@@ -116,4 +116,16 @@ export const labs: Lab[] = [
     kind: "tool",
     assumptions: ["Rendering uses your browser's fonts; metrics differ between typefaces."],
   },
+  {
+    id: "responsive-lab",
+    title: "Responsive layout simulator",
+    summary: "Drag the viewport width and watch a 12/8/4-column grid reflow at breakpoints, with column widths computed live.",
+    concepts: ["responsive-composition", "grid-systems", "grid-calculations"],
+    kind: "simulation",
+    assumptions: [
+      "Breakpoints at 600 and 1024 CSS px are a common convention (similar to several design systems), not a standard.",
+      "Column widths use the Formula Lab grid calculation: (container − 2·margin − (columns − 1)·gutter) / columns.",
+      "Real layouts also adapt content, not just columns — this shows only the grid mechanics.",
+    ],
+  },
 ];

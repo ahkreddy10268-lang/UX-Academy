@@ -35,6 +35,29 @@
   --info-wash: #e5eaf3;
   --focus: #a33320;
   --shadow-raise: 0 1px 2px rgb(28 26 23 / 0.06), 0 8px 24px rgb(28 26 23 / 0.06);
+  /* Subject palettes (illustration & identity only — never evidence). Base = solid shapes; ink = text/lines on wash. */
+  --cat-core: #c2553f;
+  --cat-core-ink: #842617;
+  --cat-rose: #d6637a;
+  --cat-rose-ink: #972c45;
+  --cat-violet: #8b6bc6;
+  --cat-violet-ink: #553890;
+  --cat-teal: #2f9a86;
+  --cat-teal-ink: #175f52;
+  --cat-blue: #5a76d4;
+  --cat-blue-ink: #30449a;
+  --cat-amber: #d39526;
+  --cat-amber-ink: #7d5408;
+  --cat-green: #6a9e55;
+  --cat-green-ink: #365f2b;
+  --cat-peach: #de8550;
+  --cat-peach-ink: #8f461a;
+  --cat-cyan: #3a9fb9;
+  --cat-cyan-ink: #1a5c6d;
+  --cat-indigo: #5f5aae;
+  --cat-indigo-ink: #37337e;
+  --cat-slate: #5d8c86;
+  --cat-slate-ink: #345752;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -60,6 +83,28 @@
     --info-wash: #161d2b;
     --focus: #ee8b73;
     --shadow-raise: 0 1px 2px rgb(0 0 0 / 0.4), 0 8px 24px rgb(0 0 0 / 0.35);
+    --cat-core: #e8826b;
+    --cat-core-ink: #f4a693;
+    --cat-rose: #ec8ea0;
+    --cat-rose-ink: #f6b9c5;
+    --cat-violet: #b49ae8;
+    --cat-violet-ink: #d3c2f7;
+    --cat-teal: #5cc4ae;
+    --cat-teal-ink: #97e0d0;
+    --cat-blue: #8ea4ef;
+    --cat-blue-ink: #bfcbf8;
+    --cat-amber: #e8b85a;
+    --cat-amber-ink: #f3d595;
+    --cat-green: #92c47c;
+    --cat-green-ink: #c0e2b0;
+    --cat-peach: #f0a575;
+    --cat-peach-ink: #f8caad;
+    --cat-cyan: #6cc6dd;
+    --cat-cyan-ink: #a8e1ef;
+    --cat-indigo: #9a95e3;
+    --cat-indigo-ink: #c9c6f5;
+    --cat-slate: #8dbab3;
+    --cat-slate-ink: #bfdcd7;
   }
 }
 
@@ -85,6 +130,28 @@
   --info-wash: #161d2b;
   --focus: #ee8b73;
   --shadow-raise: 0 1px 2px rgb(0 0 0 / 0.4), 0 8px 24px rgb(0 0 0 / 0.35);
+  --cat-core: #e8826b;
+  --cat-core-ink: #f4a693;
+  --cat-rose: #ec8ea0;
+  --cat-rose-ink: #f6b9c5;
+  --cat-violet: #b49ae8;
+  --cat-violet-ink: #d3c2f7;
+  --cat-teal: #5cc4ae;
+  --cat-teal-ink: #97e0d0;
+  --cat-blue: #8ea4ef;
+  --cat-blue-ink: #bfcbf8;
+  --cat-amber: #e8b85a;
+  --cat-amber-ink: #f3d595;
+  --cat-green: #92c47c;
+  --cat-green-ink: #c0e2b0;
+  --cat-peach: #f0a575;
+  --cat-peach-ink: #f8caad;
+  --cat-cyan: #6cc6dd;
+  --cat-cyan-ink: #a8e1ef;
+  --cat-indigo: #9a95e3;
+  --cat-indigo-ink: #c9c6f5;
+  --cat-slate: #8dbab3;
+  --cat-slate-ink: #bfdcd7;
 }
 
 @theme inline {
@@ -112,6 +179,12 @@
   --font-mono: var(--font-plex-mono), ui-monospace, "SFMono-Regular", monospace;
 
   --shadow-raise: var(--shadow-raise);
+
+  /* Context category colour: set by a .cat-* class on an ancestor. */
+  --color-c: var(--c);
+  --color-c-ink: var(--c-ink);
+  --color-c-wash: var(--c-wash);
+  --color-c-soft: var(--c-soft);
 }
 
 @theme {
@@ -255,4 +328,135 @@ textarea {
   overflow: hidden;
   clip-path: inset(50%);
   white-space: nowrap;
+}
+
+/* ------------------------------------------------------------------ */
+/* Category context                                                    */
+/* ------------------------------------------------------------------ */
+/* Any element with .cat-<family> exposes --c (solid), --c-ink (text/lines),
+   --c-wash (plate background) and --c-soft (secondary shapes). Washes are
+   mixed from the current paper, so dark mode gets deep tinted fields rather
+   than inverted pastels. Default context = core (rubric). */
+:root,
+.cat-core {
+  --c: var(--cat-core);
+  --c-ink: var(--cat-core-ink);
+}
+.cat-core {
+  --c: var(--cat-core);
+  --c-ink: var(--cat-core-ink);
+}
+.cat-rose {
+  --c: var(--cat-rose);
+  --c-ink: var(--cat-rose-ink);
+}
+.cat-violet {
+  --c: var(--cat-violet);
+  --c-ink: var(--cat-violet-ink);
+}
+.cat-teal {
+  --c: var(--cat-teal);
+  --c-ink: var(--cat-teal-ink);
+}
+.cat-blue {
+  --c: var(--cat-blue);
+  --c-ink: var(--cat-blue-ink);
+}
+.cat-amber {
+  --c: var(--cat-amber);
+  --c-ink: var(--cat-amber-ink);
+}
+.cat-green {
+  --c: var(--cat-green);
+  --c-ink: var(--cat-green-ink);
+}
+.cat-peach {
+  --c: var(--cat-peach);
+  --c-ink: var(--cat-peach-ink);
+}
+.cat-cyan {
+  --c: var(--cat-cyan);
+  --c-ink: var(--cat-cyan-ink);
+}
+.cat-indigo {
+  --c: var(--cat-indigo);
+  --c-ink: var(--cat-indigo-ink);
+}
+.cat-slate {
+  --c: var(--cat-slate);
+  --c-ink: var(--cat-slate-ink);
+}
+
+:root,
+[class*="cat-"] {
+  --c-wash: color-mix(in srgb, var(--c) 16%, var(--paper));
+  --c-soft: color-mix(in srgb, var(--c) 42%, var(--paper));
+}
+
+/* ------------------------------------------------------------------ */
+/* Type roles (see docs/DESIGN_SYSTEM.md)                              */
+/* ------------------------------------------------------------------ */
+.t-hero { font-family: var(--font-serif); font-variation-settings: "opsz" 72; font-weight: 500; letter-spacing: -0.022em; line-height: 1.02; }
+.t-page { font-family: var(--font-serif); font-variation-settings: "opsz" 60; font-weight: 500; letter-spacing: -0.015em; line-height: 1.08; }
+.t-section { font-family: var(--font-serif); font-variation-settings: "opsz" 36; font-weight: 500; letter-spacing: -0.01em; line-height: 1.15; }
+.t-sub { font-family: var(--font-sans); font-weight: 600; letter-spacing: -0.005em; line-height: 1.3; }
+.t-lede { font-family: var(--font-serif); font-variation-settings: "opsz" 24; line-height: 1.5; color: var(--ink-2); }
+.t-caption { font-family: var(--font-sans); font-size: var(--text-xs); line-height: var(--text-xs--line-height); color: var(--ink-3); }
+
+/* ------------------------------------------------------------------ */
+/* Motion — educational only (docs/INTERACTION_AND_MOTION_GUIDELINES)  */
+/* ------------------------------------------------------------------ */
+:root {
+  --dur-1: 120ms;
+  --dur-2: 220ms;
+  --dur-3: 420ms;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Plate animations run only when the learner has not asked for reduced motion,
+   and stop when an ancestor is paused. Every animated plate is fully legible
+   in its static first frame. */
+@media (prefers-reduced-motion: no-preference) {
+  .anim-travel { animation: plate-travel 3.2s var(--ease-standard) infinite; }
+  .anim-pulse { animation: plate-pulse 2.4s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+  .anim-draw { stroke-dasharray: var(--len, 400); animation: plate-draw 3.6s var(--ease-out) infinite; }
+  .anim-fade { animation: plate-fade 3.2s ease-in-out infinite; }
+  .anim-blink { animation: plate-blink 2.8s steps(1, end) infinite; }
+  .anim-sway { animation: plate-sway 5s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+  .anim-drift { animation: plate-drift 6s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+  .rise-in { animation: rise-in var(--dur-3) var(--ease-out) both; }
+}
+[data-paused="true"] * { animation-play-state: paused !important; }
+.anim-delay-1 { animation-delay: 0.4s; }
+.anim-delay-2 { animation-delay: 0.8s; }
+.anim-delay-3 { animation-delay: 1.2s; }
+.anim-delay-4 { animation-delay: 1.6s; }
+
+@keyframes plate-travel {
+  0%, 12% { offset-distance: 0%; opacity: 1; }
+  70%, 88% { offset-distance: 100%; opacity: 1; }
+  100% { offset-distance: 100%; opacity: 0; }
+}
+@keyframes plate-pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.08); } }
+@keyframes plate-draw { 0% { stroke-dashoffset: var(--len, 400); } 60%, 100% { stroke-dashoffset: 0; } }
+@keyframes plate-fade { 0%, 100% { opacity: 0.25; } 50% { opacity: 1; } }
+@keyframes plate-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.2; } }
+@keyframes plate-sway { 0%, 100% { transform: translateX(-4px); } 50% { transform: translateX(4px); } }
+@keyframes plate-drift { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(6px, -4px); } }
+@keyframes rise-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+/* Interactive surfaces: hover is a border change only. Moving the surface would
+   shift click targets under the pointer (tested: it made card controls unstable). */
+.lift { transition: border-color var(--dur-2) var(--ease-standard), background-color var(--dur-2) var(--ease-standard); }
+
+/* Range inputs: visible track and thumb in both themes */
+input[type="range"] { accent-color: var(--accent); }
+
+/* Grids without an explicit template default to one shrinkable column, so long
+   unbreakable content (formulas, search fields, chip rows) can never widen the
+   page on small screens. Explicit grid-cols-* utilities override this. */
+@layer base {
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }

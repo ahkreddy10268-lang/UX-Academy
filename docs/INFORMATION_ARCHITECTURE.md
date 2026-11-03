@@ -39,6 +39,10 @@ Defined in `content/taxonomy.ts`. A topic without an entry has an honest "planne
 
 Breadcrumb → type label → title → alternate names → summary → evidence / level / status / verified → actions (save, complete, flashcards, collections) → Definition & objectives & prerequisites → Explanation (Beginner | Intermediate | Advanced tabs) → Formula & calculator → Method / Standard details → Lab → Origin → Application → When to use / avoid / limitations / misconceptions → Connections → Practice (quiz, exercises) → Evidence & references → My notes → prev/next. A sticky "On this page" TOC mirrors the sections.
 
+## Learning routes (v2)
+
+`/learn/<path>` (curriculum) → `/learn/<path>/lesson/<slug>` (lesson view of an entry at the stage's level) → `/learn/<path>/level/<n>` (level test). Lessons reuse entry content — nothing is duplicated.
+
 ## URL scheme
 
-`/library/<slug>` entries and planned topics · `/topics/<domain>` · `/formulas/<formula-id>` · `/labs/<lab-id>` · `/learn/<path-id>` · `/compare/<id>` · `/practice/workshops/<id>` · `/glossary#<term>` · `/graph?focus=<slug>` · `/library?q=&domain=&type=&scope=` (shareable filters).
+`/library/<slug>` entries and planned topics · `/topics/<domain>` · `/formulas/<formula-id>` · `/labs/<lab-id>` · `/learn/<path-id>` · `/compare/<id>` · `/practice/workshops/<id>` · `/glossary#<term>` · `/graph?focus=<slug>` · `/library?q=&domain=&type=&level=&evidence=&scope=&feature=&view=` (all filters and the view are shareable).

@@ -80,3 +80,19 @@ for (const e of entries)
 writeFileSync(join(docs, "CONTENT_COVERAGE.md"), c);
 
 console.log("docs/KNOWLEDGE_TAXONOMY.md, docs/RESEARCH_SOURCES.md, docs/CONTENT_COVERAGE.md written");
+
+/* ---------------- Illustration coverage ---------------- */
+{
+  const { illustrations } = await import("../components/illustrations/registry");
+  const pub = entries.filter((e) => e.status === "published");
+  let md = header("Illustration coverage register", "Plates live in components/illustrations; coverage is enforced by tests/illustrations.test.ts.");
+  const covered = pub.filter((e) => illustrations.has(e.slug)).length;
+  md += `| Measure | Count |\n|---|---|\n| Registered plates | ${illustrations.size} |\n| Published entries with a plate | ${covered} / ${pub.length} |\n| Subject plates | ${domains.filter((d) => illustrations.has(d.id)).length} / ${domains.length} |\n| Animated plates | ${[...illustrations.values()].filter((p) => p.animated).length} |\n| Plates with an interactive explorer | ${[...illustrations.values()].filter((p) => p.explorer).length} |\n\n`;
+  md += "| Slug | Kind | Animated | Explorer | What it shows |\n|---|---|---|---|---|\n";
+  for (const p of illustrations.values()) {
+    const kind = domains.some((d) => d.id === p.slug) ? "subject" : entries.some((e) => e.slug === p.slug) ? "entry" : "planned topic";
+    md += `| \`${p.slug}\` | ${kind} | ${p.animated ? "yes" : "—"} | ${p.explorer ?? "—"} | ${p.description.replace(/\|/g, "/")} |\n`;
+  }
+  writeFileSync(join(docs, "ILLUSTRATION_COVERAGE.md"), md);
+  console.log("docs/ILLUSTRATION_COVERAGE.md written");
+}

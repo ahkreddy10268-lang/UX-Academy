@@ -1,5 +1,7 @@
 # Design system
 
+> **v2 (2026-11-03):** the system below is extended by subject palettes, plates, type roles and educational motion — read docs/UI_UX_DESIGN_DIRECTION.md, ILLUSTRATION_SYSTEM.md and INTERACTION_AND_MOTION_GUIDELINES.md. Where this file says "one accent", "no icons/illustration" or "no motion", v2 supersedes it: rubric remains the only *brand/interaction* accent.
+
 **Direction:** premium editorial + modern academic + minimal + interactive + research-led. The interface should feel like a well-set scholarly publication that you can operate.
 
 ## Concept: the rubric
@@ -72,3 +74,27 @@ Semantic landmarks and headings; skip link; all controls reachable and operable 
 ## Avoid
 
 Gradients, glassmorphism, decorative animation, icon clutter (the UI uses almost no icons), card-everything layouts, more than one accent colour, numeric "confidence scores".
+
+## v2 additions
+
+### Subject palettes (light base / ink · dark base / ink)
+
+| Family | Light | Dark | Ink on wash (L / D) |
+|---|---|---|---|
+| core | #c2553f / #842617 | #e8826b / #f4a693 | 7.1 / 7.4 |
+| rose | #d6637a / #972c45 | #ec8ea0 / #f6b9c5 | 6.0 / 8.5 |
+| violet | #8b6bc6 / #553890 | #b49ae8 / #d3c2f7 | 7.0 / 8.7 |
+| teal | #2f9a86 / #175f52 | #5cc4ae / #97e0d0 | 6.0 / 9.3 |
+| blue | #5a76d4 / #30449a | #8ea4ef / #bfcbf8 | 6.8 / 8.9 |
+| amber | #d39526 / #7d5408 | #e8b85a / #f3d595 | 5.5 / 9.5 |
+| green | #6a9e55 / #365f2b | #92c47c / #c0e2b0 | 6.0 / 9.7 |
+| peach | #de8550 / #8f461a | #f0a575 / #f8caad | 5.6 / 9.3 |
+| cyan | #3a9fb9 / #1a5c6d | #6cc6dd / #a8e1ef | 6.1 / 9.6 |
+| indigo | #5f5aae / #37337e | #9a95e3 / #c9c6f5 | 8.2 / 8.9 |
+| slate | #5d8c86 / #345752 | #8dbab3 / #bfdcd7 | 6.4 / 9.6 |
+
+Wash = 16% base mixed into paper; soft = 42%. Because they are mixed from the current `--paper`, dark mode gets deep tinted fields, not inverted pastels. Base-on-wash is 2.1–4.5:1, so solid shapes are always outlined in ink.
+
+### Components (v2)
+
+Knowledge card (standard / featured / formula / compact / planned), category tile, path card, plate + figure caption, concept hero, explorer shell, formula curve (+ data table), formula index, glossary browser, lesson rail, curriculum level, evidence-ledger panel, illustrated relation item, mobile filter drawer, motion frame (pause).

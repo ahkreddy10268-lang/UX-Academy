@@ -277,3 +277,28 @@ describe("visual mathematics", () => {
   });
   it("aspect ratio", () => expect(aspectRatio(1920, 1080)).toMatchObject({ w: 16, h: 9 }));
 });
+
+import { chunk, peakEnd } from "./experience";
+
+describe("experience models", () => {
+  it("peak-end average uses the most intense and the final moment", () => {
+    const r = peakEnd([2, 3, 9, 4, 5]);
+    expect(r.peakIndex).toBe(2);
+    expect(r.peakEndAverage).toBe(7); // (9 + 5) / 2
+    expect(r.mean).toBeCloseTo(4.6, 10);
+  });
+  it("supports pain ratings where the peak is the minimum", () => {
+    expect(peakEnd([0, -8, -2], "min").peakEndAverage).toBe(-5);
+  });
+  it("adding a milder final period lowers remembered pain though total pain grows (cold-pressor pattern)", () => {
+    const short = peakEnd([-6, -8, -8], "min");
+    const long = peakEnd([-6, -8, -8, -5], "min");
+    expect(long.peakEndAverage).toBeGreaterThan(short.peakEndAverage);
+    expect(long.total).toBeLessThan(short.total);
+  });
+  it("chunks symbols", () => {
+    expect(chunk("415 926 535", 3)).toEqual(["415", "926", "535"]);
+    expect(chunk("12345", 2)).toEqual(["12", "34", "5"]);
+    expect(() => chunk("123", 0)).toThrow();
+  });
+});

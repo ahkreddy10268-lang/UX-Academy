@@ -5,7 +5,7 @@ import { useSearchParams } from "next/navigation";
 import { useMemo, useState } from "react";
 import { RELATION_LABEL } from "@/lib/content/labels";
 
-export type GNode = { id: string; title: string; domain: string; planned: boolean; summary?: string };
+export type GNode = { id: string; title: string; domain: string; planned: boolean; summary?: string; cat?: string };
 export type GEdge = { from: string; to: string; type: keyof typeof RELATION_LABEL; note: string };
 
 const W = 960;
@@ -186,9 +186,9 @@ export function KnowledgeGraph({ nodes, edges, domains }: { nodes: GNode[]; edge
               const r = n.planned ? 4 : 5 + Math.min(6, degree(n.id) * 0.5);
               const dim = focus && !isFocus && !near;
               return (
-                <g key={n.id} transform={`translate(${p.x} ${p.y})`} onClick={() => setFocus(n.id)} className="cursor-pointer" opacity={dim ? 0.3 : 1}>
+                <g key={n.id} transform={`translate(${p.x} ${p.y})`} onClick={() => setFocus(n.id)} className={`${n.cat ?? ""} cursor-pointer`} opacity={dim ? 0.3 : 1}>
                   <circle r={r + 6} className="fill-transparent" />
-                  <circle r={r} className={isFocus ? "fill-accent" : n.planned ? "fill-surface stroke-ink-3" : "fill-ink"} strokeWidth={1.4} />
+                  <circle r={r} fill={n.planned ? "var(--surface)" : "var(--c)"} stroke={isFocus ? "var(--ink)" : n.planned ? "var(--ink-3)" : "var(--paper)"} strokeWidth={isFocus ? 3 : 1.4} />
                   {(!n.planned || isFocus || near) && (
                     <text y={-r - 5} textAnchor="middle" className={`pointer-events-none text-[11px] ${isFocus ? "fill-accent-ink font-semibold" : "fill-ink-2"}`}>
                       {n.title.length > 28 ? n.title.slice(0, 26) + "…" : n.title}
@@ -199,7 +199,7 @@ export function KnowledgeGraph({ nodes, edges, domains }: { nodes: GNode[]; edge
             })}
           </svg>
         </div>
-        <p className="mt-2 text-xs text-ink-3">Filled dot: written entry (size = number of connections) · hollow: planned topic · dashed line: prerequisite · click a dot to focus.</p>
+        <p className="mt-2 text-xs text-ink-3">Filled dot: written entry, coloured by subject family (size = number of connections) · hollow: planned topic · dashed line: prerequisite · dark ring: selected · click a dot to focus.</p>
       </div>
       <aside aria-live="polite" className="lg:pt-[7.5rem]">
         {focusNode ? (

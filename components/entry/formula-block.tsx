@@ -1,5 +1,7 @@
 import type { Formula } from "@/lib/content/schema";
 import { Calculator } from "@/components/formula/calculator";
+import { FormulaCurve } from "@/components/formula/formula-curve";
+import { hasCurve } from "@/components/formula/curves";
 import { Bullets } from "@/components/ui/layout";
 import { Rich, RichParagraphs, type RichContext } from "@/components/ui/rich";
 
@@ -44,6 +46,8 @@ export function FormulaBlock({ formula, ctx, headingLevel = 3 }: { formula: Form
       </div>
 
       {formula.calculator && <Calculator id={formula.calculator} />}
+
+      {formula.calculator && hasCurve(formula.calculator) && <FormulaCurve calculator={formula.calculator} />}
 
       <div className="grid gap-8 md:grid-cols-2">
         <div>

@@ -2,6 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { EntryActions } from "@/components/entry/entry-actions";
+import { ConceptIllustration } from "@/components/illustrations/concept-illustration";
+import { ConceptExplorer } from "@/components/illustrations/interactive/explorers";
+import { MotionFrame } from "@/components/illustrations/motion-toggle";
+import { illustrationFor, plateNumber } from "@/components/illustrations/registry";
+import { citationLine } from "@/components/entry/references";
 import { FormulaBlock } from "@/components/entry/formula-block";
 import { LevelTabs } from "@/components/entry/level-tabs";
 import { NotesPanel } from "@/components/entry/notes-panel";
@@ -13,7 +18,9 @@ import { DifficultyMark, EvidenceMark, StatusMark, TypeMark } from "@/components
 import { Rich, RichParagraphs } from "@/components/ui/rich";
 import { domainById, edgesFor, entries, entryBySlug, knownSlugs, labById, sourceById, subcategoryTitle, taxonomyBySlug, titleFor, unlockedBy, verification } from "@/lib/content";
 import { linkMapFor, resolveSlug, richContext } from "@/lib/content/context";
-import { EVIDENCE_DESCRIPTION, LEVEL_PURPOSE, RELATION_LABEL } from "@/lib/content/labels";
+import { catClass } from "@/lib/content/categories";
+import { EVIDENCE_DESCRIPTION, EVIDENCE_LABEL, EVIDENCE_ORDER, LEVEL_PURPOSE, RELATION_LABEL, TYPE_LABEL } from "@/lib/content/labels";
+import { readingMinutes } from "@/lib/content/learning";
 import { collectStrings, extractCitations, richToPlain } from "@/lib/content/rich";
 import type { KnowledgeEntry } from "@/lib/content/schema";
 
@@ -55,8 +62,11 @@ function Entry({ entry: e }: { entry: KnowledgeEntry }) {
   const quizLinks = { ...linkMapFor(e.quiz), [e.slug]: resolveSlug(e.slug)! };
   for (const q of e.quiz) if (q.revise && resolveSlug(q.revise)) quizLinks[q.revise] = resolveSlug(q.revise)!;
 
+  const plate = illustrationFor(e.slug);
+  const explorer = plate?.explorer;
   const toc = [
     ["definition", "Definition"],
+    ...(explorer ? [["visual", "Visual explanation"]] : []),
     ["explanation", "Explanation"],
     ...(e.formulas.length ? [["formula", "Formula & calculator"]] : []),
     ...(e.method ? [["method", "Method"]] : []),
@@ -161,8 +171,9 @@ function Entry({ entry: e }: { entry: KnowledgeEntry }) {
 
   return (
     <article>
-      <header className="border-b border-rule pb-10 pt-10 sm:pt-12">
-        <Container>
+      <header className={`${catClass(e.domain)} border-b border-rule`}>
+        <div aria-hidden className="h-1 bg-c" />
+        <Container className="pb-10 pt-8 sm:pt-10">
           <Breadcrumbs
             items={[
               { href: "/library", label: "Library" },
@@ -171,40 +182,74 @@ function Entry({ entry: e }: { entry: KnowledgeEntry }) {
               { label: e.title },
             ]}
           />
-          <div className="mt-8 max-w-4xl">
-            <TypeMark type={e.primaryType} secondary={e.secondaryTypes} />
-            <h1 className="display mt-3 text-3xl sm:text-4xl">{e.title}</h1>
-            {e.alternateNames.length > 0 && <p className="mt-2 text-sm text-ink-3">Also known as {e.alternateNames.join(" · ")}</p>}
-            <p className="mt-5 max-w-read font-serif text-xl leading-relaxed text-ink-2 [font-variation-settings:'opsz'_24]">{e.summary}</p>
-          </div>
-          <dl className="mt-8 flex flex-wrap gap-x-8 gap-y-3 text-sm">
-            <div>
-              <dt className="label">Evidence</dt>
-              <dd className="mt-1">
-                <a href="#evidence" className="hover:underline">
-                  <EvidenceMark evidence={e.evidence} />
-                </a>
-              </dd>
+          <div className="mt-8 grid items-start gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-14">
+            <div className="rise-in">
+              <p className="flex flex-wrap items-center gap-x-3 gap-y-1">
+                <TypeMark type={e.primaryType} secondary={e.secondaryTypes} />
+                <span className="flex items-center gap-1.5 text-xs text-c-ink">
+                  <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-c" />
+                  {domain.shortTitle}
+                </span>
+              </p>
+              <h1 className="t-page mt-3 text-4xl sm:text-5xl">{e.title}</h1>
+              {e.alternateNames.length > 0 && <p className="mt-3 text-sm text-ink-3">Also known as {e.alternateNames.join(" · ")}</p>}
+              <p className="t-lede mt-5 text-xl">
+                <Rich text={e.summary} ctx={ctx} />
+              </p>
+              <dl className="mt-8 flex flex-wrap gap-x-8 gap-y-4 border-t border-rule pt-5 text-sm">
+                <div>
+                  <dt className="label">Evidence</dt>
+                  <dd className="mt-1">
+                    <a href="#evidence" className="hover:underline">
+                      <EvidenceMark evidence={e.evidence} />
+                    </a>
+                  </dd>
+                </div>
+                <div>
+                  <dt className="label">Starts at</dt>
+                  <dd className="mt-1">
+                    <DifficultyMark level={e.difficulty} />
+                  </dd>
+                </div>
+                <div>
+                  <dt className="label">Reading</dt>
+                  <dd className="tabular mt-1 text-ink-2">≈ {readingMinutes(e)} min · 3 levels</dd>
+                </div>
+                <div>
+                  <dt className="label">Verified</dt>
+                  <dd className="tabular mt-1 flex flex-wrap items-center gap-2 text-ink-2">
+                    {e.lastVerifiedAt}
+                    {e.status !== "published" && <StatusMark status={e.status} />}
+                  </dd>
+                </div>
+              </dl>
+              <div className="mt-6">
+                <EntryActions slug={e.slug} cards={e.flashcards.map((c) => ({ id: c.id }))} />
+              </div>
             </div>
-            <div>
-              <dt className="label">Starts at</dt>
-              <dd className="mt-1">
-                <DifficultyMark level={e.difficulty} />
-              </dd>
-            </div>
-            <div>
-              <dt className="label">Status</dt>
-              <dd className="mt-1">
-                <StatusMark status={e.status} />
-              </dd>
-            </div>
-            <div>
-              <dt className="label">Last verified</dt>
-              <dd className="tabular mt-1 text-ink-2">{e.lastVerifiedAt}</dd>
-            </div>
-          </dl>
-          <div className="mt-6">
-            <EntryActions slug={e.slug} cards={e.flashcards.map((c) => ({ id: c.id }))} />
+            <figure className="rise-in">
+              <div className="overflow-hidden rounded-sm border border-rule">
+                {plate?.animated ? (
+                  <MotionFrame label={e.title}>
+                    <ConceptIllustration slug={e.slug} title={e.title} domain={e.domain} variant="hero" animate />
+                  </MotionFrame>
+                ) : (
+                  <ConceptIllustration slug={e.slug} title={e.title} domain={e.domain} variant="hero" />
+                )}
+              </div>
+              <figcaption className="t-caption mt-2 flex justify-between gap-4">
+                <span>
+                  {plateNumber(e.slug) ? <span className="formula">Pl. {String(plateNumber(e.slug)).padStart(2, "0")} — </span> : null}
+                  {e.title}
+                  {plate ? "" : " · typographic placeholder (no plate drawn yet)"}
+                </span>
+                {explorer && (
+                  <a href="#visual" className="link">
+                    Explore it interactively ↓
+                  </a>
+                )}
+              </figcaption>
+            </figure>
           </div>
         </Container>
       </header>
@@ -246,6 +291,15 @@ function Entry({ entry: e }: { entry: KnowledgeEntry }) {
               </p>
             )}
           </section>
+
+          {explorer && (
+            <section aria-labelledby="visual" className={`${catClass(e.domain)} pt-16`}>
+              <SectionHeading id="visual" kicker="Visual explanation">
+                See it change
+              </SectionHeading>
+              <ConceptExplorer id={explorer} />
+            </section>
+          )}
 
           <section aria-labelledby="explanation" className="pt-16">
             <SectionHeading id="explanation" kicker="Explanation at three depths">
@@ -488,16 +542,23 @@ function Entry({ entry: e }: { entry: KnowledgeEntry }) {
               {relationGroups.map(([type, rels]) => (
                 <div key={type}>
                   <p className="label">{RELATION_LABEL[type as keyof typeof RELATION_LABEL]}</p>
-                  <ul className="mt-3 divide-y divide-rule border-y border-rule">
+                  <ul className="mt-3 grid gap-3 sm:grid-cols-2">
                     {rels.map((r) => {
                       const info = resolveSlug(r.to)!;
+                      const target = entryBySlug.get(r.to);
+                      const t = target ?? taxonomyBySlug.get(r.to);
                       return (
-                        <li key={r.to} className="grid gap-1 py-3 sm:grid-cols-[13rem_1fr] sm:gap-4">
-                          <Link href={info.href} className={info.planned ? "text-ink underline decoration-dotted underline-offset-4" : "link font-medium"}>
-                            {info.title}
-                            {info.planned && <span className="ml-1 text-xs text-ink-3">(planned)</span>}
-                          </Link>
-                          <span className="text-sm text-ink-2">{r.note}</span>
+                        <li key={r.to} className={`${catClass(t?.domain ?? e.domain)} relative grid grid-cols-[4.5rem_minmax(0,1fr)] gap-3 rounded-sm border p-3 ${info.planned ? "border-dashed border-rule-strong" : "border-rule bg-surface lift hover:border-ink-3"}`}>
+                          <div className="overflow-hidden rounded-xs border border-rule">
+                            {target ? <ConceptIllustration slug={target.slug} title={target.title} domain={target.domain} decorative /> : <div className="aspect-[4/3] bg-c-wash" />}
+                          </div>
+                          <div className="min-w-0">
+                            <Link href={info.href} className={`after:absolute after:inset-0 ${info.planned ? "text-ink-2" : "t-sub text-ink hover:text-accent-ink"}`}>
+                              {info.title}
+                            </Link>
+                            <p className="text-[11px] uppercase tracking-[0.08em] text-ink-3">{info.planned ? "planned topic" : TYPE_LABEL[target!.primaryType]}</p>
+                            <p className="mt-1 text-sm text-ink-2">{r.note}</p>
+                          </div>
                         </li>
                       );
                     })}
@@ -592,12 +653,47 @@ function Entry({ entry: e }: { entry: KnowledgeEntry }) {
             <SectionHeading id="evidence" kicker="Evidence">
               How well supported is this?
             </SectionHeading>
-            <div className="rounded-sm border border-rule p-5">
-              <EvidenceMark evidence={e.evidence} />
-              <p className="mt-2 text-sm text-ink-3">{EVIDENCE_DESCRIPTION[e.evidence]}</p>
-              <p className="prose-read mt-4 !text-base">
-                <Rich text={e.evidenceNote} ctx={ctx} />
-              </p>
+            <div className="overflow-hidden rounded-sm border border-rule bg-surface">
+              <div className="border-b border-rule p-5">
+                <p className="label">Evidence ledger</p>
+                <ol className="mt-3 grid grid-cols-2 gap-1 sm:grid-cols-4" aria-label="Evidence scale, strongest to most contested">
+                  {EVIDENCE_ORDER.map((ev) => (
+                    <li key={ev} aria-current={ev === e.evidence ? "true" : undefined} className={`rounded-xs border px-1.5 py-1.5 text-[11px] leading-tight ${ev === e.evidence ? "border-ink bg-ink text-paper" : "border-rule text-ink-3"}`}>
+                      {EVIDENCE_LABEL[ev]}
+                    </li>
+                  ))}
+                </ol>
+                <p className="mt-3 text-sm text-ink-2">
+                  <span className="font-medium text-ink">{EVIDENCE_LABEL[e.evidence]}.</span> {EVIDENCE_DESCRIPTION[e.evidence]}
+                </p>
+              </div>
+              <div className="grid gap-0 md:grid-cols-2">
+                <div className="border-b border-rule p-5 md:border-b-0 md:border-r">
+                  <p className="t-sub text-sm">What the evidence supports — and what it does not</p>
+                  <p className="prose-read mt-2 !text-base">
+                    <Rich text={e.evidenceNote} ctx={ctx} />
+                  </p>
+                </div>
+                <div className="p-5">
+                  <p className="t-sub text-sm">Original research</p>
+                  <ul className="mt-2 space-y-2 text-sm">
+                    {e.references
+                      .filter((r) => r.role === "primary" || r.role === "standard")
+                      .map((r) => {
+                        const src = sourceById.get(r.source)!;
+                        return (
+                          <li key={r.source}>
+                            <a href={`#ref-${r.source}`} className="hover:underline">
+                              <span className="text-ink-2">{citationLine(src)}</span> <span className="font-serif italic text-ink">{src.title}</span>
+                            </a>
+                          </li>
+                        );
+                      })}
+                  </ul>
+                  <p className="t-sub mt-5 text-sm">Key limitations</p>
+                  <Bullets className="mt-2 text-sm text-ink-2" items={e.limitations.slice(0, 3).map((x, i) => <Rich key={i} text={x} ctx={ctx} />)} />
+                </div>
+              </div>
             </div>
             <div className="mt-10">
               <ReferenceList references={e.references} sources={sourceById} verification={verification} />

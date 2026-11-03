@@ -25,7 +25,8 @@ classified, evidenced, connected and practised.
 | `npm test` | Content integrity + formula unit tests (Vitest) |
 | `npm run docs:generate` | Regenerate docs/KNOWLEDGE_TAXONOMY.md, RESEARCH_SOURCES.md, CONTENT_COVERAGE.md from content |
 | `npm run check` | Index → typecheck → tests → lint (everything except build) |
-| `tests/browser/*.cjs` | Crawl, e2e and axe audits against `next start` — see tests/browser/README.md |
+| `tests/browser/*.cjs` | Crawl, e2e (`e2e.cjs`, `e2e-redesign.cjs`) and axe audits against `next start` — see tests/browser/README.md |
+| `NODE_PATH=$(npm root -g) npx tsx scripts/render-plates.tsx [slug…]` | Render plates (card + hero, light + dark) to `.plates/` for visual QA |
 
 ## Architecture rules
 
@@ -48,12 +49,16 @@ classified, evidenced, connected and practised.
 - Only `status: "published"` with every quality-gate flag true counts as complete. Taxonomy items without entries are "planned" — never present them as content.
 - Do not assign numeric confidence scores; use `evidence` classes and `evidenceNote`.
 
-## Design rules
+## Design rules (v2 — see docs/UI_UX_DESIGN_DIRECTION.md)
 
-- Premium editorial + modern academic. Light-first; coherent dark theme. Tokens live **only** in `app/globals.css` (`:root` / `[data-theme]`) — never hard-code colours, sizes or radii in components.
-- Typography carries hierarchy: Newsreader (display & reading), IBM Plex Sans (UI), IBM Plex Mono (formulas/data).
-- One accent ("rubric" red). No gradients, glassmorphism, decorative animation, icon clutter or card-for-everything layouts.
-- Accessibility floor: semantic HTML, visible focus, keyboard reachable, WCAG 2.2 AA contrast, `prefers-reduced-motion` respected, every visual (graph, chart) has a text alternative.
+- Premium editorial + visual encyclopedia + interactive learning. Light-first; deliberately designed dark theme. Tokens live **only** in `app/globals.css` — never hard-code colours, sizes or radii in components.
+- Typography roles: Newsreader for editorial display/reading (`.t-hero/.t-page/.t-section/.t-lede/.prose-read`), IBM Plex Sans for UI (`.t-sub/.label/.t-caption`), IBM Plex Mono for formulas and data (`.formula`).
+- Colour = rubric red brand accent + eleven subject palettes (`lib/content/categories.ts`, `.cat-*` classes exposing `--c/--c-ink/--c-wash/--c-soft`). Subject colour is for identity and illustration only — **never** for evidence, status or body text.
+- Illustrations are original **plates** (`components/illustrations/`, rules in docs/ILLUSTRATION_SYSTEM.md): explanatory diagrams of the mechanism, colour via CSS variables only, accessible title + description. Every published entry and subject must have one (tested). Never copy third-party artwork.
+- Motion only to teach or confirm (docs/INTERACTION_AND_MOTION_GUIDELINES.md): CSS `anim-*` classes, off under `prefers-reduced-motion`, pausable, static first frame complete. No scroll effects, parallax or moving hit targets.
+- Interactive explorers compute only with `lib/formulas`; label simulations vs experiments; state assumptions and what they cannot show.
+- Still forbidden: gradients, glassmorphism, decorative animation, icon clutter, fake data, colour-only meaning.
+- Accessibility floor: semantic HTML, visible focus, keyboard reachable, WCAG 2.2 AA contrast, text alternatives for every plate/chart/graph. Grids must use `minmax(0,1fr)` tracks (base rule exists) — verify phones at the real device width.
 
 ## Working conventions
 

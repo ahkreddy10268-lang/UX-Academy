@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { FormulaIndex, type FormulaRow } from "@/components/formula/formula-index";
+import { ConceptIllustration } from "@/components/illustrations/concept-illustration";
+import { hasIllustration } from "@/components/illustrations/registry";
 import { Container, PageHeader } from "@/components/ui/layout";
-import { libraryFormulas } from "@/lib/content";
+import { entryBySlug, libraryFormulas, taxonomyBySlug } from "@/lib/content";
+import { catClass } from "@/lib/content/categories";
 
 export const metadata: Metadata = { title: "Formula Lab" };
 
@@ -14,42 +17,37 @@ const GROUPS: { title: string; description: string; calculators: string[] }[] = 
 ];
 
 export default function FormulasPage() {
+  const rows: FormulaRow[] = libraryFormulas.map((f) => {
+    const domain = entryBySlug.get(f.host.slug)?.domain ?? taxonomyBySlug.get(f.host.slug)?.domain ?? "metrics";
+    return {
+      id: f.id,
+      name: f.name,
+      expression: f.expression,
+      summary: f.summary,
+      host: f.host.title,
+      hasEntry: f.host.hasEntry,
+      group: GROUPS.find((g) => f.calculator && g.calculators.includes(f.calculator))?.title ?? "Statistics",
+      cat: catClass(domain),
+    };
+  });
+  const plates = Object.fromEntries(
+    libraryFormulas.map((f) => {
+      const e = entryBySlug.get(f.host.slug);
+      const domain = e?.domain ?? taxonomyBySlug.get(f.host.slug)?.domain ?? "metrics";
+      const slug = e && hasIllustration(e.slug) ? e.slug : domain;
+      return [f.id, <ConceptIllustration key={f.id} slug={slug} title={f.name} domain={domain} decorative />];
+    }),
+  );
   return (
     <>
       <PageHeader
+        cat="cat-blue"
         eyebrow="Formula Lab"
         title="Calculate, then interpret"
-        lede="Every formula is documented with its source, variables, assumptions, a worked example and its limitations — and every calculator is backed by unit-tested code. A number without its assumptions is not an answer."
+        lede={`${libraryFormulas.length} formulas, each with its source, variables, assumptions, a worked example and its limitations — and a calculator backed by unit-tested code. A number without its assumptions is not an answer.`}
       />
-      <Container className="space-y-14 pt-10">
-        {GROUPS.map((g) => {
-          const items = libraryFormulas.filter((f) => f.calculator && g.calculators.includes(f.calculator));
-          return (
-            <section key={g.title} aria-labelledby={g.title}>
-              <div className="flex flex-wrap items-baseline justify-between gap-2 border-b border-rule-strong pb-3">
-                <h2 id={g.title} className="display text-2xl">
-                  {g.title}
-                </h2>
-                <p className="text-sm text-ink-3">{g.description}</p>
-              </div>
-              <ul className="divide-y divide-rule">
-                {items.map((f) => (
-                  <li key={f.id}>
-                    <Link href={`/formulas/${f.id}`} className="group grid gap-2 py-5 md:grid-cols-[16rem_minmax(0,1fr)_auto] md:items-baseline md:gap-8">
-                      <span className="font-medium text-ink group-hover:text-accent-ink">{f.name}</span>
-                      <span className="formula truncate text-sm text-ink-2" title={f.expression}>{f.expression}</span>
-                      <span className="text-xs text-ink-3">{f.host.hasEntry ? `Full entry: ${f.host.title}` : "Formula specification"}</span>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </section>
-          );
-        })}
-        <p className="text-sm text-ink-3">
-          Calculations use the functions in <code className="formula">lib/formulas</code>, verified against statistical tables and published worked examples in{" "}
-          <code className="formula">lib/formulas/formulas.test.ts</code>.
-        </p>
+      <Container className="pt-10">
+        <FormulaIndex rows={rows} groups={GROUPS.map(({ title, description }) => ({ title, description }))} plates={plates} />
       </Container>
     </>
   );

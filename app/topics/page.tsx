@@ -1,47 +1,46 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { ConceptIllustration } from "@/components/illustrations/concept-illustration";
+import { CategoryTile } from "@/components/knowledge/knowledge-card";
 import { Container, PageHeader } from "@/components/ui/layout";
-import { CoverageBar } from "@/components/ui/coverage-bar";
 import { domains } from "@/lib/content";
+import { PALETTE_LABEL, paletteFor, type Palette } from "@/lib/content/categories";
 import { domainCoverage } from "@/lib/content/coverage";
 
 export const metadata: Metadata = { title: "All subjects" };
 
 export default function TopicsPage() {
   const cov = new Map(domainCoverage().map((c) => [c.id, c]));
+  // Group subjects by palette family so the colour system is legible as a map.
+  const families = [...new Set(domains.map((d) => paletteFor(d.id)))] as Palette[];
   return (
     <>
       <PageHeader
         eyebrow="Subject index"
         title="The discipline, mapped"
-        lede="Twenty subjects, from cognitive science to service design. The map is deliberately broader than what is written so far — every planned topic is labelled as such."
+        lede="Twenty subjects in eleven colour families, from perception to service design. The map is deliberately broader than what is written — every planned topic is labelled as such."
         crumbs={[{ href: "/library", label: "Library" }, { label: "All subjects" }]}
       />
-      <Container className="pt-6">
-        <ol className="grid gap-x-12 sm:grid-cols-2">
-          {domains.map((d, i) => {
-            const c = cov.get(d.id)!;
-            return (
-              <li key={d.id} className="border-b border-rule py-6">
-                <div className="flex items-baseline gap-4">
-                  <span className="formula w-6 shrink-0 text-sm text-ink-3">{String(i + 1).padStart(2, "0")}</span>
-                  <div className="min-w-0 flex-1">
-                    <h2>
-                      <Link href={`/topics/${d.id}`} className="display text-xl hover:text-accent-ink">
-                        {d.title}
-                      </Link>
-                    </h2>
-                    <p className="mt-1 text-sm text-ink-2">{d.description}</p>
-                    <p className="mt-2 text-xs text-ink-3">{d.subcategories.map((s) => s.title).join(" · ")}</p>
-                    <div className="mt-3 max-w-xs">
-                      <CoverageBar published={c.published} total={c.total} label={d.title} />
-                    </div>
-                  </div>
-                </div>
-              </li>
-            );
-          })}
-        </ol>
+      <Container className="space-y-14 pt-10">
+        {families.map((f) => (
+          <section key={f} aria-labelledby={`fam-${f}`} className={`cat-${f}`}>
+            <h2 id={`fam-${f}`} className="flex items-center gap-2 t-sub text-base">
+              <span aria-hidden className="h-2.5 w-2.5 rounded-full bg-c" />
+              {PALETTE_LABEL[f]}
+            </h2>
+            <ul className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {domains
+                .filter((d) => paletteFor(d.id) === f)
+                .map((d) => {
+                  const c = cov.get(d.id)!;
+                  return (
+                    <li key={d.id}>
+                      <CategoryTile id={d.id} title={d.title} description={d.description} published={c.published} total={c.total} plate={<ConceptIllustration slug={d.id} title={d.title} domain={d.id} decorative />} />
+                    </li>
+                  );
+                })}
+            </ul>
+          </section>
+        ))}
       </Container>
     </>
   );

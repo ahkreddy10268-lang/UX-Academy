@@ -1,11 +1,17 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { ConceptIllustration } from "@/components/illustrations/concept-illustration";
 import { Container, PageHeader } from "@/components/ui/layout";
-import { labs, titleFor } from "@/lib/content";
+import { entryBySlug, labs, taxonomyBySlug, titleFor } from "@/lib/content";
+import { catClass } from "@/lib/content/categories";
 
 export const metadata: Metadata = { title: "Labs" };
 
-const KIND = { experiment: "Experiment — measures you", simulation: "Simulation", tool: "Tool" } as const;
+const KINDS = [
+  { kind: "experiment", title: "Experiments", lede: "Measure your own performance and fit the model to your data." },
+  { kind: "simulation", title: "Simulations", lede: "Move the variables and watch the principle respond. Nothing is measured." },
+  { kind: "tool", title: "Tools", lede: "Check real work against standards and scales." },
+] as const;
 
 export default function LabsPage() {
   return (
@@ -13,25 +19,46 @@ export default function LabsPage() {
       <PageHeader
         eyebrow="Labs"
         title="See the principles behave"
-        lede="Experiments that measure your own performance, simulations you can manipulate, and tools you will use in practice. Each lab states the assumptions behind it."
+        lede="Experiments that measure you, simulations you manipulate, and tools you will use in practice. Each lab is explicit about which it is — and states the assumptions behind it."
       />
-      <Container className="pt-6">
-        <ul className="divide-y divide-rule">
-          {labs.map((l) => (
-            <li key={l.id} className="grid gap-2 py-6 md:grid-cols-[minmax(0,1fr)_16rem] md:gap-10">
-              <div>
-                <p className="label">{KIND[l.kind]}</p>
-                <h2 className="mt-1">
-                  <Link href={`/labs/${l.id}`} className="display text-xl hover:text-accent-ink">
-                    {l.title}
-                  </Link>
-                </h2>
-                <p className="mt-1 max-w-read text-ink-2">{l.summary}</p>
-              </div>
-              <p className="text-sm text-ink-3 md:pt-6">Concepts: {l.concepts.map((c) => titleFor(c) ?? c).join(", ")}</p>
-            </li>
-          ))}
-        </ul>
+      <Container className="space-y-14 pt-10">
+        {KINDS.map((k) => (
+          <section key={k.kind} aria-labelledby={`k-${k.kind}`}>
+            <div className="flex flex-wrap items-baseline justify-between gap-2 border-b border-rule pb-3">
+              <h2 id={`k-${k.kind}`} className="t-section text-2xl">
+                {k.title}
+              </h2>
+              <p className="text-sm text-ink-3">{k.lede}</p>
+            </div>
+            <ul className="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              {labs
+                .filter((l) => l.kind === k.kind)
+                .map((l) => {
+                  const c = entryBySlug.get(l.concepts[0]);
+                  const domain = c?.domain ?? taxonomyBySlug.get(l.concepts[0])?.domain ?? "visual";
+                  return (
+                    <li key={l.id}>
+                      <article className={`${catClass(domain)} group relative flex h-full flex-col overflow-hidden rounded-sm border border-rule bg-surface lift hover:border-ink-3`}>
+                        <div className="border-b border-rule">
+                          <ConceptIllustration slug={c?.slug ?? domain} title={l.title} domain={domain} decorative />
+                        </div>
+                        <div className="flex flex-1 flex-col p-4">
+                          <p className="label">{k.kind === "experiment" ? "Experiment · measures you" : k.kind === "tool" ? "Tool" : "Simulation"}</p>
+                          <h3 className="t-section mt-1.5 text-xl group-hover:text-accent-ink">
+                            <Link href={`/labs/${l.id}`} className="after:absolute after:inset-0">
+                              {l.title}
+                            </Link>
+                          </h3>
+                          <p className="mt-1 text-sm text-ink-2">{l.summary}</p>
+                          <p className="mt-auto pt-3 text-xs text-ink-3">Concepts: {l.concepts.map((x) => titleFor(x) ?? x).join(", ")}</p>
+                        </div>
+                      </article>
+                    </li>
+                  );
+                })}
+            </ul>
+          </section>
+        ))}
       </Container>
     </>
   );

@@ -1,6 +1,6 @@
 # Progress register
 
-_Last updated: 2026-11-03 (session 1)_
+_Last updated: 2026-11-03 (session 2 — visual & product redesign)_
 
 ## State
 
@@ -47,6 +47,27 @@ First meaningful release is complete and verified. All Definition-of-Done items 
 - Responsive layout simulator, steering-law experiment and colour-vision simulation labs are not yet built.
 - Unknown slugs return the 404 page with HTTP status 200.
 
-## Next task (precise)
+## Session 2 — visual & product redesign (v2)
+
+**Implemented**
+- Design language v2: brand accent + 11 subject palettes (light/dark, contrast-checked), type roles, motion tokens, base grid rule. Docs: UI_UX_DESIGN_DIRECTION, ILLUSTRATION_SYSTEM, INTERACTION_AND_MOTION_GUIDELINES, PAGE_TEMPLATES, VISUAL_QA; CLAUDE.md design rules revised.
+- Illustration system: primitives, plate frame, registry, 67 original plates — all 45 published entries, all 20 subjects, plus design-thinking and atomic-design (planned topics, labelled). 12 animated (pausable), 7 interactive explorers (Fitts, Hick-Hyman, peak-end, chunking, grouping, information density, signifiers).
+- Flagship pages: homepage (hero search, constellation, disciplines, featured concept, evidence ledger, paths, labs, connections), Library (grid/list/A–Z, card variants, type strip, full URL state, mobile drawer), concept page (illustrated hero, visual explanation, evidence-ledger panel, illustrated relations).
+- Platform: illustrated subject pages; Learning Academy with levels, lesson template and level tests (`/learn/[id]/lesson/[slug]`, `/learn/[id]/level/[n]`); Formula Lab search + category nav + response curves with data tables; illustrated labs grouped by kind + new responsive layout simulator; subject-coloured graph; illustrated workshops; searchable glossary; comparison plates; illustrated planned-topic and 404 pages; footer subject key.
+- New tested functions: `peakEnd`, `chunk` (lib/formulas/experience.ts). Illustration integrity tests.
+
+**Verified (actually run, after the final build)** — see the table below and docs/VISUAL_QA.md.
+
+**Known limitations**
+- No screen-reader or real-device testing; axe and scripted keyboard paths only.
+- Steering-law experiment and colour-vision-deficiency simulation labs remain unbuilt.
+- Plates for most planned topics do not exist; planned pages show the subject plate, captioned as such.
+- Explorers exist for 7 concepts; others show the static hero plate.
+
+## Next task (precise) — supersedes the one below
+
+Write the **Foundations gap** entries (see docs/ROADMAP.md), starting with `user-experience`, and draw its plate in `components/illustrations/concepts/frameworks-visual.tsx`; then `npm run content:index && npm run check && npm run docs:generate` and re-run `tests/browser/e2e-redesign.cjs`.
+
+## Previous next task (session 1)
 
 Write the **Foundations gap** entries listed first in `docs/ROADMAP.md` — start with `user-experience` (domain `foundations`, subcategory `core-concepts`, primaryType `discipline`): follow `docs/CONTENT_MODEL.md`, reuse `norman-nielsen-ux-definition`, `iso-9241-210-2019` and `hassenzahl-tractinsky-2006` from the registry, add the ISO 9241-210 definition of user experience (paraphrased), link `usability`, `user-centred-design`, `ui-design`, then `npm run content:index && npm run sources:verify -- <new ids> && npm run check && npm run docs:generate`.

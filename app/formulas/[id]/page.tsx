@@ -3,8 +3,11 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { FormulaBlock } from "@/components/entry/formula-block";
 import { ReferenceList } from "@/components/entry/references";
+import { ConceptIllustration } from "@/components/illustrations/concept-illustration";
+import { hasIllustration } from "@/components/illustrations/registry";
 import { Container, PageHeader, SectionHeading } from "@/components/ui/layout";
-import { entries, libraryFormulas, sourceById, standaloneFormulaById, titleFor, verification } from "@/lib/content";
+import { catClass } from "@/lib/content/categories";
+import { entries, libraryFormulas, sourceById, standaloneFormulaById, taxonomyBySlug, titleFor, verification } from "@/lib/content";
 import { richContext } from "@/lib/content/context";
 
 export function generateStaticParams() {
@@ -34,6 +37,8 @@ export default async function FormulaPage({ params }: PageProps<"/formulas/[id]"
   const { formula, references, host, summary } = found;
   const ctx = richContext(references.map((r) => r.source));
   const topic = "topic" in formula ? (formula.topic as string) : undefined;
+  const domain = host?.domain ?? (topic ? taxonomyBySlug.get(topic)?.domain : undefined) ?? "metrics";
+  const plateSlug = host && hasIllustration(host.slug) ? host.slug : domain;
 
   return (
     <>
@@ -41,7 +46,9 @@ export default async function FormulaPage({ params }: PageProps<"/formulas/[id]"
         eyebrow="Formula Lab"
         title={formula.name}
         lede={summary}
+        cat={catClass(domain)}
         crumbs={[{ href: "/formulas", label: "Formula Lab" }, { label: formula.name }]}
+        aside={<ConceptIllustration slug={plateSlug} title={host?.title ?? formula.name} domain={domain} variant={host ? "hero" : "card"} decorative={!host} />}
       >
         <p className="mt-4 text-sm text-ink-2">
           {host ? (

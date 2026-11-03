@@ -18,3 +18,12 @@
 | D-014 | 2026-11-03 | Design language: "rubric" — one red accent, Newsreader + IBM Plex, near-square radii, borders over shadows | Academic/editorial authority; colour carries meaning | Neutral SaaS aesthetic; multi-colour category coding |
 | D-015 | 2026-11-03 | The single theme source is `app/globals.css` (no prior design system existed; greenfield) | One place for values, light/dark coherence | Tokens JSON + build step (premature) |
 | D-016 | 2026-11-03 | Contrast lab defaults to a passing pair; failing example behind a button | The page itself must conform to WCAG while still teaching failure | Failing default (axe violation) |
+| D-017 | 2026-11-03 | v2: evolve Rubric into brand accent + 11 subject palettes; supersedes D-014's single-accent rule | Learners need wayfinding across 20 subjects; colour is restricted to identity/illustration and never encodes evidence | Per-concept colours (Laws of UX) — weaker as a system; status-quo single accent — no wayfinding |
+| D-018 | 2026-11-03 | Illustrations are explanatory "plates" (atlas-style diagrams with annotations), original SVG | Ownable and educational: shows the mechanism; distinct from Laws of UX's abstract glyphs | Abstract emblems; stock imagery; icon sets |
+| D-019 | 2026-11-03 | Plates colour via CSS variables only, server-rendered, passed to client components as nodes | Zero client JS for art; recolourable by context; renderable standalone for QA | Tailwind classes in SVG; client-side registry |
+| D-020 | 2026-11-03 | Subject washes mixed from `--paper` with `color-mix` | Dark theme gets designed tints automatically | Separate hand-picked dark washes per family |
+| D-021 | 2026-11-03 | Learning paths adopt Levels → Lessons → Level test with derived counts and a dedicated lesson route | Uxcel-like clarity of progression without inventing data | Article-style path pages |
+| D-022 | 2026-11-03 | Library filter state mirrored with `history.replaceState` | Shareable URLs without RSC navigations or effect loops | `router.replace` (v1) |
+| D-023 | 2026-11-03 | Hover is border/background only — no transform | A 2px lift moved click targets under the pointer | Lift on hover |
+| D-024 | 2026-11-03 | Base rule `.grid { grid-template-columns: minmax(0,1fr) }` | Implicit `auto` tracks let unbreakable content widen phone layouts (found at 1336px) | Patching each grid |
+| D-025 | 2026-11-03 | Explorers and curves call only `lib/formulas` (added `peakEnd`, `chunk` with tests) | One tested implementation of every quantity | Inline maths in components |

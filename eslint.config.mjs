@@ -12,6 +12,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Generated aggregators and plain-Node browser scripts (CommonJS by design).
+    "content/*/_index.ts",
+    "tests/browser/**",
   ]),
 ]);
 

@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Container, PageHeader } from "@/components/ui/layout";
 import { PracticeStats } from "@/components/practice/practice-stats";
-import { allFlashcards, allQuestions, workshops } from "@/lib/content";
+import { ConceptIllustration } from "@/components/illustrations/concept-illustration";
+import { allFlashcards, allQuestions, entryBySlug, taxonomyBySlug, workshops } from "@/lib/content";
+import { catClass } from "@/lib/content/categories";
 import { DIFFICULTY_LABEL } from "@/lib/content/labels";
 
 export const metadata: Metadata = { title: "Practice" };
@@ -25,26 +27,43 @@ export default function PracticePage() {
           ].map((c) => (
             <Link key={c.title} href={c.href} className="group bg-surface p-6 hover:bg-paper">
               <p className="label">{c.meta}</p>
-              <h2 className="display mt-2 text-2xl group-hover:text-accent-ink">{c.title}</h2>
+              <h2 className="t-section mt-2 text-2xl group-hover:text-accent-ink">{c.title}</h2>
               <p className="mt-2 text-sm text-ink-2">{c.body}</p>
             </Link>
           ))}
         </div>
 
         <section id="workshops" aria-labelledby="ws" className="scroll-mt-24 pt-16">
-          <h2 id="ws" className="display text-2xl">
+          <h2 id="ws" className="t-section text-[1.75rem]">
             Design workshops
           </h2>
-          <ul className="mt-4 divide-y divide-rule border-y border-rule">
-            {workshops.map((w) => (
-              <li key={w.id}>
-                <Link href={`/practice/workshops/${w.id}`} className="group grid gap-1 py-4 sm:grid-cols-[minmax(0,1fr)_10rem_8rem] sm:items-baseline sm:gap-6">
-                  <span className="font-medium text-ink group-hover:text-accent-ink">{w.title}</span>
-                  <span className="text-sm text-ink-3">{DIFFICULTY_LABEL[w.level]}</span>
-                  <span className="text-sm text-ink-3">{w.duration}</span>
-                </Link>
-              </li>
-            ))}
+          <ul className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {workshops.map((w) => {
+              const c = entryBySlug.get(w.concepts.find((x) => entryBySlug.has(x)) ?? "");
+              const domain = c?.domain ?? taxonomyBySlug.get(w.concepts[0])?.domain ?? "practice";
+              return (
+                <li key={w.id}>
+                  <article className={`${catClass(domain)} group relative flex h-full flex-col overflow-hidden rounded-sm border border-rule bg-surface lift hover:border-ink-3`}>
+                    <div className="border-b border-rule">
+                      <ConceptIllustration slug={c?.slug ?? domain} title={w.title} domain={domain} decorative />
+                    </div>
+                    <div className="flex flex-1 flex-col p-4">
+                      <p className="label">
+                        Workshop · {DIFFICULTY_LABEL[w.level]} · {w.duration}
+                      </p>
+                      <h3 className="t-section mt-1.5 text-lg group-hover:text-accent-ink">
+                        <Link href={`/practice/workshops/${w.id}`} className="after:absolute after:inset-0">
+                          {w.title}
+                        </Link>
+                      </h3>
+                      <p className="mt-auto pt-3 text-xs text-ink-3">
+                        {w.tasks.length} tasks · {w.deliverables.length} deliverables · {w.criteria.length} assessment criteria
+                      </p>
+                    </div>
+                  </article>
+                </li>
+              );
+            })}
           </ul>
         </section>
       </Container>

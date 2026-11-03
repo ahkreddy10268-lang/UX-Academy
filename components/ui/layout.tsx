@@ -30,28 +30,38 @@ export function Breadcrumbs({ items }: { items: Crumb[] }) {
   );
 }
 
-/** Page header: optional breadcrumb, eyebrow, display title and lede. */
+/** Page header: optional breadcrumb, eyebrow, title, lede, and an optional illustrated aside. */
 export function PageHeader({
   eyebrow,
   title,
   lede,
   crumbs,
   children,
+  aside,
+  cat,
 }: {
   eyebrow?: string;
   title: ReactNode;
   lede?: ReactNode;
   crumbs?: Crumb[];
   children?: ReactNode;
+  /** Usually a plate; shown beside the text on large screens. */
+  aside?: ReactNode;
+  /** Category class (e.g. "cat-teal") — adds the subject rule and colour context. */
+  cat?: string;
 }) {
   return (
-    <header className="border-b border-rule pb-10 pt-10 sm:pt-14">
-      <Container>
-        {crumbs && <Breadcrumbs items={crumbs} />}
-        {eyebrow && <p className={`label ${crumbs ? "mt-6" : ""}`}>{eyebrow}</p>}
-        <h1 className="display mt-3 max-w-4xl text-3xl sm:text-4xl">{title}</h1>
-        {lede && <div className="mt-4 max-w-read font-serif text-lg text-ink-2 [font-variation-settings:'opsz'_20]">{lede}</div>}
-        {children}
+    <header className={`${cat ?? ""} border-b border-rule`}>
+      {cat && <div aria-hidden className="h-1 bg-c" />}
+      <Container className={`pb-10 pt-10 sm:pt-12 ${aside ? "grid items-center gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] lg:gap-14" : ""}`}>
+        <div>
+          {crumbs && <Breadcrumbs items={crumbs} />}
+          {eyebrow && <p className={`label ${crumbs ? "mt-6" : ""}`}>{eyebrow}</p>}
+          <h1 className="t-page mt-3 max-w-4xl text-4xl sm:text-5xl">{title}</h1>
+          {lede && <div className="t-lede mt-4 max-w-read text-lg">{lede}</div>}
+          {children}
+        </div>
+        {aside && <div className="overflow-hidden rounded-sm border border-rule">{aside}</div>}
       </Container>
     </header>
   );
@@ -63,7 +73,7 @@ export function SectionHeading({ id, kicker, children, level = 2 }: { id?: strin
   return (
     <div className="mb-5">
       {kicker && <p className="label mb-2">{kicker}</p>}
-      <H id={id} className={`display scroll-mt-24 ${level === 2 ? "text-2xl" : "text-xl"}`}>
+      <H id={id} className={`t-section scroll-mt-24 ${level === 2 ? "text-[1.75rem]" : "text-xl"}`}>
         {children}
       </H>
     </div>

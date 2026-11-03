@@ -5,6 +5,8 @@ import { KnowledgeGraph, type GEdge, type GNode } from "@/components/graph/knowl
 import { Container, PageHeader } from "@/components/ui/layout";
 import { domains, entries, entryBySlug, graphEdges, taxonomyBySlug, titleFor } from "@/lib/content";
 import { RELATION_LABEL } from "@/lib/content/labels";
+import { catClass } from "@/lib/content/categories";
+import { richToPlain } from "@/lib/content/rich";
 
 export const metadata: Metadata = { title: "Knowledge graph" };
 
@@ -13,9 +15,9 @@ export default function GraphPage() {
   entries.forEach((e) => ids.add(e.slug));
   const nodes: GNode[] = [...ids].flatMap((id): GNode[] => {
     const e = entryBySlug.get(id);
-    if (e) return [{ id, title: e.title, domain: e.domain, planned: false, summary: e.summary }];
+    if (e) return [{ id, title: e.title, domain: e.domain, planned: false, summary: richToPlain(e.summary), cat: catClass(e.domain) }];
     const t = taxonomyBySlug.get(id);
-    return t ? [{ id, title: t.title, domain: t.domain, planned: true }] : [];
+    return t ? [{ id, title: t.title, domain: t.domain, planned: true, cat: catClass(t.domain) }] : [];
   });
   const edges: GEdge[] = graphEdges.map((e) => ({ ...e }));
 

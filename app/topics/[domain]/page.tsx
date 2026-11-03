@@ -1,12 +1,17 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Container, PageHeader } from "@/components/ui/layout";
+import { ConceptIllustration } from "@/components/illustrations/concept-illustration";
+import { KnowledgeCard } from "@/components/knowledge/knowledge-card";
+import { PathCard } from "@/components/learn/path-card";
 import { CoverageBar } from "@/components/ui/coverage-bar";
-import { EvidenceMark } from "@/components/ui/marks";
-import { domainById, domains, itemsForSubcategory, learningPaths } from "@/lib/content";
+import { Container, PageHeader } from "@/components/ui/layout";
+import { domainById, domains, entryBySlug, itemsForSubcategory, learningPaths } from "@/lib/content";
+import { cardFor } from "@/lib/content/cards";
+import { catClass, PALETTE_LABEL, paletteFor } from "@/lib/content/categories";
 import { domainCoverage } from "@/lib/content/coverage";
 import { TYPE_LABEL } from "@/lib/content/labels";
+import { pathStats } from "@/lib/content/learning";
 
 export function generateStaticParams() {
   return domains.map((d) => ({ domain: d.id }));
@@ -23,99 +28,107 @@ export default async function DomainPage({ params }: PageProps<"/topics/[domain]
   if (!d) notFound();
   const cov = domainCoverage().find((c) => c.id === id)!;
   const i = domains.findIndex((x) => x.id === id);
-  const paths = learningPaths.filter((p) => p.stages.some((s) => s.steps.some((step) => itemsForSubcategoryAll(id).has(step))));
+  const slugs = new Set(d.subcategories.flatMap((s) => itemsForSubcategory(id, s.id).map((x) => x.slug)));
+  const paths = learningPaths.filter((p) => p.stages.some((s) => s.steps.some((step) => slugs.has(step))));
+  const prev = domains[i - 1];
+  const next = domains[i + 1];
 
   return (
     <>
-      <PageHeader eyebrow={`Subject ${String(i + 1).padStart(2, "0")}`} title={d.title} lede={d.description} crumbs={[{ href: "/library", label: "Library" }, { href: "/topics", label: "All subjects" }, { label: d.shortTitle }]}>
+      <PageHeader
+        cat={catClass(id)}
+        eyebrow={`Subject ${String(i + 1).padStart(2, "0")} · ${PALETTE_LABEL[paletteFor(id)]}`}
+        title={d.title}
+        lede={d.description}
+        crumbs={[{ href: "/library", label: "Library" }, { href: "/topics", label: "All subjects" }, { label: d.shortTitle }]}
+        aside={<ConceptIllustration slug={id} title={d.title} domain={id} variant="hero" />}
+      >
         <div className="mt-6 max-w-xs">
           <CoverageBar published={cov.published} total={cov.total} label={d.title} />
         </div>
+        <nav aria-label="Subcategories" className="mt-6 flex flex-wrap gap-2">
+          {d.subcategories.map((s) => (
+            <a key={s.id} href={`#${s.id}`} className="rounded-xs border border-rule bg-surface px-2.5 py-1 text-sm text-ink-2 hover:border-ink-3 hover:text-ink">
+              {s.title}
+            </a>
+          ))}
+        </nav>
       </PageHeader>
-      <Container className="lg:grid lg:grid-cols-[14rem_minmax(0,1fr)] lg:gap-16">
-        <nav aria-label="Subcategories" className="hidden lg:block">
-          <div className="sticky top-24 pt-10">
-            <p className="label">In this subject</p>
-            <ol className="mt-3 space-y-1 text-sm">
-              {d.subcategories.map((s) => (
-                <li key={s.id}>
-                  <a href={`#${s.id}`} className="block border-l border-rule py-1 pl-3 text-ink-2 hover:border-accent hover:text-ink">
-                    {s.title}
-                  </a>
-                </li>
-              ))}
-            </ol>
-            {paths.length > 0 && (
-              <>
-                <p className="label mt-8">Learning paths</p>
-                <ul className="mt-3 space-y-1 text-sm">
-                  {paths.map((p) => (
-                    <li key={p.id}>
-                      <Link href={`/learn/${p.id}`} className="text-ink-2 hover:text-ink">
-                        {p.title}
-                      </Link>
+
+      <Container className="space-y-16 pt-12">
+        {d.subcategories.map((s) => {
+          const items = itemsForSubcategory(d.id, s.id).sort((a, b) => a.title.localeCompare(b.title));
+          const written = items.filter((x) => x.entry);
+          const planned = items.filter((x) => !x.entry);
+          return (
+            <section key={s.id} aria-labelledby={s.id} className="scroll-mt-24">
+              <div className="flex flex-wrap items-baseline justify-between gap-2 border-b border-rule pb-3">
+                <h2 id={s.id} className="t-section scroll-mt-24 text-2xl">
+                  {s.title}
+                </h2>
+                <p className="text-sm text-ink-3">
+                  {written.length} published · {planned.length} planned
+                </p>
+              </div>
+              {s.description && <p className="mt-3 max-w-read text-ink-2">{s.description}</p>}
+              {written.length > 0 && (
+                <ul className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                  {written.map((t) => (
+                    <li key={t.slug}>
+                      <KnowledgeCard d={cardFor(t.entry!)} plate={<ConceptIllustration slug={t.slug} title={t.title} domain={t.entry!.domain} decorative />} />
                     </li>
                   ))}
                 </ul>
-              </>
-            )}
-          </div>
-        </nav>
-        <div className="min-w-0 space-y-14 pt-10">
-          {d.subcategories.map((s) => {
-            const items = itemsForSubcategory(d.id, s.id).sort((a, b) => Number(!!b.entry) - Number(!!a.entry) || a.title.localeCompare(b.title));
-            const written = items.filter((x) => x.entry);
-            const planned = items.filter((x) => !x.entry);
-            return (
-              <section key={s.id} aria-labelledby={s.id}>
-                <h2 id={s.id} className="display scroll-mt-24 text-2xl">
-                  {s.title}
-                </h2>
-                {s.description && <p className="mt-1 text-ink-2">{s.description}</p>}
-                {written.length > 0 && (
-                  <ul className="mt-5 divide-y divide-rule border-y border-rule">
-                    {written.map((t) => (
-                      <li key={t.slug} className="grid gap-1 py-4 sm:grid-cols-[minmax(0,1fr)_auto] sm:gap-6">
-                        <div>
-                          <span className="label !text-accent">{TYPE_LABEL[t.type]}</span>
-                          <h3 className="mt-0.5">
-                            <Link href={`/library/${t.slug}`} className="display text-lg hover:text-accent-ink">
-                              {t.title}
-                            </Link>
-                          </h3>
-                          <p className="mt-1 text-sm text-ink-2">{t.entry!.summary}</p>
-                        </div>
-                        <div className="sm:pt-5">
-                          <EvidenceMark evidence={t.entry!.evidence} />
-                        </div>
+              )}
+              {planned.length > 0 && (
+                <div className="mt-6">
+                  <p className="label">Planned · not yet researched</p>
+                  <ul className="mt-3 flex flex-wrap gap-x-2 gap-y-2">
+                    {planned.map((t) => (
+                      <li key={t.slug}>
+                        <Link href={`/library/${t.slug}`} className="inline-flex items-baseline gap-1.5 rounded-xs border border-dashed border-rule-strong px-2 py-1 text-sm text-ink-2 hover:border-ink-3 hover:text-ink">
+                          {t.title}
+                          <span className="text-[11px] text-ink-3">{TYPE_LABEL[t.type]}</span>
+                        </Link>
                       </li>
                     ))}
                   </ul>
-                )}
-                {planned.length > 0 && (
-                  <div className="mt-5">
-                    <p className="label">Planned · research pending</p>
-                    <ul className="mt-2 flex flex-wrap gap-x-4 gap-y-1.5 text-sm">
-                      {planned.map((t) => (
-                        <li key={t.slug}>
-                          <Link href={`/library/${t.slug}`} className="text-ink-2 underline decoration-rule-strong decoration-dotted underline-offset-4 hover:text-ink">
-                            {t.title}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-              </section>
-            );
-          })}
-        </div>
+                </div>
+              )}
+            </section>
+          );
+        })}
+
+        {paths.length > 0 && (
+          <section aria-labelledby="paths">
+            <h2 id="paths" className="t-section text-2xl">
+              Learning paths through this subject
+            </h2>
+            <ul className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+              {paths.slice(0, 8).map((p) => {
+                const stats = pathStats(p);
+                const first = stats.firstPublished;
+                return (
+                  <li key={p.id}>
+                    <PathCard
+                      path={p}
+                      stats={stats}
+                      domain={first?.domain ?? id}
+                      writtenSteps={p.stages.flatMap((s) => s.steps).filter((x) => entryBySlug.has(x))}
+                      plate={first ? <ConceptIllustration slug={first.slug} title={first.title} domain={first.domain} decorative /> : <ConceptIllustration slug={id} title={d.title} domain={id} decorative />}
+                    />
+                  </li>
+                );
+              })}
+            </ul>
+          </section>
+        )}
+
+        <nav aria-label="Adjacent subjects" className="grid grid-cols-2 gap-4 border-t border-rule pt-6 text-sm">
+          <div>{prev && <Link href={`/topics/${prev.id}`} className="hover:text-accent-ink">← {prev.title}</Link>}</div>
+          <div className="text-right">{next && <Link href={`/topics/${next.id}`} className="hover:text-accent-ink">{next.title} →</Link>}</div>
+        </nav>
       </Container>
     </>
   );
-}
-
-function itemsForSubcategoryAll(domainId: string): Set<string> {
-  const d = domainById.get(domainId)!;
-  return new Set(d.subcategories.flatMap((s) => itemsForSubcategory(domainId, s.id).map((i) => i.slug)));
 }

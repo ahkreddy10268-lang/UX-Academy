@@ -95,10 +95,10 @@ const check = (name, ok, detail = '') => results.push({ name, ok: !!ok, detail }
   // 10. Library filters
   await p.goto(BASE + '/library', { waitUntil: 'networkidle' });
   const before = await p.getByText(/^\d+ results?/).textContent();
-  await p.getByLabel('Knowledge type').selectOption('law');
+  await p.locator('aside[aria-label=Filters]').getByLabel('Knowledge type').selectOption('law');
   const after = await p.getByText(/^\d+ results?/).textContent();
   check('library type filter narrows results', parseInt(after) < parseInt(before) && parseInt(after) > 0, `${before} → ${after}`);
-  await p.getByLabel('Search', { exact: true }).fill('memory');
+  await p.getByLabel('Search the library').fill('memory');
   await p.waitForTimeout(800);
   check('library search + filter combine', /result/.test(await p.getByText(/results?/).first().textContent()));
 
@@ -150,7 +150,7 @@ const check = (name, ok, detail = '') => results.push({ name, ok: !!ok, detail }
   const m = await b.newContext({ ...devices['iPhone 13'] });
   const mp = await m.newPage();
   await mp.goto(BASE + '/library/cognitive-load-theory', { waitUntil: 'networkidle' });
-  const overflow = await mp.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
+  const overflow = await mp.evaluate(() => document.documentElement.scrollWidth - 390);
   check('no horizontal scroll on mobile entry', overflow <= 0, `overflow ${overflow}px`);
   await mp.getByRole('button', { name: 'Menu' }).click();
   check('mobile menu opens', await mp.locator('#mobile-menu').isVisible());
@@ -159,7 +159,7 @@ const check = (name, ok, detail = '') => results.push({ name, ok: !!ok, detail }
   await Promise.resolve();
   for (const r of ['/', '/formulas/two-proportion-z-test', '/compare/ux-vs-ui', '/graph', '/labs/gestalt-lab', '/sources']) {
     await mp.goto(BASE + r, { waitUntil: 'networkidle' });
-    const o = await mp.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
+    const o = await mp.evaluate(() => document.documentElement.scrollWidth - 390);
     check(`no horizontal scroll on mobile ${r}`, o <= 0, `overflow ${o}px`);
   }
   await m.close();

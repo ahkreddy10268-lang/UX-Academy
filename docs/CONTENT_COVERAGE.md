@@ -11,7 +11,7 @@
 | Quiz questions | 158 |
 | Exercises | 124 |
 | Flashcards | 128 |
-| Labs | 10 |
+| Labs | 11 |
 | Workshops | 11 |
 | Comparisons | 10 |
 | Learning paths | 16 |
