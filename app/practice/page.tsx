@@ -25,7 +25,7 @@ export default function PracticePage() {
             { href: "/practice/flashcards", title: "Flashcards", meta: `${allFlashcards.length} cards available`, body: "Spaced review with the Leitner system: remembered cards move to longer intervals; forgotten cards return tomorrow." },
             { href: "#workshops", title: "Workshops", meta: `${workshops.length} practical briefs`, body: "Redesign, evaluate, plan and critique, with complete artefacts to work on and criteria for what excellent looks like." },
           ].map((c) => (
-            <Link key={c.title} href={c.href} className="group bg-surface p-6 hover:bg-paper">
+            <Link key={c.title} href={c.href} className="group bg-surface p-6 hover:bg-soft">
               <p className="label">{c.meta}</p>
               <h2 className="t-section mt-2 text-2xl group-hover:text-accent-ink">{c.title}</h2>
               <p className="mt-2 text-sm text-ink-2">{c.body}</p>

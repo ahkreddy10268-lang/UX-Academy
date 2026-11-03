@@ -11,10 +11,10 @@ export function PracticeStats({ totalCards }: { totalCards: number }) {
   const answered = Object.values(quiz);
   const lastCorrect = answered.filter((q) => q.lastCorrect).length;
   return (
-    <dl className="grid grid-cols-2 gap-6 border-y border-rule py-6 sm:grid-cols-4">
+    <dl className="grid grid-cols-2 gap-3 sm:grid-cols-4 [&>div]:rounded-lg [&>div]:border [&>div]:border-rule [&>div]:bg-soft [&>div]:p-4">
       <div>
         <dt className="label">Cards due today</dt>
-        <dd className="formula mt-1 text-3xl">{due}</dd>
+        <dd className="t-page tabular mt-1 text-3xl">{due}</dd>
         {due > 0 && (
           <dd className="mt-1 text-sm">
             <Link className="link" href="/practice/flashcards">
@@ -25,18 +25,18 @@ export function PracticeStats({ totalCards }: { totalCards: number }) {
       </div>
       <div>
         <dt className="label">In your deck</dt>
-        <dd className="formula mt-1 text-3xl">
+        <dd className="t-page tabular mt-1 text-3xl">
           {deck.length}
           <span className="text-base text-ink-3"> / {totalCards}</span>
         </dd>
       </div>
       <div>
         <dt className="label">Questions answered</dt>
-        <dd className="formula mt-1 text-3xl">{answered.length}</dd>
+        <dd className="t-page tabular mt-1 text-3xl">{answered.length}</dd>
       </div>
       <div>
         <dt className="label">Correct on last attempt</dt>
-        <dd className="formula mt-1 text-3xl">{answered.length ? `${Math.round((lastCorrect / answered.length) * 100)}%` : "—"}</dd>
+        <dd className="t-page tabular mt-1 text-3xl">{answered.length ? `${Math.round((lastCorrect / answered.length) * 100)}%` : "—"}</dd>
       </div>
     </dl>
   );

@@ -32,17 +32,20 @@ The registry is presentation: content never imports it (no cycles). Plates are s
 
 ## Variants
 
-| Variant | Use | Detail | Motion |
-|---|---|---|---|
-| `thumb` | tiny lists | no grid dots | no |
-| `card` | cards, tiles, relation items | no labels | no |
-| `hero` | concept/lesson/subject headers, visual explanations | labels + dimensions | yes, if `animated` |
+| Variant (brief name) | Implementation | Use | Detail | Motion |
+|---|---|---|---|---|
+| thumbnail | `thumb` / `card` at 80–120px | research cards, curriculum rows, lab cards | no labels | no |
+| standard | `card` | cards, tiles, relation items | no labels | no |
+| featured | `card`/`hero` inside a raised white card on `.bg-feature` | featured library card, home featured concept | labels in hero | no |
+| hero | `hero` | concept/lesson/subject/lab heroes (raised card on the pastel hero) | labels + dimensions | if `animated` |
+| animated | `hero` + `animate` in `MotionFrame` | 12 plates | — | pausable |
+| interactive | `ConceptExplorer` | visual explanation sections | live labels | driven by input |
 
 Where no plate exists, `TypePlate` shows a monogram on the wash — honest, never a fake illustration.
 
 ## Explorers (Level 3)
 
-`fitts`, `hick`, `peak-end`, `chunking`, `gestalt`, `cognitive-load`, `signifiers`. Each states what is manipulated, what the concept predicts, its assumptions and what it cannot show, and computes only via `lib/formulas` (`fittsId`, `hickInformation`, `peakEnd`, `chunk`). Simulations are labelled as such; experiments that measure the learner live in `/labs`.
+`fitts`, `hick`, `peak-end`, `chunking`, `gestalt`, `cognitive-load`, `signifiers`. v3: the Fitts explorer adds the **direction of approach** (width along the approach path, `widthAlongApproach`, the W′ model compared by MacKenzie & Buxton 1992) and an **easy vs difficult comparison** strip on one ID scale. Each states what is manipulated, what the concept predicts, its assumptions and what it cannot show, and computes only via `lib/formulas` (`fittsId`, `hickInformation`, `peakEnd`, `chunk`). Simulations are labelled as such; experiments that measure the learner live in `/labs`.
 
 ## QA
 
@@ -57,3 +60,9 @@ Renders card + hero for every plate in light and dark into `.plates/plates-{ligh
 1. Add an `IllustrationEntry` to the right `concepts/<group>.tsx` (slug = entry slug, taxonomy slug or domain id).
 2. Render it with the script; fix issues in both themes.
 3. `npx vitest run tests/illustrations.test.ts && npm run docs:generate`.
+
+## v3 additions
+
+- **68 plates** (was 67): new **Human-Centred Design** plate (`frameworks-visual.tsx`), drawn ahead of its entry. It shows nested rings for users, the people affected and the context of use, with an iteration spiral that converges through three evaluation points, so it is deliberately distinct from the UCD square loop. The planned-topic page shows it captioned "drawn ahead of the entry".
+- The brief's initial set of 15 (including Affordances & Signifiers and HCD) is covered: every published entry, every subject, and three planned topics (design-thinking, atomic-design, human-centred-design) have plates.
+- In the v3 pastel washes, `C.paper` knocks out to the cool canvas and `C.soft` mixes into the surface. Both were re-rendered and reviewed in light and dark.

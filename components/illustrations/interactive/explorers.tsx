@@ -8,7 +8,7 @@
 import Link from "next/link";
 import { useId, useState, type ReactNode } from "react";
 import { chunk, peakEnd } from "@/lib/formulas/experience";
-import { fittsId, hickInformation, hickInformationEqual } from "@/lib/formulas/pointing";
+import { fittsId, hickInformation, hickInformationEqual, widthAlongApproach } from "@/lib/formulas/pointing";
 import type { ExplorerId } from "../illustration-types";
 import { C, Cursor, Dim, Label, STROKE } from "../primitives";
 
@@ -28,20 +28,21 @@ function Slider({ label, value, min, max, step = 1, onChange, unit = "", format 
   );
 }
 
-function Shell({ title, controls, canvas, readout, predicts, assumptions, cannot, link }: { title: string; controls: ReactNode; canvas: ReactNode; readout: ReactNode; predicts: string; assumptions: string; cannot: string; link?: { href: string; label: string } }) {
+function Shell({ title, controls, canvas, readout, predicts, assumptions, cannot, link, extra }: { title: string; controls: ReactNode; canvas: ReactNode; readout: ReactNode; predicts: string; assumptions: string; cannot: string; link?: { href: string; label: string }; extra?: ReactNode }) {
   return (
-    <section aria-label={`${title} explorer`} className="overflow-hidden rounded-md border border-rule bg-surface">
+    <section aria-label={`${title} explorer`} className="overflow-hidden rounded-xl border border-rule bg-surface shadow-card">
       <div className="grid md:grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)]">
-        <div className="border-b border-rule bg-c-wash md:border-b-0 md:border-r">{canvas}</div>
+        <div className="flex items-center border-b border-rule bg-c-wash md:border-b-0 md:border-r">{canvas}</div>
         <div className="flex flex-col gap-5 p-5">
           <p className="label">Explore · {title}</p>
           {controls}
-          <div aria-live="polite" className="rounded-sm border border-rule bg-paper p-3">
+          <div aria-live="polite" className="rounded-md bg-soft p-3.5 ring-1 ring-rule">
             {readout}
           </div>
         </div>
       </div>
-      <dl className="grid gap-4 border-t border-rule p-5 text-sm sm:grid-cols-3">
+      {extra && <div className="border-t border-rule p-5">{extra}</div>}
+      <dl className="grid gap-4 border-t border-rule bg-soft p-5 text-sm sm:grid-cols-3">
         <div>
           <dt className="t-sub text-ink">What the concept predicts</dt>
           <dd className="mt-1 text-ink-2">{predicts}</dd>
@@ -67,41 +68,114 @@ function Shell({ title, controls, canvas, readout, predicts, assumptions, cannot
 }
 
 /* ---------------- Fitts ---------------- */
+const FITTS_EASY = { D: 80, W: 80 };
+const FITTS_HARD = { D: 320, W: 8 };
+const FITTS_H = 120; // target height (px) — fixed so width and approach can be compared
+const K = 0.65; // drawing scale
+
 function FittsExplorer() {
   const [D, setD] = useState(240);
   const [W, setW] = useState(32);
-  const id = fittsId(D, W);
-  const x0 = 50;
-  const tx = x0 + D;
+  const [angle, setAngle] = useState(0);
+  const wAlong = widthAlongApproach(W, FITTS_H, angle);
+  const id = fittsId(D, wAlong);
+  const id1d = fittsId(D, W);
+  const easy = fittsId(FITTS_EASY.D, FITTS_EASY.W);
+  const hard = fittsId(FITTS_HARD.D, FITTS_HARD.W);
+  // Scene: target centre fixed; the start point sits D away along the approach direction (from the left, rotating downwards).
+  const cx = 300;
+  const cy = 110;
+  const t = (angle * Math.PI) / 180;
+  const sx = cx - D * K * Math.cos(t);
+  const sy = cy + D * K * Math.sin(t);
+  const half = (wAlong * K) / 2;
+  const ex = cx - half * Math.cos(t);
+  const ey = cy + half * Math.sin(t);
+  const fx = cx + half * Math.cos(t);
+  const fy = cy - half * Math.sin(t);
+  const r2 = (v: number) => Math.round(v * 100) / 100;
+  const scaleMax = 6;
+  const pct = (v: number) => `${Math.min(100, (v / scaleMax) * 100)}%`;
   return (
     <Shell
       title="Fitts's law"
       canvas={
-        <svg viewBox="0 0 400 240" className="h-auto w-full" role="img" aria-label={`Start point and a target ${D} pixels away and ${W} pixels wide. Index of difficulty ${id.toFixed(2)} bits.`}>
-          <rect x={tx - W / 2} y={40} width={W} height={150} fill={C.base} stroke={C.line} strokeWidth={STROKE.fine} />
-          <path d={`M${x0} 160 C ${x0 + D * 0.35} 90, ${x0 + D * 0.75} 90, ${tx} 115`} fill="none" stroke={C.line} strokeWidth={STROKE.main} strokeDasharray="1 6" strokeLinecap="round" />
-          <circle cx={x0} cy={160} r={7} fill={C.paper} stroke={C.line} strokeWidth={STROKE.main} />
-          <Cursor x={tx - 2} y={110} />
-          <Dim x1={x0} y1={214} x2={tx} y2={214} label={`D = ${D}`} />
-          <Dim x1={tx - W / 2} y1={26} x2={tx + W / 2} y2={26} label={`W = ${W}`} />
+        <svg viewBox="0 0 400 340" className="h-auto w-full" role="img" aria-label={`Start point ${D} pixels from a target ${W} by ${FITTS_H} pixels, approached at ${angle} degrees. Width along the approach ${wAlong.toFixed(0)} pixels. Index of difficulty ${id.toFixed(2)} bits.`}>
+          <rect x={r2(cx - (W * K) / 2)} y={r2(cy - (FITTS_H * K) / 2)} width={r2(W * K)} height={r2(FITTS_H * K)} fill={C.base} stroke={C.line} strokeWidth={STROKE.fine} />
+          {/* the approach axis and the width the movement actually has to stop within */}
+          <line x1={r2(sx)} y1={r2(sy)} x2={r2(ex)} y2={r2(ey)} stroke={C.line} strokeWidth={STROKE.main} strokeDasharray="1 6" strokeLinecap="round" />
+          <line x1={r2(ex)} y1={r2(ey)} x2={r2(fx)} y2={r2(fy)} stroke={C.ink} strokeWidth={4} strokeLinecap="round" />
+          <circle cx={r2(sx)} cy={r2(sy)} r={7} fill={C.paper} stroke={C.line} strokeWidth={STROKE.main} />
+          <Label x={r2(sx)} y={r2(sy + 22)} tone="line">
+            start
+          </Label>
+          <Cursor x={r2(cx - 2)} y={r2(cy - 2)} />
+          <Label x={r2(sx + (cx - sx) * 0.42 - (16 + 22 * Math.sin(t)) * Math.sin(t))} y={r2(sy + (cy - sy) * 0.42 - 12 * Math.cos(t))} tone="ink">
+            {`D = ${D}`}
+          </Label>
+          <Dim x1={r2(cx - (W * K) / 2)} y1={r2(cy - (FITTS_H * K) / 2 - 14)} x2={r2(cx + (W * K) / 2)} y2={r2(cy - (FITTS_H * K) / 2 - 14)} label={`W = ${W}`} />
+          <Label x={r2(cx + (W * K) / 2 + 8)} y={r2(cy + 4)} tone="ink" anchor="start">
+            {`W′ = ${wAlong.toFixed(0)}`}
+          </Label>
+          <Label x={12} y={330} tone="line" anchor="start">
+            {`drawn at 65% scale · approach ${angle}°`}
+          </Label>
         </svg>
       }
       controls={
         <>
           <Slider label="Distance D" value={D} min={40} max={320} step={10} onChange={setD} unit=" px" />
           <Slider label="Width W" value={W} min={6} max={120} step={2} onChange={setW} unit=" px" />
+          <Slider label="Direction of approach" value={angle} min={0} max={90} step={15} onChange={setAngle} unit="°" />
         </>
       }
       readout={
         <>
           <p className="formula text-xl text-ink">ID = {id.toFixed(2)} bits</p>
           <p className="mt-1 text-sm text-ink-2">
-            log₂({D}/{W} + 1). {id > 4 ? "A hard target: far and small." : id < 2 ? "An easy target: near and large." : "Moderate difficulty."} Halve the distance or double the width and the ratio — and the difficulty — is the same.
+            log₂({D}/{wAlong.toFixed(0)} + 1).{" "}
+            {angle === 0
+              ? "Approaching horizontally, only the width W limits where the pointer can stop."
+              : `At ${angle}° the movement crosses the target diagonally, so the depth it must stop within is ${wAlong.toFixed(0)} px — the one-dimensional ID with W alone would be ${id1d.toFixed(2)} bits.`}
           </p>
         </>
       }
-      predicts="Movement time rises linearly with ID, so harder ratios take longer to hit."
-      assumptions="Rapid aimed movement to a known target; width measured along the approach axis."
+      extra={
+        <figure>
+          <figcaption className="flex flex-wrap items-baseline justify-between gap-2">
+            <span className="t-sub text-sm text-ink">Easy and difficult targets on one scale</span>
+            <span className="text-xs text-ink-3">index of difficulty, 0–{scaleMax} bits</span>
+          </figcaption>
+          <div className="relative mt-4 h-2 rounded-full bg-sunken" aria-hidden>
+            <span className="absolute inset-y-0 left-0 rounded-full bg-c-soft" style={{ width: pct(id) }} />
+          </div>
+          <ul className="mt-3 grid gap-3 text-sm sm:grid-cols-3">
+            <li className="rounded-md bg-soft p-3 ring-1 ring-rule">
+              <p className="font-medium text-ink">Easy — near and large</p>
+              <p className="formula mt-1 text-xs text-ink-2">
+                D {FITTS_EASY.D} · W {FITTS_EASY.W} → {easy.toFixed(2)} bits
+              </p>
+            </li>
+            <li className="rounded-md bg-c-wash p-3 ring-1 ring-c">
+              <p className="font-medium text-c-ink">Your target</p>
+              <p className="formula mt-1 text-xs text-ink">
+                D {D} · W′ {wAlong.toFixed(0)} → {id.toFixed(2)} bits
+              </p>
+            </li>
+            <li className="rounded-md bg-soft p-3 ring-1 ring-rule">
+              <p className="font-medium text-ink">Difficult — far and small</p>
+              <p className="formula mt-1 text-xs text-ink-2">
+                D {FITTS_HARD.D} · W {FITTS_HARD.W} → {hard.toFixed(2)} bits
+              </p>
+            </li>
+          </ul>
+          <p className="mt-3 text-xs text-ink-3">
+            The difficult target has {(hard / easy).toFixed(1)}× the easy one&apos;s ID. With fitted a and b, that difference becomes milliseconds; the ratio of times is usually smaller, because the intercept a is usually positive.
+          </p>
+        </figure>
+      }
+      predicts="Movement time rises linearly with ID, so harder ratios take longer to hit. For 2-D targets, the width that matters is the one along the path of approach."
+      assumptions="Rapid aimed movement to a known target. W′ (width along the approach) is one of several 2-D models compared by MacKenzie & Buxton (1992); others use the smaller of width and height."
       cannot="Real times. Those need a and b fitted to your device and users — measure yours in the lab."
       link={{ href: "/labs/fitts-lab", label: "Measure your own a and b in the Fitts's law experiment" }}
     />

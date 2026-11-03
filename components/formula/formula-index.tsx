@@ -16,7 +16,7 @@ export function FormulaIndex({ rows, groups, plates }: { rows: FormulaRow[]; gro
   return (
     <div className="lg:grid lg:grid-cols-[14rem_minmax(0,1fr)] lg:gap-12">
       <aside className="mb-8 lg:mb-0">
-        <div className="lg:sticky lg:top-24">
+        <div className="rounded-lg border border-rule bg-soft p-4 lg:sticky lg:top-24">
           <label htmlFor={`${id}-q`} className="text-sm font-medium">
             Find a formula
           </label>
@@ -26,7 +26,7 @@ export function FormulaIndex({ rows, groups, plates }: { rows: FormulaRow[]; gro
             <ul className="mt-2 space-y-1 text-sm">
               {groups.map((g) => (
                 <li key={g.title}>
-                  <a href={`#g-${g.title.replace(/\W+/g, "-")}`} className="flex justify-between border-l border-rule py-1 pl-3 text-ink-2 hover:border-accent hover:text-ink">
+                  <a href={`#g-${g.title.replace(/\W+/g, "-")}`} className="flex justify-between rounded-xs border-l-2 border-transparent py-1.5 pl-3 pr-2 text-ink-2 hover:border-accent hover:bg-soft hover:text-ink">
                     {g.title}
                     <span className="formula text-xs text-ink-3">{rows.filter((r) => r.group === g.title && match(r)).length}</span>
                   </a>
@@ -45,15 +45,15 @@ export function FormulaIndex({ rows, groups, plates }: { rows: FormulaRow[]; gro
           if (!items.length) return null;
           return (
             <section key={g.title} id={`g-${g.title.replace(/\W+/g, "-")}`} aria-labelledby={`h-${g.title.replace(/\W+/g, "-")}`} className="scroll-mt-24">
-              <div className="flex flex-wrap items-baseline justify-between gap-2 border-b border-rule-strong pb-3">
-                <h2 id={`h-${g.title.replace(/\W+/g, "-")}`} className="t-section text-2xl">
+              <div className="flex flex-wrap items-baseline justify-between gap-2 border-b border-rule pb-3">
+                <h2 id={`h-${g.title.replace(/\W+/g, "-")}`} className="t-section text-xl">
                   {g.title}
                 </h2>
                 <p className="text-sm text-ink-3">{g.description}</p>
               </div>
-              <ul className="mt-5 grid gap-4 md:grid-cols-2">
+              <ul className="mt-5 grid gap-4 md:grid-cols-2 2xl:grid-cols-3">
                 {items.map((r) => (
-                  <li key={r.id} className={`${r.cat} group relative grid grid-cols-[6.5rem_minmax(0,1fr)] gap-4 rounded-sm border border-rule bg-surface p-3 lift hover:border-ink-3`}>
+                  <li key={r.id} className={`${r.cat} card group relative grid grid-cols-[6.5rem_minmax(0,1fr)] gap-4 p-3`}>
                     <div className="overflow-hidden rounded-xs border border-rule">{plates[r.id]}</div>
                     <div className="min-w-0">
                       <h3 className="t-sub text-base text-ink group-hover:text-accent-ink">
@@ -73,7 +73,7 @@ export function FormulaIndex({ rows, groups, plates }: { rows: FormulaRow[]; gro
           );
         })}
         {shown.length === 0 && (
-          <div className="rounded-sm border border-dashed border-rule-strong p-10 text-center">
+          <div className="rounded-lg border border-dashed border-rule-strong bg-soft p-10 text-center">
             <p className="t-sub">No formula matches “{q}”.</p>
             <button type="button" onClick={() => setQ("")} className="mt-3 text-sm text-accent-ink underline">
               Clear search

@@ -13,20 +13,40 @@ const check = (name, ok, detail = '') => results.push({ name, ok: !!ok, detail }
 
   // Library grid with plates
   await p.goto(BASE + '/library', { waitUntil: 'networkidle' });
-  const plates = await p.locator('section[aria-label=Results] article svg[viewBox="0 0 400 300"]').count();
-  check('library grid renders a plate per published card', plates >= 45, `${plates} plates`);
+  const res = p.locator('section[aria-label=Results]');
+  const firstPage = await res.locator('article svg[viewBox="0 0 400 300"]').count();
+  check('library grid shows the first page of 24 cards, each with a plate', firstPage === 24, `${firstPage} plates`);
+  await res.getByRole('button', { name: /^Show \d+ more$/ }).click();
+  const plates = await res.locator('article svg[viewBox="0 0 400 300"]').count();
+  check('"Show more" reveals every published card with its plate', plates >= 45, `${plates} plates`);
+  check('featured card leads with the flagship concept', (await res.locator('article').first().textContent()).includes("Fitts"));
 
   // URL state restores filters and view
   await p.goto(BASE + '/library?type=law&view=list&level=beginner', { waitUntil: 'networkidle' });
-  check('URL restores type filter', (await p.locator('#' + (await p.locator('aside[aria-label=Filters] select').nth(1).getAttribute('id'))).inputValue()) === 'law');
+  const filters = p.getByRole('group', { name: 'Filters' });
+  check('URL restores type filter', (await filters.getByLabel('Type', { exact: true }).inputValue()) === 'law');
   check('URL restores view', (await p.getByRole('button', { name: 'List', exact: true }).getAttribute('aria-pressed')) === 'true');
   await p.getByRole('button', { name: 'Grid', exact: true }).click();
   await p.waitForTimeout(200);
   check('changing view updates URL without losing filters', /type=law/.test(p.url()) && /level=beginner/.test(p.url()) && !/view=/.test(p.url()), p.url());
   await p.goto(BASE + '/library', { waitUntil: 'networkidle' });
-  await p.getByRole('button', { name: /^Heuristic/ }).click();
+  await p.getByRole('navigation', { name: 'Browse by knowledge type' }).getByRole('button', { name: /^Heuristic/ }).click();
   await p.waitForTimeout(200);
-  check('type strip sets the type filter and URL', /type=heuristic/.test(p.url()) && (await p.getByRole('button', { name: /^Heuristic/ }).getAttribute('aria-pressed')) === 'true', p.url());
+  check('type strip sets the type filter and URL', /type=heuristic/.test(p.url()) && (await p.getByRole('navigation', { name: 'Browse by knowledge type' }).getByRole('button', { name: /^Heuristic/ }).getAttribute('aria-pressed')) === 'true', p.url());
+
+  // Sort and subcategory are mirrored in the URL
+  await p.goto(BASE + '/library', { waitUntil: 'networkidle' });
+  await p.getByLabel('Sort', { exact: true }).selectOption('evidence');
+  await p.waitForTimeout(200);
+  check('sort is mirrored to the URL', /sort=evidence/.test(p.url()), p.url());
+  const f2 = p.getByRole('group', { name: 'Filters' });
+  check('subcategory is disabled until a subject is chosen', await f2.getByLabel('Subcategory').isDisabled());
+  await f2.getByLabel('Subject', { exact: true }).selectOption('psychology');
+  const subOpts = await f2.getByLabel('Subcategory').locator('option').count();
+  check('choosing a subject enables its subcategories', (await f2.getByLabel('Subcategory').isEnabled()) && subOpts > 1, `${subOpts} options`);
+  await f2.getByLabel('Subcategory').selectOption({ index: 1 });
+  await p.waitForTimeout(200);
+  check('subcategory filter is mirrored to the URL', /domain=psychology/.test(p.url()) && /sub=/.test(p.url()), p.url());
 
   // Card bookmark persists to My learning
   await p.goto(BASE + '/library', { waitUntil: 'networkidle' });
@@ -80,6 +100,34 @@ const check = (name, ok, detail = '') => results.push({ name, ok: !!ok, detail }
   const anim = await rp.evaluate(() => getComputedStyle(document.querySelector('.anim-travel')).animationName);
   check('prefers-reduced-motion disables animations', anim === 'none', anim);
   await rm.close();
+
+  // v3 shell: collapsible sidebar persists and shows tooltips when collapsed
+  await p.goto(BASE + '/library', { waitUntil: 'networkidle' });
+  await p.getByRole('button', { name: 'Collapse sidebar' }).click();
+  await p.reload({ waitUntil: 'networkidle' });
+  const sideW = await p.evaluate(() => document.querySelector('.app-sidebar').getBoundingClientRect().width);
+  check('sidebar collapse persists across reload (76px)', (await p.evaluate(() => document.documentElement.dataset.sidebar)) === 'collapsed' && Math.round(sideW) === 76, `${sideW}px`);
+  await p.locator('.app-sidebar a[href="/labs"]').hover();
+  check('collapsed sidebar shows a tooltip with the label', await p.locator('.app-sidebar a[href="/labs"] .nav-tip').isVisible());
+  check('collapsed nav keeps accessible names', (await p.getByRole('navigation', { name: 'Primary' }).getByRole('link', { name: 'Formula Lab' }).count()) === 1);
+  check('active page is marked in the sidebar', (await p.locator('.app-sidebar a[aria-current=page]').getAttribute('href')) === '/library');
+  await p.getByRole('button', { name: 'Expand sidebar' }).click();
+  check('sidebar expands again', (await p.evaluate(() => document.documentElement.dataset.sidebar)) === undefined);
+
+  // Fitts explorer: direction of approach uses the width along the path
+  await p.goto(BASE + '/library/fitts-law', { waitUntil: 'networkidle' });
+  const ex = p.locator('section[aria-label="Fitts\'s law explorer"]');
+  await ex.getByLabel('Direction of approach').fill('90');
+  check('approach at 90° measures the target height (W′ = 120)', /W′ 120/.test(await ex.textContent()));
+
+  // New labs
+  await p.goto(BASE + '/labs/steering-lab', { waitUntil: 'networkidle' });
+  await p.getByRole('button', { name: 'Start' }).click();
+  check('steering lab shows a tunnel after Start', (await p.locator('[role=application] svg rect').count()) >= 3);
+  await p.goto(BASE + '/labs/cvd-lab', { waitUntil: 'networkidle' });
+  check('CVD lab renders typical vision and three dichromacies', (await p.locator('section[aria-label^="Typical"], section[aria-label^="Protanopia"], section[aria-label^="Deuteranopia"], section[aria-label^="Tritanopia"]').count()) === 4);
+  await p.getByLabel('Hex value of Error').fill('#ffffff');
+  check('CVD lab recomputes from edited colours', (await p.locator('section[aria-label^="Protanopia"]').textContent()).includes('#ffffff'));
 
   // Mobile filter drawer
   const m = await b.newContext({ ...devices['iPhone 13'] });

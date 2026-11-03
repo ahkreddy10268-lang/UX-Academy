@@ -35,6 +35,24 @@ export function throughput(idEffective: number, movementTimeSeconds: number): nu
   return idEffective / movementTimeSeconds;
 }
 
+/**
+ * Width of a rectangular target measured along the approach direction — the
+ * "W′" model for two-dimensional targets compared by MacKenzie & Buxton (1992):
+ * the length of the line through the target centre at the approach angle,
+ * clipped by the rectangle. 0° = approaching horizontally (width counts),
+ * 90° = vertically (height counts).
+ */
+export function widthAlongApproach(width: number, height: number, angleDeg: number): number {
+  assertPositive(width, "Width W");
+  assertPositive(height, "Height H");
+  assertFinite(angleDeg, "Approach angle");
+  const t = (angleDeg * Math.PI) / 180;
+  const c = Math.abs(Math.cos(t));
+  const s = Math.abs(Math.sin(t));
+  const along = Math.min(c > 1e-12 ? width / c : Infinity, s > 1e-12 ? height / s : Infinity);
+  return along;
+}
+
 /* ---------------- Hick-Hyman law ---------------- */
 
 /** Information (bits) in a choice among n equally likely alternatives. Hick's variant adds 1 for the "no signal" possibility. */

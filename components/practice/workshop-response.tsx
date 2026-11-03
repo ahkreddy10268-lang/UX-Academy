@@ -30,7 +30,7 @@ export function WorkshopResponse({ id }: { id: string }) {
         <button type="button" onClick={() => save("started")} className="h-10 rounded-sm border border-rule px-4 text-sm font-medium hover:border-rule-strong">
           Save draft
         </button>
-        <button type="button" onClick={() => save("submitted")} className="h-10 rounded-sm bg-ink px-4 text-sm font-medium text-paper">
+        <button type="button" onClick={() => save("submitted")} className="h-10 rounded-sm bg-accent px-4 text-sm font-medium text-surface">
           Mark as complete
         </button>
         <span className="text-sm text-ink-3" role="status">

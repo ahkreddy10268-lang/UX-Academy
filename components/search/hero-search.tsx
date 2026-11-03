@@ -31,7 +31,7 @@ export function HeroSearch({ placeholder = "Search 45 concepts, formulas and met
         <label htmlFor={`${id}-q`} className="sr-only">
           Search the academy
         </label>
-        <div className="flex items-center rounded-sm border border-line-control bg-surface shadow-raise focus-within:outline focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-[var(--focus)]">
+        <div className="flex items-center rounded-lg border border-line-control bg-surface shadow-raise focus-within:outline focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-[var(--focus)]">
           <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden className="ml-4 shrink-0 text-ink-3">
             <circle cx="7.5" cy="7.5" r="5.5" fill="none" stroke="currentColor" strokeWidth="1.6" />
             <path d="M12 12l4.5 4.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
@@ -62,11 +62,11 @@ export function HeroSearch({ placeholder = "Search 45 concepts, formulas and met
             autoComplete="off"
             className="h-14 min-w-0 flex-1 bg-transparent px-3 text-lg outline-none placeholder:text-ink-3"
           />
-          <button className="mr-2 h-10 rounded-xs bg-ink px-4 text-sm font-medium text-paper hover:bg-ink-2">Search</button>
+          <button className="mr-2 h-10 rounded-sm bg-accent px-4 text-sm font-medium text-surface hover:bg-accent-ink">Search</button>
         </div>
       </form>
       {open && (
-        <div className="absolute inset-x-0 top-full z-30 mt-2 overflow-hidden rounded-sm border border-rule bg-surface shadow-raise" aria-live="polite">
+        <div className="absolute inset-x-0 top-full z-30 mt-2 overflow-hidden rounded-lg border border-rule bg-surface shadow-dialog" aria-live="polite">
           {status === "loading" && shown.length === 0 && <p className="px-4 py-3 text-sm text-ink-3">Searching…</p>}
           {status === "ready" && shown.length === 0 && <p className="px-4 py-3 text-sm text-ink-2">No matches. Try a broader term.</p>}
           {shown.length > 0 && (

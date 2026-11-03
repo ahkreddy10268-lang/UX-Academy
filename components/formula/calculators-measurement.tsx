@@ -47,7 +47,7 @@ export function SusCalculator() {
                       aria-checked={resp[i] === v}
                       aria-label={`${v}`}
                       onClick={() => setResp((x) => x.map((y, j) => (j === i ? v : y)))}
-                      className={`formula h-8 w-8 rounded-xs border text-sm ${resp[i] === v ? "border-ink bg-ink text-paper" : "border-line-control text-ink-2 hover:bg-sunken"}`}
+                      className={`formula h-8 w-8 rounded-xs border text-sm ${resp[i] === v ? "border-ink bg-accent text-surface" : "border-line-control text-ink-2 hover:bg-sunken"}`}
                     >
                       {v}
                     </button>
@@ -144,7 +144,7 @@ export function NasaTlxCalculator() {
               {TLX_PAIRS.map(([a, b], i) => (
                 <div key={i} className="flex flex-wrap gap-2 text-sm">
                   {[a, b].map((c) => (
-                    <button key={c} type="button" aria-pressed={pairs[i] === c} onClick={() => setPairs((x) => x.map((y, j) => (j === i ? c : y)))} className={`rounded-xs border px-2 py-1 ${pairs[i] === c ? "border-ink bg-ink text-paper" : "border-line-control text-ink-2"}`}>
+                    <button key={c} type="button" aria-pressed={pairs[i] === c} onClick={() => setPairs((x) => x.map((y, j) => (j === i ? c : y)))} className={`rounded-xs border px-2 py-1 ${pairs[i] === c ? "border-ink bg-accent text-surface" : "border-line-control text-ink-2"}`}>
                       {TLX_SCALES[c]}
                     </button>
                   ))}

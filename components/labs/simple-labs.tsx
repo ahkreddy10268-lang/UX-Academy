@@ -297,7 +297,7 @@ export function HierarchyLab() {
         <div className={`${box} p-6`}>
           {els.map((e) =>
             e.id === "cta" ? (
-              <button key={e.id} type="button" className="rounded-sm bg-ink px-4 py-2 text-paper" style={{ fontSize: e.size, fontWeight: e.weight, opacity: e.contrast / 100 }}>
+              <button key={e.id} type="button" className="rounded-sm bg-accent px-4 py-2 text-surface" style={{ fontSize: e.size, fontWeight: e.weight, opacity: e.contrast / 100 }}>
                 {e.text}
               </button>
             ) : (
@@ -373,7 +373,7 @@ export function DisclosureLab() {
               {g.items.map((i) => (
                 <label key={i} className="text-sm">
                   {i}
-                  <input className="mt-1 h-9 w-full rounded-xs border border-line-control bg-paper px-2" />
+                  <input className="mt-1 h-9 w-full rounded-xs border border-line-control bg-surface px-2" />
                 </label>
               ))}
             </div>
@@ -393,7 +393,7 @@ export function DisclosureLab() {
               <button type="button" disabled={stage === 0} onClick={() => setStage((s) => s - 1)} className="h-9 rounded-sm border border-rule px-3 text-sm disabled:opacity-40">
                 Back
               </button>
-              <button type="button" disabled={stage === SETTINGS.length - 1} onClick={() => setStage((s) => s + 1)} className="h-9 rounded-sm bg-ink px-3 text-sm text-paper disabled:opacity-40">
+              <button type="button" disabled={stage === SETTINGS.length - 1} onClick={() => setStage((s) => s + 1)} className="h-9 rounded-sm bg-accent px-3 text-sm text-surface disabled:opacity-40">
                 Continue
               </button>
             </div>
@@ -467,7 +467,7 @@ export function FeedbackLab() {
         <p className="label">Document · Q3 research plan</p>
         <p className="mt-2 text-sm text-ink-2">Status: {saved ? "All changes saved" : "Unsaved changes"}</p>
         <div className="mt-5 flex flex-wrap items-center gap-4">
-          <button type="button" onClick={run} disabled={state === "pending" && strategy !== "none"} className="inline-flex h-10 items-center gap-2 rounded-sm bg-ink px-4 text-sm font-medium text-paper disabled:opacity-70">
+          <button type="button" onClick={run} disabled={state === "pending" && strategy !== "none"} className="inline-flex h-10 items-center gap-2 rounded-sm bg-accent px-4 text-sm font-medium text-surface disabled:opacity-70">
             {state === "pending" && strategy === "spinner" && <span aria-hidden className="h-3.5 w-3.5 animate-spin rounded-full border-2 border-paper border-t-transparent" />}
             {state === "pending" && strategy !== "none" && strategy !== "optimistic" ? "Saving…" : "Save"}
           </button>
@@ -557,7 +557,7 @@ export function SerialPositionLab() {
         {phase === "ready" && (
           <div className="flex flex-wrap items-center justify-between gap-4">
             <p className="text-ink-2">{LIST_LEN} words will appear one per second. Then type every word you remember, in any order.</p>
-            <button type="button" onClick={start} className="h-10 rounded-sm bg-ink px-4 text-sm font-medium text-paper">
+            <button type="button" onClick={start} className="h-10 rounded-sm bg-accent px-4 text-sm font-medium text-surface">
               Start
             </button>
           </div>
@@ -577,8 +577,8 @@ export function SerialPositionLab() {
             <label htmlFor="sp-recall" className="text-sm font-medium">
               Type the words you remember
             </label>
-            <textarea id="sp-recall" autoFocus rows={3} value={answer} onChange={(e) => setAnswer(e.target.value)} className="mt-1 w-full rounded-sm border border-line-control bg-paper px-3 py-2" />
-            <button className="mt-3 h-10 rounded-sm bg-ink px-4 text-sm font-medium text-paper">Score my recall</button>
+            <textarea id="sp-recall" autoFocus rows={3} value={answer} onChange={(e) => setAnswer(e.target.value)} className="mt-1 w-full rounded-sm border border-line-control bg-surface px-3 py-2" />
+            <button className="mt-3 h-10 rounded-sm bg-accent px-4 text-sm font-medium text-surface">Score my recall</button>
           </form>
         )}
         {phase === "scored" && (

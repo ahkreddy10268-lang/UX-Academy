@@ -49,15 +49,18 @@ classified, evidenced, connected and practised.
 - Only `status: "published"` with every quality-gate flag true counts as complete. Taxonomy items without entries are "planned" — never present them as content.
 - Do not assign numeric confidence scores; use `evidence` classes and `evidenceNote`.
 
-## Design rules (v2 — see docs/UI_UX_DESIGN_DIRECTION.md)
+## Design rules (v3 — see docs/DESIGN_SYSTEM.md, docs/UI_UX_DESIGN_DIRECTION.md)
 
-- Premium editorial + visual encyclopedia + interactive learning. Light-first; deliberately designed dark theme. Tokens live **only** in `app/globals.css` — never hard-code colours, sizes or radii in components.
-- Typography roles: Newsreader for editorial display/reading (`.t-hero/.t-page/.t-section/.t-lede/.prose-read`), IBM Plex Sans for UI (`.t-sub/.label/.t-caption`), IBM Plex Mono for formulas and data (`.formula`).
-- Colour = rubric red brand accent + eleven subject palettes (`lib/content/categories.ts`, `.cat-*` classes exposing `--c/--c-ink/--c-wash/--c-soft`). Subject colour is for identity and illustration only — **never** for evidence, status or body text.
+- Pastel Editorial Workspace: persistent sidebar + topbar + ONE rounded workspace frame (`app/layout.tsx`, `components/shell/`). Pages never draw their own outer frame. Light-first; designed dark theme. Tokens live **only** in `app/globals.css` — never hard-code colours, sizes or radii in components. `tests/tokens.test.ts` gates contrast: change a token, run it.
+- Colour roles: action indigo (`accent`) for interaction; `rubric` red only for editorial heritage (wordmark §, type labels); eleven pastel subject washes (`lib/content/categories.ts`, `.cat-*` → `--c/--c-ink/--c-wash/--c-soft`) for identity, illustration and labelled callout roles — **never** for evidence, status or body text. Primary buttons: `bg-accent text-surface hover:bg-accent-ink`.
+- Typography: Plex Sans 600 for UI and workspace headings (`.t-hero/.t-page/.t-section/.t-sub`); Newsreader for editorial titles (`.t-editorial`), quotes (`.t-quote`) and reading (`.prose-read`, max 70ch); Plex Mono for formulas (`.formula`).
+- Shape: radii xs 6 · sm 10 · md 12 · lg 16 · xl 20 · 2xl 24; soft shadows (`shadow-card/hover/raise/dialog`); hover = border + shadow, never transform. Gradients only on the home hero (`.bg-hero`) and featured panels (`.bg-feature`).
+- Three page families (docs/PAGE_TEMPLATES.md): Workspace, Editorial, Experimental. Cards pick their variant from classification (`variantFor`). Callouts (`components/ui/callout.tsx`) mark moments, not every paragraph.
+- Icons: only `components/shell/icons.tsx` (one family, 20px grid, 1.5 stroke); always beside a text label or with an accessible name.
 - Illustrations are original **plates** (`components/illustrations/`, rules in docs/ILLUSTRATION_SYSTEM.md): explanatory diagrams of the mechanism, colour via CSS variables only, accessible title + description. Every published entry and subject must have one (tested). Never copy third-party artwork.
 - Motion only to teach or confirm (docs/INTERACTION_AND_MOTION_GUIDELINES.md): CSS `anim-*` classes, off under `prefers-reduced-motion`, pausable, static first frame complete. No scroll effects, parallax or moving hit targets.
-- Interactive explorers compute only with `lib/formulas`; label simulations vs experiments; state assumptions and what they cannot show.
-- Still forbidden: gradients, glassmorphism, decorative animation, icon clutter, fake data, colour-only meaning.
+- Interactive explorers and labs compute only with `lib/formulas`; label simulations vs experiments; state assumptions and what they cannot show.
+- Still forbidden: glassmorphism, decorative animation, icon clutter, fake data/avatars/achievements, colour-only meaning, nested page frames.
 - Accessibility floor: semantic HTML, visible focus, keyboard reachable, WCAG 2.2 AA contrast, text alternatives for every plate/chart/graph. Grids must use `minmax(0,1fr)` tracks (base rule exists) — verify phones at the real device width.
 
 ## Working conventions

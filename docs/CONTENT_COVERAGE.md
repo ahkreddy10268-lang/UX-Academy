@@ -11,12 +11,12 @@
 | Quiz questions | 158 |
 | Exercises | 124 |
 | Flashcards | 128 |
-| Labs | 11 |
+| Labs | 13 |
 | Workshops | 11 |
 | Comparisons | 10 |
 | Learning paths | 16 |
 | Glossary terms | 114 |
-| Sources | 250 |
+| Sources | 252 |
 
 ## By domain
 
@@ -72,7 +72,7 @@
 | Design Tokens | Concept | Practitioner recommendation | 6 | 4 | 3 | — | — |
 | Doherty Threshold | Rule of thumb | Practitioner recommendation | 8 | 3 | 2 | — | feedback-lab |
 | Double Diamond | Framework | Professional guideline | 3 | 4 | 3 | — | — |
-| Fitts's Law | Law | Original empirical research | 9 | 4 | 3 | fitts | fitts-lab |
+| Fitts's Law | Law | Original empirical research | 10 | 4 | 3 | fitts | fitts-lab |
 | Gestalt Principles of Perceptual Grouping | Principle | Established theoretical model | 6 | 3 | 3 | — | gestalt-lab |
 | Gulfs of Execution and Evaluation | Model | Established theoretical model | 6 | 3 | 3 | — | — |
 | HEART Framework | Framework | Peer-reviewed research | 3 | 3 | 3 | — | — |
@@ -94,7 +94,7 @@
 | Serial Position Effect | Concept | Original empirical research | 6 | 4 | 3 | — | serial-position-lab |
 | Shneiderman's Eight Golden Rules | Heuristic | Professional guideline | 7 | 4 | 3 | — | — |
 | Signifiers | Concept | Professional guideline | 7 | 3 | 2 | — | — |
-| Steering Law | Law | Original empirical research | 5 | 3 | 2 | steering | — |
+| Steering Law | Law | Original empirical research | 5 | 3 | 2 | steering | steering-lab |
 | System Usability Scale (SUS) | Research instrument | Peer-reviewed research | 7 | 4 | 3 | sus | — |
 | Task Success Rate | Metric | Peer-reviewed research | 4 | 3 | 3 | task-success | — |
 | Tesler's Law | Principle | Practitioner recommendation | 5 | 3 | 2 | — | — |

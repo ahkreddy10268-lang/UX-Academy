@@ -17,7 +17,7 @@ export function GlossaryBrowser({ items }: { items: GlossaryItem[] }) {
   }
   return (
     <div>
-      <div className="sticky top-16 z-10 -mx-4 border-b border-rule bg-paper/95 px-4 py-3 sm:mx-0 sm:px-0">
+      <div className="sticky top-[68px] z-10 -mx-4 border-b border-rule bg-surface/95 px-4 py-3 sm:mx-0 sm:px-0">
         <div className="flex flex-wrap items-center gap-4">
           <label htmlFor={id} className="sr-only">
             Filter terms

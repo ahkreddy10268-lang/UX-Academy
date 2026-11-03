@@ -37,7 +37,7 @@ export default async function PathPage({ params }: PageProps<"/learn/[id]">) {
         crumbs={[{ href: "/learn", label: "Learn" }, { label: p.title }]}
         aside={first ? <ConceptIllustration slug={first.slug} title={first.title} domain={first.domain} variant="hero" /> : undefined}
       >
-        <dl className="mt-6 grid max-w-xl grid-cols-2 gap-4 sm:grid-cols-4">
+        <dl className="mt-6 grid max-w-xl grid-cols-2 gap-px overflow-hidden rounded-lg bg-rule ring-1 ring-rule sm:grid-cols-4 [&>div]:bg-surface [&>div]:px-3.5 [&>div]:py-2.5">
           {[
             [stats.levels, "levels"],
             [stats.lessons, "lessons"],
@@ -45,16 +45,19 @@ export default async function PathPage({ params }: PageProps<"/learn/[id]">) {
             [`≈${stats.minutes}`, "min reading"],
           ].map(([n, l]) => (
             <div key={l} className="flex flex-col-reverse">
-              <dt className="t-caption">{l}</dt>
-              <dd className="formula text-2xl text-ink">{n}</dd>
+              <dt className="text-xs text-ink-2">
+                {l}
+                {l === "min reading" && <span className="sr-only"> (estimated from word count)</span>}
+              </dt>
+              <dd className="t-sub tabular text-xl text-ink">{n}</dd>
             </div>
           ))}
         </dl>
-        <div className="mt-6 max-w-sm">
+        <div className="mt-5 max-w-sm rounded-md bg-surface/70 p-3">
           <PathProgress steps={written} />
         </div>
         {firstLesson && (
-          <Link href={`/learn/${p.id}/lesson/${firstLesson}`} className="mt-6 inline-flex h-11 items-center rounded-sm bg-ink px-5 font-medium text-paper hover:bg-ink-2">
+          <Link href={`/learn/${p.id}/lesson/${firstLesson}`} className="mt-6 inline-flex h-11 items-center rounded-sm bg-accent px-5 font-medium text-surface hover:bg-accent-ink">
             Start with lesson 1
           </Link>
         )}
@@ -72,9 +75,9 @@ export default async function PathPage({ params }: PageProps<"/learn/[id]">) {
               let n = 0;
               return (
                 <li key={s.title}>
-                  <details open={si === 0} className="group overflow-hidden rounded-sm border border-rule bg-surface">
+                  <details open={si === 0} className="group overflow-hidden rounded-lg border border-rule bg-surface shadow-card">
                     <summary className="flex cursor-pointer list-none items-center gap-4 px-5 py-4">
-                      <span className="formula grid h-10 w-10 shrink-0 place-items-center rounded-full border border-ink text-sm">L{si + 1}</span>
+                      <span className="t-sub grid h-10 w-10 shrink-0 place-items-center rounded-md bg-accent-wash text-sm text-accent-ink">L{si + 1}</span>
                       <span className="min-w-0 flex-1">
                         <span className="block t-sub text-base text-ink">{s.title}</span>
                         <span className="block text-xs text-ink-3">
@@ -103,8 +106,8 @@ export default async function PathPage({ params }: PageProps<"/learn/[id]">) {
                             );
                           n++;
                           return (
-                            <li key={slug} className={`${catClass(e.domain)} relative flex items-center gap-4 border-t border-rule px-5 py-3 hover:bg-paper`}>
-                              <span className="w-12 shrink-0 overflow-hidden rounded-xs border border-rule">
+                            <li key={slug} className={`${catClass(e.domain)} relative flex items-center gap-4 border-t border-rule px-5 py-3 hover:bg-soft`}>
+                              <span className="w-14 shrink-0 overflow-hidden rounded-xs border border-rule">
                                 <ConceptIllustration slug={e.slug} title={e.title} domain={e.domain} decorative />
                               </span>
                               <span className="min-w-0 flex-1">
@@ -120,8 +123,8 @@ export default async function PathPage({ params }: PageProps<"/learn/[id]">) {
                           );
                         })}
                         {st.questions > 0 && (
-                          <li className="relative flex items-center gap-4 border-t border-rule bg-sunken/60 px-5 py-3">
-                            <span aria-hidden className="formula grid w-12 shrink-0 place-items-center text-lg text-accent">
+                          <li className="relative flex items-center gap-4 border-t border-rule bg-soft px-5 py-3">
+                            <span aria-hidden className="formula grid w-12 shrink-0 place-items-center text-lg text-accent-ink">
                               ✓
                             </span>
                             <span className="flex-1">
@@ -157,14 +160,14 @@ export default async function PathPage({ params }: PageProps<"/learn/[id]">) {
             })}
           </ol>
         </div>
-        <aside className="pt-10">
-          <div className="lg:sticky lg:top-24">
+        <aside className="pb-12 pt-10">
+          <div className="space-y-0 rounded-lg border border-rule bg-soft p-5 lg:sticky lg:top-24">
             <p className="label">For</p>
             <p className="mt-1 text-sm text-ink-2">{p.audience}</p>
             <p className="label mt-6">You will be able to</p>
             <Bullets className="mt-2 text-sm text-ink-2" items={p.objectives} />
-            <p className="label mt-6">Prerequisites</p>
-            <p className="mt-1 text-sm text-ink-2">{p.prerequisites.join("; ")}</p>
+            <p className="label mt-6">Entry requirements</p>
+            <p className="mt-1 text-sm text-ink-2">{p.prerequisites.length ? p.prerequisites.join("; ") : "None — starts from first principles."}</p>
             <p className="label mt-6">Complete when</p>
             <Bullets className="mt-2 text-sm text-ink-2" items={p.completion} />
           </div>

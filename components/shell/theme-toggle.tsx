@@ -1,11 +1,13 @@
 "use client";
 
 import { useLocalString, writeLocal } from "@/lib/store/local";
+import { Icon } from "./icons";
 
 type Theme = "system" | "light" | "dark";
 const KEY = "ux-academy:theme";
 const ORDER: Theme[] = ["system", "light", "dark"];
 const LABEL: Record<Theme, string> = { system: "Auto", light: "Light", dark: "Dark" };
+const ICON = { system: "auto", light: "sun", dark: "moon" } as const;
 
 export function ThemeToggle() {
   const stored = useLocalString(KEY);
@@ -22,23 +24,12 @@ export function ThemeToggle() {
     <button
       type="button"
       onClick={cycle}
-      className="inline-flex h-9 items-center gap-2 rounded-sm px-3 text-sm font-medium text-ink-2 hover:bg-sunken hover:text-ink"
+      className="inline-flex h-10 items-center gap-2 rounded-sm px-2.5 text-sm font-medium text-ink-2 hover:bg-sunken hover:text-ink"
       aria-label={`Theme: ${LABEL[theme]}. Activate to change.`}
-      title="Change theme"
+      title="Change theme (Auto → Light → Dark)"
     >
-      <ThemeGlyph theme={theme} />
-      <span className="hidden sm:inline">{LABEL[theme]}</span>
+      <Icon name={ICON[theme]} />
+      <span className="hidden md:inline">{LABEL[theme]}</span>
     </button>
-  );
-}
-
-function ThemeGlyph({ theme }: { theme: Theme }) {
-  // A disc: outline = light, filled = dark, half-filled = follow the system.
-  return (
-    <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden>
-      <circle cx="8" cy="8" r="6.25" fill="none" stroke="currentColor" strokeWidth="1.5" />
-      {theme === "dark" && <circle cx="8" cy="8" r="6.25" fill="currentColor" />}
-      {theme === "system" && <path d="M8 1.75a6.25 6.25 0 0 1 0 12.5z" fill="currentColor" />}
-    </svg>
   );
 }

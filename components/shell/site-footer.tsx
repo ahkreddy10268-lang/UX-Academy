@@ -1,60 +1,27 @@
 import Link from "next/link";
-import { PALETTE_LABEL, type Palette } from "@/lib/content/categories";
-import { primaryNav, secondaryNav } from "./nav";
+import { secondaryNav } from "./nav";
 
+/** Compact colophon below the workspace frame. Navigation lives in the sidebar. */
 export function SiteFooter() {
   return (
-    <footer className="mt-24 border-t border-rule bg-paper">
-      <div className="mx-auto grid max-w-page gap-10 px-4 py-12 sm:px-6 md:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
-        <div className="max-w-sm">
-          <p className="t-section text-xl">
-            <span className="text-accent" aria-hidden>
-              §{" "}
-            </span>
-            UX Academy
-          </p>
-          <p className="mt-3 text-sm text-ink-2">
-            A personal academy for the design discipline. Content is written from primary research where it exists, labelled by
-            evidence, and linked to its sources. Your notes and progress stay in this browser.
-          </p>
-        </div>
-        <nav aria-label="Footer — study">
-          <p className="label">Study</p>
-          <ul className="mt-3 space-y-2 text-sm">
-            {primaryNav.map((n) => (
-              <li key={n.href}>
-                <Link className="text-ink-2 hover:text-ink" href={n.href}>
-                  {n.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-        <nav aria-label="Footer — subjects" className="md:order-last">
-          <p className="label">Subject families</p>
-          <ul className="mt-3 space-y-2 text-sm">
-            {(Object.keys(PALETTE_LABEL) as Palette[]).map((p) => (
-              <li key={p} className={`cat-${p}`}>
-                <Link className="flex items-center gap-2 text-ink-2 hover:text-ink" href={`/topics#fam-${p}`}>
-                  <span aria-hidden className="h-2 w-2 rounded-full bg-c" />
-                  {PALETTE_LABEL[p]}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-        <nav aria-label="Footer — reference">
-          <p className="label">Reference</p>
-          <ul className="mt-3 space-y-2 text-sm">
+    <footer className="px-4 pb-6 pt-2 sm:px-6 lg:pl-2">
+      <div className="flex flex-col gap-3 text-xs text-ink-3 md:flex-row md:items-center md:justify-between">
+        <p className="max-w-2xl">
+          <span className="font-semibold text-ink-2">UX Academy</span> — a personal academy for the design discipline. Written
+          from primary research where it exists, labelled by evidence, linked to sources. Your notes and progress stay in this
+          browser.
+        </p>
+        <nav aria-label="Reference">
+          <ul className="flex flex-wrap gap-x-4 gap-y-1">
             {secondaryNav.map((n) => (
               <li key={n.href}>
-                <Link className="text-ink-2 hover:text-ink" href={n.href}>
+                <Link className="hover:text-ink" href={n.href}>
                   {n.label}
                 </Link>
               </li>
             ))}
             <li>
-              <Link className="text-ink-2 hover:text-ink" href="/topics">
+              <Link className="hover:text-ink" href="/topics">
                 All subjects
               </Link>
             </li>

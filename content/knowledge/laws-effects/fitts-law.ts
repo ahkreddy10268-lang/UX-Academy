@@ -367,6 +367,7 @@ export default defineEntry({
     { source: "mackenzie-1992", role: "primary", note: "Shannon formulation; review of HCI applications." },
     { source: "soukoreff-mackenzie-2004", role: "primary", note: "Effective width, throughput and evaluation standards." },
     { source: "card-english-burr-1978", role: "primary", note: "Application to pointing-device comparison." },
+    { source: "mackenzie-buxton-1992", role: "further", note: "Compares models of target width for two-dimensional targets, including width along the approach angle (used by the visual explorer)." },
     { source: "bi-li-zhai-2013", role: "primary", note: "FFitts law for finger touch." },
     { source: "card-moran-newell-1983", role: "explanatory", note: "Integration into the Model Human Processor." },
     { source: "w3c-wcag-22", role: "standard", locator: "SC 2.5.8 Target Size (Minimum); SC 2.5.5 Target Size (Enhanced)", note: "Minimum target sizes." },

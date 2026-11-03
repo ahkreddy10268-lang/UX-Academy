@@ -28,7 +28,7 @@ export function FlashcardReview({ cards }: { cards: Card[] }) {
           <p className="mt-1 text-sm text-ink-2">Add cards from any entry with “Add flashcards”, or add everything below.</p>
           <button
             type="button"
-            className="mt-4 h-10 rounded-sm bg-ink px-4 text-sm font-medium text-paper"
+            className="mt-4 h-10 rounded-sm bg-accent px-4 text-sm font-medium text-surface"
             onClick={() => actions.addCards(cards.map((c) => ({ id: c.id, entry: c.entry })))}
           >
             Add all {cards.length} cards
@@ -50,7 +50,7 @@ export function FlashcardReview({ cards }: { cards: Card[] }) {
           </div>
           <div className="flex flex-wrap justify-center gap-3 border-t border-rule px-5 py-4" aria-live="polite">
             {!revealed ? (
-              <button type="button" onClick={() => setRevealed(true)} className="h-10 rounded-sm bg-ink px-5 text-sm font-medium text-paper">
+              <button type="button" onClick={() => setRevealed(true)} className="h-10 rounded-sm bg-accent px-5 text-sm font-medium text-surface">
                 Show answer
               </button>
             ) : (
@@ -73,7 +73,7 @@ export function FlashcardReview({ cards }: { cards: Card[] }) {
                     setRevealed(false);
                     setReviewed((n) => n + 1);
                   }}
-                  className="h-10 rounded-sm bg-ink px-5 text-sm font-medium text-paper"
+                  className="h-10 rounded-sm bg-accent px-5 text-sm font-medium text-surface"
                 >
                   Remembered · in {LEITNER_INTERVALS[Math.min(4, deck[current.id].box)]} days
                 </button>

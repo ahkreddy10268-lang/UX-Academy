@@ -857,12 +857,28 @@
     "registeredContainer": "Psychological Review",
     "similarity": 1
   },
+  "machado-oliveira-fernandes-2009": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "A Physiologically-based Model for Simulation of Color Vision Deficiency",
+    "registeredYear": 2009,
+    "registeredContainer": "IEEE Transactions on Visualization and Computer Graphics",
+    "similarity": 1
+  },
   "mackenzie-1992": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",
     "registeredTitle": "Fitts' Law as a Research and Design Tool in Human-Computer Interaction",
     "registeredYear": 1992,
     "registeredContainer": "Human–Computer Interaction",
+    "similarity": 1
+  },
+  "mackenzie-buxton-1992": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Extending Fitts' law to two-dimensional tasks",
+    "registeredYear": 1992,
+    "registeredContainer": "Proceedings of the SIGCHI conference on Human factors in computing systems  - CHI '92",
     "similarity": 1
   },
   "mahatody-sagar-kolski-2010": {

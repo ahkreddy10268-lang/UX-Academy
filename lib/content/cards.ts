@@ -1,6 +1,6 @@
 /** Builds card data from content (server). */
 import type { CardData } from "@/components/knowledge/knowledge-card";
-import { domainById, entries, entryBySlug, taxonomyItems } from "./index";
+import { domainById, entries, entryBySlug, graphEdges, subcategoryTitle, taxonomyItems } from "./index";
 import { richToPlain } from "./rich";
 import type { KnowledgeEntry } from "./schema";
 
@@ -12,11 +12,16 @@ export function cardFor(e: KnowledgeEntry): CardData {
     type: e.primaryType,
     domain: e.domain,
     subject: domainById.get(e.domain)?.shortTitle ?? e.domain,
+    subcategory: e.subcategory,
+    subcategoryTitle: subcategoryTitle(e.domain, e.subcategory),
     difficulty: e.difficulty,
     evidence: e.evidence,
     expression: e.formulas[0]?.expression,
     hasLab: Boolean(e.lab),
     hasCalculator: e.formulas.some((f) => f.calculator),
+    refs: e.references.length,
+    connections: graphEdges.filter((g) => g.from === e.slug || g.to === e.slug).length,
+    method: e.method ? { purpose: e.method.purpose, data: e.method.data } : undefined,
   };
 }
 
@@ -25,7 +30,17 @@ export function cardForSlug(slug: string): CardData | undefined {
   if (e) return cardFor(e);
   const t = taxonomyItems.find((x) => x.slug === slug);
   if (!t) return undefined;
-  return { slug, title: t.title, summary: "", type: t.type, domain: t.domain, subject: domainById.get(t.domain)?.shortTitle ?? t.domain, planned: true };
+  return {
+    slug,
+    title: t.title,
+    summary: "",
+    type: t.type,
+    domain: t.domain,
+    subject: domainById.get(t.domain)?.shortTitle ?? t.domain,
+    subcategory: t.subcategory,
+    subcategoryTitle: subcategoryTitle(t.domain, t.subcategory),
+    planned: true,
+  };
 }
 
 export const publishedCards = () => entries.filter((e) => e.status === "published").map(cardFor);

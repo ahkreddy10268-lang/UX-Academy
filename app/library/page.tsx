@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 import { ConceptIllustration } from "@/components/illustrations/concept-illustration";
 import { LibraryExplorer, type LibraryDoc } from "@/components/library/library-explorer";
-import { Container } from "@/components/ui/layout";
-import { domains, entries, taxonomyItems } from "@/lib/content";
+import { Container, PageHeader } from "@/components/ui/layout";
+import { domains, entries, graphEdges, taxonomyItems } from "@/lib/content";
 import { TYPE_DESCRIPTION, TYPE_LABEL } from "@/lib/content/labels";
 import { richToPlain } from "@/lib/content/rich";
 
@@ -34,7 +34,9 @@ export default function LibraryPage() {
       expression: e.formulas[0]?.expression,
       hasCalculator: e.formulas.some((f) => f.calculator),
       hasLab: Boolean(e.lab),
-      method: e.method ? e.method.purpose : undefined,
+      method: e.method ? { purpose: e.method.purpose, data: e.method.data } : undefined,
+      refs: e.references.length,
+      connections: graphEdges.filter((g) => g.from === e.slug || g.to === e.slug).length,
     })),
     ...planned.map((t) => ({ slug: t.slug, title: t.title, summary: "", type: t.type, secondary: [], domain: t.domain, subject: subject.get(t.domain) ?? t.domain, subcategory: t.subcategory, status: "planned" as const, alt: [] })),
   ].sort((a, b) => a.title.localeCompare(b.title, "en", { sensitivity: "base" }));
@@ -51,33 +53,40 @@ export default function LibraryPage() {
 
   return (
     <>
-      <header className="border-b border-rule">
-        <Container className="grid gap-8 pb-10 pt-12 sm:pt-14 lg:grid-cols-[minmax(0,1fr)_22rem] lg:items-end">
-          <div>
-            <p className="label">Knowledge Library</p>
-            <h1 className="t-page mt-3 text-4xl sm:text-5xl">Every concept, classified and connected</h1>
-            <p className="t-lede mt-4 max-w-2xl text-lg">
-              Filter by what something <em>is</em> — a law, a method, a metric — by subject, level and the strength of its evidence. Planned topics are shown only when you ask for them,
-              and always labelled as not yet researched.
-            </p>
-          </div>
-          <dl className="grid grid-cols-3 gap-4 border-t border-rule pt-5 lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0">
-            {[
+      <PageHeader
+        eyebrow="Knowledge Library"
+        title="Every concept, classified and connected"
+        lede={
+          <>
+            Filter by what something <em>is</em> — a law, a method, a metric — by subject, level and the strength of its evidence. Planned topics
+            appear only when you ask for them, always labelled as not yet researched.
+          </>
+        }
+      >
+        <dl className="mt-5 flex flex-wrap gap-2">
+          {(
+            [
               [published.length, "published"],
               [planned.length, "planned"],
               [domains.length, "subjects"],
-            ].map(([n, l]) => (
-              <div key={l} className="flex flex-col-reverse">
-                <dt className="t-caption">{l}</dt>
-                <dd className="formula text-3xl text-ink">{n}</dd>
-              </div>
-            ))}
-          </dl>
-        </Container>
-      </header>
-      <Container className="pt-8">
+            ] as const
+          ).map(([n, l]) => (
+            <div key={l} className="flex items-baseline gap-1.5 rounded-full border border-rule bg-soft px-3 py-1 text-sm">
+              <dd className="t-sub tabular text-ink">{n}</dd>
+              <dt className="text-ink-2">{l}</dt>
+            </div>
+          ))}
+        </dl>
+      </PageHeader>
+      <Container className="pb-12 pt-6">
         <Suspense fallback={<p className="text-ink-3">Loading library…</p>}>
-          <LibraryExplorer docs={docs} domains={domains.map((d) => ({ id: d.id, title: d.title }))} plates={plates} typeCounts={typeCounts} />
+          <LibraryExplorer
+            docs={docs}
+            domains={domains.map((d) => ({ id: d.id, title: d.title, short: d.shortTitle }))}
+            subcategories={domains.flatMap((d) => d.subcategories.map((s) => ({ id: s.id, title: s.title, domain: d.id })))}
+            plates={plates}
+            typeCounts={typeCounts}
+          />
         </Suspense>
       </Container>
     </>

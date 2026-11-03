@@ -2,24 +2,32 @@ import type { Formula } from "@/lib/content/schema";
 import { Calculator } from "@/components/formula/calculator";
 import { FormulaCurve } from "@/components/formula/formula-curve";
 import { hasCurve } from "@/components/formula/curves";
+import { Callout } from "@/components/ui/callout";
 import { Bullets } from "@/components/ui/layout";
 import { Rich, RichParagraphs, type RichContext } from "@/components/ui/rich";
 
 /** Full Formula Library specification (spec Part 11) for one formula. */
-export function FormulaBlock({ formula, ctx, headingLevel = 3 }: { formula: Formula; ctx: RichContext; headingLevel?: 2 | 3 }) {
+export function FormulaBlock({ formula, ctx, headingLevel = 3, layout = "stacked" }: { formula: Formula; ctx: RichContext; headingLevel?: 2 | 3; layout?: "stacked" | "split" }) {
   const H = headingLevel === 2 ? "h2" : "h3";
-  return (
-    <div className="space-y-8">
+  const workbench = (formula.calculator || null) && (
+    <>
+      {formula.calculator && <Calculator id={formula.calculator} />}
+      {formula.calculator && hasCurve(formula.calculator) && <FormulaCurve calculator={formula.calculator} />}
+    </>
+  );
+  const head = (
       <div>
-        <H className="display text-xl">{formula.name}</H>
+        <H className="t-sub text-xl">{formula.name}</H>
         <p className="mt-1 text-sm text-ink-3">{formula.contributor}</p>
-        <div tabIndex={0} role="group" aria-label={`${formula.name} expression`} className="mt-4 overflow-x-auto rounded-sm border border-rule bg-sunken px-5 py-6 text-center">
+        <div tabIndex={0} role="group" aria-label={`${formula.name} expression`} className="mt-4 overflow-x-auto rounded-lg bg-sunken px-5 py-6 text-center ring-1 ring-rule">
           <p className="formula whitespace-nowrap text-xl text-ink sm:text-2xl" aria-label={`Formula: ${formula.expression}`}>
             {formula.expression}
           </p>
         </div>
       </div>
-
+  );
+  const spec = (
+    <>
       <div className="overflow-x-auto" tabIndex={0} role="group" aria-label="Variables table">
         <table className="w-full min-w-[32rem] text-left text-sm">
           <caption className="label pb-2 text-left">Variables</caption>
@@ -45,9 +53,7 @@ export function FormulaBlock({ formula, ctx, headingLevel = 3 }: { formula: Form
         <p className="mt-2 text-sm text-ink-2">Result: {formula.resultUnit}</p>
       </div>
 
-      {formula.calculator && <Calculator id={formula.calculator} />}
-
-      {formula.calculator && hasCurve(formula.calculator) && <FormulaCurve calculator={formula.calculator} />}
+      {layout === "stacked" && workbench}
 
       <div className="grid gap-8 md:grid-cols-2">
         <div>
@@ -69,16 +75,15 @@ export function FormulaBlock({ formula, ctx, headingLevel = 3 }: { formula: Form
         </ol>
       </div>
 
-      <div className="rounded-sm border border-rule p-5">
-        <p className="label">Worked example</p>
-        <Bullets className="mt-3 text-ink-2" items={formula.workedExample.given} />
+      <Callout role="formula" label="Worked example">
+        <Bullets className="text-ink" items={formula.workedExample.given} />
         <ol className="formula mt-4 space-y-1 text-sm text-ink">
           {formula.workedExample.steps.map((s, i) => (
             <li key={i}>{s}</li>
           ))}
         </ol>
-        <p className="mt-4 border-t border-rule pt-3 font-medium text-ink">{formula.workedExample.result}</p>
-      </div>
+        <p className="mt-4 border-t border-c-soft pt-3 font-medium text-ink">{formula.workedExample.result}</p>
+      </Callout>
 
       <div>
         <p className="label">Interpreting the result</p>
@@ -114,6 +119,26 @@ export function FormulaBlock({ formula, ctx, headingLevel = 3 }: { formula: Form
           </dl>
         </div>
       )}
+    </>
+  );
+
+  if (layout === "split" && workbench) {
+    return (
+      <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,27rem)] lg:gap-10">
+        <div className="min-w-0 space-y-8">
+          {head}
+          {spec}
+        </div>
+        <aside aria-label="Calculator workspace" className="min-w-0">
+          <div className="space-y-6 rounded-xl border border-rule bg-soft p-4 lg:sticky lg:top-24 lg:max-h-[calc(100dvh-7rem)] lg:overflow-y-auto">{workbench}</div>
+        </aside>
+      </div>
+    );
+  }
+  return (
+    <div className="space-y-8">
+      {head}
+      {spec}
     </div>
   );
 }

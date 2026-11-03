@@ -1,6 +1,18 @@
-# UI/UX design direction (v2)
+# UI/UX design direction (v3 — Pastel Editorial Workspace)
 
-**Direction:** premium editorial + visual encyclopedia + interactive learning + modern academic. An evolution of the v1 "Rubric" system, not a replacement.
+**Direction (v3, 2026-11-03):** a premium pastel workspace (persistent sidebar, toolbar, one rounded white frame, soft panels) + a visual knowledge encyclopedia (pastel subject fields, explanatory plates) + interactive learning (explorers, labs) + an editorial reading voice. v3 evolves v2 and does not replace it: plates, evidence model, content and IA are unchanged. Detailed tokens: DESIGN_SYSTEM.md. Decisions: DECISION_LOG D-026…D-033.
+
+## v3 reference translation
+
+The owner's five productivity-dashboard reference images were **not accessible in this session** (no files in the repository or uploads), so the translation below works from the brief's description of them, not from the images. Patterns taken: grouped left navigation with section labels, a quiet toolbar with search, a single white workspace on a cool canvas, pastel summary tiles, rounded soft cards, light shadows. Patterns deliberately **not** taken (per the brief): Kanban columns, task cards, avatars and team activity, task-management functionality. Their learning-specific equivalents:
+
+| Dashboard pattern | UX Academy equivalent |
+|---|---|
+| Project/status tiles | Subject tiles (published / planned counts), My Learning stat tiles (real local counts) |
+| "Continue where you left off" | Learning panel: last concept, levels read, path progress, next lesson — empty state when there is no history |
+| Filter toolbar over a board | Library filter toolbar + subject/type chips over a 4/3/2/1 card grid |
+| Detail side panel | Concept TOC panel, Formula Lab calculator workspace, lab "about this lab" panel |
+| Activity feed | Not used — no social or fabricated activity |
 
 ## Research summary (2026-11-03)
 
@@ -18,23 +30,21 @@ Neither site's artwork, layouts or copy were reused. Laws of UX artwork is CC BY
 
 Laws of UX illustrates *metaphorically*. UX Academy illustrates *explanatorily*: each concept is a **plate** — like the plates of a scientific atlas — drawn on a tinted graph-paper field with ink line-work, solid category shapes and measurement annotations (dimension lines, labels in Plex Mono). The Fitts plate shows the start point, D, W and the corrective sub-movements; it is a diagram you can learn from, not a logo. Plates are numbered ("Pl. 01") in figure captions, reinforcing the academic voice.
 
-## Colour: brand accent + subject palettes
+## Colour (v3)
 
-- **Rubric red** remains the brand and interaction accent (links, focus, active states, primary rules).
-- **Eleven subject families** (rose, violet, teal, blue, amber, green, peach, cyan, indigo, slate, core) identify *where you are* in the discipline. Twenty domains map onto them (`lib/content/categories.ts`).
-- Colour **never** encodes evidence. Evidence keeps its neutral three-bar glyph + text label everywhere; the home ledger states this explicitly.
-- Category colour appears in: plates, the 4px subject rule atop headers, small identity dots, explorer canvases, path ladders, graph nodes. Not in body text or large UI chrome.
+- **Action indigo** (`accent` #4c5ead) carries interaction: primary buttons, the active nav item, selected chips, links and focus. It is calm, it is distinct from every subject wash, and it passes ≥4.8:1 everywhere.
+- **Rubric red** is kept as the *heritage editorial* accent: the § wordmark, knowledge-type labels, the A–Z index letters. It is no longer the interaction colour (supersedes D-014/D-017 on that point; see D-027).
+- **Eleven pastel subject washes** identify *where you are*. They appear in subject tiles, card subject pills, concept/lesson/path heroes, plates and explorer canvases. They never appear in evidence, status or body text. Evidence keeps its neutral three-bar glyph + label.
+- **Callout roles** reuse the washes as *content-role* identity (definition, analogy, example, application, research, limitation, misconception…), always with a written label (D-030).
+- **One gradient:** the homepage hero (violet → blue → teal washes). Featured panels may use a wash → surface fade. No other gradients.
 
-## Typography roles
+## Typography (v3)
 
-Newsreader for editorial display and long-form reading (`.t-hero`, `.t-page`, `.t-section`, `.t-lede`, `.prose-read`); IBM Plex Sans for interface and sub-headings (`.t-sub`, `.label`, `.t-caption`); IBM Plex Mono for formulas, numbers and plate annotations (`.formula`). The display serif is no longer used for every heading — UI-level headings (filters, card meta, curriculum rows) use Plex Sans 600.
+Plex Sans 600 for UI, navigation and workspace headings; Newsreader for the editorial moments (concept, lesson and planned-topic titles, the featured concept, the evidence ledger title, the hero accent, analogies and quotes) and for long-form reading; Plex Mono for formulas and data.
 
-## Layout principles
+## Layout (v3)
 
-- Editorial grids, not card-everything: hero splits text | plate; ledgers use ruled cells; curricula use ruled rows.
-- Cards exist where browsing needs them (library, subjects, paths, labs) and come in distinct variants (standard, featured, formula, compact, planned).
-- Grids default to `minmax(0,1fr)` tracks so long content can never widen a phone layout.
-
-## Hard rules kept from v1
-
-Borders over shadows; near-square radii; no gradients or glassmorphism; one brand accent; planned topics always labelled; no fabricated numbers — every count is derived from content.
+- **Shell:** sidebar 248px expanded / 76px collapsed (tooltips), topbar 68px, one 24px-radius workspace frame on ≥1024px; a modal drawer below 1024px. No page draws its own outer frame.
+- **Three page families:** A Workspace (home, library, subjects, learn, My Learning, reference pages) — sans titles, panels, grids. B Editorial (concepts, lessons, planned topics) — pastel hero with an editorial title, 70ch reading column, sticky TOC, differentiated callouts. C Experimental (Formula Lab, labs, graph) — split workspaces: specification/canvas and controls/results side by side.
+- **Bounded pages:** the homepage was cut from nine sections to seven and the v2 "connections" section moved to the graph, so the page has a clear end.
+- Grids keep `minmax(0,1fr)` tracks; the library grid uses container queries (`@container`) so column count follows the space beside the sidebar, not the viewport.

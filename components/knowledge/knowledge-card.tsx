@@ -1,13 +1,16 @@
 /**
- * Knowledge cards. Server-safe presentation; the illustration is passed in as a
- * node so pages decide whether it is rendered (keeps plate code off the client).
+ * Knowledge cards (v3). Server-safe presentation; the illustration is passed in
+ * as a node so pages decide whether it is rendered (keeps plate code off the client).
  *
- * Variants:
- *  - standard  plate on top, type, title, summary, meta
- *  - featured  wide: plate left, larger title, definition-length summary
- *  - formula   standard + the expression in a mono strip
- *  - compact   no plate (list contexts)
- *  - planned   no plate, dashed, explicitly "not yet researched"
+ * Variants — chosen by what the entry *is* (see `variantFor`):
+ *  - standard   plate on a pastel field, type, title, summary, meta
+ *  - featured   wide: plate left on a soft gradient, larger title
+ *  - formula    standard + the expression in a mono well
+ *  - research   methods & instruments: thumbnail, purpose/data tags, source count
+ *  - framework  frameworks & models: plate + how many concepts it connects
+ *  - lab        entries with an interactive lab: standard + a lab action band
+ *  - compact    no plate (dense lists, related rows)
+ *  - planned    dashed, explicitly "not yet researched"
  */
 import Link from "next/link";
 import type { ReactNode } from "react";
@@ -24,46 +27,73 @@ export type CardData = {
   type: KnowledgeType;
   domain: string;
   subject: string;
+  subcategory?: string;
+  subcategoryTitle?: string;
   difficulty?: Difficulty;
   evidence?: EvidenceClass;
   planned?: boolean;
   expression?: string;
   hasLab?: boolean;
   hasCalculator?: boolean;
+  /** number of references in the entry */
+  refs?: number;
+  /** explained relations to other entries */
+  connections?: number;
+  method?: { purpose: "generative" | "evaluative" | "both"; data: "qualitative" | "quantitative" | "mixed" };
 };
 
-export type CardVariant = "standard" | "featured" | "formula" | "compact" | "planned";
+export type CardVariant = "standard" | "featured" | "formula" | "research" | "framework" | "lab" | "compact" | "planned";
+
+const RESEARCH_TYPES = new Set<KnowledgeType>(["method", "methodology", "technique", "research-instrument"]);
+const FRAMEWORK_TYPES = new Set<KnowledgeType>(["framework", "model"]);
+
+/** The card variant that fits a record — classification decides presentation. */
+export function variantFor(d: CardData): CardVariant {
+  if (d.planned) return "planned";
+  if (RESEARCH_TYPES.has(d.type)) return "research";
+  if (d.expression) return "formula";
+  if (FRAMEWORK_TYPES.has(d.type)) return "framework";
+  if (d.hasLab) return "lab";
+  return "standard";
+}
 
 function Features({ d }: { d: CardData }) {
   if (!d.hasLab && !d.hasCalculator) return null;
   return (
     <span className="flex gap-1.5">
-      {d.hasCalculator && <span className="rounded-xs border border-rule px-1.5 py-px text-[11px] font-medium text-ink-2">Calculator</span>}
-      {d.hasLab && <span className="rounded-xs border border-rule px-1.5 py-px text-[11px] font-medium text-ink-2">Lab</span>}
+      {d.hasCalculator && <span className="rounded-full bg-sunken px-2 py-px text-[11px] font-medium text-ink-2">Calculator</span>}
+      {d.hasLab && <span className="rounded-full bg-sunken px-2 py-px text-[11px] font-medium text-ink-2">Lab</span>}
     </span>
   );
 }
 
-export function KnowledgeCard({ d, variant = "standard", plate, headingLevel = 3 }: { d: CardData; variant?: CardVariant; plate?: ReactNode; headingLevel?: 2 | 3 }) {
+const PURPOSE = { generative: "Generative", evaluative: "Evaluative", both: "Generative + evaluative" } as const;
+const DATA = { qualitative: "Qualitative", quantitative: "Quantitative", mixed: "Mixed data" } as const;
+
+export function KnowledgeCard({ d, variant, plate, headingLevel = 3 }: { d: CardData; variant?: CardVariant; plate?: ReactNode; headingLevel?: 2 | 3 }) {
+  const v = variant ?? variantFor(d);
   const H = headingLevel === 2 ? "h2" : "h3";
   const href = `/library/${d.slug}`;
+  const title = (cls: string) => (
+    <H className={cls}>
+      <Link href={href} className="after:absolute after:inset-0 after:rounded-[inherit]">
+        {d.title}
+      </Link>
+    </H>
+  );
 
-  if (variant === "planned" || d.planned) {
+  if (v === "planned" || d.planned) {
     return (
-      <article className="flex h-full flex-col rounded-sm border border-dashed border-rule-strong p-4">
+      <article className="relative flex h-full flex-col rounded-md border border-dashed border-rule-strong bg-soft p-4 hover:border-ink-3">
         <p className="label">{TYPE_LABEL[d.type]} · planned</p>
-        <H className="mt-1.5 text-base font-medium leading-snug text-ink-2">
-          <Link href={href} className="after:absolute after:inset-0 hover:text-ink">
-            {d.title}
-          </Link>
-        </H>
+        {title("mt-1.5 text-base font-medium leading-snug text-ink-2")}
         <p className="mt-auto pt-2 text-xs text-ink-3">{d.subject} · not yet researched</p>
       </article>
     );
   }
 
   const meta = (
-    <div className="mt-auto flex flex-wrap items-center gap-x-4 gap-y-2 pt-4">
+    <div className="mt-auto flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-rule pt-3">
       {d.evidence && <EvidenceMark evidence={d.evidence} />}
       {d.difficulty && <DifficultyMark level={d.difficulty} />}
       <Features d={d} />
@@ -71,67 +101,93 @@ export function KnowledgeCard({ d, variant = "standard", plate, headingLevel = 3
   );
 
   const eyebrow = (
-    <p className="flex items-center gap-2 text-xs">
-      <span className="font-semibold uppercase tracking-[0.08em] text-ink-2">{TYPE_LABEL[d.type]}</span>
-      <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-c" />
-      <span className="text-c-ink">{d.subject}</span>
+    <p className="flex min-w-0 items-center gap-2 text-xs">
+      <span className="shrink-0 rounded-full bg-c-wash px-2 py-0.5 font-semibold text-c-ink">{d.subject}</span>
+      <span className="truncate text-ink-3">{TYPE_LABEL[d.type]}</span>
     </p>
   );
 
-  if (variant === "compact") {
+  const bookmark = (
+    <div className="absolute right-2.5 top-2.5 z-10 rounded-xs bg-surface/90 shadow-card">
+      <BookmarkToggle slug={d.slug} title={d.title} />
+    </div>
+  );
+
+  if (v === "compact") {
     return (
-      <article className={`${catClass(d.domain)} relative flex h-full flex-col rounded-sm border border-rule bg-surface p-4 lift hover:border-ink-3`}>
+      <article className={`${catClass(d.domain)} card group relative flex h-full flex-col p-4`}>
         {eyebrow}
-        <H className="mt-1.5 t-section text-lg">
-          <Link href={href} className="after:absolute after:inset-0">
-            {d.title}
-          </Link>
-        </H>
+        {title("t-sub mt-2 text-base group-hover:text-accent-ink")}
         <p className="mt-1 line-clamp-2 text-sm text-ink-2">{d.summary}</p>
-        {meta}
+        <div className="pt-3">{meta}</div>
       </article>
     );
   }
 
-  if (variant === "featured") {
+  if (v === "featured") {
     return (
-      <article className={`${catClass(d.domain)} group relative grid h-full grid-cols-[minmax(0,1fr)] overflow-hidden rounded-sm border border-rule bg-surface lift hover:border-ink-3 sm:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]`}>
-        <div className="flex items-center border-b border-rule bg-c-wash sm:border-b-0 sm:border-r">{plate}</div>
-        <div className="flex min-w-0 flex-col p-6">
-          {eyebrow}
-          <H className="mt-2 t-section text-2xl group-hover:text-accent-ink">
-            <Link href={href} className="after:absolute after:inset-0">
-              {d.title}
-            </Link>
-          </H>
-          <p className="mt-2 t-lede text-base">{d.summary}</p>
-          {d.expression && <p className="formula mt-4 truncate rounded-xs bg-sunken px-3 py-2 text-sm text-ink">{d.expression}</p>}
+      <article className={`${catClass(d.domain)} card group relative grid h-full overflow-hidden !rounded-xl md:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)]`}>
+        <div className="bg-feature flex items-center p-4 sm:p-6">
+          <div className="w-full overflow-hidden rounded-lg border border-rule bg-surface">{plate}</div>
+        </div>
+        <div className="flex min-w-0 flex-col p-6 lg:p-8">
+          <p className="label !text-c-ink">Featured</p>
+          <div className="mt-2">{eyebrow}</div>
+          {title("t-editorial mt-3 text-[1.9rem] group-hover:text-accent-ink")}
+          <p className="t-lede mt-2 text-base">{d.summary}</p>
+          {d.expression && <p className="formula mt-4 truncate rounded-sm bg-sunken px-3 py-2 text-sm text-ink">{d.expression}</p>}
+          <div className="pt-5">{meta}</div>
+        </div>
+        {bookmark}
+      </article>
+    );
+  }
+
+  if (v === "research") {
+    return (
+      <article className={`${catClass(d.domain)} card group relative flex h-full flex-col p-4`}>
+        <div className="pr-9">{eyebrow}</div>
+        <div className="mt-3 flex items-center gap-3">
+          {plate && <div className="w-20 shrink-0 overflow-hidden rounded-sm border border-rule">{plate}</div>}
+          <div className="min-w-0 flex-1">{title("t-sub text-[1.05rem] leading-snug group-hover:text-accent-ink")}</div>
+        </div>
+        <p className="mt-3 line-clamp-3 text-sm text-ink-2">{d.summary}</p>
+        {d.method && (
+          <p className="mt-3 flex flex-wrap gap-1.5 text-[11px] font-medium">
+            <span className="rounded-full border border-rule px-2 py-px text-ink-2">{PURPOSE[d.method.purpose]}</span>
+            <span className="rounded-full border border-rule px-2 py-px text-ink-2">{DATA[d.method.data]}</span>
+          </p>
+        )}
+        <div className="pt-3">
           {meta}
+          {d.refs !== undefined && <p className="tabular mt-2 text-xs text-ink-3">{d.refs} references</p>}
         </div>
-        <div className="absolute right-2 top-2 z-10">
-          <BookmarkToggle slug={d.slug} title={d.title} />
-        </div>
+        {bookmark}
       </article>
     );
   }
 
   return (
-    <article className={`${catClass(d.domain)} group relative flex h-full flex-col overflow-hidden rounded-sm border border-rule bg-surface lift hover:border-ink-3`}>
+    <article className={`${catClass(d.domain)} card group relative flex h-full flex-col overflow-hidden`}>
       <div className="border-b border-rule">{plate}</div>
-      {variant === "formula" && d.expression && <p className="formula truncate border-b border-rule bg-sunken px-4 py-2 text-xs text-ink">{d.expression}</p>}
+      {v === "formula" && d.expression && <p className="formula truncate border-b border-rule bg-sunken px-4 py-2 text-xs text-ink">{d.expression}</p>}
       <div className="flex flex-1 flex-col p-4">
         {eyebrow}
-        <H className="mt-1.5 t-section text-xl group-hover:text-accent-ink">
-          <Link href={href} className="after:absolute after:inset-0">
-            {d.title}
-          </Link>
-        </H>
+        {title("t-sub mt-2 text-[1.075rem] leading-snug group-hover:text-accent-ink")}
         <p className="mt-1.5 line-clamp-3 text-sm text-ink-2">{d.summary}</p>
-        {meta}
+        {v === "framework" && d.connections !== undefined && (
+          <p className="tabular mt-3 text-xs text-ink-3">
+            Connects <span className="font-semibold text-c-ink">{d.connections}</span> explained relations
+          </p>
+        )}
+        <div className="pt-3">{meta}</div>
       </div>
-      <div className="absolute right-2 top-2 z-10 rounded-xs bg-surface/80">
-        <BookmarkToggle slug={d.slug} title={d.title} />
-      </div>
+      {v === "lab" && (
+        <p className="flex items-center justify-between border-t border-rule bg-c-wash px-4 py-2 text-xs font-medium text-c-ink">
+          Includes an interactive lab <span aria-hidden>→</span>
+        </p>
+      )}
+      {bookmark}
     </article>
   );
 }
@@ -139,17 +195,19 @@ export function KnowledgeCard({ d, variant = "standard", plate, headingLevel = 3
 /** Subject tile: plate + name + description + real published count. */
 export function CategoryTile({ id, title, description, published, total, plate }: { id: string; title: string; description: string; published: number; total: number; plate: ReactNode }) {
   return (
-    <article className={`${catClass(id)} group relative flex h-full flex-col overflow-hidden rounded-sm border border-rule bg-surface lift hover:border-ink-3`}>
-      <div className="border-b border-rule">{plate}</div>
-      <div className="flex flex-1 flex-col p-4">
-        <h3 className="t-sub text-base text-ink group-hover:text-accent-ink">
+    <article className={`${catClass(id)} group relative flex h-full flex-col overflow-hidden rounded-lg bg-c-wash transition-shadow hover:shadow-hover`}>
+      <div className="px-3 pt-3">
+        <div className="overflow-hidden rounded-md">{plate}</div>
+      </div>
+      <div className="flex flex-1 flex-col p-4 pt-3">
+        <h3 className="t-sub text-base text-ink group-hover:text-c-ink">
           <Link href={`/topics/${id}`} className="after:absolute after:inset-0">
             {title}
           </Link>
         </h3>
         <p className="mt-1 line-clamp-2 text-sm text-ink-2">{description}</p>
-        <p className="tabular mt-auto pt-3 text-xs text-ink-3">
-          <span className="font-medium text-c-ink">{published} published</span> · {total - published} planned
+        <p className="tabular mt-auto pt-3 text-xs text-ink-2">
+          <span className="font-semibold text-c-ink">{published} published</span> · {total - published} planned
         </p>
       </div>
     </article>

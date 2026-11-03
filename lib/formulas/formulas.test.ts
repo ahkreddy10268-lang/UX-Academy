@@ -6,7 +6,8 @@
  */
 import { describe, expect, it } from "vitest";
 import { FormulaInputError, linearFit, normalCdf, normalInv, parseNumberList, tCdf, tInv } from "./math";
-import { effectiveWidth, fittsId, hickInformation, hickInformationEqual, klmTotal, parseKlm, steeringId, throughput } from "./pointing";
+import { MACHADO_2009_SEVERITY_1, deltaE76, simulateCvd, srgbToLab } from "./colour-vision";
+import { effectiveWidth, fittsId, hickInformation, hickInformationEqual, klmTotal, parseKlm, steeringId, throughput, widthAlongApproach } from "./pointing";
 import { ces, csat, nasaTlxRaw, nasaTlxWeighted, nps, npsFromRatings, susScore, tlxWeightsFromPairs, umuxLite, TLX_PAIRS } from "./questionnaires";
 import {
   ciMean,
@@ -67,6 +68,14 @@ describe("Fitts's law", () => {
   it("original and Welford formulations", () => {
     expect(fittsId(160, 20, "original")).toBeCloseTo(4, 10); // log2(16)
     expect(fittsId(300, 20, "welford")).toBeCloseTo(Math.log2(15.5), 10);
+  });
+  it("measures a 2-D target's width along the approach direction (W′ model)", () => {
+    expect(widthAlongApproach(40, 120, 0)).toBeCloseTo(40, 10); // horizontal approach: width
+    expect(widthAlongApproach(40, 120, 90)).toBeCloseTo(120, 10); // vertical approach: height
+    expect(widthAlongApproach(40, 40, 45)).toBeCloseTo(40 * Math.SQRT2, 10); // square, diagonal
+    expect(widthAlongApproach(40, 120, 45)).toBeCloseTo(40 * Math.SQRT2, 10); // clipped by the narrow side
+    expect(widthAlongApproach(40, 120, 180)).toBeCloseTo(40, 10); // direction-independent of sign
+    expect(() => widthAlongApproach(0, 10, 0)).toThrow();
   });
   it("only the D/W ratio matters", () => expect(fittsId(150, 30)).toBeCloseTo(fittsId(300, 60), 12));
   it("effective width and throughput", () => {
@@ -302,3 +311,51 @@ describe("experience models", () => {
     expect(() => chunk("123", 0)).toThrow();
   });
 });
+
+describe("colour-vision-deficiency simulation (Machado et al. 2009)", () => {
+  it("leaves neutrals unchanged, because every matrix row sums to 1", () => {
+    for (const t of ["protanopia", "deuteranopia", "tritanopia"] as const) {
+      for (const row of MACHADO_2009_SEVERITY_1[t]) expect(row[0] + row[1] + row[2]).toBeCloseTo(1, 5);
+      expect(simulateCvd("#ffffff", t)).toBe("#ffffff");
+      expect(simulateCvd("#000000", t)).toBe("#000000");
+      expect(simulateCvd("#808080", t)).toBe("#808080");
+    }
+  });
+  it("maps pure red as the protanopia matrix's first column predicts", () => {
+    // linear (1,0,0) → (0.152286, 0.114503, −0.003882 → 0) → sRGB-encoded
+    const enc = (l: number) => Math.round(255 * (1.055 * l ** (1 / 2.4) - 0.055));
+    expect(simulateCvd("#ff0000", "protanopia")).toBe(`#${[enc(0.152286), enc(0.114503), 0].map((v) => v.toString(16).padStart(2, "0")).join("")}`);
+  });
+  it("collapses a red/green pair towards similar colours for red-green dichromats but not tritanopes", () => {
+    const dist = (a: string, b: string) => {
+      const p = (h: string) => [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16));
+      const [x, y] = [p(a), p(b)];
+      return Math.hypot(x[0] - y[0], x[1] - y[1], x[2] - y[2]);
+    };
+    const red = "#d0312d";
+    const green = "#3b8e3a";
+    const normal = dist(red, green);
+    expect(dist(simulateCvd(red, "deuteranopia"), simulateCvd(green, "deuteranopia"))).toBeLessThan(normal * 0.5);
+    expect(dist(simulateCvd(red, "tritanopia"), simulateCvd(green, "tritanopia"))).toBeGreaterThan(normal * 0.5);
+  });
+});
+
+describe("CIE L*a*b* and ΔE*ab", () => {
+  it("matches published sRGB → Lab reference values (D65)", () => {
+    const white = srgbToLab("#ffffff");
+    expect(white.L).toBeCloseTo(100, 2);
+    expect(white.a).toBeCloseTo(0, 2);
+    expect(white.b).toBeCloseTo(0, 2);
+    const red = srgbToLab("#ff0000"); // widely tabulated: L 53.24, a 80.09, b 67.20
+    expect(red.L).toBeCloseTo(53.24, 1);
+    expect(red.a).toBeCloseTo(80.09, 1);
+    expect(red.b).toBeCloseTo(67.2, 1);
+    expect(srgbToLab("#000000").L).toBeCloseTo(0, 6);
+  });
+  it("is a distance: zero for identical colours, symmetric, 100 between black and white", () => {
+    expect(deltaE76("#336699", "#336699")).toBe(0);
+    expect(deltaE76("#123456", "#abcdef")).toBeCloseTo(deltaE76("#abcdef", "#123456"), 10);
+    expect(deltaE76("#000000", "#ffffff")).toBeCloseTo(100, 2);
+  });
+});
+

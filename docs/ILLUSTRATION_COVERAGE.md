@@ -5,7 +5,7 @@
 
 | Measure | Count |
 |---|---|
-| Registered plates | 67 |
+| Registered plates | 68 |
 | Published entries with a plate | 45 / 45 |
 | Subject plates | 20 / 20 |
 | Animated plates | 12 |
@@ -53,6 +53,7 @@
 | `sample-size-estimation` | entry | — | — | Three rows of increasing sample size — 10, 40 and 160 observations — drawn as clouds of dots. Beside each, the confidence interval for the mean narrows: every fourfold increase in sample size halves the interval's width, because precision grows with the square root of n. |
 | `usability` | entry | — | — | A dashed boundary marks the context of use. Inside it, a user on the left reaches a goal on the right by two routes: a short direct path and a long wandering one. Above, three meters measure the attempt: effectiveness (was the goal reached), efficiency (how much effort it took) and satisfaction. |
 | `user-centred-design` | entry | — | — | Four activities sit on a square loop around a central group of users: understand the context of use, specify user requirements, produce design solutions, and evaluate against requirements. Arrows run clockwise, a dashed arrow returns from evaluation to iterate, and an exit arrow leaves the loop once requirements are met. |
+| `human-centred-design` | planned topic | — | — | Three nested rings surround one person: the users, the wider group of people affected by the system, and the context of use with its tasks and environment. A dashed spiral starts outside the rings and winds inwards through three evaluation points, showing a design brought closer to fit with each iteration rather than in one step. |
 | `jobs-to-be-done` | entry | — | — | A thick progress arrow runs from a hatched box on the left, the struggling current situation, to a solid box on the right, the desired outcome. A product sits on the arrow, hired to make that progress. Beneath, three strands for the functional, emotional and social dimensions of the job converge on the outcome. |
 | `heart-framework` | entry | — | — | A five-column grid headed H, E, A, R and T for happiness, engagement, adoption, retention and task success. Each column has three rows: a goal, the signal that shows progress toward it, and the metric that tracks the signal. One column is highlighted with arrows from goal to signal to metric. |
 | `progressive-disclosure` | entry | — | — | A settings panel shows three essential rows in full. Below a fold, a reveal control with a chevron leads to advanced options, drawn as stacked panels that sit behind the first and are partly hidden. Only what most people need is shown at first; the rest is one deliberate step away. |

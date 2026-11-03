@@ -14,7 +14,8 @@ Motion exists only to **teach** (show a mechanism changing) or to **confirm** (s
 |---|---|---|
 | Educational plate motion | Hero plates with `animated: true`, homepage constellation | `anim-*` CSS classes, loop ≤ 6s, ≤ 2 elements |
 | Entrance | Hero text and figure (`.rise-in`) | once, 420ms, 6px rise |
-| Hover | Cards, rows (`.lift`) | border/background colour only |
+| Hover | Cards, rows (`.card`, `.lift`) | border colour + soft shadow; never a transform |
+| Sidebar collapse | `.app-sidebar` width 248 ↔ 76px | 220ms width transition, off under reduced motion |
 | Feedback | Quiz answer states, saved/bookmarked, progress bars | colour + text change, no bounce |
 
 **Not allowed:** scroll-triggered animation, parallax, cursor-following effects, moving hit targets. (Tested: a 2px hover lift moved card controls under the pointer and made them unstable — removed.)
@@ -32,8 +33,12 @@ Motion exists only to **teach** (show a mechanism changing) or to **confirm** (s
 | Search dialog (⌘K, /) | `components/search/search-trigger.tsx` | combobox + listbox, ↑↓ Enter Esc |
 | Hero search | `components/search/hero-search.tsx` | combobox, inline results |
 | Level tabs | `components/entry/level-tabs.tsx` | APG tabs, ←→ Home End, preference persisted |
-| Library filters | sidebar ≥1024px; `<dialog>` drawer below | native dialog focus trap, "Show N results" |
-| Library URL state | `history.replaceState` mirror of all filters and view | shareable, no navigation |
+| App navigation | sidebar ≥1024px (collapse persisted, tooltips when collapsed); modal `<dialog>` drawer below | Tab order: skip link → sidebar → topbar → main; Esc closes drawer; route change closes drawer |
+| Library filters | toolbar group ≥1024px; `<dialog>` drawer below | native dialog focus trap, "Show N results" |
+| Library sort & paging | sort select (mirrored to `?sort=`), "Show 24 more" button with a "Showing n of N" count | native |
+| Library URL state | `history.replaceState` mirror of all filters (incl. `sub`, `sort`) and view | shareable, no navigation |
+| Steering lab | pointer drag through tunnels (mouse, pen, touch; `touch-action: none` on the stage only) | no keyboard equivalent exists for a steering task — stated in the lab; results table and chart are accessible |
+| CVD simulator | colour pickers + hex fields, live re-render | native inputs, `aria-invalid` on bad hex |
 | Explorers | range inputs + checkboxes | native controls, live readout `aria-live` |
 | Curriculum levels | `<details>` disclosure | native |
 | Bookmarks on cards | separate button above the card link overlay | no nested interactive elements |

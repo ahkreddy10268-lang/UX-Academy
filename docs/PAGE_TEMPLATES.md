@@ -1,21 +1,33 @@
-# Page templates
+# Page templates (v3)
+
+Every page renders inside the single workspace frame (`app/layout.tsx`: sidebar · topbar · `main.workspace`). Pages never add a second outer frame.
+
+## Family A — Workspace (sans titles, panels, grids)
 
 | Template | Route(s) | Structure |
 |---|---|---|
-| **Home** | `/` | Hero (headline, lede, hero search, CTAs, constellation figure) → continue learning (real local data) → disciplines (10 subject tiles, real counts) → featured concept (Fitts, on its wash) → evidence ledger (all published entries placed by evidence class) → learning paths (4 path cards) → labs preview → connected knowledge (relation pairs with plates and notes) → start here (3 cards) |
-| **Library** | `/library` | Editorial header with counts → search + knowledge-type strip → filter sidebar (drawer on mobile) → toolbar (count, Grid/List/A–Z) → results: featured + formula + standard cards; planned topics in a separate, labelled section |
-| **Concept** | `/library/[slug]` | Subject rule → breadcrumbs → hero (type + subject, title, alternate names, summary, evidence/level/reading/verified, actions) ‖ hero plate (animated + pause, Pl. caption) → definition & objectives → visual explanation (explorer) → three-level explanation tabs → formula & calculator & curve → method / standard → lab callout → origin → application → use/avoid/limits/misconceptions → illustrated connections → practice → evidence ledger panel + references → notes → prev/next; sticky TOC |
-| **Planned topic** | `/library/[slug]` (no entry) | Same URL as the future entry; dashed-framed subject plate captioned "not yet researched"; glossary definition; existing connections |
-| **Subject index** | `/topics` | Families (colour key) → subject tiles |
-| **Subject** | `/topics/[domain]` | Subject rule, hero with subject plate, coverage, subcategory jump links → per subcategory: published cards + planned chips → related paths → prev/next subject |
-| **Paths index** | `/learn` | Path cards (plate, level ladder, lessons/exercises/minutes, progress) |
-| **Path** | `/learn/[id]` | Hero (stats, progress, start lesson 1) → curriculum: Level accordions → lesson rows (thumb, type, exercise count, minutes, state) → level test row → practice links; sidebar: audience, objectives, prerequisites, completion |
-| **Lesson** | `/learn/[id]/lesson/[slug]` | Lesson rail → header ‖ plate → objectives → level-matched explanation (+ analogy / practice / open questions) → explorer → "watch out for" misconception → knowledge check (level questions) → exercise → complete/save → prev/next lesson or level test |
-| **Level test** | `/learn/[id]/level/[n]` | All quiz questions from the level's lessons, explained answers, revision links |
-| **Formula Lab** | `/formulas` | Search + category nav → grouped formula cards with plates and expressions |
-| **Formula** | `/formulas/[id]` | Hero ‖ plate → expression, variables, calculator, response curve (+ data table), assumptions, steps, worked example, interpretation, errors, limits, alternatives → references |
-| **Labs** | `/labs`, `/labs/[id]` | Grouped by kind (experiment / simulation / tool) with plates; lab page labels kind explicitly ("measures you" vs "nothing is measured"), assumptions, concepts |
-| **Graph** | `/graph` | Controls → subject-coloured force layout + selected-concept panel → list alternative |
-| **Glossary** | `/glossary` | Sticky filter + letters → definitions with related links, "entry" markers |
-| **Practice** | `/practice/*` | Stats → quiz / flashcards / workshops (illustrated) |
-| Comparison, Sources, Coverage, Method, My learning, 404 | — | Shared PageHeader; comparison shows both plates; 404 uses the IA "you are here" plate |
+| **Home** | `/` | Gradient hero (headline with editorial accent, lede, hero search, Browse / Start CTAs, constellation figure, real stat strip) → learning panel (local data or honest empty state) → 10 subject tiles (real counts) → featured concept (Fitts, feature panel) → learning journeys (4 path cards) → evidence ledger as a research feature (4 example concepts with class, primary reference, limitation; counts per class) → labs → recommended first (3 cards) |
+| **Library** | `/library` | Header with counts → filter panel: search + sort, subject chips (category overview), type chips, filter toolbar (subject, subcategory, type, level, evidence, includes, status; drawer below 1024px) → results bar (count, clear, Grid/List/A–Z) → container-query grid 4/3/2/1 with auto card variants, featured first, "Show 24 more" paging; planned topics in a labelled section |
+| **Subject index / subject** | `/topics`, `/topics/[domain]` | Pastel subject hero (plate, coverage, subcategory chips) → cards per subcategory |
+| **Paths index** | `/learn` | Path cards with objectives and entry requirements |
+| **Path** | `/learn/[id]` | Pastel hero (stats grid, progress, start) → curriculum level accordions → lesson rows + level test; side panel: audience, objectives, entry requirements, completion |
+| **My Learning** | `/me` | Pastel stat tiles → study next / revise panels → paths, saved, recent, notes, calculations, collections, lab runs → data export/import |
+| Practice, Glossary, Comparisons, Sources, Coverage, Method | — | `PageHeader` + panels |
+
+## Family B — Editorial (Newsreader titles, reading column)
+
+| Template | Route(s) | Structure |
+|---|---|---|
+| **Concept** | `/library/[slug]` | Breadcrumbs → pastel hero panel (type + subject pill, editorial title, serif lede, evidence/level/reading/verified grid, actions ‖ hero plate in a raised card with pause) → definition callout + objectives → visual explanation (explorer) → level tabs (analogy, example, application and research callouts) → formula → method/standard → lab feature panel → origin (attribution note) → application (numbered steps) → use / avoid + limitation and misconception callouts → illustrated connections (cards) → practice → evidence ledger panel + references → notes → prev/next; sticky TOC panel |
+| **Lesson** | `/learn/[id]/lesson/[slug]` | Lesson rail → pastel hero → objectives panel → level-matched explanation with callouts → explorer → "watch out for" → knowledge check → exercise → prev/next |
+| **Planned topic** | `/library/[slug]` (no entry) | Dashed soft hero (clearly not content), concept plate if drawn ahead (e.g. Human-Centred Design) or subject plate, captioned |
+
+## Family C — Experimental (split workspaces)
+
+| Template | Route(s) | Structure |
+|---|---|---|
+| **Formula Lab** | `/formulas` | Sticky category/search panel ‖ grouped formula cards |
+| **Formula** | `/formulas/[id]` | Pastel hero → split: specification (expression, variables, assumptions, steps, worked-example callout, interpretation, errors, limits, alternatives) ‖ sticky calculator workspace (calculator + response curve) → references |
+| **Lab** | `/labs/[id]` | Pastel hero (kind stated) → split: lab (instructions bar, Start/Restart, canvas, results table + chart, interpretation) ‖ side panel (kind of lab, assumptions, concepts) |
+| **Graph** | `/graph` | Controls → force layout + focus panel |
+| 404 | — | IA "you are here" plate |

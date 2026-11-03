@@ -17,9 +17,8 @@ export function PlannedTopic({ item }: { item: TaxonomyItem }) {
 
   return (
     <article>
-      <header className={`${catClass(item.domain)} border-b border-rule pb-10 pt-10 sm:pt-12`}>
-        <Container className="grid items-center gap-10 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)]">
-          <div>
+      <header className={`${catClass(item.domain)} pt-6 sm:pt-8`}>
+        <Container>
           <Breadcrumbs
             items={[
               { href: "/library", label: "Library" },
@@ -28,25 +27,26 @@ export function PlannedTopic({ item }: { item: TaxonomyItem }) {
               { label: item.title },
             ]}
           />
-          <div className="mt-8 max-w-3xl">
+          <div className="mt-5 grid items-center gap-8 rounded-2xl border border-dashed border-rule-strong bg-soft p-5 sm:p-8 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)]">
+          <div className="max-w-3xl">
             <TypeMark type={item.type} />
-            <h1 className="t-page mt-3 text-4xl text-ink-2 sm:text-5xl">{item.title}</h1>
-            <p className="mt-4 inline-flex items-center gap-2 rounded-xs border border-rule px-2 py-1 text-sm text-ink-3">Planned · research pending</p>
+            <h1 className="t-editorial mt-3 text-[2.3rem] text-ink-2 sm:text-[3rem]">{item.title}</h1>
+            <p className="mt-4 inline-flex items-center gap-2 rounded-full border border-rule-strong bg-surface px-3 py-1 text-sm text-ink-2">Planned · research pending</p>
             <p className="mt-5 max-w-read text-ink-2">
               This topic is part of the academy&apos;s subject inventory but has not been researched and written yet. Nothing on this page is
               presented as educational content. {TYPE_DESCRIPTION[item.type]}
             </p>
           </div>
-          </div>
-          <figure className="hidden overflow-hidden rounded-sm border border-dashed border-rule-strong lg:block">
+          <figure className="hidden overflow-hidden rounded-xl border border-rule bg-surface lg:block">
             <ConceptIllustration slug={hasIllustration(item.slug) ? item.slug : item.domain} title={item.title} domain={item.domain} variant="card" decorative />
             <figcaption className="t-caption border-t border-rule bg-surface px-3 py-2">
               {hasIllustration(item.slug) ? "Concept plate drawn ahead of the entry" : `Subject plate · ${domain.title}`} — the topic itself is not yet researched.
             </figcaption>
           </figure>
+          </div>
         </Container>
       </header>
-      <Container className="max-w-3xl space-y-12 pt-12">
+      <Container className="max-w-3xl space-y-12 pb-12 pt-10">
         {term && (
           <section>
             <p className="label">Working definition from the glossary</p>

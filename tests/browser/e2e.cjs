@@ -95,7 +95,7 @@ const check = (name, ok, detail = '') => results.push({ name, ok: !!ok, detail }
   // 10. Library filters
   await p.goto(BASE + '/library', { waitUntil: 'networkidle' });
   const before = await p.getByText(/^\d+ results?/).textContent();
-  await p.locator('aside[aria-label=Filters]').getByLabel('Knowledge type').selectOption('law');
+  await p.getByRole('group', { name: 'Filters' }).getByLabel('Type', { exact: true }).selectOption('law');
   const after = await p.getByText(/^\d+ results?/).textContent();
   check('library type filter narrows results', parseInt(after) < parseInt(before) && parseInt(after) > 0, `${before} → ${after}`);
   await p.getByLabel('Search the library').fill('memory');
@@ -135,7 +135,7 @@ const check = (name, ok, detail = '') => results.push({ name, ok: !!ok, detail }
 
   // 14. Graph focus
   await p.goto(BASE + '/graph?focus=fitts-law', { waitUntil: 'networkidle' });
-  check('graph focus panel shows relations', (await p.locator('aside').textContent()).includes('Steering'));
+  check('graph focus panel shows relations', (await p.locator('main aside').textContent()).includes('Steering'));
 
   // 15. Lab: Fitts experiment runs a trial
   await p.goto(BASE + '/labs/fitts-lab', { waitUntil: 'networkidle' });

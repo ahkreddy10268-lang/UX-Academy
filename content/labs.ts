@@ -128,4 +128,29 @@ export const labs: Lab[] = [
       "Real layouts also adapt content, not just columns — this shows only the grid mechanics.",
     ],
   },
+  {
+    id: "steering-lab",
+    title: "Steering law tunnel experiment",
+    summary: "Drag through straight tunnels of different length and width without touching the walls. Your own times are regressed on A/W to estimate your a and b.",
+    concepts: ["steering-law"],
+    kind: "experiment",
+    assumptions: [
+      "Straight tunnels of constant width only — the simplest case of the steering law (Accot & Zhai 1997); curved and narrowing paths integrate width along the path.",
+      "Timing starts when the pointer enters the tunnel and stops when it reaches the finish; wall contacts are counted as errors and the tunnel is repeated.",
+      "Six conditions, three repetitions each, in random order; there is no practice block, so early trials include learning.",
+      "Mouse, trackpad, pen and touch all work but give different constants — compare results only within one device.",
+    ],
+  },
+  {
+    id: "cvd-lab",
+    title: "Colour vision deficiency simulator",
+    summary: "See your palette and text colours as they may appear with protanopia, deuteranopia and tritanopia, and find the pairs that can only be told apart by hue.",
+    concepts: ["colour-vision-differences", "colour-contrast-ratio"],
+    kind: "simulation",
+    assumptions: [
+      "Uses the severity-1.0 (dichromacy) matrices of Machado, Oliveira & Fernandes (2009), applied in linear sRGB; milder anomalous trichromacy is not simulated.",
+      "Assumes a standard sRGB display; real appearance depends on the screen, ambient light and the individual.",
+      "A simulation cannot tell you what anyone actually sees — test with people who have colour vision deficiencies.",
+    ],
+  },
 ];

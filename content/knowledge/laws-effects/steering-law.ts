@@ -330,6 +330,7 @@ export default defineEntry({
   evidenceNote:
     "Supported by controlled laboratory experiments across tunnel shapes and input devices, with good linear fits at typical scales. Evidence is thinner for soft boundaries, sharp corners and extreme scales, and constants do not transfer between devices or tasks.",
 
+  lab: "steering-lab",
   status: "published",
   quality: {
     classification: true,

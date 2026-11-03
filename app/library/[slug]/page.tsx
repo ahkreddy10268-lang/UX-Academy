@@ -13,6 +13,7 @@ import { NotesPanel } from "@/components/entry/notes-panel";
 import { ReferenceList } from "@/components/entry/references";
 import { PlannedTopic } from "@/components/entry/planned-topic";
 import { Quiz } from "@/components/practice/quiz";
+import { Callout } from "@/components/ui/callout";
 import { Breadcrumbs, Bullets, Container, SectionHeading } from "@/components/ui/layout";
 import { DifficultyMark, EvidenceMark, StatusMark, TypeMark } from "@/components/ui/marks";
 import { Rich, RichParagraphs } from "@/components/ui/rich";
@@ -86,18 +87,16 @@ function Entry({ entry: e }: { entry: KnowledgeEntry }) {
       <div className="space-y-8">
         <RichParagraphs items={lv.beginner.explanation} ctx={ctx} />
         {lv.beginner.analogy && (
-          <aside className="border-l-2 border-accent pl-5">
-            <p className="label">An analogy</p>
-            <p className="prose-read mt-2 italic text-ink-2">
+          <Callout role="analogy">
+            <p className="t-quote text-lg text-ink">
               <Rich text={lv.beginner.analogy} ctx={ctx} />
             </p>
-          </aside>
+          </Callout>
         )}
         {lv.beginner.everydayExamples.length > 0 && (
-          <div>
-            <p className="label">Everyday examples</p>
-            <Bullets className="mt-3 text-ink-2" items={lv.beginner.everydayExamples.map((x, i) => <Rich key={i} text={x} ctx={ctx} />)} />
-          </div>
+          <Callout role="example">
+            <Bullets className="text-ink" items={lv.beginner.everydayExamples.map((x, i) => <Rich key={i} text={x} ctx={ctx} />)} />
+          </Callout>
         )}
         {lv.beginner.vocabulary.length > 0 && (
           <div>
@@ -124,10 +123,9 @@ function Entry({ entry: e }: { entry: KnowledgeEntry }) {
           </div>
         )}
         {lv.intermediate.implementation.length > 0 && (
-          <div>
-            <p className="label">Implementation guidance</p>
-            <Bullets className="mt-3 text-ink-2" items={lv.intermediate.implementation.map((x, i) => <Rich key={i} text={x} ctx={ctx} />)} />
-          </div>
+          <Callout role="application" label="Implementation guidance">
+            <Bullets className="text-ink" items={lv.intermediate.implementation.map((x, i) => <Rich key={i} text={x} ctx={ctx} />)} />
+          </Callout>
         )}
         {lv.intermediate.scenarios.length > 0 && (
           <div>
@@ -141,10 +139,9 @@ function Entry({ entry: e }: { entry: KnowledgeEntry }) {
       <div className="space-y-8">
         <RichParagraphs items={lv.advanced.explanation} ctx={ctx} />
         {lv.advanced.evidence.length > 0 && (
-          <div>
-            <p className="label">Research evidence</p>
-            <RichParagraphs className="mt-3" items={lv.advanced.evidence} ctx={ctx} />
-          </div>
+          <Callout role="research">
+            <RichParagraphs items={lv.advanced.evidence} ctx={ctx} />
+          </Callout>
         )}
         {lv.advanced.debates.length > 0 && (
           <div>
@@ -171,9 +168,8 @@ function Entry({ entry: e }: { entry: KnowledgeEntry }) {
 
   return (
     <article>
-      <header className={`${catClass(e.domain)} border-b border-rule`}>
-        <div aria-hidden className="h-1 bg-c" />
-        <Container className="pb-10 pt-8 sm:pt-10">
+      <header className={catClass(e.domain)}>
+        <Container className="pt-6 sm:pt-8">
           <Breadcrumbs
             items={[
               { href: "/library", label: "Library" },
@@ -182,21 +178,18 @@ function Entry({ entry: e }: { entry: KnowledgeEntry }) {
               { label: e.title },
             ]}
           />
-          <div className="mt-8 grid items-start gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-14">
+          <div className="mt-5 grid items-center gap-8 rounded-2xl bg-c-wash p-5 sm:p-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-12 lg:p-10">
             <div className="rise-in">
               <p className="flex flex-wrap items-center gap-x-3 gap-y-1">
                 <TypeMark type={e.primaryType} secondary={e.secondaryTypes} />
-                <span className="flex items-center gap-1.5 text-xs text-c-ink">
-                  <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-c" />
-                  {domain.shortTitle}
-                </span>
+                <span className="rounded-full bg-surface px-2.5 py-0.5 text-xs font-semibold text-c-ink">{domain.shortTitle}</span>
               </p>
-              <h1 className="t-page mt-3 text-4xl sm:text-5xl">{e.title}</h1>
-              {e.alternateNames.length > 0 && <p className="mt-3 text-sm text-ink-3">Also known as {e.alternateNames.join(" · ")}</p>}
-              <p className="t-lede mt-5 text-xl">
+              <h1 className="t-editorial mt-3 text-[2.4rem] sm:text-[3.2rem]">{e.title}</h1>
+              {e.alternateNames.length > 0 && <p className="mt-3 text-sm text-ink-2">Also known as {e.alternateNames.join(" · ")}</p>}
+              <p className="t-lede-serif mt-4 text-xl">
                 <Rich text={e.summary} ctx={ctx} />
               </p>
-              <dl className="mt-8 flex flex-wrap gap-x-8 gap-y-4 border-t border-rule pt-5 text-sm">
+              <dl className="mt-6 grid grid-cols-2 gap-px overflow-hidden rounded-lg bg-rule text-sm ring-1 ring-rule [&>div]:bg-surface [&>div]:px-3.5 [&>div]:py-3">
                 <div>
                   <dt className="label">Evidence</dt>
                   <dd className="mt-1">
@@ -228,7 +221,7 @@ function Entry({ entry: e }: { entry: KnowledgeEntry }) {
               </div>
             </div>
             <figure className="rise-in">
-              <div className="overflow-hidden rounded-sm border border-rule">
+              <div className="overflow-hidden rounded-xl border border-rule bg-surface shadow-raise">
                 {plate?.animated ? (
                   <MotionFrame label={e.title}>
                     <ConceptIllustration slug={e.slug} title={e.title} domain={e.domain} variant="hero" animate />
@@ -237,7 +230,7 @@ function Entry({ entry: e }: { entry: KnowledgeEntry }) {
                   <ConceptIllustration slug={e.slug} title={e.title} domain={e.domain} variant="hero" />
                 )}
               </div>
-              <figcaption className="t-caption mt-2 flex justify-between gap-4">
+              <figcaption className="t-caption mt-2.5 flex justify-between gap-4 !text-ink-2">
                 <span>
                   {plateNumber(e.slug) ? <span className="formula">Pl. {String(plateNumber(e.slug)).padStart(2, "0")} — </span> : null}
                   {e.title}
@@ -254,9 +247,9 @@ function Entry({ entry: e }: { entry: KnowledgeEntry }) {
         </Container>
       </header>
 
-      <Container className="lg:grid lg:grid-cols-[minmax(0,1fr)_14rem] lg:gap-16">
+      <Container className="lg:grid lg:grid-cols-[minmax(0,1fr)_15rem] lg:gap-14">
         <div className="min-w-0 max-w-[46rem]">
-          <details className="mt-6 rounded-sm border border-rule lg:hidden">
+          <details className="mt-6 rounded-lg border border-rule bg-soft lg:hidden">
             <summary className="cursor-pointer px-4 py-3 text-sm font-medium">On this page</summary>
             <TocList toc={toc} />
           </details>
@@ -265,11 +258,11 @@ function Entry({ entry: e }: { entry: KnowledgeEntry }) {
             <SectionHeading id="definition" kicker="Definition">
               What it is
             </SectionHeading>
-            <div className="rounded-sm border border-rule bg-surface p-6">
+            <Callout role="definition">
               <p className="prose-read">
                 <Rich text={e.definition} ctx={ctx} />
               </p>
-            </div>
+            </Callout>
             <div className="mt-8">
               <p className="label">You will be able to</p>
               <Bullets className="mt-3 text-ink-2" items={e.learningObjectives} />
@@ -392,13 +385,13 @@ function Entry({ entry: e }: { entry: KnowledgeEntry }) {
           )}
 
           {lab && (
-            <aside className="mt-16 flex flex-col gap-4 rounded-sm border border-rule bg-sunken p-6 sm:flex-row sm:items-center sm:justify-between">
+            <aside className="bg-feature mt-16 flex flex-col gap-4 rounded-xl border border-rule p-6 sm:flex-row sm:items-center sm:justify-between">
               <div>
                 <p className="label">Interactive lab</p>
-                <p className="display mt-1 text-lg">{lab.title}</p>
+                <p className="t-sub mt-1 text-lg">{lab.title}</p>
                 <p className="mt-1 text-sm text-ink-2">{lab.summary}</p>
               </div>
-              <Link href={`/labs/${lab.id}`} className="inline-flex h-10 shrink-0 items-center rounded-sm bg-ink px-4 text-sm font-medium text-paper hover:bg-ink-2">
+              <Link href={`/labs/${lab.id}`} className="inline-flex h-10 shrink-0 items-center rounded-sm bg-accent px-4 text-sm font-medium text-surface hover:bg-accent-ink">
                 Open the lab
               </Link>
             </aside>
@@ -425,10 +418,9 @@ function Entry({ entry: e }: { entry: KnowledgeEntry }) {
               </p>
               <RichParagraphs className="mt-4" items={e.origin.narrative} ctx={ctx} />
               {e.origin.attributionNote && (
-                <p className="mt-5 border-l-2 border-warn pl-4 text-sm text-ink-2">
-                  <span className="font-medium text-ink">Attribution note. </span>
-                  {e.origin.attributionNote}
-                </p>
+                <Callout role="note" label="Attribution note" className="mt-6 text-sm">
+                  <p className="text-ink-2">{e.origin.attributionNote}</p>
+                </Callout>
               )}
             </section>
           )}
@@ -461,7 +453,7 @@ function Entry({ entry: e }: { entry: KnowledgeEntry }) {
                 <ol className="mt-3 space-y-3">
                   {e.application.steps.map((s, i) => (
                     <li key={i} className="grid grid-cols-[2rem_1fr] gap-2">
-                      <span className="formula text-sm text-accent">{String(i + 1).padStart(2, "0")}</span>
+                      <span className="formula grid h-6 w-6 place-items-center rounded-full bg-accent-wash text-xs text-accent-ink">{i + 1}</span>
                       <span className="text-ink-2">
                         <Rich text={s} ctx={ctx} />
                       </span>
@@ -491,32 +483,30 @@ function Entry({ entry: e }: { entry: KnowledgeEntry }) {
                   <Bullets className="mt-3 text-ink-2" items={e.advantages.map((x, i) => <Rich key={i} text={x} ctx={ctx} />)} />
                 </div>
               )}
-              <div>
-                <p className="label">Limitations</p>
-                <Bullets className="mt-3 text-ink-2" items={e.limitations.map((x, i) => <Rich key={i} text={x} ctx={ctx} />)} />
-              </div>
             </div>
+            <Callout role="limitation" className="mt-8">
+              <Bullets className="text-ink" items={e.limitations.map((x, i) => <Rich key={i} text={x} ctx={ctx} />)} />
+            </Callout>
             {e.misconceptions.length > 0 && (
-              <div className="mt-10">
-                <p className="label">Common misunderstandings</p>
-                <dl className="mt-3 divide-y divide-rule border-y border-rule">
+              <Callout role="misconception" label="Common misunderstandings" className="mt-6">
+                <dl className="divide-y divide-c-soft">
                   {e.misconceptions.map((m, i) => (
-                    <div key={i} className="py-4">
+                    <div key={i} className="py-3 first:pt-0 last:pb-0">
                       <dt className="font-medium text-ink">
-                        <span className="mr-2 text-accent" aria-hidden>
+                        <span className="mr-2 text-c-ink" aria-hidden>
                           ✕
                         </span>
                         <span className="sr-only">Myth: </span>
                         {m.myth}
                       </dt>
-                      <dd className="mt-1.5 pl-6 text-ink-2">
+                      <dd className="mt-1.5 pl-6 text-ink">
                         <span className="sr-only">Reality: </span>
                         <Rich text={m.reality} ctx={ctx} />
                       </dd>
                     </div>
                   ))}
                 </dl>
-              </div>
+              </Callout>
             )}
           </section>
 
@@ -548,7 +538,7 @@ function Entry({ entry: e }: { entry: KnowledgeEntry }) {
                       const target = entryBySlug.get(r.to);
                       const t = target ?? taxonomyBySlug.get(r.to);
                       return (
-                        <li key={r.to} className={`${catClass(t?.domain ?? e.domain)} relative grid grid-cols-[4.5rem_minmax(0,1fr)] gap-3 rounded-sm border p-3 ${info.planned ? "border-dashed border-rule-strong" : "border-rule bg-surface lift hover:border-ink-3"}`}>
+                        <li key={r.to} className={`${catClass(t?.domain ?? e.domain)} relative grid grid-cols-[4.5rem_minmax(0,1fr)] gap-3 rounded-md border p-3 ${info.planned ? "border-dashed border-rule-strong bg-soft" : "card"}`}>
                           <div className="overflow-hidden rounded-xs border border-rule">
                             {target ? <ConceptIllustration slug={target.slug} title={target.title} domain={target.domain} decorative /> : <div className="aspect-[4/3] bg-c-wash" />}
                           </div>
@@ -653,12 +643,12 @@ function Entry({ entry: e }: { entry: KnowledgeEntry }) {
             <SectionHeading id="evidence" kicker="Evidence">
               How well supported is this?
             </SectionHeading>
-            <div className="overflow-hidden rounded-sm border border-rule bg-surface">
-              <div className="border-b border-rule p-5">
+            <div className="overflow-hidden rounded-xl border border-rule bg-surface shadow-card">
+              <div className="border-b border-rule bg-soft p-5">
                 <p className="label">Evidence ledger</p>
                 <ol className="mt-3 grid grid-cols-2 gap-1 sm:grid-cols-4" aria-label="Evidence scale, strongest to most contested">
                   {EVIDENCE_ORDER.map((ev) => (
-                    <li key={ev} aria-current={ev === e.evidence ? "true" : undefined} className={`rounded-xs border px-1.5 py-1.5 text-[11px] leading-tight ${ev === e.evidence ? "border-ink bg-ink text-paper" : "border-rule text-ink-3"}`}>
+                    <li key={ev} aria-current={ev === e.evidence ? "true" : undefined} className={`rounded-sm border px-2 py-1.5 text-[11px] leading-tight ${ev === e.evidence ? "border-accent bg-accent-wash font-semibold text-accent-ink" : "border-rule bg-surface text-ink-3"}`}>
                       {EVIDENCE_LABEL[ev]}
                     </li>
                   ))}
@@ -692,6 +682,7 @@ function Entry({ entry: e }: { entry: KnowledgeEntry }) {
                   </ul>
                   <p className="t-sub mt-5 text-sm">Key limitations</p>
                   <Bullets className="mt-2 text-sm text-ink-2" items={e.limitations.slice(0, 3).map((x, i) => <Rich key={i} text={x} ctx={ctx} />)} />
+                  <p className="mt-3 text-xs text-ink-3">Repeated from “When to use” so the evidence can be read on its own.</p>
                 </div>
               </div>
             </div>
@@ -714,7 +705,7 @@ function Entry({ entry: e }: { entry: KnowledgeEntry }) {
           </section>
 
           {(prev || next) && (
-            <nav aria-label="More in this subcategory" className="mt-16 grid grid-cols-2 gap-4 border-t border-rule pt-6 text-sm">
+            <nav aria-label="More in this subcategory" className="mt-16 grid grid-cols-2 gap-4 pb-12 text-sm [&_a]:block [&_a]:rounded-lg [&_a]:border [&_a]:border-rule [&_a]:p-4 [&_a:hover]:border-rule-strong">
               <div>
                 {prev && (
                   <Link href={`/library/${prev.slug}`} className="group">
@@ -736,7 +727,7 @@ function Entry({ entry: e }: { entry: KnowledgeEntry }) {
         </div>
 
         <aside className="hidden lg:block">
-          <div className="sticky top-24 pt-12">
+          <div className="sticky top-24 mt-12 rounded-lg border border-rule bg-soft p-4">
             <p className="label">On this page</p>
             <TocList toc={toc} />
             <CitedCount e={e} />
@@ -752,7 +743,7 @@ function TocList({ toc }: { toc: [string, string][] }) {
     <ol className="space-y-1 px-4 pb-3 pt-2 text-sm lg:px-0 lg:pt-3">
       {toc.map(([id, label]) => (
         <li key={id}>
-          <a href={`#${id}`} className="block border-l border-rule py-1 pl-3 text-ink-2 hover:border-accent hover:text-ink">
+          <a href={`#${id}`} className="block rounded-xs border-l-2 border-transparent py-1 pl-3 text-ink-2 hover:border-accent hover:bg-surface hover:text-ink">
             {label}
           </a>
         </li>

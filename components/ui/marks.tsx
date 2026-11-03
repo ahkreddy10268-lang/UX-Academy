@@ -13,7 +13,7 @@ import {
 export function TypeMark({ type, secondary = [] }: { type: KnowledgeType; secondary?: KnowledgeType[] }) {
   return (
     <span className="inline-flex items-baseline gap-1.5" title={TYPE_DESCRIPTION[type]}>
-      <span className="label !text-accent">{TYPE_LABEL[type]}</span>
+      <span className="label !text-rubric">{TYPE_LABEL[type]}</span>
       {secondary.length > 0 && <span className="label">· {secondary.map((t) => TYPE_LABEL[t]).join(" · ")}</span>}
     </span>
   );
@@ -40,7 +40,7 @@ export function EvidenceMark({ evidence, showLabel = true }: { evidence: Evidenc
             strokeWidth="1"
           />
         ))}
-        {evidence === "contested" && <path d="M0 11 L14 1" className="stroke-accent" strokeWidth="1.5" />}
+        {evidence === "contested" && <path d="M0 11 L14 1" className="stroke-rubric" strokeWidth="1.5" />}
       </svg>
       {showLabel && <span>{EVIDENCE_LABEL[evidence]}</span>}
     </span>

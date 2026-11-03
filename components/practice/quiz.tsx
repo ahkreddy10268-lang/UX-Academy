@@ -179,7 +179,7 @@ export function Quiz({
                   </Link>
                 </p>
               )}
-              <button type="button" onClick={next} className="mt-4 h-9 rounded-sm bg-ink px-4 text-sm font-medium text-paper hover:bg-ink-2">
+              <button type="button" onClick={next} className="mt-4 h-9 rounded-sm bg-accent px-4 text-sm font-medium text-surface hover:bg-accent-ink">
                 {index + 1 < questions.length ? "Next question" : "See result"}
               </button>
             </div>

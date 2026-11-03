@@ -2,6 +2,8 @@
 
 ## Navigation model
 
+> **v3 (D-026):** navigation now lives in a persistent sidebar grouped by activity — **Overview** (Home) · **Learn** (Learn, Knowledge Library) · **Experiment** (Formula Lab, Labs, Practice) · **Explore** (Graph, Glossary) · **Personal** (My Learning) · **More** (Comparisons, Sources, Coverage, Method). The topbar carries search, theme and My Learning; below 1024px the same groups open in a drawer. The activity-first principle below is unchanged.
+
 The spec proposed 15 primary items. That many top-level destinations would exceed what a header can show legibly and blur the distinction between *ways of studying* and *subjects*. Decision (see DECISION_LOG D-007): **primary navigation is organised by activity; subjects live inside the Library.**
 
 | Primary (header) | Purpose | Spec items it absorbs |
@@ -45,4 +47,4 @@ Breadcrumb → type label → title → alternate names → summary → evidence
 
 ## URL scheme
 
-`/library/<slug>` entries and planned topics · `/topics/<domain>` · `/formulas/<formula-id>` · `/labs/<lab-id>` · `/learn/<path-id>` · `/compare/<id>` · `/practice/workshops/<id>` · `/glossary#<term>` · `/graph?focus=<slug>` · `/library?q=&domain=&type=&level=&evidence=&scope=&feature=&view=` (all filters and the view are shareable).
+`/library/<slug>` entries and planned topics · `/topics/<domain>` · `/formulas/<formula-id>` · `/labs/<lab-id>` · `/learn/<path-id>` · `/compare/<id>` · `/practice/workshops/<id>` · `/glossary#<term>` · `/graph?focus=<slug>` · `/library?q=&domain=&sub=&type=&level=&evidence=&scope=&feature=&sort=&view=` (all filters and the view are shareable).

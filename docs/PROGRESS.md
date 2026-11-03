@@ -1,6 +1,6 @@
 # Progress register
 
-_Last updated: 2026-11-03 (session 2 — visual & product redesign)_
+_Last updated: 2026-11-03 (session 3 — v3 Pastel Editorial Workspace)_
 
 ## State
 
@@ -64,7 +64,25 @@ First meaningful release is complete and verified. All Definition-of-Done items 
 - Plates for most planned topics do not exist; planned pages show the subject plate, captioned as such.
 - Explorers exist for 7 concepts; others show the static hero plate.
 
-## Next task (precise) — supersedes the one below
+## Session 3 — v3 Pastel Editorial Workspace (not committed; awaiting owner authorisation)
+
+**Implemented**
+- Design system v3: cool neutral canvas, action indigo, rubric heritage accent, explicit pastel washes (dark computed), radii 6–24, four soft shadows, selective gradients, Plex Sans headings + Newsreader editorial roles, surface recipes; `tests/tokens.test.ts` gates contrast in both themes.
+- App shell: grouped collapsible sidebar (248/76px, persisted, tooltips), 68px topbar (search, theme, My Learning), single rounded workspace frame, modal drawer below 1024px, a custom 30-glyph icon set; footer reduced to a colophon.
+- Flagship pages: homepage dashboard (gradient hero with stats; learning panel from real local data; subject tiles; featured concept; journeys; evidence ledger research feature; labs; recommendations). Library: toolbar filters with subcategory, sort, subject/type chips, 4/3/2/1 container grid, 8 auto card variants, paging, URL state. Concept page: pastel hero, 9 callout roles, Fitts explorer with approach direction and an easy/difficult comparison, TOC panel, evidence panel.
+- Platform: path cards with objectives and entry requirements; path, lesson, planned-topic heroes; Formula Lab split workspace; lab workspace with side panel; pastel My Learning tiles; practice stats; every route restyled through shared primitives.
+- New labs: **steering-law tunnel experiment** and **colour-vision-deficiency simulator** (Machado et al. 2009, DOI verified; ΔE*ab). New tested functions: `widthAlongApproach`, `simulateCvd`, `srgbToLab`, `deltaE76`. New verified sources: `mackenzie-buxton-1992`, `machado-oliveira-fernandes-2009`.
+- New plate: Human-Centred Design (68 plates).
+
+**Verified** — see docs/VISUAL_QA.md (129 unit tests, 42 + 45 e2e, 152 axe audits with 0 violations, 120 responsive overflow checks, 60 screenshots reviewed).
+
+## Next task (precise)
+
+1. Get the owner's review of the v3 screenshots, then commit (authorisation required).
+2. Write the `colour-vision-differences` entry (planned taxonomy slug, domain `visual`): cite `machado-oliveira-fernandes-2009`, link `cvd-lab` and `colour-contrast-ratio`, draw its plate. Then `npm run content:index && npm run sources:verify -- <new ids> && npm run check && npm run docs:generate`.
+
+## Earlier next task (session 2) — still open
+
 
 Write the **Foundations gap** entries (see docs/ROADMAP.md), starting with `user-experience`, and draw its plate in `components/illustrations/concepts/frameworks-visual.tsx`; then `npm run content:index && npm run check && npm run docs:generate` and re-run `tests/browser/e2e-redesign.cjs`.
 

@@ -26,33 +26,47 @@ export default async function LabPage({ params }: PageProps<"/labs/[id]">) {
   return (
     <>
       <PageHeader cat={catClass(domain)} eyebrow={lab.kind === "experiment" ? "Experiment · measures you" : lab.kind === "tool" ? "Tool" : "Simulation · illustrative, nothing is measured"} title={lab.title} lede={lab.summary} crumbs={[{ href: "/labs", label: "Labs" }, { label: lab.title }]} aside={<ConceptIllustration slug={c?.slug ?? domain} title={lab.title} domain={domain} variant="hero" decorative />} />
-      <Container className={`${catClass(domain)} pt-10`}>
-        <LabView id={lab.id} />
-        <div className="mt-14 grid gap-10 border-t border-rule pt-8 md:grid-cols-2">
-          <div>
-            <p className="label">Assumptions behind this lab</p>
-            <Bullets className="mt-3 text-sm text-ink-2" items={lab.assumptions} />
+      <Container className={`${catClass(domain)} pb-12 pt-6`}>
+        <div className="grid gap-8 xl:grid-cols-[minmax(0,1fr)_18rem]">
+          <div className="min-w-0">
+            <LabView id={lab.id} />
           </div>
-          <div>
-            <p className="label">Learn the concepts</p>
-            <ul className="mt-3 space-y-1.5 text-sm">
-              {lab.concepts.map((c) => {
-                const info = resolveSlug(c);
-                return (
-                  <li key={c}>
-                    {info ? (
-                      <Link className={info.planned ? "underline decoration-dotted" : "link"} href={info.href}>
-                        {info.title}
-                        {info.planned && " (planned)"}
-                      </Link>
-                    ) : (
-                      c
-                    )}
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
+          <aside aria-label="About this lab" className="space-y-5 text-sm xl:sticky xl:top-24 xl:self-start">
+            <div className="rounded-lg border border-rule bg-soft p-4">
+              <p className="label">What kind of lab</p>
+              <p className="mt-1.5 text-ink">
+                {lab.kind === "experiment"
+                  ? "An experiment: every number comes from your own trials in this browser."
+                  : lab.kind === "tool"
+                    ? "A tool: it calculates from what you enter."
+                    : "A simulation: it illustrates a model. Nothing about you is measured."}
+              </p>
+            </div>
+            <div className="rounded-lg border border-rule bg-soft p-4">
+              <p className="label">Assumptions</p>
+              <Bullets className="mt-2 text-ink-2" items={lab.assumptions} />
+            </div>
+            <div className="rounded-lg border border-rule bg-soft p-4">
+              <p className="label">Learn the concepts</p>
+              <ul className="mt-2 space-y-1.5">
+                {lab.concepts.map((c) => {
+                  const info = resolveSlug(c);
+                  return (
+                    <li key={c}>
+                      {info ? (
+                        <Link className={info.planned ? "underline decoration-dotted" : "link"} href={info.href}>
+                          {info.title}
+                          {info.planned && " (planned)"}
+                        </Link>
+                      ) : (
+                        c
+                      )}
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          </aside>
         </div>
       </Container>
     </>

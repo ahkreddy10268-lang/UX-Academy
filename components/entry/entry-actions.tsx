@@ -95,9 +95,9 @@ function CollectionMenu({ slug }: { slug: string }) {
               value={name}
               onChange={(e) => setName(e.target.value)}
               placeholder="New collection"
-              className="h-8 min-w-0 flex-1 rounded-xs border border-line-control bg-paper px-2 text-sm"
+              className="h-8 min-w-0 flex-1 rounded-xs border border-line-control bg-surface px-2 text-sm"
             />
-            <button className="h-8 rounded-xs bg-ink px-2.5 text-sm font-medium text-paper">Add</button>
+            <button className="h-8 rounded-xs bg-accent px-2.5 text-sm font-medium text-surface">Add</button>
           </form>
         </div>
       )}

@@ -9,6 +9,7 @@ and `npm i -D playwright` locally — not committed as a dependency).
 npm run build && npx next start -p 3100
 node tests/browser/crawl.cjs / /library /library/fitts-law   # status codes, console errors, failed requests
 node tests/browser/e2e.cjs                                    # 42 interaction checks (search, tabs, persistence, quiz, calculators, export/import, theme, mobile)
+node tests/browser/e2e-redesign.cjs                           # 45 v2/v3 checks (library paging/sort/subcategory/URL state, sidebar collapse + tooltips, explorers, new labs, motion, 390px overflow)
 AXE_PATH=/path/to/axe.min.js node tests/browser/a11y.cjs / /library   # axe-core WCAG 2.2 AA, light + dark
 ```
 

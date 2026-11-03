@@ -70,9 +70,9 @@ export default async function FormulaPage({ params }: PageProps<"/formulas/[id]"
           ) : null}
         </p>
       </PageHeader>
-      <Container className="max-w-[52rem] pt-10">
-        <FormulaBlock formula={formula} ctx={ctx} headingLevel={2} />
-        <section className="pt-16" aria-labelledby="refs">
+      <Container className="pb-12 pt-8">
+        <FormulaBlock formula={formula} ctx={ctx} headingLevel={2} layout="split" />
+        <section className="max-w-[46rem] pt-16" aria-labelledby="refs">
           <SectionHeading id="refs" kicker="Sources">
             References
           </SectionHeading>

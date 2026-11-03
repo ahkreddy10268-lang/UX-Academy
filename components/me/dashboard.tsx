@@ -65,37 +65,39 @@ export function Dashboard({ meta, paths, questionEntry }: { meta: Record<string,
     download(`ux-academy-notes-${new Date().toISOString().slice(0, 10)}.md`, md, "text/markdown");
   }
 
-  const section = "border-t border-rule pt-8";
-  const h2 = "display text-2xl";
+  const section = "panel p-5 sm:p-6";
+  const h2 = "t-section text-lg";
 
   return (
-    <div className="space-y-14">
-      <dl className="grid grid-cols-2 gap-6 border-y border-rule py-6 sm:grid-cols-5">
-        {[
-          ["Entries completed", completed.length],
-          ["Entries visited", s.history.length],
-          ["Cards due", dueCards],
-          ["Questions answered", Object.keys(s.quiz).length],
-          ["Notes", notes.length],
-        ].map(([k, v]) => (
-          <div key={k}>
-            <dt className="label">{k}</dt>
-            <dd className="formula mt-1 text-3xl">{v}</dd>
+    <div className="space-y-6">
+      <dl className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
+        {(
+          [
+            ["Entries completed", completed.length, "cat-green"],
+            ["Entries visited", s.history.length, "cat-blue"],
+            ["Cards due", dueCards, "cat-amber"],
+            ["Questions answered", Object.keys(s.quiz).length, "cat-violet"],
+            ["Notes", notes.length, "cat-teal"],
+          ] as const
+        ).map(([k, v, cat]) => (
+          <div key={k} className={`${cat} rounded-lg bg-c-wash p-4`}>
+            <dt className="text-xs font-semibold text-c-ink">{k}</dt>
+            <dd className="t-page tabular mt-1 text-3xl text-ink">{v}</dd>
           </div>
         ))}
       </dl>
 
       {empty && (
-        <div className="rounded-sm border border-dashed border-rule-strong p-8">
-          <p className="display text-xl">Nothing here yet</p>
+        <div className="rounded-lg border border-dashed border-rule-strong bg-soft p-6">
+          <p className="t-sub text-lg">Nothing here yet</p>
           <p className="mt-2 max-w-read text-ink-2">
             Start with a <Link className="link" href="/learn">learning path</Link> or open any entry in the <Link className="link" href="/library">library</Link>. Saved entries, notes, quiz results and lab runs will collect here.
           </p>
         </div>
       )}
 
-      <div className="grid gap-12 lg:grid-cols-2">
-        <section aria-labelledby="next">
+      <div className="grid gap-6 lg:grid-cols-2">
+        <section aria-labelledby="next" className={section}>
           <h2 id="next" className={h2}>
             Study next
           </h2>
@@ -110,7 +112,7 @@ export function Dashboard({ meta, paths, questionEntry }: { meta: Record<string,
             ))}
           </ul>
         </section>
-        <section aria-labelledby="revise">
+        <section aria-labelledby="revise" className={section}>
           <h2 id="revise" className={h2}>
             Revise
           </h2>
@@ -164,7 +166,7 @@ export function Dashboard({ meta, paths, questionEntry }: { meta: Record<string,
         </ul>
       </section>
 
-      <div className="grid gap-12 lg:grid-cols-2">
+      <div className="grid gap-6 lg:grid-cols-2">
         <section aria-labelledby="saved" className={section}>
           <h2 id="saved" className={h2}>
             Saved entries
@@ -211,7 +213,7 @@ export function Dashboard({ meta, paths, questionEntry }: { meta: Record<string,
             Notes
           </h2>
           {notes.length > 0 && (
-            <button type="button" onClick={exportNotes} className="h-9 rounded-sm border border-rule px-3 text-sm font-medium hover:border-rule-strong">
+            <button type="button" onClick={exportNotes} className="h-9 rounded-sm border border-line-control bg-surface px-3 text-sm font-medium hover:border-ink-3">
               Export notes as Markdown
             </button>
           )}
@@ -235,7 +237,7 @@ export function Dashboard({ meta, paths, questionEntry }: { meta: Record<string,
         )}
       </section>
 
-      <div className="grid gap-12 lg:grid-cols-2">
+      <div className="grid gap-6 lg:grid-cols-2">
         <section aria-labelledby="calcs" className={section}>
           <h2 id="calcs" className={h2}>
             Formula collection
@@ -323,7 +325,7 @@ export function Dashboard({ meta, paths, questionEntry }: { meta: Record<string,
           Stored in this browser&apos;s local storage only. Export a JSON backup to keep it safe or move it to another browser; importing replaces what is here.
         </p>
         <div className="mt-4 flex flex-wrap gap-3">
-          <button type="button" onClick={() => download(`ux-academy-backup-${new Date().toISOString().slice(0, 10)}.json`, exportJson(), "application/json")} className="h-10 rounded-sm bg-ink px-4 text-sm font-medium text-paper">
+          <button type="button" onClick={() => download(`ux-academy-backup-${new Date().toISOString().slice(0, 10)}.json`, exportJson(), "application/json")} className="h-10 rounded-sm bg-accent px-4 text-sm font-medium text-surface">
             Export backup (JSON)
           </button>
           <button type="button" onClick={() => fileInput.current?.click()} className="h-10 rounded-sm border border-rule px-4 text-sm font-medium hover:border-rule-strong">

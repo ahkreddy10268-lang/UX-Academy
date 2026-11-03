@@ -12,6 +12,7 @@
 | 5 Interactive features | ✅ search, filters, graph, Formula Lab (25), labs (10), quizzes, flashcards, workshops, comparisons, glossary, paths, My learning |
 | 6 Testing & verification | ✅ unit + content tests, browser crawl, e2e, axe audit |
 | 7 Long-term expansion | ▶ ongoing — below |
+| v3 Pastel Editorial Workspace | ✅ implemented and verified, uncommitted pending authorisation |
 
 ## Next content (priority order — fill subjects with the lowest coverage first, foundational topics first)
 
@@ -29,7 +30,7 @@
 
 ## Features
 
-- Labs still to build: Steering law tunnel experiment; colour-vision-deficiency simulation in the contrast lab (needs a verified source for the simulation matrices). The responsive layout simulator shipped in v2.
+- ✅ v3 shipped the steering-law tunnel experiment and the colour-vision-deficiency simulator (Machado et al. 2009). Next lab ideas: anomalous-trichromacy severities (needs the paper's tabulated matrices — do not interpolate), curved-tunnel steering, an ISO 9241-411 throughput task.
 - Explorers for more concepts (Jakob's law familiar vs unfamiliar patterns, progressive disclosure inline, typography hierarchy, colour HSV manipulation).
 - Plates for planned topics as their entries are written (tests require a plate for every published entry).
 - Case studies as a content type (schema exists in the knowledge type list; needs a template).
@@ -40,6 +41,11 @@
 - Offline support (PWA) for a fully local academy.
 
 ## Known issues
+
+- v3: the owner's dashboard reference images were not available; the v3 look follows the written brief and should be checked against the images.
+- v3: the library subject/type chip rows scroll horizontally on narrow widths — fine for touch, less discoverable with a mouse (consider wrapping at ≥1280px).
+- v3: the steering lab has no keyboard equivalent (inherent to a steering task); the lab says so.
+- v3: the coverage and sources stat strips still use the v2 inline-stat style (functional, less pastel).
 
 - Unknown slugs under dynamic routes (`/library/x`, `/labs/x`, `/learn/x`, …) render the not-found page but with HTTP 200 (Cache Components + streaming; `dynamicParams` is not allowed). Paths matching no route return 404. Verified 2026-11-03; harmless for a personal static app.
 - Eight URLs block automated verification (ISO, ACM DL, some publisher pages); records are bibliographic and labelled so.

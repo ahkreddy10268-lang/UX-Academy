@@ -6,6 +6,7 @@ import { ConceptIllustration } from "@/components/illustrations/concept-illustra
 import { ConceptExplorer } from "@/components/illustrations/interactive/explorers";
 import { illustrationFor } from "@/components/illustrations/registry";
 import { Quiz } from "@/components/practice/quiz";
+import { Callout } from "@/components/ui/callout";
 import { Breadcrumbs, Bullets, Container } from "@/components/ui/layout";
 import { Rich, RichParagraphs } from "@/components/ui/rich";
 import { entryBySlug, learningPaths } from "@/lib/content";
@@ -52,8 +53,7 @@ export default async function LessonPage({ params }: PageProps<"/learn/[id]/less
 
   return (
     <article className={catClass(e.domain)}>
-      <div aria-hidden className="h-1 bg-c" />
-      <Container className="pt-8">
+      <Container className="pt-6 sm:pt-8">
         <Breadcrumbs items={[{ href: "/learn", label: "Learn" }, { href: `/learn/${id}`, label: path.title }, { href: `/learn/${id}`, label: `Level ${stageIndex + 1}` }, { label: e.title }]} />
         {/* lesson progress rail */}
         <ol className="mt-6 flex gap-1" aria-label={`Lesson ${index + 1} of ${lessons.length}`}>
@@ -65,26 +65,28 @@ export default async function LessonPage({ params }: PageProps<"/learn/[id]/less
         </ol>
       </Container>
 
-      <Container className="grid gap-10 pb-10 pt-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)] lg:gap-14">
-        <div>
-          <p className="label">
+      <Container className="pb-10 pt-6">
+        <div className="grid items-center gap-8 rounded-2xl bg-c-wash p-5 sm:p-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)] lg:gap-12">
+        <div className="min-w-0">
+          <p className="label !text-c-ink">
             Lesson {index + 1} of {lessons.length} · Level {stageIndex + 1} · {DIFFICULTY_LABEL[level]} — {LEVEL_PURPOSE[level]}
           </p>
-          <h1 className="t-page mt-3 text-4xl sm:text-5xl">{e.title}</h1>
-          <p className="t-lede mt-4 text-lg">
+          <h1 className="t-editorial mt-3 text-[2.3rem] sm:text-[3rem]">{e.title}</h1>
+          <p className="t-lede-serif mt-4 text-lg">
             <Rich text={e.summary} ctx={ctx} />
           </p>
-          <p className="mt-4 text-sm text-ink-3">
+          <p className="mt-4 text-sm text-ink-2">
             {TYPE_LABEL[e.primaryType]} · ≈ {minutesForLevel(e, level)} min at this level · {questions.length} knowledge checks
           </p>
         </div>
-        <figure className="overflow-hidden rounded-sm border border-rule">
+        <figure className="overflow-hidden rounded-xl border border-rule bg-surface shadow-raise">
           <ConceptIllustration slug={e.slug} title={e.title} domain={e.domain} variant="hero" />
         </figure>
+        </div>
       </Container>
 
       <Container className="max-w-[46rem] space-y-14 pb-6">
-        <section aria-labelledby="objectives" className="rounded-sm border border-rule bg-surface p-5">
+        <section aria-labelledby="objectives" className="rounded-lg border border-rule bg-soft p-5">
           <h2 id="objectives" className="t-sub text-base">
             In this lesson you will
           </h2>
@@ -92,23 +94,21 @@ export default async function LessonPage({ params }: PageProps<"/learn/[id]/less
         </section>
 
         <section aria-labelledby="learn">
-          <h2 id="learn" className="t-section text-[1.75rem]">
+          <h2 id="learn" className="t-section text-[1.5rem]">
             {level === "beginner" ? "The idea" : level === "intermediate" ? "Applying it" : "Analysing it"}
           </h2>
           <RichParagraphs className="mt-4" items={lv.explanation} ctx={ctx} />
           {"analogy" in lv && lv.analogy && (
-            <aside className="mt-8 border-l-2 border-c pl-5">
-              <p className="label">An analogy</p>
-              <p className="prose-read mt-2 italic text-ink-2">
+            <Callout role="analogy" className="mt-8">
+              <p className="t-quote text-lg">
                 <Rich text={lv.analogy} ctx={ctx} />
               </p>
-            </aside>
+            </Callout>
           )}
           {"implementation" in lv && lv.implementation.length > 0 && (
-            <div className="mt-8">
-              <p className="label">Do this in practice</p>
-              <Bullets className="mt-3 text-ink-2" items={lv.implementation.map((x, i) => <Rich key={i} text={x} ctx={ctx} />)} />
-            </div>
+            <Callout role="application" label="Do this in practice" className="mt-8">
+              <Bullets className="text-ink" items={lv.implementation.map((x, i) => <Rich key={i} text={x} ctx={ctx} />)} />
+            </Callout>
           )}
           {"debates" in lv && lv.debates.length > 0 && (
             <div className="mt-8">
@@ -120,7 +120,7 @@ export default async function LessonPage({ params }: PageProps<"/learn/[id]/less
 
         {explorer && (
           <section aria-labelledby="try">
-            <h2 id="try" className="t-section text-[1.75rem]">
+            <h2 id="try" className="t-section text-[1.5rem]">
               Try it
             </h2>
             <div className="mt-4">
@@ -130,7 +130,7 @@ export default async function LessonPage({ params }: PageProps<"/learn/[id]/less
         )}
 
         {e.misconceptions[0] && (
-          <section aria-labelledby="watch" className="rounded-sm border border-rule bg-c-wash p-5">
+          <section aria-labelledby="watch" className="cat-rose rounded-lg bg-c-wash p-5">
             <h2 id="watch" className="t-sub text-base">
               Watch out for
             </h2>
@@ -143,7 +143,7 @@ export default async function LessonPage({ params }: PageProps<"/learn/[id]/less
 
         {questions.length > 0 && (
           <section aria-labelledby="check">
-            <h2 id="check" className="t-section text-[1.75rem]">
+            <h2 id="check" className="t-section text-[1.5rem]">
               Knowledge check
             </h2>
             <div className="mt-4">
@@ -153,7 +153,7 @@ export default async function LessonPage({ params }: PageProps<"/learn/[id]/less
         )}
 
         {exercise && (
-          <section aria-labelledby="exercise" className="rounded-sm border border-rule bg-surface p-5">
+          <section aria-labelledby="exercise" className="rounded-lg border border-rule bg-surface p-5 shadow-card">
             <p className="label">Exercise · {exercise.kind}</p>
             <h2 id="exercise" className="t-sub mt-1 text-lg">
               {exercise.title}
@@ -173,7 +173,7 @@ export default async function LessonPage({ params }: PageProps<"/learn/[id]/less
         <nav aria-label="Lesson navigation" className="grid grid-cols-2 gap-4 text-sm">
           <div>
             {prev && (
-              <Link href={`/learn/${id}/lesson/${prev.slug}`} className="group block rounded-sm border border-rule p-4 hover:border-ink-3">
+              <Link href={`/learn/${id}/lesson/${prev.slug}`} className="group block rounded-lg border border-rule p-4 hover:border-rule-strong hover:shadow-hover">
                 <span className="label">Previous lesson</span>
                 <span className="mt-1 block text-ink group-hover:text-accent-ink">← {entryBySlug.get(prev.slug)!.title}</span>
               </Link>
@@ -181,12 +181,12 @@ export default async function LessonPage({ params }: PageProps<"/learn/[id]/less
           </div>
           <div className="text-right">
             {next ? (
-              <Link href={`/learn/${id}/lesson/${next.slug}`} className="group block rounded-sm border border-rule p-4 hover:border-ink-3">
+              <Link href={`/learn/${id}/lesson/${next.slug}`} className="group block rounded-lg border border-rule p-4 hover:border-rule-strong hover:shadow-hover">
                 <span className="label">{next.stageIndex !== stageIndex ? `Next: level ${next.stageIndex + 1}` : "Next lesson"}</span>
                 <span className="mt-1 block text-ink group-hover:text-accent-ink">{entryBySlug.get(next.slug)!.title} →</span>
               </Link>
             ) : (
-              <Link href={`/learn/${id}/level/${stageIndex + 1}`} className="group block rounded-sm border border-rule p-4 hover:border-ink-3">
+              <Link href={`/learn/${id}/level/${stageIndex + 1}`} className="group block rounded-lg border border-rule p-4 hover:border-rule-strong hover:shadow-hover">
                 <span className="label">Finish</span>
                 <span className="mt-1 block text-ink group-hover:text-accent-ink">Take the level {stageIndex + 1} test →</span>
               </Link>

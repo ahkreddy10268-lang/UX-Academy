@@ -1,100 +1,103 @@
-# Design system
+# Design system — v3 "Pastel Editorial Workspace"
 
-> **v2 (2026-11-03):** the system below is extended by subject palettes, plates, type roles and educational motion — read docs/UI_UX_DESIGN_DIRECTION.md, ILLUSTRATION_SYSTEM.md and INTERACTION_AND_MOTION_GUIDELINES.md. Where this file says "one accent", "no icons/illustration" or "no motion", v2 supersedes it: rubric remains the only *brand/interaction* accent.
+_v3, 2026-11-03. Supersedes the v1 "rubric" system and the v2 additions. History is in DECISION_LOG D-014 → D-017 → D-026…D-033._
 
-**Direction:** premium editorial + modern academic + minimal + interactive + research-led. The interface should feel like a well-set scholarly publication that you can operate.
+**Direction:** a calm productivity workspace (sidebar, toolbar, one rounded frame, white panels on a cool canvas), combined with a visual encyclopedia (pastel subject fields, explanatory plates) and an editorial reading voice (Newsreader for concept titles and long-form text). The interface should feel like a well-designed tool you study in, not a magazine you scroll.
 
-## Concept: the rubric
+**Why the change from v2:** v2 was a publication. The academy is used for long, repeated sessions: you move between Library, Labs and My Learning dozens of times. A persistent sidebar and a stable app frame reduce re-orientation costs. Pastel fields make twenty subjects identifiable at a glance without loud colour. The editorial serif survives where reading happens, which keeps the academic voice where it matters.
 
-Medieval scribes wrote headings and section marks in red ink — *rubrica* — to guide the reader through dense text. UX Academy uses one red accent in the same way: section marks (the **§** in the wordmark), knowledge-type labels, active states, focus rings and the step numbers of procedures. Everything else is ink on paper. Colour therefore always *means* "navigational emphasis", never decoration.
+## Tokens (`app/globals.css` — the only place values live; tests/tokens.test.ts gates contrast)
 
-## Tokens (`app/globals.css` — the only place values live)
+### Neutrals and action
 
-### Colour
+| Token | Light | Dark | Role |
+|---|---|---|---|
+| `paper` | #f3f6fa | #10131a | canvas behind the app frame |
+| `surface` | #ffffff | #171b24 | workspace frame, cards, inputs |
+| `soft` | #f8fafc | #1c212b | quiet panels inside the workspace (TOC, side panels, readouts) |
+| `sunken` | #ecf0f5 | #0c0f15 | wells: formulas, tracks, segmented controls |
+| `ink` | #1f2532 | #e6e9f0 | primary text — ≥12.3:1 / ≥10.2:1 on every surface and wash |
+| `ink-2` | #475266 | #b3bbc9 | secondary text — ≥6.3:1 / ≥6.4:1 |
+| `ink-3` | #5a6476 | #99a2b3 | muted/meta — ≥4.8:1 on every surface **and every pastel wash** |
+| `rule` / `rule-strong` | #e4e9f0 / #cfd7e2 | #262c38 / #353d4c | decorative hairlines only |
+| `line-control` | #7c879a | #737d90 | form-control borders, ≥3:1 on base surfaces (WCAG 1.4.11) |
+| `accent` | #4c5ead | #99a5ec | action: primary buttons, active nav, selection — ≥4.8:1 |
+| `accent-ink` | #3d4e99 | #bac3f6 | link text, hover — ≥6.1:1 |
+| `accent-wash` | #e7ebf8 | #232a45 | selected/active backgrounds |
+| `rubric` | #a33320 | #e8826b | heritage editorial red: the § wordmark, knowledge-type labels, A–Z letters |
+| `ok` `warn` `info` (+ `-wash`) | | | status, always with a text label |
 
-| Token | Light | Dark | Use | Contrast on paper (L / D) |
-|---|---|---|---|---|
-| `paper` | #faf8f4 | #141311 | page | — |
-| `surface` | #ffffff | #1b1a17 | panels, inputs | — |
-| `sunken` | #f2efe8 | #0f0e0d | formula wells, insets | — |
-| `ink` | #1c1a17 | #ede9e1 | primary text | 16.4 / 15.3 |
-| `ink-2` | #4b4740 | #c0baae | secondary text | 8.7 / 9.6 |
-| `ink-3` | #6b665d | #9c9589 | metadata | 5.4 / 6.3 |
-| `accent` | #a33320 | #ee8b73 | rubric | 6.5 / 7.6 |
-| `rule` / `rule-strong` | #e2ddd3 / #c9c2b4 | #2f2c27 / #4a463f | decorative hairlines | — |
-| `line-control` | #8c857a | #7a746a | form borders (≥3:1, WCAG 1.4.11) | |
-| `ok` `warn` `info` (+ `-wash`) | | | status, always with a text label | ≥4.6 |
+The brief proposed `text-muted #8893A3` and `text-secondary #657184`. Both failed: #8893A3 is 3.11:1 on white, and #657184 is 4.37:1 on sunken and ~4.0–4.4 on the pastel washes. The values above are the nearest tones that pass everywhere. Primary buttons use `bg-accent text-surface`, which gives white text in light mode and dark text on the light accent in dark mode, ≥5.98:1 in both.
 
-All text tokens were checked with the app's own `contrastRatio()` against paper, surface, sunken and accent-wash in both themes (≥4.5:1). Verified in-browser with axe-core: 0 violations across 76 pages × 2 themes.
+### Subject palettes (identity and illustration only — never evidence, status or body text)
+
+Each family has a solid `base` (plates), an `ink` (text and lines on its wash) and a pastel `wash` (fields). Light washes are explicit tokens; dark washes are `color-mix(base 16%, surface)`, so dark mode gets deep tinted fields rather than inverted pastels.
+
+| Family | Wash (L) | Ink (L) | Ink on wash L / D |
+|---|---|---|---|
+| core | #f7e7e2 | #8a2d1c | 7.07 / 6.90 |
+| rose | #f6e2e6 | #8e2a43 | 6.61 / 7.88 |
+| violet | #eae3fb | #4f3591 | 7.50 / 7.95 |
+| teal | #ddf1e8 | #16584c | 7.03 / 8.38 |
+| blue | #dfeafb | #2c4594 | 7.25 / 8.09 |
+| amber | #faf0d9 | #74500a | 6.40 / 8.70 |
+| green | #e8f0e0 | #355c29 | 6.62 / 8.80 |
+| peach | #fbe9dc | #8a431a | 6.14 / 8.44 |
+| cyan | #e0f0f4 | #185766 | 6.92 / 8.71 |
+| indigo | #e9eaf8 | #363380 | 9.06 / 8.08 |
+| slate | #e1f0ec | #30554f | 7.04 / 8.73 |
+
+`.cat-<family>` exposes `--c --c-ink --c-wash --c-soft` (soft = 34% base into surface). Utilities: `bg-c-wash`, `text-c-ink`, `bg-c`, `fill-c-…`.
+
+### Shape and elevation
+
+- **Radii:** `xs 6` chips, badges and small wells · `sm 10` inputs and buttons · `md 12` cards · `lg 16` panels · `xl 20` feature panels and explorers · `2xl 24` the app frame and heroes. Pills use `rounded-full`.
+- **Shadows** (soft, low contrast): `shadow-card` resting cards · `shadow-hover` hovered cards (with a border change; there is never a transform, see D-023) · `shadow-raise` floating art and heroes · `shadow-dialog` dialogs, drawers and search.
+- **Recipes:** `.panel` (white, hairline, `lg`, card shadow) · `.panel-soft` · `.card` (hover recipe built in) · `.chip` (pill; `aria-pressed=true` gives the selected state) · `.bg-hero` · `.bg-feature`.
+- **Selective gradient:** `--grad-hero` (violet → blue → teal washes) is used only on the homepage hero. `.bg-feature` (subject wash → surface) is used only on featured panels: the featured concept, featured cards and the lab call-out. Gradients are never used for text, buttons or data.
+- **Layout:** sidebar 248 / 76px; topbar 68px; workspace frame inset 16px and `2xl`-rounded on ≥1024px; `max-w-page` 80rem inside it. Concept pages use a 46rem article column with a 15rem sticky TOC. Prose is capped at 70ch.
 
 ### Typography
 
-| Role | Family | Notes |
+| Role | Class | Family |
 |---|---|---|
-| Display & long-form reading | **Newsreader** (variable, optical size) | `opsz` 72 for display, 16–24 for text — one family that is genuinely designed for both screen reading and headlines; gives the academic voice without the stiffness of Times-like faces |
-| UI, labels, data | **IBM Plex Sans** | engineered, neutral, excellent at small sizes; its technical character matches labs and tools |
-| Formulas & numbers | **IBM Plex Mono** | tabular figures, unambiguous zero; formulas read as precise artefacts |
+| Hero (home) | `.t-hero` | Plex Sans 600, −0.028em; its accent phrase is `.t-editorial` italic |
+| Page title (workspace pages) | `.t-page` | Plex Sans 600, −0.022em |
+| Section / sub | `.t-section` `.t-sub` | Plex Sans 600 |
+| Editorial titles (concepts, lessons, planned topics, featured concept, evidence ledger) | `.t-editorial` | Newsreader 500, opsz 60 |
+| Quotes, analogies | `.t-quote` | Newsreader italic |
+| Lede | `.t-lede` (sans) / `.t-lede-serif` (concept and lesson heroes) | |
+| Long-form reading | `.prose-read` | Newsreader 18/28, max 70ch |
+| Labels | `.label` | Plex Sans 12/600, +0.06em uppercase — the only uppercase |
+| Formulas, data | `.formula` `.tabular` | Plex Mono / tabular figures |
 
-Scale: major third (1.25) on 16px — `2xs 12 · xs 13 · sm 14 · base 16 · read 18 · lg 20 · xl 25 · 2xl 31 · 3xl 39 · 4xl 49`. Reading measure `max-w-read` = 42rem (≈68ch at 18px). The `.label` style (12px, 600, +0.08em, uppercase) is the only uppercase in the system.
+**Why:** Plex Sans headings make the workspace feel like a tool. They are compact, legible at 13–16px in navigation, and engineered in character. Newsreader is kept where the reader shifts into study mode, so the contrast between the two fonts marks "you are now reading". The risk is that two voices could look inconsistent. The mitigation is that each page family uses exactly one title voice (see PAGE_TEMPLATES.md).
 
-Trade-offs: Newsreader is less familiar than Source Serif or Georgia, and its italics are expressive — used sparingly (analogies, the hero). Alternative pairings considered: Source Serif 4 + Source Sans 3 (safer, less distinctive); Fraunces + Inter (too decorative/generic respectively).
+### Iconography
 
-### Space, shape, elevation
-
-- Spacing: Tailwind's 4px base; sections separated by 64px (`pt-16`), groups by 32px, items by 12–16px.
-- Radius: `xs 2px · sm 4px · md 6px` — nearly square, editorial.
-- Borders over shadows. One shadow (`shadow-raise`) for floating layers only (menus, dialogs).
-- Layout: `max-w-page` 76rem; entry pages = 46rem article + 14rem sticky table of contents.
+`components/shell/icons.tsx` contains one family of 30 glyphs drawn for this product. They sit on a 20×20 grid with a 1.5 stroke and round caps and joins, and have no fills except small dots. Each glyph names an activity, not a brand: a rising path for Learn, volumes for the Library, a flask for Labs, a target for Practice, nodes for the Graph, an open book for the Glossary, a progress ring with a tick for My Learning (deliberately not a person), and a balance for Method. Icons are decorative (`aria-hidden`), and the adjacent text carries the meaning. In the collapsed sidebar the text stays in the accessibility tree and also appears as a tooltip.
 
 ## Components (by responsibility)
 
-| Component | File | Rules |
+| Component | File | Notes |
 |---|---|---|
-| Page header, section heading, breadcrumbs, bullets, empty state | `components/ui/layout.tsx` | Every page starts with `PageHeader`; every major section with `SectionHeading` (kicker + display title) |
-| Type / evidence / status / difficulty marks | `components/ui/marks.tsx` | Typographic labels, not coloured chips; evidence uses a 3-bar glyph + text (never colour alone) |
-| Rich text | `components/ui/rich.tsx` | Planned-topic links are dotted, entry links solid rubric |
-| Level tabs | `components/entry/level-tabs.tsx` | APG tabs with arrow/Home/End; preference persisted; panels pre-rendered |
-| Calculator shell & fields | `components/formula/kit.tsx` | Inputs left, live results right on a sunken well; validation message replaces results; Reset + Save |
-| Quiz | `components/practice/quiz.tsx` | Feedback for the chosen and correct option, "why not" for the rest, revision link |
-| Charts | `components/labs/charts.tsx` | `role="img"` with a data summary; always next to a table |
-| Search | `components/search/*` | `<dialog>` + combobox/listbox with `aria-activedescendant` |
+| Sidebar, mobile drawer, wordmark | `components/shell/sidebar.tsx` | Grouped nav (Overview · Learn · Experiment · Explore · Personal · More). Collapse persists in `ux-academy:sidebar`, applied before paint by the inline script. Collapsed state: labels are visually hidden but stay accessible, with tooltips on hover/focus. The drawer is a native modal `<dialog>` |
+| Topbar | `components/shell/topbar.tsx` | Search field (⌘K / "/"), theme (Auto → Light → Dark), My Learning |
+| Page header | `components/ui/layout.tsx` | Quiet workspace title, or a pastel panel with `cat`; `editorial` switches the title to Newsreader |
+| Callout | `components/ui/callout.tsx` | Nine roles: definition, analogy, example, note, formula, application, research, limitation, misconception. Each has a pastel field + glyph + written label. Use for moments, not paragraphs |
+| Knowledge card | `components/knowledge/knowledge-card.tsx` | Eight variants chosen by `variantFor` (classification decides presentation): standard, featured, formula, research, framework, lab, compact, planned |
+| Category tile | same | Pastel tile with an inset plate and real published/planned counts |
+| Path card | `components/learn/path-card.tsx` | Level pills, objectives and entry requirements (`detail="full"`), real counts; reading time is marked as an estimate |
+| Learning panel | `components/home/learning-panel.tsx` | Home "continue": last concept, levels read, reading level, path progress, next lesson. Shows an honest empty state |
+| Explorer shell | `components/illustrations/interactive/explorers.tsx` | Canvas · controls · live readout · optional comparison strip · predicts / assumptions / cannot show |
+| Formula block | `components/entry/formula-block.tsx` | `layout="split"` on Formula Lab pages: specification left, sticky calculator workspace right |
+| Lab workspace | `app/labs/[id]/page.tsx` | Lab left; side panel (kind of lab, assumptions, concepts) right |
+| Marks | `components/ui/marks.tsx` | Type label in rubric; evidence glyph + text; status |
 
 ## States
 
-Every interactive component defines: idle, hover, focus-visible (2px rubric outline, 2px offset), pressed/selected (`aria-pressed`, `aria-selected`), disabled, loading (text, not spinner-only), empty (explains what to do), error (says what went wrong and how to fix it).
-
-## Motion
-
-Essentially none: colour/opacity transitions ≤150ms on hover, a spinner only in the feedback lab demonstration. `prefers-reduced-motion` disables all animation and transitions.
-
-## Accessibility rules
-
-Semantic landmarks and headings; skip link; all controls reachable and operable by keyboard; visible focus; WCAG 2.2 AA contrast; scrollable regions focusable; charts and the graph have text alternatives; no information by colour alone; forms have programmatic labels and error text; dialogs use the native `<dialog>` for focus containment.
+Every interactive component defines: idle, hover (border + soft shadow), focus-visible (2px accent outline, 2px offset), pressed/selected (`aria-pressed` / `aria-current` → accent-wash + accent-ink, weight 600), disabled (60% opacity plus an explanatory label, e.g. "Choose a subject first"), loading (text), empty (says what to do), and error (says what went wrong and how to fix it).
 
 ## Avoid
 
-Gradients, glassmorphism, decorative animation, icon clutter (the UI uses almost no icons), card-everything layouts, more than one accent colour, numeric "confidence scores".
-
-## v2 additions
-
-### Subject palettes (light base / ink · dark base / ink)
-
-| Family | Light | Dark | Ink on wash (L / D) |
-|---|---|---|---|
-| core | #c2553f / #842617 | #e8826b / #f4a693 | 7.1 / 7.4 |
-| rose | #d6637a / #972c45 | #ec8ea0 / #f6b9c5 | 6.0 / 8.5 |
-| violet | #8b6bc6 / #553890 | #b49ae8 / #d3c2f7 | 7.0 / 8.7 |
-| teal | #2f9a86 / #175f52 | #5cc4ae / #97e0d0 | 6.0 / 9.3 |
-| blue | #5a76d4 / #30449a | #8ea4ef / #bfcbf8 | 6.8 / 8.9 |
-| amber | #d39526 / #7d5408 | #e8b85a / #f3d595 | 5.5 / 9.5 |
-| green | #6a9e55 / #365f2b | #92c47c / #c0e2b0 | 6.0 / 9.7 |
-| peach | #de8550 / #8f461a | #f0a575 / #f8caad | 5.6 / 9.3 |
-| cyan | #3a9fb9 / #1a5c6d | #6cc6dd / #a8e1ef | 6.1 / 9.6 |
-| indigo | #5f5aae / #37337e | #9a95e3 / #c9c6f5 | 8.2 / 8.9 |
-| slate | #5d8c86 / #345752 | #8dbab3 / #bfdcd7 | 6.4 / 9.6 |
-
-Wash = 16% base mixed into paper; soft = 42%. Because they are mixed from the current `--paper`, dark mode gets deep tinted fields, not inverted pastels. Base-on-wash is 2.1–4.5:1, so solid shapes are always outlined in ink.
-
-### Components (v2)
-
-Knowledge card (standard / featured / formula / compact / planned), category tile, path card, plate + figure caption, concept hero, explorer shell, formula curve (+ data table), formula index, glossary browser, lesson rail, curriculum level, evidence-ledger panel, illustrated relation item, mobile filter drawer, motion frame (pause).
+Glassmorphism; gradients outside the hero and featured panels; decorative animation; icons without labels; nested rounded containers (pages render inside one frame and use flat sections, panels and cards, never a second page frame); subject colour on evidence, status or body text; fake data, avatars or achievements; numeric confidence scores.

@@ -21,16 +21,16 @@ export default function LabsPage() {
         title="See the principles behave"
         lede="Experiments that measure you, simulations you manipulate, and tools you will use in practice. Each lab is explicit about which it is — and states the assumptions behind it."
       />
-      <Container className="space-y-14 pt-10">
+      <Container className="space-y-12 pb-12 pt-6">
         {KINDS.map((k) => (
           <section key={k.kind} aria-labelledby={`k-${k.kind}`}>
             <div className="flex flex-wrap items-baseline justify-between gap-2 border-b border-rule pb-3">
-              <h2 id={`k-${k.kind}`} className="t-section text-2xl">
+              <h2 id={`k-${k.kind}`} className="t-section text-xl">
                 {k.title}
               </h2>
               <p className="text-sm text-ink-3">{k.lede}</p>
             </div>
-            <ul className="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            <ul className="mt-5 grid gap-4 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
               {labs
                 .filter((l) => l.kind === k.kind)
                 .map((l) => {
@@ -38,13 +38,13 @@ export default function LabsPage() {
                   const domain = c?.domain ?? taxonomyBySlug.get(l.concepts[0])?.domain ?? "visual";
                   return (
                     <li key={l.id}>
-                      <article className={`${catClass(domain)} group relative flex h-full flex-col overflow-hidden rounded-sm border border-rule bg-surface lift hover:border-ink-3`}>
+                      <article className={`${catClass(domain)} card group relative flex h-full flex-col overflow-hidden`}>
                         <div className="border-b border-rule">
                           <ConceptIllustration slug={c?.slug ?? domain} title={l.title} domain={domain} decorative />
                         </div>
                         <div className="flex flex-1 flex-col p-4">
                           <p className="label">{k.kind === "experiment" ? "Experiment · measures you" : k.kind === "tool" ? "Tool" : "Simulation"}</p>
-                          <h3 className="t-section mt-1.5 text-xl group-hover:text-accent-ink">
+                          <h3 className="t-sub mt-1.5 text-lg group-hover:text-accent-ink">
                             <Link href={`/labs/${l.id}`} className="after:absolute after:inset-0">
                               {l.title}
                             </Link>

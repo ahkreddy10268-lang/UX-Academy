@@ -403,9 +403,59 @@ const designTokens: IllustrationEntry = {
   ),
 };
 
+/** Human-centred design (ISO 9241-210): people in nested contexts, design iterating inwards towards fit. */
+const humanCentredDesign: IllustrationEntry = {
+  slug: "human-centred-design",
+  title: "Human-centred design plate",
+  description:
+    "Three nested rings surround one person: the users, the wider group of people affected by the system, and the context of use with its tasks and environment. A dashed spiral starts outside the rings and winds inwards through three evaluation points, showing a design brought closer to fit with each iteration rather than in one step.",
+  Art: ({ detail }) => {
+    const cx = 196;
+    const cy = 154;
+    return (
+      <g>
+        <circle cx={cx} cy={cy} r={120} fill="none" stroke={C.mute} strokeWidth={STROKE.fine} strokeDasharray="4 5" />
+        <circle cx={cx} cy={cy} r={84} fill={C.soft} fillOpacity={0.45} stroke={C.ink} strokeWidth={STROKE.fine} />
+        <circle cx={cx} cy={cy} r={48} fill={C.soft} stroke={C.ink} strokeWidth={STROKE.main} />
+        {/* the person at the centre */}
+        <circle cx={cx} cy={cy - 12} r={9} fill={C.base} />
+        <path d={`M${cx - 16} ${cy + 18} a16 16 0 0 1 32 0z`} fill={C.base} />
+        {/* iteration spiral: outside → inwards, three evaluation points */}
+        <path
+          d={`M 362 44 C 330 20, 250 34, 300 92 C 330 128, 296 214, 236 214 C 190 214, 160 186, 168 160 C 172 146, 184 140, 192 146`}
+          fill="none"
+          stroke={C.line}
+          strokeWidth={STROKE.main}
+          strokeDasharray="1 6"
+          strokeLinecap="round"
+        />
+        <Arrow x1={186} y1={142} x2={193} y2={147} color={C.line} />
+        {[
+          [300, 92],
+          [236, 214],
+          [168, 160],
+        ].map(([x, y], i) => (
+          <g key={i}>
+            <circle cx={x} cy={y} r={9} fill={C.surface} stroke={C.line} strokeWidth={STROKE.main} />
+            <text x={x} y={y + 4} textAnchor="middle" fontSize="10" fill={C.line} fontFamily="var(--font-plex-mono), monospace">
+              {i + 1}
+            </text>
+          </g>
+        ))}
+        <Label x={cx} y={24} show={detail} tone="mute">context of use</Label>
+        <Label x={cx - 70} y={100} show={detail}>people affected</Label>
+        <Label x={cx} y={cy + 36} show={detail}>users</Label>
+        <Label x={284} y={86} show={detail} anchor="end" tone="mute">evaluate</Label>
+        <Label x={348} y={60} show={detail}>iterate</Label>
+      </g>
+    );
+  },
+};
+
 const plates: IllustrationEntry[] = [
   usability,
   userCentredDesign,
+  humanCentredDesign,
   jobsToBeDone,
   heartFramework,
   progressiveDisclosure,

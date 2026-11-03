@@ -75,7 +75,7 @@ export function CognitiveLoadLab() {
       <div className="rounded-sm border border-rule bg-surface">
         <div className="flex flex-wrap items-center justify-between gap-3 border-b border-rule px-5 py-3">
           <p className="text-sm text-ink-2">{cur ? `Layout ${step + 1} of 2 — ${QUESTION}` : step < 0 ? "You will answer the same question in two layouts. The order is randomised." : "Done."}</p>
-          <button type="button" onClick={start} className="h-9 rounded-sm bg-ink px-4 text-sm font-medium text-paper">
+          <button type="button" onClick={start} className="h-9 rounded-sm bg-accent px-4 text-sm font-medium text-surface">
             {step < 0 ? "Start" : "Run again"}
           </button>
         </div>

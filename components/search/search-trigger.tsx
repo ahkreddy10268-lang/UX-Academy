@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useId, useRef, useState } from "react";
 import { KIND_LABEL, TYPE_LABEL } from "@/lib/content/labels";
+import { Icon } from "../shell/icons";
 import { prefetchSearch, snippet, useSearch } from "./use-search";
 
 export function SearchTrigger() {
@@ -36,18 +37,21 @@ export function SearchTrigger() {
         onClick={() => setOpen(true)}
         onPointerEnter={prefetchSearch}
         onFocus={prefetchSearch}
-        className="inline-flex h-9 items-center gap-3 rounded-sm border border-rule bg-surface px-3 text-sm text-ink-3 hover:border-rule-strong hover:text-ink-2"
+        className="inline-flex h-10 w-full min-w-0 items-center gap-2.5 rounded-sm border border-rule bg-surface px-3 text-sm text-ink-3 shadow-card transition-colors hover:border-rule-strong hover:text-ink-2 sm:max-w-[28rem]"
         aria-haspopup="dialog"
       >
-        <span className="text-ink-2">Search</span>
-        <kbd className="hidden rounded-xs border border-rule px-1.5 font-mono text-[11px] leading-5 text-ink-3 md:inline">⌘K</kbd>
+        <Icon name="search" size={18} className="shrink-0" />
+        <span className="truncate text-ink-3">
+          Search<span className="hidden sm:inline"> concepts, formulas, methods…</span>
+        </span>
+        <kbd className="ml-auto hidden rounded-xs border border-rule bg-soft px-1.5 font-mono text-[11px] leading-5 text-ink-3 md:inline">⌘K</kbd>
       </button>
       <dialog
         ref={dialog}
         onClose={() => setOpen(false)}
         onClick={(e) => e.target === dialog.current && setOpen(false)}
         aria-label="Search UX Academy"
-        className="m-0 mx-auto mt-[8vh] w-[min(44rem,calc(100vw-2rem))] max-w-none rounded-md border border-rule bg-surface p-0 text-ink shadow-raise backdrop:bg-ink/30"
+        className="m-0 mx-auto mt-[8vh] w-[min(44rem,calc(100vw-2rem))] max-w-none rounded-lg border border-rule bg-surface p-0 text-ink shadow-dialog"
       >
         {open && <SearchPanel onDone={() => setOpen(false)} />}
       </dialog>

@@ -43,7 +43,7 @@ export function ResponsiveLab() {
               <span>1440</span>
             </div>
           </div>
-          <dl className="grid grid-cols-2 gap-4 rounded-sm border border-rule bg-paper p-4" aria-live="polite">
+          <dl className="grid grid-cols-2 gap-4 rounded-sm border border-rule bg-soft p-4" aria-live="polite">
             {[
               ["Breakpoint", `${bp.name} (≥ ${bp.min}px)`],
               ["Columns", bp.columns],

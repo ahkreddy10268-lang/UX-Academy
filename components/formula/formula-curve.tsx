@@ -105,7 +105,7 @@ export function FormulaCurve({ calculator }: { calculator: string }) {
           const last = s.points[s.points.length - 1];
           return (
             <g key={s.name}>
-              <path d={"M" + s.points.map(([x, y]) => `${sx(x)} ${sy(y)}`).join(" L")} fill="none" stroke={i === 0 ? "var(--c)" : "var(--ink-2)"} strokeWidth="2.25" strokeDasharray={DASH[i]} />
+              <path d={"M" + s.points.map(([x, y]) => `${sx(x).toFixed(2)} ${sy(y).toFixed(2)}`).join(" L")} fill="none" stroke={i === 0 ? "var(--c)" : "var(--ink-2)"} strokeWidth="2.25" strokeDasharray={DASH[i]} />
               <text x={sx(last[0]) + 6} y={sy(last[1]) + 4} fontSize="11" fill="var(--ink-2)" fontFamily="var(--font-plex-mono)">
                 {s.name}
               </text>
