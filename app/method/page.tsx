@@ -23,7 +23,7 @@ const GATES = [
 export default function MethodPage() {
   return (
     <>
-      <PageHeader eyebrow="Method" title="How this academy decides what is true" lede="Accuracy over quantity. Every entry is classified, evidenced and reviewed against a quality gate before it is published — and anything not yet researched is labelled as planned." />
+      <PageHeader eyebrow="Method" title="How this academy decides what is true" lede="Accuracy over quantity. Every entry is classified, evidenced and reviewed against a quality gate before it is published. Anything not yet researched is labelled as planned." />
       <Container className="max-w-[52rem] space-y-16 pt-10">
         <section>
           <SectionHeading kicker="Evidence classes">How strong is the support?</SectionHeading>

@@ -26,7 +26,7 @@ export default function GraphPage() {
       <PageHeader
         eyebrow="Knowledge graph"
         title="How the ideas connect"
-        lede={`${entries.length} written entries and ${graphEdges.length} explained relationships — prerequisites, derivations, applications, contrasts and measurements.`}
+        lede={`${entries.length} written entries and ${graphEdges.length} explained relationships: prerequisites, derivations, applications, contrasts and measurements.`}
       />
       <Container className="pt-8">
         <Suspense fallback={<p className="text-ink-3">Laying out the graph…</p>}>

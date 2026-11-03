@@ -37,6 +37,14 @@
   --warn-wash: #f8efd9;
   --info: #36507f;
   --info-wash: #e3eaf6;
+  --error: #a4262c;
+  --error-wash: #fbe8e8;
+  /* Knowledge semantics — never subject colour */
+  --evidence: #36446a; /* evidence glyphs and the ledger's current class */
+  --evidence-wash: #e8ecf5;
+  --planned: #5a6476; /* planned-topic text and dashed outlines */
+  --planned-line: #9aa3b3;
+  --published: #2e6a4c;
   --focus: #4c5ead;
   /* Elevation — soft, low-contrast */
   --shadow-card: 0 1px 2px rgb(31 37 50 / 0.04), 0 1px 3px rgb(31 37 50 / 0.04);
@@ -106,6 +114,13 @@
     --warn-wash: #2a2213;
     --info: #9db4e6;
     --info-wash: #161d2b;
+    --error: #f2a7a7;
+    --error-wash: #2c1717;
+    --evidence: #b7c3e3;
+    --evidence-wash: #1f2536;
+    --planned: #99a2b3;
+    --planned-line: #525b6c;
+    --published: #7fc4a0;
     --focus: #99a5ec;
     --shadow-card: 0 1px 2px rgb(0 0 0 / 0.3);
     --shadow-hover: 0 2px 4px rgb(0 0 0 / 0.3), 0 8px 20px rgb(0 0 0 / 0.3);
@@ -170,6 +185,13 @@
   --warn-wash: #2a2213;
   --info: #9db4e6;
   --info-wash: #161d2b;
+  --error: #f2a7a7;
+  --error-wash: #2c1717;
+  --evidence: #b7c3e3;
+  --evidence-wash: #1f2536;
+  --planned: #99a2b3;
+  --planned-line: #525b6c;
+  --published: #7fc4a0;
   --focus: #99a5ec;
   --shadow-card: 0 1px 2px rgb(0 0 0 / 0.3);
   --shadow-hover: 0 2px 4px rgb(0 0 0 / 0.3), 0 8px 20px rgb(0 0 0 / 0.3);
@@ -232,6 +254,13 @@
   --color-warn-wash: var(--warn-wash);
   --color-info: var(--info);
   --color-info-wash: var(--info-wash);
+  --color-error: var(--error);
+  --color-error-wash: var(--error-wash);
+  --color-evidence: var(--evidence);
+  --color-evidence-wash: var(--evidence-wash);
+  --color-planned: var(--planned);
+  --color-planned-line: var(--planned-line);
+  --color-published: var(--published);
 
   --font-serif: var(--font-newsreader), "Iowan Old Style", Georgia, serif;
   --font-sans: var(--font-plex-sans), ui-sans-serif, system-ui, sans-serif;
@@ -567,6 +596,9 @@ dialog::backdrop { background: var(--overlay); }
 .bg-feature { background: linear-gradient(135deg, var(--c-wash) 0%, var(--surface) 100%); }
 .chip { display: inline-flex; align-items: center; gap: 0.375rem; border-radius: 999px; border: 1px solid var(--rule); background: var(--surface); padding: 0.25rem 0.75rem; font-size: var(--text-xs); line-height: var(--text-xs--line-height); color: var(--ink-2); }
 .chip[aria-pressed="true"], .chip[aria-current="true"], .chip[data-active="true"] { background: var(--accent-wash); border-color: color-mix(in srgb, var(--accent) 40%, transparent); color: var(--accent-ink); font-weight: 600; }
+
+/* Diagram textures — a pattern, not a colour, so a segment is distinguishable without hue (WCAG 1.4.1). */
+.hatch-extraneous { background-color: var(--sunken); background-image: repeating-linear-gradient(135deg, transparent 0 6px, var(--rule-strong) 6px 8px); }
 
 /* Range inputs: visible track and thumb in both themes */
 input[type="range"] { accent-color: var(--accent); }

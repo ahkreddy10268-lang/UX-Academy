@@ -16,7 +16,7 @@ export default function MePage() {
       <PageHeader
         eyebrow="My learning"
         title="Your academy"
-        lede="Progress, notes, saved work and what to study next. Everything here lives only in this browser — export it to keep a copy or move it to another device."
+        lede="Progress, notes, saved work and what to study next. Everything here lives only in this browser. Export it to keep a copy or to move it to another device."
       />
       <Container className="pt-10">
         <Dashboard meta={meta} paths={paths} questionEntry={questionEntry} />

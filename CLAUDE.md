@@ -9,7 +9,7 @@ classified, evidenced, connected and practised.
 ## Start of every session
 
 1. Read this file, then `docs/PROGRESS.md` (state + the precise next task).
-2. Read the docs relevant to the task (`docs/ARCHITECTURE.md`, `docs/CONTENT_MODEL.md`, `docs/DESIGN_SYSTEM.md`, `docs/DECISION_LOG.md`).
+2. Read the docs relevant to the task (`docs/ARCHITECTURE.md`, `docs/CONTENT_MODEL.md`, `docs/DESIGN_SYSTEM.md`, `docs/VISUAL_KNOWLEDGE_SYSTEM.md`, `docs/DIAGRAM_DESIGN_GUIDELINES.md`, `docs/EDITORIAL_STYLE_GUIDE.md`, `docs/DECISION_LOG.md`).
 3. `git status && git log --oneline -15`
 4. `npm run check` (index → typecheck → tests → lint). Fix red before adding anything.
 5. Continue from the actual state of the code — never from memory of earlier conversations.
@@ -37,6 +37,12 @@ classified, evidenced, connected and practised.
 - Personal data (bookmarks, notes, progress, flashcards, history) is local-first in `localStorage` via `lib/store/`. Versioned schema, export/import JSON. No accounts, no backend, no API keys.
 - Keep dependencies minimal: next, react, zod, minisearch. Ask before adding more.
 
+## Editorial voice (docs/EDITORIAL_STYLE_GUIDE.md)
+
+- Clear, precise, natural, approachable, academically responsible. Lead with the idea; show the mechanism with a concrete case; prefer precise words; say what is uncertain.
+- Banned stock phrases and repeated templates are enforced by `tests/editorial.test.ts` — do not replace one cliché with another.
+- Three voices: interface (short, literal, action first), educational (define → mechanism → example → limits), editorial (specific, restrained). Label illustrative scenarios. Never invent sources, quotes, statistics or outcomes.
+
 ## Content & research rules (non-negotiable)
 
 - Accuracy over quantity. Explain, don't summarise. Beginner clarity without expert simplification.
@@ -60,6 +66,8 @@ classified, evidenced, connected and practised.
 - Illustrations are original **plates** (`components/illustrations/`, rules in docs/ILLUSTRATION_SYSTEM.md): explanatory diagrams of the mechanism, colour via CSS variables only, accessible title + description. Every published entry and subject must have one (tested). Never copy third-party artwork.
 - Motion only to teach or confirm (docs/INTERACTION_AND_MOTION_GUIDELINES.md): CSS `anim-*` classes, off under `prefers-reduced-motion`, pausable, static first frame complete. No scroll effects, parallax or moving hit targets.
 - Interactive explorers and labs compute only with `lib/formulas`; label simulations vs experiments; state assumptions and what they cannot show.
+- **Visual Knowledge Engine (v4):** Level-2 explanations live in `components/visual-explanations/` (templates in `diagrams/`, compositions in `concepts/`, `registry.tsx`). Choose the visual strategy by what the knowledge is; build with HTML/CSS text + token-coloured SVG shapes; every figure has objective, takeaway, ordered text version, verification kind (`content-checked` / `illustrative`) and sources from the entry's own references (`tests/visuals.test.ts`). Rules: docs/DIAGRAM_DESIGN_GUIDELINES.md.
+- Status/evidence colours are semantic tokens (`ok warn info error evidence planned published`) — never subject colours.
 - Still forbidden: glassmorphism, decorative animation, icon clutter, fake data/avatars/achievements, colour-only meaning, nested page frames.
 - Accessibility floor: semantic HTML, visible focus, keyboard reachable, WCAG 2.2 AA contrast, text alternatives for every plate/chart/graph. Grids must use `minmax(0,1fr)` tracks (base rule exists) — verify phones at the real device width.
 

@@ -32,7 +32,7 @@ export default defineEntry({
         "Options that are much more likely than others are faster to choose, because a predictable choice carries less uncertainty. A familiar, frequently used option behaves almost like no choice at all.",
       ],
       analogy:
-        "Think of a game of 'twenty questions'. To find one item among 8 you need about 3 yes/no questions; among 16, about 4. Your brain behaves as though it is narrowing down the possibilities in halves — each doubling of options costs one more 'question'.",
+        "In a game of 'twenty questions', to find one item among 8 you need about 3 yes/no questions; among 16, about 4. Your brain behaves as though it is narrowing down the possibilities in halves — each doubling of options costs one more 'question'.",
       everydayExamples: [
         "A traffic light has three possible signals you know by heart, so you react to it very fast.",
         "Picking a lift button for a familiar floor is quick, even though the panel has many buttons — your choice is predictable.",

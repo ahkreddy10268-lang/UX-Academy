@@ -32,7 +32,7 @@ export default defineEntry({
         "This matters most when information arrives **one piece at a time** — a voice assistant reading options, a slideshow, a training video, a sequence of onboarding screens. When everything is visible at once, people can simply look again, and the effect matters much less.",
       ],
       analogy:
-        "Think of a long film. You remember how it started, because you were paying full attention and had time to think about it, and how it ended, because it is still fresh. The middle blurs together.",
+        "After a long film you remember how it started, because you were paying full attention and had time to think about it, and how it ended, because it is still fresh. The middle blurs together.",
       everydayExamples: [
         "Remembering the first and last songs of a concert more vividly than the ones in between.",
         "Recalling the first and last options an automated phone line reads out.",

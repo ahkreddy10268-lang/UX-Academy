@@ -4,6 +4,8 @@ import { notFound } from "next/navigation";
 import { EntryActions } from "@/components/entry/entry-actions";
 import { ConceptIllustration } from "@/components/illustrations/concept-illustration";
 import { ConceptExplorer } from "@/components/illustrations/interactive/explorers";
+import { VisualFigure } from "@/components/visual-explanations/figure";
+import { quickTakeaways, visualsFor } from "@/components/visual-explanations/registry";
 import { MotionFrame } from "@/components/illustrations/motion-toggle";
 import { illustrationFor, plateNumber } from "@/components/illustrations/registry";
 import { citationLine } from "@/components/entry/references";
@@ -65,9 +67,11 @@ function Entry({ entry: e }: { entry: KnowledgeEntry }) {
 
   const plate = illustrationFor(e.slug);
   const explorer = plate?.explorer;
+  const visuals = visualsFor(e.slug);
+  const glance = quickTakeaways[e.slug];
   const toc = [
     ["definition", "Definition"],
-    ...(explorer ? [["visual", "Visual explanation"]] : []),
+    ...(explorer || visuals.length ? [["visual", "Visual explanation"]] : []),
     ["explanation", "Explanation"],
     ...(e.formulas.length ? [["formula", "Formula & calculator"]] : []),
     ...(e.method ? [["method", "Method"]] : []),
@@ -236,16 +240,43 @@ function Entry({ entry: e }: { entry: KnowledgeEntry }) {
                   {e.title}
                   {plate ? "" : " · typographic placeholder (no plate drawn yet)"}
                 </span>
-                {explorer && (
-                  <a href="#visual" className="link">
-                    Explore it interactively ↓
+                {(explorer || visuals.length > 0) && (
+                  <a href="#visual" className="link shrink-0">
+                    {visuals.length ? "See how it works ↓" : "Explore it interactively ↓"}
                   </a>
                 )}
               </figcaption>
+              {glance && (
+                <p className="mt-3 rounded-lg bg-surface/80 px-3.5 py-2.5 text-sm text-ink ring-1 ring-rule">
+                  <span className="font-semibold text-c-ink">At a glance · </span>
+                  {glance}
+                </p>
+              )}
             </figure>
           </div>
         </Container>
       </header>
+
+      {(visuals.length > 0 || explorer) && (
+        <Container className={`${catClass(e.domain)} pt-12`}>
+          <section aria-labelledby="visual">
+            <SectionHeading id="visual" kicker="Visual explanation">
+              {visuals.length ? "See how it works" : "See it change"}
+            </SectionHeading>
+            <div className="space-y-8">
+              {visuals.map((v) => (
+                <VisualFigure key={v.id} v={v} />
+              ))}
+              {explorer && (
+                <div>
+                  {visuals.length > 0 && <p className="label mb-3">Level 3 · interactive model</p>}
+                  <ConceptExplorer id={explorer} />
+                </div>
+              )}
+            </div>
+          </section>
+        </Container>
+      )}
 
       <Container className="lg:grid lg:grid-cols-[minmax(0,1fr)_15rem] lg:gap-14">
         <div className="min-w-0 max-w-[46rem]">
@@ -284,15 +315,6 @@ function Entry({ entry: e }: { entry: KnowledgeEntry }) {
               </p>
             )}
           </section>
-
-          {explorer && (
-            <section aria-labelledby="visual" className={`${catClass(e.domain)} pt-16`}>
-              <SectionHeading id="visual" kicker="Visual explanation">
-                See it change
-              </SectionHeading>
-              <ConceptExplorer id={explorer} />
-            </section>
-          )}
 
           <section aria-labelledby="explanation" className="pt-16">
             <SectionHeading id="explanation" kicker="Explanation at three depths">
@@ -648,7 +670,7 @@ function Entry({ entry: e }: { entry: KnowledgeEntry }) {
                 <p className="label">Evidence ledger</p>
                 <ol className="mt-3 grid grid-cols-2 gap-1 sm:grid-cols-4" aria-label="Evidence scale, strongest to most contested">
                   {EVIDENCE_ORDER.map((ev) => (
-                    <li key={ev} aria-current={ev === e.evidence ? "true" : undefined} className={`rounded-sm border px-2 py-1.5 text-[11px] leading-tight ${ev === e.evidence ? "border-accent bg-accent-wash font-semibold text-accent-ink" : "border-rule bg-surface text-ink-3"}`}>
+                    <li key={ev} aria-current={ev === e.evidence ? "true" : undefined} className={`rounded-sm border px-2 py-1.5 text-[11px] leading-tight ${ev === e.evidence ? "border-evidence bg-evidence-wash font-semibold text-evidence" : "border-rule bg-surface text-ink-3"}`}>
                       {EVIDENCE_LABEL[ev]}
                     </li>
                   ))}

@@ -25,7 +25,10 @@ _v3, 2026-11-03. Supersedes the v1 "rubric" system and the v2 additions. History
 | `accent-ink` | #3d4e99 | #bac3f6 | link text, hover — ≥6.1:1 |
 | `accent-wash` | #e7ebf8 | #232a45 | selected/active backgrounds |
 | `rubric` | #a33320 | #e8826b | heritage editorial red: the § wordmark, knowledge-type labels, A–Z letters |
-| `ok` `warn` `info` (+ `-wash`) | | | status, always with a text label |
+| `ok` `warn` `info` `error` (+ `-wash`) | | | status, always with a text label |
+| `evidence` / `evidence-wash` | #36446a | #b7c3e3 | evidence glyphs, the ledger's current class (v4, D-038) |
+| `planned` / `planned-line` | #5a6476 / #9aa3b3 | #99a2b3 / #525b6c | planned-topic text and dashed outlines |
+| `published` | #2e6a4c | #7fc4a0 | publication status |
 
 The brief proposed `text-muted #8893A3` and `text-secondary #657184`. Both failed: #8893A3 is 3.11:1 on white, and #657184 is 4.37:1 on sunken and ~4.0–4.4 on the pastel washes. The values above are the nearest tones that pass everywhere. Primary buttons use `bg-accent text-surface`, which gives white text in light mode and dark text on the light accent in dark mode, ≥5.98:1 in both.
 

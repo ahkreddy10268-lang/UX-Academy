@@ -27,6 +27,7 @@ export type LibraryDoc = {
   expression?: string;
   hasCalculator?: boolean;
   hasLab?: boolean;
+  hasVisual?: boolean;
   method?: CardData["method"];
   refs?: number;
   connections?: number;
@@ -122,6 +123,7 @@ export function LibraryExplorer({
     if (f.evidence && d.evidence !== f.evidence) return false;
     if (f.feature === "formula" && !d.hasCalculator) return false;
     if (f.feature === "lab" && !d.hasLab) return false;
+    if (f.feature === "visual" && !d.hasVisual) return false;
     return true;
   });
   const sort = f.sort || (f.q.trim() ? "" : "title");
@@ -156,7 +158,7 @@ export function LibraryExplorer({
     ["type", "Type", [["", "All types"], ...[...new Set(docs.map((d) => d.type))].sort().map((t) => [t, TYPE_LABEL[t]])]],
     ["level", "Level", [["", "Any level"], ...(["beginner", "intermediate", "advanced"] as const).map((l) => [l, DIFFICULTY_LABEL[l]])]],
     ["evidence", "Evidence", [["", "Any evidence"], ...Object.entries(EVIDENCE_LABEL)]],
-    ["feature", "Includes", [["", "Anything"], ["formula", "A calculator"], ["lab", "An interactive lab"]]],
+    ["feature", "Includes", [["", "Anything"], ["formula", "A calculator"], ["lab", "An interactive lab"], ["visual", "A detailed diagram"]]],
     ["scope", "Status", [["published", "Researched"], ["all", "Researched + planned"], ["planned", "Planned only"]]],
   ];
   const filterFields = (prefix: string, layout: "bar" | "stack") => (

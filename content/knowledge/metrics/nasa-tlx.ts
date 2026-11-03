@@ -32,7 +32,7 @@ export default defineEntry({
         "The ratings are then combined into one workload score. Higher means the task felt more demanding. Like most questionnaires, the score is most useful for **comparing**: design A against design B, or a task before and after a change.",
       ],
       analogy:
-        "Think of a fitness tracker that reports heart rate, distance, pace and how tired you feel, instead of just 'how hard was your run?'. NASA-TLX splits 'how hard was that task?' into separate readings you can inspect.",
+        "A good fitness tracker reports heart rate, distance, pace and how tired you feel, instead of just 'how hard was your run?'. NASA-TLX splits 'how hard was that task?' into separate readings you can inspect.",
       everydayExamples: [
         "Comparing how demanding two versions of a hospital medication-entry screen feel to nurses.",
         "Checking whether a new air-traffic display increases time pressure.",

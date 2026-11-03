@@ -1,5 +1,37 @@
 # Visual QA log
 
+## 2026-11-03 — v4 Visual Intelligence
+
+### Method
+Production build, Playwright Chromium. All screenshots below were captured and inspected.
+- **Matrix:** home, library, Fitts's Law, Double Diamond, Cognitive Load Theory, Information Architecture, learning path, Formula Lab (Fitts) and My Learning, at 1440 / 1280 / 1024 / 768 / 390 / 360 × light / dark = **108 overflow checks**. **54 screenshots** were kept (1440 and 390 in both themes; 1024 and 768 in light), plus full-page light/dark pairs of the three new gold-standard pages.
+- **Per figure:** each Level-2 figure was captured on its own at 1440 and 390 (Fitts ×2, Double Diamond, Cognitive Load ×2, IA ×2), and the plate sheets for the four gold-standard concepts in both themes.
+
+### Problems found and fixed
+| Found | Fix |
+|---|---|
+| Diagrams squeezed into the 46rem reading column (four-phase process unreadable) | Full-width visual section; templates respond to their container (`@container`) |
+| Process phases too narrow side by side at laptop widths | Diamonds side by side and phases stacked inside each diamond, with a fully horizontal layout only at ≥72rem containers |
+| IA plate: search lens and label overlapped the Events group; label text on the pale base was low contrast | Lens moved over the gap; active label drawn on the category ink |
+| IA Venn sub-labels crossed circle strokes | Labels moved below the circles |
+| Duplicate "Design Council (UK); Design Council (UK)" source line under a figure | Citation shows author and title |
+| Cognitive-load bar: white text on a pale violet base | Segment uses the category ink; extraneous load uses a hatch texture (no colour-only meaning) |
+| axe: `aria-label` on a `<p>` in the formula anatomy | `role="img"` with label (0 violations after the fix) |
+| React lint: render-time mutation in the process template | Marker numbers computed, not mutated |
+
+### Automated results (final build)
+- `npm run check`: **155/155 tests**. These include `tests/visuals.test.ts` (6), `tests/editorial.test.ts` (4), 56 token tests (incl. semantic status tokens), content gates for the new IA entry and illustrations (69 plates). Typecheck and lint clean.
+- `npm run build`: 811 pages. `npm run sources:verify` on the new DOIs: Pirolli & Card 1999 and Furnas et al. 1987 verified with Crossref.
+- Crawl of 27 routes: all 200 except `/nope` (404 as intended), 0 console errors.
+- `tests/browser/e2e.cjs` **42/42** · `tests/browser/e2e-redesign.cjs` **56/56**. New checks: the number of figures per gold concept, takeaway and text version present, the text version expands into an ordered list, all four phase names are real text, the at-a-glance line, the library diagram filter (4 results), the curriculum map, and no 390px overflow on 12 pages.
+- axe-core WCAG 2.2 AA: 78 pages (32 templates + 46 entries) × light/dark = **156 audits, 0 violations** (after the one fix above).
+
+### Limits
+- The reference images (five dashboards, four visual explanations) were not available in the session.
+- No screen-reader or real-device testing.
+- Only four concepts have Level-2 explanations so far; the other 42 rely on plates (Level 1) and, for six, explorers (Level 3).
+
+
 ## 2026-11-03 — v3 Pastel Editorial Workspace
 
 ### Method

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ConceptIllustration } from "@/components/illustrations/concept-illustration";
+import { CurriculumMap } from "@/components/learn/curriculum-map";
 import { LessonState, PathProgress } from "@/components/learn/path-progress";
 import { Bullets, Container, PageHeader } from "@/components/ui/layout";
 import { entryBySlug, labById, learningPaths, taxonomyBySlug, workshops } from "@/lib/content";
@@ -65,7 +66,20 @@ export default async function PathPage({ params }: PageProps<"/learn/[id]">) {
 
       <Container className="lg:grid lg:grid-cols-[minmax(0,1fr)_18rem] lg:gap-16">
         <div className="min-w-0 pt-10">
-          <h2 className="t-section text-2xl">Curriculum</h2>
+          <h2 className="t-section text-2xl">Curriculum map</h2>
+          <p className="mt-1 text-sm text-ink-3">The whole path at a glance. Filled dots are lessons you have completed in this browser.</p>
+          <div className="mt-4">
+            <CurriculumMap
+              levels={p.stages.map((s, si) => ({
+                title: s.title,
+                levelLabel: `${DIFFICULTY_LABEL[s.level]} · ${LEVEL_PURPOSE[s.level]}`,
+                testHref: stageStats(s).questions > 0 ? `/learn/${p.id}/level/${si + 1}` : undefined,
+                lessons: s.steps.filter((x) => entryBySlug.has(x)).map((x) => ({ slug: x, title: entryBySlug.get(x)!.title, href: `/learn/${p.id}/lesson/${x}` })),
+                planned: s.steps.filter((x) => !entryBySlug.has(x)).length,
+              }))}
+            />
+          </div>
+          <h2 className="t-section mt-12 text-2xl">Lessons by level</h2>
           <p className="mt-1 text-sm text-ink-3">
             {stats.lessons} lessons{stats.planned ? ` · ${stats.planned} planned topics shown for context, not yet written` : ""}
           </p>

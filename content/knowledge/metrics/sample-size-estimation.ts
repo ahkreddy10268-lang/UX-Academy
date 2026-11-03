@@ -32,7 +32,7 @@ export default defineEntry({
         "If you want to show a **difference** between designs, the size you need depends on how big the difference is. Big differences show up with modest samples. Small differences, such as conversion moving from 5% to 6%, need thousands of users in each group.",
       ],
       analogy:
-        "It is like choosing a camera lens: to photograph a mountain (a big effect) any lens works; to photograph a distant bird (a small effect) you need a powerful zoom (a large sample).",
+        "Choosing a sample size resembles choosing a camera lens: to photograph a mountain (a big effect) any lens works; to photograph a distant bird (a small effect) you need a powerful zoom (a large sample).",
       everydayExamples: [
         "A survey team plans 400 responses to estimate a percentage within about ±5 points.",
         "A product team learns its A/B test needs about 8,000 users per variant to detect a 5% → 6% change, and decides to test a bolder idea instead.",

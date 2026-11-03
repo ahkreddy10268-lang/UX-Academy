@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 import { ConceptIllustration } from "@/components/illustrations/concept-illustration";
 import { LibraryExplorer, type LibraryDoc } from "@/components/library/library-explorer";
+import { hasVisuals } from "@/components/visual-explanations/registry";
 import { Container, PageHeader } from "@/components/ui/layout";
 import { domains, entries, graphEdges, taxonomyItems } from "@/lib/content";
 import { TYPE_DESCRIPTION, TYPE_LABEL } from "@/lib/content/labels";
@@ -34,6 +35,7 @@ export default function LibraryPage() {
       expression: e.formulas[0]?.expression,
       hasCalculator: e.formulas.some((f) => f.calculator),
       hasLab: Boolean(e.lab),
+      hasVisual: hasVisuals(e.slug),
       method: e.method ? { purpose: e.method.purpose, data: e.method.data } : undefined,
       refs: e.references.length,
       connections: graphEdges.filter((g) => g.from === e.slug || g.to === e.slug).length,

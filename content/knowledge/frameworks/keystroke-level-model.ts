@@ -31,7 +31,7 @@ export default defineEntry({
         "It predicts the time for an **experienced user who knows exactly what to do and makes no mistakes**. That sounds narrow, but it is very useful: it lets you compare two designs on paper — before building anything — and see which one is faster for people who use it every day.",
       ],
       analogy:
-        "It is like estimating a recipe's preparation time by adding up 'chop an onion: 1 minute', 'boil water: 5 minutes', 'stir: 10 seconds'. The estimate assumes a practised cook who never needs to reread the recipe — so it is a best case, not a beginner's experience.",
+        "KLM estimates time the way you might estimate a recipe's preparation time, by adding up 'chop an onion: 1 minute', 'boil water: 5 minutes', 'stir: 10 seconds'. The estimate assumes a practised cook who never needs to reread the recipe — so it is a best case, not a beginner's experience.",
       everydayExamples: [
         "Copying text with Ctrl+C / Ctrl+V is faster than right-click → Copy → right-click → Paste for a practised user — the KLM shows by how much.",
         "Entering a date by typing 12/05 versus picking from a calendar widget.",

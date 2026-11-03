@@ -21,7 +21,7 @@ export default function GlossaryPage() {
       <PageHeader
         eyebrow="Glossary"
         title="The vocabulary of the discipline"
-        lede={`${glossary.length} short definitions. Terms marked “entry” have a full knowledge entry — follow it for the explanation, evidence and practice.`}
+        lede={`${glossary.length} short definitions. Terms marked “entry” have a full knowledge entry with the explanation, evidence and practice.`}
       />
       <Container className="pt-4">
         <GlossaryBrowser items={items} />

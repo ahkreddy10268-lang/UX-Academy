@@ -3,14 +3,15 @@ import { citationLine } from "@/components/entry/references";
 import { LearningPanel } from "@/components/home/learning-panel";
 import { ConceptIllustration } from "@/components/illustrations/concept-illustration";
 import { HomeHeroArt } from "@/components/illustrations/home-hero-art";
-import { CategoryTile, KnowledgeCard } from "@/components/knowledge/knowledge-card";
+import { CategoryTile } from "@/components/knowledge/knowledge-card";
+import { quickTakeaways, visualsFor } from "@/components/visual-explanations/registry";
+import { VISUAL_TYPE_LABEL } from "@/components/visual-explanations/types";
 import { PathCard } from "@/components/learn/path-card";
 import { HeroSearch } from "@/components/search/hero-search";
 import { Icon } from "@/components/shell/icons";
 import { Container } from "@/components/ui/layout";
 import { EvidenceMark } from "@/components/ui/marks";
 import { domainById, entries, entryBySlug, graphEdges, labs, learningPaths, libraryFormulas, sourceById, sources, verification } from "@/lib/content";
-import { cardFor } from "@/lib/content/cards";
 import { catClass } from "@/lib/content/categories";
 import { domainCoverage } from "@/lib/content/coverage";
 import { EVIDENCE_LABEL, EVIDENCE_ORDER, TYPE_LABEL } from "@/lib/content/labels";
@@ -23,6 +24,7 @@ const LAB_PREVIEW = ["fitts-lab", "serial-position-lab", "contrast-lab"];
 /** One concept per kind of evidence story: replicated law, misapplied finding, contested effect, practitioner heuristic. */
 const EVIDENCE_EXAMPLES = ["fitts-law", "millers-law", "jakobs-law", "choice-overload"];
 const STARTERS = ["usability", "mental-models", "cognitive-load-theory"];
+const VISUAL_SHOWCASE = ["fitts-law", "double-diamond", "cognitive-load-theory", "information-architecture"];
 
 function SectionHead({ id, kicker, title, href, linkLabel }: { id: string; kicker: string; title: string; href?: string; linkLabel?: string }) {
   return (
@@ -68,7 +70,7 @@ export default function Home() {
                 Understand the principles behind <span className="t-editorial italic text-accent-ink">better experiences.</span>
               </h1>
               <p className="t-lede mt-5 max-w-[34rem] text-base sm:text-lg">
-                Concepts from psychology, research, interaction and visual design — explained at three depths, drawn as diagrams you can
+                Concepts from psychology, research, interaction and visual design, explained at three depths, drawn as diagrams you can
                 manipulate, and labelled by the strength of their evidence.
               </p>
               <div className="mt-7 max-w-xl">
@@ -276,16 +278,34 @@ export default function Home() {
         </section>
       </Container>
 
-      {/* ---------------- Recommendations ---------------- */}
+      {/* ---------------- Explained visually ---------------- */}
       <Container>
-        <section aria-labelledby="start">
-          <SectionHead id="start" kicker="Recommended first" title="Three ideas everything else builds on" href="/library" linkLabel="Open the library" />
-          <ul className="mt-6 grid gap-4 md:grid-cols-3">
-            {STARTERS.map((slug) => {
+        <section aria-labelledby="visual">
+          <SectionHead id="visual" kicker="Explained visually" title="Four concepts, four ways of drawing an idea" href="/library?feature=visual" linkLabel="All concepts with diagrams" />
+          <p className="mt-2 max-w-2xl text-sm text-ink-2">A formula is drawn as its geometry, a process as its phases, a theory as its model, a structure as its tree. The choice follows what the knowledge is.</p>
+          <ul className="mt-6 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+            {VISUAL_SHOWCASE.map((slug) => {
               const e = entryBySlug.get(slug)!;
+              const v = visualsFor(slug)[0];
               return (
                 <li key={slug}>
-                  <KnowledgeCard d={cardFor(e)} variant="standard" plate={<ConceptIllustration slug={slug} title={e.title} domain={e.domain} decorative />} />
+                  <article className={`${catClass(e.domain)} card group relative flex h-full flex-col overflow-hidden`}>
+                    <div className="border-b border-rule">
+                      <ConceptIllustration slug={slug} title={e.title} domain={e.domain} decorative />
+                    </div>
+                    <div className="flex flex-1 flex-col p-4">
+                      <p className="flex items-center gap-2 text-xs">
+                        <span className="rounded-full bg-c-wash px-2 py-0.5 font-semibold text-c-ink">{VISUAL_TYPE_LABEL[v.type]}</span>
+                        <span className="text-ink-3">{visualsFor(slug).length} diagram{visualsFor(slug).length > 1 ? "s" : ""}</span>
+                      </p>
+                      <h3 className="t-sub mt-2 text-base group-hover:text-accent-ink">
+                        <Link href={`/library/${slug}#visual`} className="after:absolute after:inset-0">
+                          {e.title}
+                        </Link>
+                      </h3>
+                      <p className="mt-1 text-sm text-ink-2">{quickTakeaways[slug]}</p>
+                    </div>
+                  </article>
                 </li>
               );
             })}

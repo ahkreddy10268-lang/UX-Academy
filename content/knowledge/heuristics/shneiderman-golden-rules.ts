@@ -32,7 +32,7 @@ export default defineEntry({
         "**5. Prevent errors** — make mistakes hard to make, and if they happen, offer simple, specific recovery. **6. Permit easy reversal of actions** — undo lowers anxiety and encourages exploration. **7. Keep users in control** — people, especially experienced ones, want the system to respond to them rather than surprise them. **8. Reduce short-term memory load** — do not make people remember information from one screen to use on another.",
       ],
       analogy:
-        "Think of a well-run train journey: the signs are consistent at every station, there is help for first-time travellers and fast lanes for commuters, announcements tell you what is happening, the ticket confirms you are done, barriers stop you boarding the wrong train, you can change your booking, you decide when to travel, and you never need to memorise the platform — it is printed on the board.",
+        "On a well-run train journey the signs are consistent at every station, there is help for first-time travellers and fast lanes for commuters, announcements tell you what is happening, the ticket confirms you are done, barriers stop you boarding the wrong train, you can change your booking, you decide when to travel, and you never need to memorise the platform — it is printed on the board.",
       everydayExamples: [
         "Checkout flows ending with an order-confirmation page (closure).",
         "Undo in a text editor or 'Restore' in an email trash folder (easy reversal).",

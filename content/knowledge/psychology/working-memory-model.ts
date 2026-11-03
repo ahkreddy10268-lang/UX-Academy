@@ -32,7 +32,7 @@ export default defineEntry({
         "Because each part has limited room, doing two things that use the *same* part is hard — like remembering a number while listening to someone talk. Doing two things that use *different* parts — like remembering a number while looking at a map — is easier.",
       ],
       analogy:
-        "Think of a small kitchen with one chef (the central executive), a narrow shelf for spoken notes (the phonological loop) and a small whiteboard for sketches (the visuospatial sketchpad). The chef can glance at both, but each holds only a little — and two cooks writing on the same whiteboard get in each other's way.",
+        "Picture a small kitchen with one chef (the central executive), a narrow shelf for spoken notes (the phonological loop) and a small whiteboard for sketches (the visuospatial sketchpad). The chef can glance at both, but each holds only a little — and two cooks writing on the same whiteboard get in each other's way.",
       everydayExamples: [
         "Repeating a verification code under your breath while switching apps to type it.",
         "Finding it hard to read while someone is talking to you — both use verbal resources.",

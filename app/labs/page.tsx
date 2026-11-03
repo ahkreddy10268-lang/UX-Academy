@@ -19,7 +19,7 @@ export default function LabsPage() {
       <PageHeader
         eyebrow="Labs"
         title="See the principles behave"
-        lede="Experiments that measure you, simulations you manipulate, and tools you will use in practice. Each lab is explicit about which it is — and states the assumptions behind it."
+        lede="Experiments that measure you, simulations you manipulate, and tools you will use in practice. Each lab says which it is and states the assumptions behind it."
       />
       <Container className="space-y-12 pb-12 pt-6">
         {KINDS.map((k) => (

@@ -36,7 +36,7 @@ export function EvidenceMark({ evidence, showLabel = true }: { evidence: Evidenc
             y={8 - i * 4}
             width="4"
             height={4 + i * 4}
-            className={i < filled ? "fill-ink-2" : "fill-none stroke-ink-3"}
+            className={i < filled ? "fill-evidence" : "fill-none stroke-evidence"}
             strokeWidth="1"
           />
         ))}
@@ -48,12 +48,12 @@ export function EvidenceMark({ evidence, showLabel = true }: { evidence: Evidenc
 }
 
 const STATUS_TONE: Record<ContentStatus, string> = {
-  planned: "text-ink-3 border-rule",
-  "research-pending": "text-ink-3 border-rule",
+  planned: "text-planned border-planned-line border-dashed",
+  "research-pending": "text-planned border-planned-line border-dashed",
   "research-completed": "text-info border-info/40",
   drafted: "text-warn border-warn/40",
   reviewed: "text-info border-info/40",
-  published: "text-ok border-ok/40",
+  published: "text-published border-published/40",
 };
 
 export function StatusMark({ status }: { status: ContentStatus }) {

@@ -49,6 +49,14 @@ describe.each(Object.entries(themes))("%s theme tokens", (_name, t) => {
   it.each(["ink", "ink-2", "ink-3", "accent", "accent-ink"])("%s text ≥ 4.5:1 on every surface and wash", (tok) => {
     for (const bg of [...surfaces, ...washes]) expect(contrastRatio(v(tok), v(bg)), `${tok} on ${bg}`).toBeGreaterThanOrEqual(4.5);
   });
+  it.each(["ok", "warn", "info", "error", "evidence", "planned", "published"])("semantic %s ≥ 4.5:1 on base surfaces and its own wash", (tok) => {
+    const washes: Record<string, string> = { ok: "ok-wash", warn: "warn-wash", info: "info-wash", error: "error-wash", evidence: "evidence-wash" };
+    for (const bg of ["paper", "surface", "soft", "sunken", ...(washes[tok] ? [washes[tok]] : [])]) expect(contrastRatio(v(tok), v(bg)), `${tok} on ${bg}`).toBeGreaterThanOrEqual(4.5);
+  });
+  // Planned cards always also say "planned" in text, so the dashed outline is a redundant cue (not WCAG 1.4.11 essential); it must still be clearly visible.
+  it("planned dashed outlines stay visible (≥ 2.2:1) on the surfaces they sit on", () => {
+    for (const bg of ["surface", "soft"]) expect(contrastRatio(v("planned-line"), v(bg)), bg).toBeGreaterThanOrEqual(2.2);
+  });
   it("rubric ≥ 4.5:1 on base surfaces", () => {
     for (const bg of ["paper", "surface", "soft", "sunken"]) expect(contrastRatio(v("rubric"), v(bg)), bg).toBeGreaterThanOrEqual(4.5);
   });

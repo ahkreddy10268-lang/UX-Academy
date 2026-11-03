@@ -32,7 +32,7 @@ export default defineEntry({
         "It is a useful **target**, not a law of nature. Other researchers describe the same idea differently — for example, around **0.1 s** feels instant, around **1 s** keeps your flow of thought, and beyond about **10 s** people lose attention.",
       ],
       analogy:
-        "Think of a conversation. If the other person replies immediately, you keep talking naturally. A short pause is fine. A long silence makes you wonder whether they heard you — and you start doing something else.",
+        "Conversation has the same rhythm. If the other person replies immediately, you keep talking naturally. A short pause is fine. A long silence makes you wonder whether they heard you — and you start doing something else.",
       everydayExamples: [
         "Search suggestions that appear as you type feel 'live'; a search that takes three seconds feels like a separate step.",
         "A 'Like' button that changes state instantly (even before the server confirms) feels responsive.",

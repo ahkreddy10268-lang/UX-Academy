@@ -63,6 +63,6 @@ Renders card + hero for every plate in light and dark into `.plates/plates-{ligh
 
 ## v3 additions
 
-- **68 plates** (was 67): new **Human-Centred Design** plate (`frameworks-visual.tsx`), drawn ahead of its entry. It shows nested rings for users, the people affected and the context of use, with an iteration spiral that converges through three evaluation points, so it is deliberately distinct from the UCD square loop. The planned-topic page shows it captioned "drawn ahead of the entry".
+- **69 plates** (was 67): new **Information Architecture** plate (four systems in one picture, for the new entry) and **Human-Centred Design** plate (`frameworks-visual.tsx`), drawn ahead of its entry. It shows nested rings for users, the people affected and the context of use, with an iteration spiral that converges through three evaluation points, so it is deliberately distinct from the UCD square loop. The planned-topic page shows it captioned "drawn ahead of the entry".
 - The brief's initial set of 15 (including Affordances & Signifiers and HCD) is covered: every published entry, every subject, and three planned topics (design-thinking, atomic-design, human-centred-design) have plates.
 - In the v3 pastel washes, `C.paper` knocks out to the cool canvas and `C.soft` mixes into the surface. Both were re-rendered and reviewed in light and dark.

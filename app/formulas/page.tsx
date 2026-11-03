@@ -44,7 +44,7 @@ export default function FormulasPage() {
         cat="cat-blue"
         eyebrow="Formula Lab"
         title="Calculate, then interpret"
-        lede={`${libraryFormulas.length} formulas, each with its source, variables, assumptions, a worked example and its limitations — and a calculator backed by unit-tested code. A number without its assumptions is not an answer.`}
+        lede={`${libraryFormulas.length} formulas, each with its source, variables, assumptions, a worked example and its limitations, plus a calculator backed by unit-tested code. A number without its assumptions is not an answer.`}
       />
       <Container className="pt-10">
         <FormulaIndex rows={rows} groups={GROUPS.map(({ title, description }) => ({ title, description }))} plates={plates} />

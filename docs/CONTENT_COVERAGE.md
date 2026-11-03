@@ -5,18 +5,18 @@
 
 | Measure | Count |
 |---|---|
-| Topics in taxonomy | 514 |
-| Published entries | 45 |
+| Topics in taxonomy | 515 |
+| Published entries | 46 |
 | Formulas with calculators | 25 |
-| Quiz questions | 158 |
-| Exercises | 124 |
-| Flashcards | 128 |
+| Quiz questions | 162 |
+| Exercises | 127 |
+| Flashcards | 131 |
 | Labs | 13 |
 | Workshops | 11 |
 | Comparisons | 10 |
 | Learning paths | 16 |
 | Glossary terms | 114 |
-| Sources | 252 |
+| Sources | 255 |
 
 ## By domain
 
@@ -28,7 +28,7 @@
 | Principles & Heuristics | 12 | 0 | 0 | 0 | 0 | 2 | 14% |
 | UX Research | 49 | 0 | 0 | 0 | 0 | 5 | 9% |
 | Methods & Frameworks | 18 | 0 | 0 | 0 | 0 | 4 | 18% |
-| Information Architecture | 17 | 0 | 0 | 0 | 0 | 0 | 0% |
+| Information Architecture | 17 | 0 | 0 | 0 | 0 | 1 | 6% |
 | Interaction Design | 15 | 0 | 0 | 0 | 0 | 1 | 6% |
 | UI & Visual Design | 24 | 0 | 0 | 0 | 0 | 1 | 4% |
 | Typography & Colour Science | 23 | 0 | 0 | 0 | 0 | 2 | 8% |
@@ -45,16 +45,16 @@
 
 ## Quality gate
 
-- classification: 45/45
-- explanation: 45/45
-- research: 45/45
-- beginner: 45/45
-- professional: 45/45
-- examples: 45/45
-- limitations: 45/45
-- relationships: 45/45
-- sources: 45/45
-- activities: 45/45
+- classification: 46/46
+- explanation: 46/46
+- research: 46/46
+- beginner: 46/46
+- professional: 46/46
+- examples: 46/46
+- limitations: 46/46
+- relationships: 46/46
+- sources: 46/46
+- activities: 46/46
 
 ## Published entries
 
@@ -78,6 +78,7 @@
 | HEART Framework | Framework | Peer-reviewed research | 3 | 3 | 3 | — | — |
 | Heuristic Evaluation | Method | Peer-reviewed research | 11 | 4 | 3 | — | — |
 | Hick-Hyman Law | Law | Original empirical research | 6 | 4 | 3 | hick-hyman | hick-lab |
+| Information Architecture | Discipline | Practitioner recommendation | 4 | 4 | 3 | — | — |
 | Jakob's Law | Principle | Practitioner recommendation | 4 | 3 | 2 | — | — |
 | Jobs To Be Done | Framework | Practitioner recommendation | 3 | 4 | 3 | — | — |
 | Keystroke-Level Model (KLM) | Model | Established theoretical model | 4 | 3 | 2 | klm | — |

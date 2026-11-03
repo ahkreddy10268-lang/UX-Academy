@@ -18,7 +18,7 @@ export default function CoveragePage() {
       <PageHeader
         eyebrow="Coverage register"
         title="What is written, and what is not yet"
-        lede="Computed from the content itself — nothing on this page is entered by hand. A topic counts as covered only when its entry is published and passes every quality gate."
+        lede="Computed from the content itself: nothing on this page is entered by hand. A topic counts as covered only when its entry is published and passes every quality gate."
       />
       <Container className="space-y-16 pt-8">
         <dl className="grid grid-cols-2 gap-6 border-y border-rule py-6 sm:grid-cols-3 lg:grid-cols-6">

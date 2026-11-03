@@ -32,7 +32,7 @@ export default defineEntry({
         "It is the most direct evidence you can get about usability. Experts can guess where problems are, but watching even a handful of people often reveals problems nobody on the team expected.",
       ],
       analogy:
-        "It is like a dress rehearsal for a play. The script may look perfect on paper, but only when actors perform it in front of an audience do you see which jokes fall flat and which scenes confuse people.",
+        "A usability test plays the part of a dress rehearsal. The script may look perfect on paper, but only when actors perform it in front of an audience do you see which jokes fall flat and which scenes confuse people.",
       everydayExamples: [
         "Watching five customers try to change their delivery address on a shopping site.",
         "Asking colleagues from another department to try a new expense form on a paper prototype.",

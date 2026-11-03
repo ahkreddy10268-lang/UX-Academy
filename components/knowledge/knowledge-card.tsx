@@ -35,6 +35,7 @@ export type CardData = {
   expression?: string;
   hasLab?: boolean;
   hasCalculator?: boolean;
+  hasVisual?: boolean;
   /** number of references in the entry */
   refs?: number;
   /** explained relations to other entries */
@@ -58,11 +59,12 @@ export function variantFor(d: CardData): CardVariant {
 }
 
 function Features({ d }: { d: CardData }) {
-  if (!d.hasLab && !d.hasCalculator) return null;
+  if (!d.hasLab && !d.hasCalculator && !d.hasVisual) return null;
   return (
     <span className="flex gap-1.5">
       {d.hasCalculator && <span className="rounded-full bg-sunken px-2 py-px text-[11px] font-medium text-ink-2">Calculator</span>}
       {d.hasLab && <span className="rounded-full bg-sunken px-2 py-px text-[11px] font-medium text-ink-2">Lab</span>}
+      {d.hasVisual && <span className="rounded-full bg-sunken px-2 py-px text-[11px] font-medium text-ink-2">Diagram</span>}
     </span>
   );
 }
@@ -84,9 +86,9 @@ export function KnowledgeCard({ d, variant, plate, headingLevel = 3 }: { d: Card
 
   if (v === "planned" || d.planned) {
     return (
-      <article className="relative flex h-full flex-col rounded-md border border-dashed border-rule-strong bg-soft p-4 hover:border-ink-3">
+      <article className="relative flex h-full flex-col rounded-md border border-dashed border-planned-line bg-soft p-4 hover:border-ink-3">
         <p className="label">{TYPE_LABEL[d.type]} · planned</p>
-        {title("mt-1.5 text-base font-medium leading-snug text-ink-2")}
+        {title("mt-1.5 text-base font-medium leading-snug text-planned")}
         <p className="mt-auto pt-2 text-xs text-ink-3">{d.subject} · not yet researched</p>
       </article>
     );

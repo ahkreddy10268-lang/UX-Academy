@@ -32,7 +32,7 @@ export default defineEntry({
         "Usability is also only one part of a good product. A perfectly easy app that does nothing you need is useless. Designers often say a product must be both **useful** (it does the right things) and **usable** (people can do those things easily).",
       ],
       analogy:
-        "Think of a ticket machine at a train station. It is usable if a tourist in a hurry, carrying luggage, can buy the right ticket first time, quickly, and walk away calm. The same machine may be fine for a daily commuter but fail the tourist — same machine, different users and context.",
+        "A ticket machine at a train station is usable if a tourist in a hurry, carrying luggage, can buy the right ticket first time, quickly, and walk away calm. The same machine may be fine for a daily commuter but fail the tourist — same machine, different users and context.",
       everydayExamples: [
         "A microwave where you can heat food in one press versus one that requires reading the manual to set the time.",
         "A form that tells you exactly which field has a problem, compared with one that just says 'Error'.",

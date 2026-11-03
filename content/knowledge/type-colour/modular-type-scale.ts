@@ -32,7 +32,7 @@ export default defineEntry({
         "Because every size is related by the same ratio, the steps feel even, and there are fewer arbitrary choices to make. It also gives a team a shared list of sizes to use.",
       ],
       analogy:
-        "It's like the notes of a musical scale. You don't play any random pitch; you pick from a set of notes related by fixed intervals, so whatever you play fits together. The common ratio names even come from music — 'major third', 'perfect fourth'.",
+        "A musician does not play any random pitch but picks from notes related by fixed intervals, so whatever is played fits together. A modular scale does the same for type sizes. The common ratio names even come from music — 'major third', 'perfect fourth'.",
       everydayExamples: [
         "A blog with body text at 18 px and headings at 22.5, 28 and 35 px (ratio 1.25).",
         "A design system that offers 'text-sm, text-base, text-lg, text-xl…' tokens rather than any pixel value.",

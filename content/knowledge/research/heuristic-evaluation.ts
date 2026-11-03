@@ -32,7 +32,7 @@ export default defineEntry({
         "It is popular because it is quick and cheap: you need no participants, no lab and no recruitment. But it finds *likely* problems, not proven ones — experts can be wrong about what real users will struggle with.",
       ],
       analogy:
-        "It is like having several experienced editors proofread a document independently. Each catches different mistakes; together they catch most of them. But editors cannot tell you whether readers will find the argument persuasive — only readers can.",
+        "Several experienced editors proofreading a document independently work the same way. Each catches different mistakes; together they catch most of them. But editors cannot tell you whether readers will find the argument persuasive — only readers can.",
       everydayExamples: [
         "Three designers each spend an hour reviewing a new checkout flow, then meet to merge their findings.",
         "A consultant audits a public-sector website against the ten heuristics before a redesign.",

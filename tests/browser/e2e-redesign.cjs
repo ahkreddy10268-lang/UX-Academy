@@ -129,6 +129,24 @@ const check = (name, ok, detail = '') => results.push({ name, ok: !!ok, detail }
   await p.getByLabel('Hex value of Error').fill('#ffffff');
   check('CVD lab recomputes from edited colours', (await p.locator('section[aria-label^="Protanopia"]').textContent()).includes('#ffffff'));
 
+  // v4 visual knowledge engine
+  for (const [slug, n] of [['fitts-law', 2], ['double-diamond', 1], ['cognitive-load-theory', 2], ['information-architecture', 2]]) {
+    await p.goto(BASE + '/library/' + slug, { waitUntil: 'networkidle' });
+    const figs = p.locator('section[aria-labelledby=visual] > div > figure');
+    check(`${slug}: ${n} detailed visual explanation(s) with title, takeaway and text version`, (await figs.count()) === n && (await figs.first().getByText('Take away').count()) === 1 && (await figs.first().getByText('Read this diagram as text').count()) === 1);
+  }
+  await p.goto(BASE + '/library/double-diamond', { waitUntil: 'networkidle' });
+  const fig = p.locator('section[aria-labelledby=visual] figure').first();
+  await fig.getByText('Read this diagram as text').click();
+  check('text version of a diagram expands into an ordered reading', (await fig.locator('details ol li').count()) >= 3 && (await fig.locator('details ol li').first().isVisible()));
+  const phaseCounts = await Promise.all(['Discover', 'Define', 'Develop', 'Deliver'].map((w) => fig.getByText(w, { exact: true }).count()));
+  check('process diagram names all four phases as real text', phaseCounts.every((c) => c >= 1), phaseCounts.join(','));
+  check('concept hero shows an at-a-glance takeaway', (await p.getByText('At a glance ·').count()) === 1);
+  await p.goto(BASE + '/library?feature=visual', { waitUntil: 'networkidle' });
+  check('library filters concepts that have a detailed diagram', /^4 results/.test(await p.getByText(/^\d+ results?/).textContent()));
+  await p.goto(BASE + '/learn/ux-fundamentals', { waitUntil: 'networkidle' });
+  check('path page draws a curriculum map with a node per lesson', (await p.locator('ol[aria-label="Curriculum map"] > li').count()) >= 3);
+
   // Mobile filter drawer
   const m = await b.newContext({ ...devices['iPhone 13'] });
   const mp = await m.newPage();
@@ -139,7 +157,7 @@ const check = (name, ok, detail = '') => results.push({ name, ok: !!ok, detail }
   await dlg.getByLabel('Subject').selectOption('psychology');
   await dlg.getByRole('button', { name: /^Show \d+ results?$/ }).click();
   check('drawer applies filter and closes', !(await dlg.isVisible()) && /domain=psychology/.test(mp.url()), mp.url());
-  for (const r of ['/', '/library', '/library/fitts-law', '/learn/ux-fundamentals', '/learn/ux-fundamentals/lesson/usability', '/formulas', '/topics/psychology', '/labs/responsive-lab', '/glossary', '/me']) {
+  for (const r of ['/', '/library', '/library/fitts-law', '/library/double-diamond', '/library/information-architecture', '/learn/ux-fundamentals', '/learn/ux-fundamentals/lesson/usability', '/formulas', '/topics/psychology', '/labs/responsive-lab', '/glossary', '/me']) {
     await mp.goto(BASE + r, { waitUntil: 'networkidle' });
     const o = await mp.evaluate(() => document.documentElement.scrollWidth - 390);
     check(`no horizontal scroll at 390px ${r}`, o <= 0, `${o}px`);

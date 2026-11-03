@@ -32,7 +32,7 @@ export default defineEntry({
         "Narrow intervals mean a precise estimate; wide intervals mean uncertainty. Intervals shrink with **more participants** and with **less variation** between participants.",
       ],
       analogy:
-        "It is like a weather forecast of 'between 15 and 19 degrees tomorrow' rather than 'exactly 17': a range is more honest about what can be known, and the width tells you how confident the forecaster is.",
+        "A forecast of 'between 15 and 19 degrees tomorrow' says more than 'exactly 17': the range is more honest about what can be known, and the width tells you how confident the forecaster is.",
       everydayExamples: [
         "Opinion polls reported as '42% ± 3 points'.",
         "'Average task time 48 seconds (95% CI 39–59 s)' in a usability benchmark.",

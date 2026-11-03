@@ -32,7 +32,7 @@ export default defineEntry({
         "It is narrower than other reviews: it only checks whether a new user can **figure out** the task by exploring. That focus is its strength — it finds the exact moments where first-time users lose their way.",
       ],
       analogy:
-        "It is like checking a route for a visitor in an unfamiliar city. At each junction you ask: will they know they need to turn here, will they see the sign, will the sign make sense to them, and once they turn, will they know they are on the right road?",
+        "A walkthrough resembles checking a route for a visitor to an unfamiliar city. At each junction you ask: will they know they need to turn here, will they see the sign, will the sign make sense to them, and once they turn, will they know they are on the right road?",
       everydayExamples: [
         "Checking whether a new user can set up two-factor authentication without help.",
         "Walking through a self-service ticket machine as a first-time traveller.",

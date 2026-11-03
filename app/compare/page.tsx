@@ -11,7 +11,7 @@ export default function ComparePage() {
   const ctx = richContext();
   return (
     <>
-      <PageHeader eyebrow="Comparisons" title="Concepts that are easily confused" lede="Side by side, dimension by dimension — with guidance on when to choose each, and how they work together." />
+      <PageHeader eyebrow="Comparisons" title="Concepts that are easily confused" lede="Side by side, dimension by dimension, with guidance on when to choose each and how they work together." />
       <Container className="pt-6">
         <ul className="divide-y divide-rule">
           {comparisons.map((c) => (

@@ -32,7 +32,7 @@ export default defineEntry({
         "The surprising part is the shape of the relationship. Doubling the distance does not double the time — time grows more gently, following a logarithm. What really matters is the *ratio* of distance to size: a target twice as far away but twice as big is about as easy as the original.",
       ],
       analogy:
-        "Think of throwing a ball into a bucket. A wide bucket at your feet is easy. A narrow cup across the room needs a careful, slower throw. Moving a cursor works the same way: you make a fast movement towards the target, then smaller corrective movements as you get close — and smaller or farther targets need more corrections.",
+        "Throwing a ball into a wide bucket at your feet is easy. A narrow cup across the room needs a careful, slower throw. Moving a cursor works the same way: you make a fast movement towards the target, then smaller corrective movements as you get close — and smaller or farther targets need more corrections.",
       everydayExamples: [
         "A full-width 'Pay now' button on a phone is quicker to tap than a small text link.",
         "Right-click context menus open where your pointer already is, so the distance is almost zero.",

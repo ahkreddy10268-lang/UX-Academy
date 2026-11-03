@@ -1,4 +1,6 @@
-# UI/UX design direction (v3 — Pastel Editorial Workspace)
+# UI/UX design direction (v3 — Pastel Editorial Workspace; v4 Visual Intelligence)
+
+> **v4 (2026-11-03):** the v3 workspace is kept. v4 adds the Visual Knowledge Engine (docs/VISUAL_KNOWLEDGE_SYSTEM.md, DIAGRAM_DESIGN_GUIDELINES.md), the editorial voice (EDITORIAL_STYLE_GUIDE.md), semantic status tokens, a homepage "Explained visually" section, a library diagram filter and curriculum maps. The four visual-explanation reference images and five dashboard references were again not available in the session.
 
 **Direction (v3, 2026-11-03):** a premium pastel workspace (persistent sidebar, toolbar, one rounded white frame, soft panels) + a visual knowledge encyclopedia (pastel subject fields, explanatory plates) + interactive learning (explorers, labs) + an editorial reading voice. v3 evolves v2 and does not replace it: plates, evidence model, content and IA are unchanged. Detailed tokens: DESIGN_SYSTEM.md. Decisions: DECISION_LOG D-026…D-033.
 

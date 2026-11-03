@@ -32,7 +32,7 @@ export default defineEntry({
         "Card sorting tells you how people *expect* things to be grouped. It does not prove that people can *find* things in the structure you build — that is checked with a different method called tree testing.",
       ],
       analogy:
-        "It is like asking several friends to organise your kitchen cupboards. If most of them put the spices next to the oils, that is a strong hint about where a guest would look for the paprika.",
+        "Ask several friends to organise your kitchen cupboards. If most of them put the spices next to the oils, that is a strong hint about where a guest would look for the paprika.",
       everydayExamples: [
         "A university asks prospective students to sort 40 topics (fees, accommodation, courses, open days) to design its website menu.",
         "An intranet team runs a closed sort to see whether staff can place documents into existing department categories.",

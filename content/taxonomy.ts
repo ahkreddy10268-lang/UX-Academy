@@ -283,6 +283,11 @@ export const domains: Domain[] = [
     description: "How information is organised, labelled, navigated and found.",
     subcategories: [
       {
+        id: "discipline",
+        title: "The discipline",
+        items: [...g("discipline", "Information Architecture|information-architecture")],
+      },
+      {
         id: "structures",
         title: "Structures & models",
         items: [

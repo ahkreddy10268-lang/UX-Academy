@@ -32,7 +32,7 @@ export default defineEntry({
         "'Gestalt' is German for 'form' or 'shape'. The big idea is that the whole we perceive is different from a simple list of its parts.",
       ],
       analogy:
-        "Think of people standing at a party. Without anyone telling you, you see who is in which conversation — by how close they stand, which way they face and whether they share a table. Gestalt principles are the same instinct applied to shapes on a screen.",
+        "At a party, without anyone telling you, you see who is in which conversation — by how close they stand, which way they face and whether they share a table. Gestalt principles are the same instinct applied to shapes on a screen.",
       everydayExamples: [
         "A form where each label sits closer to its own field than to the field above it.",
         "Navigation links styled identically, so you read them as one menu.",

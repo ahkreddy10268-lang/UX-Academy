@@ -1,6 +1,6 @@
 # Progress register
 
-_Last updated: 2026-11-03 (session 3 — v3 Pastel Editorial Workspace)_
+_Last updated: 2026-11-03 (session 4 — v4 Visual Intelligence)_
 
 ## State
 
@@ -63,6 +63,32 @@ First meaningful release is complete and verified. All Definition-of-Done items 
 - Steering-law experiment and colour-vision-deficiency simulation labs remain unbuilt.
 - Plates for most planned topics do not exist; planned pages show the subject plate, captioned as such.
 - Explorers exist for 7 concepts; others show the static hero plate.
+
+## Session 4 — v4 Visual Intelligence (committed and pushed with authorisation)
+
+**Implemented**
+- **Visual Knowledge Engine** (`components/visual-explanations/`): types, HTML/CSS primitives, a figure frame that answers the five questions with a text version and sources, four templates (process timeline, hierarchy tree, before/after comparison, formula anatomy), a registry with integrity tests, and full-width placement on concept pages with an "at a glance" takeaway under the hero plate.
+- **Four gold-standard concepts**, each with a different strategy:
+  - Fitts (formula anatomy + computed placement comparison);
+  - Double Diamond (process);
+  - Cognitive Load Theory (conceptual model + split-attention comparison);
+  - Information Architecture (system + hierarchy).
+- **New entry:** Information Architecture (46 published), with new sources (Rosenfeld, Morville & Arango 2015; Pirolli & Card 1999; Furnas et al. 1987), and a new IA plate (69 plates).
+- **Editorial system:** `docs/EDITORIAL_STYLE_GUIDE.md`, an editorial gate test, 17 analogy openings rewritten, and UI ledes rebalanced.
+- **Semantic tokens:** error, evidence, planned and published.
+- **Product:** homepage "Explained visually" section, a library "A detailed diagram" filter and card chip, and a curriculum map on path pages.
+- **Docs:** VISUAL_KNOWLEDGE_SYSTEM, DIAGRAM_DESIGN_GUIDELINES and EDITORIAL_STYLE_GUIDE are new; CLAUDE.md, DESIGN_SYSTEM, ILLUSTRATION_SYSTEM, UI_UX_DESIGN_DIRECTION, DECISION_LOG (D-034…D-038) and VISUAL_QA are updated.
+
+**Verified:** see docs/VISUAL_QA.md (155 unit tests, 42 + 56 e2e checks, 156 axe audits with 0 violations, 108 responsive checks).
+
+## Next task (precise)
+
+Add Level-2 explanations for the next concepts by strategy, reusing the templates:
+1. `user-centred-design` (process template, iterative).
+2. `gestalt-principles` (annotated interface, a new template).
+3. `heuristic-evaluation` (process + decision).
+
+For each: write the composition in `components/visual-explanations/concepts/`, register it with sources from the entry's own references, then run `npx vitest run tests/visuals.test.ts`, build, and re-run `tests/browser/e2e-redesign.cjs`. Then implement the colour (HSV) explorer from spec Part 09 using new tested functions in `lib/formulas/visual.ts`.
 
 ## Session 3 — v3 Pastel Editorial Workspace (not committed; awaiting owner authorisation)
 
