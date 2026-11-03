@@ -7,6 +7,22 @@
     "registeredContainer": "Proceedings of the ACM SIGCHI Conference on Human factors in computing systems",
     "similarity": 1
   },
+  "accot-zhai-1999": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Performance evaluation of input devices in trajectory-based tasks: an application of the steering law",
+    "registeredYear": 1999,
+    "registeredContainer": "Proceedings of the SIGCHI conference on Human factors in computing systems the CHI is the limit - CHI '99",
+    "similarity": 1
+  },
+  "accot-zhai-2001": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Scale effects in steering law tasks",
+    "registeredYear": 2001,
+    "registeredContainer": "Proceedings of the SIGCHI Conference on Human Factors in Computing Systems",
+    "similarity": 1
+  },
   "acm-dl": {
     "status": "url-unreachable",
     "checkedAt": "2026-11-03",
@@ -17,20 +33,100 @@
     "checkedAt": "2026-11-03",
     "httpStatus": 200
   },
+  "agresti-coull-1998": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Approximate is Better than “Exact” for Interval Estimation of Binomial Proportions",
+    "registeredYear": 1998,
+    "registeredContainer": "The American Statistician",
+    "similarity": 1
+  },
+  "ahlstrom-2005": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Modeling and improving selection in cascading pull-down menus using Fitts' law, the steering law and force fields",
+    "registeredYear": 2005,
+    "registeredContainer": "Proceedings of the SIGCHI Conference on Human Factors in Computing Systems",
+    "similarity": 1
+  },
   "apple-hig": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
     "httpStatus": 200
+  },
+  "atkinson-shiffrin-1968": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Human Memory: A Proposed System and its Control Processes",
+    "registeredYear": 1968,
+    "registeredContainer": "Psychology of Learning and Motivation",
+    "similarity": 1
   },
   "atlassian-design": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
     "httpStatus": 200
   },
+  "baddeley-1994": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "The magical number seven: Still magic after all these years?",
+    "registeredYear": 1994,
+    "registeredContainer": "Psychological Review",
+    "similarity": 1
+  },
+  "baddeley-2000": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "The episodic buffer: a new component of working memory?",
+    "registeredYear": 2000,
+    "registeredContainer": "Trends in Cognitive Sciences",
+    "similarity": 1
+  },
+  "baddeley-2012": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Working Memory: Theories, Models, and Controversies",
+    "registeredYear": 2012,
+    "registeredContainer": "Annual Review of Psychology",
+    "similarity": 1
+  },
+  "baddeley-hitch-1974": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Working Memory",
+    "registeredYear": 1974,
+    "registeredContainer": "Psychology of Learning and Motivation",
+    "similarity": 1
+  },
+  "baddeley-thomson-buchanan-1975": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Word length and the structure of short-term memory",
+    "registeredYear": 1975,
+    "registeredContainer": "Journal of Verbal Learning and Verbal Behavior",
+    "similarity": 1
+  },
+  "bangor-kortum-miller-2008": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "An Empirical Evaluation of the System Usability Scale",
+    "registeredYear": 2008,
+    "registeredContainer": "International Journal of Human–Computer Interaction",
+    "similarity": 1
+  },
   "baymard-research": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
     "httpStatus": 200
+  },
+  "bevan-carter-harker-2015": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "ISO 9241-11 Revised: What Have We Learnt About Usability Since 1998?",
+    "registeredYear": 2015,
+    "registeredContainer": "Lecture Notes in Computer Science",
+    "similarity": 1
   },
   "bi-li-zhai-2013": {
     "status": "doi-verified",
@@ -38,6 +134,74 @@
     "registeredTitle": "FFitts law: modeling finger touch with fitts' law",
     "registeredYear": 2013,
     "registeredContainer": "Proceedings of the SIGCHI Conference on Human Factors in Computing Systems",
+    "similarity": 1
+  },
+  "bjork-whitten-1974": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Recency-sensitive retrieval processes in long-term free recall",
+    "registeredYear": 1974,
+    "registeredContainer": "Cognitive Psychology",
+    "similarity": 1
+  },
+  "blackmon-et-al-2002": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Cognitive walkthrough for the web",
+    "registeredYear": 2002,
+    "registeredContainer": "Proceedings of the SIGCHI Conference on Human Factors in Computing Systems",
+    "similarity": 1
+  },
+  "boren-ramey-2000": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Thinking aloud: reconciling theory and practice",
+    "registeredYear": 2000,
+    "registeredContainer": "IEEE Transactions on Professional Communication",
+    "similarity": 1
+  },
+  "brooke-1996": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "SUS: A 'Quick and Dirty' Usability Scale",
+    "registeredYear": 1996,
+    "registeredContainer": "Usability Evaluation In Industry",
+    "similarity": 1
+  },
+  "brooke-2013": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "brooks-1987": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "No Silver Bullet Essence and Accidents of Software Engineering",
+    "registeredYear": 1987,
+    "registeredContainer": "Computer",
+    "similarity": 1
+  },
+  "brown-2008": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "brown-2011": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "budiu-recognition-recall": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "burmistrov-et-al-2015": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Flat Design vs Traditional Design: Comparative Experimental Study",
+    "registeredYear": 2015,
+    "registeredContainer": "Lecture Notes in Computer Science",
     "similarity": 1
   },
   "carbon-design-system": {
@@ -53,20 +217,180 @@
     "registeredContainer": "Ergonomics",
     "similarity": 1
   },
+  "card-moran-newell-1980": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "The keystroke-level model for user performance time with interactive systems",
+    "registeredYear": 1980,
+    "registeredContainer": "Communications of the ACM",
+    "similarity": 1
+  },
+  "card-robertson-mackinlay-1991": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "The information visualizer, an information workspace",
+    "registeredYear": 1991,
+    "registeredContainer": "Proceedings of the SIGCHI conference on Human factors in computing systems Reaching through technology - CHI '91",
+    "similarity": 1
+  },
+  "carroll-carrithers-1984": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Training wheels in a user interface",
+    "registeredYear": 1984,
+    "registeredContainer": "Communications of the ACM",
+    "similarity": 1
+  },
+  "chandler-sweller-1991": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Cognitive Load Theory and the Format of Instruction",
+    "registeredYear": 1991,
+    "registeredContainer": "Cognition and Instruction",
+    "similarity": 1
+  },
+  "chernev-bockenholt-goodman-2015": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Choice overload: A conceptual review and meta‐analysis",
+    "registeredYear": 2014,
+    "registeredContainer": "Journal of Consumer Psychology",
+    "similarity": 1
+  },
+  "christensen-et-al-2016": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "cockburn-gutwin-greenberg-2007": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "A predictive model of menu performance",
+    "registeredYear": 2007,
+    "registeredContainer": "Proceedings of the SIGCHI Conference on Human Factors in Computing Systems",
+    "similarity": 1
+  },
+  "cohen-1992": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "A power primer.",
+    "registeredYear": 1992,
+    "registeredContainer": "Psychological Bulletin",
+    "similarity": 1
+  },
+  "cowan-1988": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Evolving conceptions of memory storage, selective attention, and their mutual constraints within the human information-processing system.",
+    "registeredYear": 1988,
+    "registeredContainer": "Psychological Bulletin",
+    "similarity": 1
+  },
+  "cowan-2001": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "The magical number 4 in short-term memory: A reconsideration of mental storage capacity",
+    "registeredYear": 2001,
+    "registeredContainer": "Behavioral and Brain Sciences",
+    "similarity": 1
+  },
   "crossref": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
     "httpStatus": 200
+  },
+  "cumming-2014": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "The New Statistics: Why and How",
+    "registeredYear": 2013,
+    "registeredContainer": "Psychological Science",
+    "similarity": 1
+  },
+  "de-jong-2010": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Cognitive load theory, educational research, and instructional design: some food for thought",
+    "registeredYear": 2009,
+    "registeredContainer": "Instructional Science",
+    "similarity": 1
   },
   "defra-research-methods": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
     "httpStatus": 200
   },
+  "design-council-double-diamond": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "design-council-framework-for-innovation": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "dion-berscheid-walster-1972": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "What is beautiful is good.",
+    "registeredYear": 1972,
+    "registeredContainer": "Journal of Personality and Social Psychology",
+    "similarity": 1
+  },
+  "dixon-freeman-toman-2010": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "doherty-thadani-1982": {
+    "status": "url-unreachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 503
+  },
+  "dtcg-2026-thank-you-jina": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "dtcg-format-2025": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "etsi-en-301-549-v321": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "fabijan-et-al-2019": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Diagnosing Sample Ratio Mismatch in Online Controlled Experiments: A Taxonomy and Rules of Thumb for Practitioners",
+    "registeredYear": 2019,
+    "registeredContainer": "Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery &amp; Data Mining",
+    "similarity": 1
+  },
+  "faulkner-2003": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Beyond the five-user assumption: Benefits of increased sample sizes in usability testing",
+    "registeredYear": 2003,
+    "registeredContainer": "Behavior Research Methods, Instruments, &amp; Computers",
+    "similarity": 1
+  },
   "figma-learn": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
     "httpStatus": 200
+  },
+  "finstad-2010": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "The Usability Metric for User Experience",
+    "registeredYear": 2010,
+    "registeredContainer": "Interacting with Computers",
+    "similarity": 1
   },
   "fitts-1954": {
     "status": "doi-verified",
@@ -80,6 +404,43 @@
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
     "httpStatus": 200
+  },
+  "fornell-1992": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "A National Customer Satisfaction Barometer: The Swedish Experience",
+    "registeredYear": 1992,
+    "registeredContainer": "Journal of Marketing",
+    "similarity": 1
+  },
+  "fredrickson-kahneman-1993": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Duration neglect in retrospective evaluations of affective episodes.",
+    "registeredYear": 1993,
+    "registeredContainer": "Journal of Personality and Social Psychology",
+    "similarity": 1
+  },
+  "frost-2016": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "gaver-1991": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Technology affordances",
+    "registeredYear": 1991,
+    "registeredContainer": "Proceedings of the SIGCHI conference on Human factors in computing systems Reaching through technology - CHI '91",
+    "similarity": 1
+  },
+  "glanzer-cunitz-1966": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Two storage mechanisms in free recall",
+    "registeredYear": 1966,
+    "registeredContainer": "Journal of Verbal Learning and Verbal Behavior",
+    "similarity": 1
   },
   "google-pair-guidebook": {
     "status": "url-reachable",
@@ -96,6 +457,14 @@
     "checkedAt": "2026-11-03",
     "httpStatus": 200
   },
+  "gould-lewis-1985": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Designing for usability:  key principles and what designers think",
+    "registeredYear": 1985,
+    "registeredContainer": "Communications of the ACM",
+    "similarity": 1
+  },
   "govuk-design-system": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
@@ -111,15 +480,159 @@
     "checkedAt": "2026-11-03",
     "httpStatus": 200
   },
+  "gray-salzman-1998": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Damaged Merchandise? A Review of Experiments That Compare Usability Evaluation Methods",
+    "registeredYear": 1998,
+    "registeredContainer": "Human–Computer Interaction",
+    "similarity": 1
+  },
+  "greenland-et-al-2016": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Statistical tests, P values, confidence intervals, and power: a guide to misinterpretations",
+    "registeredYear": 2016,
+    "registeredContainer": "European Journal of Epidemiology",
+    "similarity": 1
+  },
+  "halasz-moran-1983": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Mental models and problem solving in using a calculator",
+    "registeredYear": 1983,
+    "registeredContainer": "Proceedings of the SIGCHI conference on Human Factors in Computing Systems  - CHI '83",
+    "similarity": 1
+  },
+  "hart-2006": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Nasa-Task Load Index (NASA-TLX); 20 Years Later",
+    "registeredYear": 2006,
+    "registeredContainer": "Proceedings of the Human Factors and Ergonomics Society Annual Meeting",
+    "similarity": 1
+  },
+  "hart-staveland-1988": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Development of NASA-TLX (Task Load Index): Results of Empirical and Theoretical Research",
+    "registeredYear": 1988,
+    "registeredContainer": "Advances in Psychology",
+    "similarity": 1
+  },
+  "hassenzahl-2004": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "The Interplay of Beauty, Goodness, and Usability in Interactive Products",
+    "registeredYear": 2004,
+    "registeredContainer": "Human-Computer Interaction",
+    "similarity": 1
+  },
+  "hassenzahl-monk-2010": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "The Inference of Perceived Usability From Beauty",
+    "registeredYear": 2010,
+    "registeredContainer": "Human-Computer Interaction",
+    "similarity": 1
+  },
+  "hassenzahl-tractinsky-2006": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "User experience - a research agenda",
+    "registeredYear": 2006,
+    "registeredContainer": "Behaviour &amp; Information Technology",
+    "similarity": 1
+  },
   "hcibib": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
     "httpStatus": 200
   },
+  "healey-enns-2012": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Attention and Visual Memory in Visualization and Computer Graphics",
+    "registeredYear": 2012,
+    "registeredContainer": "IEEE Transactions on Visualization and Computer Graphics",
+    "similarity": 1
+  },
+  "hedges-1981": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Distribution Theory for Glass's Estimator of Effect size and Related Estimators",
+    "registeredYear": 1981,
+    "registeredContainer": "Journal of Educational Statistics",
+    "similarity": 1
+  },
+  "hertzum-jacobsen-2001": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "The Evaluator Effect: A Chilling Fact About Usability Evaluation Methods",
+    "registeredYear": 2001,
+    "registeredContainer": "International Journal of Human-Computer Interaction",
+    "similarity": 1
+  },
+  "hick-1952": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "On the Rate of Gain of Information",
+    "registeredYear": 1952,
+    "registeredContainer": "Quarterly Journal of Experimental Psychology",
+    "similarity": 1
+  },
+  "hoekstra-et-al-2014": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Robust misinterpretation of confidence intervals",
+    "registeredYear": 2014,
+    "registeredContainer": "Psychonomic Bulletin &amp; Review",
+    "similarity": 1
+  },
+  "hollender-et-al-2010": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Integrating cognitive load theory and concepts of human–computer interaction",
+    "registeredYear": 2010,
+    "registeredContainer": "Computers in Human Behavior",
+    "similarity": 1
+  },
   "homeoffice-ucd-manual": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
     "httpStatus": 200
+  },
+  "hornbaek-law-2007": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Meta-analysis of correlations among usability measures",
+    "registeredYear": 2007,
+    "registeredContainer": "Proceedings of the SIGCHI Conference on Human Factors in Computing Systems",
+    "similarity": 1
+  },
+  "hunt-1995": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "The subtlety of distinctiveness: What von Restorff really did",
+    "registeredYear": 1995,
+    "registeredContainer": "Psychonomic Bulletin &amp; Review",
+    "similarity": 1
+  },
+  "hutchins-hollan-norman-1985": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Direct Manipulation Interfaces",
+    "registeredYear": 1985,
+    "registeredContainer": "Human–Computer Interaction",
+    "similarity": 1
+  },
+  "hyman-1953": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Stimulus information as a determinant of reaction time.",
+    "registeredYear": 1953,
+    "registeredContainer": "Journal of Experimental Psychology",
+    "similarity": 1
   },
   "ideo-design-kit": {
     "status": "url-reachable",
@@ -151,15 +664,198 @@
     "checkedAt": "2026-11-03",
     "httpStatus": 403
   },
+  "itti-koch-2001": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Computational modelling of visual attention",
+    "registeredYear": 2001,
+    "registeredContainer": "Nature Reviews Neuroscience",
+    "similarity": 1
+  },
   "ixdf-literature": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
     "httpStatus": 200
   },
+  "iyengar-lepper-2000": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "When choice is demotivating: Can one desire too much of a good thing?",
+    "registeredYear": 2000,
+    "registeredContainer": "Journal of Personality and Social Psychology",
+    "similarity": 1
+  },
+  "john-kieras-1996": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "The GOMS family of user interface analysis techniques: comparison and contrast",
+    "registeredYear": 1996,
+    "registeredContainer": "ACM Transactions on Computer-Human Interaction",
+    "similarity": 1
+  },
+  "kahneman-et-al-1993": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "When More Pain Is Preferred to Less: Adding a Better End",
+    "registeredYear": 1993,
+    "registeredContainer": "Psychological Science",
+    "similarity": 1
+  },
+  "kahneman-wakker-sarin-1997": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Back to Bentham? Explorations of Experienced Utility",
+    "registeredYear": 1997,
+    "registeredContainer": "The Quarterly Journal of Economics",
+    "similarity": 1
+  },
+  "kalyuga-2011": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Cognitive Load Theory: How Many Types of Load Does It Really Need?",
+    "registeredYear": 2011,
+    "registeredContainer": "Educational Psychology Review",
+    "similarity": 1
+  },
+  "kalyuga-et-al-2003": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "The Expertise Reversal Effect",
+    "registeredYear": 2003,
+    "registeredContainer": "Educational Psychologist",
+    "similarity": 1
+  },
+  "keiningham-et-al-2007": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "A Longitudinal Examination of Net Promoter and Firm Revenue Growth",
+    "registeredYear": 2007,
+    "registeredContainer": "Journal of Marketing",
+    "similarity": 1
+  },
+  "kieras-bovair-1984": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "The Role of a Mental Model in Learning to Operate a Device*",
+    "registeredYear": 1984,
+    "registeredContainer": "Cognitive Science",
+    "similarity": 1
+  },
+  "kohavi-et-al-2009": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Controlled experiments on the web: survey and practical guide",
+    "registeredYear": 2008,
+    "registeredContainer": "Data Mining and Knowledge Discovery",
+    "similarity": 1
+  },
+  "kohavi-tang-xu-2020": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Trustworthy Online Controlled Experiments: A Practical Guide to A/B Testing",
+    "registeredYear": 2020,
+    "similarity": 1
+  },
+  "krosnick-alwin-1987": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "An Evaluation of a Cognitive Theory of Response-Order Effects in Survey Measurement",
+    "registeredYear": 1987,
+    "registeredContainer": "Public Opinion Quarterly",
+    "similarity": 1
+  },
+  "kurosu-kashimura-1995": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Apparent usability vs. inherent usability: experimental analysis on the determinants of the apparent usability",
+    "registeredYear": 1995,
+    "registeredContainer": "Conference companion on Human factors in computing systems  - CHI '95",
+    "similarity": 1
+  },
+  "landauer-nachbar-1985": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Selection from alphabetic and numeric menu trees using a touch screen: breadth, depth, and width",
+    "registeredYear": 1985,
+    "registeredContainer": "Proceedings of the SIGCHI conference on Human factors in computing systems  - CHI '85",
+    "similarity": 1
+  },
   "laws-of-ux": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
     "httpStatus": 200
+  },
+  "leppink-et-al-2013": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Development of an instrument for measuring different types of cognitive load",
+    "registeredYear": 2013,
+    "registeredContainer": "Behavior Research Methods",
+    "similarity": 1
+  },
+  "lewis-1994": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Sample Sizes for Usability Studies: Additional Considerations",
+    "registeredYear": 1994,
+    "registeredContainer": "Human Factors: The Journal of the Human Factors and Ergonomics Society",
+    "similarity": 1
+  },
+  "lewis-2001": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Evaluation of Procedures for Adjusting Problem-Discovery Rates Estimated From Small Samples",
+    "registeredYear": 2001,
+    "registeredContainer": "International Journal of Human-Computer Interaction",
+    "similarity": 1
+  },
+  "lewis-2018-sus": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "The System Usability Scale: Past, Present, and Future",
+    "registeredYear": 2018,
+    "registeredContainer": "International Journal of Human–Computer Interaction",
+    "similarity": 1
+  },
+  "lewis-et-al-1990": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Testing a walkthrough methodology for theory-based design of walk-up-and-use interfaces",
+    "registeredYear": 1990,
+    "registeredContainer": "Proceedings of the SIGCHI conference on Human factors in computing systems Empowering people - CHI '90",
+    "similarity": 1
+  },
+  "lewis-sauro-2009": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "The Factor Structure of the System Usability Scale",
+    "registeredYear": 2009,
+    "registeredContainer": "Lecture Notes in Computer Science",
+    "similarity": 1
+  },
+  "lewis-utesch-maher-2013": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "UMUX-LITE: when there's no time for the SUS",
+    "registeredYear": 2013,
+    "registeredContainer": "Proceedings of the SIGCHI Conference on Human Factors in Computing Systems",
+    "similarity": 1
+  },
+  "lewis-utesch-maher-2015": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Measuring Perceived Usability: The SUS, UMUX-LITE, and AltUsability",
+    "registeredYear": 2015,
+    "registeredContainer": "International Journal of Human-Computer Interaction",
+    "similarity": 1
+  },
+  "loewenstein-prelec-1993": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Preferences for sequences of outcomes.",
+    "registeredYear": 1993,
+    "registeredContainer": "Psychological Review",
+    "similarity": 1
   },
   "mackenzie-1992": {
     "status": "doi-verified",
@@ -169,7 +865,99 @@
     "registeredContainer": "Human–Computer Interaction",
     "similarity": 1
   },
+  "mahatody-sagar-kolski-2010": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "State of the Art on the Cognitive Walkthrough Method, Its Variants and Evolutions",
+    "registeredYear": 2010,
+    "registeredContainer": "International Journal of Human–Computer Interaction",
+    "similarity": 1
+  },
+  "mandler-1980": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Recognizing: The judgment of previous occurrence.",
+    "registeredYear": 1980,
+    "registeredContainer": "Psychological Review",
+    "similarity": 1
+  },
+  "marcotte-2010": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
   "material-3": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "mayer-moreno-2003": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Nine Ways to Reduce Cognitive Load in Multimedia Learning",
+    "registeredYear": 2003,
+    "registeredContainer": "Educational Psychologist",
+    "similarity": 1
+  },
+  "mcgrenere-ho-2000": {
+    "status": "url-unreachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 403
+  },
+  "miller-1956": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "The magical number seven, plus or minus two: Some limits on our capacity for processing information.",
+    "registeredYear": 1956,
+    "registeredContainer": "Psychological Review",
+    "similarity": 1
+  },
+  "miller-1968": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Response time in man-computer conversational transactions",
+    "registeredYear": 1968,
+    "registeredContainer": "Proceedings of the December 9-11, 1968, fall joint computer conference, part I on - AFIPS '68 (Fall, part I)",
+    "similarity": 1
+  },
+  "miller-1969": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "A psychological method to investigate verbal concepts",
+    "registeredYear": 1969,
+    "registeredContainer": "Journal of Mathematical Psychology",
+    "similarity": 1
+  },
+  "miron-shatz-2009": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Evaluating multiepisode events: Boundary conditions for the peak-end rule.",
+    "registeredYear": 2009,
+    "registeredContainer": "Emotion",
+    "similarity": 1
+  },
+  "molich-et-al-2004": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Comparative usability evaluation",
+    "registeredYear": 2004,
+    "registeredContainer": "Behaviour &amp; Information Technology",
+    "similarity": 1
+  },
+  "molich-nielsen-1990": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Improving a human-computer dialogue",
+    "registeredYear": 1990,
+    "registeredContainer": "Communications of the ACM",
+    "similarity": 1
+  },
+  "moran-2017-flat-ui": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "moran-gordon-2023": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
     "httpStatus": 200
@@ -179,7 +967,105 @@
     "checkedAt": "2026-11-03",
     "httpStatus": 200
   },
+  "murdock-1962": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "The serial position effect of free recall.",
+    "registeredYear": 1962,
+    "registeredContainer": "Journal of Experimental Psychology",
+    "similarity": 1
+  },
+  "myers-1985": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "The importance of percent-done progress indicators for computer-human interfaces",
+    "registeredYear": 1985,
+    "registeredContainer": "Proceedings of the SIGCHI conference on Human factors in computing systems  - CHI '85",
+    "similarity": 1
+  },
   "nasa-tlx-site": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "nielsen-1992-heuristic": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Finding usability problems through heuristic evaluation",
+    "registeredYear": 1992,
+    "registeredContainer": "Proceedings of the SIGCHI conference on Human factors in computing systems  - CHI '92",
+    "similarity": 1
+  },
+  "nielsen-1993-response-times": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "nielsen-1994-heuristics": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Enhancing the explanatory power of usability heuristics",
+    "registeredYear": 1994,
+    "registeredContainer": "Proceedings of the SIGCHI Conference on Human Factors in Computing Systems",
+    "similarity": 1
+  },
+  "nielsen-1995-problems-found": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "nielsen-2000-end-of-web-design": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "nielsen-2000-five-users": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "nielsen-2004-card-sorting": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "nielsen-2006-progressive-disclosure": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "nielsen-landauer-1993": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "A mathematical model of the finding of usability problems",
+    "registeredYear": 1993,
+    "registeredContainer": "Proceedings of the SIGCHI conference on Human factors in computing systems  - CHI '93",
+    "similarity": 1
+  },
+  "nielsen-molich-1990": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Heuristic evaluation of user interfaces",
+    "registeredYear": 1990,
+    "registeredContainer": "Proceedings of the SIGCHI conference on Human factors in computing systems Empowering people - CHI '90",
+    "similarity": 1
+  },
+  "nielsen-severity-ratings": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "nielsen-ten-heuristics-article": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "nielsen-thinking-aloud-article": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "nielsen-usability-101": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
     "httpStatus": 200
@@ -194,15 +1080,263 @@
     "checkedAt": "2026-11-03",
     "httpStatus": 200
   },
+  "norman-1986": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Cognitive Engineering",
+    "registeredYear": 1986,
+    "registeredContainer": "User Centered System Design",
+    "similarity": 1
+  },
+  "norman-1999": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Affordance, conventions, and design",
+    "registeredYear": 1999,
+    "registeredContainer": "Interactions",
+    "similarity": 1
+  },
+  "norman-2008": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "THE WAY I SEE ITSignifiers, not affordances",
+    "registeredYear": 2008,
+    "registeredContainer": "Interactions",
+    "similarity": 0.67
+  },
+  "norman-draper-1986": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "User Centered System Design: New Perspectives on Human-computer Interaction",
+    "registeredYear": 1986,
+    "similarity": 1
+  },
+  "norman-nielsen-ux-definition": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "paas-1992": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Training strategies for attaining transfer of problem-solving skill in statistics: A cognitive-load approach.",
+    "registeredYear": 1992,
+    "registeredContainer": "Journal of Educational Psychology",
+    "similarity": 1
+  },
+  "palmer-1992": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Common region: A new principle of perceptual grouping",
+    "registeredYear": 1992,
+    "registeredContainer": "Cognitive Psychology",
+    "similarity": 1
+  },
+  "palmer-rock-1994": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Rethinking perceptual organization: The role of uniform connectedness",
+    "registeredYear": 1994,
+    "registeredContainer": "Psychonomic Bulletin &amp; Review",
+    "similarity": 1
+  },
+  "pearson-1895": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "VII. Note on regression and inheritance in the case of two parents",
+    "registeredYear": 1895,
+    "registeredContainer": "Proceedings of the Royal Society of London",
+    "similarity": 1
+  },
+  "pernice-2017-f-pattern": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "polson-et-al-1992": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Cognitive walkthroughs: a method for theory-based evaluation of user interfaces",
+    "registeredYear": 1992,
+    "registeredContainer": "International Journal of Man-Machine Studies",
+    "similarity": 1
+  },
+  "polson-lewis-1990": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Theory-Based Design for Easily Learned Interfaces",
+    "registeredYear": 1990,
+    "registeredContainer": "Human–Computer Interaction",
+    "similarity": 1
+  },
+  "redelmeier-kahneman-1996": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Patients' memories of painful medical treatments: real-time and retrospective evaluations of two minimally invasive procedures",
+    "registeredYear": 1996,
+    "registeredContainer": "Pain",
+    "similarity": 1
+  },
+  "redelmeier-katz-kahneman-2003": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Memories of colonoscopy: a randomized trial",
+    "registeredYear": 2003,
+    "registeredContainer": "Pain",
+    "similarity": 1
+  },
+  "reichheld-2003": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "rodden-hutchinson-fu-2010": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Measuring the user experience on a large scale: user-centered metrics for web applications",
+    "registeredYear": 2010,
+    "registeredContainer": "Proceedings of the SIGCHI Conference on Human Factors in Computing Systems",
+    "similarity": 1
+  },
+  "rohrer-ux-research-methods": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "roth-2010": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Mental models for web objects: Where do users expect to find the most frequent objects in online shops, news portals, and company web pages?",
+    "registeredYear": 2010,
+    "registeredContainer": "Interacting with Computers",
+    "similarity": 1
+  },
+  "rugg-mcgeorge-1997": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "The sorting techniques: a tutorial paper on card sorts, picture sorts and item sorts",
+    "registeredYear": 1997,
+    "registeredContainer": "Expert Systems",
+    "similarity": 1
+  },
+  "rundus-1971": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Analysis of rehearsal processes in free recall.",
+    "registeredYear": 1971,
+    "registeredContainer": "Journal of Experimental Psychology",
+    "similarity": 1
+  },
+  "sauro-lewis-2005": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Estimating Completion Rates from Small Samples Using Binomial Confidence Intervals: Comparisons and Recommendations",
+    "registeredYear": 2005,
+    "registeredContainer": "Proceedings of the Human Factors and Ergonomics Society Annual Meeting",
+    "similarity": 1
+  },
+  "sauro-lewis-2010": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Average task times in usability tests: what to report?",
+    "registeredYear": 2010,
+    "registeredContainer": "Proceedings of the SIGCHI Conference on Human Factors in Computing Systems",
+    "similarity": 1
+  },
+  "sauro-lewis-2011": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "When designing usability questionnaires, does it hurt to be positive?",
+    "registeredYear": 2011,
+    "registeredContainer": "Proceedings of the SIGCHI Conference on Human Factors in Computing Systems",
+    "similarity": 1
+  },
+  "scheibehenne-greifeneder-todd-2010": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Can There Ever Be Too Many Options? A Meta-Analytic Review of Choice Overload",
+    "registeredYear": 2010,
+    "registeredContainer": "Journal of Consumer Research",
+    "similarity": 1
+  },
   "semantic-scholar": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
     "httpStatus": 200
   },
+  "seow-2005": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Information Theoretic Models of HCI: A Comparison of the Hick-Hyman Law and Fitts' Law",
+    "registeredYear": 2005,
+    "registeredContainer": "Human-Computer Interaction",
+    "similarity": 1
+  },
   "servicedesigntools": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
     "httpStatus": 200
+  },
+  "shallice-warrington-1970": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Independent Functioning of Verbal Memory Stores: A Neuropsychological Study",
+    "registeredYear": 1970,
+    "registeredContainer": "Quarterly Journal of Experimental Psychology",
+    "similarity": 1
+  },
+  "shepard-1967": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Recognition memory for words, sentences, and pictures",
+    "registeredYear": 1967,
+    "registeredContainer": "Journal of Verbal Learning and Verbal Behavior",
+    "similarity": 1
+  },
+  "shneiderman-1983": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Direct Manipulation: A Step Beyond Programming Languages",
+    "registeredYear": 1983,
+    "registeredContainer": "Computer",
+    "similarity": 1
+  },
+  "shneiderman-1984": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Response time and display rate in human performance with computers",
+    "registeredYear": 1984,
+    "registeredContainer": "ACM Computing Surveys",
+    "similarity": 1
+  },
+  "shneiderman-2003": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Promoting universal usability with multi-layer interface design",
+    "registeredYear": 2002,
+    "registeredContainer": "Proceedings of the 2003 conference on Universal usability",
+    "similarity": 1
+  },
+  "shneiderman-2020": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Human-Centered Artificial Intelligence: Reliable, Safe &amp; Trustworthy",
+    "registeredYear": 2020,
+    "registeredContainer": "International Journal of Human–Computer Interaction",
+    "similarity": 1
+  },
+  "shneiderman-golden-rules-page": {
+    "status": "url-unreachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 503
+  },
+  "sonderegger-sauer-2010": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "The influence of design aesthetics in usability testing: Effects on user performance and perceived usability",
+    "registeredYear": 2010,
+    "registeredContainer": "Applied Ergonomics",
+    "similarity": 1
   },
   "soukoreff-mackenzie-2004": {
     "status": "doi-verified",
@@ -210,6 +1344,99 @@
     "registeredTitle": "Towards a standard for pointing device evaluation, perspectives on 27 years of Fitts’ law research in HCI",
     "registeredYear": 2004,
     "registeredContainer": "International Journal of Human-Computer Studies",
+    "similarity": 1
+  },
+  "spencer-2000": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "The streamlined cognitive walkthrough method, working around social constraints encountered in a software development company",
+    "registeredYear": 2000,
+    "registeredContainer": "Proceedings of the SIGCHI conference on Human Factors in Computing Systems",
+    "similarity": 1
+  },
+  "spool-schroeder-2001": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Testing web sites: five users is nowhere near enough",
+    "registeredYear": 2001,
+    "registeredContainer": "CHI '01 Extended Abstracts on Human Factors in Computing Systems",
+    "similarity": 1
+  },
+  "standing-1973": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Learning 10000 pictures",
+    "registeredYear": 1973,
+    "registeredContainer": "Quarterly Journal of Experimental Psychology",
+    "similarity": 0.67
+  },
+  "sweller-1988": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Cognitive Load During Problem Solving: Effects on Learning",
+    "registeredYear": 1988,
+    "registeredContainer": "Cognitive Science",
+    "similarity": 1
+  },
+  "sweller-1994": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Cognitive load theory, learning difficulty, and instructional design",
+    "registeredYear": 1994,
+    "registeredContainer": "Learning and Instruction",
+    "similarity": 1
+  },
+  "sweller-2010": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Element Interactivity and Intrinsic, Extraneous, and Germane Cognitive Load",
+    "registeredYear": 2010,
+    "registeredContainer": "Educational Psychology Review",
+    "similarity": 1
+  },
+  "sweller-van-merrienboer-paas-1998": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Cognitive Architecture and Instructional Design",
+    "registeredYear": 1998,
+    "registeredContainer": "Educational Psychology Review",
+    "similarity": 1
+  },
+  "sweller-van-merrienboer-paas-2019": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Cognitive Architecture and Instructional Design: 20 Years Later",
+    "registeredYear": 2019,
+    "registeredContainer": "Educational Psychology Review",
+    "similarity": 1
+  },
+  "tesler-nomodes": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "tractinsky-1997": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Aesthetics and apparent usability: empirically assessing cultural and methodological issues",
+    "registeredYear": 1997,
+    "registeredContainer": "Proceedings of the ACM SIGCHI Conference on Human factors in computing systems",
+    "similarity": 1
+  },
+  "tractinsky-katz-ikar-2000": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "What is beautiful is usable",
+    "registeredYear": 2000,
+    "registeredContainer": "Interacting with Computers",
+    "similarity": 1
+  },
+  "treisman-gelade-1980": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "A feature-integration theory of attention",
+    "registeredYear": 1980,
+    "registeredContainer": "Cognitive Psychology",
     "similarity": 1
   },
   "uxcel": {
@@ -226,6 +1453,22 @@
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
     "httpStatus": 200
+  },
+  "virzi-1992": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Refining the Test Phase of Usability Evaluation: How Many Subjects Is Enough?",
+    "registeredYear": 1992,
+    "registeredContainer": "Human Factors: The Journal of the Human Factors and Ergonomics Society",
+    "similarity": 1
+  },
+  "von-restorff-1933": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Über die Wirkung von Bereichsbildungen im Spurenfeld",
+    "registeredYear": 1933,
+    "registeredContainer": "Psychologische Forschung",
+    "similarity": 1
   },
   "w3c-aria-apg": {
     "status": "url-reachable",
@@ -252,9 +1495,67 @@
     "checkedAt": "2026-11-03",
     "httpStatus": 200
   },
+  "w3c-wcag-3-wd": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "w3c-wcag-overview": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "wagemans-2012a": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "A century of Gestalt psychology in visual perception: I. Perceptual grouping and figure–ground organization.",
+    "registeredYear": 2012,
+    "registeredContainer": "Psychological Bulletin",
+    "similarity": 1
+  },
+  "wagemans-2012b": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "A century of Gestalt psychology in visual perception: II. Conceptual and theoretical foundations.",
+    "registeredYear": 2012,
+    "registeredContainer": "Psychological Bulletin",
+    "similarity": 1
+  },
   "webaim": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
     "httpStatus": 200
+  },
+  "wertheimer-1923": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Untersuchungen zur Lehre von der Gestalt. II",
+    "registeredYear": 1923,
+    "registeredContainer": "Psychologische Forschung",
+    "similarity": 1
+  },
+  "wolfe-horowitz-2004": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "What attributes guide the deployment of visual attention and how do they do it?",
+    "registeredYear": 2004,
+    "registeredContainer": "Nature Reviews Neuroscience",
+    "similarity": 1
+  },
+  "yonelinas-2002": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "The Nature of Recollection and Familiarity: A Review of 30 Years of Research",
+    "registeredYear": 2002,
+    "registeredContainer": "Journal of Memory and Language",
+    "similarity": 1
+  },
+  "young-1981": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "The machine inside the machine: users' models of pocket calculators",
+    "registeredYear": 1981,
+    "registeredContainer": "International Journal of Man-Machine Studies",
+    "similarity": 1
   }
 }

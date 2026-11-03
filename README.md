@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# § UX Academy
 
-## Getting Started
+A personal, research-backed academy for the whole UX/UI discipline: theories, laws, methods, metrics and standards, each explained at three depths, classified by what it actually is, labelled by its strength of evidence, connected to its prerequisites and relations, and practised through calculators, labs, quizzes, flashcards and workshops.
 
-First, run the development server:
+Local-first: no accounts, no backend, no API keys. Notes and progress live in your browser and export to JSON/Markdown.
+
+## Quick start
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev          # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Production build (prerenders ~630 static pages and validates all content):
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build && npm start
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## What's inside
 
-## Learn More
+| Area | Route | What it does |
+|---|---|---|
+| Library | `/library`, `/library/[slug]` | 45 published entries + ~470 planned topics; full-text search, filters, A–Z |
+| Subjects | `/topics`, `/topics/[domain]` | 20-domain taxonomy with coverage |
+| Learn | `/learn`, `/learn/[id]` | 16 learning paths, beginner → advanced |
+| Formula Lab | `/formulas`, `/formulas/[id]` | 25 documented formulas with unit-tested calculators |
+| Labs | `/labs/[id]` | 10 experiments and simulations (Fitts, Hick-Hyman, Gestalt, contrast…) |
+| Practice | `/practice` | Mixed quizzes, Leitner flashcards, 11 design workshops |
+| Graph | `/graph` | Knowledge graph of 331 explained relationships + list alternative |
+| Compare | `/compare` | 10 side-by-side concept comparisons |
+| Glossary | `/glossary` | 114 terms |
+| Sources | `/sources` | 250-source registry with Crossref/URL verification status |
+| Coverage | `/coverage` | What's written vs planned, computed from content |
+| My learning | `/me` | Progress, notes, bookmarks, collections, saved calculations, export/import |
 
-To learn more about Next.js, take a look at the following resources:
+Search anywhere with **⌘K** / **Ctrl K** or **/**.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Commands
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Command | Purpose |
+|---|---|
+| `npm run dev` / `build` / `start` | Next.js |
+| `npm test` | Content integrity (quality gate) + formula + store unit tests |
+| `npm run check` | Regenerate indexes, typecheck, test, lint |
+| `npm run content:index` | Regenerate `content/*/_index.ts` after adding content files |
+| `npm run sources:verify [-- --all \| ids…]` | Verify DOIs (Crossref) and URLs; writes `content/sources/verification.json` |
+| `npm run docs:generate` | Regenerate taxonomy, source registry and coverage docs from content |
 
-## Deploy on Vercel
+Browser tests (crawl, 42-step e2e, axe-core WCAG audit): see `tests/browser/README.md`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Adding content
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Read `docs/CONTENT_MODEL.md`, copy the structure of `content/knowledge/laws-effects/fitts-law.ts`, add sources to `content/sources/`, then:
+
+```bash
+npm run content:index && npm run sources:verify -- <new-source-ids> && npm test
+```
+
+## Documentation
+
+`CLAUDE.md` (permanent instructions) · `docs/PROGRESS.md` (state & next task) · `docs/PRODUCT_VISION.md` · `docs/ARCHITECTURE.md` · `docs/DESIGN_SYSTEM.md` · `docs/INFORMATION_ARCHITECTURE.md` · `docs/CONTENT_MODEL.md` · `docs/KNOWLEDGE_TAXONOMY.md` · `docs/RESEARCH_SOURCES.md` · `docs/CONTENT_COVERAGE.md` · `docs/DECISION_LOG.md` · `docs/ROADMAP.md`

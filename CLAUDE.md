@@ -23,7 +23,9 @@ classified, evidenced, connected and practised.
 | `npm run content:index` | Regenerate `content/*/_index.ts` after adding/removing content files |
 | `npm run sources:verify [-- --all \| id…]` | Verify DOIs against Crossref and URLs by HTTP; writes `content/sources/verification.json` |
 | `npm test` | Content integrity + formula unit tests (Vitest) |
-| `npm run check` | Everything above except build |
+| `npm run docs:generate` | Regenerate docs/KNOWLEDGE_TAXONOMY.md, RESEARCH_SOURCES.md, CONTENT_COVERAGE.md from content |
+| `npm run check` | Index → typecheck → tests → lint (everything except build) |
+| `tests/browser/*.cjs` | Crawl, e2e and axe audits against `next start` — see tests/browser/README.md |
 
 ## Architecture rules
 
@@ -56,6 +58,6 @@ classified, evidenced, connected and practised.
 ## Working conventions
 
 - Work in verifiable increments; run `npm run check` (and `npm run build` for UI changes) before committing.
-- Update `docs/PROGRESS.md` at each milestone, with the precise next task. Record decisions in `docs/DECISION_LOG.md`.
+- After content changes run `npm run docs:generate`. Update `docs/PROGRESS.md` at each milestone, with the precise next task. Record decisions in `docs/DECISION_LOG.md`.
 - Don't remove or weaken tests to get green. Don't fake data to make dashboards look populated.
 - Never push, deploy or publish without explicit authorisation from the owner.

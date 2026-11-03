@@ -18,7 +18,7 @@ function walk(dir: string): string[] {
     .sort();
 }
 
-function writeIndex(dir: string, exportName: string, typeImport: string, flat: boolean) {
+function writeIndex(dir: string, exportName: string, typeImport: string, flat: boolean, type: string) {
   const files = walk(join(root, dir));
   const imports = files.map((file, i) => {
     const rel = "./" + relative(join(root, dir), file).replace(/\.ts$/, "");
@@ -29,7 +29,7 @@ function writeIndex(dir: string, exportName: string, typeImport: string, flat: b
 ${typeImport}
 ${imports.join("\n")}
 
-export const ${exportName} = [
+export const ${exportName}: ${type} = [
   ${flat ? list.split(",\n  ").map((m) => `...${m}`).join(",\n  ") : list}
 ];
 `;
@@ -37,5 +37,5 @@ export const ${exportName} = [
   console.log(`${dir}/_index.ts — ${files.length} files`);
 }
 
-writeIndex("content/knowledge", "rawEntries", `import type { KnowledgeEntryInput } from "../../lib/content/schema";`, false);
-writeIndex("content/sources", "rawSources", `import type { Source } from "../../lib/content/schema";`, true);
+writeIndex("content/knowledge", "rawEntries", `import type { KnowledgeEntryInput } from "../../lib/content/schema";`, false, "KnowledgeEntryInput[]");
+writeIndex("content/sources", "rawSources", `import type { Source } from "../../lib/content/schema";`, true, "Source[]");

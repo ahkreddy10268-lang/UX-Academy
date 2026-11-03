@@ -83,7 +83,11 @@ export type TaxonomyItem = {
 
 export const taxonomyItems: TaxonomyItem[] = domains.flatMap((d) =>
   d.subcategories.flatMap((s) =>
-    s.items.map((i) => ({ ...i, domain: d.id, subcategory: s.id, entry: entryBySlug.get(i.slug) })),
+    s.items.map((i) => {
+      const entry = entryBySlug.get(i.slug);
+      // A written entry's own classification wins over the taxonomy placeholder.
+      return { ...i, type: entry?.primaryType ?? i.type, domain: d.id, subcategory: s.id, entry };
+    }),
   ),
 );
 export const taxonomyBySlug = new Map(taxonomyItems.map((t) => [t.slug, t]));

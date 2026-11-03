@@ -1,26 +1,258 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/*
+ * UX Academy design tokens — the ONLY place colours, type, spacing, radii and
+ * motion are defined. Components use the Tailwind utilities generated from
+ * @theme below (bg-paper, text-ink-2, border-rule, font-serif, …).
+ * Contrast of every text token was checked with lib/formulas/visual.ts (≥4.5:1
+ * on paper, surface, sunken and accent-wash in both themes). See docs/DESIGN_SYSTEM.md.
+ */
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+:root {
+  color-scheme: light;
+  /* Surfaces */
+  --paper: #faf8f4; /* page */
+  --surface: #ffffff; /* raised: panels, inputs */
+  --sunken: #f2efe8; /* inset: code, formula wells */
+  /* Ink */
+  --ink: #1c1a17; /* primary text 16.4:1 */
+  --ink-2: #4b4740; /* secondary text 8.7:1 */
+  --ink-3: #6b665d; /* tertiary/meta 5.4:1 */
+  /* Lines */
+  --rule: #e2ddd3; /* hairlines, dividers (decorative) */
+  --rule-strong: #c9c2b4; /* emphasised dividers (decorative) */
+  --line-control: #8c857a; /* form-control borders ≥3:1 (WCAG 1.4.11) */
+  /* Accent — "rubric": the red ink of manuscript headings */
+  --accent: #a33320;
+  --accent-ink: #842617;
+  --accent-wash: #f5e6e1;
+  /* Signals (used sparingly, always with a text label) */
+  --ok: #2e6a4c;
+  --ok-wash: #e4efe8;
+  --warn: #85621a;
+  --warn-wash: #f4ecd9;
+  --info: #36507f;
+  --info-wash: #e5eaf3;
+  --focus: #a33320;
+  --shadow-raise: 0 1px 2px rgb(28 26 23 / 0.06), 0 8px 24px rgb(28 26 23 / 0.06);
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --paper: #141311;
+    --surface: #1b1a17;
+    --sunken: #0f0e0d;
+    --ink: #ede9e1;
+    --ink-2: #c0baae;
+    --ink-3: #9c9589;
+    --rule: #2f2c27;
+    --rule-strong: #4a463f;
+    --line-control: #7a746a;
+    --accent: #ee8b73;
+    --accent-ink: #f4a693;
+    --accent-wash: #2c1b16;
+    --ok: #7fc4a0;
+    --ok-wash: #16261d;
+    --warn: #d9b460;
+    --warn-wash: #2a2213;
+    --info: #9db4e6;
+    --info-wash: #161d2b;
+    --focus: #ee8b73;
+    --shadow-raise: 0 1px 2px rgb(0 0 0 / 0.4), 0 8px 24px rgb(0 0 0 / 0.35);
   }
 }
 
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: #141311;
+  --surface: #1b1a17;
+  --sunken: #0f0e0d;
+  --ink: #ede9e1;
+  --ink-2: #c0baae;
+  --ink-3: #9c9589;
+  --rule: #2f2c27;
+  --rule-strong: #4a463f;
+  --line-control: #7a746a;
+  --accent: #ee8b73;
+  --accent-ink: #f4a693;
+  --accent-wash: #2c1b16;
+  --ok: #7fc4a0;
+  --ok-wash: #16261d;
+  --warn: #d9b460;
+  --warn-wash: #2a2213;
+  --info: #9db4e6;
+  --info-wash: #161d2b;
+  --focus: #ee8b73;
+  --shadow-raise: 0 1px 2px rgb(0 0 0 / 0.4), 0 8px 24px rgb(0 0 0 / 0.35);
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-surface: var(--surface);
+  --color-sunken: var(--sunken);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-rule: var(--rule);
+  --color-rule-strong: var(--rule-strong);
+  --color-line-control: var(--line-control);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-accent-wash: var(--accent-wash);
+  --color-ok: var(--ok);
+  --color-ok-wash: var(--ok-wash);
+  --color-warn: var(--warn);
+  --color-warn-wash: var(--warn-wash);
+  --color-info: var(--info);
+  --color-info-wash: var(--info-wash);
+
+  --font-serif: var(--font-newsreader), "Iowan Old Style", Georgia, serif;
+  --font-sans: var(--font-plex-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, "SFMono-Regular", monospace;
+
+  --shadow-raise: var(--shadow-raise);
+}
+
+@theme {
+  /* Type scale — major third (1.25) on a 16px root, with an 18px reading size. */
+  --text-2xs: 0.75rem; /* 12 — labels only, uppercase tracking */
+  --text-2xs--line-height: 1rem;
+  --text-xs: 0.8125rem; /* 13 */
+  --text-xs--line-height: 1.25rem;
+  --text-sm: 0.875rem; /* 14 */
+  --text-sm--line-height: 1.375rem;
+  --text-base: 1rem; /* 16 — UI */
+  --text-base--line-height: 1.5rem;
+  --text-read: 1.125rem; /* 18 — long-form reading */
+  --text-read--line-height: 1.75rem;
+  --text-lg: 1.25rem; /* 20 */
+  --text-lg--line-height: 1.75rem;
+  --text-xl: 1.5625rem; /* 25 */
+  --text-xl--line-height: 2rem;
+  --text-2xl: 1.953rem; /* 31 */
+  --text-2xl--line-height: 2.375rem;
+  --text-3xl: 2.441rem; /* 39 */
+  --text-3xl--line-height: 2.75rem;
+  --text-4xl: 3.052rem; /* 49 */
+  --text-4xl--line-height: 3.25rem;
+
+  /* Radii — editorial: nearly square. */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+
+  /* Measure */
+  --container-read: 42rem; /* ≈ 68ch at 18px */
+  --container-page: 76rem;
+
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+}
+
+/* ------------------------------------------------------------------ */
+/* Base                                                                */
+/* ------------------------------------------------------------------ */
+
+html {
+  background: var(--paper);
+  color: var(--ink);
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  scroll-padding-top: 5rem;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  font-feature-settings: "kern", "liga";
+  min-height: 100dvh;
+}
+
+::selection {
+  background: var(--accent-wash);
+  color: var(--ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: var(--radius-xs);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Long-form reading text */
+.prose-read {
+  font-family: var(--font-serif);
+  font-size: var(--text-read);
+  line-height: var(--text-read--line-height);
+  font-variation-settings: "opsz" 16;
+  color: var(--ink);
+}
+.prose-read p + p {
+  margin-top: 1em;
+}
+
+.display {
+  font-family: var(--font-serif);
+  font-variation-settings: "opsz" 72;
+  letter-spacing: -0.015em;
+  font-weight: 500;
+}
+
+/* Eyebrow / label style used for section kickers and metadata. */
+.label {
+  font-family: var(--font-sans);
+  font-size: var(--text-2xs);
+  line-height: var(--text-2xs--line-height);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--ink-3);
+}
+
+.link {
+  color: var(--accent-ink);
+  text-decoration-line: underline;
+  text-decoration-color: color-mix(in srgb, var(--accent) 45%, transparent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+.link:hover {
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 2px;
+}
+
+.formula {
+  font-family: var(--font-mono);
+  font-feature-settings: "zero";
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Native form controls */
+input,
+select,
+textarea {
+  accent-color: var(--accent);
+}
+
+/* Utility for visually hidden but accessible content */
+.sr-only-focusable:not(:focus):not(:focus-within) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
