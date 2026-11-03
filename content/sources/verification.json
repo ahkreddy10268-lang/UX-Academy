@@ -1,0 +1,260 @@
+{
+  "accot-zhai-1997": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Beyond Fitts' law: models for trajectory-based HCI tasks",
+    "registeredYear": 1997,
+    "registeredContainer": "Proceedings of the ACM SIGCHI Conference on Human factors in computing systems",
+    "similarity": 1
+  },
+  "acm-dl": {
+    "status": "url-unreachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 403
+  },
+  "acm-sigchi": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "apple-hig": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "atlassian-design": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "baymard-research": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "bi-li-zhai-2013": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "FFitts law: modeling finger touch with fitts' law",
+    "registeredYear": 2013,
+    "registeredContainer": "Proceedings of the SIGCHI Conference on Human Factors in Computing Systems",
+    "similarity": 1
+  },
+  "carbon-design-system": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "card-english-burr-1978": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Evaluation of Mouse, Rate-Controlled Isometric Joystick, Step Keys, and Text Keys for Text Selection on a CRT",
+    "registeredYear": 1978,
+    "registeredContainer": "Ergonomics",
+    "similarity": 1
+  },
+  "crossref": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "defra-research-methods": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "figma-learn": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "fitts-1954": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "The information capacity of the human motor system in controlling the amplitude of movement.",
+    "registeredYear": 1954,
+    "registeredContainer": "Journal of Experimental Psychology",
+    "similarity": 1
+  },
+  "fluent-2": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "google-pair-guidebook": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "google-research": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "google-scholar": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "govuk-design-system": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "govuk-service-manual": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "govuk-user-research": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "hcibib": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "homeoffice-ucd-manual": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "ideo-design-kit": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "inclusive-design-principles": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "iso-9241-11-2018": {
+    "status": "url-unreachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 403
+  },
+  "iso-9241-110-2020": {
+    "status": "url-unreachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 403
+  },
+  "iso-9241-210-2019": {
+    "status": "url-unreachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 403
+  },
+  "iso-home": {
+    "status": "url-unreachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 403
+  },
+  "ixdf-literature": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "laws-of-ux": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "mackenzie-1992": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Fitts' Law as a Research and Design Tool in Human-Computer Interaction",
+    "registeredYear": 1992,
+    "registeredContainer": "Human–Computer Interaction",
+    "similarity": 1
+  },
+  "material-3": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "ms-hai-guidelines": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "nasa-tlx-site": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "nist-hcd": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "nngroup-articles": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "semantic-scholar": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "servicedesigntools": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "soukoreff-mackenzie-2004": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-03",
+    "registeredTitle": "Towards a standard for pointing device evaluation, perspectives on 27 years of Fitts’ law research in HCI",
+    "registeredYear": 2004,
+    "registeredContainer": "International Journal of Human-Computer Studies",
+    "similarity": 1
+  },
+  "uxcel": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "uxmethods-org": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "uxpa-usability-bok": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "w3c-aria-apg": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "w3c-understanding-wcag-22": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "w3c-wai": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "w3c-wcag-21": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "w3c-wcag-22": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "webaim": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  }
+}
