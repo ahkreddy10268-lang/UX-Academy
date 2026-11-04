@@ -7,6 +7,8 @@ const eslintConfig = defineConfig([
   ...nextTs,
   // Override default ignores of eslint-config-next.
   globalIgnores([
+    // Brand kit: design source delivered as-is (components/brand holds the app copy).
+    "brand/**",
     // Default ignores of eslint-config-next:
     ".next/**",
     "out/**",

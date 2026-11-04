@@ -24,7 +24,7 @@ _v3, 2026-11-03. Supersedes the v1 "rubric" system and the v2 additions. History
 | `accent` | #4c5ead | #99a5ec | action: primary buttons, active nav, selection — ≥4.8:1 |
 | `accent-ink` | #3d4e99 | #bac3f6 | link text, hover — ≥6.1:1 |
 | `accent-wash` | #e7ebf8 | #232a45 | selected/active backgrounds |
-| `rubric` | #a33320 | #e8826b | heritage editorial red: the § wordmark, knowledge-type labels, A–Z letters |
+| `rubric` | #a33320 | #e8826b | heritage editorial red: knowledge-type labels, A–Z letters (no longer the logo) |
 | `ok` `warn` `info` `error` (+ `-wash`) | | | status, always with a text label |
 | `evidence` / `evidence-wash` | #36446a | #b7c3e3 | evidence glyphs, the ledger's current class (v4, D-038) |
 | `planned` / `planned-line` | #5a6476 / #9aa3b3 | #99a2b3 / #525b6c | planned-topic text and dashed outlines |
@@ -104,3 +104,17 @@ Every interactive component defines: idle, hover (border + soft shadow), focus-v
 ## Avoid
 
 Glassmorphism; gradients outside the hero and featured panels; decorative animation; icons without labels; nested rounded containers (pages render inside one frame and use flat sections, panels and cards, never a second page frame); subject colour on evidence, status or body text; fake data, avatars or achievements; numeric confidence scores.
+
+## Logo (brand kit v0.1, draft)
+
+Source of truth: `brand/uxa-logo-kit-v0.1-draft/` (SVG symbol, lockup and wordmark in gradient, black and white; small and XS cuts; favicon and app icons; React component and path data; README with the rules). The kit is marked **draft, pending approval of the reconstructed master**; it is in use at the owner's request, and an approved version replaces the whole kit from its generator.
+
+| Where | What | How |
+|---|---|---|
+| Sidebar and mobile top bar | Symbol, flat, 34 px wide (the kit's XS cut is chosen automatically below 40 px) beside "UX Academy" in UI type | `<UxaLogo variant="symbol" tone="current" width={34} decorative />` inside `text-ink`, so it is near-black in light and near-white in dark; decorative because the visible name gives the accessible name |
+| Browser tab | `app/icon.svg` (the kit's favicon, switches black/white with the colour scheme) and `app/favicon.ico` (16/32/48) | Next.js metadata file conventions |
+| Home screen / install | `app/apple-icon.png`, `public/icons/icon-192/512.png`, maskable 512 | `app/manifest.webmanifest` |
+
+Rules from the kit: module s = U stem width; clear space ½s on every side; black, white and greys only (no coloured gradients, no effects); black or the gradient on light, white or the reversed gradient on dark; never stretch, crop, rotate, recolour or redraw. Minimum sizes: gradient symbol 120 px, flat standard 96 px, small cut 40–95 px, XS 16–39 px; full lockup 200 px (gradient) or 140 px (flat); wordmark 100 px. The component applies cut and treatment from the rendered size. The gradient treatment is reserved for larger brand moments (it falls back to flat below 120 px).
+
+Open points carried from the kit README: the symbol geometry and X diagonals await approval, the wordmark typeface is a stand-in (Manrope ExtraBold), and the kit's wordmark spells "UX-Academy" with a hyphen while the product name in the interface is "UX Academy". The product keeps "UX Academy" in text and in the manifest until the name is settled.

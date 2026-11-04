@@ -197,3 +197,9 @@ Verified: axe (WCAG 2.0/2.1/2.2 A and AA tags) on 13 routes × light/dark = 26 a
 Not done: real devices and screen readers (not available here); Designer Skills plugins still not installed (needs the owner to run `/plugin` in Claude Code); Hairline studied, not installed; the other 66 plates remain in the earlier style; Vercel still blocked (api.vercel.com 403 from this container; no token).
 
 Next: migrate the plates on HCI and UX Fundamentals stage 1 (usability, user-experience, user-centred-design, double-diamond) following the rollout gate; then return to content (`ui-design`).
+
+## Session 13 — logo kit v0.1 (draft) adopted
+
+Done: kit added at `brand/uxa-logo-kit-v0.1-draft/`; `components/brand/uxa-logo.tsx` (from the kit; one lint fix, `prefer-const`; default title "UX Academy"); sidebar and mobile top bar use the symbol; `app/icon.svg`, `app/favicon.ico`, `app/apple-icon.png`, `app/manifest.webmanifest`, `public/icons/*`; brand section in docs/DESIGN_SYSTEM.md; CLAUDE.md logo rule; D-069.
+
+Open: the kit is a draft pending approval (geometry, X diagonals, wordmark typeface, hyphenated "UX-Academy" vs product name "UX Academy").
