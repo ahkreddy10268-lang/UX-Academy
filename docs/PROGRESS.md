@@ -8,10 +8,10 @@ Figures are generated from the content; the live source is `docs/CONTENT_COVERAG
 
 | Area | Count |
 |---|---|
-| Taxonomy topics (domains / subcategories) | 540 (20 / 62) |
-| Published entries (all gates pass) | 48 (8.9% of topics) |
-| Addressed within another entry / planned with no content | 10 / 482 |
-| Domains with no published entry | 7 |
+| Taxonomy topics (domains / subcategories) | 558 (20 / 73), taxonomy v1.0 frozen |
+| Published entries (all gates pass) | 48 (8.6% of topics) |
+| Addressed within another entry / planned with no content | 10 / 500 |
+| Domains with no published entry | 6 |
 | Explained graph relationships | 348 |
 | Formulas with unit-tested calculators | 25 |
 | Interactive labs | 15 |
@@ -203,3 +203,18 @@ Next: migrate the plates on HCI and UX Fundamentals stage 1 (usability, user-exp
 Done: kit added at `brand/uxa-logo-kit-v0.1-draft/`; `components/brand/uxa-logo.tsx` (from the kit; one lint fix, `prefer-const`; default title "UX Academy"); sidebar and mobile top bar use the symbol; `app/icon.svg`, `app/favicon.ico`, `app/apple-icon.png`, `app/manifest.webmanifest`, `public/icons/*`; brand section in docs/DESIGN_SYSTEM.md; CLAUDE.md logo rule; D-069.
 
 Open: the kit is a draft pending approval (geometry, X diagonals, wordmark typeface, hyphenated "UX-Academy" vs product name "UX Academy").
+
+## Session 14 — taxonomy v1.0 finalised and frozen
+
+Source: the owner's blueprint (`docs/PROPOSED_TAXONOMY_V1.md`), reviewed against the repository. Full decisions in docs/CONTENT_AUDIT.md § 7; backlog in docs/TAXONOMY_BACKLOG.md; governance in docs/CONTENT_MODEL.md; D-071…D-074.
+
+- **Structure:** 20 domains (ids unchanged), 62 → 73 subcategories, 540 → 558 topics (+23 added, −5 merged duplicates). Domain 3 retitled "Cognition, Behaviour & Human Factors", Domain 6 "Design Methods & Frameworks".
+- **P1 candidates:** 17 added, Conversation Design kept as an alias of `conversational-ux`. Six more gap additions (models of disability, motor control, controlled experiments, ideation techniques, workshop facilitation, UX engineering).
+- **Ownership:** product frameworks → 14, journeys and blueprints → 15, HEART/AARRR/instruments → 16, accessibility foundations → 12, interaction principles → 8, colour theory → 10, DesignOps → 20. Six published entries re-homed (slugs and routes unchanged, metadata matches).
+- **Code:** `content/taxonomy.ts` regenerated in its original notation with `aliases`; `aliases` added to the taxonomy schema, search and the generated taxonomy doc; `tests/taxonomy.test.ts` (9 tests).
+- **Coverage:** 48 of 558 topics published (8.6%; the share fell only because 18 net topics were added), 10 addressed within, 500 planned, 6 domains without a published entry (Product gained one).
+
+Not done: no new entries were written (by design); real devices/screen readers n/a; Vercel still blocked.
+
+## Next task (precise)
+Resume Tier 1 content with `ui-design`; then the dependent HCI Fundamentals steps (`history-of-hci`, `seven-stages-of-action`, `human-centred-design`, `contextual-inquiry`, `goms`). Any structural change now goes through the taxonomy governance rules.

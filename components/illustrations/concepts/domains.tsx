@@ -67,7 +67,7 @@ const lawsEffects: IllustrationEntry = {
 /* ---------------- Psychology: an attention spotlight over a field ---------------- */
 const psychology: IllustrationEntry = {
   slug: "psychology",
-  title: "HCI & Psychology subject plate",
+  title: "Cognition, Behaviour & Human Factors subject plate",
   description:
     "A field of identical outlined squares fills the plate. A soft circular spotlight falls on part of the field, and only the items inside it are filled in, showing that attention selects a small part of what is available.",
   animated: true,
@@ -164,7 +164,7 @@ const research: IllustrationEntry = {
 /* ---------------- Frameworks: a scaffold holding up work in progress ---------------- */
 const frameworks: IllustrationEntry = {
   slug: "frameworks",
-  title: "Methods & Frameworks subject plate",
+  title: "Design Methods & Frameworks subject plate",
   description:
     "A scaffold of vertical poles and horizontal platforms with diagonal braces surrounds a solid block that is being built up from the ground. Frameworks give structure to work without being the work itself.",
   Art: ({ detail }) => (

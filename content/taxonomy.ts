@@ -1,5 +1,5 @@
 /**
- * The knowledge taxonomy — the complete first-pass subject inventory (spec Part 6).
+ * The knowledge taxonomy v1.0 — the canonical subject inventory (docs/KNOWLEDGE_TAXONOMY.md, governance in docs/CONTENT_MODEL.md § Taxonomy governance).
  *
  * A topic appearing here does NOT mean its educational content exists. Coverage
  * is computed by joining these items against /content/knowledge entries by slug
@@ -9,7 +9,7 @@
  */
 import type { Domain, KnowledgeType } from "../lib/content/schema";
 
-type Item = { slug: string; title: string; type: KnowledgeType; coveredBy?: string };
+type Item = { slug: string; title: string; type: KnowledgeType; coveredBy?: string; aliases?: string[] };
 
 /** Topics explained inside a larger published entry: kept for search and links, reported as "addressed within", never as published. */
 function within(entry: string, items: Item[]): Item[] {
@@ -57,16 +57,15 @@ export const domains: Domain[] = [
         id: "approaches",
         title: "Design approaches",
         items: [
-          ...g("framework", "User-Centred Design|user-centred-design", "Human-Centred Design|human-centred-design", "Design Thinking"),
-          ...g("concept", "Accessibility|accessibility-concept", "Inclusive Design", "UX Lifecycle", "Design Process|design-processes"),
+          ...g("framework", "User-Centred Design", "Human-Centred Design", "Design Thinking"),
+          ...g("concept", "UX Lifecycle", "Design Process|design-processes"),
         ],
       },
       {
         id: "history-ethics",
-        title: "History & responsibility",
+        title: "History of design & HCI",
         items: [
           ...g("historical-contribution", "History of Interface Design", "History of HCI", "Evolution of Digital Experiences"),
-          ...g("concept", "Design Ethics|design-ethics-foundations", "Design Responsibilities"),
         ],
       },
     ],
@@ -83,7 +82,7 @@ export const domains: Domain[] = [
         title: "Human performance laws & models",
         description: "Quantitative regularities measured in controlled experiments.",
         items: [
-          ...g("law", "Fitts's Law|fitts-law", "Hick-Hyman Law|hick-hyman-law", "Steering Law", "Power Law of Practice", "Weber's Law|webers-law", "Fechner's Law|fechners-law"),
+          ...g("law", "Fitts's Law", "Hick-Hyman Law", "Steering Law", "Power Law of Practice", "Weber's Law|webers-law", "Fechner's Law|fechners-law"),
         ],
       },
       {
@@ -109,7 +108,7 @@ export const domains: Domain[] = [
         title: "Gestalt laws of grouping",
         items: [
           ...g("principle", "Gestalt Principles"),
-          ...within("gestalt-principles", g("principle", "Law of Prägnanz|law-of-pragnanz", "Law of Proximity", "Law of Similarity", "Law of Closure", "Law of Continuity", "Law of Common Region", "Common Fate", "Uniform Connectedness")),
+          ...within("gestalt-principles", g("principle", "Law of Prägnanz", "Law of Proximity", "Law of Similarity", "Law of Closure", "Law of Continuity", "Law of Common Region", "Common Fate", "Uniform Connectedness")),
         ],
       },
       {
@@ -123,27 +122,28 @@ export const domains: Domain[] = [
   },
   {
     id: "psychology",
-    title: "HCI & Psychology",
-    shortTitle: "Psychology",
+    title: "Cognition, Behaviour & Human Factors",
+    shortTitle: "Cognition",
     description:
-      "Cognitive psychology, behavioural science, visual cognition and human factors — the science of the person on the other side of the screen.",
+      "The human capabilities, limitations, motivations and contexts that shape interaction: cognitive psychology and learning, behaviour and emotion, visual perception, and human factors.",
     subcategories: [
       {
         id: "cognitive",
-        title: "Cognitive psychology",
+        title: "Cognitive psychology, memory & learning",
         items: [
           ...g("theory", "Cognitive Load Theory", "Working Memory Model", "Atkinson-Shiffrin Memory Model|atkinson-shiffrin-model", "Dual Coding Theory", "Schema Theory", "Information Processing Theory", "Bounded Rationality and Satisficing|bounded-rationality"),
-          ...g("principle", "Recognition over Recall|recognition-over-recall"),
-          ...g("concept", "Selective Attention", "Sustained Attention", "Perceptual Load", "Cognitive Flexibility", "Mental Workload", "Decision-Making|decision-making"),
+          ...g("principle", "Recognition over Recall"),
+          ...g("concept", "Selective Attention", "Sustained Attention", "Perceptual Load", "Cognitive Flexibility", "Mental Workload", "Decision-Making", "Learning and Skill Acquisition"),
         ],
       },
       {
         id: "behavioural",
-        title: "Behavioural science",
+        title: "Behavioural science, motivation & emotion",
         items: [
           ...g("theory", "Classical Conditioning", "Operant Conditioning", "Reinforcement Theory", "Self-Determination Theory", "Flow Theory", "Goal-Setting Theory", "Social Learning Theory", "Nudge Theory"),
-          ...g("model", "COM-B Model|com-b-model", "Behaviour Change Wheel", "Fogg Behavior Model|fogg-behavior-model", "Hook Model"),
-          ...g("concept", "Habit Formation", "Motivation Theory", "Persuasive Technology"),
+          ...g("model", "COM-B Model", "Behaviour Change Wheel", "Fogg Behavior Model", "Hook Model"),
+          ...g("concept", "Habit Formation", "Motivation Theory", "Persuasive Technology", "Emotion and Affect in Interaction"),
+          ...g("model", "Emotional Design (Visceral, Behavioural, Reflective)|emotional-design"),
         ],
       },
       {
@@ -155,14 +155,14 @@ export const domains: Domain[] = [
       },
       {
         id: "human-factors",
-        title: "Human factors & HCI theory",
+        title: "Human factors, ergonomics & HCI theory",
         items: [
-          ...g("model", "Seven Stages of Action", "Gulfs of Execution and Evaluation|gulfs-of-execution-and-evaluation"),
-          ...g("concept", "Mental Models", "Conceptual Models", "Affordances", "Signifiers", "Constraints", "Mapping", "Feedback|feedback-principle"),
+          ...g("model", "Seven Stages of Action", "Gulfs of Execution and Evaluation"),
+          ...g("concept", "Mental Models", "Conceptual Models", "Affordances", "Signifiers"),
           ...g("theory", "Distributed Cognition", "Situated Cognition|situated-action", "Activity Theory", "Embodied Interaction", "Ecological Psychology"),
           ...g("discipline", "Human Factors and Ergonomics|human-factors-engineering", "Cognitive Ergonomics"),
-          ...g("model", "Situation Awareness", "Technology Acceptance Model (TAM)|technology-acceptance-model", "Emotional Design (Visceral, Behavioural, Reflective)|emotional-design"),
-          ...g("concept", "Paradox of the Active User"),
+          ...g("model", "Situation Awareness", "Technology Acceptance Model (TAM)|technology-acceptance-model"),
+          ...g("concept", "Paradox of the Active User", "Motor Control and Human Performance|motor-control"),
         ],
       },
     ],
@@ -176,17 +176,11 @@ export const domains: Domain[] = [
     subcategories: [
       {
         id: "heuristic-sets",
-        title: "Heuristic sets",
+        title: "Heuristic sets, standards & cross-cutting principles",
         items: [
-          ...g("heuristic", "Nielsen's 10 Usability Heuristics|nielsen-usability-heuristics", "Shneiderman's Eight Golden Rules|shneiderman-golden-rules", "Norman's Design Principles|norman-design-principles", "Tognazzini's First Principles|tognazzini-principles", "Gerhardt-Powals' Cognitive Engineering Principles|gerhardt-powals-principles", "Bastien & Scapin Ergonomic Criteria|bastien-scapin-criteria"),
+          ...g("heuristic", "Nielsen's 10 Usability Heuristics|nielsen-usability-heuristics", "Shneiderman's Eight Golden Rules|shneiderman-golden-rules", "Norman's Design Principles", "Tognazzini's First Principles|tognazzini-principles", "Gerhardt-Powals' Cognitive Engineering Principles|gerhardt-powals-principles", "Bastien & Scapin Ergonomic Criteria|bastien-scapin-criteria"),
           ...g("standard", "ISO 9241-110 Interaction Principles|iso-9241-110"),
-        ],
-      },
-      {
-        id: "principle-families",
-        title: "Principle families",
-        items: [
-          ...g("principle", "Visual Design Principles", "Accessibility Principles", "Content Design Principles", "Error Prevention", "Consistency and Standards|consistency-principle", "User Control and Freedom"),
+          ...g("principle", "Consistency and Standards|consistency-principle", "User Control and Freedom"),
         ],
       },
     ],
@@ -209,16 +203,22 @@ export const domains: Domain[] = [
         id: "quantitative",
         title: "Quantitative methods",
         items: [
-          ...g("method", "Surveys", "A/B Testing|ab-testing", "Product Analytics", "Benchmark Studies", "First-Click Testing", "Quantitative Usability Testing", "Cohort Analysis", "Eye Tracking"),
-          ...g("research-instrument", "Questionnaires"),
+          ...g("method", "Surveys", "A/B Testing|ab-testing", "Product Analytics", "Benchmark Studies", "First-Click Testing", "Quantitative Usability Testing", "Cohort Analysis", "Eye Tracking", "Controlled Experiments"),
         ],
       },
       {
         id: "planning",
-        title: "Research planning & ethics",
+        title: "Research planning & protocols",
         items: [
           ...g("technique", "Research Objectives", "Research Questions", "Hypothesis Development", "Research Plans", "Participant Recruitment", "Screening Questionnaires", "Sampling", "Research Protocols", "Bias Reduction"),
-          ...g("methodology", "Mixed-Methods Research|mixed-methods-research"),
+          ...g("methodology", "Mixed-Methods Research"),
+        ],
+      },
+      {
+        id: "ethics",
+        title: "Research ethics & participant care",
+        description: "Consent, privacy and the duties owed to the people who take part in research.",
+        items: [
           ...g("concept", "Informed Consent", "Research Privacy", "Research Ethics"),
         ],
       },
@@ -227,7 +227,7 @@ export const domains: Domain[] = [
         title: "Analysis & synthesis",
         items: [
           ...g("technique", "Affinity Mapping", "Thematic Analysis", "Qualitative Coding", "Insight Synthesis", "Data Triangulation", "Research Readouts", "Personas", "Scenarios"),
-          ...g("tool", "Research Repositories"),
+          ...g("concept", "Research Repositories"),
           ...g("strategy", "Evidence-Based Decision Making"),
         ],
       },
@@ -243,47 +243,30 @@ export const domains: Domain[] = [
   },
   {
     id: "frameworks",
-    title: "Methods & Frameworks",
-    shortTitle: "Frameworks",
+    title: "Design Methods & Frameworks",
+    shortTitle: "Design methods",
     description:
-      "Process models, strategy frameworks and analytical models — each classified for what it actually is.",
+      "Cross-disciplinary design processes, ideation and facilitation methods, and analytical models. Research methods, product strategy, service methods and metrics have their own domains.",
     subcategories: [
       {
         id: "process",
-        title: "Design process frameworks",
+        title: "Design process & lifecycle frameworks",
         items: [
-          ...g("framework", "Double Diamond", "Lean UX", "Agile UX", "Design Sprint", "ADDIE"),
-        ],
-      },
-      {
-        id: "strategy",
-        title: "Discovery & strategy frameworks",
-        items: [
-          ...g("framework", "Jobs To Be Done|jobs-to-be-done", "Outcome-Driven Innovation", "Opportunity Solution Tree", "Business Model Canvas", "Value Proposition Canvas"),
-          ...g("model", "Kano Model"),
-          ...g("technique", "RICE Scoring|rice", "MoSCoW Prioritisation|moscow"),
-          ...g("metric", "North Star Metric"),
-        ],
-      },
-      {
-        id: "measurement",
-        title: "Measurement frameworks",
-        items: [
-          ...g("framework", "HEART Framework", "AARRR Framework|aarrr", "Kirkpatrick Model"),
+          ...g("framework", "Double Diamond", "Lean UX", "Agile UX", "Design Sprint", "ADDIE", "Kirkpatrick Model"),
         ],
       },
       {
         id: "mapping",
-        title: "Mapping techniques",
+        title: "Ideation, mapping & facilitation",
         items: [
-          ...g("technique", "Empathy Mapping", "Customer Journey Mapping", "Experience Mapping"),
+          ...g("technique", "Empathy Mapping", "Ideation Techniques", "Workshop Facilitation"),
         ],
       },
       {
         id: "analytical-models",
         title: "Analytical models of interaction",
         items: [
-          ...g("model", "GOMS", "Keystroke-Level Model|keystroke-level-model"),
+          ...g("model", "GOMS", "Keystroke-Level Model"),
           ...g("method", "Hierarchical Task Analysis|task-analysis"),
         ],
       },
@@ -293,19 +276,33 @@ export const domains: Domain[] = [
     id: "ia",
     title: "Information Architecture",
     shortTitle: "IA",
-    description: "How information is organised, labelled, navigated and found.",
+    description:
+      "How information is organised, labelled, navigated and found.",
     subcategories: [
       {
         id: "discipline",
-        title: "The discipline",
-        items: [...g("discipline", "Information Architecture|information-architecture")],
+        title: "IA foundations & practice",
+        items: [
+          ...g("discipline", "Information Architecture"),
+          ...g("technique", "Content Inventory", "Content Audit"),
+          ...g("concept", "Sitemaps"),
+        ],
       },
       {
         id: "structures",
         title: "Structures & models",
         items: [
-          ...g("concept", "Taxonomies", "Ontologies", "Metadata", "Hierarchies", "Content Modelling", "Sitemaps"),
-          ...g("technique", "Content Inventory", "Content Audit"),
+          ...g("concept", "Taxonomies", "Ontologies", "Metadata", "Hierarchies", "Content Modelling", "Labelling Systems"),
+        ],
+      },
+      {
+        id: "findability",
+        title: "Search, information scent & findability",
+        description: "How people locate information: foraging, scent, search and findability.",
+        items: [
+          ...g("concept", "Findability"),
+          ...g("theory", "Information Foraging Theory"),
+          ...g("concept", "Information Scent", "Search Architecture"),
         ],
       },
       {
@@ -313,9 +310,6 @@ export const domains: Domain[] = [
         title: "Navigation & findability",
         items: [
           ...g("pattern", "Breadcrumbs", "Global Navigation", "Local Navigation", "Faceted Navigation", "Navigation Patterns"),
-          ...g("theory", "Information Foraging Theory"),
-          ...g("concept", "Information Scent"),
-          ...g("concept", "Search Architecture", "Labelling Systems", "Findability"),
         ],
       },
     ],
@@ -324,23 +318,35 @@ export const domains: Domain[] = [
     id: "interaction",
     title: "Interaction Design",
     shortTitle: "Interaction",
-    description: "How people act on interfaces and how interfaces respond.",
+    description:
+      "How people act on interfaces and how interfaces respond.",
     subcategories: [
       {
         id: "principles",
         title: "Interaction principles",
         items: [
-          ...g("principle", "Discoverability", "Visibility of System Status|visibility-of-system-status", "Direct Manipulation", "Progressive Disclosure", "Error Recovery"),
+          ...g("principle", "Discoverability", "Visibility of System Status", "Direct Manipulation", "Progressive Disclosure", "Error Recovery"),
           ...g("guideline", "Platform Design Guidelines"),
-          ...g("concept", "Interaction Cost", "State Transitions", "Interaction States"),
+          ...g("concept", "Interaction Cost", "Feedback|feedback-principle", "Constraints", "Mapping"),
+          ...g("principle", "Error Prevention"),
+        ],
+      },
+      {
+        id: "patterns",
+        title: "Interaction patterns, state & forms",
+        description: "Recurring interaction solutions, system state and the design of forms.",
+        items: [
+          ...g("technique", "Form Design"),
+          ...g("concept", "Interaction States", "State Transitions"),
         ],
       },
       {
         id: "modalities",
         title: "Input & modalities",
         items: [
-          ...g("concept", "Input Methods", "Touch Interactions", "Keyboard Interactions", "Voice Interactions", "Gesture Design"),
+          ...g("concept", "Input Methods", "Touch Interactions", "Keyboard Interactions", "Gesture Design"),
           ...g("guideline", "Touch Target Size"),
+          ...g("technique", "Haptic Feedback Design"),
         ],
       },
       {
@@ -357,26 +363,37 @@ export const domains: Domain[] = [
     id: "visual",
     title: "UI & Visual Design",
     shortTitle: "Visual",
-    description: "Composition, hierarchy, layout and the visual principles of interface design.",
+    description:
+      "Composition, hierarchy, layout and the visual principles of interface design.",
     subcategories: [
       {
-        id: "composition",
-        title: "Composition principles",
+        id: "foundations",
+        title: "Visual communication foundations",
+        description: "The disciplines that frame visual work: graphic design, information design and brand identity.",
         items: [
-          ...g("principle", "Visual Hierarchy", "Alignment", "Balance", "Contrast|visual-contrast", "Repetition", "Proportion", "Scale", "Emphasis", "White Space", "Rhythm", "Unity", "Variety"),
+          ...g("discipline", "Graphic Design & Visual Communication|graphic-design", "Information Design", "Brand Identity Design"),
+        ],
+      },
+      {
+        id: "composition",
+        title: "Composition & visual design principles",
+        items: [
+          ...g("principle", "Visual Hierarchy", "Alignment", "Balance", "Contrast|visual-contrast", "Repetition", "Proportion", "Scale", "Emphasis", "White Space", "Rhythm", "Unity", "Variety", "Visual Design Principles"),
         ],
       },
       {
         id: "layout",
         title: "Layout & proportion",
         items: [
-          ...g("concept", "Grid Systems", "Golden Ratio", "Rule of Thirds", "Responsive Composition", "Information Density", "Visual Complexity", "Shape Language"),
+          ...g("concept", "Grid Systems", "Golden Ratio", "Rule of Thirds", "Responsive Composition", "Information Density", "Visual Complexity"),
         ],
       },
       {
         id: "elements",
-        title: "Visual elements",
-        items: [...g("concept", "Iconography", "Colour Theory", "Colour Psychology", "Colour Harmony", "Design Aesthetics")],
+        title: "Interface elements, iconography & aesthetics",
+        items: [
+          ...g("concept", "Iconography", "Design Aesthetics", "Shape Language"),
+        ],
       },
     ],
   },
@@ -384,7 +401,8 @@ export const domains: Domain[] = [
     id: "type-colour",
     title: "Typography & Colour Science",
     shortTitle: "Type & Colour",
-    description: "Type as an engineered reading system, and colour as measurable light.",
+    description:
+      "Type as an engineered reading system, and colour as measurable light.",
     subcategories: [
       {
         id: "typography",
@@ -396,11 +414,20 @@ export const domains: Domain[] = [
       },
       {
         id: "colour",
-        title: "Colour science",
+        title: "Colour science & models",
         items: [
-          ...g("model", "Colour Models", "RGB", "HSL", "HSV", "CMYK", "Perceptual Colour Spaces", "CIE Lab|cie-lab"),
+          ...g("model", "Colour Models", "RGB", "HSL", "HSV", "CMYK", "Perceptual Colour Spaces", "CIE Lab"),
+          ...g("concept", "Colour Gamut"),
+        ],
+      },
+      {
+        id: "colour-design",
+        title: "Colour in design & accessibility",
+        description: "Colour theory as used in design, plus contrast and colour-vision considerations.",
+        items: [
+          ...g("concept", "Colour Theory", "Colour Harmony", "Colour Psychology"),
           ...g("formula", "Colour Contrast Ratio"),
-          ...g("concept", "Colour Gamut", "Colour Vision Deficiency|colour-vision-differences", "Semantic Colour Systems"),
+          ...g("concept", "Colour Vision Deficiency|colour-vision-differences"),
         ],
       },
     ],
@@ -409,13 +436,14 @@ export const domains: Domain[] = [
     id: "design-systems",
     title: "Design Systems",
     shortTitle: "Systems",
-    description: "Tokens, components, governance and the architecture of interface systems.",
+    description:
+      "Tokens, components, governance and the architecture of interface systems.",
     subcategories: [
       {
         id: "foundations",
         title: "System foundations",
         items: [
-          ...g("concept", "Design System|design-system"),
+          ...g("concept", "Design System"),
           ...g("methodology", "Atomic Design"),
           ...g("concept", "Design Language", "Design Tokens", "Primitive Tokens", "Semantic Tokens", "Theme Architecture", "Multi-Brand Systems"),
         ],
@@ -423,20 +451,24 @@ export const domains: Domain[] = [
       {
         id: "scales",
         title: "Scales & visual systems",
-        items: [...g("concept", "Spacing Scales", "Typography Scales", "Colour Systems", "Elevation Systems", "Icon Systems", "Responsive Systems")],
+        items: [
+          ...g("concept", "Spacing Scales", "Typography Scales", "Colour Systems", "Elevation Systems", "Icon Systems", "Responsive Systems"),
+        ],
       },
       {
         id: "components",
         title: "Components & patterns",
         items: [
           ...g("concept", "Component Libraries", "Component Architecture", "Variants", "Component Properties", "Component State Management"),
-          ...g("pattern", "Form Architecture", "Data Tables", "Empty States", "Loading States", "Error States", "Skeleton Screens", "Progressive Loading"),
+          ...g("pattern", "Data Tables", "Empty States", "Loading States", "Error States", "Skeleton Screens", "Progressive Loading"),
         ],
       },
       {
         id: "operations",
         title: "Governance & operations",
-        items: [...g("strategy", "Design Governance", "Design System Versioning", "Design QA", "Design System Audits", "Design-to-Development Handoff")],
+        items: [
+          ...g("strategy", "Design Governance", "Design System Versioning", "Design QA", "Design System Audits"),
+        ],
       },
     ],
   },
@@ -444,32 +476,43 @@ export const domains: Domain[] = [
     id: "accessibility",
     title: "Accessibility & Inclusive Design",
     shortTitle: "Accessibility",
-    description: "Standards, techniques and the lived experience of disability in digital products.",
+    description:
+      "Standards, techniques and the lived experience of disability in digital products.",
     subcategories: [
+      {
+        id: "foundations",
+        title: "Foundations & disability models",
+        description: "What accessibility and inclusive design are, and how disability is understood.",
+        items: [
+          ...g("concept", "Models of Disability", "Accessibility|accessibility-concept", "Inclusive Design"),
+          ...g("framework", "Universal Design", "Inclusive Design Principles"),
+          ...g("principle", "Accessibility Principles"),
+        ],
+      },
       {
         id: "standards",
         title: "Standards & conformance",
         items: [
-          ...g("standard", "WCAG", "EN 301 549|en-301-549", "ISO/IEC 40500|iso-iec-40500", "WAI-ARIA|aria", "Section 508|section-508", "European Accessibility Act|european-accessibility-act"),
+          ...g("standard", "WCAG", "EN 301 549", "ISO/IEC 40500", "WAI-ARIA|aria", "Section 508", "European Accessibility Act"),
           ...g("principle", "POUR Principles|pour"),
           ...g("concept", "Success Criteria", "Conformance Levels"),
         ],
       },
       {
         id: "techniques",
-        title: "Techniques",
+        title: "Techniques & assistive technology",
         items: [
           ...g("technique", "Keyboard Accessibility", "Focus Management", "Focus Order", "Semantic HTML", "Non-Colour Indicators", "Reduced Motion", "Accessible Forms", "Accessibility Audits", "Accessible Prototyping", "Captions and Transcripts"),
-          ...g("tool", "Screen Readers", "Assistive Technologies"),
+          ...g("concept", "Screen Readers", "Assistive Technologies"),
         ],
       },
       {
         id: "inclusion",
-        title: "Inclusion",
+        title: "Access needs, inclusive content & research",
         items: [
           ...g("concept", "Cognitive Accessibility", "Visual Accessibility", "Motor Accessibility", "Hearing Accessibility", "Inclusive Content"),
-          ...g("framework", "Universal Design", "Inclusive Design Principles"),
           ...g("method", "Inclusive Research"),
+          ...g("concept", "Neuroinclusive Design"),
         ],
       },
     ],
@@ -478,7 +521,8 @@ export const domains: Domain[] = [
     id: "content",
     title: "UX Writing & Content Design",
     shortTitle: "Content",
-    description: "Words as interface: microcopy, plain language, voice and content governance.",
+    description:
+      "Words as interface: microcopy, plain language, voice and content governance.",
     subcategories: [
       {
         id: "writing",
@@ -486,16 +530,17 @@ export const domains: Domain[] = [
         items: [
           ...g("discipline", "UX Writing", "Content Design"),
           ...g("pattern", "Microcopy", "Error Messages", "Form Instructions", "Onboarding Copy", "Empty-State Writing"),
-          ...g("principle", "Plain Language", "Tone of Voice"),
+          ...g("principle", "Plain Language", "Tone of Voice", "Content Design Principles"),
         ],
       },
       {
         id: "systems",
-        title: "Content systems",
+        title: "Content systems, strategy & governance",
         items: [
           ...g("concept", "Content Hierarchy", "Localisation|localization", "Internationalisation|internationalization", "Conversational Writing", "Terminology Management"),
           ...g("formula", "Readability Formulas"),
           ...g("strategy", "Content Governance"),
+          ...g("discipline", "Content Strategy"),
         ],
       },
     ],
@@ -504,7 +549,8 @@ export const domains: Domain[] = [
     id: "product",
     title: "Product Design & Strategy",
     shortTitle: "Product",
-    description: "Discovery, strategy, prioritisation and outcomes — design as a business discipline.",
+    description:
+      "Discovery, strategy, prioritisation and outcomes — design as a business discipline.",
     subcategories: [
       {
         id: "discovery",
@@ -513,24 +559,43 @@ export const domains: Domain[] = [
           ...g("method", "Product Discovery", "Market Research", "Competitive Analysis"),
           ...g("technique", "Problem Framing", "Opportunity Identification"),
           ...g("concept", "Product-Market Fit"),
+          ...g("framework", "Jobs To Be Done", "Outcome-Driven Innovation", "Opportunity Solution Tree"),
+          ...g("model", "Kano Model"),
         ],
       },
       {
         id: "strategy",
         title: "Strategy & definition",
         items: [
-          ...g("strategy", "Product Vision", "Product Strategy", "UX Strategy", "Product Positioning", "Product Roadmaps", "Prioritisation"),
-          ...g("framework", "Objectives and Key Results (OKRs)|okrs"),
+          ...g("strategy", "Product Vision", "Product Strategy", "UX Strategy", "Product Positioning"),
+          ...g("framework", "Objectives and Key Results (OKRs)|okrs", "Business Model Canvas", "Value Proposition Canvas"),
+        ],
+      },
+      {
+        id: "planning",
+        title: "Roadmaps & prioritisation",
+        description: "Deciding what to build and in what order.",
+        items: [
+          ...g("strategy", "Product Roadmaps", "Prioritisation"),
+          ...g("technique", "RICE Scoring|rice", "MoSCoW Prioritisation|moscow"),
+        ],
+      },
+      {
+        id: "requirements",
+        title: "Requirements, stories & acceptance",
+        description: "Turning decisions into buildable, testable definitions.",
+        items: [
           ...g("technique", "User Story Mapping", "Feature Definition", "Product Requirements", "User Stories", "Acceptance Criteria"),
         ],
       },
       {
         id: "outcomes",
-        title: "Outcomes & operations",
+        title: "Outcomes, experimentation & operations",
         items: [
           ...g("method", "Product Experimentation"),
           ...g("concept", "Outcome Metrics", "Business Value", "User Value"),
-          ...g("strategy", "Stakeholder Management", "Design Leadership", "Design Operations|design-ops"),
+          ...g("strategy", "Stakeholder Management", "Design Leadership"),
+          ...g("metric", "North Star Metric"),
         ],
       },
     ],
@@ -539,24 +604,34 @@ export const domains: Domain[] = [
     id: "service",
     title: "Service Design & Systems Thinking",
     shortTitle: "Service",
-    description: "Designing across channels, organisations and time.",
+    description:
+      "Designing across channels, organisations and time.",
     subcategories: [
       {
         id: "service-design",
-        title: "Service design",
+        title: "Service design foundations & customer experience",
         items: [
           ...g("discipline", "Service Design"),
-          ...g("technique", "Service Blueprints", "Stakeholder Maps", "Ecosystem Maps", "Service Prototyping"),
           ...g("concept", "Service Ecosystems", "Touchpoints", "Frontstage and Backstage", "Omnichannel Experience", "Organisational Experience"),
-          ...g("method", "Service Evaluation"),
+          ...g("discipline", "Customer Experience (CX)|customer-experience"),
+        ],
+      },
+      {
+        id: "journeys",
+        title: "Journeys, blueprints & mapping",
+        description: "Representing the service across time, channels and stakeholders.",
+        items: [
+          ...g("technique", "Customer Journey Mapping", "Experience Mapping", "Service Blueprints", "Stakeholder Maps", "Ecosystem Maps"),
         ],
       },
       {
         id: "systems",
-        title: "Systems & participation",
+        title: "Systems, participation & delivery",
         items: [
           ...g("theory", "Systems Thinking"),
           ...g("methodology", "Co-design"),
+          ...g("technique", "Service Prototyping"),
+          ...g("method", "Service Evaluation"),
         ],
       },
     ],
@@ -565,36 +640,56 @@ export const domains: Domain[] = [
     id: "metrics",
     title: "Metrics, Formulas & Statistics",
     shortTitle: "Metrics",
-    description: "Measurement instruments, product metrics and the statistics needed to interpret them honestly.",
+    description:
+      "Measurement instruments, product metrics and the statistics needed to interpret them honestly.",
     subcategories: [
       {
         id: "usability-metrics",
-        title: "Usability measurement",
+        title: "UX & usability metrics",
         items: [
-          ...g("research-instrument", "System Usability Scale|system-usability-scale", "UMUX-LITE|umux-lite", "NASA-TLX|nasa-tlx", "Single Ease Question (SEQ)|single-ease-question", "SUPR-Q|supr-q", "User Experience Questionnaire (UEQ)|user-experience-questionnaire"),
           ...g("metric", "Task Success Rate", "Time on Task", "Error Rate", "Learnability", "Effectiveness", "Efficiency", "Satisfaction"),
+          ...g("framework", "HEART Framework"),
+        ],
+      },
+      {
+        id: "instruments",
+        title: "Research instruments & questionnaires",
+        description: "Standardised instruments that collect perceived usability, workload and satisfaction.",
+        items: [
+          ...g("research-instrument", "Questionnaires", "System Usability Scale", "UMUX-LITE", "NASA-TLX", "Single Ease Question (SEQ)|single-ease-question", "SUPR-Q", "User Experience Questionnaire (UEQ)|user-experience-questionnaire"),
         ],
       },
       {
         id: "product-metrics",
         title: "Product & customer metrics",
         items: [
-          ...g("metric", "Net Promoter Score|net-promoter-score", "Customer Satisfaction Score (CSAT)|csat", "Customer Effort Score (CES)|ces", "Conversion Rate", "Activation Rate", "Retention Rate", "Churn Rate", "DAU/MAU Ratio|dau-mau", "Engagement", "Feature Adoption", "Bounce Rate", "Drop-off Rate", "Funnel Conversion", "Cohort Retention"),
+          ...g("metric", "Net Promoter Score", "Customer Satisfaction Score (CSAT)|csat", "Customer Effort Score (CES)|ces", "Conversion Rate", "Activation Rate", "Retention Rate", "Churn Rate", "DAU/MAU Ratio|dau-mau", "Engagement", "Feature Adoption", "Bounce Rate", "Drop-off Rate", "Funnel Conversion", "Cohort Retention"),
+          ...g("framework", "AARRR Framework|aarrr"),
         ],
       },
       {
         id: "statistics",
-        title: "Statistics for UX",
+        title: "Descriptive & inferential statistics",
         items: [
-          ...g("concept", "Descriptive Statistics", "Standard Deviation", "Variance", "Confidence Intervals", "Statistical Significance", "P-value|p-value", "Effect Size", "Correlation", "Regression", "Statistical Power", "Bayesian Reasoning"),
+          ...g("concept", "Descriptive Statistics", "Standard Deviation", "Variance", "Confidence Intervals", "Statistical Significance", "P-value", "Correlation", "Regression", "Bayesian Reasoning"),
+        ],
+      },
+      {
+        id: "experimental-design",
+        title: "Experimental design, power & effect estimation",
+        description: "Planning studies that can detect real effects and estimating how large they are.",
+        items: [
+          ...g("concept", "Effect Size", "Statistical Power"),
           ...g("technique", "Sample Size Estimation", "Margin of Error"),
         ],
       },
       {
         id: "visual-math",
-        title: "Visual design mathematics",
-        items: [...g("formula", "Aspect Ratios", "Grid Calculations")]
-          .concat(g("technique", "Responsive Breakpoints")),
+        title: "UX formulas & design calculations",
+        items: [
+          ...g("formula", "Aspect Ratios", "Grid Calculations"),
+          ...g("technique", "Responsive Breakpoints"),
+        ],
       },
     ],
   },
@@ -602,7 +697,8 @@ export const domains: Domain[] = [
     id: "dataviz",
     title: "Data Visualisation",
     shortTitle: "Data Viz",
-    description: "Encoding data for perception, accuracy and decision-making.",
+    description:
+      "Encoding data for perception, accuracy and decision-making.",
     subcategories: [
       {
         id: "dataviz-core",
@@ -618,8 +714,17 @@ export const domains: Domain[] = [
         title: "Chart design & practice",
         items: [
           ...g("technique", "Chart Selection", "Dashboard Design"),
-          ...g("concept", "Chart Integrity", "Accessible Charts", "Exploratory Visualisation", "Explanatory Visualisation", "Interaction in Data Visualisation"),
+          ...g("concept", "Accessible Charts", "Exploratory Visualisation", "Interaction in Data Visualisation"),
           ...g("pattern", "Small Multiples"),
+        ],
+      },
+      {
+        id: "integrity",
+        title: "Storytelling, uncertainty & integrity",
+        description: "Communicating with data honestly: narrative, uncertainty and chart integrity.",
+        items: [
+          ...g("technique", "Data Storytelling", "Visualising Uncertainty"),
+          ...g("concept", "Chart Integrity", "Explanatory Visualisation"),
         ],
       },
     ],
@@ -628,7 +733,8 @@ export const domains: Domain[] = [
     id: "ethics",
     title: "Ethical & Responsible Design",
     shortTitle: "Ethics",
-    description: "Persuasion versus manipulation, privacy, trust and the responsibilities of design.",
+    description:
+      "Persuasion versus manipulation, privacy, trust and the responsibilities of design.",
     subcategories: [
       {
         id: "ethics-core",
@@ -642,7 +748,7 @@ export const domains: Domain[] = [
         id: "trust-privacy",
         title: "Privacy, consent & manipulation",
         items: [
-          ...g("concept", "Privacy-Centred Design|privacy-by-design", "Security UX", "Trust", "Consent Design", "Transparency", "User Autonomy", "Behaviour Change Design|behaviour-change-design"),
+          ...g("concept", "Privacy-Centred Design|privacy-by-design", "Security UX", "Trust", "Consent Design", "Transparency", "User Autonomy", "Behaviour Change Design"),
           ...g("anti-pattern", "Deceptive Patterns (Dark Patterns)|deceptive-patterns"),
         ],
       },
@@ -652,14 +758,15 @@ export const domains: Domain[] = [
     id: "emerging",
     title: "Emerging & Specialised Disciplines",
     shortTitle: "Emerging",
-    description: "AI, spatial, conversational and domain-specific design practice.",
+    description:
+      "AI, spatial, conversational and domain-specific design practice.",
     subcategories: [
       {
         id: "ai",
         title: "Human-AI interaction",
         items: [
           ...g("guideline", "Human-AI Interaction Guidelines|human-ai-interaction"),
-          ...g("emerging-concept", "AI UX|ai-ux", "Generative AI Interfaces", "Agentic AI Interfaces", "Explainable AI", "AI Transparency", "Calibrated Trust in AI|ai-trust"),
+          ...g("emerging-concept", "AI UX", "Generative AI Interfaces", "Agentic AI Interfaces", "Explainable AI", "AI Transparency", "Calibrated Trust in AI|ai-trust"),
         ],
       },
       {
@@ -672,9 +779,9 @@ export const domains: Domain[] = [
       },
       {
         id: "domains",
-        title: "Domain specialisms",
+        title: "Specialist disciplines & domain specialisms",
         items: [
-          ...g("discipline", "Automotive UX", "Healthcare UX", "Fintech UX", "Enterprise UX", "B2B SaaS UX|b2b-saas-ux", "Ecommerce UX", "Gaming UX", "Educational UX", "Learning Experience Design", "Cross-Cultural UX"),
+          ...g("discipline", "Automotive UX", "Healthcare UX", "Fintech UX", "Enterprise UX", "B2B SaaS UX", "Ecommerce UX", "Gaming UX", "Educational UX", "Learning Experience Design", "Cross-Cultural UX", "Computer-Supported Cooperative Work (CSCW)|cscw", "Design Futures & Speculative Design|design-futures"),
         ],
       },
     ],
@@ -683,23 +790,63 @@ export const domains: Domain[] = [
     id: "practice",
     title: "Design Practice & Technical Literacy",
     shortTitle: "Practice",
-    description: "How design work actually gets done, documented and built.",
+    description:
+      "How design work actually gets done, documented and built.",
     subcategories: [
       {
         id: "practice-core",
-        title: "Professional practice",
+        title: "Professional practice & documentation",
         items: [
           ...g("technique", "Design Critique", "Design Documentation", "UX Portfolio", "Stakeholder Communication", "Design Collaboration", "Prototyping", "Interaction Specifications"),
-          ...g("strategy", "Research Operations", "Agile Product Workflows"),
+          ...g("strategy", "Design-to-Development Handoff"),
+        ],
+      },
+      {
+        id: "operations",
+        title: "DesignOps & delivery operations",
+        description: "The systems that keep design and research work running at scale.",
+        items: [
+          ...g("strategy", "Design Operations|design-ops", "Research Operations", "Agile Product Workflows"),
         ],
       },
       {
         id: "technical",
-        title: "Technical literacy",
+        title: "Web foundations",
         items: [
-          ...g("concept", "HTML for Designers", "CSS for Designers", "Responsive Development", "Browser Rendering", "Frontend Accessibility", "API Fundamentals", "Design-to-Code Workflows"),
+          ...g("concept", "HTML for Designers", "CSS for Designers", "Responsive Development", "JavaScript for Designers", "DOM and Event Fundamentals"),
+        ],
+      },
+      {
+        id: "engineering",
+        title: "Front-end architecture, performance & integration",
+        description: "How interfaces are built, rendered, measured and connected to data.",
+        items: [
+          ...g("concept", "Web Performance for Designers"),
+          ...g("discipline", "UX Engineering"),
+          ...g("concept", "Browser Rendering", "Frontend Accessibility", "API Fundamentals", "Design-to-Code Workflows"),
         ],
       },
     ],
   },
 ];
+
+/**
+ * Alternate names. A topic with a synonym keeps one canonical slug; the other
+ * names are searchable aliases, never separate taxonomy items. Decisions and
+ * reasons: docs/CONTENT_AUDIT.md § Taxonomy v1.0.
+ */
+const ALIASES: Record<string, string[]> = {
+  "conversational-ux": ["Conversation Design", "Dialogue Design"],
+  "voice-user-interfaces": ["Voice Interactions", "VUI Design"],
+  "colour-systems": ["Semantic Colour Systems"],
+  "form-design": ["Form Architecture"],
+  "ethical-design": ["Design Ethics", "Design Ethics Foundations"],
+  "responsible-product-design": ["Design Responsibilities"],
+  "design-futures": ["Speculative Design", "Critical Design"],
+  cscw: ["Collaborative Computing", "Groupware"],
+  "customer-experience": ["CX"],
+  "ux-engineering": ["Design Engineering"],
+  "information-design": ["Information Graphics Design"],
+};
+for (const d of domains) for (const s of d.subcategories) for (const i of s.items) if (ALIASES[i.slug]) i.aliases = ALIASES[i.slug];
+for (const slug of Object.keys(ALIASES)) if (!domains.some((d) => d.subcategories.some((s) => s.items.some((i) => i.slug === slug)))) throw new Error(`alias target ${slug} is not a taxonomy topic`);

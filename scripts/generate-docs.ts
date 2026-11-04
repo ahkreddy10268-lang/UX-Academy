@@ -26,7 +26,7 @@ domains.forEach((d, i) => {
     tax += `### ${s.title} (\`${s.id}\`)\n\n`;
     for (const it of itemsForSubcategory(d.id, s.id)) {
       const mark = it.entry ? (it.entry.status === "published" ? "✅" : "✏️") : "◻️";
-      tax += `- ${mark} ${it.title} — *${TYPE_LABEL[it.type]}* · \`${it.slug}\`\n`;
+      tax += `- ${mark} ${it.title} — *${TYPE_LABEL[it.type]}* · \`${it.slug}\`${it.aliases?.length ? ` · also: ${it.aliases.join(", ")}` : ""}\n`;
     }
     tax += "\n";
   }

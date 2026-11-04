@@ -21,13 +21,13 @@ npm run build && npm start
 
 | Area | Route | What it does |
 |---|---|---|
-| Library | `/library`, `/library/[slug]` | 47 published entries of 540 taxonomy topics (10 more addressed within other entries, 483 planned); full-text search, filters, A–Z. Live figures: `docs/CONTENT_COVERAGE.md` |
-| Subjects | `/topics`, `/topics/[domain]` | 20-domain taxonomy with coverage |
+| Library | `/library`, `/library/[slug]` | 48 published entries of 558 taxonomy topics (10 more addressed within other entries, 500 planned); full-text search, filters, A–Z. Live figures: `docs/CONTENT_COVERAGE.md` |
+| Subjects | `/topics`, `/topics/[domain]` | 20-domain, 73-subcategory taxonomy v1.0 (frozen; docs/CONTENT_AUDIT.md § 7) with coverage |
 | Learn | `/learn`, `/learn/[id]` | 16 learning paths, beginner → advanced |
 | Formula Lab | `/formulas`, `/formulas/[id]` | 25 documented formulas with unit-tested calculators |
 | Labs | `/labs/[id]` | 10 experiments and simulations (Fitts, Hick-Hyman, Gestalt, contrast…) |
 | Practice | `/practice` | Mixed quizzes, Leitner flashcards, 11 design workshops |
-| Graph | `/graph` | Knowledge graph of 331 explained relationships + list alternative |
+| Graph | `/graph` | Knowledge graph of explained relationships + list alternative (count in the generated docs) |
 | Compare | `/compare` | 10 side-by-side concept comparisons |
 | Glossary | `/glossary` | 114 terms |
 | Sources | `/sources` | 250-source registry with Crossref/URL verification status |

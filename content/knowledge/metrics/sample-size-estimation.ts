@@ -12,7 +12,7 @@ export default defineEntry({
   primaryType: "technique",
   secondaryTypes: ["formula"],
   domain: "metrics",
-  subcategory: "statistics",
+  subcategory: "experimental-design",
   tags: ["power", "precision", "margin of error", "research planning", "A/B testing", "statistics"],
   difficulty: "intermediate",
   disciplines: ["Statistics", "UX research", "Experimentation"],

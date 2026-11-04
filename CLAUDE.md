@@ -56,6 +56,7 @@ classified, evidenced, connected and practised.
 - Expand content in the order of `docs/CONTENT_AUDIT.md` §6, one fully researched entry at a time, with sources verified first. Never generate shallow entries to raise coverage; coverage figures come only from the generated `docs/CONTENT_COVERAGE.md`.
 - Taxonomy changes (add, merge, split, reclassify) go in `content/taxonomy.ts` with a reason in `docs/CONTENT_AUDIT.md`; retarget links before removing a slug.
 - Every taxonomy topic has one of six statuses derived from the content (see `docs/CONTENT_MODEL.md` § Topic status); add a topic to `content/topic-ledger.ts` only when its sources have actually been gathered. Priority is knowledge completeness; do visual redesign only to solve a usability, accessibility or educational problem.
+- **Taxonomy v1.0 is frozen** (20 domains, ids stable; `docs/CONTENT_AUDIT.md` § 7, governance in `docs/CONTENT_MODEL.md`): one canonical home per topic, synonyms as `aliases`, no new top-level domains, moved published topics keep their slug and get matching `domain`/`subcategory`. `tests/taxonomy.test.ts` enforces it.
 - Do not assign numeric confidence scores; use `evidence` classes and `evidenceNote`.
 
 ## Design rules (v3 — see docs/DESIGN_SYSTEM.md, docs/UI_UX_DESIGN_DIRECTION.md)

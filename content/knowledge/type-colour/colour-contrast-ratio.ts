@@ -12,7 +12,7 @@ export default defineEntry({
   primaryType: "formula",
   secondaryTypes: ["metric", "standard"],
   domain: "type-colour",
-  subcategory: "colour",
+  subcategory: "colour-design",
   tags: ["contrast", "accessibility", "luminance", "sRGB", "legibility", "colour tokens", "low vision"],
   difficulty: "beginner",
   disciplines: ["Accessibility", "Colour science", "Visual design", "Design systems"],
@@ -179,7 +179,7 @@ export default defineEntry({
     { target: "design-tokens", type: "applied-in", note: "Accessible colour pairings are enforced most reliably as semantic token rules." },
     { target: "visual-hierarchy", type: "related-to", note: "Contrast is one of the strongest levers of visual hierarchy; accessibility thresholds bound how low secondary contrast may go." },
     { target: "perceptual-colour-spaces", type: "contrasts-with", note: "Perceptual spaces such as CIE Lab model lightness differences more uniformly than the WCAG luminance ratio." },
-    { target: "semantic-colour-systems", type: "applied-in", note: "Semantic colour roles (text, surface, border) are defined with contrast constraints between them." },
+    { target: "colour-systems", type: "applied-in", note: "Semantic colour roles (text, surface, border) are defined with contrast constraints between them." },
   ],
 
   formulas: [

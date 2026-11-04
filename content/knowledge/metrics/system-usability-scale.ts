@@ -12,7 +12,7 @@ export default defineEntry({
   primaryType: "research-instrument",
   secondaryTypes: ["metric"],
   domain: "metrics",
-  subcategory: "usability-metrics",
+  subcategory: "instruments",
   tags: ["questionnaire", "perceived usability", "satisfaction", "benchmarking", "post-test", "psychometrics"],
   difficulty: "beginner",
   disciplines: ["UX research", "Usability engineering", "Psychometrics", "Human factors"],

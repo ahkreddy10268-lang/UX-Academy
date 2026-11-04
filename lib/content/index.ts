@@ -81,6 +81,8 @@ export type TaxonomyItem = {
   entry?: KnowledgeEntry;
   /** Explained inside this published entry (not a dedicated entry). */
   coveredBy?: string;
+  /** Synonyms and merged topics: searchable, never separate taxonomy items. */
+  aliases?: string[];
 };
 
 export const taxonomyItems: TaxonomyItem[] = domains.flatMap((d) =>

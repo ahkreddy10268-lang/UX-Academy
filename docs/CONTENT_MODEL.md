@@ -77,6 +77,19 @@ be full entries or planned taxonomy slugs.
 All 10 `quality` flags true; ≥3 activities (quiz + exercises); ≥3 connections;
 ≥1 misconception; ≥1 primary or standard reference. Enforced by `tests/content.test.ts`.
 
+### Taxonomy governance (v1.0, frozen)
+
+1. The 20-domain structure and every domain, subcategory and topic id are frozen. Display titles may change; ids do not.
+2. Before adding a topic, search title, alias, synonym and meaning, not only the slug.
+3. Decide whether it needs a standalone entry, belongs inside a larger entry (`coveredBy`, only when that entry really explains it) or is a glossary term or alias.
+4. Every topic has one primary type from the existing vocabulary, one domain and one subcategory (canonical home); other domains connect through typed relations. Never duplicate a topic to make it discoverable.
+5. Merge synonyms into one canonical slug with `aliases` in `content/taxonomy.ts` (searchable, never separate items). Removing a published slug requires redirects and relation migration; removing a planned slug requires retargeting every reference first.
+6. Moving a published topic to another domain keeps its slug and route and updates the entry's `domain` and `subcategory` in the same change (`tests/content.test.ts` checks the match).
+7. Subcategories hold at least two topics. No software tools, platforms, job titles or course names as topics.
+8. Add a topic to the research roadmap only when credible primary or authoritative sources are identified; emerging topics stay `emerging-concept` and are revisited.
+9. After any taxonomy change: `npm run docs:generate`, reconcile counts in README, ROADMAP and PROGRESS against the generated reports, run `npm run check`. Never lower content gates to raise the published share.
+10. `tests/taxonomy.test.ts` enforces the structure (20 domains, ids, titles, canonical homes, aliases, no tools, P1 placements).
+
 ### Topic status (six states, one per taxonomy topic)
 
 Planned · Research in progress · Drafted · Quality reviewed · Published · Addressed within another entry. Derived, never hand-set per topic: an entry's own `status` (`research-pending`/`research-completed` → research in progress), `content/topic-ledger.ts` for research that has no entry file yet (add a row only when sources have actually been gathered), and taxonomy `coveredBy` for "addressed within". Only **Published** counts as covered. Reports: `docs/CONTENT_COVERAGE.md` and `/coverage` give the six statuses and the completion dimensions (research done, explanation, evidence, practice, visual, editorial) per domain and subcategory, plus empty subcategories and learning-path completeness.

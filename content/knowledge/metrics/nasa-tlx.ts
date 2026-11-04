@@ -12,7 +12,7 @@ export default defineEntry({
   primaryType: "research-instrument",
   secondaryTypes: ["metric"],
   domain: "metrics",
-  subcategory: "usability-metrics",
+  subcategory: "instruments",
   tags: ["workload", "mental workload", "human factors", "questionnaire", "cognitive load", "safety-critical"],
   difficulty: "intermediate",
   disciplines: ["Human factors", "Aviation psychology", "UX research", "Cognitive ergonomics"],

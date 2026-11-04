@@ -7,8 +7,8 @@
 | 0 Environment & preparation | ✅ done |
 | 1 Product & technical architecture | ✅ done (docs/) |
 | 2 Design system & frontend foundation | ✅ done |
-| 3 Taxonomy & database | ✅ 20 domains, 62 subcategories, 540 topics (audited 2026-11-04, docs/CONTENT_AUDIT.md) |
-| 4 Initial research & content | ✅ 47 published entries · 256 sources · 152 DOIs verified (figures from the generated docs/CONTENT_COVERAGE.md and RESEARCH_SOURCES.md) |
+| 3 Taxonomy & database | ✅ Taxonomy v1.0 frozen: 20 domains, 73 subcategories, 558 topics (docs/CONTENT_AUDIT.md § 7) |
+| 4 Initial research & content | ✅ 48 published entries · figures from the generated docs/CONTENT_COVERAGE.md and RESEARCH_SOURCES.md; not repeated here (figures from the generated docs/CONTENT_COVERAGE.md and RESEARCH_SOURCES.md) |
 | 5 Interactive features | ✅ search, filters, graph, Formula Lab (25), labs (10), quizzes, flashcards, workshops, comparisons, glossary, paths, My learning |
 | 6 Testing & verification | ✅ unit + content tests, browser crawl, e2e, axe audit |
 | 7 Long-term expansion | ▶ ongoing — below |

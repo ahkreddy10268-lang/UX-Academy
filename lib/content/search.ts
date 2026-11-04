@@ -68,7 +68,7 @@ export function buildSearchDocs(): SearchDoc[] {
       href: `/library/${t.slug}`,
       type: t.type,
       context: [d?.shortTitle, subcategoryTitle(t.domain, t.subcategory)].filter(Boolean).join(" › "),
-      summary: "Planned topic — research pending.",
+      summary: t.aliases?.length ? `Planned topic — research pending. Also known as ${t.aliases.join(", ")}.` : "Planned topic — research pending.",
     });
   }
   for (const g of glossary)

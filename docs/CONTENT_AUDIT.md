@@ -22,7 +22,7 @@ _2026-11-04. Inventory sources: `docs/CONTENT_COVERAGE.md` and `docs/KNOWLEDGE_T
 ### Reconciled counts
 README.md said "45 published entries + ~470 planned topics". PROGRESS.md and ROADMAP.md carried session-1 figures (45 entries, ≈515 topics, ≈70 subcategories, 633 pages, 250 sources). All three now point to the generated `docs/CONTENT_COVERAGE.md` and state the current figures.
 
-## 2. Domain-by-domain review (20 domains, 62 subcategories)
+## 2. Domain-by-domain review (20 domains, 62 subcategories — as audited before v1.0; the final structure is § 7)
 
 | Domain | Topics | Published | Assessment |
 |---|---:|---:|---|
@@ -144,3 +144,103 @@ Write in this order. Each entry must pass the gates above, cite only sources tha
 - Never publish an entry that fails a gate. Never mark a planned topic as published.
 - Prefer deepening thin dimensions of existing entries (practice at all three levels, verified primary sources) over adding breadth when both compete for time.
 - Re-run `npm run docs:generate` after each entry; the coverage and maturity tables are the progress report.
+
+## 7. Taxonomy v1.0 — frozen structure (session 14)
+
+Source proposal: `docs/PROPOSED_TAXONOMY_V1.md` (the owner's blueprint, kept verbatim). This section records what was adopted, changed or rejected after checking it against the repository; the full topic lists are generated in `docs/KNOWLEDGE_TAXONOMY.md` and the counts in `docs/CONTENT_COVERAGE.md`.
+
+### 7.1 Audit of the starting state (recalculated, not assumed)
+
+20 domains, 62 subcategories, 540 topics (540 unique slugs, no duplicate slugs), 48 published entries, 10 addressed-within, 482 planned, 7 domains without a published entry. Metadata between taxonomy and the 48 entries was consistent. Problems found:
+
+- **Ownership violations.** Product frameworks sat in Design Methods (JTBD, Kano, OST, RICE, MoSCoW, business model and value proposition canvases); journey maps sat there too; HEART and AARRR were measurement frameworks outside Metrics; accessibility and inclusive design were introduced under Foundations; ethics foundations under Foundations; Norman's feedback, constraints and mapping under Psychology; error prevention and content/visual/accessibility principle "families" under Principles; colour theory under Visual Design; questionnaires and SUS/NASA-TLX mixed with metrics.
+- **Semantic duplicates (planned topics, no content).** Form architecture / form design; voice interactions / voice user interfaces; semantic colour systems / colour systems; design ethics foundations / ethical design; design responsibilities / responsible product design.
+- **Misclassification.** Research repositories, screen readers and assistive technologies were typed `tool`.
+- **Structure.** Domain 3's title put HCI inside Psychology; Design Methods was a catch-all with five subcategories of which two were product and measurement; several domains lacked the subcategories needed for emotion, learning, forms, search, requirements, instruments, experimental design, storytelling and web engineering.
+
+### 7.2 Result
+
+| # | Domain (id) | Subcategories | Topics | Published |
+|---:|---|---:|---:|---:|
+| 1 | UX & UI Fundamentals (`foundations`) | 3 → 3 | 25 → 21 | 4 |
+| 2 | UX Laws & Cognitive Effects (`laws-effects`) | 5 → 5 | 46 → 46 | 13 |
+| 3 | Cognition, Behaviour & Human Factors (`psychology`) | 4 → 4 | 59 → 59 | 7 |
+| 4 | Principles & Heuristics (`heuristics`) | 2 → 1 | 13 → 9 | 2 |
+| 5 | UX Research (`research`) | 5 → 6 | 57 → 57 | 5 |
+| 6 | Design Methods & Frameworks (`frameworks`) | 5 → 3 | 23 → 12 | 2 |
+| 7 | Information Architecture (`ia`) | 3 → 4 | 19 → 19 | 1 |
+| 8 | Interaction Design (`interaction`) | 3 → 4 | 18 → 23 | 1 |
+| 9 | UI & Visual Design (`visual`) | 3 → 4 | 24 → 25 | 1 |
+| 10 | Typography & Colour Science (`type-colour`) | 2 → 3 | 25 → 27 | 2 |
+| 11 | Design Systems (`design-systems`) | 4 → 4 | 31 → 29 | 1 |
+| 12 | Accessibility & Inclusive Design (`accessibility`) | 3 → 4 | 29 → 34 | 1 |
+| 13 | UX Writing & Content Design (`content`) | 2 → 2 | 16 → 18 | 0 |
+| 14 | Product Design & Strategy (`product`) | 3 → 5 | 25 → 33 | 1 |
+| 15 | Service Design & Systems Thinking (`service`) | 2 → 3 | 13 → 16 | 0 |
+| 16 | Metrics, Formulas & Statistics (`metrics`) | 4 → 6 | 43 → 46 | 7 |
+| 17 | Data Visualisation (`dataviz`) | 2 → 3 | 15 → 17 | 0 |
+| 18 | Ethical & Responsible Design (`ethics`) | 2 → 2 | 14 → 14 | 0 |
+| 19 | Emerging & Specialised Disciplines (`emerging`) | 3 → 3 | 29 → 31 | 0 |
+| 20 | Design Practice & Technical Literacy (`practice`) | 2 → 4 | 16 → 22 | 0 |
+
+Totals: **20 domains, 73 subcategories, 558 topics** (540 + 23 added − 5 merged away). 48 published, 10 addressed within, 500 planned. Published share fell from 8.9% to 8.6% only because the denominator grew; no published entry was lost, and Product & Strategy gained its first published entry (JTBD) by an ownership move.
+
+Domain 4 is deliberately compact (9 topics, one subcategory): the blueprint's own boundary rule moves subject-specific principles to their owning domains, and the two cross-cutting principles that remain fit the heuristic-set subcategory.
+
+### 7.3 Display titles (IDs unchanged)
+
+- Domain 3 (`psychology`): **Cognition, Behaviour & Human Factors**, short title "Cognition". HCI remains a Domain 1 discipline.
+- Domain 6 (`frameworks`): **Design Methods & Frameworks**, short title "Design methods" — adopted: the old title invited research methods, product frameworks and service methods, which now live in Domains 5, 14 and 15.
+
+### 7.4 The 18 priority candidates
+
+| Candidate | Decision | Canonical slug · type · home | Reason |
+|---|---|---|---|
+| Customer Experience (CX) | Add | `customer-experience` · discipline · 15 / service design foundations | Not covered by service design or UX; distinct unit (the customer's cumulative relationship) |
+| Graphic Design / Visual Communication | Add | `graphic-design` · discipline · 9 / foundations | The parent discipline of visual design |
+| Information Design | Add | `information-design` · discipline · 9 / foundations | Distinct from IA (Domain 7) and data visualisation (Domain 17) |
+| Brand Identity Design | Add | `brand-identity-design` · discipline · 9 / foundations | Missing; needed for visual systems and logo work |
+| Content Strategy | Add | `content-strategy` · discipline · 13 / content systems | Separate from content design (practice) and governance (rules) |
+| Neuroinclusive Design | Add (research first) | `neuroinclusive-design` · concept · 12 / access needs | Distinct from cognitive accessibility; must not treat neurodivergent people as one group |
+| Form Design | Add, merging `form-architecture` | `form-design` · technique · 8 / patterns | One canonical home for form design; `accessible-forms` (12) and `form-instructions` (13) stay separate |
+| Haptic Feedback Design | Add | `haptic-feedback-design` · technique · 8 / modalities | Feedback modality; tangible interaction stays in the P2 backlog (one home, Domain 19) |
+| Emotion and Affect in Interaction | Add | `emotion-and-affect-in-interaction` · concept · 3 / behavioural | Broader than `emotional-design` (Norman's model), which is related, not duplicated |
+| Learning and Skill Acquisition | Add (not split) | `learning-and-skill-acquisition` · concept · 3 / cognitive | `power-law-of-practice` stays a law in Domain 2 |
+| Data Storytelling | Add | `data-storytelling` · technique · 17 / integrity | Distinct from chart selection |
+| Visualising Uncertainty | Add | `visualising-uncertainty` · technique · 17 / integrity | Distinct from chart integrity and statistics |
+| Conversation Design | **Alias, not added** | alias of `conversational-ux` (also "Dialogue Design") | The two names denote the same discipline; a second topic would fragment it |
+| CSCW | Add | `cscw` · discipline · 19 / specialist disciplines | Recognised field; social computing deferred to the backlog |
+| Design Futures / Speculative Design | Add | `design-futures` · discipline · 19 / specialist disciplines | Recognised practice area with its own literature |
+| JavaScript for Designers | Add | `javascript-for-designers` · concept · 20 / web foundations | Transferable concept, not a tutorial |
+| DOM and Event Fundamentals | Add | `dom-and-event-fundamentals` · concept · 20 / web foundations | As above |
+| Web Performance for Designers | Add | `web-performance-for-designers` · concept · 20 / engineering | As above |
+
+17 added, 1 alias. Types were chosen from the existing schema only; the blueprint's suggestions were revised where they were too coarse (Form Design: technique, not "method or pattern"; Conversation Design: no new type needed).
+
+### 7.5 Further gap analysis (six additions beyond the 18)
+
+`models-of-disability` (concept, 12): the social and medical models are the base of the accessibility entry and were missing. `motor-control` (concept, 3): speed–accuracy and motor behaviour underlie Fitts's law and input design. `controlled-experiments` (method, 5): HCI and UX research's core quantitative method had no topic. `ideation-techniques` and `workshop-facilitation` (technique, 6): the repaired Design Methods domain needed ideation and facilitation, which `content/workshops.ts` already teaches. `ux-engineering` (discipline, 20; alias "Design Engineering"): a named practice area in the blueprint's own Domain 20 text.
+
+### 7.6 Merges, moves and reclassifications
+
+- **Merged (slug removed, alias kept, no content or links lost):** `form-architecture` → `form-design`; `voice-interactions` → `voice-user-interfaces`; `semantic-colour-systems` → `colour-systems` (one relation and one learning-path step retargeted); `design-ethics-foundations` → `ethical-design`; `design-responsibilities` → `responsible-product-design`.
+- **Re-homed (slug and route unchanged), published:** `jobs-to-be-done` (6→14), `heart-framework` (6→16), `colour-contrast-ratio` (10, colour → colour in design), `system-usability-scale` and `nasa-tlx` (16, metrics → instruments), `sample-size-estimation` (16, statistics → experimental design). Each entry's `domain` and `subcategory` fields were updated to match; the existing consistency tests pass. Their subject colour follows the new domain.
+- **Re-homed, planned:** accessibility and inclusion topics to 12; interaction principles and states to 8; product frameworks and prioritisation to 14; journey and blueprint mapping to 15; questionnaires and instruments to 16; colour theory topics to 10; DesignOps and operations to 20; IA search topics to a findability subcategory; storytelling, uncertainty and integrity to one subcategory in 17.
+- **Reclassified:** `research-repositories`, `screen-readers`, `assistive-technologies`: `tool` → `concept`. No `tool` topics remain (tested).
+- **Subcategories:** 14 added, 3 removed (`frameworks/strategy`, `frameworks/measurement`, `heuristics/principle-families`), none holding published entries after the moves. Every subcategory has at least two topics (tested).
+
+### 7.7 Kept distinct, watched (resolve when the entries are written)
+
+`typography-scales` / `modular-type-scale`; `icon-systems` / `iconography`; `accessibility-testing` / `accessibility-audits`; `participatory-design` / `co-design`; `ai-ux` / `human-ai-interaction`; `enterprise-ux` / `b2b-saas-ux`; `educational-ux` / `learning-experience-design`; `design-to-development-handoff` / `design-to-code-workflows`; `inclusive-design` / `inclusive-design-principles` / `universal-design`; `colour-perception` / `colour-theory`; `ethical-design` / `responsible-product-design` / `value-sensitive-design`; `frontend-accessibility` / ARIA and semantic HTML. Each pair has a different scope today; if a researched entry cannot keep them apart, merge by alias.
+
+### 7.8 Ownership rules (final)
+
+One canonical home per topic; other domains link with typed relations. Owners: HCI discipline → 1; human capability and behaviour theory → 3; empirical laws and effects → 2; general heuristic sets → 4; research methods, instruments of method and ethics → 5; cross-disciplinary design process, ideation and analytical models → 6; information organisation and findability → 7; interaction behaviour, controls, forms and feedback → 8; visual communication and composition → 9; typography and colour science → 10; design-system architecture → 11; accessibility and inclusive practice → 12; UX writing and content → 13; product strategy, discovery, prioritisation, requirements → 14; service and customer experience, journeys, blueprints → 15; metrics, questionnaires, formulas, statistics → 16; charts and analytical visualisation → 17; ethical and responsible design → 18; emerging modalities and specialisms → 19; professional and technical delivery, DesignOps → 20.
+
+### 7.9 Deferred and rejected
+
+See `docs/TAXONOMY_BACKLOG.md` (P2 specialist backlog, optional topics, rejected candidates and their reasons).
+
+### 7.10 Freeze
+
+Taxonomy v1.0 is frozen: no new top-level domains during the next content cycle; changes follow `docs/CONTENT_MODEL.md` § Taxonomy governance and are recorded here.

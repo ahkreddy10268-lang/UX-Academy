@@ -176,7 +176,7 @@ export const learningPaths: LearningPath[] = [
     prerequisites: ["UI Design Fundamentals"],
     stages: [
       { title: "Composition", level: "intermediate", description: "Alignment, balance and space.", steps: ["visual-hierarchy", "gestalt-principles", "alignment", "balance", "white-space"], practice: ["hierarchy-lab", "gestalt-lab"] },
-      { title: "Type & colour systems", level: "intermediate", description: "Scales and semantic colour.", steps: ["modular-type-scale", "typographic-hierarchy", "colour-contrast-ratio", "semantic-colour-systems"], practice: ["type-scale-lab", "contrast-lab"] },
+      { title: "Type & colour systems", level: "intermediate", description: "Scales and semantic colour.", steps: ["modular-type-scale", "typographic-hierarchy", "colour-contrast-ratio", "colour-systems"], practice: ["type-scale-lab", "contrast-lab"] },
       { title: "Judgement", level: "advanced", description: "Aesthetics and its effects on perceived usability.", steps: ["aesthetic-usability-effect", "visual-complexity", "information-density"], practice: ["interface-critique"] },
     ],
     completion: ["Interface critique workshop submitted with reasons tied to principles"],

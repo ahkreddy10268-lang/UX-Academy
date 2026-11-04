@@ -431,6 +431,8 @@ export const taxonomyItemSchema = z.object({
    * links do not break. Writing a dedicated entry later overrides it.
    */
   coveredBy: slug.optional(),
+  /** Other names for the same topic (synonyms, abbreviations, merged topics). Searchable; the slug stays canonical. */
+  aliases: z.array(z.string()).optional(),
 });
 
 export const subcategorySchema = z.object({
