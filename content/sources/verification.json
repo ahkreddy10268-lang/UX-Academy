@@ -152,6 +152,14 @@
     "registeredContainer": "Proceedings of the SIGCHI Conference on Human Factors in Computing Systems",
     "similarity": 1
   },
+  "bodker-2006": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-04",
+    "registeredTitle": "When second wave HCI meets third wave challenges",
+    "registeredYear": 2006,
+    "registeredContainer": "Proceedings of the 4th Nordic conference on Human-computer interaction: changing roles",
+    "similarity": 1
+  },
   "boren-ramey-2000": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",
@@ -504,12 +512,28 @@
     "registeredContainer": "European Journal of Epidemiology",
     "similarity": 1
   },
+  "grudin-2005": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-04",
+    "registeredTitle": "Three Faces of Human-Computer Interaction",
+    "registeredYear": 2005,
+    "registeredContainer": "IEEE Annals of the History of Computing",
+    "similarity": 1
+  },
   "halasz-moran-1983": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",
     "registeredTitle": "Mental models and problem solving in using a calculator",
     "registeredYear": 1983,
     "registeredContainer": "Proceedings of the SIGCHI conference on Human Factors in Computing Systems  - CHI '83",
+    "similarity": 1
+  },
+  "harrison-sengers-tatar-2011": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-04",
+    "registeredTitle": "Making epistemological trouble: Third-paradigm HCI as successor science",
+    "registeredYear": 2011,
+    "registeredContainer": "Interacting with Computers",
     "similarity": 1
   },
   "hart-2006": {
@@ -579,6 +603,13 @@
     "registeredTitle": "The Evaluator Effect: A Chilling Fact About Usability Evaluation Methods",
     "registeredYear": 2001,
     "registeredContainer": "International Journal of Human-Computer Interaction",
+    "similarity": 1
+  },
+  "hewett-et-al-1992": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-04",
+    "registeredTitle": "ACM SIGCHI Curricula for Human-Computer Interaction",
+    "registeredYear": 1992,
     "similarity": 1
   },
   "hick-1952": {
@@ -863,6 +894,14 @@
     "registeredTitle": "Measuring Perceived Usability: The SUS, UMUX-LITE, and AltUsability",
     "registeredYear": 2015,
     "registeredContainer": "International Journal of Human-Computer Interaction",
+    "similarity": 1
+  },
+  "licklider-1960": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-04",
+    "registeredTitle": "Man-Computer Symbiosis",
+    "registeredYear": 1960,
+    "registeredContainer": "IRE Transactions on Human Factors in Electronics",
     "similarity": 1
   },
   "loewenstein-prelec-1993": {
@@ -1565,6 +1604,14 @@
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
     "httpStatus": 200
+  },
+  "weiser-1991": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-04",
+    "registeredTitle": "The Computer for the 21st Century",
+    "registeredYear": 1991,
+    "registeredContainer": "Scientific American",
+    "similarity": 1
   },
   "wertheimer-1923": {
     "status": "doi-verified",

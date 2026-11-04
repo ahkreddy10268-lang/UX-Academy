@@ -55,6 +55,7 @@ classified, evidenced, connected and practised.
 - Only `status: "published"` with every quality-gate flag true **and** the type-specific completeness gates (`lib/content/completeness.ts`) counts as complete. Taxonomy items without entries are "planned"; never present them as content. `coveredBy` topics are "addressed within" another entry and never count as published.
 - Expand content in the order of `docs/CONTENT_AUDIT.md` §6, one fully researched entry at a time, with sources verified first. Never generate shallow entries to raise coverage; coverage figures come only from the generated `docs/CONTENT_COVERAGE.md`.
 - Taxonomy changes (add, merge, split, reclassify) go in `content/taxonomy.ts` with a reason in `docs/CONTENT_AUDIT.md`; retarget links before removing a slug.
+- Every taxonomy topic has one of six statuses derived from the content (see `docs/CONTENT_MODEL.md` § Topic status); add a topic to `content/topic-ledger.ts` only when its sources have actually been gathered. Priority is knowledge completeness; do visual redesign only to solve a usability, accessibility or educational problem.
 - Do not assign numeric confidence scores; use `evidence` classes and `evidenceNote`.
 
 ## Design rules (v3 — see docs/DESIGN_SYSTEM.md, docs/UI_UX_DESIGN_DIRECTION.md)

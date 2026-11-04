@@ -77,6 +77,10 @@ be full entries or planned taxonomy slugs.
 All 10 `quality` flags true; ≥3 activities (quiz + exercises); ≥3 connections;
 ≥1 misconception; ≥1 primary or standard reference. Enforced by `tests/content.test.ts`.
 
+### Topic status (six states, one per taxonomy topic)
+
+Planned · Research in progress · Drafted · Quality reviewed · Published · Addressed within another entry. Derived, never hand-set per topic: an entry's own `status` (`research-pending`/`research-completed` → research in progress), `content/topic-ledger.ts` for research that has no entry file yet (add a row only when sources have actually been gathered), and taxonomy `coveredBy` for "addressed within". Only **Published** counts as covered. Reports: `docs/CONTENT_COVERAGE.md` and `/coverage` give the six statuses and the completion dimensions (research done, explanation, evidence, practice, visual, editorial) per domain and subcategory, plus empty subcategories and learning-path completeness.
+
 ### Completeness gates (type-specific, `lib/content/completeness.ts`)
 
 Structural checks that the parts a learner needs for this *kind* of knowledge exist. They never use word counts.

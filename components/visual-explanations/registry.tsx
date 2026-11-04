@@ -9,6 +9,7 @@ import { DoubleDiamondProcess } from "./concepts/double-diamond";
 import { FittsAnatomy, FittsComparison } from "./concepts/fitts-law";
 import { GestaltAnnotated, GestaltSpacing } from "./concepts/gestalt-principles";
 import { HeuristicDecision, HeuristicFlow } from "./concepts/heuristic-evaluation";
+import { HciLenses } from "./concepts/human-computer-interaction";
 import { UcdCycle } from "./concepts/user-centred-design";
 import { IaEcology, IaHierarchy } from "./concepts/information-architecture";
 import type { VisualExplanation } from "./types";
@@ -168,6 +169,24 @@ export const visualExplanations: VisualExplanation[] = [
     Component: UcdCycle,
   },
   {
+    id: "human-computer-interaction.lenses",
+    slug: "human-computer-interaction",
+    type: "conceptual",
+    level: 2,
+    title: "Three lenses on the same interaction",
+    objective: "Cognitive modelling, work and participation, and experience and meaning compared by what they take as the unit of study, the question they ask, their methods and what they cannot show.",
+    takeaway: "Each lens answers a different question about the same interaction, so choose the method that fits the question and expect a real project to combine them.",
+    summary: [
+      "Cognitive modelling takes the individual user as an information processor. Its typical question is how long an expert will take and where errors occur; its methods are task-time models such as the keystroke-level model and GOMS, and controlled experiments. It cannot show whether a team will adopt a design or what it means to people.",
+      "Work and participation takes groups and the settings where they work. Its typical question is how the technology fits what people actually do together; its methods are field observation and participatory design. It cannot give a general performance number for a task.",
+      "Experience and meaning takes broader, more varied use contexts over time. Its typical question is what the technology means to people and how that changes with use; its methods are interviews and long-term studies. It cannot show which of two layouts is quicker to operate.",
+      "The arrows show a shift of emphasis in the field, not a replacement: the lenses overlap, earlier ones keep contributing, and one project often uses all three. The lenses are interpretive framings from the cited authors, not validated stages.",
+    ],
+    verification: "content-checked",
+    sources: ["card-moran-newell-1983", "bodker-2006", "harrison-sengers-tatar-2011"],
+    Component: HciLenses,
+  },
+  {
     id: "gestalt-principles.annotated",
     slug: "gestalt-principles",
     type: "annotated-interface",
@@ -250,6 +269,7 @@ export const quickTakeaways: Record<string, string> = {
   "cognitive-load-theory": "Working memory is small: remove the effort your design adds so it can go to the material itself.",
   "information-architecture": "People find things when the grouping, the names, the routes and the search all match how they think.",
   "user-centred-design": "Learn about users, design, test with them, and repeat until the evidence says the design works.",
+  "human-computer-interaction": "People, technology and context meet in every interaction; HCI studies, designs and evaluates that meeting, with methods chosen to fit the question.",
   "gestalt-principles": "Spacing, likeness, shared boxes and connecting lines tell people what belongs together before they read anything.",
   "heuristic-evaluation": "A few experts review alone, then merge and rate what they found: fast and cheap, but predictions rather than evidence.",
 };

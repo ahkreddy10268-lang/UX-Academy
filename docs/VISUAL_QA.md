@@ -139,3 +139,6 @@ Screenshots (`.shots/learn-{light,dark}-{1440,1280,1024,768,390,360}.png`, not c
 
 ## Session 8 — learning experience refinement (`/learn`, `/learn/[id]`, lesson, entry)
 Screenshots reviewed (light + dark, 1440 and 390): catalogue, path, lesson, level test, library entry; layout overflow measured on all five routes in all four combinations (0 px). Browser suites on the production build: e2e 42/42, e2e-redesign 66/66, keyboard 43/43; devices see PROGRESS. Unit tests 166 (3 new in tests/learning.test.ts). Not tested: axe (axe.min.js unavailable offline), real devices, screen readers.
+
+## Session 9 — Human-Computer Interaction entry, coverage page
+Screenshots reviewed (light/dark, 1440 and 390): library entry (plate, "Three lenses" figure), lesson, path, `/coverage`; overflow 0 px on all. A plate label contrast issue (label on solid fill in dark) was fixed by using the soft fill. Browser suites on the production build: e2e 42/42, e2e-redesign 66/66 (the "concepts with a detailed diagram" count rose 7 → 8 with this entry; the test was updated, not loosened), keyboard 43/43, devices 137/137. Not tested: axe (not available offline), real devices, screen readers.

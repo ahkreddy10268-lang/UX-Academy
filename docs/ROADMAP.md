@@ -16,7 +16,7 @@
 
 ## Next content
 
-**The authoritative, entry-by-entry expansion plan is `docs/CONTENT_AUDIT.md` §6** (ten tiers: foundations → UI/interaction → research → IA → design systems → accessibility → product & service → data visualisation → ethics → emerging), with source requirements, relations, activities and visual type for each entry. Coverage is 47 of 540 topics (8.7%); seven domains have no published entry. The list below is the earlier, superseded ordering, kept for history.
+**The authoritative, entry-by-entry expansion plan is `docs/CONTENT_AUDIT.md` §6** (ten tiers: foundations → UI/interaction → research → IA → design systems → accessibility → product & service → data visualisation → ethics → emerging), with source requirements, relations, activities and visual type for each entry. Coverage is 48 of 540 topics (8.9%) after `human-computer-interaction`; seven domains have no published entry. Owner priority (session 9): knowledge completeness and educational quality come first; visual work only where it solves a usability, accessibility or educational problem. The list below is the earlier, superseded ordering, kept for history.
 
 ### Earlier ordering (superseded)
 

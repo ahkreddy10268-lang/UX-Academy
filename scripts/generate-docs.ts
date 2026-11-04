@@ -7,10 +7,10 @@
 import { writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { allQuestions, domains, entries, glossary, itemsForSubcategory, labs, libraryFormulas, sources, verification, comparisons, workshops, learningPaths } from "../lib/content";
-import { domainCoverage, qualitySummary } from "../lib/content/coverage";
-import { EVIDENCE_LABEL, STATUS_LABEL, TIER_LABEL, TYPE_LABEL } from "../lib/content/labels";
-import { CONTENT_STATUSES } from "../lib/content/schema";
-import { levelChecks, maturity } from "../lib/content/completeness";
+import { TOPIC_STATUSES, TOPIC_STATUS_LABEL, domainCoverage, qualitySummary } from "../lib/content/coverage";
+import { completionReport, maturityOf } from "../lib/coverage-report";
+import { EVIDENCE_LABEL, TIER_LABEL, TYPE_LABEL } from "../lib/content/labels";
+import { levelChecks } from "../lib/content/completeness";
 
 const docs = join(import.meta.dirname, "..", "docs");
 const today = new Date().toISOString().slice(0, 10);
@@ -55,12 +55,11 @@ writeFileSync(join(docs, "RESEARCH_SOURCES.md"), src);
 
 /* ---------------- Coverage ---------------- */
 const cov = domainCoverage();
-const { illustrations } = await import("../components/illustrations/registry");
-const { hasVisuals } = await import("../components/visual-explanations/registry");
 const published = entries.filter((e) => e.status === "published");
 const totalTopics = cov.reduce((s, x) => s + x.total, 0);
 const addressed = cov.reduce((s, x) => s + x.addressedWithin, 0);
-const plannedOnly = totalTopics - published.length - addressed;
+const plannedOnly = cov.reduce((n, d) => n + d.byTopicStatus.planned, 0);
+const inResearch = cov.reduce((n, d) => n + d.byTopicStatus.research + d.byTopicStatus.drafted + d.byTopicStatus.reviewed, 0);
 const emptyDomains = cov.filter((d) => d.published === 0);
 let c = header("Content coverage", "A topic counts as covered only when it has its own published entry that passes every quality gate and the type-specific completeness checks (tests/content.test.ts). \"Addressed within\" topics are explained inside a larger entry and are never counted as published.");
 c += `**${published.length} of ${totalTopics} topics have a published entry (${((published.length / totalTopics) * 100).toFixed(1)}%).** ${addressed} more are addressed within another entry; ${plannedOnly} are planned with no content. ${emptyDomains.length} of ${cov.length} domains have no published entry: ${emptyDomains.map((d) => d.title).join(", ") || "none"}. The size of the taxonomy is a map of the discipline, not a measure of coverage.\n\n`;
@@ -70,6 +69,7 @@ for (const [k, v] of [
   ["Domains / subcategories", `${domains.length} / ${domains.reduce((n, d) => n + d.subcategories.length, 0)}`],
   ["Published entries", published.length],
   ["Addressed within another entry", addressed],
+  ["Research, drafted or reviewed (not yet published)", inResearch],
   ["Planned, no content", plannedOnly],
   ["Domains with no published entry", emptyDomains.length],
   ["Formulas with calculators", libraryFormulas.length],
@@ -84,21 +84,30 @@ for (const [k, v] of [
   ["Sources", sources.length],
 ] as const)
   c += `| ${k} | ${v} |\n`;
-c += `\n## By domain\n\n| Domain | ${CONTENT_STATUSES.map((s) => STATUS_LABEL[s]).join(" | ")} | Addressed within | Topics | Written |\n|---|${CONTENT_STATUSES.map(() => "---:").join("|")}|---:|---:|---:|\n`;
-for (const d of cov) c += `| ${d.title} | ${CONTENT_STATUSES.map((s) => d.byStatus[s]).join(" | ")} | ${d.addressedWithin} | ${d.total} | ${((d.published / d.total) * 100).toFixed(0)}% |\n`;
-c += `\n## By subcategory\n\n| Domain | Subcategory | Published | Addressed within | Topics |\n|---|---|---:|---:|---:|\n`;
-for (const d of cov) for (const sub of d.subcategories) c += `| ${d.title} | ${sub.title} | ${sub.published} | ${sub.addressedWithin} | ${sub.total} |\n`;
+c += `\n## By domain\n\nEvery topic has exactly one status, derived from the content: an entry's own status, the research ledger (content/topic-ledger.ts) or the taxonomy's coveredBy. "Research in progress" = research pending or completed.\n\n| Domain | ${TOPIC_STATUSES.map((s) => TOPIC_STATUS_LABEL[s]).join(" | ")} | Topics | Published |\n|---|${TOPIC_STATUSES.map(() => "---:").join("|")}|---:|---:|\n`;
+for (const d of cov) c += `| ${d.title} | ${TOPIC_STATUSES.map((s) => d.byTopicStatus[s]).join(" | ")} | ${d.total} | ${((d.published / d.total) * 100).toFixed(0)}% |\n`;
+c += `\n## By subcategory\n\n| Domain | Subcategory | ${TOPIC_STATUSES.map((s) => TOPIC_STATUS_LABEL[s]).join(" | ")} | Topics |\n|---|---|${TOPIC_STATUSES.map(() => "---:").join("|")}|---:|\n`;
+for (const d of cov) for (const sub of d.subcategories) c += `| ${d.title} | ${sub.title} | ${TOPIC_STATUSES.map((s) => sub.byTopicStatus[s]).join(" | ")} | ${sub.total} |\n`;
+const comp = completionReport();
+c += `\n## Completion by dimension\n\n"Research done" counts topics whose research is complete or further along (completed, drafted, reviewed, published). The five dimensions count **published** entries rated *complete* (rules under Maturity below), shown as complete / published; a dash means the group has no published entry. These are separate dimensions, not one score.\n\n| Domain | Topics | Published | Research done | Explanation | Evidence | Practice | Visual | Editorial |\n|---|---:|---:|---:|---|---|---|---|---|\n`;
+const dimCell = (x: { published: number; complete: Record<"explanation" | "evidence" | "practice" | "visual" | "editorial", number> }, k: "explanation" | "evidence" | "practice" | "visual" | "editorial") => (x.published ? `${x.complete[k]} / ${x.published}` : "—");
+for (const d of comp) c += `| ${d.title} | ${d.total} | ${d.published} | ${d.researchDone} | ${(["explanation", "evidence", "practice", "visual", "editorial"] as const).map((k) => dimCell(d, k)).join(" | ")} |\n`;
+c += `\n### Subcategories\n\n| Domain | Subcategory | Topics | Published | Explanation | Evidence | Practice | Visual | Editorial |\n|---|---|---:|---:|---|---|---|---|---|\n`;
+for (const d of comp) for (const sub of d.subcategories) c += `| ${d.title} | ${sub.title} | ${sub.total} | ${sub.published} | ${(["explanation", "evidence", "practice", "visual", "editorial"] as const).map((k) => dimCell(sub, k)).join(" | ")} |\n`;
+const emptySubs = comp.flatMap((d) => d.subcategories.filter((x) => x.published === 0).map((x) => `${d.title} → ${x.title} (${x.total} topics)`));
+c += `\n### Empty subcategories and domains\n\n- **Domains with no published entry (${comp.filter((d) => d.published === 0).length}):** ${comp.filter((d) => d.published === 0).map((d) => d.title).join(", ") || "none"}\n- **Subcategories with no published entry (${emptySubs.length} of ${comp.reduce((n, d) => n + d.subcategories.length, 0)}):** ${emptySubs.join("; ") || "none"}\n`;
+c += `\n## Learning path completeness\n\nA path is complete only when every planned step is a published lesson. Planned steps are not lessons and are never presented as such.\n\n| Path | Published lessons | Planned steps | Complete |\n|---|---:|---:|---:|\n`;
+for (const p of learningPaths) {
+  const steps = p.stages.flatMap((st) => st.steps);
+  const pubSteps = steps.filter((x) => entries.some((e) => e.slug === x && e.status === "published")).length;
+  c += `| ${p.title} | ${pubSteps} | ${steps.length - pubSteps} | ${((pubSteps / steps.length) * 100).toFixed(0)}% |\n`;
+}
 c += `\n## Quality gate\n\n` + qualitySummary().map((q) => `- ${q.gate}: ${q.passing}/${q.total}`).join("\n") + "\n";
 
 /* depth and maturity */
 const levelPass = (lvl: "beginner" | "intermediate" | "advanced") => published.filter((e) => levelChecks(e)[lvl].every((x) => x.ok)).length;
 c += `\n## Depth by level\n\nEach level has its own checks (lib/content/completeness.ts): beginner = stepwise plain explanation, an analogy or everyday examples, vocabulary; intermediate = mechanism, implementation guidance, a scenario; advanced = evidence, debates or competing models, expert explanation. No word counts.\n\n| Level | Entries meeting every check |\n|---|---:|\n| Beginner | ${levelPass("beginner")} / ${published.length} |\n| Intermediate | ${levelPass("intermediate")} / ${published.length} |\n| Advanced | ${levelPass("advanced")} / ${published.length} |\n`;
-const mat = published.map((e) => {
-  const verifiedPrimary = e.references.filter((r) => (r.role === "primary" || r.role === "standard") && ["doi-verified", "url-reachable"].includes(verification[r.source]?.status ?? "")).length;
-  const awaitingVerification = e.references.filter((r) => sources.find((s) => s.id === r.source)?.verification === "awaiting-verification").length;
-  const plate = illustrations.get(e.slug);
-  return { e, m: maturity(e, { hasPlate: Boolean(plate), hasDiagram: hasVisuals(e.slug), hasInteractive: Boolean(plate?.explorer), verifiedPrimary, awaitingVerification }) };
-});
+const mat = published.map((e) => ({ e, m: maturityOf(e) }));
 const dims = ["explanation", "evidence", "practice", "visual", "editorial"] as const;
 c += `\n## Maturity\n\nFive separate dimensions, rated basic / developing / complete from the content (no numeric confidence scores):\n\n- **Explanation:** all nine level checks.\n- **Evidence:** ≥ 2 primary/standard sources, ≥ 1 machine-verified, ≥ 2 evidence points, a debate.\n- **Practice:** ≥ 3 quiz questions, questions at all three levels, ≥ 2 exercises, ≥ 3 flashcards.\n- **Visual:** plate (L1), detailed diagram (L2), explorer, lab or calculator (L3).\n- **Editorial:** published, every quality gate, no source awaiting verification, a verification date.\n\n| Dimension | Complete | Developing | Basic |\n|---|---:|---:|---:|\n`;
 for (const d of dims) c += `| ${d[0].toUpperCase() + d.slice(1)} | ${mat.filter((x) => x.m[d] === "complete").length} | ${mat.filter((x) => x.m[d] === "developing").length} | ${mat.filter((x) => x.m[d] === "basic").length} |\n`;

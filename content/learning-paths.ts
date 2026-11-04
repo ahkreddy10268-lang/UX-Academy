@@ -97,6 +97,7 @@ export const learningPaths: LearningPath[] = [
     objectives: ["Explain the Model Human Processor tradition and its descendants.", "Analyse a task with KLM.", "Critically evaluate the evidence behind popular UX laws."],
     prerequisites: ["UX Design Fundamentals"],
     stages: [
+      { title: "What HCI is", level: "beginner", description: "The discipline, its definition and the traditions inside it.", steps: ["human-computer-interaction", "usability"], practice: [] },
       { title: "Models of action", level: "intermediate", description: "Norman's action cycle and its gulfs.", steps: ["gulfs-of-execution-and-evaluation", "seven-stages-of-action", "mental-models", "direct-manipulation"], practice: [] },
       { title: "Models of performance", level: "advanced", description: "Quantitative models of human performance.", steps: ["fitts-law", "hick-hyman-law", "steering-law", "keystroke-level-model", "goms"], practice: ["fitts-lab", "hick-lab"] },
       { title: "Cognition in context", level: "advanced", description: "Beyond the individual information processor.", steps: ["working-memory-model", "cognitive-load-theory", "distributed-cognition", "activity-theory", "history-of-hci"], practice: [] },

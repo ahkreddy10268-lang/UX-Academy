@@ -1,22 +1,22 @@
 # Progress register
 
-_Last updated: 2026-11-04 (session 5 — second visual set, colour and Jakob models, keyboard and device testing)_
+_Last updated: 2026-11-04 (session 9 — content priority: Human-Computer Interaction, status model, completion reports)_
 
 ## State
 
-Figures are generated from the content; the live source is `docs/CONTENT_COVERAGE.md` (and `docs/RESEARCH_SOURCES.md`). Snapshot after session 6:
+Figures are generated from the content; the live source is `docs/CONTENT_COVERAGE.md` (and `docs/RESEARCH_SOURCES.md`). Snapshot after session 9 (previous snapshot: 47 published, 8.7%):
 
 | Area | Count |
 |---|---|
 | Taxonomy topics (domains / subcategories) | 540 (20 / 62) |
-| Published entries (all gates pass) | 47 (8.7% of topics) |
-| Addressed within another entry / planned with no content | 10 / 483 |
+| Published entries (all gates pass) | 48 (8.9% of topics) |
+| Addressed within another entry / planned with no content | 10 / 482 |
 | Domains with no published entry | 7 |
 | Explained graph relationships | 348 |
 | Formulas with unit-tested calculators | 25 |
 | Interactive labs | 15 |
-| Quiz questions / exercises / flashcards | 166 / 130 / 134 |
-| Sources (DOI-verified / URL-reachable) | 256 (152 / 69) |
+| Quiz questions / exercises / flashcards | 173 / 133 / 138 |
+| Sources (DOI-verified / URL-reachable) | 262 (158 / 69) |
 
 **The earlier session sections below keep the figures that were true at the time.**
 
@@ -143,3 +143,28 @@ Write the **Foundations gap** entries listed first in `docs/ROADMAP.md` — star
 Done: path artwork shared by card and path hero; card metadata ("practice items", "Est. reading time", planned count); progression-only curriculum map; the primary Level-2 figure on lesson pages; level-matched quiz/exercise selection with explicit mixed-level revision (D-051…D-055); `tests/learning.test.ts`.
 Data finding: 8 lesson-levels have no matching-level exercise or question (e.g. `mental-models` at beginner has no beginner exercise; `sample-size-estimation` at advanced has no advanced question), and 12 of 48 stages have no matching-level test questions at all (ux-research L1, information-architecture L3, design-systems L2–3, accessibility L2–3, product-strategy L2, ai-ux L2–3, service-design L2–3). They now show labelled revision. Writing matching-level questions for those is future content work.
 Next: owner review, authorise commit/push; Vercel still blocked (see Session 7); then `human-computer-interaction` (docs/CONTENT_AUDIT.md §6).
+
+## Session 9 — content first (owner priority update)
+
+**Priority change recorded:** knowledge completeness and educational quality are the primary objective; visual work continues only where it solves a usability, accessibility or educational-communication problem.
+
+**Published: `human-computer-interaction`** (Tier 1, discipline; domain Fundamentals / Core concepts)
+- Six new sources, each resolved against Crossref (`npm run sources:verify`): Hewett et al. 1992 (SIGCHI curriculum definition), Licklider 1960, Weiser 1991, Grudin 2005, Bødker 2006, Harrison/Sengers/Tatar 2011. Registry sources reused: Card/Moran/Newell 1983, Norman & Draper 1986, Shneiderman 1983. Claims about each source are restricted to what its abstract/bibliographic record supports; nothing about first-wave human factors is attributed to a source that does not state it.
+- All three levels, origin, application in four contexts, 4 misconceptions, 10 relations, 3 exercises (one per level), 7 quiz questions (2 / 2 / 3 per level, so lessons have level-matched practice), 4 flashcards.
+- Visuals: original plate (L1, `human-computer-interaction`) and one L2 conceptual figure, "Three lenses on the same interaction", built from existing primitives. No explorer: nothing here is genuinely interactive.
+- Added to `hci-fundamentals` as a new first stage ("What HCI is": HCI, usability); path completeness is reported in docs/CONTENT_COVERAGE.md.
+- Not claimed: `history-of-hci` stays **planned** (the entry gives an orientation, not a history); the first-wave/second-wave attributions are the cited authors' framings, labelled as such.
+
+**Status model and completion reports (D-056, D-057)**
+- Every topic has exactly one of six statuses (planned · research in progress · drafted · quality reviewed · published · addressed within another entry), derived from the entry status, `content/topic-ledger.ts` (research without an entry yet) or taxonomy `coveredBy`. Shown on `/coverage` and in docs/CONTENT_COVERAGE.md by domain and subcategory.
+- Completion by dimension (research done, explanation, evidence, practice, visual, editorial) by domain and subcategory, empty subcategories and domains, and learning-path completeness (published lessons vs planned steps) — all computed, none typed.
+
+**Verified:** 166 unit tests, lint and typecheck clean, `npm run build`, e2e / e2e-redesign / keyboard / devices suites (see docs/VISUAL_QA.md Session 9), source verification for the six new DOIs.
+
+**Honest status of the ten-tier programme:** Tier 1 now has `user-experience` and `human-computer-interaction` (2 of 8). 482 topics are still planned; this session added one entry. The pace is set by research and verification per entry, not by tooling.
+
+## Next task (precise)
+
+1. Write `ui-design` (Tier 1, docs/CONTENT_AUDIT.md §6): sources Norman 2013 and Shneiderman 2016 (both in the registry), plus any bibliographic source verified first; L2 *annotated interface*; critique exercise on a real screen. Record it in `content/topic-ledger.ts` as `research-pending` the moment sources are gathered.
+2. Then `interaction-design-discipline`, `accessibility-concept`, `inclusive-design`, `design-thinking`, `human-centred-design` (rest of Tier 1), and the level-matched practice gaps listed under Session 8.
+3. Remaining Tier-1 paths: add each new lesson to its path as it is published; identify prerequisites that are still planned.

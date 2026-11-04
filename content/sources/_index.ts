@@ -9,9 +9,10 @@ import m5 from "./evaluation";
 import m6 from "./fitts";
 import m7 from "./formula-library";
 import m8 from "./foundations-frameworks";
-import m9 from "./interaction-models";
-import m10 from "./measurement";
-import m11 from "./resources";
+import m9 from "./hci-history";
+import m10 from "./interaction-models";
+import m11 from "./measurement";
+import m12 from "./resources";
 
 export const rawSources: Source[] = [
   ...m0,
@@ -25,5 +26,6 @@ export const rawSources: Source[] = [
   ...m8,
   ...m9,
   ...m10,
-  ...m11
+  ...m11,
+  ...m12
 ];

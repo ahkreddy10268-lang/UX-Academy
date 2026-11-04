@@ -23,7 +23,7 @@ What user experience is, how it differs from interface design, and the vocabular
 - ◻️ Feasibility — *Concept* · `feasibility`
 - ◻️ Viability — *Concept* · `viability`
 - ◻️ UX Maturity — *Concept* · `ux-maturity`
-- ◻️ Human-Computer Interaction (HCI) — *Discipline* · `human-computer-interaction`
+- ✅ Human-Computer Interaction (HCI) — *Discipline* · `human-computer-interaction`
 
 ### Design approaches (`approaches`)
 
