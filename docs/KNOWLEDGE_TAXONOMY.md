@@ -12,7 +12,7 @@ What user experience is, how it differs from interface design, and the vocabular
 ### Core concepts (`core-concepts`)
 
 - ✅ User Experience (UX) — *Discipline* · `user-experience`
-- ◻️ User Interface (UI) Design — *Discipline* · `ui-design`
+- ✅ User Interface (UI) Design — *Discipline* · `ui-design`
 - ◻️ Product Design — *Discipline* · `product-design`
 - ◻️ Interaction Design — *Discipline* · `interaction-design-discipline`
 - ◻️ Experience Design — *Discipline* · `experience-design`

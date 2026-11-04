@@ -1,22 +1,22 @@
 # Progress register
 
-_Last updated: 2026-11-04 (session 9 — content priority: Human-Computer Interaction, status model, completion reports)_
+_Last updated: 2026-11-04 (session 15 — Tier 1 entry: User Interface Design)_
 
 ## State
 
-Figures are generated from the content; the live source is `docs/CONTENT_COVERAGE.md` (and `docs/RESEARCH_SOURCES.md`). Snapshot after session 9 (previous snapshot: 47 published, 8.7%):
+Figures are generated from the content; the live source is `docs/CONTENT_COVERAGE.md` (and `docs/RESEARCH_SOURCES.md`). Snapshot after session 15 (previous snapshot: 48 published, 8.6%):
 
 | Area | Count |
 |---|---|
 | Taxonomy topics (domains / subcategories) | 558 (20 / 73), taxonomy v1.0 frozen |
-| Published entries (all gates pass) | 48 (8.6% of topics) |
-| Addressed within another entry / planned with no content | 10 / 500 |
+| Published entries (all gates pass) | 49 (8.8% of topics) |
+| Addressed within another entry / planned with no content | 10 / 499 |
 | Domains with no published entry | 6 |
-| Explained graph relationships | 348 |
+| Explained graph relationships | 392 |
 | Formulas with unit-tested calculators | 25 |
 | Interactive labs | 15 |
-| Quiz questions / exercises / flashcards | 173 / 133 / 138 |
-| Sources (DOI-verified / URL-reachable) | 262 (158 / 69) |
+| Quiz questions / exercises / flashcards | 188 / 140 / 149 |
+| Sources (DOI-verified / URL-reachable) | 280 (165 / 74) |
 
 **The earlier session sections below keep the figures that were true at the time.**
 
@@ -218,3 +218,18 @@ Not done: no new entries were written (by design); real devices/screen readers n
 
 ## Next task (precise)
 Resume Tier 1 content with `ui-design`; then the dependent HCI Fundamentals steps (`history-of-hci`, `seven-stages-of-action`, `human-centred-design`, `contextual-inquiry`, `goms`). Any structural change now goes through the taxonomy governance rules.
+
+## Session 15 — Tier 1: User Interface Design (uncommitted; awaiting owner review)
+
+Done: `content/knowledge/foundations/ui-design.ts` published (discipline, foundations/core-concepts, beginner). Three levels; history from Sketchpad and NLS to direct manipulation, the GUI, the web, touch and conversational interfaces; boundaries with UX, HCI, interaction design, visual design, IA and design systems; web, mobile, enterprise and services contexts; 7 misconceptions; 16 relations; 9 quiz questions (3 per level), 3 exercises (one a ten-point critique of a real screen with an Observation / Impact / Reasoning / Improvement / Trade-off template), 7 flashcards; 15 references. Source added: `galitz-2007` (bibliographic, ISBN 978-0-470-05342-3; publisher URL reachable), cited only for the scope of UI design. `norman-2013` and `shneiderman-2016` reused at their existing status (not upgraded).
+
+Visuals: Level-1 plate `uiDesignPlate` (editorial-plates.tsx: user, task bubble, interface panel, layered system with input and feedback arrows, context boundary), checked in light and dark at card and hero size. Level-2 annotated interface `ui-design.annotated` (fictional study-room booking screen; hierarchy, location, controls and signifiers, content presentation, states not carried by colour alone, feedback, focus/labels/targets, each with "If broken"). No Level 3 (D-075): visual maturity is therefore "developing".
+
+Paths: `ui-design` added to UX Fundamentals stage 1 after `user-experience`; UI Fundamentals gains a first beginner stage "Interface foundations" (ui-design, signifiers, feedback-principle, affordances) and one objective. Research ledger row added then removed once the entry existed.
+
+Verified: content:index; sources:verify galitz-2007 (url-reachable); check (186 tests, typecheck, lint); docs:generate; build; e2e 42/42; e2e-redesign 66/66 (diagram-filter count updated 8 → 9); keyboard 45/45; devices 155/155; axe on /library/ui-design, /paths/ux-fundamentals, /paths/ui-fundamentals, /library: 0 violations; crawl: 0 problem pages.
+
+Maturity (ui-design): explanation complete · evidence complete · practice complete · visual developing · editorial complete.
+
+## Next task (precise)
+Tier 1: `interaction-design-discipline` — add and verify Cooper et al. *About Face* and Preece, Sharp & Rogers *Interaction Design* (bibliographic, ISBN) first; L2 *system* (user ⇄ system loop).

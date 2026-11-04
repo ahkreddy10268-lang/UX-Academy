@@ -23,7 +23,7 @@ export const learningPaths: LearningPath[] = [
         title: "Foundations",
         level: "beginner",
         description: "The vocabulary and the core idea: design for real people in real contexts.",
-        steps: ["usability", "user-experience", "user-centred-design", "double-diamond", "mental-models", "affordances", "signifiers"],
+        steps: ["usability", "user-experience", "ui-design", "user-centred-design", "double-diamond", "mental-models", "affordances", "signifiers"],
         practice: ["feedback-lab"],
       },
       {
@@ -46,15 +46,17 @@ export const learningPaths: LearningPath[] = [
   {
     id: "ui-fundamentals",
     title: "UI Design Fundamentals",
-    summary: "Perception-led visual design: grouping, hierarchy, type, colour and contrast.",
+    summary: "What an interface is and what UI design decides, then perception-led visual design: grouping, hierarchy, type, colour and contrast.",
     audience: "Beginners and developers who want to make interfaces that look and read well.",
     objectives: [
+      "Explain what user interface design decides and how it differs from UX, interaction and visual design.",
       "Use Gestalt grouping and visual hierarchy deliberately.",
       "Build a modular type scale and choose readable line lengths.",
       "Check colour contrast against WCAG and fix failures.",
     ],
     prerequisites: ["None — UX Fundamentals is a helpful companion"],
     stages: [
+      { title: "Interface foundations", level: "beginner", description: "What an interface is, what UI design decides, and the cues that tell people what they can do and what happened.", steps: ["ui-design", "signifiers", "feedback-principle", "affordances"], practice: ["feedback-lab"] },
       { title: "Perception", level: "beginner", description: "How the eye groups and ranks what it sees.", steps: ["gestalt-principles", "visual-hierarchy", "preattentive-processing", "white-space"], practice: ["gestalt-lab", "hierarchy-lab"] },
       { title: "Typography & colour", level: "intermediate", description: "Type and colour as engineered systems.", steps: ["modular-type-scale", "line-length", "readability", "colour-contrast-ratio", "colour-theory"], practice: ["type-scale-lab", "contrast-lab"] },
       { title: "Composition at scale", level: "intermediate", description: "Grids and systems that keep many screens consistent.", steps: ["grid-systems", "spacing-scales", "design-tokens", "aesthetic-usability-effect"], practice: ["interface-critique"] },

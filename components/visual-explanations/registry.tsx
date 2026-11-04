@@ -11,6 +11,7 @@ import { GestaltAnnotated, GestaltSpacing } from "./concepts/gestalt-principles"
 import { HeuristicDecision, HeuristicFlow } from "./concepts/heuristic-evaluation";
 import { HciCycle, HciEcosystem, HciInteractionModel, HciParadigms, HciPerspectives, HciTimeline } from "./concepts/human-computer-interaction";
 import { UcdCycle } from "./concepts/user-centred-design";
+import { UiDesignAnnotated } from "./concepts/ui-design";
 import { IaEcology, IaHierarchy } from "./concepts/information-architecture";
 import type { VisualExplanation } from "./types";
 
@@ -368,6 +369,28 @@ export const visualExplanations: VisualExplanation[] = [
     sources: ["nielsen-molich-1990", "nielsen-1992-heuristic"],
     Component: HeuristicDecision,
   },
+  {
+    id: "ui-design.annotated",
+    slug: "ui-design",
+    type: "annotated-interface",
+    level: 2,
+    title: "Seven interface decisions on one booking screen",
+    objective: "A fictional library screen for booking a study room, with numbered markers on the places where hierarchy, location, controls, content, states, feedback and accessibility are decided.",
+    takeaway: "Every visible part of an interface is a decision about what people perceive, what they can do and what they are told back; each marker shows one decision and what breaks without it.",
+    summary: [
+      "1 Hierarchy: the title is largest, the date quieter, and one filled button marks the primary action.",
+      "2 Location: a breadcrumb says where the person is and gives a route back up.",
+      "3 Controls and signifiers: bordered slots look pressable, underlined text looks like a link, the filled button looks like the main action.",
+      "4 Content presentation: every room card gives name, capacity and features in the same order, so rooms can be compared.",
+      "5 States: free, chosen and booked differ in words, a tick, a strike-through and a dashed border, not in colour alone.",
+      "6 Feedback: choosing a time immediately says the room is held, for how long, and what to do next.",
+      "7 Focus, labels and targets: a visible label, a visible focus ring and targets large enough to hit.",
+      "The screen is an illustration, not a tested design.",
+    ],
+    verification: "illustrative",
+    sources: ["norman-2013", "shneiderman-2016", "w3c-wcag-22"],
+    Component: UiDesignAnnotated,
+  },
 ];
 
 /** Level-1 takeaway shown with the hero plate ("at a glance"). */
@@ -379,6 +402,7 @@ export const quickTakeaways: Record<string, string> = {
   "user-centred-design": "Learn about users, design, test with them, and repeat until the evidence says the design works.",
   "human-computer-interaction": "People, technology and context meet in every interaction; HCI studies, designs and evaluates that meeting, with methods chosen to fit the question.",
   "gestalt-principles": "Spacing, likeness, shared boxes and connecting lines tell people what belongs together before they read anything.",
+  "ui-design": "The interface is the surface where a person meets a system: UI design decides what they see, what they can do and what they are told back.",
   "heuristic-evaluation": "A few experts review alone, then merge and rate what they found: fast and cheap, but predictions rather than evidence.",
 };
 

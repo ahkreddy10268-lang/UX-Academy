@@ -5,8 +5,8 @@
 
 | Measure | Count |
 |---|---|
-| Registered plates | 71 |
-| Published entries with a plate | 48 / 48 |
+| Registered plates | 72 |
+| Published entries with a plate | 49 / 49 |
 | Subject plates | 20 / 20 |
 | Animated plates | 12 |
 | Plates with an interactive explorer | 9 |
@@ -56,6 +56,7 @@
 | `human-centred-design` | planned topic | — | — | Three nested rings surround one person: the users, the wider group of people affected by the system, and the context of use with its tasks and environment. A dashed spiral starts outside the rings and winds inwards through three evaluation points, showing a design brought closer to fit with each iteration rather than in one step. |
 | `user-experience` | entry | — | — | A timeline runs from before use through during use to after use. A line traces how the person's response rises and dips across the three phases, ending in a remembered judgement. Under the during-use phase, a product window sits above two bars labelled pragmatic and hedonic, the task-related and non-task qualities that both feed the experience. |
 | `human-computer-interaction` | entry | — | hci-methods | At the centre, a person uses a screen on a raised platform: the interaction. Around it, four smaller platforms hold the person's abilities (a head with a lightbulb-like focus), the task (a checklist card), the technology (a device and input) and the context (a clock and a building). Dashed links join every element to the centre and to its neighbours, forming a ring rather than a line, and a small chart beside the centre stands for evaluation feeding back into design. |
+| `ui-design` | entry | — | — | A person stands in front of an upright screen panel and reaches toward its primary button. The panel is the interface: a heading, a text field, two choice chips with one selected, and a button with a focus ring. Behind the panel, to the right, a large block of stacked layers stands for the system: data and logic the person never sees directly. Two arrows join panel and system, one carrying the person's input in and one bringing feedback back to the screen. Above the person, a thought card shows the task as a short checklist. The whole scene sits inside a dashed boundary on the floor, with a plant, marking the context of use: where, when and under what conditions the task happens. |
 | `information-architecture` | entry | — | — | Content tiles are sorted into three labelled groups, showing organisation and labelling. A dotted path runs from a start point through one group label to a highlighted tile, showing navigation that follows the label's scent. A magnifying lens over the same tile shows search reaching it directly. |
 | `jobs-to-be-done` | entry | — | — | A thick progress arrow runs from a hatched box on the left, the struggling current situation, to a solid box on the right, the desired outcome. A product sits on the arrow, hired to make that progress. Beneath, three strands for the functional, emotional and social dimensions of the job converge on the outcome. |
 | `heart-framework` | entry | — | — | A five-column grid headed H, E, A, R and T for happiness, engagement, adoption, retention and task success. Each column has three rows: a goal, the signal that shows progress toward it, and the metric that tracks the signal. One column is highlighted with arrows from goal to signal to metric. |

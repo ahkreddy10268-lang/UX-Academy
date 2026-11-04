@@ -21,7 +21,7 @@ npm run build && npm start
 
 | Area | Route | What it does |
 |---|---|---|
-| Library | `/library`, `/library/[slug]` | 48 published entries of 558 taxonomy topics (10 more addressed within other entries, 500 planned); full-text search, filters, A–Z. Live figures: `docs/CONTENT_COVERAGE.md` |
+| Library | `/library`, `/library/[slug]` | 49 published entries of 558 taxonomy topics (10 more addressed within other entries, 499 planned); full-text search, filters, A–Z. Live figures: `docs/CONTENT_COVERAGE.md` |
 | Subjects | `/topics`, `/topics/[domain]` | 20-domain, 73-subcategory taxonomy v1.0 (frozen; docs/CONTENT_AUDIT.md § 7) with coverage |
 | Learn | `/learn`, `/learn/[id]` | 16 learning paths, beginner → advanced |
 | Formula Lab | `/formulas`, `/formulas/[id]` | 25 documented formulas with unit-tested calculators |

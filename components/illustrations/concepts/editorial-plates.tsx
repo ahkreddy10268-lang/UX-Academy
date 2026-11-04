@@ -5,7 +5,7 @@
  * plate; labels appear only in the hero variant (`detail`). Each drawing is
  * checked against its entry (see the comment on each plate).
  */
-import { Bars, Bubble, Check, Figure, Flow, IsoBox, IsoShadow, Laptop, Pill, V, Win, iso, plane, type Pt } from "../system/kit";
+import { Bars, Bubble, Check, Figure, Flow, IsoBox, IsoShadow, Laptop, Pill, Plant, V, Win, iso, plane, type Pt } from "../system/kit";
 import type { IllustrationEntry } from "../illustration-types";
 import { Cursor, Label } from "../primitives";
 
@@ -398,4 +398,83 @@ const usabilityPlate: IllustrationEntry = {
   },
 };
 
-export { cltPlate, fittsPlate, hciPlate, mentalPlate, usabilityPlate };
+/* ---------------------------------------------------------------- */
+/* User Interface Design — the interface as the meeting surface      */
+/* (checked against the entry: the interface is the layer a person   */
+/*  perceives and acts on; the system stays behind it; a task drives */
+/*  the encounter and a context surrounds it; input goes in, feedback */
+/*  comes back through the same surface)                              */
+/* ---------------------------------------------------------------- */
+const uiDesignPlate: IllustrationEntry = {
+  slug: "ui-design",
+  title: "User interface design plate",
+  description:
+    "A person stands in front of an upright screen panel and reaches toward its primary button. The panel is the interface: a heading, a text field, two choice chips with one selected, and a button with a focus ring. Behind the panel, to the right, a large block of stacked layers stands for the system: data and logic the person never sees directly. Two arrows join panel and system, one carrying the person's input in and one bringing feedback back to the screen. Above the person, a thought card shows the task as a short checklist. The whole scene sits inside a dashed boundary on the floor, with a plant, marking the context of use: where, when and under what conditions the task happens.",
+  Art: ({ detail }) => {
+    const o: Pt = [196, 104];
+    const ring = [at(o, -64, -44), at(o, 134, -44), at(o, 134, 112), at(o, -64, 112)];
+    const [ux, uy] = at(o, 30, 82);
+    const sysIn = at(o, 86, 32, 42);
+    const sysOut = at(o, 96, 32, 14);
+    const panIn = at(o, 56, 38, 52);
+    const panOut = at(o, 56, 38, 26);
+    return (
+      <g transform="translate(-58 -10) scale(1.26)">
+        {/* context: the boundary of use */}
+        <path d={`M${ring.map((p) => p.join(" ")).join(" L")} Z`} fill={V.top} fillOpacity={0.35} className="m" strokeDasharray="4 3" />
+        <Plant o={o} x={-50} y={96} />
+        {/* the system: layers behind the surface */}
+        <IsoShadow o={o} x={84} y={-12} w={40} d={44} spread={4} />
+        {[0, 16, 32].map((z, i) => (
+          <IsoBox key={z} o={o} x={84} y={-12} z={z} w={40} d={44} h={14} tone={i === 2 ? "cat" : "neutral"} />
+        ))}
+        {[0, 16, 32].map((z) => (
+          <g key={z} transform={plane.right(o, 124, 32, z + 11)}>
+            {[0, 1, 2].map((k) => (
+              <circle key={k} cx={6 + k * 5} cy={4} r={1.3} fill={V.mid} />
+            ))}
+            <rect x={22} y={3} width={16} height={2} rx={1} fill={V.mid} opacity={0.7} />
+          </g>
+        ))}
+        {/* the interface: the surface the person perceives and acts on */}
+        <IsoShadow o={o} x={2} y={36} w={52} d={6} spread={3} />
+        <IsoBox o={o} x={22} y={34} z={0} w={12} d={8} h={2} tone="neutral" />
+        <IsoBox o={o} x={27} y={37} z={2} w={2} d={2} h={8} tone="neutral" />
+        <IsoBox o={o} x={2} y={37} z={10} w={52} d={3} h={62} tone="focal" />
+        <g transform={plane.left(o, 4, 40, 70)}>
+          <rect width={48} height={58} rx={1.5} fill={V.hi} className="m" />
+          <rect x={4} y={5} width={24} height={4} rx={1} fill={V.edge} opacity={0.85} />
+          <rect x={4} y={12} width={34} height={1.8} rx={0.9} fill={V.mid} />
+          <rect x={4} y={19} width={40} height={8} rx={1.5} fill={V.hi} className="e" />
+          <rect x={7} y={22.2} width={14} height={1.8} rx={0.9} fill={V.mid} />
+          <Pill x={4} y={31} w={16} h={6} fill={V.focal} />
+          <Check x={9} y={34} s={0.5} color={V.hi} />
+          <Pill x={23} y={31} w={16} h={6} fill={V.hi} />
+          <rect x={4} y={44} width={40} height={9} rx={4.5} fill="none" stroke={V.act} strokeWidth={1} strokeDasharray="2 1.4" />
+          <Pill x={6} y={45.5} w={36} h={6} fill={V.act} />
+        </g>
+        {/* input in, feedback back */}
+        <Flow d={`M${panIn[0]} ${panIn[1]} L ${sysIn[0]} ${sysIn[1]}`} tip={sysIn} angle={Math.atan2(sysIn[1] - panIn[1], sysIn[0] - panIn[0])} dashed={false} />
+        <Flow d={`M${sysOut[0]} ${sysOut[1]} L ${panOut[0]} ${panOut[1]}`} tip={panOut} angle={Math.atan2(panOut[1] - sysOut[1], panOut[0] - sysOut[0])} />
+        {/* the person and the task */}
+        <IsoShadow o={o} x={24} y={76} w={14} d={10} spread={2} />
+        <Figure x={ux} y={uy} s={1.02} pose="reach" skin={2} hair="short" hairTone={3} top={V.right} />
+        <Bubble x={ux - 74} y={uy - 98} w={44} h={34} tail="right">
+          {[0, 1, 2].map((i) => (
+            <g key={i}>
+              <rect x={ux - 68} y={uy - 92 + i * 9.5} width={5} height={5} rx={0.8} fill={i === 0 ? V.focal : V.hi} className="h" />
+              <rect x={ux - 60} y={uy - 90.4 + i * 9.5} width={22 - i * 4} height={1.8} rx={0.9} fill={V.mid} />
+            </g>
+          ))}
+        </Bubble>
+        <Label x={ux - 4} y={uy + 18} size={7.5} show={detail}>user</Label>
+        <Label x={ux - 52} y={uy - 104} size={7.5} show={detail}>task</Label>
+        <Label x={at(o, 2, 40, 76)[0] + 18} y={at(o, 2, 40, 76)[1] - 4} size={7.5} show={detail} tone="ink">interface</Label>
+        <Label x={at(o, 104, -12, 48)[0]} y={at(o, 104, -12, 48)[1] - 8} size={7.5} show={detail}>system</Label>
+        <Label x={ring[2][0] - 34} y={ring[2][1] - 6} size={7.5} show={detail} tone="mute">context of use</Label>
+      </g>
+    );
+  },
+};
+
+export { cltPlate, fittsPlate, hciPlate, mentalPlate, uiDesignPlate, usabilityPlate };
