@@ -498,7 +498,53 @@ textarea {
 :root,
 [class*="cat-"] {
   --c-soft: color-mix(in srgb, var(--c) 34%, var(--surface));
+
+  /* Illustration roles (docs/ILLUSTRATION_SYSTEM.md § Editorial technical system).
+     Derived from the category and theme tokens, so every scene re-tints with its
+     subject and follows light/dark without its own palette. */
+  --ill-plate: var(--c-wash);
+  --ill-edge: color-mix(in srgb, var(--ink) 80%, var(--c-ink));
+  --ill-mid: color-mix(in srgb, var(--ink) 46%, var(--c-wash));
+  --ill-lo: color-mix(in srgb, var(--ink) 20%, var(--c-wash));
+  --ill-hi: var(--surface);
+  --ill-top: color-mix(in srgb, var(--c) 14%, var(--surface));
+  --ill-left: color-mix(in srgb, var(--c) 32%, var(--surface));
+  --ill-right: color-mix(in srgb, var(--c) 55%, var(--surface));
+  --ill-focal: var(--c);
+  --ill-deep: color-mix(in srgb, var(--c-ink) 72%, var(--c));
+  --ill-focal-left: color-mix(in srgb, var(--c) 78%, var(--c-ink));
+  --ill-focal-right: color-mix(in srgb, var(--c) 56%, var(--c-ink));
+  --ill-n-top: var(--surface);
+  --ill-n-left: color-mix(in srgb, var(--ink) 7%, var(--surface));
+  --ill-n-right: color-mix(in srgb, var(--ink) 15%, var(--surface));
+  --ill-shadow: color-mix(in srgb, var(--c-ink) 15%, transparent);
+  --ill-act: var(--accent);
+  --ill-act-wash: var(--accent-wash);
+  --ill-good: var(--ok);
 }
+
+/* Skin and hair tones for human figures: physical colours, the same in both
+   themes, chosen so figures read as a range of people. */
+:root {
+  --ill-skin-1: #f2cdb0;
+  --ill-skin-2: #dca47e;
+  --ill-skin-3: #a8714f;
+  --ill-skin-4: #6b4530;
+  --ill-hair-1: #2a2220;
+  --ill-hair-2: #6a4429;
+  --ill-hair-3: #b7a48f;
+  --ill-hair-4: #191c26;
+  --ill-cloth-dark: color-mix(in srgb, var(--ink) 72%, var(--surface));
+  --ill-w: 1.15px; /* edge stroke, constant at any size */
+  --ill-w-fine: 0.8px;
+  --ill-w-hair: 0.55px;
+}
+
+/* Linework classes. Strokes do not scale with the drawing (hairline convention):
+   .e edge · .m secondary · .h receding detail. */
+.ill .e { stroke: var(--ill-edge); stroke-width: var(--ill-w); vector-effect: non-scaling-stroke; stroke-linejoin: round; stroke-linecap: round; }
+.ill .m { stroke: var(--ill-mid); stroke-width: var(--ill-w-fine); vector-effect: non-scaling-stroke; stroke-linejoin: round; stroke-linecap: round; }
+.ill .h { stroke: var(--ill-lo); stroke-width: var(--ill-w-hair); vector-effect: non-scaling-stroke; stroke-linecap: round; }
 
 /* ------------------------------------------------------------------ */
 /* Type roles (see docs/DESIGN_SYSTEM.md)                              */

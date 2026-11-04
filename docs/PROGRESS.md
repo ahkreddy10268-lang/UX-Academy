@@ -179,3 +179,11 @@ Next: owner review, authorise commit/push; Vercel still blocked (see Session 7);
 
 ## Next task (precise)
 `ui-design` (Tier 1), then the dependent planned steps of `hci-fundamentals` in path order: `history-of-hci`, `seven-stages-of-action`, `human-centred-design`, `contextual-inquiry`, `goms`.
+
+## Session 11 — illustration system v5 (learning-path artwork)
+
+Done: audit of the old path art; illustration system documented (docs/ILLUSTRATION_SYSTEM.md § Editorial technical system: canvas, fit, projection, strokes, surfaces, colour roles, composition, figures, annotation, motion, accessibility, 16 path briefs, recorded exploration); shared kit `components/illustrations/system/kit.tsx`; `--ill-*` roles in `app/globals.css`; 16 new path scenes (`components/learn/art/`), measured fit (`scripts/render-path-art.tsx --measure`); family C layer explorer on two path pages; test that every path has a scene and a fit. Decisions D-063…D-065.
+
+Not done / limits: the Designer Skills plugins (owl-listener/designer-skills) are **not installed** in this environment and `/plugin` commands cannot be run from here, so they were not used (the installed `visual-critique`-style review was done by hand against the brief's ten criteria). Hairline was studied, not installed. Concept plates (family B) were not redrawn in the new style; the kit is ready for that. Human figures are simplified editorial figures, not detailed portraits. Axe, real devices and screen readers not run.
+
+Next: redraw the highest-traffic concept plates (Fitts's law, HCI, User Experience) with the kit where it improves explanation; then return to content (`ui-design`, docs/CONTENT_AUDIT.md §6).

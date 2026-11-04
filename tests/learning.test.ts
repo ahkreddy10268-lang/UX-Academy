@@ -23,3 +23,17 @@ describe("learning paths", () => {
     for (const p of learningPaths) for (const s of p.stages) for (const slug of s.steps) for (const v of visualsFor(slug)) expect(v.slug).toBe(slug);
   });
 });
+
+describe("learning-path artwork", async () => {
+  const { hasPathArt } = await import("@/components/learn/path-art");
+  const { FIT } = await import("@/components/learn/art/fit");
+  it("every path has its own scene and a measured fit inside the canvas", () => {
+    for (const p of learningPaths) {
+      expect(hasPathArt(p.id), p.id).toBe(true);
+      const f = FIT[p.id];
+      expect(f, p.id).toBeDefined();
+      expect(f.k, `${p.id} scale`).toBeGreaterThan(0.6);
+      expect(f.k, `${p.id} scale`).toBeLessThanOrEqual(2.1);
+    }
+  });
+});

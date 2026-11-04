@@ -145,3 +145,20 @@ Screenshots reviewed (light/dark, 1440 and 390): library entry (plate, "Three le
 
 ## Session 10 — HCI entry extension
 Reviewed light/dark at 1440 and 390 px: the timeline, interaction model, method selector (and spot-checked the other figures); overflow 0 px on the library entry, lesson, path and catalogue. Browser suites on the production build: e2e 42/42, e2e-redesign 66/66, keyboard 45/45 (now includes the HCI entry), devices 149/149 (now includes the HCI entry and path, with the 24 px target check on the new radio options). Unit tests 176. Not tested: axe (not available offline), real devices, screen readers. The sticky top bar overlaps long full-page element screenshots; that is a capture artefact, not a layout fault.
+
+## Session 11 — learning-path artwork, before and after
+
+Browser suites on the production build: e2e 42/42, e2e-redesign 66/66, keyboard 45/45, devices 155/155 (now includes /learn/design-systems; the first run found the explorer links below 24 px on three devices, fixed with `.tap`). Rendered and reviewed: all 16 scenes as a sheet in light and dark at 2x (`scripts/render-path-art.tsx`); `/learn` at 1440 and 390 px in both themes; path pages for UI Fundamentals, Design Systems and HCI Fundamentals at 1440 and 390 px in both themes; the layer explorer operated by click and by keyboard (arrow keys move the selection and update the live region), and with `reducedMotion: 'reduce'` (no transition, state still changes). Horizontal overflow 0 px on every page checked.
+
+| Criterion | Before (session 7 scenes) | After |
+|---|---|---|
+| Subject specificity | Category symbols (a sitemap, a chart, a speech bubble) | The subject happening: a usability lab with measures, a service counter with a line of visibility, a token-to-interface staircase |
+| Composition | One flat object group per card, similar weight everywhere | Foreground / middle / background, one focal object, distinct layouts per path |
+| Visual hierarchy | Even emphasis | Focal tone on one object; neutrals for context |
+| Detail quality | Basic shapes, generic figures | Fine linework, interface fragments, jointed figures, props that explain context |
+| Perspective and depth | Mostly flat | Consistent 30° isometric with planes for screens and walls, contact shadows |
+| Category consistency | Shared colours only | Shared kit, stroke scale, surfaces and fit |
+| Responsiveness | Fine | Fine; measured fit keeps every scene in the safe area at any width |
+| Accessibility | Decorative, hidden | Decorative, hidden; the interactive stack is keyboard and touch operable with a text equivalent |
+| Performance | Static SVG | Static, server-rendered SVG; client JS only for the explorer on two pages |
+| Overall | Placeholder-like | Coherent editorial family; remaining weakness: figures are small at card size, and the UX Fundamentals route scene is the sparsest |

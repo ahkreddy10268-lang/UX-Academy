@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { ConceptIllustration } from "@/components/illustrations/concept-illustration";
 import { CurriculumMap } from "@/components/learn/curriculum-map";
 import { PathArt, pathCat } from "@/components/learn/path-art";
+import { PathExplorer, hasPathExplorer } from "@/components/learn/path-explorer";
 import { LessonState, PathProgress } from "@/components/learn/path-progress";
 import { Bullets, Container, PageHeader } from "@/components/ui/layout";
 import { entryBySlug, labById, learningPaths, taxonomyBySlug, workshops } from "@/lib/content";
@@ -73,6 +74,15 @@ export default async function PathPage({ params }: PageProps<"/learn/[id]">) {
 
       <Container className="lg:grid lg:grid-cols-[minmax(0,1fr)_18rem] lg:gap-16">
         <div className="min-w-0 pt-10">
+          {hasPathExplorer(p.id) && (
+            <section aria-labelledby="layers" className={`${pathCat(p.id)} mb-12`}>
+              <h2 id="layers" className="t-section text-2xl">
+                See how the layers build up
+              </h2>
+              <p className="mb-4 mt-1 text-sm text-ink-3">Choose a layer to see what it decides and where to study it.</p>
+              <PathExplorer id={p.id} />
+            </section>
+          )}
           <h2 className="t-section text-2xl">Curriculum map</h2>
           <p className="mt-1 text-sm text-ink-3">How the path progresses, level by level. Lesson details are listed below; filled bars are lessons you have completed in this browser.</p>
           <div className="mt-4">
