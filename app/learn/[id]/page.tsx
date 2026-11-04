@@ -3,12 +3,13 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ConceptIllustration } from "@/components/illustrations/concept-illustration";
 import { CurriculumMap } from "@/components/learn/curriculum-map";
+import { PathArt, pathCat } from "@/components/learn/path-art";
 import { LessonState, PathProgress } from "@/components/learn/path-progress";
 import { Bullets, Container, PageHeader } from "@/components/ui/layout";
 import { entryBySlug, labById, learningPaths, taxonomyBySlug, workshops } from "@/lib/content";
 import { catClass } from "@/lib/content/categories";
 import { DIFFICULTY_LABEL, LEVEL_PURPOSE, TYPE_LABEL } from "@/lib/content/labels";
-import { pathStats, readingMinutes, stageStats } from "@/lib/content/learning";
+import { levelQuestionCounts, pathStats, readingMinutes, stageStats } from "@/lib/content/learning";
 
 export function generateStaticParams() {
   return learningPaths.map((p) => ({ id: p.id }));
@@ -19,36 +20,42 @@ export async function generateMetadata({ params }: PageProps<"/learn/[id]">): Pr
   return { title: learningPaths.find((p) => p.id === id)?.title ?? "Learning path" };
 }
 
+/** "6 questions at this level · 12 optional revision questions from other levels". */
+function testLine(stage: (typeof learningPaths)[number]["stages"][number]) {
+  const { matching, other } = levelQuestionCounts(stage);
+  const q = (n: number) => `${n} ${n === 1 ? "question" : "questions"}`;
+  return [matching ? `${q(matching)} at this level` : "No questions written for this level yet", other ? `${q(other)} of optional mixed-level revision` : ""].filter(Boolean).join(" · ");
+}
+
 export default async function PathPage({ params }: PageProps<"/learn/[id]">) {
   const { id } = await params;
   const p = learningPaths.find((x) => x.id === id);
   if (!p) notFound();
   const stats = pathStats(p);
-  const first = stats.firstPublished;
   const written = p.stages.flatMap((s) => s.steps).filter((s) => entryBySlug.has(s));
   const firstLesson = written[0];
 
   return (
     <>
       <PageHeader
-        cat={catClass(first?.domain ?? "foundations")}
+        cat={pathCat(p.id)}
         eyebrow="Learning path"
         title={p.title}
         lede={p.summary}
         crumbs={[{ href: "/learn", label: "Learn" }, { label: p.title }]}
-        aside={first ? <ConceptIllustration slug={first.slug} title={first.title} domain={first.domain} variant="hero" /> : undefined}
+        aside={<PathArt id={p.id} />}
       >
         <dl className="mt-6 grid max-w-xl grid-cols-2 gap-px overflow-hidden rounded-lg bg-rule ring-1 ring-rule sm:grid-cols-4 [&>div]:bg-surface [&>div]:px-3.5 [&>div]:py-2.5">
           {[
             [stats.levels, "levels"],
             [stats.lessons, "lessons"],
-            [stats.questions + stats.exercises, "exercises"],
-            [`≈${stats.minutes}`, "min reading"],
+            [stats.questions + stats.exercises, "practice items"],
+            [`≈${stats.minutes}`, "min est. reading"],
           ].map(([n, l]) => (
             <div key={l} className="flex flex-col-reverse">
               <dt className="text-xs text-ink-2">
                 {l}
-                {l === "min reading" && <span className="sr-only"> (estimated from word count)</span>}
+                {l === "min est. reading" && <span className="sr-only"> (estimated from word count)</span>}
               </dt>
               <dd className="t-sub tabular text-xl text-ink">{n}</dd>
             </div>
@@ -67,21 +74,22 @@ export default async function PathPage({ params }: PageProps<"/learn/[id]">) {
       <Container className="lg:grid lg:grid-cols-[minmax(0,1fr)_18rem] lg:gap-16">
         <div className="min-w-0 pt-10">
           <h2 className="t-section text-2xl">Curriculum map</h2>
-          <p className="mt-1 text-sm text-ink-3">The whole path at a glance. Filled dots are lessons you have completed in this browser.</p>
+          <p className="mt-1 text-sm text-ink-3">How the path progresses, level by level. Lesson details are listed below; filled bars are lessons you have completed in this browser.</p>
           <div className="mt-4">
             <CurriculumMap
               levels={p.stages.map((s, si) => ({
                 title: s.title,
                 levelLabel: `${DIFFICULTY_LABEL[s.level]} · ${LEVEL_PURPOSE[s.level]}`,
                 testHref: stageStats(s).questions > 0 ? `/learn/${p.id}/level/${si + 1}` : undefined,
-                lessons: s.steps.filter((x) => entryBySlug.has(x)).map((x) => ({ slug: x, title: entryBySlug.get(x)!.title, href: `/learn/${p.id}/lesson/${x}` })),
+                lessonSlugs: s.steps.filter((x) => entryBySlug.has(x)),
+                practiceItems: stageStats(s).questions + stageStats(s).exercises,
                 planned: s.steps.filter((x) => !entryBySlug.has(x)).length,
               }))}
             />
           </div>
           <h2 className="t-section mt-12 text-2xl">Lessons by level</h2>
           <p className="mt-1 text-sm text-ink-3">
-            {stats.lessons} lessons{stats.planned ? ` · ${stats.planned} topics shown for context, more lessons in development` : ""}
+            {stats.lessons} lessons{stats.planned ? ` · ${stats.planned} more ${stats.planned === 1 ? "topic" : "topics"} shown for context, in development` : ""}
           </p>
           <ol className="mt-6 space-y-4">
             {p.stages.map((s, si) => {
@@ -95,7 +103,7 @@ export default async function PathPage({ params }: PageProps<"/learn/[id]">) {
                       <span className="min-w-0 flex-1">
                         <span className="block t-sub text-base text-ink">{s.title}</span>
                         <span className="block text-xs text-ink-3">
-                          {DIFFICULTY_LABEL[s.level]} — {LEVEL_PURPOSE[s.level]} · {st.lessons} lessons · {st.questions + st.exercises} exercises · ≈ {st.minutes} min
+                          {DIFFICULTY_LABEL[s.level]} — {LEVEL_PURPOSE[s.level]} · {st.lessons} lessons · {st.questions + st.exercises} practice items · est. reading ≈ {st.minutes} min
                         </span>
                       </span>
                       <span aria-hidden className="text-ink-3 transition-transform group-open:rotate-90">
@@ -129,7 +137,7 @@ export default async function PathPage({ params }: PageProps<"/learn/[id]">) {
                                   {n}. {e.title}
                                 </Link>
                                 <span className="block text-xs text-ink-3">
-                                  {TYPE_LABEL[e.primaryType]} · {e.quiz.length + e.exercises.length} exercises · ≈ {readingMinutes(e)} min
+                                  {TYPE_LABEL[e.primaryType]} · {e.quiz.length + e.exercises.length} practice items · est. reading ≈ {readingMinutes(e)} min
                                 </span>
                               </span>
                               <LessonState slug={slug} />
@@ -145,7 +153,7 @@ export default async function PathPage({ params }: PageProps<"/learn/[id]">) {
                               <Link href={`/learn/${p.id}/level/${si + 1}`} className="t-sub text-sm text-ink after:absolute after:inset-0 hover:text-accent-ink">
                                 Level {si + 1} test
                               </Link>
-                              <span className="block text-xs text-ink-3">{st.questions} questions drawn from this level&apos;s lessons</span>
+                              <span className="block text-xs text-ink-3">{testLine(s)}</span>
                             </span>
                           </li>
                         )}

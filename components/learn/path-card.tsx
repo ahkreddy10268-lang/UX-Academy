@@ -2,7 +2,7 @@ import Link from "next/link";
 import { DIFFICULTY_LABEL } from "@/lib/content/labels";
 import type { PathStats } from "@/lib/content/learning";
 import type { LearningPath } from "@/lib/content/schema";
-import { PATH_PALETTE, PathArt } from "./path-art";
+import { PathArt, pathCat } from "./path-art";
 import { PathProgress } from "./path-progress";
 
 /**
@@ -15,7 +15,7 @@ export function PathCard({ path, stats, writtenSteps }: { path: LearningPath; st
   const levels = [...new Set(path.stages.map((s) => s.level))];
   const practice = stats.questions + stats.exercises;
   return (
-    <article className={`cat-${PATH_PALETTE[path.id] ?? "core"} card group relative flex h-full flex-col overflow-hidden`}>
+    <article className={`${pathCat(path.id)} card group relative flex h-full flex-col overflow-hidden`}>
       <div className="bg-c-wash p-3 pb-0">
         <div className="overflow-hidden rounded-t-md border border-b-0 border-rule">
           <PathArt id={path.id} />
@@ -37,15 +37,11 @@ export function PathCard({ path, stats, writtenSteps }: { path: LearningPath; st
         <p className="mt-1.5 line-clamp-2 text-sm text-ink-2">{path.summary}</p>
         <p className="tabular mt-4 flex flex-wrap gap-x-3 gap-y-1 text-xs text-ink-2">
           <span>{stats.lessons} {stats.lessons === 1 ? "lesson" : "lessons"}</span>
-          {practice > 0 && <span>{practice} practice</span>}
-          {stats.lessons > 0 && stats.minutes > 0 && (
-            <span>
-              ≈{stats.minutes} min<span className="sr-only"> reading time, estimated from word count</span>
-            </span>
-          )}
+          {practice > 0 && <span>{practice} practice items</span>}
+          {stats.lessons > 0 && stats.minutes > 0 && <span>Est. reading time ≈{stats.minutes} min</span>}
         </p>
         <div className="mt-auto flex flex-col gap-2 pt-4">
-          {stats.planned > 0 && <p className="text-xs text-ink-3">More lessons in development</p>}
+          {stats.planned > 0 && <p className="text-xs text-ink-3">{stats.planned} more {stats.planned === 1 ? "lesson" : "lessons"} in development</p>}
           <div className="border-t border-rule pt-3">
             <PathProgress steps={writtenSteps} compact />
           </div>

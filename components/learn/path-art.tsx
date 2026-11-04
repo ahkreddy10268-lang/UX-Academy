@@ -37,6 +37,9 @@ export const PATH_PALETTE: Record<string, Palette> = {
   "service-design": "slate",
 };
 
+/** Colour-family class for a path (shared by the catalogue card and the path hero). */
+export const pathCat = (id: string) => `cat-${PATH_PALETTE[id] ?? "core"}`;
+
 const Screen = ({ x, y, w, h, children }: { x: number; y: number; w: number; h: number; children?: ReactNode }) => (
   <g>
     <rect x={x} y={y} width={w} height={h} rx={10} fill={P} {...stroke} />

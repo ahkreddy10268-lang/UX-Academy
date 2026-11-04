@@ -9,6 +9,8 @@ import { Quiz } from "@/components/practice/quiz";
 import { Callout } from "@/components/ui/callout";
 import { Breadcrumbs, Bullets, Container } from "@/components/ui/layout";
 import { Rich, RichParagraphs } from "@/components/ui/rich";
+import { VisualFigure } from "@/components/visual-explanations/figure";
+import { visualsFor } from "@/components/visual-explanations/registry";
 import { entryBySlug, learningPaths } from "@/lib/content";
 import { linkMapFor, resolveSlug, richContext } from "@/lib/content/context";
 import { catClass } from "@/lib/content/categories";
@@ -46,9 +48,17 @@ export default async function LessonPage({ params }: PageProps<"/learn/[id]/less
   const ctx = richContext(e.references.map((r) => r.source));
   const explorer = illustrationFor(slug)?.explorer;
   const lv = e.levels[level];
+  // Level-matched material only. If this entry has none at this level, fall back to
+  // other-level material but say so (mixedQuiz / mixedExercise label it on the page).
   const checks = e.quiz.filter((q) => q.level === level);
-  const questions = (checks.length ? checks : e.quiz).slice(0, 3);
-  const exercise = e.exercises.find((x) => x.level === level) ?? e.exercises[0];
+  const mixedQuiz = checks.length === 0 && e.quiz.length > 0;
+  const questions = (mixedQuiz ? e.quiz : checks).slice(0, 3);
+  const matchedExercise = e.exercises.find((x) => x.level === level);
+  const mixedExercise = !matchedExercise && e.exercises.length > 0;
+  const exercise = matchedExercise ?? e.exercises[0];
+  // The entry's first registered Level-2 figure is its primary visual; further figures stay on the library page.
+  const visuals = visualsFor(slug);
+  const mainVisual = visuals[0];
   const links = { ...linkMapFor(questions), [e.slug]: resolveSlug(e.slug)! };
 
   return (
@@ -80,7 +90,7 @@ export default async function LessonPage({ params }: PageProps<"/learn/[id]/less
             <Rich text={e.summary} ctx={ctx} />
           </p>
           <p className="mt-4 text-sm text-ink-2">
-            {TYPE_LABEL[e.primaryType]} · ≈ {minutesForLevel(e, level)} min at this level · {questions.length} knowledge checks
+            {TYPE_LABEL[e.primaryType]} · est. reading ≈ {minutesForLevel(e, level)} min at this level · {questions.length} knowledge {questions.length === 1 ? "check" : "checks"}
           </p>
         </div>
         <figure className="overflow-hidden rounded-xl border border-rule bg-surface shadow-raise">
@@ -122,6 +132,26 @@ export default async function LessonPage({ params }: PageProps<"/learn/[id]/less
           )}
         </section>
 
+        {mainVisual && (
+          <section aria-labelledby="see">
+            <h2 id="see" className="t-section text-[1.5rem]">
+              See how it works
+            </h2>
+            <div className="mt-4">
+              <VisualFigure v={mainVisual} />
+            </div>
+            {visuals.length > 1 && (
+              <p className="mt-3 text-sm text-ink-2">
+                {visuals.length - 1} more {visuals.length === 2 ? "diagram" : "diagrams"} in the{" "}
+                <Link href={`/library/${e.slug}#visual`} className="link">
+                  full entry
+                </Link>
+                .
+              </p>
+            )}
+          </section>
+        )}
+
         {explorer && (
           <section aria-labelledby="try">
             <h2 id="try" className="t-section text-[1.5rem]">
@@ -150,6 +180,7 @@ export default async function LessonPage({ params }: PageProps<"/learn/[id]/less
             <h2 id="check" className="t-section text-[1.5rem]">
               Knowledge check
             </h2>
+            {mixedQuiz && <p className="mt-2 text-sm text-ink-2">Revision from other levels — this lesson has no question written for the {DIFFICULTY_LABEL[level].toLowerCase()} level yet.</p>}
             <div className="mt-4">
               <Quiz questions={questions.map((q) => ({ ...q, entry: e.slug }))} links={Object.fromEntries(Object.entries(links).filter(([, v]) => v))} />
             </div>
@@ -158,7 +189,10 @@ export default async function LessonPage({ params }: PageProps<"/learn/[id]/less
 
         {exercise && (
           <section aria-labelledby="exercise" className="rounded-lg border border-rule bg-surface p-5 shadow-card">
-            <p className="label">Exercise · {exercise.kind}</p>
+            <p className="label">
+              {mixedExercise ? "Revision exercise" : "Exercise"} · {exercise.kind}
+              {mixedExercise && ` · written for the ${DIFFICULTY_LABEL[exercise.level].toLowerCase()} level`}
+            </p>
             <h2 id="exercise" className="t-sub mt-1 text-lg">
               {exercise.title}
             </h2>

@@ -54,3 +54,19 @@ export function stageStats(stage: LearningPath["stages"][number]) {
     minutes: published.reduce((n, e) => n + readingMinutes(e), 0),
   };
 }
+
+/**
+ * Level-test composition: questions at exactly the stage's difficulty versus
+ * questions written for another level. The level test leads with the matching
+ * ones and offers the rest as a separately labelled revision set — it never mixes
+ * them silently. (`stageStats().questions` still counts every question.)
+ */
+export function levelQuestionCounts(stage: LearningPath["stages"][number]): { matching: number; other: number } {
+  let matching = 0;
+  let other = 0;
+  for (const s of stage.steps) for (const q of entryBySlug.get(s)?.quiz ?? []) {
+      if (q.level === stage.level) matching++;
+      else other++;
+    }
+  return { matching, other };
+}

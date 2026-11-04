@@ -136,3 +136,6 @@ Zero axe violations does **not** prove accessibility: no screen-reader testing (
 
 ## Session 7 — `/learn` refinement
 Screenshots (`.shots/learn-{light,dark}-{1440,1280,1024,768,390,360}.png`, not committed) reviewed for 1440 light and 390 dark; layout metrics checked at all 12 combinations: 3 columns at 1440 and 1280, 2 at 1024 and 768, 1 at 390 and 360, no horizontal overflow. Browser suites against the production build: e2e 42/42, e2e-redesign 66/66, keyboard 43/43; devices.cjs 137/137. axe was not run (axe.min.js unavailable offline). Unit tests 163/163, lint clean. Not tested: real devices, screen readers.
+
+## Session 8 — learning experience refinement (`/learn`, `/learn/[id]`, lesson, entry)
+Screenshots reviewed (light + dark, 1440 and 390): catalogue, path, lesson, level test, library entry; layout overflow measured on all five routes in all four combinations (0 px). Browser suites on the production build: e2e 42/42, e2e-redesign 66/66, keyboard 43/43; devices see PROGRESS. Unit tests 166 (3 new in tests/learning.test.ts). Not tested: axe (axe.min.js unavailable offline), real devices, screen readers.

@@ -137,3 +137,9 @@ Write the **Foundations gap** entries listed first in `docs/ROADMAP.md` — star
 - **Vercel deploy: blocked, not done.** The container's network policy denies api.vercel.com (HTTP 403) and no Vercel CLI/token exists. Needs: Network access widened (cloud environment settings) plus Vercel login/token, or import `ahkreddy10268-lang/UX-Academy` in Vercel directly. The app is a plain `next build`, no env vars.
 - **`/learn` refined** (D-046…D-050): lighter path cards, per-path artwork (`components/learn/path-art.tsx`), new header copy and counts, quiet "Not started" / "More lessons in development", container-query columns. `PathCard` API slimmed (also used on home and topic hubs, which inherit the new card). Data, stats calculations, store and routes unchanged.
 - Next: owner review of the new `/learn`, authorise commit/push; then continue with `human-computer-interaction` (docs/CONTENT_AUDIT.md §6).
+
+## Session 8 — learning experience refinement (uncommitted until authorised)
+
+Done: path artwork shared by card and path hero; card metadata ("practice items", "Est. reading time", planned count); progression-only curriculum map; the primary Level-2 figure on lesson pages; level-matched quiz/exercise selection with explicit mixed-level revision (D-051…D-055); `tests/learning.test.ts`.
+Data finding: 8 lesson-levels have no matching-level exercise or question (e.g. `mental-models` at beginner has no beginner exercise; `sample-size-estimation` at advanced has no advanced question), and 12 of 48 stages have no matching-level test questions at all (ux-research L1, information-architecture L3, design-systems L2–3, accessibility L2–3, product-strategy L2, ai-ux L2–3, service-design L2–3). They now show labelled revision. Writing matching-level questions for those is future content work.
+Next: owner review, authorise commit/push; Vercel still blocked (see Session 7); then `human-computer-interaction` (docs/CONTENT_AUDIT.md §6).
