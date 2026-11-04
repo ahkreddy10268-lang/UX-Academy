@@ -76,8 +76,8 @@ const check = (name, ok, detail = '') => results.push({ name, ok: !!ok, detail }
   await p.waitForURL('**/lesson/usability');
   check('lesson page shows knowledge check', await p.getByRole('heading', { name: 'Knowledge check' }).isVisible());
   await p.getByRole('link', { name: /Next lesson/ }).click();
-  await p.waitForURL('**/lesson/user-centred-design');
-  check('next-lesson navigation advances within the path', p.url().endsWith('/lesson/user-centred-design'));
+  await p.waitForURL('**/lesson/user-experience');
+  check('next-lesson navigation advances within the path', p.url().endsWith('/lesson/user-experience'));
   await p.goto(BASE + '/learn/ux-fundamentals/level/1', { waitUntil: 'networkidle' });
   check('level test draws questions from the level', /Question 1 of \d+/.test(await p.locator('main').textContent()));
 

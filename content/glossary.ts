@@ -161,7 +161,7 @@ const terms: T[] = [
   /* Practice */
   t("Design critique", "design-critique-term", "A structured review in which work is assessed against its goals and principles, with feedback focused on the work rather than the person.", ["design-critique", "design-collaboration"]),
   t("Prototype fidelity", "prototype-fidelity", "How closely a prototype resembles the final product in visual detail, interactivity and content. Choose the lowest fidelity that answers the question.", ["prototyping", "concept-testing"]),
-  t("Design handoff", "handoff", "The transfer of design intent, specifications and assets to engineering — ideally a continuous collaboration rather than a single event.", ["design-handoff", "design-to-development-handoff"]),
+  t("Design handoff", "handoff", "The transfer of design intent, specifications and assets to engineering — ideally a continuous collaboration rather than a single event.", ["design-to-development-handoff"]),
 ];
 
 export const glossary: GlossaryTerm[] = terms.map((x) => ({ ...x, seeAlso: x.seeAlso ?? [] }));

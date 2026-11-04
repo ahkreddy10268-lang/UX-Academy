@@ -77,6 +77,40 @@ be full entries or planned taxonomy slugs.
 All 10 `quality` flags true; ≥3 activities (quiz + exercises); ≥3 connections;
 ≥1 misconception; ≥1 primary or standard reference. Enforced by `tests/content.test.ts`.
 
+### Completeness gates (type-specific, `lib/content/completeness.ts`)
+
+Structural checks that the parts a learner needs for this *kind* of knowledge exist. They never use word counts.
+
+**Level depth (every entry):**
+- **beginner:** a stepwise plain explanation (≥ 2 paragraphs), an analogy or ≥ 2 everyday examples, and ≥ 3 vocabulary terms;
+- **intermediate:** the mechanism (`howItWorks`), ≥ 2 implementation points and a scenario;
+- **advanced:** ≥ 1 evidence point, debates or competing models, and ≥ 2 expert paragraphs.
+
+**All types:**
+- a primary or standard source;
+- ≥ 2 limitations;
+- ≥ 1 "when not to use";
+- ≥ 3 connections;
+- quiz questions at ≥ 2 levels.
+
+**By family:**
+- **Quantitative** (law, formula, metric, research instrument): a formula with variables and a worked example.
+- **Procedural** (method, methodology): `method` detail and ≥ 3 practical steps.
+- **Practice** (technique, pattern, strategy, tool): ≥ 3 practical steps.
+- **Explanatory** (theory, model, framework): origin, plus competing or alternative models.
+- **Normative** (principle, heuristic, guideline, rule of thumb): misreadings corrected and origin.
+- **Standard:** `standard` detail.
+- **Phenomenon** (concept, cognitive bias, emerging concept): evidence including replication status, and misreadings corrected.
+- **Discipline:** history, and scope across ≥ 3 of web / mobile / enterprise / services.
+
+### Maturity (reported, not gating)
+
+Five separate dimensions per published entry, rated basic / developing / complete and generated into `docs/CONTENT_COVERAGE.md`: **explanation** (the nine level checks), **evidence** (sources, verification, evidence points, debate), **practice** (quiz at all levels, exercises, flashcards), **visual** (plate L1, diagram L2, interactive L3) and **editorial** (gates, verification state, date). They are categorical completeness ratings, not confidence scores. The explanation rating measures structure, not prose quality; editorial review remains necessary.
+
+### Topics addressed within another entry (`coveredBy`)
+
+A taxonomy item may declare `coveredBy: <published slug>` when a published entry already explains it as part of a larger whole (primacy effect → serial-position effect; the Gestalt sub-laws → gestalt-principles). It keeps its URL and search presence, is reported as "addressed within", and is **never** counted as published. Writing a dedicated entry later overrides it. Tested: the target must be published.
+
 ### Sources
 
 - IDs: `surname-year` (`fitts-1954`), `surname-surname-year`, or org-short names for standards.

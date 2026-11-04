@@ -497,10 +497,46 @@ const informationArchitecture: IllustrationEntry = {
   },
 };
 
+/** User experience: a person's response across before / during / after use, built from pragmatic and hedonic qualities. */
+const userExperience: IllustrationEntry = {
+  slug: "user-experience",
+  title: "User experience plate",
+  description:
+    "A timeline runs from before use through during use to after use. A line traces how the person's response rises and dips across the three phases, ending in a remembered judgement. Under the during-use phase, a product window sits above two bars labelled pragmatic and hedonic, the task-related and non-task qualities that both feed the experience.",
+  Art: ({ detail }) => (
+    <g>
+      {[
+        [40, 136, "before"],
+        [136, 272, "during"],
+        [272, 360, "after"],
+      ].map(([x1, x2, l], i) => (
+        <g key={l as string}>
+          <rect x={x1 as number} y={44} width={(x2 as number) - (x1 as number) - 6} height={128} rx={6} fill={i === 1 ? C.soft : C.surface} stroke={C.line} strokeWidth={STROKE.fine} />
+          <Label x={((x1 as number) + (x2 as number) - 6) / 2} y={34} show={detail} tone="mute">{l as string}</Label>
+        </g>
+      ))}
+      {/* response over time */}
+      <path d="M48 128 C 80 118, 110 96, 140 100 C 170 104, 180 78, 206 82 C 230 86, 236 120, 258 112 C 280 104, 300 70, 330 74 L 350 74" fill="none" stroke={C.ink} strokeWidth={STROKE.main} strokeLinecap="round" />
+      <circle cx={350} cy={74} r={6} fill={C.base} stroke={C.line} strokeWidth={STROKE.fine} />
+      {/* the product, during use */}
+      <rect x={168} y={188} width={72} height={46} rx={5} fill={C.surface} stroke={C.line} strokeWidth={STROKE.main} />
+      <Lines x={178} y={200} w={44} n={3} gap={9} />
+      {/* pragmatic and hedonic qualities */}
+      <rect x={112} y={248} width={70} height={14} rx={3} fill={C.base} stroke={C.line} strokeWidth={STROKE.fine} />
+      <rect x={226} y={248} width={70} height={14} rx={3} fill={C.soft} stroke={C.line} strokeWidth={STROKE.fine} />
+      <path d="M147 248 L190 234 M261 248 L218 234" stroke={C.line} strokeWidth={STROKE.fine} />
+      <Label x={147} y={280} show={detail}>pragmatic</Label>
+      <Label x={261} y={280} show={detail}>hedonic</Label>
+      <Label x={346} y={96} show={detail} anchor="end" tone="mute">remembered</Label>
+    </g>
+  ),
+};
+
 const plates: IllustrationEntry[] = [
   usability,
   userCentredDesign,
   humanCentredDesign,
+  userExperience,
   informationArchitecture,
   jobsToBeDone,
   heartFramework,

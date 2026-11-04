@@ -79,6 +79,8 @@ export type TaxonomyItem = {
   domain: string;
   subcategory: string;
   entry?: KnowledgeEntry;
+  /** Explained inside this published entry (not a dedicated entry). */
+  coveredBy?: string;
 };
 
 export const taxonomyItems: TaxonomyItem[] = domains.flatMap((d) =>

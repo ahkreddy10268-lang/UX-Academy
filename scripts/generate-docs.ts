@@ -10,6 +10,7 @@ import { allQuestions, domains, entries, glossary, itemsForSubcategory, labs, li
 import { domainCoverage, qualitySummary } from "../lib/content/coverage";
 import { EVIDENCE_LABEL, STATUS_LABEL, TIER_LABEL, TYPE_LABEL } from "../lib/content/labels";
 import { CONTENT_STATUSES } from "../lib/content/schema";
+import { levelChecks, maturity } from "../lib/content/completeness";
 
 const docs = join(import.meta.dirname, "..", "docs");
 const today = new Date().toISOString().slice(0, 10);
@@ -54,11 +55,23 @@ writeFileSync(join(docs, "RESEARCH_SOURCES.md"), src);
 
 /* ---------------- Coverage ---------------- */
 const cov = domainCoverage();
-let c = header("Content coverage", "A topic is covered only when its entry is published and passes every quality gate (enforced by tests/content.test.ts).");
+const { illustrations } = await import("../components/illustrations/registry");
+const { hasVisuals } = await import("../components/visual-explanations/registry");
+const published = entries.filter((e) => e.status === "published");
+const totalTopics = cov.reduce((s, x) => s + x.total, 0);
+const addressed = cov.reduce((s, x) => s + x.addressedWithin, 0);
+const plannedOnly = totalTopics - published.length - addressed;
+const emptyDomains = cov.filter((d) => d.published === 0);
+let c = header("Content coverage", "A topic counts as covered only when it has its own published entry that passes every quality gate and the type-specific completeness checks (tests/content.test.ts). \"Addressed within\" topics are explained inside a larger entry and are never counted as published.");
+c += `**${published.length} of ${totalTopics} topics have a published entry (${((published.length / totalTopics) * 100).toFixed(1)}%).** ${addressed} more are addressed within another entry; ${plannedOnly} are planned with no content. ${emptyDomains.length} of ${cov.length} domains have no published entry: ${emptyDomains.map((d) => d.title).join(", ") || "none"}. The size of the taxonomy is a map of the discipline, not a measure of coverage.\n\n`;
 c += `| Measure | Count |\n|---|---|\n`;
 for (const [k, v] of [
-  ["Topics in taxonomy", cov.reduce((s, x) => s + x.total, 0)],
-  ["Published entries", entries.filter((e) => e.status === "published").length],
+  ["Topics in taxonomy", totalTopics],
+  ["Domains / subcategories", `${domains.length} / ${domains.reduce((n, d) => n + d.subcategories.length, 0)}`],
+  ["Published entries", published.length],
+  ["Addressed within another entry", addressed],
+  ["Planned, no content", plannedOnly],
+  ["Domains with no published entry", emptyDomains.length],
   ["Formulas with calculators", libraryFormulas.length],
   ["Quiz questions", allQuestions.length],
   ["Exercises", entries.reduce((s, e) => s + e.exercises.length, 0)],
@@ -71,12 +84,29 @@ for (const [k, v] of [
   ["Sources", sources.length],
 ] as const)
   c += `| ${k} | ${v} |\n`;
-c += `\n## By domain\n\n| Domain | ${CONTENT_STATUSES.map((s) => STATUS_LABEL[s]).join(" | ")} | Written |\n|---|${CONTENT_STATUSES.map(() => "---:").join("|")}|---:|\n`;
-for (const d of cov) c += `| ${d.title} | ${CONTENT_STATUSES.map((s) => d.byStatus[s]).join(" | ")} | ${Math.round((d.published / d.total) * 100)}% |\n`;
+c += `\n## By domain\n\n| Domain | ${CONTENT_STATUSES.map((s) => STATUS_LABEL[s]).join(" | ")} | Addressed within | Topics | Written |\n|---|${CONTENT_STATUSES.map(() => "---:").join("|")}|---:|---:|---:|\n`;
+for (const d of cov) c += `| ${d.title} | ${CONTENT_STATUSES.map((s) => d.byStatus[s]).join(" | ")} | ${d.addressedWithin} | ${d.total} | ${((d.published / d.total) * 100).toFixed(0)}% |\n`;
+c += `\n## By subcategory\n\n| Domain | Subcategory | Published | Addressed within | Topics |\n|---|---|---:|---:|---:|\n`;
+for (const d of cov) for (const sub of d.subcategories) c += `| ${d.title} | ${sub.title} | ${sub.published} | ${sub.addressedWithin} | ${sub.total} |\n`;
 c += `\n## Quality gate\n\n` + qualitySummary().map((q) => `- ${q.gate}: ${q.passing}/${q.total}`).join("\n") + "\n";
-c += `\n## Published entries\n\n| Entry | Type | Evidence | Refs | Quiz | Exercises | Formula | Lab |\n|---|---|---|---:|---:|---:|---|---|\n`;
-for (const e of entries)
-  c += `| ${e.title} | ${TYPE_LABEL[e.primaryType]} | ${EVIDENCE_LABEL[e.evidence]} | ${e.references.length} | ${e.quiz.length} | ${e.exercises.length} | ${e.formulas.map((f) => f.calculator).join(", ") || "—"} | ${e.lab ?? "—"} |\n`;
+
+/* depth and maturity */
+const levelPass = (lvl: "beginner" | "intermediate" | "advanced") => published.filter((e) => levelChecks(e)[lvl].every((x) => x.ok)).length;
+c += `\n## Depth by level\n\nEach level has its own checks (lib/content/completeness.ts): beginner = stepwise plain explanation, an analogy or everyday examples, vocabulary; intermediate = mechanism, implementation guidance, a scenario; advanced = evidence, debates or competing models, expert explanation. No word counts.\n\n| Level | Entries meeting every check |\n|---|---:|\n| Beginner | ${levelPass("beginner")} / ${published.length} |\n| Intermediate | ${levelPass("intermediate")} / ${published.length} |\n| Advanced | ${levelPass("advanced")} / ${published.length} |\n`;
+const mat = published.map((e) => {
+  const verifiedPrimary = e.references.filter((r) => (r.role === "primary" || r.role === "standard") && ["doi-verified", "url-reachable"].includes(verification[r.source]?.status ?? "")).length;
+  const awaitingVerification = e.references.filter((r) => sources.find((s) => s.id === r.source)?.verification === "awaiting-verification").length;
+  const plate = illustrations.get(e.slug);
+  return { e, m: maturity(e, { hasPlate: Boolean(plate), hasDiagram: hasVisuals(e.slug), hasInteractive: Boolean(plate?.explorer), verifiedPrimary, awaitingVerification }) };
+});
+const dims = ["explanation", "evidence", "practice", "visual", "editorial"] as const;
+c += `\n## Maturity\n\nFive separate dimensions, rated basic / developing / complete from the content (no numeric confidence scores):\n\n- **Explanation:** all nine level checks.\n- **Evidence:** ≥ 2 primary/standard sources, ≥ 1 machine-verified, ≥ 2 evidence points, a debate.\n- **Practice:** ≥ 3 quiz questions, questions at all three levels, ≥ 2 exercises, ≥ 3 flashcards.\n- **Visual:** plate (L1), detailed diagram (L2), explorer, lab or calculator (L3).\n- **Editorial:** published, every quality gate, no source awaiting verification, a verification date.\n\n| Dimension | Complete | Developing | Basic |\n|---|---:|---:|---:|\n`;
+for (const d of dims) c += `| ${d[0].toUpperCase() + d.slice(1)} | ${mat.filter((x) => x.m[d] === "complete").length} | ${mat.filter((x) => x.m[d] === "developing").length} | ${mat.filter((x) => x.m[d] === "basic").length} |\n`;
+c += `\n## Published entries\n\n| Entry | Type | Evidence class | Explanation | Evidence | Practice | Visual | Editorial | Refs | Quiz | Formula | Lab |\n|---|---|---|---|---|---|---|---|---:|---:|---|---|\n`;
+for (const { e, m } of mat)
+  c += `| ${e.title} | ${TYPE_LABEL[e.primaryType]} | ${EVIDENCE_LABEL[e.evidence]} | ${dims.map((d) => m[d]).join(" | ")} | ${e.references.length} | ${e.quiz.length} | ${e.formulas.map((f) => f.calculator).join(", ") || "—"} | ${e.lab ?? "—"} |\n`;
+const within = domains.flatMap((d) => d.subcategories.flatMap((sub) => itemsForSubcategory(d.id, sub.id).filter((i) => !i.entry && i.coveredBy)));
+c += `\n## Addressed within another entry\n\n${within.map((i) => `- ${i.title} → \`${i.coveredBy}\``).join("\n")}\n`;
 writeFileSync(join(docs, "CONTENT_COVERAGE.md"), c);
 
 console.log("docs/KNOWLEDGE_TAXONOMY.md, docs/RESEARCH_SOURCES.md, docs/CONTENT_COVERAGE.md written");

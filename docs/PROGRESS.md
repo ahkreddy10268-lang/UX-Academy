@@ -4,19 +4,21 @@ _Last updated: 2026-11-04 (session 5 — second visual set, colour and Jakob mod
 
 ## State
 
-First meaningful release is complete and verified. All Definition-of-Done items (spec Part 22) are implemented; see "Verified" for evidence.
+Figures are generated from the content; the live source is `docs/CONTENT_COVERAGE.md` (and `docs/RESEARCH_SOURCES.md`). Snapshot after session 6:
 
 | Area | Count |
 |---|---|
-| Published knowledge entries (all quality gates pass) | 45 |
-| Taxonomy topics (domains / subcategories) | ≈515 (20 / ≈70) |
-| Explained graph relationships | 331 |
+| Taxonomy topics (domains / subcategories) | 540 (20 / 62) |
+| Published entries (all gates pass) | 47 (8.7% of topics) |
+| Addressed within another entry / planned with no content | 10 / 483 |
+| Domains with no published entry | 7 |
+| Explained graph relationships | 348 |
 | Formulas with unit-tested calculators | 25 |
-| Interactive labs | 10 |
-| Quiz questions / exercises / flashcards | 158 / 124 / 128 |
-| Workshops / comparisons / learning paths / glossary | 11 / 10 / 16 / 114 |
-| Sources (DOI-verified / URL-reachable) | 250 (147 / 69) |
-| Prerendered pages | 633 |
+| Interactive labs | 15 |
+| Quiz questions / exercises / flashcards | 166 / 130 / 134 |
+| Sources (DOI-verified / URL-reachable) | 256 (152 / 69) |
+
+**The earlier session sections below keep the figures that were true at the time.**
 
 ## Completed this session
 
@@ -63,6 +65,30 @@ First meaningful release is complete and verified. All Definition-of-Done items 
 - Steering-law experiment and colour-vision-deficiency simulation labs remain unbuilt.
 - Plates for most planned topics do not exist; planned pages show the subject plate, captioned as such.
 - Explorers exist for 7 concepts; others show the static hero plate.
+
+## Session 6 — content coverage and depth audit
+
+**Done**
+- **Audit:** `docs/CONTENT_AUDIT.md` reviews 20 domains and 62 subcategories.
+- **Taxonomy changes:**
+  - **Additions:** 33 important missing topics, including HCI as a discipline, Design System, Information Foraging Theory, Task Analysis, Eye Tracking, Personas, Touch Target Size, SEQ/SUPR-Q/UEQ, the European Accessibility Act and Value Sensitive Design.
+  - **Merges:** 8 duplicates.
+  - **Reclassifications:** 2, plus 1 rename.
+  - **Splits:** 2 single-bucket domains.
+  - **New field:** `coveredBy` (10 topics addressed within existing entries, never counted as published).
+- **Quality gates:** type-specific completeness gates and per-level depth checks (`lib/content/completeness.ts`, enforced in `tests/content.test.ts`; no word counts).
+- **Maturity:** five-dimension maturity (explanation, evidence, practice, visual, editorial) generated into `docs/CONTENT_COVERAGE.md`.
+- **First Tier-1 entry:** `user-experience` (sources: ISO 9241-210:2019; Hassenzahl & Tractinsky 2006; Law et al. 2009, DOI verified; Hassenzahl 2004), with its plate.
+- **Counts reconciled:** README, PROGRESS and ROADMAP now match the generated docs.
+
+**Next task (precise):** write `human-computer-interaction` (Tier 1, docs/CONTENT_AUDIT.md §6).
+1. Add and verify the missing sources first.
+2. Reuse `card-moran-newell-1983` and `norman-draper-1986`.
+3. Relate the entry to `user-experience`, `gulfs-of-execution-and-evaluation`, `keystroke-level-model` and `fitts-law`.
+4. Draw its plate.
+5. Run `npm run content:index && npm run sources:verify -- <new ids> && npm run check && npm run docs:generate`.
+
+After that: `ui-design`, `interaction-design-discipline`, `accessibility-concept`, `inclusive-design`, `design-thinking`, `human-centred-design`.
 
 ## Session 5 — completed
 

@@ -3,10 +3,12 @@
  * Run: npm test
  */
 import { describe, expect, it } from "vitest";
+import { levelChecks, typeChecks } from "../lib/content/completeness";
 import {
   comparisons,
   domains,
   entries,
+  entryBySlug,
   glossary,
   knownSlugs,
   labById,
@@ -176,3 +178,24 @@ describe("collections", () => {
       for (const c of lab.concepts) expect(knownSlugs.has(c), `${lab.id} → ${c}`).toBe(true);
   });
 });
+
+describe("type-specific completeness (lib/content/completeness.ts)", () => {
+  const published = entries.filter((e) => e.status === "published");
+  it("every published entry meets its level-depth checks", () => {
+    const gaps = published.flatMap((e) => {
+      const lv = levelChecks(e);
+      return [...lv.beginner, ...lv.intermediate, ...lv.advanced].filter((c) => !c.ok).map((c) => `${e.slug}: ${c.label}`);
+    });
+    expect(gaps).toEqual([]);
+  });
+  it("every published entry meets the gate for its knowledge type", () => {
+    const gaps = published.flatMap((e) => typeChecks(e).filter((c) => !c.ok).map((c) => `${e.slug} (${e.primaryType}): ${c.label}`));
+    expect(gaps).toEqual([]);
+  });
+  it("topics marked as addressed within another entry point at a published entry that has no own entry", () => {
+    for (const t of taxonomyItems.filter((x) => x.coveredBy)) {
+      expect(entryBySlug.get(t.coveredBy!)?.status, `${t.slug} → ${t.coveredBy}`).toBe("published");
+    }
+  });
+});
+

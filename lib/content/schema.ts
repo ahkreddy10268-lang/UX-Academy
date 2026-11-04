@@ -424,6 +424,13 @@ export const taxonomyItemSchema = z.object({
   slug: slug,
   title: z.string(),
   type: z.enum(KNOWLEDGE_TYPES),
+  /**
+   * The published entry that already explains this topic as part of a larger
+   * whole (e.g. primacy effect → serial-position effect). Such topics are
+   * reported as "addressed within", never as published, and keep their URL so
+   * links do not break. Writing a dedicated entry later overrides it.
+   */
+  coveredBy: slug.optional(),
 });
 
 export const subcategorySchema = z.object({

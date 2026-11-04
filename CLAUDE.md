@@ -9,7 +9,7 @@ classified, evidenced, connected and practised.
 ## Start of every session
 
 1. Read this file, then `docs/PROGRESS.md` (state + the precise next task).
-2. Read the docs relevant to the task (`docs/ARCHITECTURE.md`, `docs/CONTENT_MODEL.md`, `docs/DESIGN_SYSTEM.md`, `docs/VISUAL_KNOWLEDGE_SYSTEM.md`, `docs/DIAGRAM_DESIGN_GUIDELINES.md`, `docs/EDITORIAL_STYLE_GUIDE.md`, `docs/DECISION_LOG.md`).
+2. Read the docs relevant to the task (`docs/CONTENT_AUDIT.md` for what to write next, `docs/ARCHITECTURE.md`, `docs/CONTENT_MODEL.md`, `docs/DESIGN_SYSTEM.md`, `docs/VISUAL_KNOWLEDGE_SYSTEM.md`, `docs/DIAGRAM_DESIGN_GUIDELINES.md`, `docs/EDITORIAL_STYLE_GUIDE.md`, `docs/DECISION_LOG.md`).
 3. `git status && git log --oneline -15`
 4. `npm run check` (index → typecheck → tests → lint). Fix red before adding anything.
 5. Continue from the actual state of the code — never from memory of earlier conversations.
@@ -52,7 +52,9 @@ classified, evidenced, connected and practised.
 - Cite with `{{src:id}}`; any cited source must also be in the entry's `references`.
 - Separate the original scientific concept from its popular UX interpretation; state evidence, assumptions, limitations and misreadings.
 - Do not bypass paywalls, reproduce copyrighted standards, or bulk-copy articles. Write original explanations; link out.
-- Only `status: "published"` with every quality-gate flag true counts as complete. Taxonomy items without entries are "planned" — never present them as content.
+- Only `status: "published"` with every quality-gate flag true **and** the type-specific completeness gates (`lib/content/completeness.ts`) counts as complete. Taxonomy items without entries are "planned"; never present them as content. `coveredBy` topics are "addressed within" another entry and never count as published.
+- Expand content in the order of `docs/CONTENT_AUDIT.md` §6, one fully researched entry at a time, with sources verified first. Never generate shallow entries to raise coverage; coverage figures come only from the generated `docs/CONTENT_COVERAGE.md`.
+- Taxonomy changes (add, merge, split, reclassify) go in `content/taxonomy.ts` with a reason in `docs/CONTENT_AUDIT.md`; retarget links before removing a slug.
 - Do not assign numeric confidence scores; use `evidence` classes and `evidenceNote`.
 
 ## Design rules (v3 — see docs/DESIGN_SYSTEM.md, docs/UI_UX_DESIGN_DIRECTION.md)

@@ -7,14 +7,18 @@
 | 0 Environment & preparation | ✅ done |
 | 1 Product & technical architecture | ✅ done (docs/) |
 | 2 Design system & frontend foundation | ✅ done |
-| 3 Taxonomy & database | ✅ 20 domains, ≈515 topics, coverage register |
-| 4 Initial research & content | ✅ 45 published entries (target was 25–40) · 250 sources · 147 DOIs verified |
+| 3 Taxonomy & database | ✅ 20 domains, 62 subcategories, 540 topics (audited 2026-11-04, docs/CONTENT_AUDIT.md) |
+| 4 Initial research & content | ✅ 47 published entries · 256 sources · 152 DOIs verified (figures from the generated docs/CONTENT_COVERAGE.md and RESEARCH_SOURCES.md) |
 | 5 Interactive features | ✅ search, filters, graph, Formula Lab (25), labs (10), quizzes, flashcards, workshops, comparisons, glossary, paths, My learning |
 | 6 Testing & verification | ✅ unit + content tests, browser crawl, e2e, axe audit |
 | 7 Long-term expansion | ▶ ongoing — below |
 | v3 Pastel Editorial Workspace | ✅ implemented and verified, uncommitted pending authorisation |
 
-## Next content (priority order — fill subjects with the lowest coverage first, foundational topics first)
+## Next content
+
+**The authoritative, entry-by-entry expansion plan is `docs/CONTENT_AUDIT.md` §6** (ten tiers: foundations → UI/interaction → research → IA → design systems → accessibility → product & service → data visualisation → ethics → emerging), with source requirements, relations, activities and visual type for each entry. Coverage is 47 of 540 topics (8.7%); seven domains have no published entry. The list below is the earlier, superseded ordering, kept for history.
+
+### Earlier ordering (superseded)
 
 1. **Foundations gaps**: user-experience, ui-design, design-thinking, accessibility-concept, inclusive-design, history-of-hci.
 2. **Interaction**: feedback-principle, visibility-of-system-status, error-prevention, direct-manipulation, constraints, mapping, microinteractions.

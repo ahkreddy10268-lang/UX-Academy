@@ -8,6 +8,8 @@ export type CoverageRow = {
   total: number;
   byStatus: Record<ContentStatus, number>;
   published: number;
+  /** Topics without their own entry that a published entry already explains (taxonomy `coveredBy`). Not counted as published. */
+  addressedWithin: number;
 };
 
 function emptyStatus(): Record<ContentStatus, number> {
@@ -20,11 +22,12 @@ export function domainCoverage(): (CoverageRow & { subcategories: CoverageRow[] 
       const items = itemsForSubcategory(d.id, s.id);
       const byStatus = emptyStatus();
       for (const i of items) byStatus[i.entry?.status ?? "planned"]++;
-      return { id: s.id, title: s.title, total: items.length, byStatus, published: byStatus.published };
+      const addressedWithin = items.filter((i) => !i.entry && i.coveredBy).length;
+      return { id: s.id, title: s.title, total: items.length, byStatus, published: byStatus.published, addressedWithin };
     });
     const byStatus = emptyStatus();
     subs.forEach((s) => CONTENT_STATUSES.forEach((k) => (byStatus[k] += s.byStatus[k])));
-    return { id: d.id, title: d.title, total: subs.reduce((a, s) => a + s.total, 0), byStatus, published: byStatus.published, subcategories: subs };
+    return { id: d.id, title: d.title, total: subs.reduce((a, s) => a + s.total, 0), byStatus, published: byStatus.published, addressedWithin: subs.reduce((a, s) => a + s.addressedWithin, 0), subcategories: subs };
   });
 }
 

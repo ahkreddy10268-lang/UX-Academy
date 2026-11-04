@@ -4,7 +4,7 @@ import { TypeMark } from "@/components/ui/marks";
 import { ConceptIllustration } from "@/components/illustrations/concept-illustration";
 import { hasIllustration } from "@/components/illustrations/registry";
 import { catClass } from "@/lib/content/categories";
-import { domainById, entries, glossary, graphEdges, subcategoryTitle, titleFor, type TaxonomyItem } from "@/lib/content";
+import { domainById, entries, entryBySlug, glossary, graphEdges, subcategoryTitle, titleFor, type TaxonomyItem } from "@/lib/content";
 import { TYPE_DESCRIPTION } from "@/lib/content/labels";
 
 /** An honest page for a topic in the taxonomy that has no researched entry yet. */
@@ -32,8 +32,17 @@ export function PlannedTopic({ item }: { item: TaxonomyItem }) {
             <TypeMark type={item.type} />
             <h1 className="t-editorial mt-3 text-[2.3rem] text-ink-2 sm:text-[3rem]">{item.title}</h1>
             <p className="mt-4 inline-flex items-center gap-2 rounded-full border border-rule-strong bg-surface px-3 py-1 text-sm text-ink-2">Planned · research pending</p>
+            {item.coveredBy && entryBySlug.get(item.coveredBy) && (
+              <p className="mt-5 max-w-read rounded-lg border border-rule bg-surface p-3 text-ink">
+                Explained within{" "}
+                <Link className="link font-medium" href={`/library/${item.coveredBy}`}>
+                  {entryBySlug.get(item.coveredBy)!.title}
+                </Link>
+                . It has no entry of its own yet; read it there in context.
+              </p>
+            )}
             <p className="mt-5 max-w-read text-ink-2">
-              This topic is part of the academy&apos;s subject inventory but has not been researched and written yet. Nothing on this page is
+              This topic is part of the academy&apos;s subject inventory but has not been researched and written as its own entry yet. Nothing on this page is
               presented as educational content. {TYPE_DESCRIPTION[item.type]}
             </p>
           </div>

@@ -9,7 +9,12 @@
  */
 import type { Domain, KnowledgeType } from "../lib/content/schema";
 
-type Item = { slug: string; title: string; type: KnowledgeType };
+type Item = { slug: string; title: string; type: KnowledgeType; coveredBy?: string };
+
+/** Topics explained inside a larger published entry: kept for search and links, reported as "addressed within", never as published. */
+function within(entry: string, items: Item[]): Item[] {
+  return items.map((i) => ({ ...i, coveredBy: entry }));
+}
 
 export function slugify(title: string): string {
   return title
@@ -45,6 +50,7 @@ export const domains: Domain[] = [
         items: [
           ...g("discipline", "User Experience (UX)|user-experience", "User Interface (UI) Design|ui-design", "Product Design", "Interaction Design|interaction-design-discipline", "Experience Design"),
           ...g("concept", "Usability", "Utility", "Usefulness", "Desirability", "Feasibility", "Viability", "UX Maturity"),
+          ...g("discipline", "Human-Computer Interaction (HCI)|human-computer-interaction"),
         ],
       },
       {
@@ -93,14 +99,17 @@ export const domains: Domain[] = [
         id: "memory-attention-effects",
         title: "Memory & attention effects",
         items: [
-          ...g("concept", "Miller's Law|millers-law", "Serial Position Effect", "Primacy Effect", "Recency Effect", "Von Restorff Effect", "Zeigarnik Effect", "Peak-End Rule", "Mere Exposure Effect", "Aesthetic-Usability Effect", "Cognitive Ease"),
+          ...g("concept", "Miller's Law|millers-law", "Serial Position Effect"),
+          ...within("serial-position-effect", g("concept", "Primacy Effect", "Recency Effect")),
+          ...g("concept", "Von Restorff Effect", "Zeigarnik Effect", "Peak-End Rule", "Mere Exposure Effect", "Aesthetic-Usability Effect", "Cognitive Ease"),
         ],
       },
       {
         id: "gestalt",
         title: "Gestalt laws of grouping",
         items: [
-          ...g("principle", "Gestalt Principles", "Law of Prägnanz|law-of-pragnanz", "Law of Proximity", "Law of Similarity", "Law of Closure", "Law of Continuity", "Law of Common Region"),
+          ...g("principle", "Gestalt Principles"),
+          ...within("gestalt-principles", g("principle", "Law of Prägnanz|law-of-pragnanz", "Law of Proximity", "Law of Similarity", "Law of Closure", "Law of Continuity", "Law of Common Region", "Common Fate", "Uniform Connectedness")),
         ],
       },
       {
@@ -123,7 +132,7 @@ export const domains: Domain[] = [
         id: "cognitive",
         title: "Cognitive psychology",
         items: [
-          ...g("theory", "Cognitive Load Theory", "Working Memory Model", "Atkinson-Shiffrin Memory Model|atkinson-shiffrin-model", "Dual Coding Theory", "Schema Theory", "Information Processing Theory"),
+          ...g("theory", "Cognitive Load Theory", "Working Memory Model", "Atkinson-Shiffrin Memory Model|atkinson-shiffrin-model", "Dual Coding Theory", "Schema Theory", "Information Processing Theory", "Bounded Rationality and Satisficing|bounded-rationality"),
           ...g("principle", "Recognition over Recall|recognition-over-recall"),
           ...g("concept", "Selective Attention", "Sustained Attention", "Perceptual Load", "Cognitive Flexibility", "Mental Workload", "Decision-Making|decision-making"),
         ],
@@ -141,7 +150,7 @@ export const domains: Domain[] = [
         id: "visual-cognition",
         title: "Visual cognition",
         items: [
-          ...g("concept", "Figure-Ground Relationship|figure-ground", "Visual Search", "Visual Saliency", "Preattentive Processing", "Change Blindness", "Inattentional Blindness", "Colour Perception", "Depth Perception", "Pattern Recognition"),
+          ...g("concept", "Figure-Ground Relationship|figure-ground", "Visual Search", "Visual Saliency", "Preattentive Processing", "Change Blindness", "Inattentional Blindness", "Colour Perception", "Depth Perception", "Pattern Recognition", "Banner Blindness"),
         ],
       },
       {
@@ -151,7 +160,9 @@ export const domains: Domain[] = [
           ...g("model", "Seven Stages of Action", "Gulfs of Execution and Evaluation|gulfs-of-execution-and-evaluation"),
           ...g("concept", "Mental Models", "Conceptual Models", "Affordances", "Signifiers", "Constraints", "Mapping", "Feedback|feedback-principle"),
           ...g("theory", "Distributed Cognition", "Situated Cognition|situated-action", "Activity Theory", "Embodied Interaction", "Ecological Psychology"),
-          ...g("discipline", "Human Factors Engineering", "Ergonomics", "Cognitive Ergonomics"),
+          ...g("discipline", "Human Factors and Ergonomics|human-factors-engineering", "Cognitive Ergonomics"),
+          ...g("model", "Situation Awareness", "Technology Acceptance Model (TAM)|technology-acceptance-model", "Emotional Design (Visceral, Behavioural, Reflective)|emotional-design"),
+          ...g("concept", "Paradox of the Active User"),
         ],
       },
     ],
@@ -175,7 +186,7 @@ export const domains: Domain[] = [
         id: "principle-families",
         title: "Principle families",
         items: [
-          ...g("principle", "Visual Design Principles", "Accessibility Principles", "Content Design Principles", "Error Prevention", "Feedback Principles", "Consistency and Standards|consistency-principle", "User Control and Freedom"),
+          ...g("principle", "Visual Design Principles", "Accessibility Principles", "Content Design Principles", "Error Prevention", "Consistency and Standards|consistency-principle", "User Control and Freedom"),
         ],
       },
     ],
@@ -191,14 +202,14 @@ export const domains: Domain[] = [
         id: "qualitative",
         title: "Qualitative methods",
         items: [
-          ...g("method", "In-depth Interviews", "Contextual Inquiry", "Ethnographic Research", "Field Studies", "Diary Studies", "Focus Groups", "Observation", "Think-Aloud Protocol", "Stakeholder Interviews", "Co-design Workshops", "Participatory Design"),
+          ...g("method", "In-depth Interviews", "Contextual Inquiry", "Ethnographic Research", "Field Studies", "Diary Studies", "Focus Groups", "Observation", "Think-Aloud Protocol", "Stakeholder Interviews", "Participatory Design"),
         ],
       },
       {
         id: "quantitative",
         title: "Quantitative methods",
         items: [
-          ...g("method", "Surveys", "A/B Testing|ab-testing", "Product Analytics", "Behavioural Analytics", "Benchmark Studies", "First-Click Testing", "Quantitative Usability Testing", "Cohort Analysis"),
+          ...g("method", "Surveys", "A/B Testing|ab-testing", "Product Analytics", "Benchmark Studies", "First-Click Testing", "Quantitative Usability Testing", "Cohort Analysis", "Eye Tracking"),
           ...g("research-instrument", "Questionnaires"),
         ],
       },
@@ -207,6 +218,7 @@ export const domains: Domain[] = [
         title: "Research planning & ethics",
         items: [
           ...g("technique", "Research Objectives", "Research Questions", "Hypothesis Development", "Research Plans", "Participant Recruitment", "Screening Questionnaires", "Sampling", "Research Protocols", "Bias Reduction"),
+          ...g("methodology", "Mixed-Methods Research|mixed-methods-research"),
           ...g("concept", "Informed Consent", "Research Privacy", "Research Ethics"),
         ],
       },
@@ -214,7 +226,7 @@ export const domains: Domain[] = [
         id: "synthesis",
         title: "Analysis & synthesis",
         items: [
-          ...g("technique", "Affinity Mapping", "Thematic Analysis", "Qualitative Coding", "Insight Synthesis", "Data Triangulation", "Research Readouts"),
+          ...g("technique", "Affinity Mapping", "Thematic Analysis", "Qualitative Coding", "Insight Synthesis", "Data Triangulation", "Research Readouts", "Personas", "Scenarios"),
           ...g("tool", "Research Repositories"),
           ...g("strategy", "Evidence-Based Decision Making"),
         ],
@@ -223,7 +235,7 @@ export const domains: Domain[] = [
         id: "evaluation",
         title: "Usability evaluation",
         items: [
-          ...g("method", "Usability Testing", "Moderated Testing", "Unmoderated Testing", "Remote Testing", "Guerrilla Testing", "Accessibility Testing", "Cognitive Walkthrough", "Heuristic Evaluation", "Comparative Testing", "Tree Testing", "Card Sorting", "Concept Testing"),
+          ...g("method", "Usability Testing", "Moderated Testing", "Unmoderated Testing", "Remote Testing", "Guerrilla Testing", "Accessibility Testing", "Cognitive Walkthrough", "Heuristic Evaluation", "Comparative Testing", "Tree Testing", "Card Sorting", "Concept Testing", "Wizard of Oz Prototyping|wizard-of-oz"),
           ...g("concept", "Formative Evaluation", "Summative Evaluation"),
         ],
       },
@@ -272,6 +284,7 @@ export const domains: Domain[] = [
         title: "Analytical models of interaction",
         items: [
           ...g("model", "GOMS", "Keystroke-Level Model|keystroke-level-model"),
+          ...g("method", "Hierarchical Task Analysis|task-analysis"),
         ],
       },
     ],
@@ -300,7 +313,8 @@ export const domains: Domain[] = [
         title: "Navigation & findability",
         items: [
           ...g("pattern", "Breadcrumbs", "Global Navigation", "Local Navigation", "Faceted Navigation", "Navigation Patterns"),
-          ...g("theory", "Information Scent"),
+          ...g("theory", "Information Foraging Theory"),
+          ...g("concept", "Information Scent"),
           ...g("concept", "Search Architecture", "Labelling Systems", "Findability"),
         ],
       },
@@ -317,6 +331,7 @@ export const domains: Domain[] = [
         title: "Interaction principles",
         items: [
           ...g("principle", "Discoverability", "Visibility of System Status|visibility-of-system-status", "Direct Manipulation", "Progressive Disclosure", "Error Recovery"),
+          ...g("guideline", "Platform Design Guidelines"),
           ...g("concept", "Interaction Cost", "State Transitions", "Interaction States"),
         ],
       },
@@ -325,6 +340,7 @@ export const domains: Domain[] = [
         title: "Input & modalities",
         items: [
           ...g("concept", "Input Methods", "Touch Interactions", "Keyboard Interactions", "Voice Interactions", "Gesture Design"),
+          ...g("guideline", "Touch Target Size"),
         ],
       },
       {
@@ -347,7 +363,7 @@ export const domains: Domain[] = [
         id: "composition",
         title: "Composition principles",
         items: [
-          ...g("principle", "Visual Hierarchy", "Alignment", "Balance", "Contrast|visual-contrast", "Proximity|proximity-principle", "Repetition", "Proportion", "Scale", "Emphasis", "White Space", "Rhythm", "Unity", "Variety"),
+          ...g("principle", "Visual Hierarchy", "Alignment", "Balance", "Contrast|visual-contrast", "Repetition", "Proportion", "Scale", "Emphasis", "White Space", "Rhythm", "Unity", "Variety"),
         ],
       },
       {
@@ -399,6 +415,7 @@ export const domains: Domain[] = [
         id: "foundations",
         title: "System foundations",
         items: [
+          ...g("concept", "Design System|design-system"),
           ...g("methodology", "Atomic Design"),
           ...g("concept", "Design Language", "Design Tokens", "Primitive Tokens", "Semantic Tokens", "Theme Architecture", "Multi-Brand Systems"),
         ],
@@ -413,7 +430,7 @@ export const domains: Domain[] = [
         title: "Components & patterns",
         items: [
           ...g("concept", "Component Libraries", "Component Architecture", "Variants", "Component Properties", "Component State Management"),
-          ...g("pattern", "Form Architecture", "Data Tables", "Dashboards", "Empty States", "Loading States", "Error States", "Skeleton Screens", "Progressive Loading"),
+          ...g("pattern", "Form Architecture", "Data Tables", "Empty States", "Loading States", "Error States", "Skeleton Screens", "Progressive Loading"),
         ],
       },
       {
@@ -433,7 +450,7 @@ export const domains: Domain[] = [
         id: "standards",
         title: "Standards & conformance",
         items: [
-          ...g("standard", "WCAG", "EN 301 549|en-301-549", "ISO/IEC 40500|iso-iec-40500", "WAI-ARIA|aria"),
+          ...g("standard", "WCAG", "EN 301 549|en-301-549", "ISO/IEC 40500|iso-iec-40500", "WAI-ARIA|aria", "Section 508|section-508", "European Accessibility Act|european-accessibility-act"),
           ...g("principle", "POUR Principles|pour"),
           ...g("concept", "Success Criteria", "Conformance Levels"),
         ],
@@ -442,7 +459,7 @@ export const domains: Domain[] = [
         id: "techniques",
         title: "Techniques",
         items: [
-          ...g("technique", "Keyboard Accessibility", "Focus Management", "Focus Order", "Semantic HTML", "Non-Colour Indicators", "Reduced Motion", "Accessible Forms", "Accessibility Audits", "Accessible Prototyping"),
+          ...g("technique", "Keyboard Accessibility", "Focus Management", "Focus Order", "Semantic HTML", "Non-Colour Indicators", "Reduced Motion", "Accessible Forms", "Accessibility Audits", "Accessible Prototyping", "Captions and Transcripts"),
           ...g("tool", "Screen Readers", "Assistive Technologies"),
         ],
       },
@@ -477,6 +494,7 @@ export const domains: Domain[] = [
         title: "Content systems",
         items: [
           ...g("concept", "Content Hierarchy", "Localisation|localization", "Internationalisation|internationalization", "Conversational Writing", "Terminology Management"),
+          ...g("formula", "Readability Formulas"),
           ...g("strategy", "Content Governance"),
         ],
       },
@@ -501,8 +519,9 @@ export const domains: Domain[] = [
         id: "strategy",
         title: "Strategy & definition",
         items: [
-          ...g("strategy", "Product Vision", "Product Strategy", "Product Positioning", "Product Roadmaps", "Prioritisation"),
-          ...g("technique", "Feature Definition", "Product Requirements", "User Stories", "Acceptance Criteria"),
+          ...g("strategy", "Product Vision", "Product Strategy", "UX Strategy", "Product Positioning", "Product Roadmaps", "Prioritisation"),
+          ...g("framework", "Objectives and Key Results (OKRs)|okrs"),
+          ...g("technique", "User Story Mapping", "Feature Definition", "Product Requirements", "User Stories", "Acceptance Criteria"),
         ],
       },
       {
@@ -552,7 +571,7 @@ export const domains: Domain[] = [
         id: "usability-metrics",
         title: "Usability measurement",
         items: [
-          ...g("research-instrument", "System Usability Scale|system-usability-scale", "UMUX-LITE|umux-lite", "NASA-TLX|nasa-tlx"),
+          ...g("research-instrument", "System Usability Scale|system-usability-scale", "UMUX-LITE|umux-lite", "NASA-TLX|nasa-tlx", "Single Ease Question (SEQ)|single-ease-question", "SUPR-Q|supr-q", "User Experience Questionnaire (UEQ)|user-experience-questionnaire"),
           ...g("metric", "Task Success Rate", "Time on Task", "Error Rate", "Learnability", "Effectiveness", "Efficiency", "Satisfaction"),
         ],
       },
@@ -574,7 +593,8 @@ export const domains: Domain[] = [
       {
         id: "visual-math",
         title: "Visual design mathematics",
-        items: [...g("formula", "Aspect Ratios", "Grid Calculations", "Spacing Systems", "Responsive Breakpoints")],
+        items: [...g("formula", "Aspect Ratios", "Grid Calculations")]
+          .concat(g("technique", "Responsive Breakpoints")),
       },
     ],
   },
@@ -586,11 +606,20 @@ export const domains: Domain[] = [
     subcategories: [
       {
         id: "dataviz-core",
-        title: "Foundations",
+        title: "Perception & encoding",
         items: [
-          ...g("concept", "Visual Encoding", "Data Hierarchy", "Statistical Graphics", "Chart Integrity", "Cognitive Load in Data Visualisation", "Colour in Data Visualisation", "Accessible Charts", "Exploratory Visualisation", "Explanatory Visualisation", "Interaction in Data Visualisation"),
-          ...g("technique", "Chart Selection", "Dashboard Design"),
           ...g("theory", "Graphical Perception"),
+          ...g("concept", "Visual Encoding", "Data Hierarchy", "Statistical Graphics", "Cognitive Load in Data Visualisation", "Colour in Data Visualisation"),
+          ...g("principle", "Data-Ink Ratio"),
+        ],
+      },
+      {
+        id: "dataviz-practice",
+        title: "Chart design & practice",
+        items: [
+          ...g("technique", "Chart Selection", "Dashboard Design"),
+          ...g("concept", "Chart Integrity", "Accessible Charts", "Exploratory Visualisation", "Explanatory Visualisation", "Interaction in Data Visualisation"),
+          ...g("pattern", "Small Multiples"),
         ],
       },
     ],
@@ -603,12 +632,18 @@ export const domains: Domain[] = [
     subcategories: [
       {
         id: "ethics-core",
-        title: "Ethics & trust",
+        title: "Ethical frameworks & responsibility",
         items: [
-          ...g("concept", "Ethical Design", "Privacy-Centred Design|privacy-by-design", "Security UX", "Trust", "Consent Design", "Transparency", "User Autonomy", "Responsible Product Design", "Algorithmic Fairness", "Sustainable UX"),
-          ...g("anti-pattern", "Dark Patterns|deceptive-patterns"),
-          ...g("concept", "Behaviour Change Design|behaviour-change-design"),
-          ...g("framework", "Responsible AI"),
+          ...g("concept", "Ethical Design", "Responsible Product Design", "Algorithmic Fairness", "Sustainable UX"),
+          ...g("framework", "Value Sensitive Design", "Responsible AI"),
+        ],
+      },
+      {
+        id: "trust-privacy",
+        title: "Privacy, consent & manipulation",
+        items: [
+          ...g("concept", "Privacy-Centred Design|privacy-by-design", "Security UX", "Trust", "Consent Design", "Transparency", "User Autonomy", "Behaviour Change Design|behaviour-change-design"),
+          ...g("anti-pattern", "Deceptive Patterns (Dark Patterns)|deceptive-patterns"),
         ],
       },
     ],
@@ -639,7 +674,7 @@ export const domains: Domain[] = [
         id: "domains",
         title: "Domain specialisms",
         items: [
-          ...g("discipline", "Automotive UX", "Healthcare UX", "Fintech UX", "Enterprise UX", "B2B SaaS UX|b2b-saas-ux", "Ecommerce UX", "Gaming UX", "Educational UX", "Cross-Cultural UX"),
+          ...g("discipline", "Automotive UX", "Healthcare UX", "Fintech UX", "Enterprise UX", "B2B SaaS UX|b2b-saas-ux", "Ecommerce UX", "Gaming UX", "Educational UX", "Learning Experience Design", "Cross-Cultural UX"),
         ],
       },
     ],
@@ -654,7 +689,7 @@ export const domains: Domain[] = [
         id: "practice-core",
         title: "Professional practice",
         items: [
-          ...g("technique", "Design Critique", "Design Documentation", "Design Handoff", "UX Portfolio", "Stakeholder Communication", "Design Collaboration", "Prototyping", "Interaction Specifications"),
+          ...g("technique", "Design Critique", "Design Documentation", "UX Portfolio", "Stakeholder Communication", "Design Collaboration", "Prototyping", "Interaction Specifications"),
           ...g("strategy", "Research Operations", "Agile Product Workflows"),
         ],
       },
