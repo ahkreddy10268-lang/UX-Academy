@@ -662,3 +662,12 @@ summary { min-height: 24px; padding-block: 2px; }
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+/* Brand app icon: render both tones, show the one that matches the theme. */
+.brand-only-dark { display: none; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .brand-only-light { display: none; }
+  :root:not([data-theme="light"]) .brand-only-dark { display: block; }
+}
+:root[data-theme="dark"] .brand-only-light { display: none; }
+:root[data-theme="dark"] .brand-only-dark { display: block; }

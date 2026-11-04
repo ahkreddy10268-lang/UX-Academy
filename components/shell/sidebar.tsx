@@ -4,19 +4,17 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { useLocalString, writeLocal } from "@/lib/store/local";
-import { UxaLogo } from "@/components/brand/uxa-logo";
+import { UxaAppIcon } from "@/components/brand/uxa-app-icon";
 import { Icon } from "./icons";
 import { isActive, navGroups } from "./nav";
 
 export const SIDEBAR_KEY = "ux-academy:sidebar";
 
-/** Brand mark: the UX Academy symbol (logo kit v0.1, flat, theme ink) beside the name in UI type. */
+/** Brand mark: the UX Academy gradient app icon (logo kit v0.1; light or dark tile by theme) beside the name in UI type. */
 export function Wordmark({ collapsible = false }: { collapsible?: boolean }) {
   return (
     <span className="flex items-center gap-2.5">
-      <span aria-hidden className="grid h-9 w-9 shrink-0 place-items-center text-ink">
-        <UxaLogo variant="symbol" tone="current" width={34} decorative />
-      </span>
+      <UxaAppIcon size={36} decorative />
       <span className={`t-sub whitespace-nowrap text-[1.05rem] tracking-tight text-ink ${collapsible ? "collapse-hide" : ""}`}>
         UX Academy
       </span>
