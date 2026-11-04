@@ -28,7 +28,7 @@ import {
   timeOnTask,
   twoProportionTest,
 } from "./stats";
-import { aspectRatio, contrastRatio, gridColumns, modularScale, parseHex, relativeLuminance, wcagChecks } from "./visual";
+import { aspectRatio, contrastRatio, gridColumns, hsvToRgb, modularScale, parseHex, relativeLuminance, rgbToHsv, toHex, wcagChecks } from "./visual";
 
 describe("distributions", () => {
   it("normal CDF matches tables", () => {
@@ -356,6 +356,33 @@ describe("CIE L*a*b* and ΔE*ab", () => {
     expect(deltaE76("#336699", "#336699")).toBe(0);
     expect(deltaE76("#123456", "#abcdef")).toBeCloseTo(deltaE76("#abcdef", "#123456"), 10);
     expect(deltaE76("#000000", "#ffffff")).toBeCloseTo(100, 2);
+  });
+});
+
+describe("HSV conversion", () => {
+  it("maps primary and secondary hues at full saturation and value", () => {
+    expect(toHex(hsvToRgb(0, 1, 1))).toBe("#ff0000");
+    expect(toHex(hsvToRgb(60, 1, 1))).toBe("#ffff00");
+    expect(toHex(hsvToRgb(120, 1, 1))).toBe("#00ff00");
+    expect(toHex(hsvToRgb(180, 1, 1))).toBe("#00ffff");
+    expect(toHex(hsvToRgb(240, 1, 1))).toBe("#0000ff");
+    expect(toHex(hsvToRgb(300, 1, 1))).toBe("#ff00ff");
+    expect(toHex(hsvToRgb(360, 1, 1))).toBe("#ff0000"); // hue wraps
+  });
+  it("gives greys at zero saturation and black at zero value", () => {
+    expect(toHex(hsvToRgb(200, 0, 0.5))).toBe("#808080");
+    expect(toHex(hsvToRgb(200, 0.7, 0))).toBe("#000000");
+  });
+  it("round-trips through rgbToHsv", () => {
+    for (const hex of ["#4c5ead", "#d39526", "#2f9a86", "#1f2532", "#ffffff"]) expect(toHex(hsvToRgb(...(Object.values(rgbToHsv(parseHex(hex))) as [number, number, number])))).toBe(hex);
+  });
+  it("shows that value is not lightness: equal V, very different luminance", () => {
+    expect(relativeLuminance(hsvToRgb(60, 1, 1))).toBeCloseTo(0.9278, 3); // yellow
+    expect(relativeLuminance(hsvToRgb(240, 1, 1))).toBeCloseTo(0.0722, 3); // blue
+  });
+  it("rejects out-of-range input", () => {
+    expect(() => hsvToRgb(0, 1.2, 1)).toThrow();
+    expect(() => hsvToRgb(Number.NaN, 1, 1)).toThrow();
   });
 });
 

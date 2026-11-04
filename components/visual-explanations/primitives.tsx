@@ -37,10 +37,11 @@ export function Legend({ items, title = "Key" }: { items: LegendItem[]; title?: 
 
 /** Directional connector that turns from horizontal (wide screens) to vertical (phones). */
 /** `turn` sets the container width at which the arrow turns from pointing down to pointing right. */
-export function FlowArrow({ label, turn = "@3xl:rotate-0" }: { label?: string; turn?: string }) {
+export function FlowArrow({ label, turn = "@3xl:rotate-0", fixed }: { label?: string; turn?: string; fixed?: "right" | "down" }) {
+  const rotation = fixed === "right" ? "" : fixed === "down" ? "rotate-90" : `rotate-90 ${turn}`;
   return (
     <span className="flex items-center justify-center gap-1 text-ink-3" aria-hidden>
-      <svg viewBox="0 0 24 24" className={`h-6 w-6 rotate-90 ${turn}`} fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round">
+      <svg viewBox="0 0 24 24" className={`h-6 w-6 ${rotation}`} fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round">
         <path d="M3 12h17M14 6l6 6-6 6" />
       </svg>
       {label && <span className="text-[11px] font-medium">{label}</span>}

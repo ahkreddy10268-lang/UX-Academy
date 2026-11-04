@@ -7,6 +7,9 @@
 import { CltArchitecture, CltSplitAttention } from "./concepts/cognitive-load";
 import { DoubleDiamondProcess } from "./concepts/double-diamond";
 import { FittsAnatomy, FittsComparison } from "./concepts/fitts-law";
+import { GestaltAnnotated, GestaltSpacing } from "./concepts/gestalt-principles";
+import { HeuristicDecision, HeuristicFlow } from "./concepts/heuristic-evaluation";
+import { UcdCycle } from "./concepts/user-centred-design";
 import { IaEcology, IaHierarchy } from "./concepts/information-architecture";
 import type { VisualExplanation } from "./types";
 
@@ -21,7 +24,7 @@ export const visualExplanations: VisualExplanation[] = [
     takeaway: "Only the ratio of distance to width sets the difficulty; a and b turn difficulty into time and have to be measured for each device and group of people.",
     summary: [
       "The equation reads MT = a + b · log₂(D/W + 1).",
-      "1, a: the intercept, time that does not depend on difficulty, fitted to data.",
+      "1, a: the intercept, the part of the time that does not grow with difficulty (often attributed to reacting, starting and pressing), fitted to data.",
       "2, b: the slope, extra time for each bit of difficulty, also fitted.",
       "3, D: the distance from the start point to the target's centre.",
       "4, W: the target's width along the direction of movement.",
@@ -81,12 +84,12 @@ export const visualExplanations: VisualExplanation[] = [
       "Working memory: handles only a few interacting elements of new information at a time, briefly.",
       "Long-term memory: a large store of schemas; a schema lets many elements be processed as one.",
       "Novice: high intrinsic load plus the extraneous load of the presentation leaves little capacity for understanding.",
-      "Expert: schemas chunk the elements, so intrinsic load is lower; the extraneous load from the same presentation is unchanged.",
+      "Expert: schemas chunk the elements, so intrinsic load is lower. The presentation can load an expert differently too: guidance that helps a novice can burden an expert (the expertise reversal effect).",
       "In the revised theory, germane processing is the working-memory resource devoted to the material, not a separate third load.",
       "This is a conceptual model, not a diagram of the brain; proportions are illustrative.",
     ],
     verification: "content-checked",
-    sources: ["sweller-van-merrienboer-paas-1998", "sweller-2010", "sweller-van-merrienboer-paas-2019"],
+    sources: ["sweller-van-merrienboer-paas-1998", "sweller-2010", "sweller-van-merrienboer-paas-2019", "kalyuga-et-al-2003"],
     Component: CltArchitecture,
   },
   {
@@ -142,6 +145,102 @@ export const visualExplanations: VisualExplanation[] = [
     sources: ["rosenfeld-morville-arango-2015", "pirolli-card-1999", "furnas-et-al-1987"],
     Component: IaHierarchy,
   },
+  {
+    id: "user-centred-design.cycle",
+    slug: "user-centred-design",
+    type: "process",
+    level: 2,
+    title: "The human-centred design cycle",
+    objective: "The four ISO 9241-210 activities arranged as a loop around the principles that apply throughout, with the decision that ends or repeats the loop.",
+    takeaway: "The cycle repeats until evaluation shows the requirements are met, and each pass returns to the activity that needs work rather than always starting over.",
+    summary: [
+      "Start by planning the human-centred activities, roles and budget.",
+      "1 Understand and specify the context of use (contextual inquiry, interviews, field studies, analytics), giving a shared description of users, tasks and environments.",
+      "2 Specify the user requirements (personas, scenarios, task analysis, measurable usability goals), stated in testable terms.",
+      "3 Produce design solutions (sketches, prototypes, content and IA work), from low to high fidelity.",
+      "4 Evaluate the designs against the requirements (usability testing, heuristic evaluation, measurement against goals).",
+      "Throughout: users are involved, decisions rest on explicit understanding of users, tasks and environments, and the team is multidisciplinary.",
+      "Decision: if the requirements are met, release and keep evaluating in use; if not, iterate back to whichever activity needs revisiting.",
+      "Gould and Lewis's three principles underpin it: early focus on users and tasks, empirical measurement, iterative design.",
+    ],
+    verification: "content-checked",
+    sources: ["iso-9241-210-2019", "gould-lewis-1985"],
+    Component: UcdCycle,
+  },
+  {
+    id: "gestalt-principles.annotated",
+    slug: "gestalt-principles",
+    type: "annotated-interface",
+    level: 2,
+    title: "Four grouping cues in one checkout step",
+    objective: "A simplified checkout screen with numbered markers on the places where proximity, similarity, common region and connectedness carry its structure.",
+    takeaway: "Layout tells people what belongs together before they read a word; each cue does a different part of that work, and removing one changes what is grouped.",
+    summary: [
+      "1 Proximity: each label is closer to its own field than to the field above, so they read as pairs.",
+      "2 Similarity: the two delivery options share shape, size and style, so they read as alternatives of one kind.",
+      "3 Common region: each option's text and radio sit in one box, which holds them together even when content varies.",
+      "4 Connectedness and continuation: a line joins the three step markers, so they read as one ordered sequence.",
+      "The screen is an illustration, not a tested design.",
+    ],
+    verification: "illustrative",
+    sources: ["wertheimer-1923", "palmer-1992", "palmer-rock-1994"],
+    Component: GestaltAnnotated,
+  },
+  {
+    id: "gestalt-principles.spacing",
+    slug: "gestalt-principles",
+    type: "comparison",
+    level: 2,
+    title: "Equal spacing versus inner and outer spacing",
+    objective: "The same three-field form with equal gaps everywhere and with labels closer to their own fields than to the next pair.",
+    takeaway: "Grouping by proximity depends on relative distance, so making the space inside a group smaller than the space between groups is often enough on its own.",
+    summary: [
+      "Before: every gap is equal, so a label is as close to the previous field as to its own, and its field has to be inferred from order.",
+      "After: a small gap between label and field and a larger gap between pairs separates the groups without lines or boxes.",
+      "Cues are graded and interact: a strong colour or border elsewhere could still override the spacing.",
+    ],
+    verification: "illustrative",
+    sources: ["wagemans-2012a"],
+    Component: GestaltSpacing,
+  },
+  {
+    id: "heuristic-evaluation.flow",
+    slug: "heuristic-evaluation",
+    type: "process",
+    level: 2,
+    title: "Independent first, then merge",
+    objective: "How a heuristic evaluation runs, with three evaluators' findings shown separately and combined, to make the evaluator effect visible.",
+    takeaway: "Different evaluators find different problems, so several work alone and merge afterwards; even the merged list misses some problems and needs checking with users.",
+    summary: [
+      "Brief: target users, key tasks, platform, scope and heuristic set, the same for every evaluator.",
+      "Three evaluators inspect independently (1–2 hours each, often in two passes). In this illustration each finds 3 of 8 problems, and each finds a different set.",
+      "Aggregation merges their findings into one de-duplicated list: 7 of 8 problems. Problem P6 was missed by everyone.",
+      "Each evaluator then rates every merged problem for severity (0 not a problem, 1 cosmetic, 2 minor, 3 major, 4 catastrophe) on frequency, impact and persistence; ratings are averaged.",
+      "Findings are reported, prioritised and, where uncertain or high-impact, validated with users.",
+      "The problem sets are invented; real proportions vary. Nielsen reported single evaluators finding a given major problem about 42% of the time and a minor one about 32%.",
+    ],
+    verification: "illustrative",
+    sources: ["nielsen-molich-1990", "nielsen-1995-problems-found", "nielsen-severity-ratings", "hertzum-jacobsen-2001"],
+    Component: HeuristicFlow,
+  },
+  {
+    id: "heuristic-evaluation.decision",
+    slug: "heuristic-evaluation",
+    type: "decision",
+    level: 2,
+    title: "When heuristic evaluation is the right choice",
+    objective: "A decision tree that separates heuristic evaluation from usability testing, cognitive walkthrough and an unstructured expert review.",
+    takeaway: "Heuristic evaluation answers a broad, early question cheaply with expert predictions; when you need evidence of real behaviour, test with users.",
+    summary: [
+      "Do you need evidence of what real users actually do? Yes: usability testing.",
+      "No: is the question whether first-time users can work out specific tasks? Yes: cognitive walkthrough.",
+      "No: do you need a broad, quick check against established principles? Yes: heuristic evaluation with three to five independent evaluators, ideally including domain expertise.",
+      "No: an expert review without heuristics, or sharpen the question first.",
+    ],
+    verification: "content-checked",
+    sources: ["nielsen-molich-1990", "nielsen-1992-heuristic"],
+    Component: HeuristicDecision,
+  },
 ];
 
 /** Level-1 takeaway shown with the hero plate ("at a glance"). */
@@ -150,6 +249,9 @@ export const quickTakeaways: Record<string, string> = {
   "double-diamond": "Open up, then narrow down, twice: first to choose the right problem, then to find a solution that works.",
   "cognitive-load-theory": "Working memory is small: remove the effort your design adds so it can go to the material itself.",
   "information-architecture": "People find things when the grouping, the names, the routes and the search all match how they think.",
+  "user-centred-design": "Learn about users, design, test with them, and repeat until the evidence says the design works.",
+  "gestalt-principles": "Spacing, likeness, shared boxes and connecting lines tell people what belongs together before they read anything.",
+  "heuristic-evaluation": "A few experts review alone, then merge and rate what they found: fast and cheap, but predictions rather than evidence.",
 };
 
 const bySlug = new Map<string, VisualExplanation[]>();

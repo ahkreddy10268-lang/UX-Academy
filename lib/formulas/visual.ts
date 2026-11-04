@@ -31,6 +31,39 @@ export function contrastRatio(a: RGB | string, b: RGB | string): number {
   return (hi + 0.05) / (lo + 0.05);
 }
 
+/* ---------------- HSV (hue, saturation, value) ---------------- */
+
+/**
+ * HSV → sRGB (8-bit). Hue in degrees [0, 360), saturation and value in [0, 1].
+ * HSV is a cylindrical re-arrangement of RGB (Smith 1978 hexcone); its "value"
+ * is max(R, G, B), not perceived lightness.
+ */
+export function hsvToRgb(h: number, s: number, v: number): RGB {
+  if (![h, s, v].every(Number.isFinite)) throw new FormulaInputError("Hue, saturation and value must be numbers.");
+  if (s < 0 || s > 1 || v < 0 || v > 1) throw new FormulaInputError("Saturation and value must be between 0 and 1.");
+  const hh = (((h % 360) + 360) % 360) / 60;
+  const c = v * s;
+  const x = c * (1 - Math.abs((hh % 2) - 1));
+  const m = v - c;
+  const [r, g, b] = hh < 1 ? [c, x, 0] : hh < 2 ? [x, c, 0] : hh < 3 ? [0, c, x] : hh < 4 ? [0, x, c] : hh < 5 ? [x, 0, c] : [c, 0, x];
+  return { r: Math.round((r + m) * 255), g: Math.round((g + m) * 255), b: Math.round((b + m) * 255) };
+}
+
+/** sRGB (8-bit) → HSV with hue in degrees, saturation and value in [0, 1]. Hue is 0 for greys. */
+export function rgbToHsv({ r, g, b }: RGB): { h: number; s: number; v: number } {
+  const [R, G, B] = [r / 255, g / 255, b / 255];
+  const max = Math.max(R, G, B);
+  const min = Math.min(R, G, B);
+  const d = max - min;
+  let h = 0;
+  if (d > 0) {
+    if (max === R) h = 60 * (((G - B) / d) % 6);
+    else if (max === G) h = 60 * ((B - R) / d + 2);
+    else h = 60 * ((R - G) / d + 4);
+  }
+  return { h: (h + 360) % 360, s: max === 0 ? 0 : d / max, v: max };
+}
+
 /** Pass/fail against WCAG 2.x thresholds. Ratios are compared unrounded, as WCAG requires. */
 export function wcagChecks(ratio: number) {
   return [

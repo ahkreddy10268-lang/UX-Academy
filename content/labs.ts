@@ -153,4 +153,29 @@ export const labs: Lab[] = [
       "A simulation cannot tell you what anyone actually sees — test with people who have colour vision deficiencies.",
     ],
   },
+  {
+    id: "jakob-lab",
+    title: "Jakob's law: familiar and unfamiliar positions",
+    summary: "Find a named control on a mock shop page, sometimes where many sites put it and sometimes in the mirror position, and compare how long each takes you.",
+    concepts: ["jakobs-law"],
+    kind: "experiment",
+    assumptions: [
+      "Only position changes: the label, size and distance from the start point are the same in both conditions, so the difference is not a Fitts's-law effect.",
+      "The 'familiar' position (top right for Basket and Sign in) is a widely used convention on shopping sites, assumed rather than measured here; your own browsing history decides how familiar it is to you.",
+      "Two practice trials are discarded; sixteen scored trials in random order. Medians are reported because search times are skewed.",
+      "It tests location conventions only. Unfamiliar icons, wording or interaction patterns carry further costs that this lab does not measure.",
+    ],
+  },
+  {
+    id: "colour-lab",
+    title: "Colour explorer: hue, saturation and value",
+    summary: "Move hue, saturation and value and see the colour, its hex and RGB values, its brightness and its contrast with white and black text.",
+    concepts: ["colour-contrast-ratio", "hsv"],
+    kind: "simulation",
+    assumptions: [
+      "Colours are sRGB on a standard display; luminance and contrast use the WCAG 2.x formulas.",
+      "HSV's value is max(R, G, B). It is a convenient way to pick colours, not a measure of perceived lightness.",
+      "Contrast against pure white and pure black only; check real foreground and background pairs in the contrast checker.",
+    ],
+  },
 ];

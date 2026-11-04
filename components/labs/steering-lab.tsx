@@ -179,7 +179,7 @@ export function SteeringLab() {
             <table className="w-full text-sm">
               <caption className="label pb-2 text-left">Your data (successful trials)</caption>
               <thead>
-                <tr className="border-b border-rule-strong text-left text-ink-3">
+                <tr className="border-b border-rule-strong text-left text-ink-3 [&>th]:pr-4">
                   <th className="py-1.5 font-medium">A (px)</th>
                   <th className="font-medium">W (px)</th>
                   <th className="font-medium">ID = A/W</th>
@@ -189,7 +189,7 @@ export function SteeringLab() {
               </thead>
               <tbody className="formula tabular">
                 {summary.rows.map((r) => (
-                  <tr key={`${r.A}-${r.W}`} className="border-b border-rule">
+                  <tr key={`${r.A}-${r.W}`} className="border-b border-rule [&>td]:pr-4">
                     <td className="py-1.5">{r.A}</td>
                     <td>{r.W}</td>
                     <td>{r.id.toFixed(1)}</td>

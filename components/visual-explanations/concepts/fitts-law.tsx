@@ -41,7 +41,7 @@ export function FittsAnatomy() {
     <FormulaAnatomy
       terms={[{ text: "MT" }, { text: "=" }, { text: "a", marker: 1 }, { text: "+" }, { text: "b", marker: 2 }, { text: "·" }, { text: "log₂(" }, { text: "D", marker: 3 }, { text: "/" }, { text: "W", marker: 4 }, { text: "+ 1)" }]}
       legend={[
-        { marker: 1, symbol: "a (s)", meaning: "Intercept: time that does not depend on difficulty — reacting, starting, pressing. Fitted to data for one device and group of people." },
+        { marker: 1, symbol: "a (s)", meaning: "Intercept: the part of the time that does not grow with difficulty, often attributed to reacting, starting and pressing. Fitted to data for one device and group of people." },
         { marker: 2, symbol: "b (s/bit)", meaning: "Slope: extra time for each bit of difficulty. Also fitted, never universal." },
         { marker: 3, symbol: "D", meaning: "Distance from the start point to the centre of the target." },
         { marker: 4, symbol: "W", meaning: "Width of the target measured along the direction of movement." },

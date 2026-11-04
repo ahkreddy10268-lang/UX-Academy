@@ -231,6 +231,7 @@ const wcag: IllustrationEntry = {
 /* ---------------- Colour contrast ratio ---------------- */
 const colourContrastRatio: IllustrationEntry = {
   slug: "colour-contrast-ratio",
+  explorer: "colour",
   title: "Colour contrast ratio plate",
   description:
     "On the left, two swatches: dark text on a light background and light text on a mid-tone background. A vertical relative-luminance scale from 0 to 1 marks each colour's luminance. On the right, a horizontal ratio scale from 1 to 21 has threshold ticks at 3, 4.5 and 7, with a marker showing where the pair falls.",

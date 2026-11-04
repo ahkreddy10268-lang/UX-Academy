@@ -38,6 +38,13 @@ These rules cover Level-2 visual explanations (`components/visual-explanations/`
 - Conceptual models of the mind say so ("a conceptual model, not a diagram of the brain"), and illustrative proportions are labelled as such.
 - Sources listed under a figure must be the entry's own references (tested).
 
+## Interactive parts
+
+- Every control in a figure or explorer is a native element (button, input, select, summary, link) reachable by Tab and operable by keyboard; live readouts are `aria-live="polite"`.
+- Targets are at least 24 × 24 CSS px (WCAG 2.2 SC 2.5.8): use the `.tap` utility for standalone links and toggles, `min-h-6` on checkbox labels; range inputs and `<summary>` get it from the base styles. Inline links in sentences are exempt.
+- A row of tiny segments that would be too narrow to tap on a phone (for example a 15-lesson progress rail) becomes a static indicator there, with Previous/Next links doing the navigation.
+- Tested by `tests/browser/keyboard.cjs` (keyboard paths, accessibility tree) and `tests/browser/devices.cjs` (device emulation, target size).
+
 ## Theming
 
 Diagrams use only token colours, so dark mode is automatic. Check both themes, especially pastel fields (`c-wash`), hatch textures and SVG strokes against `surface`.

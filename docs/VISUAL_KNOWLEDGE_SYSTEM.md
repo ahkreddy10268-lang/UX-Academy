@@ -24,8 +24,13 @@ components/visual-explanations/
     hierarchy-tree.tsx     nested-list tree with markers, highlighted path and target
     comparison.tsx         before → problem → cause → intervention → after → effect (+ claim kind)
     formula-anatomy.tsx    expression with numbered terms ↔ geometry ↔ key
+    process-cycle.tsx      iterative loop (2 × 2 ring + hub of principles) with a decision exit
+    annotated-interface.tsx simplified interface with placed markers + key ("if broken")
+    parallel-flow.tsx      independent lanes merging (evaluators, raters) then onward steps
+    decision-tree.tsx      yes/no questions leading to a recommended choice
   concepts/          original compositions per concept
     fitts-law.tsx · double-diamond.tsx · cognitive-load.tsx · information-architecture.tsx
+    user-centred-design.tsx · gestalt-principles.tsx · heuristic-evaluation.tsx
   registry.tsx       slug → explanations; quickTakeaways (Level 1)
 ```
 
@@ -55,6 +60,24 @@ Each one uses a different strategy (this is tested):
 | **Double Diamond** | Process diagram | Four phases marked open-up / narrow-down, activities and outputs, the decision between the diamonds, the return path, Framework for Innovation principles | — (a process is not a quantity to manipulate) |
 | **Cognitive Load Theory** | Conceptual model + comparison | Presented information → limited working memory ⇄ long-term schemas; one screen loading a novice and an expert differently; split attention (separate legend vs direct labels) | Explorer: information density (existing) |
 | **Information Architecture** | System + hierarchy | Users / content / context and the four systems; an illustrative library hierarchy marking organisation, labelling, navigation and search, with a scent path to "Renew a loan" | — (tree testing is the real-world experiment) |
+
+### Second set (session 5)
+
+| Concept | Strategy | Level 2 | Level 3 |
+|---|---|---|---|
+| **User-Centred Design** | Iterative cycle | ISO 9241-210's four activities as a loop with methods and outputs, a hub of principles that apply throughout, and the "requirements met?" decision that exits or returns to *whichever* activity needs it; Gould & Lewis's three principles | — |
+| **Gestalt Principles** | Annotated interface + comparison | A checkout step with markers for proximity, similarity, common region and connectedness, each with "if broken"; equal spacing vs inner < outer spacing | Explorer: proximity/similarity (existing) |
+| **Heuristic Evaluation** | Parallel flow + decision tree | Three evaluators work alone (illustrative problem sets, 3 of 8 each), merge to 7 of 8 with one problem missed by everyone, rate severity 0–4 independently, validate with users; a tree separating usability testing, cognitive walkthrough, heuristic evaluation and unstructured review | — |
+
+New interactive models: the **colour explorer** (HSV sliders, live swatches with white/black text contrast, a 12-hue luminance strip showing that equal "value" ≠ equal brightness; `hsvToRgb`/`rgbToHsv` tested) on the Colour Contrast Ratio page and as `/labs/colour-lab`; the **Jakob's law experiment** (`/labs/jakob-lab`), which varies only a control's position (familiar top right vs mirrored bottom left) with label, size and distance held constant.
+
+### Review log (session 5)
+
+Every Level-2 figure and Level-3 explorer was re-read against its entry:
+- **Fixed:** the CLT model implied an expert's extraneous load is unchanged by the same screen; it now notes the expertise-reversal effect and cites Kalyuga et al. (2003).
+- **Fixed:** the Fitts anatomy stated what the intercept *is*; it now says the non-difficulty time is *often attributed* to reacting, starting and pressing.
+- **Fixed (accessibility):** the colour explorer's contrast captions sat inside the swatch and were illegible exactly when contrast failed; they now sit below it.
+- **Checked, unchanged:** Hick, peak-end, chunking (Cowan ≈ 4), signifiers, cognitive-load explorers, and the Double Diamond, IA, Fitts placement and split-attention figures.
 
 The Information Architecture entry was written for this release (domain `ia`), with three primary sources: Rosenfeld, Morville & Arango (2015), Furnas et al. (1987, DOI verified) and Pirolli & Card (1999, DOI verified).
 

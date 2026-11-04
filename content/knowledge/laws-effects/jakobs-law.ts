@@ -258,6 +258,7 @@ export default defineEntry({
   evidenceNote:
     "The law itself is professional guidance from a practitioner article. It is consistent with empirical research on mental models and object-location expectations, which supports the value of conventions for common interactions, but there is no direct measurement of 'Jakob's Law' and the evidence does not imply conventions should never be broken.",
 
+  lab: "jakob-lab",
   status: "published",
   quality: {
     classification: true,

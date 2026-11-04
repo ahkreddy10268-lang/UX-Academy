@@ -77,7 +77,7 @@ export function FormulaCurve({ calculator }: { calculator: string }) {
     <figure className="rounded-sm border border-rule bg-surface p-5">
       <figcaption className="flex flex-wrap items-baseline justify-between gap-2">
         <span className="t-sub text-sm">{p.title}</span>
-        <button type="button" onClick={() => setTable((t) => !t)} aria-expanded={table} className="text-xs text-ink-2 underline">
+        <button type="button" onClick={() => setTable((t) => !t)} aria-expanded={table} className="tap text-xs text-ink-2 underline">
           {table ? "Hide data" : "Show data"}
         </button>
       </figcaption>

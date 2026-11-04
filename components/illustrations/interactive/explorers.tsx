@@ -9,6 +9,7 @@ import Link from "next/link";
 import { useId, useState, type ReactNode } from "react";
 import { chunk, peakEnd } from "@/lib/formulas/experience";
 import { fittsId, hickInformation, hickInformationEqual, widthAlongApproach } from "@/lib/formulas/pointing";
+import { contrastRatio, hsvToRgb, relativeLuminance, toHex } from "@/lib/formulas/visual";
 import type { ExplorerId } from "../illustration-types";
 import { C, Cursor, Dim, Label, STROKE } from "../primitives";
 
@@ -209,7 +210,7 @@ function HickExplorer() {
       controls={
         <>
           <Slider label="Number of choices n" value={n} min={1} max={16} onChange={setN} />
-          <label className="flex items-center gap-2 text-sm">
+          <label className="flex min-h-6 items-center gap-2 text-sm">
             <input type="checkbox" checked={skew} onChange={(e) => setSkew(e.target.checked)} disabled={n < 2} /> One option is chosen half the time
           </label>
         </>
@@ -338,7 +339,7 @@ function GestaltExplorer() {
       controls={
         <>
           <Slider label="Gap between column pairs (proximity)" value={gap} min={0} max={40} onChange={setGap} unit=" px" />
-          <label className="flex items-center gap-2 text-sm">
+          <label className="flex min-h-6 items-center gap-2 text-sm">
             <input type="checkbox" checked={similar} onChange={(e) => setSimilar(e.target.checked)} /> Colour alternate rows (similarity)
           </label>
         </>
@@ -443,6 +444,91 @@ function SignifiersExplorer() {
   );
 }
 
+/* ---------------- Colour (HSV) ---------------- */
+const HUE_STEPS = Array.from({ length: 12 }, (_, i) => i * 30);
+const NAMED_HUES: [number, string][] = [[0, "red"], [30, "orange"], [60, "yellow"], [120, "green"], [180, "cyan"], [240, "blue"], [300, "magenta"]];
+const hueName = (h: number) => NAMED_HUES.reduce((best, [d, n]) => (Math.min(Math.abs(h - d), 360 - Math.abs(h - d)) < Math.min(Math.abs(h - best[0]), 360 - Math.abs(h - best[0])) ? [d, n] : best), NAMED_HUES[0])[1];
+
+function ColourExplorer() {
+  const [h, setH] = useState(220);
+  const [sat, setSat] = useState(60);
+  const [val, setVal] = useState(70);
+  const rgb = hsvToRgb(h, sat / 100, val / 100);
+  const hex = toHex(rgb);
+  const Y = relativeLuminance(rgb);
+  const onWhite = contrastRatio(hex, "#ffffff");
+  const onBlack = contrastRatio(hex, "#000000");
+  const strip = HUE_STEPS.map((hh) => {
+    const c = hsvToRgb(hh, sat / 100, val / 100);
+    return { h: hh, hex: toHex(c), Y: relativeLuminance(c) };
+  });
+  const maxY = Math.max(...strip.map((x) => x.Y));
+  const minY = Math.min(...strip.map((x) => x.Y));
+  const verdict = (r: number) => (r >= 4.5 ? "passes 4.5:1 for body text" : r >= 3 ? "passes 3:1 for large text only" : "fails 3:1");
+  return (
+    <Shell
+      title="Colour: hue, saturation, value"
+      canvas={
+        <div className="w-full space-y-4 p-4">
+          <div className="grid grid-cols-2 gap-2" aria-hidden>
+            {(["#ffffff", "#000000"] as const).map((t) => (
+              <div key={t}>
+                <div className="flex h-24 items-center justify-center rounded-lg ring-1 ring-rule" style={{ background: hex, color: t }}>
+                  <span className="text-3xl font-semibold leading-none">Aa</span>
+                </div>
+                {/* the caption sits outside the swatch so it stays legible even when the sample fails */}
+                <p className="mt-1.5 text-xs text-ink-2">
+                  {t === "#ffffff" ? "White" : "Black"} text <span className="formula text-ink">{contrastRatio(hex, t).toFixed(2)}:1</span>
+                </p>
+              </div>
+            ))}
+          </div>
+          <figure>
+            <figcaption className="text-xs text-ink-2">Every hue at the same saturation and value. Bar height is relative luminance (how bright it looks).</figcaption>
+            <div className="mt-2 grid grid-cols-12 items-end gap-1" role="img" aria-label={`Twelve hues at ${sat}% saturation and ${val}% value. Relative luminance ranges from ${minY.toFixed(2)} to ${maxY.toFixed(2)}.`}>
+              {strip.map((x) => (
+                <div key={x.h} className="flex flex-col items-center gap-1">
+                  <span className="block w-full rounded-t-xs bg-ink-3" style={{ height: `${Math.max(2, x.Y * 64)}px` }} />
+                  <span className={`block h-5 w-full rounded-xs ring-1 ${Math.abs(x.h - h) < 15 || Math.abs(x.h - h) > 345 ? "ring-2 ring-ink" : "ring-rule"}`} style={{ background: x.hex }} />
+                </div>
+              ))}
+            </div>
+          </figure>
+        </div>
+      }
+      controls={
+        <>
+          <Slider label="Hue" value={h} min={0} max={359} onChange={setH} format={(v) => `${v}° ${hueName(v)}`} />
+          <Slider label="Saturation" value={sat} min={0} max={100} onChange={setSat} unit="%" />
+          <Slider label="Value" value={val} min={0} max={100} onChange={setVal} unit="%" />
+          <button type="button" onClick={() => { setH(220); setSat(60); setVal(70); }} className="self-start rounded-sm border border-line-control bg-surface px-3 py-1.5 text-sm hover:border-ink-3">
+            Reset
+          </button>
+        </>
+      }
+      readout={
+        <>
+          <p className="flex items-center gap-2">
+            <span aria-hidden className="h-6 w-6 rounded-xs ring-1 ring-rule" style={{ background: hex }} />
+            <span className="formula text-lg text-ink">{hex}</span>
+            <span className="formula text-xs text-ink-2">rgb({rgb.r}, {rgb.g}, {rgb.b})</span>
+          </p>
+          <p className="mt-1.5 text-sm text-ink-2">
+            Relative luminance <span className="formula text-ink">{Y.toFixed(3)}</span>. White text {onWhite.toFixed(2)}:1 ({verdict(onWhite)}); black text {onBlack.toFixed(2)}:1 ({verdict(onBlack)}).
+          </p>
+          <p className="mt-1.5 text-sm text-ink-2">
+            At this saturation and value, the hues range from luminance {minY.toFixed(2)} to {maxY.toFixed(2)}: same “value”, different brightness.
+          </p>
+        </>
+      }
+      predicts="Lowering value darkens a colour and lowering saturation moves it toward grey. Changing hue alone also changes brightness, because the eye is far more sensitive to green than to blue."
+      assumptions="sRGB on a standard display; luminance and contrast use the WCAG 2.x formulas. HSV value is max(R, G, B), not perceived lightness."
+      cannot="How a colour looks next to other colours, on a different screen or to someone with a colour vision deficiency. Try the colour vision simulator for the last of these."
+      link={{ href: "/labs/cvd-lab", label: "See your palette under colour vision deficiencies" }}
+    />
+  );
+}
+
 const EXPLORERS: Record<ExplorerId, () => React.JSX.Element> = {
   fitts: FittsExplorer,
   hick: HickExplorer,
@@ -451,6 +537,7 @@ const EXPLORERS: Record<ExplorerId, () => React.JSX.Element> = {
   gestalt: GestaltExplorer,
   "cognitive-load": CognitiveLoadExplorer,
   signifiers: SignifiersExplorer,
+  colour: ColourExplorer,
 };
 
 export function ConceptExplorer({ id }: { id: ExplorerId }) {

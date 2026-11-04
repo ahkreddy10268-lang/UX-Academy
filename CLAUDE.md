@@ -69,7 +69,7 @@ classified, evidenced, connected and practised.
 - **Visual Knowledge Engine (v4):** Level-2 explanations live in `components/visual-explanations/` (templates in `diagrams/`, compositions in `concepts/`, `registry.tsx`). Choose the visual strategy by what the knowledge is; build with HTML/CSS text + token-coloured SVG shapes; every figure has objective, takeaway, ordered text version, verification kind (`content-checked` / `illustrative`) and sources from the entry's own references (`tests/visuals.test.ts`). Rules: docs/DIAGRAM_DESIGN_GUIDELINES.md.
 - Status/evidence colours are semantic tokens (`ok warn info error evidence planned published`) — never subject colours.
 - Still forbidden: glassmorphism, decorative animation, icon clutter, fake data/avatars/achievements, colour-only meaning, nested page frames.
-- Accessibility floor: semantic HTML, visible focus, keyboard reachable, WCAG 2.2 AA contrast, text alternatives for every plate/chart/graph. Grids must use `minmax(0,1fr)` tracks (base rule exists) — verify phones at the real device width.
+- Accessibility floor: semantic HTML, visible focus, keyboard reachable, WCAG 2.2 AA contrast and 24px targets (`.tap`, SC 2.5.8), text alternatives for every plate/chart/graph. Run `tests/browser/keyboard.cjs` and `devices.cjs` for UI changes. Grids must use `minmax(0,1fr)` tracks (base rule exists) — verify phones at the real device width.
 
 ## Working conventions
 

@@ -49,7 +49,7 @@ function NavList({ pathname, collapsible, onNavigate }: { pathname: string; coll
                     <Icon name={item.icon} className="shrink-0" />
                     <span className={collapsible ? "collapse-hide" : ""}>{item.label}</span>
                     {collapsible && (
-                      <span role="tooltip" className="nav-tip">
+                      <span aria-hidden className="nav-tip">
                         {item.label}
                       </span>
                     )}
@@ -96,7 +96,7 @@ export function Sidebar() {
       >
         <Icon name="sidebar" className="shrink-0" />
         <span className="collapse-hide">Collapse</span>
-        <span role="tooltip" className="nav-tip">
+        <span aria-hidden className="nav-tip">
           Expand sidebar
         </span>
       </button>

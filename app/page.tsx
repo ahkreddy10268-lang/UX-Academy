@@ -36,7 +36,7 @@ function SectionHead({ id, kicker, title, href, linkLabel }: { id: string; kicke
         </h2>
       </div>
       {href && (
-        <Link href={href} className="inline-flex items-center gap-1.5 text-sm font-medium text-accent-ink hover:underline">
+        <Link href={href} className="inline-flex min-h-6 items-center gap-1.5 text-sm font-medium text-accent-ink hover:underline">
           {linkLabel} <Icon name="arrow-right" size={16} />
         </Link>
       )}
@@ -147,7 +147,7 @@ export default function Home() {
               <Link href="/library/fitts-law" className="inline-flex h-11 items-center gap-2 rounded-sm bg-accent px-5 font-medium text-surface hover:bg-accent-ink">
                 Read the concept <Icon name="arrow-right" size={18} />
               </Link>
-              <Link href="/labs/fitts-lab" className="link text-sm">
+              <Link href="/labs/fitts-lab" className="link tap text-sm">
                 Measure your own pointing
               </Link>
               <EvidenceMark evidence={fitts.evidence} />
@@ -233,14 +233,14 @@ export default function Home() {
             <ul className="flex flex-wrap gap-x-5 gap-y-2">
               {EVIDENCE_ORDER.map((ev) => (
                 <li key={ev}>
-                  <Link href={`/library?evidence=${ev}`} className="inline-flex items-center gap-2 text-ink-2 hover:text-ink">
+                  <Link href={`/library?evidence=${ev}`} className="inline-flex min-h-6 items-center gap-2 text-ink-2 hover:text-ink">
                     <EvidenceMark evidence={ev} showLabel={false} />
                     {EVIDENCE_LABEL[ev]} <span className="tabular font-semibold text-ink">{published.filter((p) => p.evidence === ev).length}</span>
                   </Link>
                 </li>
               ))}
             </ul>
-            <Link href="/method" className="link ml-auto">
+            <Link href="/method" className="link tap ml-auto">
               How evidence is classified
             </Link>
           </div>

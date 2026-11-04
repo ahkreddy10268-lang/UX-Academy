@@ -136,7 +136,7 @@ export function KnowledgeGraph({ nodes, edges, domains }: { nodes: GNode[]; edge
         <fieldset className="mb-3 flex flex-wrap gap-x-4 gap-y-1 text-xs">
           <legend className="sr-only">Relationship types</legend>
           {Object.entries(RELATION_LABEL).map(([k, v]) => (
-            <label key={k} className="flex items-center gap-1.5 text-ink-2">
+            <label key={k} className="flex min-h-6 items-center gap-1.5 text-ink-2">
               <input
                 type="checkbox"
                 checked={types.has(k)}

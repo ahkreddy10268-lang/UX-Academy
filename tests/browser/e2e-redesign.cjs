@@ -130,7 +130,7 @@ const check = (name, ok, detail = '') => results.push({ name, ok: !!ok, detail }
   check('CVD lab recomputes from edited colours', (await p.locator('section[aria-label^="Protanopia"]').textContent()).includes('#ffffff'));
 
   // v4 visual knowledge engine
-  for (const [slug, n] of [['fitts-law', 2], ['double-diamond', 1], ['cognitive-load-theory', 2], ['information-architecture', 2]]) {
+  for (const [slug, n] of [['fitts-law', 2], ['double-diamond', 1], ['cognitive-load-theory', 2], ['information-architecture', 2], ['user-centred-design', 1], ['gestalt-principles', 2], ['heuristic-evaluation', 2]]) {
     await p.goto(BASE + '/library/' + slug, { waitUntil: 'networkidle' });
     const figs = p.locator('section[aria-labelledby=visual] > div > figure');
     check(`${slug}: ${n} detailed visual explanation(s) with title, takeaway and text version`, (await figs.count()) === n && (await figs.first().getByText('Take away').count()) === 1 && (await figs.first().getByText('Read this diagram as text').count()) === 1);
@@ -143,9 +143,32 @@ const check = (name, ok, detail = '') => results.push({ name, ok: !!ok, detail }
   check('process diagram names all four phases as real text', phaseCounts.every((c) => c >= 1), phaseCounts.join(','));
   check('concept hero shows an at-a-glance takeaway', (await p.getByText('At a glance ·').count()) === 1);
   await p.goto(BASE + '/library?feature=visual', { waitUntil: 'networkidle' });
-  check('library filters concepts that have a detailed diagram', /^4 results/.test(await p.getByText(/^\d+ results?/).textContent()));
+  check('library filters concepts that have a detailed diagram', /^7 results/.test(await p.getByText(/^\d+ results?/).textContent()));
   await p.goto(BASE + '/learn/ux-fundamentals', { waitUntil: 'networkidle' });
   check('path page draws a curriculum map with a node per lesson', (await p.locator('ol[aria-label="Curriculum map"] > li').count()) >= 3);
+
+  // Colour explorer and Jakob's law experiment
+  await p.goto(BASE + '/labs/colour-lab', { waitUntil: 'networkidle' });
+  const cx = p.locator('section[aria-label="Colour: hue, saturation, value explorer"]');
+  await cx.getByRole('slider', { name: /^Saturation/ }).fill('100');
+  await cx.getByRole('slider', { name: /^Value/ }).fill('100');
+  await cx.getByRole('slider', { name: /^Hue/ }).fill('60');
+  const yellow = await cx.locator('[aria-live=polite]').textContent();
+  check('colour explorer: pure yellow has luminance 0.928 and fails white text', /#ffff00/.test(yellow) && /luminance 0\.928/.test(yellow) && /White text 1\.07:1 \(fails 3:1\)/.test(yellow), yellow.slice(0, 160));
+  await cx.getByRole('button', { name: 'Reset' }).click();
+  check('colour explorer resets to its starting colour', /#476bb3/.test(await cx.locator('[aria-live=polite]').textContent()));
+  await p.goto(BASE + '/labs/jakob-lab', { waitUntil: 'networkidle' });
+  await p.getByRole('button', { name: 'Start', exact: true }).click();
+  const stage = p.locator('[aria-label="Mock shop page"]');
+  for (let t = 0; t < 18; t++) {
+    await stage.getByRole('button', { name: 'Start trial' }).click();
+    const target = /find “(.+)”/.exec(await p.locator('p[aria-live=polite]').first().textContent())[1];
+    const positions = await stage.getByRole('button', { name: target, exact: true }).count();
+    if (positions !== 1) check(`Jakob trial ${t}: target appears exactly once`, false, String(positions));
+    await stage.getByRole('button', { name: target, exact: true }).click();
+  }
+  check('Jakob lab: 16 scored trials split 8/8 by position, practice excluded', /Familiar \(top right\)8/.test((await p.locator('table').textContent()).replace(/\s+/g, '')) || /Familiar \(top right\)\s*8/.test(await p.locator('table').textContent()));
+  check('Jakob lab explains its result', (await p.getByText('Interpreting your result').count()) === 1);
 
   // Mobile filter drawer
   const m = await b.newContext({ ...devices['iPhone 13'] });
@@ -157,7 +180,7 @@ const check = (name, ok, detail = '') => results.push({ name, ok: !!ok, detail }
   await dlg.getByLabel('Subject').selectOption('psychology');
   await dlg.getByRole('button', { name: /^Show \d+ results?$/ }).click();
   check('drawer applies filter and closes', !(await dlg.isVisible()) && /domain=psychology/.test(mp.url()), mp.url());
-  for (const r of ['/', '/library', '/library/fitts-law', '/library/double-diamond', '/library/information-architecture', '/learn/ux-fundamentals', '/learn/ux-fundamentals/lesson/usability', '/formulas', '/topics/psychology', '/labs/responsive-lab', '/glossary', '/me']) {
+  for (const r of ['/', '/library', '/library/fitts-law', '/library/double-diamond', '/library/information-architecture', '/library/heuristic-evaluation', '/labs/jakob-lab', '/labs/colour-lab', '/learn/ux-fundamentals', '/learn/ux-fundamentals/lesson/usability', '/formulas', '/topics/psychology', '/labs/responsive-lab', '/glossary', '/me']) {
     await mp.goto(BASE + r, { waitUntil: 'networkidle' });
     const o = await mp.evaluate(() => document.documentElement.scrollWidth - 390);
     check(`no horizontal scroll at 390px ${r}`, o <= 0, `${o}px`);

@@ -1,6 +1,6 @@
 # Progress register
 
-_Last updated: 2026-11-03 (session 4 — v4 Visual Intelligence)_
+_Last updated: 2026-11-04 (session 5 — second visual set, colour and Jakob models, keyboard and device testing)_
 
 ## State
 
@@ -64,31 +64,21 @@ First meaningful release is complete and verified. All Definition-of-Done items 
 - Plates for most planned topics do not exist; planned pages show the subject plate, captioned as such.
 - Explorers exist for 7 concepts; others show the static hero plate.
 
-## Session 4 — v4 Visual Intelligence (committed and pushed with authorisation)
+## Session 5 — completed
 
-**Implemented**
-- **Visual Knowledge Engine** (`components/visual-explanations/`): types, HTML/CSS primitives, a figure frame that answers the five questions with a text version and sources, four templates (process timeline, hierarchy tree, before/after comparison, formula anatomy), a registry with integrity tests, and full-width placement on concept pages with an "at a glance" takeaway under the hero plate.
-- **Four gold-standard concepts**, each with a different strategy:
-  - Fitts (formula anatomy + computed placement comparison);
-  - Double Diamond (process);
-  - Cognitive Load Theory (conceptual model + split-attention comparison);
-  - Information Architecture (system + hierarchy).
-- **New entry:** Information Architecture (46 published), with new sources (Rosenfeld, Morville & Arango 2015; Pirolli & Card 1999; Furnas et al. 1987), and a new IA plate (69 plates).
-- **Editorial system:** `docs/EDITORIAL_STYLE_GUIDE.md`, an editorial gate test, 17 analogy openings rewritten, and UI ledes rebalanced.
-- **Semantic tokens:** error, evidence, planned and published.
-- **Product:** homepage "Explained visually" section, a library "A detailed diagram" filter and card chip, and a curriculum map on path pages.
-- **Docs:** VISUAL_KNOWLEDGE_SYSTEM, DIAGRAM_DESIGN_GUIDELINES and EDITORIAL_STYLE_GUIDE are new; CLAUDE.md, DESIGN_SYSTEM, ILLUSTRATION_SYSTEM, UI_UX_DESIGN_DIRECTION, DECISION_LOG (D-034…D-038) and VISUAL_QA are updated.
+1. **Level-2 visual explanations** for User-Centred Design (iterative cycle), Gestalt Principles (annotated interface + spacing comparison) and Heuristic Evaluation (parallel flow + decision tree). These use four new templates; the existing ones are unchanged. 7 concepts now have Level-2 explanations, 12 figures in all.
+2. **Colour explorer** (HSV sliders, live previews, white/black text contrast, a hue–luminance strip; tested `hsvToRgb`/`rgbToHsv`). It sits on the Colour Contrast Ratio page and at `/labs/colour-lab`.
+3. **Jakob's law experiment** (`/labs/jakob-lab`): position-only comparison, 2 practice + 16 scored trials, median, mean and errors, first-vs-last learning, interpretation. Linked from the Jakob's Law entry.
+4. **Review** of all Level-2 figures and Level-3 explorers for accuracy, consistency and responsiveness. Two accuracy fixes and several layout fixes (docs/VISUAL_KNOWLEDGE_SYSTEM.md review log).
+5. **Keyboard and accessibility-tree testing** (`tests/browser/keyboard.cjs`) and **device emulation** (`tests/browser/devices.cjs`). These found and fixed a doubled accessible name and WCAG 2.5.8 target-size failures across the app.
 
-**Verified:** see docs/VISUAL_QA.md (155 unit tests, 42 + 56 e2e checks, 156 axe audits with 0 violations, 108 responsive checks).
+**Not testable here:** screen readers and physical devices (docs/VISUAL_QA.md, "Could not be tested").
 
 ## Next task (precise)
 
-Add Level-2 explanations for the next concepts by strategy, reusing the templates:
-1. `user-centred-design` (process template, iterative).
-2. `gestalt-principles` (annotated interface, a new template).
-3. `heuristic-evaluation` (process + decision).
-
-For each: write the composition in `components/visual-explanations/concepts/`, register it with sources from the entry's own references, then run `npx vitest run tests/visuals.test.ts`, build, and re-run `tests/browser/e2e-redesign.cjs`. Then implement the colour (HSV) explorer from spec Part 09 using new tested functions in `lib/formulas/visual.ts`.
+1. Owner-run checks that cannot be done in the cloud container: VoiceOver (macOS Safari, iOS Safari) and NVDA (Windows Firefox) on `/`, `/library`, `/library/double-diamond`, `/labs/jakob-lab` and the mobile drawer; one real iPhone and one Android phone for touch, the steering lab and the Jakob lab. Record findings in docs/VISUAL_QA.md.
+2. Add a WebKit pass to `tests/browser/devices.cjs` if a WebKit build becomes available (`playwright.webkit`).
+3. Next Level-2 explanations, by strategy: `cognitive-walkthrough` (per-step question flow), `peak-end-rule` (experience curve with annotations), `wcag` (hierarchy of principles → guidelines → criteria → levels).
 
 ## Session 3 — v3 Pastel Editorial Workspace (not committed; awaiting owner authorisation)
 

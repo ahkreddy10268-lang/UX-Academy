@@ -30,8 +30,11 @@
 
 ## Features
 
+- ✅ Session 5 shipped the colour (HSV) explorer and the Jakob's law position experiment, plus Level-2 visuals for UCD, Gestalt and Heuristic Evaluation (7 concepts with detailed diagrams).
 - ✅ v3 shipped the steering-law tunnel experiment and the colour-vision-deficiency simulator (Machado et al. 2009). Next lab ideas: anomalous-trichromacy severities (needs the paper's tabulated matrices — do not interpolate), curved-tunnel steering, an ISO 9241-411 throughput task.
-- Explorers for more concepts (Jakob's law familiar vs unfamiliar patterns, progressive disclosure inline, typography hierarchy, colour HSV manipulation).
+- Explorers for more concepts (progressive disclosure inline, typography hierarchy). Jakob's law and colour HSV are done.
+- Level-2 explanations next: cognitive walkthrough, peak-end rule, WCAG structure, then one per remaining published entry where a diagram explains something words do not.
+- Testing: real screen readers (VoiceOver, NVDA) and physical devices; a WebKit emulation pass.
 - Plates for planned topics as their entries are written (tests require a plate for every published entry).
 - Case studies as a content type (schema exists in the knowledge type list; needs a template).
 - Learning-path completion certificates/progress export; streak-free revision reminders (calendar export of due cards).
@@ -41,6 +44,9 @@
 - Offline support (PWA) for a fully local academy.
 
 ## Known issues
+
+- Screen-reader and physical-device testing not yet done (cloud container has neither); keyboard, accessibility-tree and device-emulation suites pass.
+- On phones the lesson progress rail is a static indicator (segments too narrow to tap); navigation is by Previous/Next.
 
 - v3: the owner's dashboard reference images were not available; the v3 look follows the written brief and should be checked against the images.
 - v3: the library subject/type chip rows scroll horizontally on narrow widths — fine for touch, less discoverable with a mouse (consider wrapping at ≥1280px).

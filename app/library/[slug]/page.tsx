@@ -241,7 +241,7 @@ function Entry({ entry: e }: { entry: KnowledgeEntry }) {
                   {plate ? "" : " · typographic placeholder (no plate drawn yet)"}
                 </span>
                 {(explorer || visuals.length > 0) && (
-                  <a href="#visual" className="link shrink-0">
+                  <a href="#visual" className="link tap shrink-0">
                     {visuals.length ? "See how it works ↓" : "Explore it interactively ↓"}
                   </a>
                 )}

@@ -47,6 +47,7 @@ export function CltArchitecture() {
           <div className="mt-3 space-y-3">
             <CapacityBar who="Novice" load={{ intrinsic: 55, extraneous: 35 }} note="same screen" />
             <CapacityBar who="Expert" load={{ intrinsic: 20, extraneous: 35 }} note="schemas chunk the elements" />
+            <p className="text-[11px] leading-snug text-ink-2">Extraneous load is drawn the same for both. In practice it can differ: guidance that helps a novice can burden an expert (expertise reversal).</p>
           </div>
         </div>
         <span className="flex flex-col items-center gap-1 text-[11px] font-medium text-ink-3">

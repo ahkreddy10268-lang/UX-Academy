@@ -45,7 +45,7 @@ Where no plate exists, `TypePlate` shows a monogram on the wash — honest, neve
 
 ## Explorers (Level 3)
 
-`fitts`, `hick`, `peak-end`, `chunking`, `gestalt`, `cognitive-load`, `signifiers`. v3: the Fitts explorer adds the **direction of approach** (width along the approach path, `widthAlongApproach`, the W′ model compared by MacKenzie & Buxton 1992) and an **easy vs difficult comparison** strip on one ID scale. Each states what is manipulated, what the concept predicts, its assumptions and what it cannot show, and computes only via `lib/formulas` (`fittsId`, `hickInformation`, `peakEnd`, `chunk`). Simulations are labelled as such; experiments that measure the learner live in `/labs`.
+`fitts`, `hick`, `peak-end`, `chunking`, `gestalt`, `cognitive-load`, `signifiers`, `colour` (session 5: HSV, attached to the Colour Contrast Ratio plate). v3: the Fitts explorer adds the **direction of approach** (width along the approach path, `widthAlongApproach`, the W′ model compared by MacKenzie & Buxton 1992) and an **easy vs difficult comparison** strip on one ID scale. Each states what is manipulated, what the concept predicts, its assumptions and what it cannot show, and computes only via `lib/formulas` (`fittsId`, `hickInformation`, `peakEnd`, `chunk`). Simulations are labelled as such; experiments that measure the learner live in `/labs`.
 
 ## QA
 

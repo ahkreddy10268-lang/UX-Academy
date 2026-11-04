@@ -16,7 +16,7 @@ export type ArtProps = {
   animate: boolean;
 };
 
-export type ExplorerId = "fitts" | "hick" | "peak-end" | "chunking" | "gestalt" | "cognitive-load" | "signifiers";
+export type ExplorerId = "fitts" | "hick" | "peak-end" | "chunking" | "gestalt" | "cognitive-load" | "signifiers" | "colour";
 
 export type IllustrationEntry = {
   /** Knowledge slug, taxonomy slug or domain id this plate illustrates. */

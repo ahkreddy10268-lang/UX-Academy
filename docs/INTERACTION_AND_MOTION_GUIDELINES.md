@@ -38,6 +38,9 @@ Motion exists only to **teach** (show a mechanism changing) or to **confirm** (s
 | Library sort & paging | sort select (mirrored to `?sort=`), "Show 24 more" button with a "Showing n of N" count | native |
 | Library URL state | `history.replaceState` mirror of all filters (incl. `sub`, `sort`) and view | shareable, no navigation |
 | Steering lab | pointer drag through tunnels (mouse, pen, touch; `touch-action: none` on the stage only) | no keyboard equivalent exists for a steering task — stated in the lab; results table and chart are accessible |
+| Jakob's law lab | buttons on a mock page, timed from "Start trial" | completable by keyboard, but times then reflect Tab order, so the lab asks for a mouse or touch |
+| Colour explorer | three range inputs, Reset | Home/End/arrows; readout `aria-live` |
+| Target size | `.tap` (min 24px) on standalone links/toggles; range and summary ≥ 24px; lesson rail static on phones | WCAG 2.2 SC 2.5.8 |
 | CVD simulator | colour pickers + hex fields, live re-render | native inputs, `aria-invalid` on bad hex |
 | Explorers | range inputs + checkboxes | native controls, live readout `aria-live` |
 | Curriculum levels | `<details>` disclosure | native |

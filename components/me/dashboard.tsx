@@ -91,7 +91,7 @@ export function Dashboard({ meta, paths, questionEntry }: { meta: Record<string,
         <div className="rounded-lg border border-dashed border-rule-strong bg-soft p-6">
           <p className="t-sub text-lg">Nothing here yet</p>
           <p className="mt-2 max-w-read text-ink-2">
-            Start with a <Link className="link" href="/learn">learning path</Link> or open any entry in the <Link className="link" href="/library">library</Link>. Saved entries, notes, quiz results and lab runs will collect here.
+            Start with a <Link className="tap link" href="/learn">learning path</Link> or open any entry in the <Link className="tap link" href="/library">library</Link>. Saved entries, notes, quiz results and lab runs will collect here.
           </p>
         </div>
       )}
@@ -104,7 +104,7 @@ export function Dashboard({ meta, paths, questionEntry }: { meta: Record<string,
           <ul className="mt-4 divide-y divide-rule border-y border-rule">
             {recs.map((r) => (
               <li key={r.slug} className="py-3">
-                <Link href={`/library/${r.slug}`} className="font-medium hover:text-accent-ink">
+                <Link href={`/library/${r.slug}`} className="tap font-medium hover:text-accent-ink">
                   {meta[r.slug]?.title ?? r.slug}
                 </Link>
                 <p className="text-xs text-ink-3">{r.reason}</p>
@@ -119,14 +119,14 @@ export function Dashboard({ meta, paths, questionEntry }: { meta: Record<string,
           <ul className="mt-4 space-y-2 text-sm">
             {dueCards > 0 && (
               <li>
-                <Link className="link" href="/practice/flashcards">
+                <Link className="tap link" href="/practice/flashcards">
                   {dueCards} flashcards due today
                 </Link>
               </li>
             )}
             {missed.map((slug) => (
               <li key={slug}>
-                <Link className="link" href={`/library/${slug}#practice`}>
+                <Link className="tap link" href={`/library/${slug}#practice`}>
                   {meta[slug].title}
                 </Link>{" "}
                 <span className="text-ink-3">— last quiz answer was wrong</span>
@@ -134,7 +134,7 @@ export function Dashboard({ meta, paths, questionEntry }: { meta: Record<string,
             ))}
             {staleCompleted.slice(0, 5).map((slug) => (
               <li key={slug}>
-                <Link className="link" href={`/library/${slug}#practice`}>
+                <Link className="tap link" href={`/library/${slug}#practice`}>
                   {meta[slug]?.title}
                 </Link>{" "}
                 <span className="text-ink-3">— completed over two weeks ago; test yourself again</span>
@@ -154,7 +154,7 @@ export function Dashboard({ meta, paths, questionEntry }: { meta: Record<string,
             const d = p.steps.filter((x) => s.progress[x]?.completedAt).length;
             return (
               <li key={p.id} className="flex items-baseline justify-between gap-4 border-b border-rule py-2 text-sm">
-                <Link href={`/learn/${p.id}`} className="hover:text-accent-ink">
+                <Link href={`/learn/${p.id}`} className="tap hover:text-accent-ink">
                   {p.title}
                 </Link>
                 <span className="formula tabular text-ink-3">
@@ -175,7 +175,7 @@ export function Dashboard({ meta, paths, questionEntry }: { meta: Record<string,
             <ul className="mt-4 space-y-2 text-sm">
               {bookmarks.map(([slug, b]) => (
                 <li key={slug} className="flex justify-between gap-4">
-                  <Link className="link" href={`/library/${slug}`}>
+                  <Link className="tap link" href={`/library/${slug}`}>
                     {meta[slug]?.title ?? slug}
                   </Link>
                   <span className="text-ink-3">{day(b.at)}</span>
@@ -194,7 +194,7 @@ export function Dashboard({ meta, paths, questionEntry }: { meta: Record<string,
             <ul className="mt-4 space-y-2 text-sm">
               {s.history.slice(0, 10).map((h) => (
                 <li key={h.slug} className="flex justify-between gap-4">
-                  <Link className="link" href={`/library/${h.slug}`}>
+                  <Link className="tap link" href={`/library/${h.slug}`}>
                     {meta[h.slug]?.title ?? h.slug}
                   </Link>
                   <span className="text-ink-3">{day(h.at)}</span>
@@ -223,7 +223,7 @@ export function Dashboard({ meta, paths, questionEntry }: { meta: Record<string,
             {notes.map(([slug, n]) => (
               <li key={slug} className="py-4">
                 <div className="flex justify-between gap-4">
-                  <Link className="link font-medium" href={`/library/${slug}#notes`}>
+                  <Link className="tap link font-medium" href={`/library/${slug}#notes`}>
                     {meta[slug]?.title ?? slug}
                   </Link>
                   <span className="text-xs text-ink-3">{day(n.updatedAt)}</span>
@@ -280,7 +280,7 @@ export function Dashboard({ meta, paths, questionEntry }: { meta: Record<string,
                       ? c.slugs.map((slug, i) => (
                           <span key={slug}>
                             {i > 0 && ", "}
-                            <Link className="link" href={`/library/${slug}`}>
+                            <Link className="tap link" href={`/library/${slug}`}>
                               {meta[slug]?.title ?? slug}
                             </Link>
                           </span>
@@ -304,7 +304,7 @@ export function Dashboard({ meta, paths, questionEntry }: { meta: Record<string,
           <ul className="mt-4 space-y-2 text-sm">
             {Object.entries(s.labRuns).map(([lab, runs]) => (
               <li key={lab}>
-                <Link className="link" href={`/labs/${lab}`}>
+                <Link className="tap link" href={`/labs/${lab}`}>
                   {lab.replace(/-lab$/, "").replace(/-/g, " ")}
                 </Link>
                 <span className="formula ml-3 text-xs text-ink-2">

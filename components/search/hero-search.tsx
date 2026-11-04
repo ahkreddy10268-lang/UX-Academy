@@ -84,7 +84,7 @@ export function HeroSearch({ placeholder = "Search 45 concepts, formulas and met
       <p className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-ink-3">
         <span>Try</span>
         {SUGGESTIONS.map((s) => (
-          <Link key={s} href={`/library?q=${encodeURIComponent(s)}`} className="text-ink-2 underline decoration-rule-strong underline-offset-4 hover:text-ink hover:decoration-ink-3">
+          <Link key={s} href={`/library?q=${encodeURIComponent(s)}`} className="tap text-ink-2 underline decoration-rule-strong underline-offset-4 hover:text-ink hover:decoration-ink-3">
             {s}
           </Link>
         ))}

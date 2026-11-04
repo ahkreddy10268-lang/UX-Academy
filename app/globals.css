@@ -600,8 +600,13 @@ dialog::backdrop { background: var(--overlay); }
 /* Diagram textures — a pattern, not a colour, so a segment is distinguishable without hue (WCAG 1.4.1). */
 .hatch-extraneous { background-color: var(--sunken); background-image: repeating-linear-gradient(135deg, transparent 0 6px, var(--rule-strong) 6px 8px); }
 
-/* Range inputs: visible track and thumb in both themes */
-input[type="range"] { accent-color: var(--accent); }
+/* Range inputs: visible track and thumb in both themes; ≥ 24px tall target (WCAG 2.5.8) */
+input[type="range"] { accent-color: var(--accent); min-height: 24px; }
+
+/* Target size (WCAG 2.2 SC 2.5.8): standalone links and toggles get at least a 24px-tall hit area
+   without changing their visual weight. Inline links inside sentences are exempt and keep the text flow. */
+.tap { display: inline-flex; align-items: center; min-height: 24px; }
+summary { min-height: 24px; padding-block: 2px; }
 
 /* Grids without an explicit template default to one shrinkable column, so long
    unbreakable content (formulas, search fields, chip rows) can never widen the

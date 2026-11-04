@@ -39,7 +39,7 @@ export function CurriculumMap({ levels }: { levels: MapLevel[] }) {
                     )}
                     {state === "started" && <span className="h-2 w-2 rounded-full bg-accent" />}
                   </span>
-                  <Link href={l.href} className="min-w-0 truncate text-sm text-ink hover:text-accent-ink hover:underline">
+                  <Link href={l.href} className="block min-h-6 min-w-0 truncate text-sm leading-6 text-ink hover:text-accent-ink hover:underline">
                     {l.title}
                   </Link>
                   <span className="sr-only">{state === "done" ? "(completed)" : state === "started" ? "(started)" : "(not started)"}</span>
@@ -51,7 +51,7 @@ export function CurriculumMap({ levels }: { levels: MapLevel[] }) {
                 <span aria-hidden className="relative z-10 grid h-5 w-5 shrink-0 place-items-center rounded-md border-2 border-accent bg-accent-wash text-[10px] font-bold text-accent-ink">
                   ✓
                 </span>
-                <Link href={lv.testHref} className="text-sm font-medium text-accent-ink hover:underline">
+                <Link href={lv.testHref} className="tap text-sm font-medium text-accent-ink hover:underline">
                   Level {i + 1} test
                 </Link>
               </li>

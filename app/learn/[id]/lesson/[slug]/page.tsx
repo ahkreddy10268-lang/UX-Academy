@@ -59,7 +59,11 @@ export default async function LessonPage({ params }: PageProps<"/learn/[id]/less
         <ol className="mt-6 flex gap-1" aria-label={`Lesson ${index + 1} of ${lessons.length}`}>
           {lessons.map((l, i) => (
             <li key={l.slug} className="flex-1">
-              <Link href={`/learn/${id}/lesson/${l.slug}`} aria-current={i === index ? "step" : undefined} aria-label={`Lesson ${i + 1}: ${entryBySlug.get(l.slug)!.title}`} className={`block h-1.5 rounded-full ${i === index ? "bg-c" : i < index ? "bg-ink-3" : "bg-rule"}`} />
+              <Link href={`/learn/${id}/lesson/${l.slug}`} aria-current={i === index ? "step" : undefined} aria-label={`Lesson ${i + 1}: ${entryBySlug.get(l.slug)!.title}`} className="group hidden py-[9px] sm:block">
+                <span aria-hidden className={`block h-1.5 rounded-full group-hover:opacity-80 ${i === index ? "bg-c" : i < index ? "bg-ink-3" : "bg-rule"}`} />
+              </Link>
+              {/* On phones the segments are too narrow to tap precisely (WCAG 2.5.8), so the rail is a static bar; Previous/Next below navigate. */}
+              <span aria-hidden className={`block h-1.5 rounded-full sm:hidden ${i === index ? "bg-c" : i < index ? "bg-ink-3" : "bg-rule"}`} />
             </li>
           ))}
         </ol>
@@ -165,7 +169,7 @@ export default async function LessonPage({ params }: PageProps<"/learn/[id]/less
 
         <section aria-label="Finish the lesson" className="flex flex-wrap items-center justify-between gap-4 border-t border-rule pt-6">
           <EntryActions slug={e.slug} cards={e.flashcards.map((c) => ({ id: c.id }))} />
-          <Link href={`/library/${e.slug}`} className="link text-sm">
+          <Link href={`/library/${e.slug}`} className="link tap text-sm">
             Read the full entry, evidence and references →
           </Link>
         </section>

@@ -112,7 +112,7 @@ export default async function PathPage({ params }: PageProps<"/learn/[id]">) {
                             return (
                               <li key={slug} className="flex items-center gap-4 border-t border-dashed border-rule px-5 py-3 text-sm text-ink-3">
                                 <span className="w-12 shrink-0" />
-                                <Link href={`/library/${slug}`} className="flex-1 underline decoration-dotted underline-offset-4 hover:text-ink">
+                                <Link href={`/library/${slug}`} className="tap flex-1 underline decoration-dotted underline-offset-4 hover:text-ink">
                                   {t?.title}
                                 </Link>
                                 <span className="text-xs">planned · not yet a lesson</span>

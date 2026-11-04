@@ -1,5 +1,37 @@
 # Visual QA log
 
+## 2026-11-04 — session 5: new visuals, colour and Jakob models, keyboard and device testing
+
+### Method
+Production build (`next build` → `next start`), Playwright 1.63 Chromium.
+- Each new figure was screenshotted on its own at 1440 px (light) and 390 px (dark): UCD cycle, Gestalt annotated interface and spacing comparison, Heuristic Evaluation flow and decision tree. The colour explorer was captured at blue (H 240, S 100, V 100), and the Jakob lab after a completed run.
+- **Keyboard and accessibility tree** (`tests/browser/keyboard.cjs`, 43 checks): skip link, sidebar Tab order and focus outline, collapse by Enter, tooltip on focus, search by `/` + arrows + Enter, diagram text version by Enter, explorer sliders by Home/End, library toggles and selects, a Jakob trial by keyboard, and the mobile drawer (focus moves in, never reaches content behind, Escape returns focus). It also checks structure on 10 pages (one main, one h1, no heading skips, named images, buttons and nav landmarks) and an aria snapshot of a process figure.
+- **Device emulation** (`tests/browser/devices.cjs`, 137 checks): iPhone SE, iPhone 13, Pixel 7, Galaxy S9+, iPad Mini and iPad Pro 11 (landscape), across 19 pages. It covers overflow, tap to open the drawer, tap on a slider, and WCAG 2.2 SC 2.5.8 target size (≥ 24 × 24 px; inline links exempt).
+
+### Problems found and fixed
+| Found | How | Fix |
+|---|---|---|
+| Collapsed-sidebar tooltip inside the link would double its accessible name ("Labs Labs") when shown | keyboard/AT-tree suite | Tooltip `aria-hidden` (D-042) |
+| Standalone links, `<summary>` toggles, range inputs, checkbox labels and a "Show data" button under 24 px tall | device suite (target size) | `.tap` utility, base styles for range/summary, `min-h-6` labels (D-041) |
+| 15-lesson progress rail: 22 px-wide link segments on phones | device suite | Static bar below 640 px; Previous/Next navigate |
+| Colour explorer hue strip: `<ul role="img">` with list items | axe (serious, 2 pages × 2 themes) | `div role="img"` |
+| Colour explorer contrast captions illegible inside failing swatches | screenshot review | Captions below the swatch |
+| UCD hub squeezed into a narrow pill; Gestalt markers covering labels | screenshot review | Wider hub column; markers in a reserved gutter |
+| Jakob and steering tables: cramped columns | screenshot review | Cell padding, minimum table width |
+| CLT model implied unchanged extraneous load for experts; Fitts anatomy stated the intercept's meaning as fact | accuracy review | Expertise-reversal note (+ Kalyuga et al. 2003); "often attributed to" |
+
+### Automated results (final build)
+- `npm run check`: **160/160 unit tests**, typecheck and lint clean. `npm run build`: 813 pages.
+- Crawl of 32 routes: all 200 except `/nope` (404 as intended).
+- `e2e.cjs` **42/42** · `e2e-redesign.cjs` **66/66** (new: seven concepts' figure counts, library diagram filter = 7, colour explorer values and reset, a full 18-trial Jakob run with exactly one target per trial, 390 px overflow on 15 pages) · `keyboard.cjs` **43/43** · `devices.cjs` **137/137**.
+- axe-core WCAG 2.2 AA: 80 pages (34 templates + 46 entries) × light/dark = **160 audits, 0 violations** (after the fix above).
+
+### Could not be tested
+- **Screen readers.** VoiceOver, NVDA, JAWS and TalkBack are not available in this Linux cloud container. The keyboard suite checks what Chromium's accessibility tree exposes (roles, names, structure, live regions); it does not show how any screen reader announces or navigates the pages.
+- **Real devices.** No physical phones, tablets or desktops are attached. The device suite uses Playwright emulation (viewport, DPR, touch events, mobile UA) in Chromium only. It does not cover Safari/WebKit rendering, real touch latency, OS font scaling, browser chrome or performance.
+- **Human timing.** The Jakob and steering labs were driven by scripts, which shows the mechanics work; the times recorded are machine times, not evidence about people.
+
+
 ## 2026-11-03 — v4 Visual Intelligence
 
 ### Method
