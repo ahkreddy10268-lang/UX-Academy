@@ -9,7 +9,7 @@
 | Published entries with a plate | 48 / 48 |
 | Subject plates | 20 / 20 |
 | Animated plates | 12 |
-| Plates with an interactive explorer | 8 |
+| Plates with an interactive explorer | 9 |
 
 | Slug | Kind | Animated | Explorer | What it shows |
 |---|---|---|---|---|
@@ -55,7 +55,7 @@
 | `user-centred-design` | entry | — | — | Four activities sit on a square loop around a central group of users: understand the context of use, specify user requirements, produce design solutions, and evaluate against requirements. Arrows run clockwise, a dashed arrow returns from evaluation to iterate, and an exit arrow leaves the loop once requirements are met. |
 | `human-centred-design` | planned topic | — | — | Three nested rings surround one person: the users, the wider group of people affected by the system, and the context of use with its tasks and environment. A dashed spiral starts outside the rings and winds inwards through three evaluation points, showing a design brought closer to fit with each iteration rather than in one step. |
 | `user-experience` | entry | — | — | A timeline runs from before use through during use to after use. A line traces how the person's response rises and dips across the three phases, ending in a remembered judgement. Under the during-use phase, a product window sits above two bars labelled pragmatic and hedonic, the task-related and non-task qualities that both feed the experience. |
-| `human-computer-interaction` | entry | — | — | A person on the left and a screen device on the right exchange arrows: the person's action goes to the device and its feedback comes back. A dashed boundary around both marks the context of use. Beneath them three small boxes labelled study, design and evaluate connect upward to the exchange, the three strands of the discipline. |
+| `human-computer-interaction` | entry | — | hci-methods | A person on the left and a screen device on the right exchange arrows: the person's action goes to the device and its feedback comes back. A dashed boundary around both marks the context of use. Beneath them three small boxes labelled study, design and evaluate connect upward to the exchange, the three strands of the discipline. |
 | `information-architecture` | entry | — | — | Content tiles are sorted into three labelled groups, showing organisation and labelling. A dotted path runs from a start point through one group label to a highlighted tile, showing navigation that follows the label's scent. A magnifying lens over the same tile shows search reaching it directly. |
 | `jobs-to-be-done` | entry | — | — | A thick progress arrow runs from a hatched box on the left, the struggling current situation, to a solid box on the right, the desired outcome. A product sits on the arrow, hired to make that progress. Beneath, three strands for the functional, emotional and social dimensions of the job converge on the outcome. |
 | `heart-framework` | entry | — | — | A five-column grid headed H, E, A, R and T for happiness, engagement, adoption, retention and task success. Each column has three rows: a goal, the signal that shows progress toward it, and the metric that tracks the signal. One column is highlighted with arrows from goal to signal to metric. |

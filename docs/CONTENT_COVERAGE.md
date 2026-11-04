@@ -15,15 +15,15 @@
 | Planned, no content | 482 |
 | Domains with no published entry | 7 |
 | Formulas with calculators | 25 |
-| Quiz questions | 173 |
-| Exercises | 133 |
-| Flashcards | 138 |
+| Quiz questions | 179 |
+| Exercises | 137 |
+| Flashcards | 142 |
 | Labs | 15 |
 | Workshops | 11 |
 | Comparisons | 10 |
 | Learning paths | 16 |
 | Glossary terms | 114 |
-| Sources | 262 |
+| Sources | 279 |
 
 ## By domain
 
@@ -125,7 +125,7 @@ Every topic has exactly one status, derived from the content: an entry's own sta
 
 | Domain | Topics | Published | Research done | Explanation | Evidence | Practice | Visual | Editorial |
 |---|---:|---:|---:|---|---|---|---|---|
-| UX & UI Fundamentals | 25 | 4 | 4 | 4 / 4 | 4 / 4 | 3 / 4 | 0 / 4 | 4 / 4 |
+| UX & UI Fundamentals | 25 | 4 | 4 | 4 / 4 | 4 / 4 | 3 / 4 | 1 / 4 | 4 / 4 |
 | UX Laws & Cognitive Effects | 46 | 13 | 13 | 13 / 13 | 13 / 13 | 8 / 13 | 2 / 13 | 12 / 13 |
 | HCI & Psychology | 59 | 7 | 7 | 7 / 7 | 7 / 7 | 4 / 7 | 1 / 7 | 7 / 7 |
 | Principles & Heuristics | 13 | 2 | 2 | 2 / 2 | 2 / 2 | 2 / 2 | 0 / 2 | 1 / 2 |
@@ -150,7 +150,7 @@ Every topic has exactly one status, derived from the content: an entry's own sta
 
 | Domain | Subcategory | Topics | Published | Explanation | Evidence | Practice | Visual | Editorial |
 |---|---|---:|---:|---|---|---|---|---|
-| UX & UI Fundamentals | Core concepts | 13 | 3 | 3 / 3 | 3 / 3 | 3 / 3 | 0 / 3 | 3 / 3 |
+| UX & UI Fundamentals | Core concepts | 13 | 3 | 3 / 3 | 3 / 3 | 3 / 3 | 1 / 3 | 3 / 3 |
 | UX & UI Fundamentals | Design approaches | 7 | 1 | 1 / 1 | 1 / 1 | 0 / 1 | 0 / 1 | 1 / 1 |
 | UX & UI Fundamentals | History & responsibility | 5 | 0 | — | — | — | — | — |
 | UX Laws & Cognitive Effects | Human performance laws & models | 6 | 3 | 3 / 3 | 3 / 3 | 2 / 3 | 1 / 3 | 3 / 3 |
@@ -228,7 +228,7 @@ A path is complete only when every planned step is a published lesson. Planned s
 | UI Design Fundamentals | 6 | 7 | 46% |
 | Product Design | 8 | 6 | 57% |
 | Interaction Design | 9 | 5 | 64% |
-| HCI Fundamentals | 10 | 6 | 63% |
+| HCI Fundamentals | 14 | 12 | 54% |
 | Cognitive Psychology for Designers | 10 | 3 | 77% |
 | UX Research | 5 | 11 | 31% |
 | Usability Engineering | 11 | 1 | 92% |
@@ -279,7 +279,7 @@ Five separate dimensions, rated basic / developing / complete from the content (
 | Explanation | 48 | 0 | 0 |
 | Evidence | 46 | 2 | 0 |
 | Practice | 36 | 12 | 0 |
-| Visual | 3 | 28 | 17 |
+| Visual | 4 | 27 | 17 |
 | Editorial | 44 | 4 | 0 |
 
 ## Published entries
@@ -304,7 +304,7 @@ Five separate dimensions, rated basic / developing / complete from the content (
 | HEART Framework | Framework | Peer-reviewed research | complete | developing | complete | basic | complete | 3 | 3 | — | — |
 | Heuristic Evaluation | Method | Peer-reviewed research | complete | complete | complete | developing | complete | 11 | 4 | — | — |
 | Hick-Hyman Law | Law | Original empirical research | complete | complete | complete | developing | complete | 6 | 4 | hick-hyman | hick-lab |
-| Human-Computer Interaction (HCI) | Discipline | Established theoretical model | complete | complete | complete | developing | complete | 9 | 7 | — | — |
+| Human-Computer Interaction (HCI) | Discipline | Professional guideline | complete | complete | complete | complete | complete | 33 | 13 | — | — |
 | Information Architecture | Discipline | Practitioner recommendation | complete | complete | complete | developing | complete | 4 | 4 | — | — |
 | Jakob's Law | Principle | Practitioner recommendation | complete | complete | developing | developing | complete | 4 | 3 | — | jakob-lab |
 | Jobs To Be Done | Framework | Practitioner recommendation | complete | complete | complete | basic | complete | 3 | 4 | — | — |

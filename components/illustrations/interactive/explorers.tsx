@@ -12,6 +12,7 @@ import { fittsId, hickInformation, hickInformationEqual, widthAlongApproach } fr
 import { contrastRatio, hsvToRgb, relativeLuminance, toHex } from "@/lib/formulas/visual";
 import type { ExplorerId } from "../illustration-types";
 import { C, Cursor, Dim, Label, STROKE } from "../primitives";
+import { HciMethodExplorer } from "./hci-method-explorer";
 
 function Slider({ label, value, min, max, step = 1, onChange, unit = "", format }: { label: string; value: number; min: number; max: number; step?: number; onChange: (v: number) => void; unit?: string; format?: (v: number) => string }) {
   const id = useId();
@@ -538,6 +539,7 @@ const EXPLORERS: Record<ExplorerId, () => React.JSX.Element> = {
   "cognitive-load": CognitiveLoadExplorer,
   signifiers: SignifiersExplorer,
   colour: ColourExplorer,
+  "hci-methods": HciMethodExplorer,
 };
 
 export function ConceptExplorer({ id }: { id: ExplorerId }) {

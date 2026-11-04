@@ -535,6 +535,7 @@ const userExperience: IllustrationEntry = {
 /** Human-computer interaction: a person and a system exchanging action and feedback inside a context, studied through three strands. */
 const humanComputerInteraction: IllustrationEntry = {
   slug: "human-computer-interaction",
+  explorer: "hci-methods",
   title: "Human-computer interaction plate",
   description:
     "A person on the left and a screen device on the right exchange arrows: the person's action goes to the device and its feedback comes back. A dashed boundary around both marks the context of use. Beneath them three small boxes labelled study, design and evaluate connect upward to the exchange, the three strands of the discipline.",

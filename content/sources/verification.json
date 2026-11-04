@@ -49,6 +49,14 @@
     "registeredContainer": "Proceedings of the SIGCHI Conference on Human Factors in Computing Systems",
     "similarity": 1
   },
+  "amershi-et-al-2019": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-04",
+    "registeredTitle": "Guidelines for Human-AI Interaction",
+    "registeredYear": 2019,
+    "registeredContainer": "Proceedings of the 2019 CHI Conference on Human Factors in Computing Systems",
+    "similarity": 1
+  },
   "apple-hig": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
@@ -249,6 +257,19 @@
     "registeredContainer": "Communications of the ACM",
     "similarity": 1
   },
+  "carroll-hci-brief-intro": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-04",
+    "httpStatus": 200
+  },
+  "carter-mankoff-2005": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-04",
+    "registeredTitle": "When participants do the capturing: the role of media in diary studies",
+    "registeredYear": 2005,
+    "registeredContainer": "Proceedings of the SIGCHI Conference on Human Factors in Computing Systems",
+    "similarity": 1
+  },
   "chandler-sweller-1991": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",
@@ -365,6 +386,19 @@
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
     "httpStatus": 200
+  },
+  "engelbart-1962": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-04",
+    "httpStatus": 200
+  },
+  "engelbart-english-1968": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-04",
+    "registeredTitle": "A research center for augmenting human intellect",
+    "registeredYear": 1968,
+    "registeredContainer": "Proceedings of the December 9-11, 1968, fall joint computer conference, part I on - AFIPS '68 (Fall, part I)",
+    "similarity": 1
   },
   "etsi-en-301-549-v321": {
     "status": "url-reachable",
@@ -512,6 +546,14 @@
     "registeredContainer": "European Journal of Epidemiology",
     "similarity": 1
   },
+  "grudin-1994": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-04",
+    "registeredTitle": "Computer-supported cooperative work: history and focus",
+    "registeredYear": 1994,
+    "registeredContainer": "Computer",
+    "similarity": 1
+  },
   "grudin-2005": {
     "status": "doi-verified",
     "checkedAt": "2026-11-04",
@@ -579,6 +621,11 @@
   "hcibib": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "hcii-cmu-history": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-04",
     "httpStatus": 200
   },
   "healey-enns-2012": {
@@ -682,6 +729,14 @@
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
     "httpStatus": 200
+  },
+  "ishii-ullmer-1997": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-04",
+    "registeredTitle": "Tangible bits: towards seamless interfaces between people, bits and atoms",
+    "registeredYear": 1997,
+    "registeredContainer": "Proceedings of the ACM SIGCHI Conference on Human factors in computing systems",
+    "similarity": 1
   },
   "iso-9241-11-2018": {
     "status": "url-unreachable",
@@ -1038,6 +1093,14 @@
     "checkedAt": "2026-11-03",
     "httpStatus": 200
   },
+  "muller-kuhn-1993": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-04",
+    "registeredTitle": "Participatory design",
+    "registeredYear": 1993,
+    "registeredContainer": "Communications of the ACM",
+    "similarity": 1
+  },
   "murdock-1962": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",
@@ -1052,6 +1115,14 @@
     "registeredTitle": "The importance of percent-done progress indicators for computer-human interfaces",
     "registeredYear": 1985,
     "registeredContainer": "Proceedings of the SIGCHI conference on Human factors in computing systems  - CHI '85",
+    "similarity": 1
+  },
+  "myers-1998": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-04",
+    "registeredTitle": "A brief history of human-computer interaction technology",
+    "registeredYear": 1998,
+    "registeredContainer": "Interactions",
     "similarity": 1
   },
   "nasa-tlx-site": {
@@ -1408,6 +1479,11 @@
     "status": "url-unreachable",
     "checkedAt": "2026-11-03",
     "httpStatus": 503
+  },
+  "sigchi-about": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-04",
+    "httpStatus": 200
   },
   "sonderegger-sauer-2010": {
     "status": "doi-verified",

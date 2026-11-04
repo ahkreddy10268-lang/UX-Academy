@@ -142,3 +142,6 @@ Screenshots reviewed (light + dark, 1440 and 390): catalogue, path, lesson, leve
 
 ## Session 9 — Human-Computer Interaction entry, coverage page
 Screenshots reviewed (light/dark, 1440 and 390): library entry (plate, "Three lenses" figure), lesson, path, `/coverage`; overflow 0 px on all. A plate label contrast issue (label on solid fill in dark) was fixed by using the soft fill. Browser suites on the production build: e2e 42/42, e2e-redesign 66/66 (the "concepts with a detailed diagram" count rose 7 → 8 with this entry; the test was updated, not loosened), keyboard 43/43, devices 137/137. Not tested: axe (not available offline), real devices, screen readers.
+
+## Session 10 — HCI entry extension
+Reviewed light/dark at 1440 and 390 px: the timeline, interaction model, method selector (and spot-checked the other figures); overflow 0 px on the library entry, lesson, path and catalogue. Browser suites on the production build: e2e 42/42, e2e-redesign 66/66, keyboard 45/45 (now includes the HCI entry), devices 149/149 (now includes the HCI entry and path, with the 24 px target check on the new radio options). Unit tests 176. Not tested: axe (not available offline), real devices, screen readers. The sticky top bar overlaps long full-page element screenshots; that is a capture artefact, not a layout fault.

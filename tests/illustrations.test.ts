@@ -24,7 +24,7 @@ describe("illustration registry", () => {
     }
   });
   it("uses explorers only from the implemented set", () => {
-    const ok = new Set(["fitts", "hick", "peak-end", "chunking", "gestalt", "cognitive-load", "signifiers", "colour"]);
+    const ok = new Set(["fitts", "hick", "peak-end", "chunking", "gestalt", "cognitive-load", "signifiers", "colour", "hci-methods"]);
     for (const p of illustrations.values()) if (p.explorer) expect(ok.has(p.explorer), p.slug).toBe(true);
   });
 });

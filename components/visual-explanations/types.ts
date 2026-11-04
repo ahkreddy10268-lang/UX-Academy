@@ -16,7 +16,8 @@ export type VisualType =
   | "annotated-interface"
   | "journey"
   | "decision"
-  | "hierarchy";
+  | "hierarchy"
+  | "timeline";
 
 /** 1 quick visual · 2 detailed explanation · 3 interactive model (spec Part 06). */
 export type VisualLevel = 1 | 2 | 3;
@@ -53,4 +54,5 @@ export const VISUAL_TYPE_LABEL: Record<VisualType, string> = {
   journey: "Journey map",
   decision: "Decision tree",
   hierarchy: "Hierarchy diagram",
+  timeline: "Timeline",
 };

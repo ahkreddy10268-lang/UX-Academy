@@ -168,3 +168,14 @@ Next: owner review, authorise commit/push; Vercel still blocked (see Session 7);
 1. Write `ui-design` (Tier 1, docs/CONTENT_AUDIT.md §6): sources Norman 2013 and Shneiderman 2016 (both in the registry), plus any bibliographic source verified first; L2 *annotated interface*; critique exercise on a real screen. Record it in `content/topic-ledger.ts` as `research-pending` the moment sources are gathered.
 2. Then `interaction-design-discipline`, `accessibility-concept`, `inclusive-design`, `design-thinking`, `human-centred-design` (rest of Tier 1), and the level-matched practice gaps listed under Session 8.
 3. Remaining Tier-1 paths: add each new lesson to its path as it is published; identify prerequisites that are still planned.
+
+## Session 10 — Human-Computer Interaction audit and extension (uncommitted until authorised)
+
+**Audit finding.** The first version defined HCI correctly and cited it carefully, but it was thin on history, contributing disciplines, the human and technology sides, research methods and contemporary issues; carried an unnecessary `usability` prerequisite that contradicted the path order; labelled a discipline `established-theory`; had one L2 figure; and its path leaned on performance models.
+
+**Changed (D-059…D-062).** Entry deepened in place at all three levels (history separated into events and interpretations, nine contributing disciplines, human and technology sides, eight method families, contemporary human-AI questions), 13 quiz questions across all levels (4 / 4 / 5 beginner / intermediate / advanced) and 7 exercises, 8 flashcards, 33 references, 28 explained relations to canonical slugs. 17 new sources: 11 DOI-verified or URL-reachable; 6 books are bibliographic (ISBN) and are flagged as such. `hci-fundamentals` rebuilt in four stages (same id). Six L2 figures + one L3 method selector. `tests/hci.test.ts` added.
+
+**Not done / honest limits.** `history-of-hci`, `goms`, `seven-stages-of-action`, `human-centred-design`, `contextual-inquiry`, `participatory-design`, `distributed-cognition`, `activity-theory`, `situated-action`, `human-ai-interaction`, `prototyping` and the other path steps remain **planned**: the path shows them as in development, so the path is not yet a complete course (see path completeness in docs/CONTENT_COVERAGE.md). The CMU HCII page and Carroll's overview were read through a summarising tool, so statements attributed to them are limited to what that summary reported and are marked as one source's account. Engelbart 1962 was checked only as a reachable URL; its content is not described beyond its title. Books were not machine-verifiable. The paradigm and system explorers were not built (D-062). Axe, real devices and screen readers were not run.
+
+## Next task (precise)
+`ui-design` (Tier 1), then the dependent planned steps of `hci-fundamentals` in path order: `history-of-hci`, `seven-stages-of-action`, `human-centred-design`, `contextual-inquiry`, `goms`.

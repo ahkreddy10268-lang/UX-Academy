@@ -9,7 +9,7 @@ const BASE = process.env.BASE_URL ?? 'http://localhost:3100';
 const results = [];
 const check = (name, ok, detail = '') => results.push({ name, ok: !!ok, detail });
 const DEVICES = ['iPhone SE', 'iPhone 13', 'Pixel 7', 'Galaxy S9+', 'iPad Mini', 'iPad Pro 11 landscape'];
-const PAGES = ['/', '/library', '/library/fitts-law', '/library/double-diamond', '/library/heuristic-evaluation', '/library/gestalt-principles', '/learn/ux-fundamentals', '/learn/ux-fundamentals/lesson/usability', '/formulas', '/formulas/fitts-shannon', '/labs', '/labs/colour-lab', '/labs/jakob-lab', '/labs/steering-lab', '/graph', '/glossary', '/practice', '/me', '/sources'];
+const PAGES = ['/', '/library', '/library/fitts-law', '/library/double-diamond', '/library/heuristic-evaluation', '/library/gestalt-principles', '/library/human-computer-interaction', '/learn/hci-fundamentals', '/learn/ux-fundamentals', '/learn/ux-fundamentals/lesson/usability', '/formulas', '/formulas/fitts-shannon', '/labs', '/labs/colour-lab', '/labs/jakob-lab', '/labs/steering-lab', '/graph', '/glossary', '/practice', '/me', '/sources'];
 
 (async () => {
   const b = await chromium.launch();

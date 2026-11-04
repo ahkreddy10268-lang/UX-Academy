@@ -50,7 +50,7 @@ export default defineSources([
   site("govuk-design-system", "GOV.UK Design System", "Government Digital Service (UK)", "https://design-system.service.gov.uk/", 2, "official-documentation", ["design system", "patterns", "accessibility", "forms"]),
   site("figma-learn", "Figma Learn", "Figma", "https://help.figma.com/", 3, "official-documentation", ["tooling", "variables", "components"]),
   site("google-pair-guidebook", "People + AI Guidebook", "Google PAIR", "https://pair.withgoogle.com/guidebook/", 2, "official-documentation", ["human-AI interaction", "trust", "explainability"]),
-  site("ms-hai-guidelines", "Guidelines for Human-AI Interaction", "Microsoft Research", "https://www.microsoft.com/en-us/research/project/guidelines-for-human-ai-interaction/", 2, "official-documentation", ["human-AI interaction"]),
+  site("ms-hai-guidelines", "Guidelines for Human-AI Interaction: project page", "Microsoft Research", "https://www.microsoft.com/en-us/research/project/guidelines-for-human-ai-interaction/", 2, "official-documentation", ["human-AI interaction"]),
   site("google-scholar", "Google Scholar", "Google", "https://scholar.google.com/", 4, "website", ["discovery"], "Discovery tool only; never cite as a source."),
   site("semantic-scholar", "Semantic Scholar", "Allen Institute for AI", "https://www.semanticscholar.org/", 4, "website", ["discovery"], "Discovery tool only; never cite as a source."),
   site("crossref", "Crossref", "Crossref", "https://www.crossref.org/", 4, "website", ["DOI metadata"], "Used by scripts/verify-sources.ts to verify DOIs."),

@@ -42,7 +42,7 @@ SVG primitives for drawn shapes (arrows, cursors, dimension lines, labels) are *
 |---|---|
 | `id` | Stable, `slug.purpose` |
 | `slug` | The entry it explains (must be published) |
-| `type` | Visual strategy, chosen by what the knowledge is: `formula`, `process`, `conceptual`, `system`, `hierarchy`, `comparison`, `annotated-interface`, `journey`, `decision`, `isometric` |
+| `type` | Visual strategy, chosen by what the knowledge is: `formula`, `process`, `conceptual`, `system`, `hierarchy`, `comparison`, `annotated-interface`, `journey`, `decision`, `isometric`, `timeline` (added in session 9 for the HCI landmarks figure: dated items marked System / Research / Framing, with sources) |
 | `level` | 1, 2 or 3 |
 | `title`, `objective`, `takeaway` | "What am I looking at?" and "What should I understand?" |
 | `summary[]` | The diagram read in order. It is the screen-reader text version, the "Read this diagram as text" disclosure, and the fallback on any device |

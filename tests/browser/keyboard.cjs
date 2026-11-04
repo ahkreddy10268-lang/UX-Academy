@@ -142,7 +142,7 @@ async function tabUntil(p, pred, max = 80) {
   await m.close();
 
   // 10. Accessibility-tree structure on key pages
-  const pages = ['/', '/library', '/library/fitts-law', '/library/double-diamond', '/library/heuristic-evaluation', '/learn/ux-fundamentals', '/formulas/fitts-shannon', '/labs/jakob-lab', '/labs/colour-lab', '/me'];
+  const pages = ['/', '/library', '/library/human-computer-interaction', '/library/fitts-law', '/library/double-diamond', '/library/heuristic-evaluation', '/learn/ux-fundamentals', '/formulas/fitts-shannon', '/labs/jakob-lab', '/labs/colour-lab', '/me'];
   for (const url of pages) {
     await p.goto(BASE + url, { waitUntil: 'networkidle' });
     const s = await p.evaluate(() => {
