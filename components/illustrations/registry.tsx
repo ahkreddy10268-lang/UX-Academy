@@ -5,11 +5,11 @@
  * authored in parallel without merge conflicts.
  */
 import { corePlates } from "./concepts/core-plates";
-import { fittsLaw } from "./concepts/fitts-law";
+import { fittsPlate } from "./concepts/editorial-plates";
 import type { IllustrationEntry } from "./illustration-types";
 import { fragments } from "./registry/_fragments";
 
-const all: IllustrationEntry[] = [fittsLaw, ...corePlates, ...fragments];
+const all: IllustrationEntry[] = [fittsPlate, ...corePlates, ...fragments];
 
 const map = new Map<string, IllustrationEntry>();
 for (const e of all) {

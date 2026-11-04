@@ -1,9 +1,10 @@
 /** Plates: research-metrics. Authored to docs/ILLUSTRATION_SYSTEM.md rules. */
 import type { ReactNode } from "react";
 import { nasaTlxRaw, nps, susScore } from "../../../lib/formulas/questionnaires";
-import { problemDiscovery, taskSuccess } from "../../../lib/formulas/stats";
+import { taskSuccess } from "../../../lib/formulas/stats";
 import type { IllustrationEntry } from "../illustration-types";
-import { Arrow, Box, C, Cursor, HatchDefs, Label, Lines, Node, STROKE, Window } from "../primitives";
+import { usabilityPlate } from "./editorial-plates";
+import { Arrow, Box, C, HatchDefs, Label, Lines, Node, STROKE, Window } from "../primitives";
 
 /** Deterministic pseudo-random numbers so plates are stable between renders. */
 function rng(seed: number) {
@@ -146,66 +147,6 @@ const cognitiveWalkthrough: IllustrationEntry = {
   },
 };
 
-/* ---------------- Usability testing: observe, and the problem-discovery curve ---------------- */
-const pd = (p: number) =>
-  "M" +
-  Array.from({ length: 16 }, (_, n) => `${200 + n * 11} ${(230 - (n === 0 ? 0 : problemDiscovery(p, n)) * 150).toFixed(1)}`).join(" L");
-
-const usabilityTesting: IllustrationEntry = {
-  slug: "usability-testing",
-  title: "Usability testing plate",
-  description:
-    "On the left, a participant works through a task on an interface while an observer watches. On the right, the problem-discovery curve 1 − (1 − p)ⁿ: for a problem met by 31% of users, the chance of seeing it at least once rises steeply and flattens, reaching about 84% by five participants. A second, lower curve for a rarer problem (p = 0.10) shows that rare problems need many more participants.",
-  Art: ({ detail }) => {
-    const p5 = problemDiscovery(0.31, 5);
-    const y5 = 230 - p5 * 150;
-    return (
-      <g>
-        <Window x={28} y={64} w={140} h={112}>
-          <Lines x={40} y={92} w={110} n={2} gap={10} />
-          <Box x={40} y={128} w={64} h={22} fill={C.base} r={3} />
-        </Window>
-        <Cursor x={96} y={140} />
-        <Node cx={56} cy={218} r={13} fill={C.base} width={STROKE.main} />
-        <Node cx={144} cy={218} r={13} fill={C.surface} width={STROKE.main} strokeDasharray="3 3" />
-        <Arrow x1={138} y1={204} x2={124} y2={182} dashed color={C.ink} />
-        <Label x={56} y={250} show={detail} size={10}>
-          participant
-        </Label>
-        <Label x={144} y={250} show={detail} size={10}>
-          observer
-        </Label>
-        {/* chart */}
-        <line x1={200} y1={230} x2={372} y2={230} stroke={C.line} strokeWidth={STROKE.fine} />
-        <line x1={200} y1={70} x2={200} y2={230} stroke={C.line} strokeWidth={STROKE.fine} />
-        <line x1={200} y1={80} x2={372} y2={80} stroke={C.mute} strokeWidth={STROKE.hair} strokeDasharray="2 4" />
-        <path d={pd(0.1)} fill="none" stroke={C.mute} strokeWidth={STROKE.fine} strokeDasharray="5 4" />
-        <path d={pd(0.31)} fill="none" stroke={C.line} strokeWidth={STROKE.main} strokeLinejoin="round" />
-        <line x1={255} y1={230} x2={255} y2={y5} stroke={C.ink} strokeWidth={STROKE.hair} strokeDasharray="3 3" />
-        <line x1={200} y1={y5} x2={255} y2={y5} stroke={C.ink} strokeWidth={STROKE.hair} strokeDasharray="3 3" />
-        <Node cx={255} cy={y5} r={6} fill={C.base} />
-        <Label x={255} y={246} show={detail} size={10}>
-          n = 5
-        </Label>
-        <Label x={196} y={y5 + 4} anchor="end" show={detail} size={10}>
-          {Math.round(p5 * 100)}%
-        </Label>
-        <Label x={196} y={84} anchor="end" show={detail} size={10} tone="mute">
-          100%
-        </Label>
-        <Label x={286} y={60} show={detail} tone="line">
-          1 − (1 − p)ⁿ, p = 0.31
-        </Label>
-        <Label x={368} y={206} anchor="end" show={detail} tone="mute" size={10}>
-          p = 0.10
-        </Label>
-        <Label x={372} y={262} anchor="end" show={detail} tone="mute" size={10}>
-          participants →
-        </Label>
-      </g>
-    );
-  },
-};
 
 /* ---------------- Card sorting: piles and a similarity matrix ---------------- */
 const groupOf = [0, 0, 0, 1, 1, 2];
@@ -636,7 +577,7 @@ const sampleSizeEstimation: IllustrationEntry = {
 const plates: IllustrationEntry[] = [
   heuristicEvaluation,
   cognitiveWalkthrough,
-  usabilityTesting,
+  usabilityPlate,
   cardSorting,
   systemUsabilityScale,
   nasaTlx,

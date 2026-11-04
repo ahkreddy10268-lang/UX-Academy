@@ -33,7 +33,7 @@ export function Plate({
   return (
     <svg
       viewBox={`0 0 ${W} ${H}`}
-      className={`block h-auto w-full ${palette ? `cat-${palette}` : ""} ${className}`}
+      className={`ill block h-auto w-full ${palette ? `cat-${palette}` : ""} ${className}`}
       role={decorative ? undefined : "img"}
       aria-hidden={decorative || undefined}
       aria-labelledby={decorative ? undefined : `${uid}-t ${uid}-d`}

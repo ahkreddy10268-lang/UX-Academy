@@ -8,8 +8,9 @@
  */
 import type { ReactNode } from "react";
 import type { Palette } from "@/lib/content/categories";
-import { DsScene, HciScene, ResearchScene, UiScene, UxScene } from "./art/scenes-a";
-import { AccessibilityScene, AiScene, CognitionScene, IaScene, InteractionScene, MetricsScene, ProductScene, ServiceScene, StrategyScene, UsabilityScene, VisualScene } from "./art/scenes-b";
+import { HciScene, ResearchScene, UiScene } from "./art/scenes-a";
+import { AiScene, IaScene, ProductScene, ServiceScene, VisualScene } from "./art/scenes-b";
+import { AccessibilityScene, CognitionScene, DsScene, InteractionScene, MetricsScene, StrategyScene, UsabilityScene, UxScene } from "./art/scenes-c";
 
 /** Palette each path is drawn in (presentation only). */
 export const PATH_PALETTE: Record<string, Palette> = {

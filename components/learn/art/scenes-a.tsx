@@ -1,5 +1,5 @@
 /** Path scenes, part A (the Phase 4 prototypes): UX Fundamentals, HCI, UI, Design Systems, UX Research. */
-import { Bars, Bubble, Canvas, Chair, Check, Clock, Desk, Figure, Flow, IsoBox, IsoFloor, IsoShadow, Laptop, Marker, Monitor, Phone, Pill, Plant, Scene, Sticky, V, Wall, Win, iso, plane } from "@/components/illustrations/system/kit";
+import { Bars, Bubble, Canvas, Chair, Clock, Desk, Figure, Flow, IsoBox, IsoFloor, IsoShadow, Laptop, Marker, Monitor, Phone, Pill, Plant, Scene, Sticky, V, Wall, Win, iso, plane } from "@/components/illustrations/system/kit";
 import { FIT } from "./fit";
 
 const at = (o: readonly [number, number], x: number, y: number, z = 0) => iso(o, x, y, z);
@@ -60,67 +60,6 @@ export function HciScene() {
         <Marker x={at(o, 0, 74, 50)[0] + 4} y={at(o, 0, 74, 50)[1] - 6} n={2} r={4.4} />
         <Marker x={at(o, 78, 38, 46)[0] + 6} y={at(o, 78, 38, 46)[1] - 6} n={3} r={4.4} />
         <Marker x={at(o, 104, 0, 52)[0] + 8} y={at(o, 104, 0, 52)[1] - 4} n={4} r={4.4} />
-      </Scene>
-    </Canvas>
-  );
-}
-
-/* ---------------- UX Fundamentals: goal → interface → feedback → outcome ---------------- */
-export function UxScene() {
-  const o = [70, 30] as const;
-  const P = (x: number, y: number, z = 0) => at(o, x, y, z);
-  const [f1x, f1y] = P(30, 150);
-  const [f2x, f2y] = P(150, 40);
-  return (
-    <Canvas>
-      <Scene {...FIT["ux-fundamentals"]}>
-        <IsoFloor o={o} w={210} d={180} step={30} />
-        {/* the route across the ground */}
-        <g transform={plane.top(o, 0, 0, 0)}>
-          <path d="M30 168 C 40 120, 90 130, 92 96 S 120 50, 170 40" fill="none" stroke={V.edge} strokeWidth={17} strokeLinecap="round" />
-          <path d="M30 168 C 40 120, 90 130, 92 96 S 120 50, 170 40" fill="none" stroke={V.top} strokeWidth={15.6} strokeLinecap="round" />
-          <path d="M30 168 C 40 120, 90 130, 92 96 S 120 50, 170 40" fill="none" className="m" strokeDasharray="3 4" />
-        </g>
-        {/* 1 goal: a person sets out with a need */}
-        <Figure x={f1x} y={f1y} s={1} pose="hold" skin={2} hair="long" hairTone={2} top={V.focal}>
-          <rect x={-2.2} y={-46} width={6} height={9.5} rx={1.2} fill={V.edge} />
-        </Figure>
-        <Bubble x={f1x - 34} y={f1y - 94} w={28} h={20} tail="right">
-          <g transform={`translate(${f1x - 27} ${f1y - 90})`}>
-            <path d="M3 6 L9 2.5 L15 6 L15 13 L9 16 L3 13 Z" fill={V.left} className="e" />
-            <path d="M3 6 L9 9.5 L15 6 M9 9.5 L9 16" fill="none" className="e" />
-          </g>
-        </Bubble>
-        {/* 2 interface: the app, standing as a large screen */}
-        <IsoShadow o={o} x={76} y={108} w={26} d={4} />
-        <IsoBox o={o} x={76} y={108} z={0} w={28} d={3} h={48} tone="neutral" />
-        <g transform={plane.left(o, 78, 111, 46)}>
-          <rect width={24} height={44} rx={2} fill={V.hi} className="m" />
-          <Bars x={4} y={5} w={12} n={1} />
-          <rect x={4} y={10} width={16} height={11} rx={1.5} fill={V.left} className="h" />
-          <Bars x={4} y={25} w={15} n={2} gap={4} />
-          <Pill x={4} y={35} w={16} h={5} />
-        </g>
-        {/* 3 feedback: a confirmation arrives */}
-        <Bubble x={P(118, 64)[0] - 6} y={P(118, 64)[1] - 56} w={40} h={16} tail="left">
-          <circle cx={P(118, 64)[0] + 2} cy={P(118, 64)[1] - 48} r={4} fill={V.good} />
-          <Check x={P(118, 64)[0] + 2.3} y={P(118, 64)[1] - 47.6} s={0.7} color={V.hi} />
-          <rect x={P(118, 64)[0] + 9} y={P(118, 64)[1] - 50.5} width={20} height={1.8} rx={0.9} fill={V.mid} />
-          <rect x={P(118, 64)[0] + 9} y={P(118, 64)[1] - 46.5} width={13} height={1.8} rx={0.9} fill={V.mid} opacity={0.6} />
-        </Bubble>
-        {/* 4 outcome: the parcel at the door, the person satisfied */}
-        <IsoShadow o={o} x={160} y={10} w={30} d={22} />
-        <IsoBox o={o} x={160} y={10} z={0} w={30} d={22} h={40} tone="cat" />
-        <g transform={plane.left(o, 166, 32, 30)}>
-          <rect width={11} height={30} rx={1} fill={V.focalL} className="e" />
-          <circle cx={9} cy={16} r={0.9} fill={V.hi} />
-        </g>
-        <IsoBox o={o} x={180} y={34} z={0} w={8} d={7} h={6} tone="neutral" />
-        <Figure x={f2x} y={f2y} s={1} pose="stand" skin={2} hair="long" hairTone={2} top={V.focal} />
-        <Marker x={f1x + 12} y={f1y - 70} n={1} r={4.4} />
-        <Marker x={P(104, 108, 50)[0] + 6} y={P(104, 108, 50)[1]} n={2} r={4.4} />
-        <Marker x={P(118, 64)[0] + 40} y={P(118, 64)[1] - 58} n={3} r={4.4} />
-        <Marker x={P(190, 10, 44)[0] + 6} y={P(190, 10, 44)[1]} n={4} r={4.4} />
       </Scene>
     </Canvas>
   );
@@ -196,89 +135,6 @@ export function UiScene() {
           <rect x={1.4} y={18.4} width={9.6} height={2.8} rx={1.4} fill={V.focal} />
         </Phone>
         <Flow d="M196 120 C 214 120, 224 128, 228 136" tip={[228, 136]} angle={1.1} />
-      </Scene>
-    </Canvas>
-  );
-}
-
-/* ---------------- Design Systems: token → component → pattern → interface ---------------- */
-export function DsScene() {
-  const o = [20, 116] as const;
-  const tier = (x: number, h: number, tone: "neutral" | "cat" | "focal", kids: React.ReactNode, y = 0) => (
-    <g>
-      <IsoShadow o={o} x={x} y={y} w={46} d={46} spread={3} />
-      <IsoBox o={o} x={x} y={y} z={0} w={46} d={46} h={h} tone={tone} />
-      <g transform={plane.top(o, x, y, h)}>{kids}</g>
-    </g>
-  );
-  return (
-    <Canvas>
-      <Scene {...FIT["design-systems"]}>
-        <IsoFloor o={o} w={240} d={130} y0={-50} step={30} />
-        {/* tokens */}
-        {tier(10, 10, "cat", (
-          <g>
-            {[V.focal, V.focalL, V.right, V.edge].map((f, i) => (
-              <rect key={i} x={6 + i * 9} y={6} width={7} height={7} rx={1.4} fill={f} className="h" />
-            ))}
-            {[3, 5, 8, 12].map((s, i) => (
-              <rect key={i} x={6 + i * 9} y={20} width={s * 0.6} height={6} fill={V.right} className="h" />
-            ))}
-            {[2, 4, 6].map((r, i) => (
-              <rect key={i} x={6 + i * 12} y={32} width={9} height={7} rx={r * 0.5} fill={V.hi} className="h" />
-            ))}
-          </g>
-        ), 70)}
-        {/* components */}
-        {tier(62, 26, "neutral", (
-          <g>
-            <rect x={6} y={6} width={22} height={7} rx={3.5} fill={V.focal} className="e" />
-            <rect x={6} y={18} width={34} height={7} rx={1.5} fill={V.hi} className="e" />
-            <rect x={6} y={30} width={12} height={7} rx={3.5} fill={V.hi} className="e" />
-            <circle cx={15} cy={33.5} r={2.6} fill={V.focal} />
-            <rect x={24} y={30} width={7} height={7} rx={1.2} fill={V.hi} className="e" />
-            <Check x={27.5} y={34} s={0.6} color={V.edge} />
-          </g>
-        ), 34)}
-        {/* patterns */}
-        {tier(114, 42, "neutral", (
-          <g>
-            <rect x={5} y={5} width={36} height={36} rx={2} fill={V.hi} className="e" />
-            <rect x={9} y={9} width={18} height={2.4} rx={1.2} fill={V.mid} />
-            <rect x={9} y={14} width={28} height={5} rx={1} fill={V.top} className="h" />
-            <rect x={9} y={22} width={28} height={5} rx={1} fill={V.top} className="h" />
-            <rect x={9} y={31} width={16} height={6} rx={3} fill={V.focal} className="e" />
-          </g>
-        ), -2)}
-        {/* interface */}
-        <IsoShadow o={o} x={166} y={-40} w={60} d={6} spread={3} />
-        <IsoBox o={o} x={166} y={-40} z={0} w={62} d={3} h={80} tone="neutral" />
-        <g transform={plane.left(o, 168, -37, 77)}>
-          <rect width={58} height={74} rx={2} fill={V.hi} className="m" />
-          <rect x={0} y={0} width={58} height={9} fill={V.top} className="h" />
-          <rect x={4} y={14} width={22} height={4} rx={1} fill={V.edge} opacity={0.85} />
-          <rect x={4} y={22} width={50} height={20} rx={2} fill={V.left} className="h" />
-          <rect x={4} y={46} width={24} height={22} rx={2} fill={V.hi} className="h" />
-          <rect x={7} y={50} width={14} height={3} rx={1} fill={V.top} className="h" />
-          <rect x={7} y={55} width={14} height={3} rx={1} fill={V.top} className="h" />
-          <rect x={7} y={61} width={10} height={4} rx={2} fill={V.focal} />
-          <rect x={31} y={46} width={23} height={22} rx={2} fill={V.hi} className="h" />
-          <rect x={34} y={61} width={10} height={4} rx={2} fill={V.focal} />
-        </g>
-        <Flow d={`M${at(o, 40, 72, 12)[0]} ${at(o, 40, 72, 12)[1] - 4} q 14 -26 32 -24`} tip={[at(o, 40, 72, 12)[0] + 32, at(o, 40, 72, 12)[1] - 28]} angle={0} />
-        <Flow d={`M${at(o, 92, 36, 28)[0]} ${at(o, 92, 36, 28)[1] - 4} q 14 -26 32 -24`} tip={[at(o, 92, 36, 28)[0] + 32, at(o, 92, 36, 28)[1] - 28]} angle={0} />
-        <Flow d={`M${at(o, 144, 0, 44)[0]} ${at(o, 144, 0, 44)[1] - 4} q 12 -22 26 -22`} tip={[at(o, 144, 0, 44)[0] + 26, at(o, 144, 0, 44)[1] - 26]} angle={0} />
-        {(() => {
-          const [x, y] = at(o, 70, 100);
-          return (
-            <g>
-              <IsoShadow o={o} x={66} y={96} w={8} d={6} spread={1} />
-              <Figure x={x} y={y} s={0.95} pose="hold" skin={2} hair="short" hairTone={3} top={V.focal}>
-                <rect x={-4} y={-45} width={9} height={6} rx={1.5} fill={V.hi} className="e" />
-              </Figure>
-            </g>
-          );
-        })()}
       </Scene>
     </Canvas>
   );

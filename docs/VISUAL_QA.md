@@ -162,3 +162,10 @@ Browser suites on the production build: e2e 42/42, e2e-redesign 66/66, keyboard 
 | Accessibility | Decorative, hidden | Decorative, hidden; the interactive stack is keyboard and touch operable with a text equivalent |
 | Performance | Static SVG | Static, server-rendered SVG; client JS only for the explorer on two pages |
 | Overall | Placeholder-like | Coherent editorial family; remaining weakness: figures are small at card size, and the UX Fundamentals route scene is the sparsest |
+
+## Session 12 — illustration v5.1 and plate pilot
+
+- **axe-core 4.10.2** (local copy), WCAG 2.0/2.1/2.2 A and AA tags, on `/`, `/learn`, five path pages, the five pilot entries and an HCI lesson, light and dark: **0 violations** in 26 audits. axe checks only automatable rules.
+- Browser suites on the production build: e2e 42/42, e2e-redesign 66/66, keyboard 45/45, devices 155/155 (same as the session 11 baseline; no regressions).
+- Rendered and reviewed: all 16 path scenes (light, dark, 2x sheet), `/learn` full page at 1440, 820 and 390 px in both themes, the five pilot plates as sheets (card + hero, both themes) and in the entry hero at real size (1440 and 390 px). Fixes found by review: a cropped picture-in-picture figure, label collisions on the HCI and Fitts plates, a detached "no direct line" marker on Mental Models.
+- Not tested: real devices, VoiceOver/NVDA/TalkBack, browser zoom to 400% (reflow is covered by the 390 px checks only).

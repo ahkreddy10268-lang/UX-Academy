@@ -3,7 +3,8 @@
  * Each draws the concept's *mechanism*, not a decorative metaphor.
  */
 import type { IllustrationEntry } from "../illustration-types";
-import { Arrow, Box, C, CurveArrow, Cursor, HatchDefs, Label, Lines, Node, STROKE, Window } from "../primitives";
+import { cltPlate, mentalPlate } from "./editorial-plates";
+import { Arrow, Box, C, CurveArrow, Cursor, Label, Lines, Node, STROKE, Window } from "../primitives";
 
 /* ---------------- Hick-Hyman law: each doubling of choices adds one bit ---------------- */
 export const hickHyman: IllustrationEntry = {
@@ -91,41 +92,6 @@ export const gestalt: IllustrationEntry = {
 };
 
 /* ---------------- Cognitive load theory: a vessel with limited capacity ---------------- */
-export const cognitiveLoad: IllustrationEntry = {
-  slug: "cognitive-load-theory",
-  title: "Cognitive load theory plate",
-  description:
-    "Two working-memory vessels with the same capacity line. In the left vessel, intrinsic load (solid) plus a large extraneous load (hatched) overflows the capacity line, leaving no room for learning. In the right vessel, extraneous load has been reduced, so intrinsic load and germane processing (outlined) fit beneath the line.",
-  explorer: "cognitive-load",
-  Art: ({ detail }) => {
-    const vessel = (x: number, segs: { h: number; kind: "intrinsic" | "extraneous" | "germane" }[]) => {
-      let y = 250;
-      return (
-        <g>
-          {segs.map((s, i) => {
-            y -= s.h;
-            const fill = s.kind === "intrinsic" ? C.base : s.kind === "extraneous" ? "url(#cl-hatch)" : C.surface;
-            return <rect key={i} x={x + 6} y={y} width={88} height={s.h} fill={fill} stroke={C.line} strokeWidth={STROKE.fine} strokeDasharray={s.kind === "germane" ? "4 3" : undefined} />;
-          })}
-          <path d={`M${x} 70 V250 H${x + 100} V70`} fill="none" stroke={C.line} strokeWidth={STROKE.main} />
-        </g>
-      );
-    };
-    return (
-      <g>
-        <HatchDefs id="cl-hatch" />
-        <line x1="40" y1="100" x2="360" y2="100" stroke={C.ink} strokeWidth={STROKE.fine} strokeDasharray="6 4" />
-        {vessel(70, [{ h: 70, kind: "intrinsic" }, { h: 110, kind: "extraneous" }, { h: 22, kind: "germane" }])}
-        {vessel(230, [{ h: 70, kind: "intrinsic" }, { h: 26, kind: "extraneous" }, { h: 52, kind: "germane" }])}
-        <Arrow x1={182} y1={175} x2={218} y2={175} />
-        <Label x={360} y={94} anchor="end" show={detail}>capacity</Label>
-        <Label x={120} y={272} show={detail}>overloaded</Label>
-        <Label x={280} y={272} show={detail}>redesigned</Label>
-        <Label x={50} y={40} anchor="start" show={detail} tone="mute">■ intrinsic  ▨ extraneous  ┅ germane</Label>
-      </g>
-    );
-  },
-};
 
 /* ---------------- Miller's law: chunking ---------------- */
 export const millers: IllustrationEntry = {
@@ -197,45 +163,6 @@ export const jakobs: IllustrationEntry = {
 };
 
 /* ---------------- Mental models ---------------- */
-export const mentalModels: IllustrationEntry = {
-  slug: "mental-models",
-  title: "Mental models plate",
-  description:
-    "On the left, the user's mental model: a simple chain of three nodes. On the right, the system's actual structure: a denser network. Between them sits the interface, the system image, through which the user builds and tests their model. A gap is marked where the two models disagree.",
-  Art: ({ detail }) => {
-    const sys = [
-      [300, 80], [352, 110], [282, 140], [340, 170], [300, 210], [356, 230], [262, 196],
-    ];
-    const links = [[0, 1], [0, 2], [1, 3], [2, 3], [2, 6], [3, 4], [4, 5], [3, 5], [6, 4]];
-    return (
-      <g>
-        {/* user's model */}
-        <rect x="26" y="60" width="118" height="180" rx="59" fill={C.soft} opacity="0.55" />
-        <Node cx={85} cy={95} r={11} />
-        <Node cx={85} cy={150} r={11} />
-        <Node cx={85} cy={205} r={11} />
-        <Arrow x1={85} y1={107} x2={85} y2={137} />
-        <Arrow x1={85} y1={162} x2={85} y2={192} />
-        {/* system image */}
-        <rect x="168" y="80" width="52" height="140" rx="4" fill={C.surface} stroke={C.line} strokeWidth={STROKE.main} />
-        <Lines x={176} y={100} w={36} n={6} gap={18} />
-        {/* system */}
-        {links.map(([a, b], i) => (
-          <line key={i} x1={sys[a][0]} y1={sys[a][1]} x2={sys[b][0]} y2={sys[b][1]} stroke={C.line} strokeWidth={STROKE.fine} />
-        ))}
-        {sys.map(([x, y], i) => (
-          <Node key={i} cx={x} cy={y} r={8} fill={i === 6 ? C.paper : C.base} strokeDasharray={i === 6 ? "3 2" : undefined} />
-        ))}
-        <Arrow x1={148} y1={150} x2={166} y2={150} dashed />
-        <Arrow x1={240} y1={150} x2={222} y2={150} dashed />
-        <Label x={85} y={262} show={detail}>user&apos;s model</Label>
-        <Label x={194} y={242} show={detail}>interface</Label>
-        <Label x={312} y={262} show={detail}>system</Label>
-        <Label x={248} y={214} anchor="end" show={detail} tone="mute">gap</Label>
-      </g>
-    );
-  },
-};
 
 /* ---------------- Affordances: action possibilities ---------------- */
 export const affordances: IllustrationEntry = {
@@ -500,5 +427,5 @@ export const atomicDesign: IllustrationEntry = {
   },
 };
 
-export const corePlates = [hickHyman, gestalt, cognitiveLoad, millers, jakobs, mentalModels, affordances, signifiers, peakEnd, doubleDiamond, designThinking, nielsenHeuristics, informationArchitecture, atomicDesign];
+export const corePlates = [hickHyman, gestalt, cltPlate, millers, jakobs, mentalPlate, affordances, signifiers, peakEnd, doubleDiamond, designThinking, nielsenHeuristics, informationArchitecture, atomicDesign];
 

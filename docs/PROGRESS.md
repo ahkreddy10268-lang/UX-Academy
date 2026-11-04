@@ -187,3 +187,13 @@ Done: audit of the old path art; illustration system documented (docs/ILLUSTRATI
 Not done / limits: the Designer Skills plugins (owl-listener/designer-skills) are **not installed** in this environment and `/plugin` commands cannot be run from here, so they were not used (the installed `visual-critique`-style review was done by hand against the brief's ten criteria). Hairline was studied, not installed. Concept plates (family B) were not redrawn in the new style; the kit is ready for that. Human figures are simplified editorial figures, not detailed portraits. Axe, real devices and screen readers not run.
 
 Next: redraw the highest-traffic concept plates (Fitts's law, HCI, User Experience) with the kit where it improves explanation; then return to content (`ui-design`, docs/CONTENT_AUDIT.md §6).
+
+## Session 12 — illustration v5.1 and the knowledge-plate pilot (uncommitted until authorised)
+
+Done: eight path scenes recomposed (UX Fundamentals close-up loop, Accessibility with four access routes and assistive technology, Usability Engineering evidence close-up, Product Strategy and Advanced UX Metrics object studies, Cognitive Psychology network with top-down links, Design Systems traced lineage, Interaction Design closed loop); rooms reduced to two; fits re-measured. Five concept plates redrawn in the kit (HCI, CLT, Fitts, Mental Models, Usability Testing) and swapped in place. Rules, pilot table and rollout strategy in docs/ILLUSTRATION_SYSTEM.md; D-066…D-068.
+
+Verified: axe (WCAG 2.0/2.1/2.2 A and AA tags) on 13 routes × light/dark = 26 audits, 0 violations; unit 177; e2e 42/42; e2e-redesign 66/66; keyboard 45/45; devices 155/155; build clean; screenshots of /learn at 1440, 820 and 390 px in both themes and the five plates at real size.
+
+Not done: real devices and screen readers (not available here); Designer Skills plugins still not installed (needs the owner to run `/plugin` in Claude Code); Hairline studied, not installed; the other 66 plates remain in the earlier style; Vercel still blocked (api.vercel.com 403 from this container; no token).
+
+Next: migrate the plates on HCI and UX Fundamentals stage 1 (usability, user-experience, user-centred-design, double-diamond) following the rollout gate; then return to content (`ui-design`).

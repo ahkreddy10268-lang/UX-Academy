@@ -1,5 +1,6 @@
 /** Plates: frameworks-visual. Authored to docs/ILLUSTRATION_SYSTEM.md rules. */
 import type { IllustrationEntry } from "../illustration-types";
+import { hciPlate } from "./editorial-plates";
 import { Arrow, C, CurveArrow, Cursor, HatchDefs, Label, Lines, Node, STROKE } from "../primitives";
 
 /* ---------------- Usability (ISO 9241-11) ---------------- */
@@ -532,51 +533,13 @@ const userExperience: IllustrationEntry = {
   ),
 };
 
-/** Human-computer interaction: a person and a system exchanging action and feedback inside a context, studied through three strands. */
-const humanComputerInteraction: IllustrationEntry = {
-  slug: "human-computer-interaction",
-  explorer: "hci-methods",
-  title: "Human-computer interaction plate",
-  description:
-    "A person on the left and a screen device on the right exchange arrows: the person's action goes to the device and its feedback comes back. A dashed boundary around both marks the context of use. Beneath them three small boxes labelled study, design and evaluate connect upward to the exchange, the three strands of the discipline.",
-  Art: ({ detail }) => (
-    <g>
-      <rect x={28} y={34} width={344} height={150} rx={14} fill="none" stroke={C.ink} strokeWidth={STROKE.fine} strokeDasharray="6 5" />
-      <Label x={44} y={52} show={detail} anchor="start" tone="mute">context of use</Label>
-      {/* person */}
-      <circle cx={92} cy={96} r={16} fill={C.base} stroke={C.line} strokeWidth={STROKE.main} />
-      <path d="M62 170 C62 132 76 118 92 118 C108 118 122 132 122 170 Z" fill={C.soft} stroke={C.line} strokeWidth={STROKE.main} />
-      {/* system */}
-      <rect x={252} y={72} width={96} height={72} rx={7} fill={C.surface} stroke={C.line} strokeWidth={STROKE.main} />
-      <Lines x={264} y={88} w={72} n={3} gap={11} />
-      <rect x={264} y={124} width={30} height={12} rx={4} fill={C.base} stroke={C.line} strokeWidth={STROKE.fine} />
-      {/* action and feedback */}
-      <Arrow x1={134} y1={100} x2={246} y2={100} color={C.ink} width={STROKE.main} />
-      <Arrow x1={246} y1={128} x2={134} y2={128} color={C.line} width={STROKE.fine} />
-      <Label x={190} y={92} show={detail}>action</Label>
-      <Label x={190} y={148} show={detail}>feedback</Label>
-      {/* the three strands */}
-      {[
-        [48, "study"],
-        [152, "design"],
-        [256, "evaluate"],
-      ].map(([x, l], i) => (
-        <g key={l as string}>
-          <rect x={x as number} y={218} width={96} height={34} rx={6} fill={C.soft} stroke={C.line} strokeWidth={i === 1 ? STROKE.main : STROKE.fine} />
-          <path d={`M${(x as number) + 48} 218 L${i === 0 ? 120 : i === 1 ? 200 : 290} 186`} stroke={C.line} strokeWidth={STROKE.fine} />
-          <Label x={(x as number) + 48} y={239} show={detail}>{l as string}</Label>
-        </g>
-      ))}
-    </g>
-  ),
-};
 
 const plates: IllustrationEntry[] = [
   usability,
   userCentredDesign,
   humanCentredDesign,
   userExperience,
-  humanComputerInteraction,
+  hciPlate,
   informationArchitecture,
   jobsToBeDone,
   heartFramework,
