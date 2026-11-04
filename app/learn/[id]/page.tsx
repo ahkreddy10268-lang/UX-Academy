@@ -81,7 +81,7 @@ export default async function PathPage({ params }: PageProps<"/learn/[id]">) {
           </div>
           <h2 className="t-section mt-12 text-2xl">Lessons by level</h2>
           <p className="mt-1 text-sm text-ink-3">
-            {stats.lessons} lessons{stats.planned ? ` · ${stats.planned} planned topics shown for context, not yet written` : ""}
+            {stats.lessons} lessons{stats.planned ? ` · ${stats.planned} topics shown for context, more lessons in development` : ""}
           </p>
           <ol className="mt-6 space-y-4">
             {p.stages.map((s, si) => {
@@ -115,7 +115,7 @@ export default async function PathPage({ params }: PageProps<"/learn/[id]">) {
                                 <Link href={`/library/${slug}`} className="tap flex-1 underline decoration-dotted underline-offset-4 hover:text-ink">
                                   {t?.title}
                                 </Link>
-                                <span className="text-xs">planned · not yet a lesson</span>
+                                <span className="text-xs">in development</span>
                               </li>
                             );
                           n++;

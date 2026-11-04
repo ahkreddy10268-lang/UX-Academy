@@ -131,3 +131,9 @@ Write the **Foundations gap** entries (see docs/ROADMAP.md), starting with `user
 ## Previous next task (session 1)
 
 Write the **Foundations gap** entries listed first in `docs/ROADMAP.md` — start with `user-experience` (domain `foundations`, subcategory `core-concepts`, primaryType `discipline`): follow `docs/CONTENT_MODEL.md`, reuse `norman-nielsen-ux-definition`, `iso-9241-210-2019` and `hassenzahl-tractinsky-2006` from the registry, add the ISO 9241-210 definition of user experience (paraphrased), link `usability`, `user-centred-design`, `ui-design`, then `npm run content:index && npm run sources:verify -- <new ids> && npm run check && npm run docs:generate`.
+
+## Session 7 — `/learn` refinement and Vercel (not committed)
+
+- **Vercel deploy: blocked, not done.** The container's network policy denies api.vercel.com (HTTP 403) and no Vercel CLI/token exists. Needs: Network access widened (cloud environment settings) plus Vercel login/token, or import `ahkreddy10268-lang/UX-Academy` in Vercel directly. The app is a plain `next build`, no env vars.
+- **`/learn` refined** (D-046…D-050): lighter path cards, per-path artwork (`components/learn/path-art.tsx`), new header copy and counts, quiet "Not started" / "More lessons in development", container-query columns. `PathCard` API slimmed (also used on home and topic hubs, which inherit the new card). Data, stats calculations, store and routes unchanged.
+- Next: owner review of the new `/learn`, authorise commit/push; then continue with `human-computer-interaction` (docs/CONTENT_AUDIT.md §6).

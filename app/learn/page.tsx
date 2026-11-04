@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { ConceptIllustration } from "@/components/illustrations/concept-illustration";
 import { PathCard } from "@/components/learn/path-card";
 import { Container, PageHeader } from "@/components/ui/layout";
 import { entryBySlug, learningPaths } from "@/lib/content";
@@ -8,49 +7,38 @@ import { pathStats } from "@/lib/content/learning";
 export const metadata: Metadata = { title: "Learning paths" };
 
 export default function LearnPage() {
-  const all = learningPaths.map((p) => ({ p, stats: pathStats(p) }));
-  const lessons = all.reduce((n, x) => n + x.stats.lessons, 0);
+  const all = learningPaths.map((p) => ({ p, stats: pathStats(p), written: p.stages.flatMap((s) => s.steps).filter((s) => entryBySlug.has(s)) }));
+  // A lesson can sit in more than one path (Fitts's law is in two), so count each published lesson once.
+  const lessons = new Set(all.flatMap((x) => x.written)).size;
   return (
     <>
       <PageHeader
         eyebrow="Learn"
-        title="Structured paths through the discipline"
-        lede="Each path climbs three levels — understand, apply, analyse — through short lessons, knowledge checks and a test at the end of every level. The library stays open: paths give an order, not a gate."
+        title="Learning paths"
+        lede="Choose a learning path and build your knowledge step by step. Each path combines focused lessons, practical exercises and assessments. You can explore any topic in the Knowledge Library whenever you need it."
       >
         <dl className="mt-5 flex flex-wrap gap-2 text-sm text-ink-2 [&>div]:items-baseline [&>div]:rounded-full [&>div]:border [&>div]:border-rule [&>div]:bg-soft [&>div]:px-3 [&>div]:py-1">
           <div className="flex gap-2">
-            <dt>Paths</dt>
+            <dt>Learning paths</dt>
             <dd className="t-sub tabular text-ink">{learningPaths.length}</dd>
           </div>
           <div className="flex gap-2">
-            <dt>Lesson slots written</dt>
+            <dt>Published lessons</dt>
             <dd className="t-sub tabular text-ink">{lessons}</dd>
-          </div>
-          <div className="flex gap-2">
-            <dt>Levels</dt>
-            <dd className="t-sub tabular text-ink">{all.reduce((n, x) => n + x.stats.levels, 0)}</dd>
           </div>
         </dl>
       </PageHeader>
       <Container className="pb-12 pt-6">
-        <ol className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
-          {all.map(({ p, stats }, i) => {
-            const first = stats.firstPublished;
-            return (
+        {/* Container-query columns: 3 across by default, 4 only when each card keeps ≥ 17rem. */}
+        <div className="@container">
+          <ol className="grid gap-4 @2xl:grid-cols-2 @4xl:grid-cols-3 @[76rem]:grid-cols-4">
+            {all.map(({ p, stats, written }) => (
               <li key={p.id}>
-                <PathCard
-                  detail="full"
-                  index={i}
-                  path={p}
-                  stats={stats}
-                  domain={first?.domain ?? "foundations"}
-                  writtenSteps={p.stages.flatMap((s) => s.steps).filter((s) => entryBySlug.has(s))}
-                  plate={first ? <ConceptIllustration slug={first.slug} title={first.title} domain={first.domain} decorative /> : <ConceptIllustration slug="emerging" title={p.title} domain="emerging" decorative />}
-                />
+                <PathCard path={p} stats={stats} writtenSteps={written} />
               </li>
-            );
-          })}
-        </ol>
+            ))}
+          </ol>
+        </div>
       </Container>
     </>
   );

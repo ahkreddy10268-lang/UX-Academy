@@ -107,15 +107,12 @@ export default async function DomainPage({ params }: PageProps<"/topics/[domain]
             <ul className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
               {paths.slice(0, 8).map((p) => {
                 const stats = pathStats(p);
-                const first = stats.firstPublished;
                 return (
                   <li key={p.id}>
                     <PathCard
                       path={p}
                       stats={stats}
-                      domain={first?.domain ?? id}
                       writtenSteps={p.stages.flatMap((s) => s.steps).filter((x) => entryBySlug.has(x))}
-                      plate={first ? <ConceptIllustration slug={first.slug} title={first.title} domain={first.domain} decorative /> : <ConceptIllustration slug={id} title={d.title} domain={id} decorative />}
                     />
                   </li>
                 );

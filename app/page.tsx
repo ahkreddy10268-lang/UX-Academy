@@ -164,15 +164,12 @@ export default function Home() {
             {FEATURED_PATHS.map((id) => {
               const p = learningPaths.find((x) => x.id === id)!;
               const s = pathStats(p);
-              const first = s.firstPublished!;
               return (
                 <li key={id}>
                   <PathCard
                     path={p}
                     stats={s}
-                    domain={first.domain}
                     writtenSteps={p.stages.flatMap((st) => st.steps).filter((st) => entryBySlug.has(st))}
-                    plate={<ConceptIllustration slug={first.slug} title={first.title} domain={first.domain} decorative />}
                   />
                 </li>
               );
