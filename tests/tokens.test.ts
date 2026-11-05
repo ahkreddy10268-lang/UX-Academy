@@ -83,3 +83,21 @@ describe("theme parity", () => {
     expect(media).toEqual(themes.dark);
   });
 });
+
+describe("visualisation canvas tokens (theme-independent, D-086)", () => {
+  const viz = block(":root {\n  /* Visualisation canvas */");
+  const v = (k: string) => resolve(viz, `var(--${k})`);
+  const surfaces = ["viz-bg", "viz-surface-1", "viz-surface-2", "viz-surface-3"];
+  it.each(["viz-text", "viz-text-2", "viz-text-3"])("%s ≥ 4.5:1 on every viz surface", (tok) => {
+    for (const bg of surfaces) expect(contrastRatio(v(tok), v(bg)), `${tok} on ${bg}`).toBeGreaterThanOrEqual(4.5);
+  });
+  it.each(["viz-accent", "viz-positive", "viz-warning"])("%s ≥ 4.5:1 on every viz surface (used for labels)", (tok) => {
+    for (const bg of surfaces) expect(contrastRatio(v(tok), v(bg)), `${tok} on ${bg}`).toBeGreaterThanOrEqual(4.5);
+  });
+  it("structural edges stay visible (≥ 3:1 for the bright edge on the canvas)", () => {
+    expect(contrastRatio(v("viz-edge-hi"), v("viz-bg"))).toBeGreaterThanOrEqual(3);
+  });
+  it("is not redefined by the dark theme (one canvas in both themes)", () => {
+    expect(Object.keys(themes.dark).filter((k) => k.startsWith("viz-"))).toEqual([]);
+  });
+});

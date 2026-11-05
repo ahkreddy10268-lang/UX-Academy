@@ -1,6 +1,6 @@
 # Progress register
 
-_Last updated: 2026-11-05 (session 18 — Tier 1 entry: Accessibility)_
+_Last updated: 2026-11-05 (session 19 — illustration v6: dark technical editorial system, accessibility pilot)_
 
 ## State
 
@@ -280,3 +280,16 @@ Maturity (accessibility-concept): explanation complete · evidence complete · p
 
 ## Next task (precise)
 Tier 1: `inclusive-design` — add and verify the Microsoft Inclusive Design toolkit (professional) and Clarkson et al. *Inclusive Design* first; L2 *conceptual* (permanent / temporary / situational, labelled as a design prompt); persona-spectrum exercise.
+
+## Session 19 — illustration v6: dark technical editorial system (uncommitted; awaiting owner review)
+
+References: five of the six supplied images were available (01 isometric architecture, 02 product-swap flow, 03 retention decision flow, 04 agent-runtime hero, 05 editorial problem section) and are kept git-ignored in `.local/visual-style-references/`; 06 (analytics dashboard) was not supplied, so its direction comes from the written brief only.
+
+Done (D-086…D-088): `--viz-*` token namespace (dark in both themes, contrast-gated in tests/tokens.test.ts; `.viz` remaps the v5 `--ill-*` roles; glow and route classes; `.viz-panel`); `components/illustrations/system/viz.tsx` kit (VizDefs/VizCanvas, Slab with base/lit/glass/dim states and plane labels, ContactShadow, Bloom, Guides, Route/isoRoute/roundedPath with accent/positive/blocked/neutral kinds and dot/cross/arrow terminals, Junction, ModuleCard, Tag, Brackets, Callout); `IllustrationEntry.canvas` and `ArtProps.uid`; `Plate` renders the viz canvas. Pilot: accessibility L1 rebuilt in `concepts/viz-plates.tsx` (exploded service with lit accessibility tree, five access-channel routes, one blocked switch route, announced-status callout; the old platform/ramp/figures plate removed); accessibility L2 rebuilt as a dark scenario-branching comparison with a separate rights band and legend (content unchanged). New tests: v6 files contain no colour literals; v6 plates do not use `Figure`; the pilot plate uses the viz canvas; viz tokens pass contrast and are theme-independent. `docs/ILLUSTRATION_COVERAGE.md` now records each plate's style (1 of 74 in v6). Docs: ILLUSTRATION_SYSTEM § Dark technical editorial (art direction, tokens, kit, families, rules, quality gate, migration order), DIAGRAM_DESIGN_GUIDELINES, VISUAL_KNOWLEDGE_SYSTEM, CLAUDE.md.
+
+Verified: check (214 tests, typecheck, lint); docs:generate; build (877 pages); atlas 36/36; e2e 42/42; e2e-redesign 66/66; keyboard 45/45; devices 155/155; crawl 0 problem pages; axe on /library/accessibility-concept, /library, /learn/accessibility, /topics/accessibility and / in light and dark: 0 violations. Rendered and inspected: the plate at card and hero size on light and dark page themes (render-plates sheet and 2× crops), and the plate inside a light-theme card grid; the L2 figure at 1440 px (light and dark page themes), 820 px and 390 px; accessibility-tree snapshot of the L2 figure (regions per lens, term/definition pairs in visual order).
+
+Not done: migration of the other 73 plates and their Level-2 figures (ordered list in docs/ILLUSTRATION_SYSTEM.md § Migration); real devices and screen readers.
+
+## Next task (precise)
+Migrate the UX Fundamentals stage-1 plates to v6 one at a time, starting with `usability` and `user-experience` (family 3 infographics) and `ui-design` (family 1 exploded interface layers), each with its Level-2 figure; then resume Tier 1 content with `inclusive-design`.

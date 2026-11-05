@@ -14,6 +14,8 @@ export type ArtProps = {
   detail: boolean;
   /** Run educational motion (only ever when the plate is the hero). */
   animate: boolean;
+  /** Plate-unique id prefix for gradient and pattern references (viz canvas). */
+  uid?: string;
 };
 
 export type ExplorerId = "fitts" | "hick" | "peak-end" | "chunking" | "gestalt" | "cognitive-load" | "signifiers" | "colour" | "hci-methods";
@@ -30,6 +32,8 @@ export type IllustrationEntry = {
   animated?: boolean;
   /** Interactive explorer available on the concept page. */
   explorer?: ExplorerId;
+  /** "viz": the dark technical editorial canvas (illustration v6, D-086); default: the pastel editorial plate. */
+  canvas?: "viz";
 };
 
 export const W = 400;

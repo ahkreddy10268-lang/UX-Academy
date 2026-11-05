@@ -276,6 +276,22 @@
   --color-c-ink: var(--c-ink);
   --color-c-wash: var(--c-wash);
   --color-c-soft: var(--c-soft);
+
+  /* Visualisation canvas (docs/ILLUSTRATION_SYSTEM.md § Dark technical editorial). */
+  --color-viz-bg: var(--viz-bg);
+  --color-viz-surface-1: var(--viz-surface-1);
+  --color-viz-surface-2: var(--viz-surface-2);
+  --color-viz-surface-3: var(--viz-surface-3);
+  --color-viz-edge: var(--viz-edge);
+  --color-viz-edge-soft: var(--viz-edge-soft);
+  --color-viz-edge-hi: var(--viz-edge-hi);
+  --color-viz-text: var(--viz-text);
+  --color-viz-text-2: var(--viz-text-2);
+  --color-viz-text-3: var(--viz-text-3);
+  --color-viz-accent: var(--viz-accent);
+  --color-viz-accent-soft: var(--viz-accent-soft);
+  --color-viz-positive: var(--viz-positive);
+  --color-viz-warning: var(--viz-warning);
 }
 
 @theme {
@@ -522,6 +538,72 @@ textarea {
   --ill-act-wash: var(--accent-wash);
   --ill-good: var(--ok);
 }
+
+/* Visualisation canvas — dark technical editorial (illustration v6, D-086).
+   The same values in both themes on purpose: knowledge figures keep one dark
+   canvas while the application keeps its light and dark themes. Text roles are
+   contrast-tested against every viz surface (tests/tokens.test.ts). */
+:root {
+  /* Visualisation canvas */
+  --viz-bg: #0b0d0f;
+  --viz-surface-1: #111518;
+  --viz-surface-2: #191e22;
+  --viz-surface-3: #22282d;
+  --viz-edge: #424b52;
+  --viz-edge-soft: #2b3237;
+  --viz-edge-hi: #66717a;
+  --viz-grid: #1b2024;
+  --viz-text: #f2f3f4;
+  --viz-text-2: #a7afb5;
+  --viz-text-3: #8a949b;
+  --viz-accent: #ff8a3d;
+  --viz-accent-deep: #c4561a;
+  --viz-accent-soft: #3a2416;
+  --viz-accent-glow: #ff8a3d66;
+  --viz-positive: #6fd29a;
+  --viz-positive-soft: #15281f;
+  --viz-warning: #ff7a66;
+  --viz-warning-soft: #2e1714;
+  --viz-shadow: #00000099;
+}
+
+/* Inside a viz canvas the editorial kit's roles map onto the dark palette, so
+   isometric primitives (IsoBox, Win, Flow…) render as graphite and amber
+   without their own colours. */
+.viz {
+  --ill-plate: var(--viz-bg);
+  --ill-edge: var(--viz-edge-hi);
+  --ill-mid: var(--viz-edge);
+  --ill-lo: var(--viz-edge-soft);
+  --ill-hi: var(--viz-surface-3);
+  --ill-top: var(--viz-surface-3);
+  --ill-left: var(--viz-surface-2);
+  --ill-right: var(--viz-surface-1);
+  --ill-n-top: var(--viz-surface-3);
+  --ill-n-left: var(--viz-surface-2);
+  --ill-n-right: var(--viz-surface-1);
+  --ill-focal: var(--viz-accent);
+  --ill-focal-left: var(--viz-accent-deep);
+  --ill-focal-right: var(--viz-accent-soft);
+  --ill-deep: var(--viz-accent);
+  --ill-shadow: var(--viz-shadow);
+  --ill-act: var(--viz-accent);
+  --ill-act-wash: var(--viz-accent-soft);
+  --ill-good: var(--viz-positive);
+}
+/* HTML diagram panels on the viz canvas: the same faint engineering grid. */
+.viz-panel {
+  background-image: linear-gradient(var(--viz-grid) 1px, transparent 1px), linear-gradient(90deg, var(--viz-grid) 1px, transparent 1px);
+  background-size: 24px 24px;
+  background-position: -1px -1px;
+}
+/* Controlled illumination: only on focal geometry, never on text. */
+.viz .glow { filter: drop-shadow(0 0 2px var(--viz-accent-glow)) drop-shadow(0 0 7px var(--viz-accent-glow)); }
+.viz .glow-soft { filter: drop-shadow(0 0 5px var(--viz-accent-glow)); }
+.viz .va { stroke: var(--viz-accent); stroke-width: 1.4px; vector-effect: non-scaling-stroke; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+.viz .vp { stroke: var(--viz-positive); stroke-width: 1.2px; vector-effect: non-scaling-stroke; stroke-linecap: round; fill: none; }
+.viz .vw { stroke: var(--viz-warning); stroke-width: 1.2px; vector-effect: non-scaling-stroke; stroke-linecap: round; fill: none; stroke-dasharray: 3 2.5; }
+.viz .vn { stroke: var(--viz-edge-hi); stroke-width: 0.8px; vector-effect: non-scaling-stroke; stroke-linecap: round; fill: none; }
 
 /* Skin and hair tones for human figures: physical colours, the same in both
    themes, chosen so figures read as a range of people. */

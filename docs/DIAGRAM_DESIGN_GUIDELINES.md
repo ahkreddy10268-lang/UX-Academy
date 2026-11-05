@@ -48,3 +48,8 @@ These rules cover Level-2 visual explanations (`components/visual-explanations/`
 ## Theming
 
 Diagrams use only token colours, so dark mode is automatic. Check both themes, especially pastel fields (`c-wash`), hatch textures and SVG strokes against `surface`.
+
+## Dark technical editorial diagrams (v6, D-086)
+
+New and migrated Level-2 figures sit on a dark `.viz-panel` (`bg-viz-bg`, engineering grid) inside the usual figure frame, which keeps its title, objective, takeaway, text version and sources. Inside the panel: graphite module cards (`bg-viz-surface-1/2`, `border-viz-edge`), white primary text and grey secondary text, small monospace section labels, bracket corners for annotations, one amber element for the main idea, positive green and warning coral only where they carry meaning and always with a second cue (dashed line, cross, label). Connectors are SVG and hidden when the layout stacks; miniature visuals are `aria-hidden` because the adjacent text states the same thing. Reference implementation: `components/visual-explanations/concepts/accessibility-concept.tsx`. Full art direction: docs/ILLUSTRATION_SYSTEM.md § Dark technical editorial.
+

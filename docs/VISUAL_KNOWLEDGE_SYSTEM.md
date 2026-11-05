@@ -2,6 +2,8 @@
 
 A visualisation must **explain** something. A learner should get the basic idea from the visual before reading the full explanation, and an advanced learner should be able to inspect its parts, relationships and limits.
 
+> **v6 (D-086):** Level-1 plates and Level-2 figures for knowledge entries now use the dark technical editorial system — `canvas: "viz"`, `--viz-*` tokens and `components/illustrations/system/viz.tsx`. See docs/ILLUSTRATION_SYSTEM.md § Dark technical editorial and docs/DIAGRAM_DESIGN_GUIDELINES.md § Dark technical editorial diagrams.
+
 ## Three levels
 
 | Level | Purpose | Where it lives | Implementation |

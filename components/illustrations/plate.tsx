@@ -8,6 +8,7 @@ import type { Palette } from "@/lib/content/categories";
 import type { IllustrationEntry, PlateVariant } from "./illustration-types";
 import { H, W } from "./illustration-types";
 import { C } from "./primitives";
+import { VizCanvas, VizDefs } from "./system/viz";
 
 export function Plate({
   entry,
@@ -30,10 +31,11 @@ export function Plate({
   const uid = useId().replace(/:/g, "");
   const detail = variant === "hero";
   const { Art } = entry;
+  const viz = entry.canvas === "viz";
   return (
     <svg
       viewBox={`0 0 ${W} ${H}`}
-      className={`ill block h-auto w-full ${palette ? `cat-${palette}` : ""} ${className}`}
+      className={`ill ${viz ? "viz" : ""} block h-auto w-full ${palette ? `cat-${palette}` : ""} ${className}`}
       role={decorative ? undefined : "img"}
       aria-hidden={decorative || undefined}
       aria-labelledby={decorative ? undefined : `${uid}-t ${uid}-d`}
@@ -46,14 +48,21 @@ export function Plate({
         </>
       )}
       <defs>
+        {viz && <VizDefs uid={uid} />}
         <pattern id={`${uid}-grid`} width="20" height="20" patternUnits="userSpaceOnUse">
           <circle cx="10" cy="10" r={variant === "thumb" ? 0 : 0.9} fill={C.ink} opacity="0.22" />
         </pattern>
       </defs>
-      <rect width={W} height={H} fill={C.wash} />
-      <rect width={W} height={H} fill={`url(#${uid}-grid)`} />
+      {viz ? (
+        <VizCanvas uid={uid} w={W} h={H} grid={variant !== "thumb"} />
+      ) : (
+        <>
+          <rect width={W} height={H} fill={C.wash} />
+          <rect width={W} height={H} fill={`url(#${uid}-grid)`} />
+        </>
+      )}
       <g>
-        <Art detail={detail} animate={animate && variant === "hero"} />
+        <Art detail={detail} animate={animate && variant === "hero"} uid={uid} />
       </g>
     </svg>
   );

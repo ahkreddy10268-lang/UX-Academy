@@ -190,3 +190,79 @@ Inventory (from the registry): 71 plates — 48 for published entries (5 now in 
 3. **Choose by knowledge type.** Laws and formulas: a technical diagram with true proportions; theories and models: networks or apertures, never a pipeline unless the theory says so; principles and heuristics: an annotated interface fragment; methods: the activity with its evidence; disciplines: an ecosystem.
 4. **Gate.** Render with `scripts/render-plates.tsx` in both themes, check at card and hero size, then run `tests/illustrations.test.ts`. A plate that does not explain better than the old one is not merged.
 5. **Do not batch-convert.** Each migration is a design decision; there is no automatic restyle.
+
+## Dark technical editorial system (illustration v6) — the standard for knowledge figures
+
+Decision D-086 (2026-11-05). Applies to **family B, Levels 1 and 2** (knowledge and concept figures). Learning-path artwork (family A) and the isometric scenes (family C) are unchanged. Every new knowledge figure, and every migrated one, follows this section; earlier pastel plates stay valid until they are migrated one by one.
+
+### Why the earlier style was not enough
+
+The v5/v5.1 kit fixed geometry and linework but still read as educational clip art: pastel washes and flat tints gave every subject the same soft look; jointed `Figure` people carried the meaning in many plates (a person at a laptop standing in for a system); interface fragments were empty rectangles with placeholder bars; connectors were generic dashed arrows; and there was no material depth, no focal illumination and no language for barriers versus working routes. Concepts that are systems (accessibility, HCI, design systems) were shown as scenes about people instead of as the system itself.
+
+### References
+
+The owner's art-direction references are kept locally in `.local/visual-style-references/` (git-ignored; third-party images, never committed or copied): 01 an isometric exploded architecture with one lit orange layer and module cards routed into it; 02 a product-swap flow of interface cards with thin amber outlines and illuminated junctions; 03 a retention-versus-cancellation decision flow (green solid vs grey dashed paths, double chevrons, bracketed annotations, legend); 04 an isometric infrastructure hero with modules on a platform, dashed links and one highlighted module with a callout; 05 an editorial data-story section of dark cards with sparse red highlights and bar charts. Reference 06 (analytics dashboard) was not supplied; use the written brief (graphite surfaces, luminous focal values, warm highlights) for metric figures. Use them for art direction only.
+
+### Art direction
+
+**Dark technical editorial + isometric systems + premium product infographics.** A near-black graphite canvas in both application themes; matte graphite surfaces with tonal gradients and a fine inner highlight; hairline edges; **one** illuminated amber element that carries the main idea; fine routed connectors with junction dots; small monospace technical labels set beside, or on the plane of, the thing they name; generous negative space. Complexity comes from information and craft, not clutter.
+
+### Tokens (`app/globals.css`, contrast-tested in `tests/tokens.test.ts`)
+
+`--viz-bg` `#0b0d0f`, `--viz-surface-1/2/3` `#111518 / #191e22 / #22282d`, `--viz-edge` `#424b52`, `--viz-edge-soft`, `--viz-edge-hi`, `--viz-grid`, `--viz-text` `#f2f3f4`, `--viz-text-2` `#a7afb5`, `--viz-text-3` `#8a949b` (raised from the brief's `#747e86` to pass 4.5:1 on every viz surface), `--viz-accent` `#ff8a3d` with `--viz-accent-deep`, `--viz-accent-soft`, `--viz-accent-glow`, `--viz-positive` / `--viz-positive-soft`, `--viz-warning` / `--viz-warning-soft`, `--viz-shadow`. They are defined once on `:root` and **not** redefined in the dark theme (tested). Tailwind utilities: `bg-viz-bg`, `text-viz-text-2`, `border-viz-accent`, etc. Inside a `.viz` canvas the v5 roles (`--ill-*`) are remapped to the viz palette, so `IsoBox`, `Win` and `Flow` render in graphite and amber if reused. Classes: `.glow` (lit geometry only), `.glow-soft`, linework `.va` (accent route), `.vp` (positive), `.vw` (warning, dashed), `.vn` (neutral hairline), `.viz-panel` (engineering grid for HTML diagrams).
+
+### Colour meaning
+
+| Role | Token | Use | Paired non-colour cue |
+|---|---|---|---|
+| Primary accent | `--viz-accent` | The one focal layer, the active or accessible route, the main interaction | Solid, illuminated line; lit fill |
+| Positive | `--viz-positive` | A successful outcome, an available path | Solid line; tick |
+| Warning | `--viz-warning` | A barrier, failure, risk or destructive path | **Dashed** line ending in a **cross**; dashed outline |
+| Neutral | graphite / `--viz-edge-hi` | Structure, secondary relations | Hairline; dashed for dependency |
+
+Never use all accents in one figure without need, and never let colour be the only difference.
+
+### Kit (`components/illustrations/system/viz.tsx`)
+
+`VizDefs` / `VizCanvas` (uid-scoped gradients, vignette and grid, rendered by `Plate` when `canvas: "viz"`), `Slab` (states `base`, `lit`, `glass`, `dim`; labels set on the top plane), `ContactShadow`, `Bloom` (one per figure), `Guides` (alignment lines between exploded layers), `Route` + `isoRoute` + `roundedPath` (iso-aligned routed connectors; kinds `accent`, `positive`, `blocked`, `neutral`, `neutral-dashed`; terminals dot, cross, arrow), `Junction`, `ModuleCard` (flat input/service modules, either axis, blocked state), `Tag` (monospace label with optional leader and index), `Brackets`, `Callout`. Plates receive `uid` in their props for gradient references; ids never collide when many plates share a page. All server-rendered.
+
+### Composition families
+
+1. **Isometric technical** — exploded stacks, platforms and modules for systems and architectures (accessibility, HCI, design systems, IA, UI layers).
+2. **Product and interface explanatory** — realistic miniature interfaces, states and decisions joined by routes (interaction design, flows, onboarding, error recovery, before/after).
+3. **Technical editorial infographic** — modular dark cards, charts, grids of cells, timelines and legends for laws, psychology, metrics, formulas and research methods.
+
+Choose by what the concept teaches; do not force every subject into a stack.
+
+### Rules
+
+- **No stick figures and no `Figure` primitive in v6 plates (tested).** Show the system, interface, data or decision. A person may appear only when the human activity is the concept, and never instead of the mechanism.
+- One dominant idea and one focal accent per Level-1 plate; labels in the hero variant; structure readable at 300–360 px card width without labels.
+- Every connector stands for a real relation; every layer is a real part of the concept; no decorative technical noise.
+- Level 2: dark `.viz-panel` inside the existing figure frame, real HTML text, SVG only for connectors and miniature visuals, a legend when line styles carry meaning, connectors hidden and content stacked on narrow screens, reading order equal to visual order.
+- The figure may not add claims the entry does not make; illustrative scenarios are labelled.
+
+### Quality gate (before accepting a figure)
+
+Premium technical editorial rather than clip art? Main idea clear in seconds? Depth, layers and routes meaningful? Focal highlight guiding attention? Free of characters? Composed at card size? Adds information beyond the title? Different from unrelated figures? Consistent with the references? Reject anything that reads as an icon diagram, a placeholder or a stick-figure scene.
+
+### Pilot (accepted 2026-11-05)
+
+- **L1 `accessibility-concept`** (`concepts/viz-plates.tsx`): an exploded digital service — content and semantics at the base; the lit accessibility tree (names, roles, states); the glass interface layer with a visible focus ring; captions and text-size alternatives on top — with five access-channel modules (keyboard, switch, screen reader, voice control, magnifier) routed into the tree, the switch route dashed and stopped at a cross (drag-only control), and a positive callout for an announced status message. Reviewed light/dark page themes, card and hero.
+- **L2 `accessibility-concept.perspectives`**: one scenario card (lecture videos without captions, barrier marked) branching to three lens modules, each with the question it asks, a miniature visual (one case selected; every recording captioned; the ICF interaction with the environmental factor lit), the response and its five-point profile; the CRPD as an illuminated rights band marked "Not a fourth model" with amber links to all three; a legend. Reviewed at 1440, 820 and 390 px.
+
+### Migration order and remaining work
+
+Migrate one figure at a time: read the entry, name the single visual lesson, choose the family, build from the kit, check against the entry, render light/dark page themes at card, hero and mobile, then update docs. Keep any earlier figure that already meets the gate. `docs/ILLUSTRATION_COVERAGE.md` shows each plate's style (generated). Remaining published-entry plates, by learning-path priority:
+
+1. UX Fundamentals: usability, user-experience, ui-design, user-centred-design, double-diamond, mental-models, affordances, signifiers, gulfs-of-execution-and-evaluation, recognition-over-recall, cognitive-load-theory, jakobs-law, progressive-disclosure, nielsen-usability-heuristics, heuristic-evaluation, usability-testing, system-usability-scale.
+2. HCI Fundamentals: human-computer-interaction, working-memory-model, fitts-law, hick-hyman-law, steering-law, keystroke-level-model.
+3. UI Fundamentals: gestalt-principles, visual-hierarchy, modular-type-scale, colour-contrast-ratio, design-tokens, aesthetic-usability-effect.
+4. Interaction Design: interaction-design-discipline, doherty-threshold, teslers-law.
+5. Usability Engineering: shneiderman-golden-rules, cognitive-walkthrough, task-success-rate, nasa-tlx, confidence-intervals, sample-size-estimation, ab-testing.
+6. UX Research: card-sorting.
+7. Other published: choice-overload, heart-framework, information-architecture, jobs-to-be-done, millers-law, net-promoter-score, peak-end-rule, serial-position-effect, von-restorff-effect, wcag.
+8. Then the twenty subject plates and the planned-topic plates.
+
+Level-2 figures migrate with their entry. Quantitative figures with explorers (Fitts, Hick, colour) keep their formula-driven geometry; only their visual treatment changes.
+

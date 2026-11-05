@@ -1,6 +1,7 @@
 /** Plates: frameworks-visual. Authored to docs/ILLUSTRATION_SYSTEM.md rules. */
 import type { IllustrationEntry } from "../illustration-types";
-import { accessibilityPlate, hciPlate, interactionDesignPlate, uiDesignPlate } from "./editorial-plates";
+import { hciPlate, interactionDesignPlate, uiDesignPlate } from "./editorial-plates";
+import { accessibilityPlate } from "./viz-plates";
 import { Arrow, C, CurveArrow, Cursor, HatchDefs, Label, Lines, Node, STROKE } from "../primitives";
 
 /* ---------------- Usability (ISO 9241-11) ---------------- */
