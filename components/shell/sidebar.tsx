@@ -88,7 +88,7 @@ export function Sidebar() {
         onClick={toggle}
         aria-expanded={!collapsed}
         aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"}
-        className="nav-item relative mt-4 flex h-9 items-center gap-3 rounded-sm px-3 text-sm font-medium text-ink-3 hover:bg-sunken hover:text-ink"
+        className="nav-item relative mt-4 flex h-9 shrink-0 items-center gap-3 rounded-sm px-3 text-sm font-medium text-ink-3 hover:bg-sunken hover:text-ink"
       >
         <Icon name="sidebar" className="shrink-0" />
         <span className="collapse-hide">Collapse</span>

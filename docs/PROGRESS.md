@@ -1,6 +1,6 @@
 # Progress register
 
-_Last updated: 2026-11-05 (session 16 — Tier 1 entry: Interaction Design)_
+_Last updated: 2026-11-05 (session 17 — Knowledge Atlas and Domains & Topics navigation)_
 
 ## State
 
@@ -247,6 +247,17 @@ Path: the existing `interaction-design` path (id unchanged) now has four stages:
 Verified: content:index; sources:verify for both new ids (url-reachable); check (186 tests, typecheck, lint); docs:generate; build (876 pages); e2e 42/42; e2e-redesign 66/66 (diagram-filter count updated 9 → 10); keyboard 45/45; devices 155/155; crawl 0 problem pages; axe on /library/interaction-design-discipline, /paths/interaction-design, /library, /learn: 0 violations. Not done: real devices and screen readers (not available here).
 
 Maturity (interaction-design-discipline): explanation complete · evidence complete · practice complete · visual developing · editorial complete.
+
+## Next task (precise)
+Tier 1: `accessibility-concept` — add and verify the WHO *World Report on Disability* and a source for the social model of disability first (WCAG 2.2 is already in the registry); L2 *comparison*; exercise: audit a screen against five criteria.
+
+## Session 17 — Knowledge Atlas and Domains & Topics navigation (uncommitted; awaiting owner review)
+
+Done (D-081): `/topics` rebuilt as the Knowledge Atlas — computed overview figures (domains, subcategories, topics, published, addressed within, planned) with a reconciliation line; "three ways in" links to Learn and the Library; an expandable directory of all domains → subcategories → topics with type, status (text + shape) and destination; addressed-within topics link to and name their covering entry; search over domain names and descriptions, subcategory names, topic titles and aliases, with emphasised matches and a status region; status, knowledge-type and domain filters; URL state `?q=&status=&type=&domain=` with back/forward; expand all / collapse all; a server-rendered domain list before hydration. Sidebar: **Domains & Topics** added first in Explore (`grid` icon, `/topics`, active on domain pages); Knowledge Library now matches `/library` only; collapse button no longer shrinks when the sidebar overflows (found by devices.cjs on iPad landscape). Domain pages: breadcrumb "Knowledge Atlas", per-topic status and covering-entry link for unpublished topics, link back to the atlas filtered to the domain. Footer, search "no results" and 404 links renamed to Domains & Topics / Knowledge Atlas. Taxonomy unchanged.
+
+Files: new `lib/content/atlas.ts`, `lib/content/atlas-filter.ts`, `lib/content/topic-status.ts`, `components/topics/atlas-explorer.tsx`, `components/topics/status-tag.tsx`, `tests/atlas.test.ts`, `tests/browser/atlas.cjs`; changed `app/topics/page.tsx`, `app/topics/[domain]/page.tsx`, `components/shell/nav.ts`, `components/shell/sidebar.tsx`, `components/shell/site-footer.tsx`, `components/search/search-trigger.tsx`, `app/not-found.tsx`, `lib/content/coverage.ts` (status constants moved to `topic-status.ts`, re-exported), docs.
+
+Verified: check (203 tests, including 17 new atlas tests: integrity, counts against the coverage register, status and links, aliases, search, filters, URL parameters, highlighting, navigation); docs:generate (generated reports unchanged: no content changed); build (876 pages; `/topics` static); new browser suite atlas.cjs 36/36 (navigation and active state, collapsed tooltip, mobile drawer, 20/73/558 rendered after expand all, Enter/Space disclosure, search reveal, alias, filters, back/forward, clear, shared URL with invalid parameter, addressed-within link, domain breadcrumb, 390px overflow and 24px targets); e2e 42/42; e2e-redesign 66/66; keyboard 45/45; devices 155/155; crawl 0 problem pages; axe on /topics (plain, searched, addressed filter), two domain pages, /library and / in light and dark: 0 violations. Screenshots reviewed at 1440 (light, dark), 820 and 390 px. Not done: real devices and screen readers.
 
 ## Next task (precise)
 Tier 1: `accessibility-concept` — add and verify the WHO *World Report on Disability* and a source for the social model of disability first (WCAG 2.2 is already in the registry); L2 *comparison*; exercise: audit a screen against five criteria.

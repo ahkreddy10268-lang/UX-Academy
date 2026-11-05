@@ -11,7 +11,7 @@ export default function NotFound() {
         <p className="mt-4 max-w-read text-ink-2">
           The topic may not exist yet, or the address may be mistyped. Search from the header, or find your way from the{" "}
           <Link className="link" href="/topics">
-            subject index
+            Knowledge Atlas
           </Link>{" "}
           or the{" "}
           <Link className="link" href="/library">

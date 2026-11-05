@@ -3,17 +3,8 @@ import { researchLedger } from "../../content/topic-ledger";
 import { domains, entries, itemsForSubcategory, type TaxonomyItem } from "./index";
 import { CONTENT_STATUSES, type ContentStatus } from "./schema";
 
-/** The six statuses a learner-facing report uses. Research in progress = research pending or completed. */
-export const TOPIC_STATUSES = ["planned", "research", "drafted", "reviewed", "published", "addressed"] as const;
-export type TopicStatus = (typeof TOPIC_STATUSES)[number];
-export const TOPIC_STATUS_LABEL: Record<TopicStatus, string> = {
-  planned: "Planned",
-  research: "Research in progress",
-  drafted: "Drafted",
-  reviewed: "Quality reviewed",
-  published: "Published",
-  addressed: "Addressed within another entry",
-};
+import { TOPIC_STATUSES, type TopicStatus } from "./topic-status";
+export { TOPIC_STATUSES, TOPIC_STATUS_LABEL, type TopicStatus } from "./topic-status";
 
 /** One explicit status per taxonomy topic, from the content itself. */
 export function topicStatus(i: TaxonomyItem): TopicStatus {

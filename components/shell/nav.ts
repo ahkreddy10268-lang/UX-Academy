@@ -11,7 +11,7 @@ export const navGroups: readonly NavGroup[] = [
     label: "Learn",
     items: [
       { href: "/learn", label: "Learn", icon: "learn", match: ["/learn"] },
-      { href: "/library", label: "Knowledge Library", icon: "library", match: ["/library", "/topics"] },
+      { href: "/library", label: "Knowledge Library", icon: "library", match: ["/library"] },
     ],
   },
   {
@@ -27,6 +27,7 @@ export const navGroups: readonly NavGroup[] = [
     id: "explore",
     label: "Explore",
     items: [
+      { href: "/topics", label: "Domains & Topics", icon: "grid", match: ["/topics"] },
       { href: "/graph", label: "Graph", icon: "graph", match: ["/graph"] },
       { href: "/glossary", label: "Glossary", icon: "glossary", match: ["/glossary"] },
     ],

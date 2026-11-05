@@ -22,7 +22,7 @@ export function SiteFooter() {
             ))}
             <li>
               <Link className="hover:text-ink" href="/topics">
-                All subjects
+                Domains & Topics
               </Link>
             </li>
           </ul>

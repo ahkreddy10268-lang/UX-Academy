@@ -9,7 +9,8 @@ import { Container, PageHeader } from "@/components/ui/layout";
 import { domainById, domains, entryBySlug, itemsForSubcategory, learningPaths } from "@/lib/content";
 import { cardFor } from "@/lib/content/cards";
 import { catClass, PALETTE_LABEL, paletteFor } from "@/lib/content/categories";
-import { domainCoverage } from "@/lib/content/coverage";
+import { domainCoverage, topicStatus } from "@/lib/content/coverage";
+import { StatusTag } from "@/components/topics/status-tag";
 import { TYPE_LABEL } from "@/lib/content/labels";
 import { pathStats } from "@/lib/content/learning";
 
@@ -40,7 +41,7 @@ export default async function DomainPage({ params }: PageProps<"/topics/[domain]
         eyebrow={`Subject ${String(i + 1).padStart(2, "0")} · ${PALETTE_LABEL[paletteFor(id)]}`}
         title={d.title}
         lede={d.description}
-        crumbs={[{ href: "/library", label: "Library" }, { href: "/topics", label: "All subjects" }, { label: d.shortTitle }]}
+        crumbs={[{ href: "/topics", label: "Knowledge Atlas" }, { label: d.shortTitle }]}
         aside={<ConceptIllustration slug={id} title={d.title} domain={id} variant="hero" />}
       >
         <div className="mt-6 max-w-xs">
@@ -67,7 +68,7 @@ export default async function DomainPage({ params }: PageProps<"/topics/[domain]
                   {s.title}
                 </h2>
                 <p className="text-sm text-ink-3">
-                  {written.length} published · {planned.length} planned
+                  {written.length} published · {planned.length} not yet published
                 </p>
               </div>
               {s.description && <p className="mt-3 max-w-read text-ink-2">{s.description}</p>}
@@ -82,16 +83,22 @@ export default async function DomainPage({ params }: PageProps<"/topics/[domain]
               )}
               {planned.length > 0 && (
                 <div className="mt-6">
-                  <p className="label">Planned · not yet researched</p>
+                  <p className="label">Not yet published</p>
                   <ul className="mt-3 flex flex-wrap gap-x-2 gap-y-2">
-                    {planned.map((t) => (
-                      <li key={t.slug}>
-                        <Link href={`/library/${t.slug}`} className="inline-flex items-baseline gap-1.5 rounded-xs border border-dashed border-rule-strong px-2 py-1 text-sm text-ink-2 hover:border-ink-3 hover:text-ink">
-                          {t.title}
-                          <span className="text-[11px] text-ink-3">{TYPE_LABEL[t.type]}</span>
-                        </Link>
-                      </li>
-                    ))}
+                    {planned.map((t) => {
+                      const status = topicStatus(t);
+                      const parent = status === "addressed" && t.coveredBy ? entryBySlug.get(t.coveredBy) : undefined;
+                      return (
+                        <li key={t.slug}>
+                          <Link href={parent ? `/library/${parent.slug}` : `/library/${t.slug}`} className="inline-flex flex-wrap items-center gap-1.5 rounded-xs border border-dashed border-rule-strong px-2 py-1 text-sm text-ink-2 hover:border-ink-3 hover:text-ink">
+                            {t.title}
+                            <span className="text-[11px] text-ink-3">{TYPE_LABEL[t.type]}</span>
+                            <StatusTag status={status} />
+                            {parent && <span className="text-[11px] text-ink-3">in {parent.title}</span>}
+                          </Link>
+                        </li>
+                      );
+                    })}
                   </ul>
                 </div>
               )}
@@ -121,6 +128,11 @@ export default async function DomainPage({ params }: PageProps<"/topics/[domain]
           </section>
         )}
 
+        <p className="text-sm">
+          <Link className="link" href={`/topics?domain=${id}`}>
+            ← All topics in this domain in the Knowledge Atlas
+          </Link>
+        </p>
         <nav aria-label="Adjacent subjects" className="grid grid-cols-2 gap-4 border-t border-rule pt-6 text-sm">
           <div>{prev && <Link href={`/topics/${prev.id}`} className="hover:text-accent-ink">← {prev.title}</Link>}</div>
           <div className="text-right">{next && <Link href={`/topics/${next.id}`} className="hover:text-accent-ink">{next.title} →</Link>}</div>

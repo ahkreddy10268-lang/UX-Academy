@@ -118,7 +118,7 @@ function SearchPanel({ onDone }: { onDone: () => void }) {
           <p className="px-4 py-6 text-sm text-ink-2">
             No matches for “{query}”. Try a broader term, or browse the{" "}
             <Link className="link" href="/topics" onClick={onDone}>
-              subject index
+              Knowledge Atlas
             </Link>
             .
           </p>
