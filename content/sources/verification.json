@@ -307,6 +307,11 @@
     "registeredContainer": "Psychological Bulletin",
     "similarity": 1
   },
+  "cooper-reimann-cronin-noessel-2014": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-05",
+    "httpStatus": 200
+  },
   "cowan-1988": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",
@@ -1352,6 +1357,11 @@
     "registeredYear": 2010,
     "registeredContainer": "Proceedings of the SIGCHI Conference on Human Factors in Computing Systems",
     "similarity": 1
+  },
+  "rogers-sharp-preece-2023": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-05",
+    "httpStatus": 200
   },
   "rohrer-ux-research-methods": {
     "status": "url-reachable",

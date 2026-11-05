@@ -1,22 +1,22 @@
 # Progress register
 
-_Last updated: 2026-11-04 (session 15 — Tier 1 entry: User Interface Design)_
+_Last updated: 2026-11-05 (session 16 — Tier 1 entry: Interaction Design)_
 
 ## State
 
-Figures are generated from the content; the live source is `docs/CONTENT_COVERAGE.md` (and `docs/RESEARCH_SOURCES.md`). Snapshot after session 15 (previous snapshot: 48 published, 8.6%):
+Figures are generated from the content; the live source is `docs/CONTENT_COVERAGE.md` (and `docs/RESEARCH_SOURCES.md`). Snapshot after session 16 (previous snapshot: 49 published, 8.8%):
 
 | Area | Count |
 |---|---|
 | Taxonomy topics (domains / subcategories) | 558 (20 / 73), taxonomy v1.0 frozen |
-| Published entries (all gates pass) | 49 (8.8% of topics) |
-| Addressed within another entry / planned with no content | 10 / 499 |
+| Published entries (all gates pass) | 50 (9.0% of topics) |
+| Addressed within another entry / planned with no content | 10 / 498 |
 | Domains with no published entry | 6 |
-| Explained graph relationships | 392 |
+| Explained graph relationships | 416 |
 | Formulas with unit-tested calculators | 25 |
 | Interactive labs | 15 |
-| Quiz questions / exercises / flashcards | 188 / 140 / 149 |
-| Sources (DOI-verified / URL-reachable) | 280 (165 / 74) |
+| Quiz questions / exercises / flashcards | 197 / 143 / 157 |
+| Sources (DOI-verified / URL-reachable) | 282 (165 / 76) |
 
 **The earlier session sections below keep the figures that were true at the time.**
 
@@ -233,3 +233,20 @@ Maturity (ui-design): explanation complete · evidence complete · practice comp
 
 ## Next task (precise)
 Tier 1: `interaction-design-discipline` — add and verify Cooper et al. *About Face* and Preece, Sharp & Rogers *Interaction Design* (bibliographic, ISBN) first; L2 *system* (user ⇄ system loop).
+
+## Session 16 — Tier 1: Interaction Design (uncommitted; awaiting owner review)
+
+Done: `content/knowledge/foundations/interaction-design-discipline.ts` published (discipline, foundations/core-concepts, beginner). Built around the interaction loop (goal → intention → action → processing and state change → feedback → perception → evaluation → next action), labelled as a conceptual model. Beginner: interaction, the loop, signifiers/feedback/mapping/constraints, five everyday examples, ten vocabulary terms. Intermediate: goals and tasks, states and transitions, feedback and timing, execution cues, direct manipulation and its limits, sequence and recovery, input modalities, prototyping and evaluation; seven how-it-works steps, six implementation points, two illustrative scenarios. Advanced: relation to HCI, plural foundations (human factors, cognitive HCI, action cycle, situated action), conceptual models, evidence classes, four trade-offs, limits of patterns, contemporary systems; six evidence items, four debates, three alternative models. Origin with attribution note (no single founder; the date the term came into use is given only as a period). Web, mobile, enterprise, physical/service and emerging contexts; a ten-step workflow with outputs; 6 when-to-use, 4 when-not-to-use, 5 limitations, 8 misconceptions; 24 explained relations (including direct-manipulation, feedback-principle, mapping, constraints). Practice: 9 quiz questions (3 per level), 3 exercises (beginner loop mapping; intermediate **design a feedback loop for a payment** with criteria and a model answer covering success, timeout and decline; advanced comparison of direct manipulation and scanning for a ward medication round), 8 flashcards. 28 references.
+
+Sources: `cooper-reimann-cronin-noessel-2014` (About Face, 4th ed., Wiley 2014, ISBN 978-1-118-76657-6; Csizmadi and LeMoine recorded as contributors in the notes, not as authors) and `rogers-sharp-preece-2023` (Interaction Design: Beyond Human-Computer Interaction, 6th ed., Wiley 2023, ISBN 978-1-119-90109-9; the publisher page titles it the 6th edition, so the 6th-edition URL is recorded rather than the '7th-edition' slug). Both `verification: "bibliographic"`; `sources:verify` result for both: url-reachable. Neither was read in full; they are used for the scope of the discipline only. Reused existing records at their existing status. Moggridge's *Designing Interactions* was considered for the origin of the term but not added: the publisher page could not be fetched (HTTP 403), so the claim stays unsourced and is not made.
+
+Visuals: Level-1 plate `interactionDesignPlate` (person and machine on two platforms joined by an action arc and a feedback arc; visible state lights; goal bubble), checked in light and dark at card and hero size. Level-2 system diagram `interaction-design-discipline.loop` (person and system columns, input and output channels, "hidden from the person" note, annotated timeout failure point, 9 → 2 return), content-checked, reviewed at 1440, 820 and 390 px and in dark theme. No Level 3 (D-078).
+
+Path: the existing `interaction-design` path (id unchanged) now has four stages: Foundations of interaction design (new; this entry first), Principles and behaviour (adds mapping, constraints, direct-manipulation), Performance models (unchanged), Complexity, states and recovery (adds state-transitions, error-recovery). Summary and objectives updated. Research ledger row added once the sources were gathered, then removed when the entry existed.
+
+Verified: content:index; sources:verify for both new ids (url-reachable); check (186 tests, typecheck, lint); docs:generate; build (876 pages); e2e 42/42; e2e-redesign 66/66 (diagram-filter count updated 9 → 10); keyboard 45/45; devices 155/155; crawl 0 problem pages; axe on /library/interaction-design-discipline, /paths/interaction-design, /library, /learn: 0 violations. Not done: real devices and screen readers (not available here).
+
+Maturity (interaction-design-discipline): explanation complete · evidence complete · practice complete · visual developing · editorial complete.
+
+## Next task (precise)
+Tier 1: `accessibility-concept` — add and verify the WHO *World Report on Disability* and a source for the social model of disability first (WCAG 2.2 is already in the registry); L2 *comparison*; exercise: audit a screen against five criteria.

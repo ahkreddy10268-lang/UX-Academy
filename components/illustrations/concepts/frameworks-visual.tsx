@@ -1,6 +1,6 @@
 /** Plates: frameworks-visual. Authored to docs/ILLUSTRATION_SYSTEM.md rules. */
 import type { IllustrationEntry } from "../illustration-types";
-import { hciPlate, uiDesignPlate } from "./editorial-plates";
+import { hciPlate, interactionDesignPlate, uiDesignPlate } from "./editorial-plates";
 import { Arrow, C, CurveArrow, Cursor, HatchDefs, Label, Lines, Node, STROKE } from "../primitives";
 
 /* ---------------- Usability (ISO 9241-11) ---------------- */
@@ -541,6 +541,7 @@ const plates: IllustrationEntry[] = [
   userExperience,
   hciPlate,
   uiDesignPlate,
+  interactionDesignPlate,
   informationArchitecture,
   jobsToBeDone,
   heartFramework,

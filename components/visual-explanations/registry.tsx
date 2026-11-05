@@ -12,6 +12,7 @@ import { HeuristicDecision, HeuristicFlow } from "./concepts/heuristic-evaluatio
 import { HciCycle, HciEcosystem, HciInteractionModel, HciParadigms, HciPerspectives, HciTimeline } from "./concepts/human-computer-interaction";
 import { UcdCycle } from "./concepts/user-centred-design";
 import { UiDesignAnnotated } from "./concepts/ui-design";
+import { InteractionLoop } from "./concepts/interaction-design";
 import { IaEcology, IaHierarchy } from "./concepts/information-architecture";
 import type { VisualExplanation } from "./types";
 
@@ -391,6 +392,28 @@ export const visualExplanations: VisualExplanation[] = [
     sources: ["norman-2013", "shneiderman-2016", "w3c-wcag-22"],
     Component: UiDesignAnnotated,
   },
+  {
+    id: "interaction-design-discipline.loop",
+    slug: "interaction-design-discipline",
+    type: "system",
+    level: 2,
+    title: "The user ⇄ system interaction loop",
+    objective: "Nine steps of one interaction split between the person and the system, joined by an input channel and an output channel, with one annotated failure point.",
+    takeaway: "An interaction is reciprocal: the system's state is hidden, so the person can only act well if its output reports that state clearly enough to evaluate the result and choose the next action.",
+    summary: [
+      "Conceptual model, not a literal sequence for every interaction. Example: paying a £45 bill (illustrative).",
+      "Person: 1 Goal (the bill is paid). 2 Intention (pay now from the current account). 3 Action / input (presses Pay).",
+      "Input channel: the action reaches the system.",
+      "System (hidden from the person, known only through its output): 4 Processing (validates and sends to the payment network). 5 State transition (ready, processing, paid; balance changes). 6 Output / feedback (Paying… at once, then Paid £45 with a reference).",
+      "Output channel: the response reaches the person.",
+      "Person: 7 Perception (sees the tick and amount). 8 Interpretation and evaluation (paid once, right amount: goal met). 9 Next action (stop, continue, correct or retry).",
+      "9 returns to 2: the loop repeats. Steps 1–3 are the gulf of execution; steps 6–8 the gulf of evaluation.",
+      "Failure point between 6 and 8: on a timeout with no clear output the person cannot evaluate and may pay twice or leave the bill unpaid; the design should show the real state, list the payment as pending and offer a way to check.",
+    ],
+    verification: "content-checked",
+    sources: ["norman-2013", "norman-1986", "hutchins-hollan-norman-1985", "nielsen-1993-response-times"],
+    Component: InteractionLoop,
+  },
 ];
 
 /** Level-1 takeaway shown with the hero plate ("at a glance"). */
@@ -402,6 +425,7 @@ export const quickTakeaways: Record<string, string> = {
   "user-centred-design": "Learn about users, design, test with them, and repeat until the evidence says the design works.",
   "human-computer-interaction": "People, technology and context meet in every interaction; HCI studies, designs and evaluates that meeting, with methods chosen to fit the question.",
   "gestalt-principles": "Spacing, likeness, shared boxes and connecting lines tell people what belongs together before they read anything.",
+  "interaction-design-discipline": "A person acts, the system changes state and responds, the person interprets the response and acts again: interaction design designs that exchange over time.",
   "ui-design": "The interface is the surface where a person meets a system: UI design decides what they see, what they can do and what they are told back.",
   "heuristic-evaluation": "A few experts review alone, then merge and rate what they found: fast and cheap, but predictions rather than evidence.",
 };

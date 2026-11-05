@@ -143,7 +143,7 @@ const check = (name, ok, detail = '') => results.push({ name, ok: !!ok, detail }
   check('process diagram names all four phases as real text', phaseCounts.every((c) => c >= 1), phaseCounts.join(','));
   check('concept hero shows an at-a-glance takeaway', (await p.getByText('At a glance ·').count()) === 1);
   await p.goto(BASE + '/library?feature=visual', { waitUntil: 'networkidle' });
-  check('library filters concepts that have a detailed diagram (9 after UI Design)', /^9 results/.test(await p.getByText(/^\d+ results?/).textContent()));
+  check('library filters concepts that have a detailed diagram (10 after Interaction Design)', /^10 results/.test(await p.getByText(/^\d+ results?/).textContent()));
   await p.goto(BASE + '/learn/ux-fundamentals', { waitUntil: 'networkidle' });
   check('path page draws a curriculum map with a node per lesson', (await p.locator('ol[aria-label="Curriculum map"] > li').count()) >= 3);
 

@@ -477,4 +477,70 @@ const uiDesignPlate: IllustrationEntry = {
   },
 };
 
-export { cltPlate, fittsPlate, hciPlate, mentalPlate, uiDesignPlate, usabilityPlate };
+/* ---------------------------------------------------------------- */
+/* Interaction Design — two sides of an ongoing exchange             */
+/* (checked against the entry: a person acts, the system changes     */
+/*  state and responds, the person interprets the response and acts   */
+/*  again; the loop repeats, and feedback reports the new state)      */
+/* ---------------------------------------------------------------- */
+const interactionDesignPlate: IllustrationEntry = {
+  slug: "interaction-design-discipline",
+  title: "Interaction design plate",
+  description:
+    "A person stands on a platform on the left and points across to a machine on a platform on the right. The two are joined by a loop of two arrows. The upper arrow runs from the person to the machine and carries a small pressed-button token: the action. The lower arrow runs back from the machine to the person and carries a speech bubble with a tick: the feedback. On the machine's face, a column of three state lights has the middle one lit beside a short label bar, and a display shows a progress bar, so the machine's current state is visible. A thought bubble above the person shows a target symbol for their goal. The loop has no start or end, showing that the exchange repeats.",
+  Art: ({ detail }) => {
+    const o: Pt = [196, 128];
+    const [px, py] = at(o, -54, 40);
+    const top: Pt = [132, 54];
+    const sysTop: Pt = [252, 46];
+    const sysLow: Pt = [262, 140];
+    const low: Pt = [150, 150];
+    return (
+      <g transform="translate(-71 6) scale(1.416)">
+        {/* the two sides */}
+        <IsoShadow o={o} x={-74} y={22} w={40} d={36} spread={4} />
+        <IsoBox o={o} x={-74} y={22} z={0} w={40} d={36} h={6} tone="cat" />
+        <IsoShadow o={o} x={40} y={-36} w={44} d={40} spread={4} />
+        <IsoBox o={o} x={40} y={-36} z={0} w={44} d={40} h={6} tone="cat" />
+        {/* the system: a machine whose state is visible */}
+        <IsoBox o={o} x={48} y={-28} z={6} w={30} d={24} h={58} tone="neutral" />
+        <g transform={plane.left(o, 50, -4, 60)}>
+          <rect width={26} height={20} rx={1.2} fill={V.hi} className="m" />
+          <rect x={3} y={4} width={14} height={2} rx={1} fill={V.mid} />
+          <rect x={3} y={10} width={20} height={4} rx={2} fill={V.top} className="h" />
+          <rect x={3} y={10} width={12} height={4} rx={2} fill={V.focal} />
+          {[0, 1, 2].map((i) => (
+            <g key={i}>
+              <circle cx={5} cy={27 + i * 7} r={2.4} fill={i === 1 ? V.focal : V.hi} className="e" />
+              <rect x={10} y={26 + i * 7} width={i === 1 ? 13 : 9} height={2} rx={1} fill={i === 1 ? V.edge : V.mid} opacity={i === 1 ? 0.85 : 0.6} />
+            </g>
+          ))}
+        </g>
+        {/* the person and their goal */}
+        <Figure x={px} y={py} s={1.08} pose="point" skin={3} hair="long" hairTone={2} top={V.right} />
+        <Bubble x={px - 34} y={py - 104} w={30} h={24} tail="right">
+          <circle cx={px - 19} cy={py - 92} r={8} fill={V.hi} className="e" />
+          <circle cx={px - 19} cy={py - 92} r={4.6} fill={V.top} className="h" />
+          <circle cx={px - 19} cy={py - 92} r={1.8} fill={V.focal} />
+        </Bubble>
+        {/* the loop: action out, feedback back */}
+        <Flow d={`M${top[0]} ${top[1]} C ${top[0] + 30} ${top[1] - 34}, ${sysTop[0] - 40} ${sysTop[1] - 34}, ${sysTop[0]} ${sysTop[1]}`} tip={sysTop} angle={0.75} dashed={false} />
+        <Flow d={`M${sysLow[0]} ${sysLow[1]} C ${sysLow[0] - 20} ${sysLow[1] + 34}, ${low[0] + 44} ${low[1] + 30}, ${low[0]} ${low[1]}`} tip={low} angle={Math.PI + 0.9} />
+        <g transform="translate(184 26)">
+          <rect x={-12} y={-6} width={24} height={12} rx={6} fill={V.act} className="e" />
+          <circle cx={4} cy={0} r={2.6} fill={V.hi} />
+        </g>
+        <Bubble x={186} y={160} w={24} h={16} tail="none">
+          <Check x={198} y={168.5} s={0.7} />
+        </Bubble>
+        <Label x={px - 26} y={py + 22} size={7.5} show={detail}>person</Label>
+        <Label x={px - 40} y={py - 90} size={7.5} show={detail} tone="mute" anchor="end">goal</Label>
+        <Label x={184} y={13} size={7.5} show={detail} tone="ink">action</Label>
+        <Label x={at(o, 62, -4, 0)[0] + 22} y={at(o, 62, -4, 0)[1] + 25} size={7.5} show={detail}>system state</Label>
+        <Label x={198} y={190} size={7.5} show={detail} tone="ink">feedback</Label>
+      </g>
+    );
+  },
+};
+
+export { cltPlate, fittsPlate, hciPlate, interactionDesignPlate, mentalPlate, uiDesignPlate, usabilityPlate };
