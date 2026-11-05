@@ -506,7 +506,7 @@ Standards, techniques and the lived experience of disability in digital products
 ### Foundations & disability models (`foundations`)
 
 - ◻️ Models of Disability — *Concept* · `models-of-disability`
-- ◻️ Accessibility — *Concept* · `accessibility-concept`
+- ✅ Accessibility — *Concept* · `accessibility-concept`
 - ◻️ Inclusive Design — *Concept* · `inclusive-design`
 - ◻️ Universal Design — *Framework* · `universal-design`
 - ◻️ Inclusive Design Principles — *Framework* · `inclusive-design-principles`

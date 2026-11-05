@@ -13,6 +13,7 @@ import { HciCycle, HciEcosystem, HciInteractionModel, HciParadigms, HciPerspecti
 import { UcdCycle } from "./concepts/user-centred-design";
 import { UiDesignAnnotated } from "./concepts/ui-design";
 import { InteractionLoop } from "./concepts/interaction-design";
+import { DisabilityPerspectives } from "./concepts/accessibility-concept";
 import { IaEcology, IaHierarchy } from "./concepts/information-architecture";
 import type { VisualExplanation } from "./types";
 
@@ -414,6 +415,26 @@ export const visualExplanations: VisualExplanation[] = [
     sources: ["norman-2013", "norman-1986", "hutchins-hollan-norman-1985", "nielsen-1993-response-times"],
     Component: InteractionLoop,
   },
+  {
+    id: "accessibility-concept.perspectives",
+    slug: "accessibility-concept",
+    type: "comparison",
+    level: 2,
+    title: "Three perspectives on disability, and the rights lens across them",
+    objective: "The individual (medical) model, the social model and the WHO ICF compared on the same five questions, with the UN Convention on the Rights of Persons with Disabilities shown separately as a rights framework that applies across all three.",
+    takeaway: "Where you locate the difficulty decides what you look for and change: in the person, in the environment and organisation, or in their interaction; the Convention adds that access and participation are rights, whichever explanation fits.",
+    summary: [
+      "Educational comparison, simplified; not a complete history of disability theory.",
+      "A. Individual (medical) model. Locates the difficulty in the person's impairment or health condition; examines diagnosis, functional limits and individual needs; foregrounds treatment, rehabilitation, assistive devices and individual support; explains health needs and specific support well; can leave out inaccessible environments, services and attitudes.",
+      "B. Social model (UPIAS and the Disability Alliance, 1976; developed by Oliver and others). Locates disability in a social organisation that takes little or no account of people with impairments; examines barriers in buildings, products, information, policies and attitudes; foregrounds removing barriers, changing defaults and policy, and decisions with disabled people; explains exclusion and segregation well; can leave out impairment experiences such as pain or fatigue, and was first framed around physical impairment.",
+      "C. WHO ICF (2001). Locates disability in the interaction between a health condition and environmental and personal factors; examines body functions and structures, activities, participation and contextual factors together; foregrounds both individual support and environmental change, and measuring functioning; explains functioning in context well; is a classification rather than a political account, and some argue it remains health-centred.",
+      "Rights-based lens, not a fourth model: the CRPD (2006) is a human-rights treaty applying across all three, with principles of dignity and autonomy, non-discrimination, participation, accessibility, equality of opportunity, reasonable accommodation and universal design, and obligations to identify and remove barriers.",
+      "Illustrative case: lecture videos without captions. Medical lens: individual support. Social lens: caption every video by default. ICF lens: hearing, the activity, participation and the missing captions together. Rights lens: equal access to education and information, plus reasonable accommodation where still needed.",
+    ],
+    verification: "content-checked",
+    sources: ["upias-disability-alliance-1976", "oliver-1983", "who-icf-2001", "un-crpd-2006"],
+    Component: DisabilityPerspectives,
+  },
 ];
 
 /** Level-1 takeaway shown with the hero plate ("at a glance"). */
@@ -425,6 +446,7 @@ export const quickTakeaways: Record<string, string> = {
   "user-centred-design": "Learn about users, design, test with them, and repeat until the evidence says the design works.",
   "human-computer-interaction": "People, technology and context meet in every interaction; HCI studies, designs and evaluates that meeting, with methods chosen to fit the question.",
   "gestalt-principles": "Spacing, likeness, shared boxes and connecting lines tell people what belongs together before they read anything.",
+  "accessibility-concept": "Barriers are made by environments, products and organisations, so they can be removed: accessibility opens access and participation for people with different needs, and is a right, not an extra.",
   "interaction-design-discipline": "A person acts, the system changes state and responds, the person interprets the response and acts again: interaction design designs that exchange over time.",
   "ui-design": "The interface is the surface where a person meets a system: UI design decides what they see, what they can do and what they are told back.",
   "heuristic-evaluation": "A few experts review alone, then merge and rate what they found: fast and cheap, but predictions rather than evidence.",

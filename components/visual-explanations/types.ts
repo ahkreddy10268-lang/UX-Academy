@@ -47,7 +47,7 @@ export const VISUAL_TYPE_LABEL: Record<VisualType, string> = {
   isometric: "Exploded interface",
   system: "System diagram",
   process: "Process diagram",
-  comparison: "Before and after",
+  comparison: "Comparison",
   conceptual: "Conceptual model",
   formula: "Formula anatomy",
   "annotated-interface": "Annotated interface",

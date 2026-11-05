@@ -1268,6 +1268,13 @@
     "checkedAt": "2026-11-03",
     "httpStatus": 200
   },
+  "oliver-1983": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-05",
+    "registeredTitle": "Social Work with Disabled People",
+    "registeredYear": 1983,
+    "similarity": 1
+  },
   "paas-1992": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",
@@ -1609,6 +1616,16 @@
     "registeredContainer": "Cognitive Psychology",
     "similarity": 1
   },
+  "un-crpd-2006": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-05",
+    "httpStatus": 200
+  },
+  "upias-disability-alliance-1976": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-05",
+    "httpStatus": 200
+  },
   "uxcel": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
@@ -1711,6 +1728,21 @@
     "registeredYear": 1923,
     "registeredContainer": "Psychologische Forschung",
     "similarity": 1
+  },
+  "who-global-report-health-equity-disability-2022": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-05",
+    "httpStatus": 200
+  },
+  "who-icf-2001": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-05",
+    "httpStatus": 200
+  },
+  "who-world-report-disability-2011": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-05",
+    "httpStatus": 200
   },
   "wolfe-horowitz-2004": {
     "status": "doi-verified",

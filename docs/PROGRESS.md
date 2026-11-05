@@ -1,22 +1,22 @@
 # Progress register
 
-_Last updated: 2026-11-05 (session 17 — Knowledge Atlas and Domains & Topics navigation)_
+_Last updated: 2026-11-05 (session 18 — Tier 1 entry: Accessibility)_
 
 ## State
 
-Figures are generated from the content; the live source is `docs/CONTENT_COVERAGE.md` (and `docs/RESEARCH_SOURCES.md`). Snapshot after session 16 (previous snapshot: 49 published, 8.8%):
+Figures are generated from the content; the live source is `docs/CONTENT_COVERAGE.md` (and `docs/RESEARCH_SOURCES.md`). Snapshot after session 18 (previous snapshot: 50 published, 9.0%):
 
 | Area | Count |
 |---|---|
 | Taxonomy topics (domains / subcategories) | 558 (20 / 73), taxonomy v1.0 frozen |
-| Published entries (all gates pass) | 50 (9.0% of topics) |
-| Addressed within another entry / planned with no content | 10 / 498 |
+| Published entries (all gates pass) | 51 (9.1% of topics) |
+| Addressed within another entry / planned with no content | 10 / 497 |
 | Domains with no published entry | 6 |
-| Explained graph relationships | 416 |
+| Explained graph relationships | 440 |
 | Formulas with unit-tested calculators | 25 |
 | Interactive labs | 15 |
-| Quiz questions / exercises / flashcards | 197 / 143 / 157 |
-| Sources (DOI-verified / URL-reachable) | 282 (165 / 76) |
+| Quiz questions / exercises / flashcards | 206 / 147 / 165 |
+| Sources (DOI-verified / URL-reachable) | 288 (166 / 81) |
 
 **The earlier session sections below keep the figures that were true at the time.**
 
@@ -261,3 +261,22 @@ Verified: check (203 tests, including 17 new atlas tests: integrity, counts agai
 
 ## Next task (precise)
 Tier 1: `accessibility-concept` — add and verify the WHO *World Report on Disability* and a source for the social model of disability first (WCAG 2.2 is already in the registry); L2 *comparison*; exercise: audit a screen against five criteria.
+
+## Session 18 — Tier 1: Accessibility (uncommitted; awaiting owner review)
+
+Done: `content/knowledge/accessibility/accessibility-concept.ts` published (concept, accessibility/foundations, beginner; secondary type principle; evidence class `official-standard` with an evidence note separating normative instruments, conceptual frameworks, official reports and professional guidance, and stating that replication does not apply to treaties, standards or definitions). Beginner: barriers, who meets them, digital and non-digital access, permanent/temporary/situational as a design prompt (not a classification), six examples, a doorway analogy, eight terms. Intermediate: access as an interaction (ICF), five kinds of barrier, POUR as kinds of access, diversity of needs and terminology, assistive technology, universal design vs inclusive design vs reasonable accommodation (CRPD Art. 2), standards and conformance (WCAG 3 labelled a Working Draft), prevention vs retrofit, evaluation methods; two illustrative scenarios. Advanced: medical model; social model from UPIAS and the Disability Alliance (quoted from the 1976 document, with its scope — physical impairment, no "social model" label — and Oliver's role stated as development and naming, not origin); debates about the social model; the ICF and its critiques; the CRPD as a treaty, not a model (Arts 1, 3, 9, 21); how standards, frameworks and rights connect; evaluation limits; trade-offs and prioritisation without making access optional; health inequities (WHO 2022); emerging modalities. Ten-step-plus workflow with purpose, output and common mistakes; application to web, mobile, workplace systems and physical/information/service settings; 10 misconceptions; 5 limitations; 24 relations.
+
+Practice: 9 quiz questions (3 per level), 4 exercises (beginner barrier journey; intermediate **five-criteria screen audit** against WCAG 1.1.1, 1.4.3/1.4.1, 2.1.1, 2.4.7, 3.3.2/3.3.1 with pass / fail / not tested / not applicable, evidence, impact, improvement and limitations, plus a model answer on an original fictional booking page and an explanation of what a screenshot cannot show; intermediate one task, different barriers; advanced analysis through social, ICF and CRPD perspectives), 8 flashcards.
+
+Sources added (`content/sources/disability.ts`): `upias-disability-alliance-1976` (read first-hand in the Leeds Disability Archive PDF: discussion of 22 November 1975, introduction dated November 1976, 1997 reformatted edition by Mark Priestley; definitions on original p. 14) — url-reachable; `oliver-1983` (Macmillan, ISBN 978-0-333-32707-4) — doi-verified by Crossref; `who-icf-2001` (endorsed 22 May 2001, WHA54.21) — url-reachable; `un-crpd-2006` (Articles 1, 2, 3, 9, 21 read first-hand in the UN PDF; the OHCHR and UN DESA pages returned 403 to automated fetches) — url-reachable; `who-world-report-disability-2011` (WHO and World Bank, ISBN 978-92-4-156418-2; 'more than a billion' as a 2011 estimate) — url-reachable; `who-global-report-health-equity-disability-2022` (ISBN 978-92-4-006360-0; 1.3 billion / 16% as the report's estimate) — url-reachable. Reused: `w3c-wcag-22`, `w3c-understanding-wcag-22`, `w3c-wcag-overview`, `w3c-wcag-3-wd`, `iso-9241-11-2018`.
+
+Visuals: Level-1 plate `accessibilityPlate` (shared platform for participation; steps labelled "barrier for some"; ramp and landing labelled "support for all"; two people meeting; a person using a kiosk with captions; badges for captions, speech, braille and keys), checked light/dark, card/hero. Level-2 comparison `accessibility-concept.perspectives` (medical, social and ICF on five questions; the CRPD as a separately styled rights lens marked "Not a fourth model"; an illustrative captions case read through each lens), content-checked, reviewed at 1440 (light/dark), 820 and 390 px; accessibility tree reads in order (region per perspective, term/definition pairs). The generic label for `comparison` figures changed from "Before and after" to "Comparison" (it mislabelled this figure; still accurate for the existing three). No Level 3 (D-082).
+
+Path: the existing `accessibility` path (id unchanged) now begins with this entry: Accessibility foundations (accessibility-concept, wcag, pour, conformance-levels, colour-contrast-ratio), Accessible implementation, Disability, inclusion and evaluation; summary and objectives rewritten. Research-ledger row added once sources were gathered, then removed.
+
+Verified: content:index; sources:verify for the six new ids (results above); check (203 tests, typecheck, lint); docs:generate; build (877 pages); atlas 36/36; e2e 42/42; e2e-redesign 66/66 (diagram-filter count updated 10 → 11); keyboard 45/45; devices 155/155; crawl 0 problem pages; axe on /library/accessibility-concept, /learn/accessibility, /topics/accessibility (light and dark): 0 violations. Not done: real devices and screen readers.
+
+Maturity (accessibility-concept): explanation complete · evidence complete · practice complete · visual developing · editorial complete.
+
+## Next task (precise)
+Tier 1: `inclusive-design` — add and verify the Microsoft Inclusive Design toolkit (professional) and Clarkson et al. *Inclusive Design* first; L2 *conceptual* (permanent / temporary / situational, labelled as a design prompt); persona-spectrum exercise.

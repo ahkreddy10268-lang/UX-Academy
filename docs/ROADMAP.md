@@ -8,7 +8,7 @@
 | 1 Product & technical architecture | ✅ done (docs/) |
 | 2 Design system & frontend foundation | ✅ done |
 | 3 Taxonomy & database | ✅ Taxonomy v1.0 frozen: 20 domains, 73 subcategories, 558 topics (docs/CONTENT_AUDIT.md § 7) |
-| 4 Initial research & content | ✅ 50 published entries · figures from the generated docs/CONTENT_COVERAGE.md and RESEARCH_SOURCES.md; not repeated here |
+| 4 Initial research & content | ✅ 51 published entries · figures from the generated docs/CONTENT_COVERAGE.md and RESEARCH_SOURCES.md; not repeated here |
 | 5 Interactive features | ✅ search, filters, graph, Formula Lab (25), labs (10), quizzes, flashcards, workshops, comparisons, glossary, paths, My learning |
 | 6 Testing & verification | ✅ unit + content tests, browser crawl, e2e, axe audit |
 | 7 Long-term expansion | ▶ ongoing — below |
@@ -16,7 +16,7 @@
 
 ## Next content
 
-**The authoritative, entry-by-entry expansion plan is `docs/CONTENT_AUDIT.md` §6** (ten tiers: foundations → UI/interaction → research → IA → design systems → accessibility → product & service → data visualisation → ethics → emerging), with source requirements, relations, activities and visual type for each entry. Coverage is 50 of 558 topics (9.0%) after `interaction-design-discipline`; six domains have no published entry. Owner priority (session 9): knowledge completeness and educational quality come first; visual work only where it solves a usability, accessibility or educational problem. The list below is the earlier, superseded ordering, kept for history.
+**The authoritative, entry-by-entry expansion plan is `docs/CONTENT_AUDIT.md` §6** (ten tiers: foundations → UI/interaction → research → IA → design systems → accessibility → product & service → data visualisation → ethics → emerging), with source requirements, relations, activities and visual type for each entry. Coverage is 51 of 558 topics (9.1%) after `accessibility-concept`; six domains have no published entry. Owner priority (session 9): knowledge completeness and educational quality come first; visual work only where it solves a usability, accessibility or educational problem. The list below is the earlier, superseded ordering, kept for history.
 
 ### Earlier ordering (superseded)
 
