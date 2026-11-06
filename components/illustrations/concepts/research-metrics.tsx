@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 import { nasaTlxRaw, nps, susScore } from "../../../lib/formulas/questionnaires";
 import { taskSuccess } from "../../../lib/formulas/stats";
 import type { IllustrationEntry } from "../illustration-types";
-import { usabilityPlate } from "./editorial-plates";
+import { usabilityTestingPlate } from "./foundation-sheets";
 import { Arrow, Box, C, HatchDefs, Label, Lines, Node, STROKE, Window } from "../primitives";
 
 /** Deterministic pseudo-random numbers so plates are stable between renders. */
@@ -577,7 +577,7 @@ const sampleSizeEstimation: IllustrationEntry = {
 const plates: IllustrationEntry[] = [
   heuristicEvaluation,
   cognitiveWalkthrough,
-  usabilityPlate,
+  usabilityTestingPlate,
   cardSorting,
   systemUsabilityScale,
   nasaTlx,

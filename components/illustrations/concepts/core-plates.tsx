@@ -4,8 +4,9 @@
  */
 import { doubleDiamondPlate } from "./sheet-plates";
 import type { IllustrationEntry } from "../illustration-types";
-import { cltPlate, mentalPlate } from "./editorial-plates";
-import { Arrow, Box, C, CurveArrow, Cursor, Label, Lines, Node, STROKE, Window } from "../primitives";
+import { cltPlate } from "./editorial-plates";
+import { affordancesPlate, mentalModelsPlate, signifiersPlate } from "./foundation-sheets";
+import { Arrow, Box, C, Label, Lines, Node, STROKE, Window } from "../primitives";
 
 /* ---------------- Hick-Hyman law: each doubling of choices adds one bit ---------------- */
 export const hickHyman: IllustrationEntry = {
@@ -161,62 +162,6 @@ export const jakobs: IllustrationEntry = {
       </g>
     );
   },
-};
-
-/* ---------------- Mental models ---------------- */
-
-/* ---------------- Affordances: action possibilities ---------------- */
-export const affordances: IllustrationEntry = {
-  slug: "affordances",
-  title: "Affordances plate",
-  description:
-    "Three physical-looking controls, each with the action it makes possible drawn as a dotted motion: a knob with a curved rotate arrow, a slider with a sideways slide arrow, and a raised button with a downward press arrow. Affordances are relations between an object's properties and what an agent can do with it.",
-  Art: ({ detail, animate }) => (
-    <g>
-      {/* knob */}
-      <circle cx="80" cy="150" r="40" fill={C.base} stroke={C.line} strokeWidth={STROKE.main} />
-      <line x1="80" y1="150" x2="80" y2="118" stroke={C.paper} strokeWidth="4" strokeLinecap="round" />
-      <CurveArrow d="M 44 98 A 62 62 0 0 1 128 106" tip={[128, 106]} angle={0.75} dashed />
-      {/* slider */}
-      <rect x="160" y="146" width="96" height="8" rx="4" fill={C.soft} stroke={C.line} strokeWidth={STROKE.fine} />
-      <rect x="186" y="132" width="20" height="36" rx="3" fill={C.base} stroke={C.line} strokeWidth={STROKE.main} className={animate ? "anim-sway" : undefined} />
-      <Arrow x1={170} y1={112} x2={248} y2={112} dashed />
-      {/* push button */}
-      <rect x="292" y="168" width="70" height="16" rx="2" fill={C.soft} stroke={C.line} strokeWidth={STROKE.fine} />
-      <rect x="300" y="138" width="54" height="30" rx="4" fill={C.base} stroke={C.line} strokeWidth={STROKE.main} />
-      <Arrow x1={327} y1={88} x2={327} y2={128} dashed />
-      <Label x={80} y={228} show={detail}>turn</Label>
-      <Label x={208} y={228} show={detail}>slide</Label>
-      <Label x={327} y={228} show={detail}>press</Label>
-      <Label x={200} y={268} show={detail} tone="mute">what the object makes possible for this agent</Label>
-    </g>
-  ),
-};
-
-/* ---------------- Signifiers: perceivable cues ---------------- */
-export const signifiers: IllustrationEntry = {
-  slug: "signifiers",
-  title: "Signifiers plate",
-  description:
-    "Two versions of the same flat rectangle. The left one has no cues, so it is unclear whether it can be clicked; a question mark sits beside it. The right one adds signifiers: a label, an underline, a chevron, a raised edge and a pointer cursor, each pointing to how the element should be used.",
-  explorer: "signifiers",
-  Art: ({ detail }) => (
-    <g>
-      <rect x="40" y="120" width="120" height="44" rx="2" fill={C.soft} />
-      <text x="100" y="98" textAnchor="middle" fontSize="34" fill={C.mute} fontFamily="var(--font-newsreader), serif">
-        ?
-      </text>
-      <rect x="236" y="124" width="124" height="44" rx="4" fill={C.ink} opacity="0.25" />
-      <rect x="232" y="118" width="124" height="44" rx="4" fill={C.base} stroke={C.line} strokeWidth={STROKE.main} />
-      <Lines x={246} y={140} w={64} n={1} color={C.paper} last={1} />
-      <path d="M328 133 l8 7 -8 7" fill="none" stroke={C.paper} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-      <line x1="246" y1="176" x2="310" y2="176" stroke={C.ink} strokeWidth={STROKE.main} />
-      <Cursor x={330} y={150} />
-      <Arrow x1={200} y1={141} x2={222} y2={141} />
-      <Label x={100} y={196} show={detail}>no cue</Label>
-      <Label x={294} y={210} show={detail}>cues show how to use it</Label>
-    </g>
-  ),
 };
 
 /* ---------------- Peak-end rule ---------------- */
@@ -399,5 +344,5 @@ export const atomicDesign: IllustrationEntry = {
   },
 };
 
-export const corePlates = [hickHyman, gestalt, cltPlate, millers, jakobs, mentalPlate, affordances, signifiers, peakEnd, doubleDiamondPlate, designThinking, nielsenHeuristics, informationArchitecture, atomicDesign];
+export const corePlates = [hickHyman, gestalt, cltPlate, millers, jakobs, mentalModelsPlate, affordancesPlate, signifiersPlate, peakEnd, doubleDiamondPlate, designThinking, nielsenHeuristics, informationArchitecture, atomicDesign];
 

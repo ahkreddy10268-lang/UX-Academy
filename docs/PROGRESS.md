@@ -1,6 +1,6 @@
 # Progress register
 
-_Last updated: 2026-11-06 (session 20 — Visual Learning System: three dimensions, instructional sheet canvas, six pilots)_
+_Last updated: 2026-11-06 (session 21 — the eight "replace" plates redrawn on the instructional sheet)_
 
 ## State
 
@@ -294,7 +294,7 @@ Not done: migration of the other 73 plates and their Level-2 figures (ordered li
 ## Next task (precise)
 Migrate the UX Fundamentals stage-1 plates to v6 one at a time, starting with `usability` and `user-experience` (family 3 infographics) and `ui-design` (family 1 exploded interface layers), each with its Level-2 figure; then resume Tier 1 content with `inclusive-design`.
 
-## Session 20 — Visual Learning System (uncommitted; awaiting owner review)
+## Session 20 — Visual Learning System (committed ee95a29)
 
 Inspected: all 16 supplied references (extracted to `.local/visual-style-references/`, git-ignored; the five copies made in session 19 were replaced by the archive's originals), the Hairline README/site/docs/skills pages, NN/g's F-pattern article, component.gallery, Mobbin and Refero Styles (Apple HIG and refero.design returned no readable content). Rendered and reviewed all 74 registered plates as contact sheets; inventoried 21 Level-2 figures, 9 plate explorers and 14 entry labs.
 
@@ -304,5 +304,13 @@ Audit result (generated): 74 plates — 6 in the current system, 68 in the earli
 
 Verified: check (219 tests, typecheck, lint); docs:generate; build (877 pages); atlas 36/36; e2e 42/42; e2e-redesign 66/66 (after restoring the Fitts hero animation it had caught missing); keyboard 45/45; devices 155/155; crawl 0 problem pages; axe on the six pilot entries, /library and / in light and dark: 0 violations. Rendered: the six pilots at card and hero size in both page themes, and their hero plates inside the app at 1440, 1024, 820 and 390 px in both themes. Not done: real devices and screen readers; Level-2 restyling beyond accessibility; migration of the other 68 plates.
 
+## Session 21 — the eight "replace" plates (uncommitted; awaiting owner review)
+
+Done (D-093): mental-models, affordances, signifiers, usability-testing, usability, user-experience, human-computer-interaction and wcag redrawn one at a time on the `sheet` canvas (`components/illustrations/concepts/foundation-sheets.tsx`), each read against its entry first, then rendered and corrected (label collisions, leader routing, a step count that did not match its drawn route, text overflowing a box). Swapped in place with slugs, order and explorers (`signifiers`, `hci-methods`) unchanged; the legacy definitions and their unused imports removed from `core-plates.tsx`, `editorial-plates.tsx` and `frameworks-visual.tsx`. Register records updated to `retain` with category, method and techniques; ILLUSTRATION_SYSTEM § Replacements accepted documents each composition and its accuracy check.
+
+Generated result: 74 plates — 14 in the current system, 60 in the earlier pastel style; verdicts 16 retain, 58 refine, 0 replace.
+
+Verified: check (219 tests, typecheck, lint); docs:generate; build; atlas 36/36; e2e 42/42; e2e-redesign 66/66; keyboard 45/45; devices 155/155; crawl 0 problem pages; axe on the eight entry pages and /library: 0 violations. Rendered: each plate at card and hero size in both page themes, and the hero inside the app at 1440, 1024, 820 and 390 px in both themes. Known limit: on a 390 px phone the smallest plate text renders at about 4–4.5 CSS px (also true of the pilots); see ILLUSTRATION_SYSTEM § Replacements accepted. Not done: real devices and screen readers; Level-2 restyling.
+
 ## Next task (precise)
-Migrate the eight "replace" plates first, in learning-path order — `usability`, `user-experience`, `human-computer-interaction`, `mental-models`, `affordances`, `signifiers`, `usability-testing`, `wcag` — one at a time with the procedure in docs/ILLUSTRATION_SYSTEM.md § Migration; then restyle the pilots' Level-2 figures (UI design annotated interface and the interaction loop first) and add the first Responsive & Adaptive figure when a responsive entry is written.
+Decide the sheet kit's minimum text size for phones (recompose, do not scale) and apply it to the 14 current plates; then restyle the pilots' Level-2 figures (UI design annotated interface and the interaction loop first); then migrate the "refine" plates one at a time in learning-path order (UX Fundamentals first: user-centred-design, gulfs-of-execution-and-evaluation, recognition-over-recall, cognitive-load-theory, jakobs-law, progressive-disclosure, nielsen-usability-heuristics, heuristic-evaluation, system-usability-scale); add the first Responsive & Adaptive figure when a responsive entry is written.

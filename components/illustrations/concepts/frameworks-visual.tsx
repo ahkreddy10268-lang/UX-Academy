@@ -1,42 +1,9 @@
 /** Plates: frameworks-visual. Authored to docs/ILLUSTRATION_SYSTEM.md rules. */
 import type { IllustrationEntry } from "../illustration-types";
-import { hciPlate } from "./editorial-plates";
+import { hciPlate, usabilityPlate, userExperiencePlate, wcagPlate } from "./foundation-sheets";
 import { uiDesignPlate } from "./sheet-plates";
 import { accessibilityPlate, informationArchitecturePlate, interactionDesignPlate } from "./viz-plates";
-import { Arrow, C, CurveArrow, Cursor, HatchDefs, Label, Lines, Node, STROKE } from "../primitives";
-
-/* ---------------- Usability (ISO 9241-11) ---------------- */
-const usability: IllustrationEntry = {
-  slug: "usability",
-  title: "Usability plate",
-  description:
-    "A dashed boundary marks the context of use. Inside it, a user on the left reaches a goal on the right by two routes: a short direct path and a long wandering one. Above, three meters measure the attempt: effectiveness (was the goal reached), efficiency (how much effort it took) and satisfaction.",
-  Art: ({ detail }) => (
-    <g>
-      <rect x="26" y="34" width="348" height="232" rx="14" fill="none" stroke={C.ink} strokeWidth={STROKE.fine} strokeDasharray="6 5" />
-      {/* meters */}
-      {[0.92, 0.55, 0.75].map((f, i) => (
-        <g key={i}>
-          <rect x={64 + i * 98} y={66} width={80} height={12} rx={6} fill={C.surface} stroke={C.line} strokeWidth={STROKE.fine} />
-          <rect x={64 + i * 98} y={66} width={80 * f} height={12} rx={6} fill={C.base} stroke={C.line} strokeWidth={STROKE.fine} />
-        </g>
-      ))}
-      {/* routes */}
-      <path d="M86 190 C 120 120, 170 250, 210 200 S 260 130, 300 186" fill="none" stroke={C.mute} strokeWidth={STROKE.fine} strokeDasharray="3 5" />
-      <Arrow x1={88} y1={196} x2={298} y2={196} color={C.line} width={STROKE.main} />
-      <Node cx={74} cy={196} r={13} fill={C.paper} width={STROKE.main} />
-      <circle cx="74" cy="192" r="4" fill={C.line} />
-      <rect x="304" y="174" width="40" height="44" rx="3" fill={C.base} stroke={C.line} strokeWidth={STROKE.main} />
-      <path d="M314 196 l7 7 13 -15" fill="none" stroke={C.paper} strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-      <Label x={104} y={98} show={detail}>effectiveness</Label>
-      <Label x={202} y={98} show={detail}>efficiency</Label>
-      <Label x={300} y={98} show={detail}>satisfaction</Label>
-      <Label x={74} y={232} show={detail}>user</Label>
-      <Label x={324} y={238} show={detail}>goal</Label>
-      <Label x={200} y={254} show={detail} tone="mute">context of use: users · tasks · environment</Label>
-    </g>
-  ),
-};
+import { Arrow, C, CurveArrow, Cursor, HatchDefs, Label, Lines, STROKE } from "../primitives";
 
 /* ---------------- User-centred design (ISO 9241-210 activities) ---------------- */
 const userCentredDesign: IllustrationEntry = {
@@ -192,41 +159,6 @@ const progressiveDisclosure: IllustrationEntry = {
       <Label x={290} y={58} anchor="start" show={detail}>essentials</Label>
       <Label x={352} y={280} anchor="end" show={detail} tone="mute">advanced, deferred</Label>
       <Label x={192} y={197} anchor="start" show={detail}>reveal</Label>
-    </g>
-  ),
-};
-
-/* ---------------- WCAG: POUR principles and conformance levels ---------------- */
-const wcag: IllustrationEntry = {
-  slug: "wcag",
-  title: "WCAG plate",
-  description:
-    "Four pillars labelled P, O, U and R, for perceivable, operable, understandable and robust, stand on a base. They support three stacked bands for the conformance levels A, AA and AAA, with AA highlighted as the level most commonly required.",
-  Art: ({ detail }) => (
-    <g>
-      {/* levels */}
-      <rect x="132" y="38" width="136" height="26" rx="2" fill={C.surface} stroke={C.line} strokeWidth={STROKE.fine} />
-      <rect x="96" y="64" width="208" height="30" rx="2" fill={C.base} stroke={C.line} strokeWidth={STROKE.main} />
-      <rect x="60" y="94" width="280" height="30" rx="2" fill={C.soft} stroke={C.line} strokeWidth={STROKE.fine} />
-      {/* pillars */}
-      {["P", "O", "U", "R"].map((l, i) => {
-        const x = 76 + i * 66;
-        return (
-          <g key={l}>
-            <rect x={x} y={124} width={50} height={112} fill={C.surface} stroke={C.line} strokeWidth={STROKE.main} />
-            <line x1={x + 16} y1={130} x2={x + 16} y2={230} stroke={C.mute} strokeWidth={STROKE.hair} />
-            <line x1={x + 34} y1={130} x2={x + 34} y2={230} stroke={C.mute} strokeWidth={STROKE.hair} />
-            <text x={x + 25} y={190} textAnchor="middle" fontSize="22" fill={C.line} fontFamily="var(--font-newsreader), serif" fontWeight="500">
-              {l}
-            </text>
-          </g>
-        );
-      })}
-      <rect x="50" y="236" width="300" height="16" rx="2" fill={C.line} />
-      <Label x={200} y={56} show={detail} tone="line">AAA</Label>
-      <Label x={200} y={84} show={detail} tone="line">AA</Label>
-      <Label x={200} y={114} show={detail} tone="line">A</Label>
-      <Label x={200} y={276} show={detail} tone="mute">perceivable · operable · understandable · robust</Label>
     </g>
   ),
 };
@@ -457,47 +389,11 @@ const humanCentredDesign: IllustrationEntry = {
 };
 
 
-/** User experience: a person's response across before / during / after use, built from pragmatic and hedonic qualities. */
-const userExperience: IllustrationEntry = {
-  slug: "user-experience",
-  title: "User experience plate",
-  description:
-    "A timeline runs from before use through during use to after use. A line traces how the person's response rises and dips across the three phases, ending in a remembered judgement. Under the during-use phase, a product window sits above two bars labelled pragmatic and hedonic, the task-related and non-task qualities that both feed the experience.",
-  Art: ({ detail }) => (
-    <g>
-      {[
-        [40, 136, "before"],
-        [136, 272, "during"],
-        [272, 360, "after"],
-      ].map(([x1, x2, l], i) => (
-        <g key={l as string}>
-          <rect x={x1 as number} y={44} width={(x2 as number) - (x1 as number) - 6} height={128} rx={6} fill={i === 1 ? C.soft : C.surface} stroke={C.line} strokeWidth={STROKE.fine} />
-          <Label x={((x1 as number) + (x2 as number) - 6) / 2} y={34} show={detail} tone="mute">{l as string}</Label>
-        </g>
-      ))}
-      {/* response over time */}
-      <path d="M48 128 C 80 118, 110 96, 140 100 C 170 104, 180 78, 206 82 C 230 86, 236 120, 258 112 C 280 104, 300 70, 330 74 L 350 74" fill="none" stroke={C.ink} strokeWidth={STROKE.main} strokeLinecap="round" />
-      <circle cx={350} cy={74} r={6} fill={C.base} stroke={C.line} strokeWidth={STROKE.fine} />
-      {/* the product, during use */}
-      <rect x={168} y={188} width={72} height={46} rx={5} fill={C.surface} stroke={C.line} strokeWidth={STROKE.main} />
-      <Lines x={178} y={200} w={44} n={3} gap={9} />
-      {/* pragmatic and hedonic qualities */}
-      <rect x={112} y={248} width={70} height={14} rx={3} fill={C.base} stroke={C.line} strokeWidth={STROKE.fine} />
-      <rect x={226} y={248} width={70} height={14} rx={3} fill={C.soft} stroke={C.line} strokeWidth={STROKE.fine} />
-      <path d="M147 248 L190 234 M261 248 L218 234" stroke={C.line} strokeWidth={STROKE.fine} />
-      <Label x={147} y={280} show={detail}>pragmatic</Label>
-      <Label x={261} y={280} show={detail}>hedonic</Label>
-      <Label x={346} y={96} show={detail} anchor="end" tone="mute">remembered</Label>
-    </g>
-  ),
-};
-
-
 const plates: IllustrationEntry[] = [
-  usability,
+  usabilityPlate,
   userCentredDesign,
   humanCentredDesign,
-  userExperience,
+  userExperiencePlate,
   hciPlate,
   uiDesignPlate,
   interactionDesignPlate,
@@ -506,7 +402,7 @@ const plates: IllustrationEntry[] = [
   jobsToBeDone,
   heartFramework,
   progressiveDisclosure,
-  wcag,
+  wcagPlate,
   colourContrastRatio,
   visualHierarchy,
   modularTypeScale,

@@ -363,3 +363,23 @@ Per figure: read the entry → name the single learning outcome → choose categ
 | Interaction design | Interaction Design · process | viz | one control across ready, pressed, processing, paid; timeout branch and recovery |
 
 Level 2 figures meet the structural standard (objective, takeaway, ordered text version, sources, verification) but, except accessibility, still use the earlier light panel styling; they migrate with their entry.
+
+### Replacements accepted (2026-11-06, D-093)
+
+The eight plates the audit marked **replace** were redrawn one at a time on the `sheet` canvas (`concepts/foundation-sheets.tsx`) and swapped in place: same slugs and registry order, explorers kept (`signifiers`, `hci-methods`), legacy definitions removed. Each now has the verdict `retain`. No person figures: each shows the mechanism through a believable interface or a structure.
+
+| Plate | Category · method | Composition | Accuracy check against the entry |
+|---|---|---|---|
+| Mental models | UX Concept · relationship | designer's conceptual model (edit → cloud copy → phone) → editor screen with no saved state shown (system image) → user's model (edit "needs Save" → this laptop; the rest missing); direct designer-to-user arc crossed out | Norman's three models; the system image is the only channel; the autosave example is the entry's own |
+| Affordances | UX Concept · comparison (+ hierarchy) | phone inbox with 1 a visible Archive button, 2 a swipe-to-delete with no cue (dashed), 3 a heading styled as a link that does nothing; sorted into a possible × perceived grid with ticks and crosses | Gaver's perceptible / hidden / false affordances as defined in the entry |
+| Signifiers | Interaction Design · comparison | the same export control with the same dashed hit area, as plain text (✗) and with four numbered cues: shape, download icon, label, hover + pointer (✓) | Same affordance, different signifiers; redundant cues; plain text read as non-interactive |
+| Usability testing | Evaluation · process | task card (the entry's train task) → interface under test with three numbered observations (hesitation, think-aloud question, success) → session timeline with time on task 1:32 → findings with severity bars linked to observations | Task without the answer, think-aloud, observation per task, severity rated after sessions; the session is labelled illustrative and shows no frequencies |
+| Usability | Usability & Accessibility · relationship (+ comparison) | one ticket machine, two contexts of use (commuter / hurried first-time visitor), each measured for effectiveness, efficiency and satisfaction | ISO 9241-11 components relative to users, goals and context; the entry's own ticket-machine analogy; step counts follow the drawn routes, outcomes are illustrative |
+| User experience | UX Concept · process (+ relationship) | one train journey: advert (before), booking and barrier (during), cancellation and six-week refund email (after); responses below a line separating designed touchpoints from what happens in the person | ISO 9241-210 before/during/after; the entry's booking, barrier and refund example; UX cannot be designed directly |
+| Human-computer interaction | UX Concept · relationship | person, task, technology and context around the act → respond → feedback → interpret loop; context changed from desk to moving car, so two links shift (glance only; small targets hard to hit); study → design → evaluate cycle | The entry's four-element model and its desk-versus-car example; the three strands of HCI work |
+| WCAG | Usability & Accessibility · hierarchy | 4 principles → 13 guidelines (two opened, the rest collapsed by number range) → five real success criteria with levels (1.4.3 AA, 1.4.6 AAA, 1.4.11 AA, 2.1.1 A, 2.5.8 AA); A ⊂ AA ⊂ AAA with AA as the usual target; non-normative Techniques dashed | WCAG 2.2 numbering, names and levels; guidelines are not testable; AA means every A and AA criterion |
+
+The v5.1 pilot table above (HCI, Mental Models, Usability Testing) is kept as history; those three plates are now the replacements listed here.
+
+**Known limit (all sheet plates, including the pilots).** The smallest interface text (5–5.6 plate units) renders at about 4–4.5 CSS px when the hero is about 316 px wide on a 390 px phone. It is legible in the hero at tablet and desktop widths; on phones the figure relies on its text description and the entry. Raising the minimum text size means recomposing the plates, not scaling them, and should be decided for the sheet kit as a whole.
+
