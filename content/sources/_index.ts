@@ -5,15 +5,16 @@ import m1 from "./cognition-hci";
 import m2 from "./cognitive-effects";
 import m3 from "./comparisons-workshops";
 import m4 from "./core";
-import m5 from "./disability";
-import m6 from "./evaluation";
-import m7 from "./fitts";
-import m8 from "./formula-library";
-import m9 from "./foundations-frameworks";
-import m10 from "./hci-history";
-import m11 from "./interaction-models";
-import m12 from "./measurement";
-import m13 from "./resources";
+import m5 from "./design-systems";
+import m6 from "./disability";
+import m7 from "./evaluation";
+import m8 from "./fitts";
+import m9 from "./formula-library";
+import m10 from "./foundations-frameworks";
+import m11 from "./hci-history";
+import m12 from "./interaction-models";
+import m13 from "./measurement";
+import m14 from "./resources";
 
 export const rawSources: Source[] = [
   ...m0,
@@ -29,5 +30,6 @@ export const rawSources: Source[] = [
   ...m10,
   ...m11,
   ...m12,
-  ...m13
+  ...m13,
+  ...m14
 ];

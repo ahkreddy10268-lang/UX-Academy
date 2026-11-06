@@ -324,3 +324,143 @@ export const interactionDesignPlate: IllustrationEntry = {
     );
   },
 };
+
+/* ---------------------------------------------------------------- */
+/* Design system — one decision traced through the system            */
+/* (checked against the entry: principles inform foundations; tokens  */
+/*  record decisions that components consume; patterns combine        */
+/*  components; products use patterns; documentation and governance    */
+/*  run alongside every layer; feedback from products returns to the   */
+/*  system and changes are released; the layers are a teaching model,  */
+/*  not an order of construction)                                      */
+/* ---------------------------------------------------------------- */
+export const designSystemPlate: IllustrationEntry = {
+  slug: "design-system",
+  title: "Design system plate",
+  canvas: "viz",
+  description:
+    "An exploded view of a design system in four layers, with one design decision traced through it. At the base, foundations and tokens: a row of colour swatches, a spacing scale and type samples; one swatch, the main action colour, is lit. Above it, components: a text input, a toggle and a button that uses the lit colour. Above that, a pattern: a sign-up form made from those components, whose button is the same component. At the top, three products (a website, a mobile app and a staff tool) each show that button. An illuminated route rises from the swatch through the button and the form, then branches into all three products: change the decision once and every product that takes the release receives it. A principles card on the ground feeds the foundations. Beside the stack, a vertical spine stands for documentation and governance and is linked to every layer; a dashed route carries feedback from the products back to the spine, which releases changes into the layers. The layers are a teaching model, not a fixed order of construction.",
+  Art: ({ detail, uid = "p" }) => {
+    const o: Pt = [150, 156];
+    const W = 84;
+    const D = 56;
+    const h = 4;
+    const zF = 0;
+    const zC = 46;
+    const zP = 92;
+    const zR = 138;
+    const key: [number, number] = [40, 40]; // the traced decision sits at the same plane position on every layer
+    const products: [number, number][] = [
+      [0, 22],
+      [29, 51],
+      [58, 80],
+    ];
+    const pc = (p: [number, number]) => (p[0] + p[1]) / 2;
+    const fine = { strokeWidth: 0.5, vectorEffect: "non-scaling-stroke" as const };
+    const spineX = 54;
+    const zU = -22;
+    const route = isoRoute(o, [
+      [key[0], key[1], zF + h],
+      [key[0], key[1], zC + h],
+      [key[0], key[1], zP + h],
+      [key[0], key[1], zR - 10],
+    ]);
+    const branch = (u: number) =>
+      isoRoute(o, [
+        [key[0], key[1], zR - 10],
+        [u, key[1], zR - 10],
+        [u, key[1], zR + 3],
+      ]);
+    return (
+      <g transform="translate(14 6)">
+        <Bloom uid={uid} x={iso(o, key[0], key[1], zC)[0]} y={iso(o, key[0], key[1], zC)[1]} rx={70} ry={52} />
+        <ContactShadow o={o} x={-10} y={-8} w={W + 20} d={D + 18} spread={6} />
+
+        {/* documentation and governance, behind every layer */}
+        <Slab o={o} uid={uid} x={spineX} y={-24} z={zU} w={26} d={6} h={zR + h + 12 - zU} state="dim" />
+        {/* principles and needs: the ground the system stands on */}
+        <Slab o={o} uid={uid} x={-10} y={-8} z={zU} w={W + 20} d={D + 18} h={3} state="dim" />
+        <Guides o={o} corners={[[0, D], [W, D]]} z0={zU + 3} z1={zF} />
+
+        {/* foundations and tokens */}
+        <Slab o={o} uid={uid} x={0} y={0} z={zF} w={W} d={D} h={h} state="glass" />
+        <g transform={plane.top(o, 0, 0, zF + h)}>
+          {[12, 26, 40, 54, 68].map((u, i) => (
+            <rect key={u} x={u - 5} y={key[1] - 5} width={10} height={10} rx={1.4} fill={u === key[0] ? Z.accent : [Z.s3, Z.edgeHi, Z.accent, Z.text3, Z.s2][i]} stroke={u === key[0] ? Z.accent : Z.edge} {...fine} className={u === key[0] ? "glow-soft" : undefined} opacity={u === key[0] ? 1 : 0.75} />
+          ))}
+          {[4, 8, 12, 18, 26].map((w, i) => (
+            <rect key={w} x={8 + [0, 6, 16, 30, 50][i]} y={10} width={w} height={4} rx={0.6} fill={Z.edgeHi} opacity={0.7} />
+          ))}
+          {[30, 22, 16].map((w, i) => (
+            <rect key={w} x={8 + i * 24} y={22} width={w * 0.6} height={6 - i * 1.4} rx={0.6} fill={Z.text3} opacity={0.8} />
+          ))}
+        </g>
+        <Guides o={o} corners={[[0, D], [W, D], [W, 0]]} z0={zF + h} z1={zC} />
+
+        {/* components */}
+        <Slab o={o} uid={uid} x={0} y={0} z={zC} w={W} d={D} h={h} />
+        <g transform={plane.top(o, 0, 0, zC + h)}>
+          <rect x={8} y={10} width={42} height={10} rx={1.6} fill={Z.s1} stroke={Z.edgeHi} {...fine} />
+          <rect x={11} y={13.6} width={16} height={2.4} rx={1} fill={Z.text3} />
+          <rect x={58} y={11} width={16} height={8} rx={4} fill={Z.s1} stroke={Z.edgeHi} {...fine} />
+          <circle cx={70} cy={15} r={2.6} fill={Z.edgeHi} />
+          <rect x={key[0] - 12} y={key[1] - 4.5} width={24} height={9} rx={4.5} fill={Z.accent} className="glow-soft" />
+          <rect x={key[0] - 6} y={key[1] - 0.8} width={12} height={1.6} rx={0.8} fill={Z.bg} />
+          <rect x={60} y={key[1] - 4.5} width={18} height={9} rx={4.5} fill="none" stroke={Z.edgeHi} {...fine} />
+        </g>
+        <Guides o={o} corners={[[0, D], [W, D], [W, 0]]} z0={zC + h} z1={zP} />
+
+        {/* pattern: a sign-up form made of the components */}
+        <Slab o={o} uid={uid} x={0} y={0} z={zP} w={W} d={D} h={h} />
+        <g transform={plane.top(o, 0, 0, zP + h)}>
+          <rect x={14} y={4} width={56} height={48} rx={2} fill={Z.s1} stroke={Z.edge} {...fine} />
+          <rect x={20} y={8} width={20} height={2.6} rx={1} fill={Z.text2} />
+          {[14, 25].map((v) => (
+            <rect key={v} x={20} y={v} width={44} height={7} rx={1.2} fill={Z.s2} stroke={Z.edgeHi} {...fine} />
+          ))}
+          <rect x={key[0] - 12} y={key[1] - 4.5} width={24} height={9} rx={4.5} fill={Z.accent} className="glow-soft" />
+        </g>
+        <Guides o={o} corners={[[0, D], [W, D], [W, 0]]} z0={zP + h} z1={zR} />
+
+        {/* the traced decision rising to the pattern and branching */}
+        <Route points={route} kind="accent" r={2} end="none" />
+
+        {/* products */}
+        {products.map((p, i) => (
+          <g key={i}>
+            <Slab o={o} uid={uid} x={p[0]} y={0} z={zR} w={p[1] - p[0]} d={D} h={h} />
+            <g transform={plane.top(o, p[0], 0, zR + h)}>
+              <rect x={2} y={3} width={p[1] - p[0] - 4} height={5} rx={1} fill={Z.s1} stroke={Z.edge} {...fine} />
+              {[14, 22].map((v) => (
+                <rect key={v} x={3} y={v} width={p[1] - p[0] - 8} height={2.4} rx={1} fill={Z.text3} opacity={0.7} />
+              ))}
+              <rect x={pc(p) - p[0] - 7} y={key[1] - 3.5} width={14} height={7} rx={3.5} fill={Z.accent} className="glow-soft" />
+            </g>
+          </g>
+        ))}
+        {products.map((p, i) => (
+          <Route key={i} points={branch(pc(p))} kind="accent" r={2} end="dot" />
+        ))}
+
+        {/* links from the spine to every layer, and feedback from the products */}
+        {[zF + h, zC + h, zP + h].map((z) => (
+          <Route key={z} points={isoRoute(o, [[spineX + 13, -18, z], [spineX + 13, 0, z]])} kind="neutral" r={1} end="dot" />
+        ))}
+        <Route points={isoRoute(o, [[pc(products[2]), 0, zR + h], [pc(products[2]), -21, zR + h + 12]])} kind="neutral-dashed" r={2} end="arrow" />
+
+        {detail && (
+          <g>
+            <Tag x={iso(o, 0, D, zR + h)[0] - 6} y={iso(o, 0, D, zR + h)[1] + 2} text="products" anchor="end" />
+            <Tag x={iso(o, 0, D, zP + h)[0] - 6} y={iso(o, 0, D, zP + h)[1] + 2} text="patterns" anchor="end" />
+            <Tag x={iso(o, 0, D, zC + h)[0] - 6} y={iso(o, 0, D, zC + h)[1] + 2} text="components" anchor="end" />
+            <Tag x={iso(o, 0, D, zF + h)[0] - 6} y={iso(o, 0, D, zF + h)[1] + 8} text="foundations · tokens" anchor="end" tone="accent" />
+            <Tag x={iso(o, -10, D + 10, zU + 3)[0] - 6} y={iso(o, -10, D + 10, zU + 3)[1] + 4} text="principles · needs" anchor="end" />
+            <Tag x={iso(o, spineX + 26, -24, zR)[0] + 6} y={iso(o, spineX + 26, -24, zR)[1]} text="docs · governance" />
+            <Tag x={iso(o, pc(products[2]), -21, zR + h + 12)[0] - 8} y={iso(o, pc(products[2]), -21, zR + h + 12)[1] - 6} text="feedback" anchor="end" />
+            <Tag x={iso(o, -10, D + 10, zU)[0] + 44} y={iso(o, -10, D + 10, zU)[1] + 36} text="one decision, traced" anchor="end" tone="accent" leader={iso(o, key[0], key[1] + 5, zF + h)} />
+          </g>
+        )}
+      </g>
+    );
+  },
+};

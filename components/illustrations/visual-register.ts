@@ -76,6 +76,7 @@ export const visualRegister: Record<string, VisualRecord> = {
   "colour-contrast-ratio": r("visual-design", "comparison", "refine", "Pair and ratio scale are right; refine with real text samples.", { secondary: ["usability-accessibility"], techniques: ["good-bad", "measurement"] }),
   "visual-hierarchy": r("visual-design", "comparison", "refine", "Numbered attention order on a page is the right idea; refine.", { techniques: ["numbered-annotation"] }),
   "modular-type-scale": r("visual-design", "hierarchy", "refine", "Ratio-driven sizes are shown; add the ratio and step labels.", { techniques: ["measurement"] }),
+  "design-system": r("design-systems", "relationship", "retain", "Exploded foundations · components · patterns · products with one decision traced from a token into three products; documentation and governance spine linked to every layer; feedback route back to the spine.", { secondaryMethods: ["hierarchy"], techniques: ["exploded-layers", "routed-connectors"] }),
   "design-tokens": r("design-systems", "hierarchy", "refine", "Primitive to semantic to component is right; refine into a traced decision.", { secondaryMethods: ["relationship"] }),
 
   /* ---- planned-topic plates ---- */

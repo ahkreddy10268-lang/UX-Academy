@@ -122,7 +122,7 @@ Write in this order. Each entry must pass the gates above, cite only sources tha
 `information-foraging-theory` (Pirolli & Card 1999, registry): conceptual. `information-scent` (Chi, Pirolli et al. 2001†): annotated interface. `taxonomies` and `labelling-systems` (Rosenfeld et al. 2015, registry; Furnas et al. 1987, registry): hierarchy. `navigation-patterns` and `faceted-navigation` (Hearst 2006†): annotated interface.
 
 ### Tier 5 — Design systems
-`design-system` (Frost *Atomic Design*†; Curtis 2010†), `atomic-design` (Frost†), `semantic-tokens` (W3C DTCG format, registry), `component-architecture`, `design-governance`. L2: hierarchy (token → component → pattern) and process (contribution model).
+✅ `design-system` (session 22: GOV.UK Design System, Carbon, USWDS (added), Adobe Spectrum (added), Frost 2016 (registry), Kholmatova 2017 and Curtis 2009 (added, scope only), Semantic Versioning 2.0.0 (added); quiz ×9, exercises ×4, flashcards ×10; plate + two L2 figures; no L3, D-095), `atomic-design` (Frost, registry), `semantic-tokens` (W3C DTCG format, registry), `component-architecture`, `design-governance`. L2: hierarchy (token → component → pattern) and process (contribution model).
 
 ### Tier 6 — Accessibility
 `pour`, `keyboard-accessibility`, `focus-management`, `semantic-html`, `aria` (W3C WAI-ARIA 1.2†, APG†), `screen-readers` (WebAIM screen reader survey†), `accessible-forms`, `en-301-549` (ETSI†), `european-accessibility-act` (Directive (EU) 2019/882†, EUR-Lex). L2: hierarchy (WCAG structure), annotated interface (focus order).

@@ -14,6 +14,7 @@ import { UcdCycle } from "./concepts/user-centred-design";
 import { UiDesignAnnotated } from "./concepts/ui-design";
 import { InteractionLoop } from "./concepts/interaction-design";
 import { DisabilityPerspectives } from "./concepts/accessibility-concept";
+import { ContributionLifecycle, DesignSystemArchitecture } from "./concepts/design-system";
 import { IaEcology, IaHierarchy } from "./concepts/information-architecture";
 import type { VisualExplanation } from "./types";
 
@@ -435,6 +436,53 @@ export const visualExplanations: VisualExplanation[] = [
     sources: ["upias-disability-alliance-1976", "oliver-1983", "who-icf-2001", "un-crpd-2006"],
     Component: DisabilityPerspectives,
   },
+  {
+    id: "design-system.architecture",
+    slug: "design-system",
+    type: "system",
+    level: 2,
+    method: "relationship",
+    title: "The layers a design decision travels through",
+    objective: "Six layers of a design system, from principles to product interfaces, each with what it holds, an illustrative example and what a change at that layer reaches, with documentation and governance beside every layer.",
+    takeaway: "Each layer refers to the one below instead of copying it, so a decision made once reaches every layer that uses it, and so does a mistake or a breaking rename; documentation and governance decide how those changes are made and explained.",
+    summary: [
+      "A teaching model, not an order of construction. Read from the bottom (what the system is for) to the top (what users see). Examples are from the entry's illustrative Harbourline ferry operator.",
+      "1, Principles and needs: what the system is for and how decisions are judged. Example: tell people what happened and what to do next; work one-handed on a moving deck. A change here alters how every later decision is evaluated.",
+      "2, Foundations and design language: scales and rules for colour, type, spacing, layout, shape, elevation, icons, motion and accessibility. Example: an action colour that meets contrast on every surface. Reaches every token and component built on it.",
+      "3, Tokens: named records of decisions that components consume, such as color.action.primary, color.feedback.danger.text and space.4. A change reaches every component that consumes the token; contrast must be rechecked on every surface.",
+      "4, Components: reusable controls with anatomy, properties, variants, states, accessibility and responsive behaviour, such as a button, text input and date input. A change reaches every pattern and product that uses the component; renaming a property is a breaking change.",
+      "5, Patterns and templates: reusable solutions to recurring tasks and page structures, such as choosing a sailing, paying and confirming, and an error summary. A change reaches every screen that uses the pattern.",
+      "6, Product interfaces: screens built from the shared parts plus what is specific to each product (booking website, mobile app, staff ticketing tool). A change here reaches one product.",
+      "Beside every layer: documentation (usage, do and don't examples, anatomy and states, accessibility requirements, content guidance, responsive behaviour, design and code links, versions and known limits) and governance (owner and decision rights, contribution process, review criteria, exceptions and extensions, decision records, releases, migration and deprecation).",
+      "Core and extension: the staff tool's dense data table is built from shared tokens in the staff tool's own extension and moves into the core only if another product needs it.",
+    ],
+    verification: "illustrative",
+    sources: ["govuk-design-system", "carbon-design-system", "frost-2016"],
+    Component: DesignSystemArchitecture,
+  },
+  {
+    id: "design-system.contribution",
+    slug: "design-system",
+    type: "process",
+    level: 2,
+    method: "process",
+    title: "From a product's need to a release, and back",
+    objective: "How a new component or pattern enters a design system, following the GOV.UK Design System's published proposal, development and review process, with the paths that stop or return a proposal.",
+    takeaway: "A contribution is judged twice on evidence, first on need and uniqueness and then on usability, consistency and versatility, and adoption creates the next round of needs, so the process is a loop rather than a pipeline.",
+    summary: [
+      "Steps 2 to 6 follow the GOV.UK Design System's published process; other systems differ in detail.",
+      "1, Find a need: a product team meets a problem other services also have. Output: examples and evidence of the need.",
+      "2, Propose: check existing discussions first (if the idea is already there, upvote it and add evidence), then present the idea and evidence of user needs without spending time on a specific design or code. Output: a proposal.",
+      "3, Check against the proposal criteria: useful (evidence that many teams or services need it) and unique (it does not replicate something already in the system; a replacement must be shown to be better). Proposals that do not meet them are not taken forward. If a proposal is not prioritised that year, the proposer can develop it or leave it for someone else.",
+      "4, Develop and research: start with what exists, work with the community, design an implementation, research it in a real service or a realistic prototype, and test accessibility. Output: a researched implementation.",
+      "5, Review: the system team reviews against the publication criteria (usable: tested with a representative sample of users, including disabled people; consistent: reuses existing styles and components and follows the style guide and coding standards; versatile: works across the services, browsers, assistive technologies and devices that need it). It can be published as it is, or only after recommended changes, which sends the work back to step 4.",
+      "6, Document and release: final checks to design, content, code and guidance, then publication with release notes and a version.",
+      "7, Adopt and feed back: product teams update; problems, gaps and ideas return as new needs, and parts that no longer serve are deprecated with a migration path. The sequence repeats.",
+    ],
+    verification: "content-checked",
+    sources: ["govuk-design-system", "semver-2"],
+    Component: ContributionLifecycle,
+  },
 ];
 
 /** Level-1 takeaway shown with the hero plate ("at a glance"). */
@@ -450,6 +498,7 @@ export const quickTakeaways: Record<string, string> = {
   "interaction-design-discipline": "A person acts, the system changes state and responds, the person interprets the response and acts again: interaction design designs that exchange over time.",
   "ui-design": "The interface is the surface where a person meets a system: UI design decides what they see, what they can do and what they are told back.",
   "heuristic-evaluation": "A few experts review alone, then merge and rate what they found: fast and cheap, but predictions rather than evidence.",
+  "design-system": "Shared decisions, components, patterns and guidance, owned and changed over time: a decision made once travels to every product that uses it, and feedback from products changes the system.",
 };
 
 const bySlug = new Map<string, VisualExplanation[]>();

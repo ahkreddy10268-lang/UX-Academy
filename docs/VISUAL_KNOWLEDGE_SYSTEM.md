@@ -4,13 +4,13 @@ A visualisation must **explain** something. A learner should get the basic idea 
 
 > **v6.1 (D-089):** every Level-2 figure has a method (`method` or `METHOD_FOR_TYPE[type]`) and is counted under its entry plate's category in docs/ILLUSTRATION_COVERAGE.md; the governing model is docs/ILLUSTRATION_SYSTEM.md § Visual Learning System.
 >
-> **v6 (D-086):** Level-1 plates and Level-2 figures for knowledge entries now use the dark technical editorial system — `canvas: "viz"`, `--viz-*` tokens and `components/illustrations/system/viz.tsx`. See docs/ILLUSTRATION_SYSTEM.md § Dark technical editorial and docs/DIAGRAM_DESIGN_GUIDELINES.md § Dark technical editorial diagrams.
+> **Superseded in part by v6.1:** the v6 decision (D-086) made the dark technical canvas (`canvas: "viz"`, `--viz-*` tokens, `components/illustrations/system/viz.tsx`) the standard for every knowledge figure. Under D-089 it is **one of two current languages**: `viz` for systems, architectures, routes and processes, and the theme-aware instructional `sheet` (`system/sheet.tsx`) for interface anatomy, measurements, comparisons and annotated examples. Choose the method from the knowledge, then the canvas; do not force a topic into either. Category, method and canvas are three independent dimensions recorded in `components/illustrations/visual-register.ts` and `visual-taxonomy.ts`; docs/ILLUSTRATION_SYSTEM.md § Visual Learning System is the authority if this document and it disagree.
 
 ## Three levels
 
 | Level | Purpose | Where it lives | Implementation |
 |---|---|---|---|
-| 1 · Quick visual | The idea in seconds | Cards, subject tiles, concept and lesson heroes, plus the "At a glance" line | Plates (`components/illustrations/`, 69 plates); `quickTakeaways` in the visual registry |
+| 1 · Quick visual | The idea in seconds | Cards, subject tiles, concept and lesson heroes, plus the "At a glance" line | Plates (`components/illustrations/`; counts, styles and audit verdicts in the generated docs/ILLUSTRATION_COVERAGE.md); `quickTakeaways` in the visual registry |
 | 2 · Detailed explanation | Parts and relationships | Concept page → "Visual explanation" (full width, before the article) | `components/visual-explanations/` (this document) |
 | 3 · Interactive model | Change a variable, see the effect | Below the Level-2 figures on the concept page; labs | Explorers (`components/illustrations/interactive/explorers.tsx`) and labs (`components/labs/`), computing only with `lib/formulas` |
 
@@ -88,9 +88,15 @@ The Information Architecture entry was written for this release (domain `ia`), w
 ## Adding a visual explanation
 
 1. Decide whether a picture explains something the words do not. If it doesn't, don't add one.
-2. Pick the strategy from the knowledge type (spec Part 05: process for methods, formula for laws, conceptual for theories, hierarchy or system for structures, comparison for interventions).
+2. Pick the strategy from the knowledge type (spec Part 05: process for methods, formula for laws, conceptual for theories, hierarchy or system for structures, comparison for interventions). Record its explanation method (`method`, or the default from `METHOD_FOR_TYPE`) and choose the language for the objective: `viz` for systems and processes, the light/dark panel or sheet style for annotated interfaces and comparisons.
 3. Build it from `diagrams/` templates and primitives. Write the concept file in `concepts/`.
 4. Register it with an objective, takeaway, ordered summary, verification kind and sources from the entry's references.
-5. Check it in light and dark at 1440 and 390px. Then run `npx vitest run tests/visuals.test.ts`, and run `tests/browser/e2e-redesign.cjs` against a build.
+5. Check it in light and dark at 1440, 1024, 820 and 390px. Then run `npx vitest run tests/visuals.test.ts`, and run `tests/browser/e2e-redesign.cjs` against a build.
 
 Rules for drawing are in `docs/DIAGRAM_DESIGN_GUIDELINES.md`.
+
+### Design System (session 22)
+
+| Concept | Strategy | Level 2 | Level 3 |
+|---|---|---|---|
+| **Design System** | System (relationship) + process | *Architecture*: six layers from principles to product interfaces, each with what it holds, an illustrative Harbourline example and what a change there reaches, with documentation and governance beside every layer and a core-versus-extension note. *Contribution*: from a product's need to a release and back, following GOV.UK's published proposal, development and review process, with the paths that stop or return a proposal. Both in the `viz` language | — (D-094: a component explorer would mostly restate token theming already taught by Design Tokens; no variable has a computed, checkable output) |

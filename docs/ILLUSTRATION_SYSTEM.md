@@ -191,9 +191,9 @@ Inventory (from the registry): 71 plates — 48 for published entries (5 now in 
 4. **Gate.** Render with `scripts/render-plates.tsx` in both themes, check at card and hero size, then run `tests/illustrations.test.ts`. A plate that does not explain better than the old one is not merged.
 5. **Do not batch-convert.** Each migration is a design decision; there is no automatic restyle.
 
-## Dark technical editorial system (illustration v6) — the standard for knowledge figures
+## Dark technical editorial system (illustration v6) — one of the two current languages
 
-Decision D-086 (2026-11-05). Applies to **family B, Levels 1 and 2** (knowledge and concept figures). Learning-path artwork (family A) and the isometric scenes (family C) are unchanged. Every new knowledge figure, and every migrated one, follows this section; earlier pastel plates stay valid until they are migrated one by one.
+Decision D-086 (2026-11-05). Applies to **family B, Levels 1 and 2** (knowledge and concept figures). Learning-path artwork (family A) and the isometric scenes (family C) are unchanged. Every new knowledge figure drawn on the `viz` canvas follows this section. Since D-089 (§ Visual Learning System below) `viz` is chosen for systems, architectures, routes and processes, and the instructional `sheet` for interface anatomy, measurements and comparisons; this section no longer makes `viz` the default for every knowledge figure. Earlier pastel plates stay valid until they are migrated one by one.
 
 ### Why the earlier style was not enough
 
@@ -383,3 +383,12 @@ The v5.1 pilot table above (HCI, Mental Models, Usability Testing) is kept as hi
 
 **Known limit (all sheet plates, including the pilots).** The smallest interface text (5–5.6 plate units) renders at about 4–4.5 CSS px when the hero is about 316 px wide on a 390 px phone. It is legible in the hero at tablet and desktop widths; on phones the figure relies on its text description and the entry. Raising the minimum text size means recomposing the plates, not scaling them, and should be decided for the sheet kit as a whole.
 
+### Design System figures (2026-11-06, D-095)
+
+| Figure | Category · method | Canvas | Composition | Check against the entry |
+|---|---|---|---|---|
+| L1 `design-system` | Design Systems · relationship (+ hierarchy) | viz | principles-and-needs ground; foundations and tokens (glass), components, a pattern and three product slabs, exploded; one action colour traced as an accent route from its swatch through the button and the sign-up form into all three products; a documentation-and-governance spine behind the stack linked to every layer; a dashed feedback route from the products back to the spine | layers and relationships as in the entry's intermediate level; the layers are labelled a teaching model in the description |
+| L2 `design-system.architecture` | relationship | viz panel (HTML) | six layers, each with what it holds, a Harbourline example (illustrative) and what a change there reaches; up and dashed-down connectors; documentation and governance beside every layer; core-versus-extension note | entry's intermediate explanation and worked example |
+| L2 `design-system.contribution` | process | viz panel (HTML) | seven steps from a product's need to adoption, with GOV.UK's two checkpoints outlined, coral stop paths and grey return paths, and the loop back to new needs | GOV.UK's published proposal, development and review pages, read 2026-11-06 |
+
+QA performed: plate at card and hero size in both page themes; the page in the app at 1440, 1024, 820 and 390 px in both themes, with no horizontal overflow; the label that touched the left edge on narrow heroes was moved. No Level 3 (D-095).

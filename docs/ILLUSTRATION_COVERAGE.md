@@ -5,19 +5,19 @@
 
 | Measure | Count |
 |---|---|
-| Registered Level-1 plates | 74 |
-| Published entries with a plate | 51 / 51 |
+| Registered Level-1 plates | 75 |
+| Published entries with a plate | 52 / 52 |
 | Subject plates | 20 / 20 |
-| Plates in the current system (dark technical or instructional sheet) | 14 |
+| Plates in the current system (dark technical or instructional sheet) | 15 |
 | Plates still in the earlier pastel style | 60 |
-| Level-2 figures | 21 |
+| Level-2 figures | 23 |
 | Level-3 explorers (on plates) | 9 |
 | Labs linked from entries | 14 |
 | Animated plates | 12 |
 
 ## The 12 illustration categories
 
-A figure has one primary category (and may list secondaries). Level 2 and Level 3 are counted under the category of their entry's plate. Maturity: **mature** = every entry plate in the category is in the current system and has a Level-2 figure (Level-2 styling is tracked separately in docs/ILLUSTRATION_SYSTEM.md: only the accessibility figure uses the current language so far); **developing** = some plates are in the current system; **weak** = none are; **gap** = no figure at all.
+A figure has one primary category (and may list secondaries). Level 2 and Level 3 are counted under the category of their entry's plate. Maturity: **mature** = every entry plate in the category is in the current system and has a Level-2 figure (Level-2 styling is tracked separately in docs/ILLUSTRATION_SYSTEM.md: only the accessibility and design-system figures use the current language so far); **developing** = some plates are in the current system; **weak** = none are; **gap** = no figure at all.
 
 | # | Category | L1 plates | Current style | L2 figures | L3 | Retain / refine / replace | Maturity | Entries |
 |---|---|---:|---:|---:|---:|---|---|---|
@@ -29,7 +29,7 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 | 6 | Interaction Design Illustrations | 7 | 2 | 1 | 3 | 2 / 5 / 0 | developing | `signifiers`, `doherty-threshold`, `gulfs-of-execution-and-evaluation`, `interaction-design-discipline`, `progressive-disclosure` |
 | 7 | Wireframe & Prototyping Illustrations | 1 | 0 | 0 | 0 | 0 / 1 / 0 | weak | — |
 | 8 | Visual Design & Composition Illustrations | 7 | 0 | 2 | 6 | 0 / 7 / 0 | weak | `gestalt-principles`, `colour-contrast-ratio`, `visual-hierarchy`, `modular-type-scale` |
-| 9 | Design Systems Illustrations | 3 | 0 | 0 | 0 | 0 / 3 / 0 | weak | `design-tokens` |
+| 9 | Design Systems Illustrations | 4 | 1 | 2 | 0 | 1 / 3 / 0 | developing | `design-system`, `design-tokens` |
 | 10 | Usability & Accessibility Illustrations | 4 | 3 | 1 | 0 | 3 / 1 / 0 | developing | `usability`, `accessibility-concept`, `wcag` |
 | 11 | Responsive & Adaptive Design Illustrations | 0 | 0 | 0 | 0 | 0 / 0 / 0 | gap | — |
 | 12 | UX Evaluation & Optimization Illustrations | 16 | 1 | 2 | 1 | 2 / 14 / 0 | developing | `nielsen-usability-heuristics`, `keystroke-level-model`, `shneiderman-golden-rules`, `heuristic-evaluation`, `cognitive-walkthrough`, `usability-testing`, `system-usability-scale`, `nasa-tlx`, `net-promoter-score`, `task-success-rate`, `ab-testing`, `confidence-intervals`, `sample-size-estimation`, `heart-framework` |
@@ -39,8 +39,8 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 | Method | L1 plates (primary) | L2 figures |
 |---|---:|---:|
 | Conceptual & Metaphorical | 16 | 7 |
-| Process & Sequential | 15 | 6 |
-| Relationship & Systems | 13 | 3 |
+| Process & Sequential | 15 | 7 |
+| Relationship & Systems | 14 | 4 |
 | Comparison & Contrast | 19 | 4 |
 | Hierarchy & Classification | 11 | 1 |
 
@@ -102,6 +102,7 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 | `colour-contrast-ratio` | entry | visual-design | comparison | earlier (pastel) | refine | Pair and ratio scale are right; refine with real text samples. | 0 | colour, contrast-lab |
 | `visual-hierarchy` | entry | visual-design | comparison | earlier (pastel) | refine | Numbered attention order on a page is the right idea; refine. | 0 | hierarchy-lab |
 | `modular-type-scale` | entry | visual-design | hierarchy | earlier (pastel) | refine | Ratio-driven sizes are shown; add the ratio and step labels. | 0 | type-scale-lab |
+| `design-system` | entry | design-systems | relationship | current · dark technical | retain | Exploded foundations · components · patterns · products with one decision traced from a token into three products; documentation and governance spine linked to every layer; feedback route back to the spine. | 2 | — |
 | `design-tokens` | entry | design-systems | hierarchy | earlier (pastel) | refine | Primitive to semantic to component is right; refine into a traced decision. | 0 | — |
 | `foundations` | subject | ux-concept | relationship | earlier (pastel) | refine | Subject identity plate; migrate after entry plates. | 0 | — |
 | `laws-effects` | subject | ux-concept | conceptual | earlier (pastel) | refine | Scatter with trend is generic for the whole subject; migrate later. | 0 | — |
@@ -148,6 +149,8 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 | `ui-design.annotated` | annotated-interface | conceptual | illustrative |
 | `interaction-design-discipline.loop` | system | relationship | content-checked |
 | `accessibility-concept.perspectives` | comparison | comparison | content-checked |
+| `design-system.architecture` | system | relationship | illustrative |
+| `design-system.contribution` | process | process | content-checked |
 
 ## Plate descriptions (text alternatives)
 
@@ -207,6 +210,7 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 | `colour-contrast-ratio` | On the left, two swatches: dark text on a light background and light text on a mid-tone background. A vertical relative-luminance scale from 0 to 1 marks each colour's luminance. On the right, a horizontal ratio scale from 1 to 21 has threshold ticks at 3, 4.5 and 7, with a marker showing where the pair falls. |
 | `visual-hierarchy` | A card layout with a large bold heading, an image area, smaller lines of body text and a solid button. Numbered markers from 1 to 4 show the predicted order in which the eye visits them, driven by size, weight, contrast and position, joined by a dashed scan path. |
 | `modular-type-scale` | Seven letter forms sit on a common baseline, each one a constant ratio larger than the one before, so sizes grow geometrically. A dashed curve through their tops traces the exponential growth, and the base size is highlighted as step zero. |
+| `design-system` | An exploded view of a design system in four layers, with one design decision traced through it. At the base, foundations and tokens: a row of colour swatches, a spacing scale and type samples; one swatch, the main action colour, is lit. Above it, components: a text input, a toggle and a button that uses the lit colour. Above that, a pattern: a sign-up form made from those components, whose button is the same component. At the top, three products (a website, a mobile app and a staff tool) each show that button. An illuminated route rises from the swatch through the button and the form, then branches into all three products: change the decision once and every product that takes the release receives it. A principles card on the ground feeds the foundations. Beside the stack, a vertical spine stands for documentation and governance and is linked to every layer; a dashed route carries feedback from the products back to the spine, which releases changes into the layers. The layers are a teaching model, not a fixed order of construction. |
 | `design-tokens` | Three tiers from left to right. Primitive tokens are raw values: a row of colour swatches and a spacing scale. Semantic tokens are named roles, drawn as labelled slots. Component tokens apply those roles to a button. One highlighted path shows a single primitive colour flowing through a semantic role into the button's background. |
 | `foundations` | A person on the left and a product window on the right are joined by arrows running both ways, showing use and response. Both sit inside a large outlined field labelled context, because experience depends on who, what and where. |
 | `laws-effects` | A scatter of many small measurement dots on a pair of axes forms a rising band, and a single fitted line runs through it. It shows a law as a regularity that appears again and again across many observed trials. |

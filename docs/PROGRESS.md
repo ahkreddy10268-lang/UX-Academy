@@ -1,22 +1,22 @@
 # Progress register
 
-_Last updated: 2026-11-06 (session 21 — the eight "replace" plates redrawn on the instructional sheet)_
+_Last updated: 2026-11-06 (session 22 — the foundational Design System entry, its visuals and the revised Design Systems path)_
 
 ## State
 
-Figures are generated from the content; the live source is `docs/CONTENT_COVERAGE.md` (and `docs/RESEARCH_SOURCES.md`). Snapshot after session 18 (previous snapshot: 50 published, 9.0%):
+Figures are generated from the content; the live source is `docs/CONTENT_COVERAGE.md` (and `docs/RESEARCH_SOURCES.md`). Snapshot after session 22 (previous snapshot, session 18: 51 published, 9.1%):
 
 | Area | Count |
 |---|---|
 | Taxonomy topics (domains / subcategories) | 558 (20 / 73), taxonomy v1.0 frozen |
-| Published entries (all gates pass) | 51 (9.1% of topics) |
-| Addressed within another entry / planned with no content | 10 / 497 |
+| Published entries (all gates pass) | 52 (9.3% of topics) |
+| Addressed within another entry / planned with no content | 10 / 496 |
 | Domains with no published entry | 6 |
 | Explained graph relationships | 440 |
 | Formulas with unit-tested calculators | 25 |
 | Interactive labs | 15 |
-| Quiz questions / exercises / flashcards | 206 / 147 / 165 |
-| Sources (DOI-verified / URL-reachable) | 288 (166 / 81) |
+| Quiz questions / exercises / flashcards | 215 / 151 / 175 |
+| Sources (DOI-verified / URL-reachable) | 293 (166 / 86) |
 
 **The earlier session sections below keep the figures that were true at the time.**
 
@@ -304,7 +304,7 @@ Audit result (generated): 74 plates — 6 in the current system, 68 in the earli
 
 Verified: check (219 tests, typecheck, lint); docs:generate; build (877 pages); atlas 36/36; e2e 42/42; e2e-redesign 66/66 (after restoring the Fitts hero animation it had caught missing); keyboard 45/45; devices 155/155; crawl 0 problem pages; axe on the six pilot entries, /library and / in light and dark: 0 violations. Rendered: the six pilots at card and hero size in both page themes, and their hero plates inside the app at 1440, 1024, 820 and 390 px in both themes. Not done: real devices and screen readers; Level-2 restyling beyond accessibility; migration of the other 68 plates.
 
-## Session 21 — the eight "replace" plates (uncommitted; awaiting owner review)
+## Session 21 — the eight "replace" plates (committed c35177d)
 
 Done (D-093): mental-models, affordances, signifiers, usability-testing, usability, user-experience, human-computer-interaction and wcag redrawn one at a time on the `sheet` canvas (`components/illustrations/concepts/foundation-sheets.tsx`), each read against its entry first, then rendered and corrected (label collisions, leader routing, a step count that did not match its drawn route, text overflowing a box). Swapped in place with slugs, order and explorers (`signifiers`, `hci-methods`) unchanged; the legacy definitions and their unused imports removed from `core-plates.tsx`, `editorial-plates.tsx` and `frameworks-visual.tsx`. Register records updated to `retain` with category, method and techniques; ILLUSTRATION_SYSTEM § Replacements accepted documents each composition and its accuracy check.
 
@@ -312,5 +312,15 @@ Generated result: 74 plates — 14 in the current system, 60 in the earlier past
 
 Verified: check (219 tests, typecheck, lint); docs:generate; build; atlas 36/36; e2e 42/42; e2e-redesign 66/66; keyboard 45/45; devices 155/155; crawl 0 problem pages; axe on the eight entry pages and /library: 0 violations. Rendered: each plate at card and hero size in both page themes, and the hero inside the app at 1440, 1024, 820 and 390 px in both themes. Known limit: on a 390 px phone the smallest plate text renders at about 4–4.5 CSS px (also true of the pilots); see ILLUSTRATION_SYSTEM § Replacements accepted. Not done: real devices and screen readers; Level-2 restyling.
 
+## Session 22 — Design System entry (uncommitted; awaiting owner review)
+
+Inspected first: git state (clean, in sync with origin at c35177d), the schema and completeness gates, the Design Tokens and Fitts entries, the source registry, the visual registry and Level-2 API, and the tests. Confirmed from the live repository: slug `design-system`, type `concept`, domain `design-systems`, subcategory `foundations`; `design-tokens` published; path id `design-systems`; visual category `design-systems`; taxonomy frozen and unchanged.
+
+Researched (pages read first-hand on 2026-11-06): GOV.UK Design System (home; propose, develop and contribution-criteria pages), USWDS (about, design tokens, maturity model), Carbon (What is Carbon: Core and extensions), Adobe Spectrum (introduction), Semantic Versioning 2.0.0, Frost's *Atomic Design* chapters 1, 2 and 5, and the publisher pages for Kholmatova (2017) and Curtis (2009). Crossref and a web search found no peer-reviewed evaluations of design systems; Churchill (2019, DOI confirmed) was not cited because its text could not be read. Open Library and Google Books refused or rate-limited requests; book details come from the publishers' pages.
+
+Done (D-094…D-096): `content/knowledge/design-systems/design-system.ts` (three levels; architecture, foundations, components as contracts, patterns and templates, documentation, governance and contribution, lifecycle and versioning, tooling, multi-brand and cross-platform, adoption and measurement, when not to build one; Harbourline illustrative worked example; quiz ×9, 3 per level; exercises ×4 with criteria and model answers; flashcards ×10; 19 relations; evidence `practitioner-recommendation`). Sources fragment `content/sources/design-systems.ts` (5 added, URLs verified). Plate `design-system` (viz) and Level-2 figures `design-system.architecture` and `design-system.contribution` (viz); no Level 3. Path `design-systems` reordered with the entry first (id, earlier steps and practice kept). Visual documentation reconciled with D-089.
+
+Generated result: 52 published entries (9.3%); 75 plates, 15 in the current system; 23 Level-2 figures; Design Systems illustration category moved from weak to developing; the entry's maturity is complete in explanation, evidence, practice and editorial, developing in visual (no Level 3, by decision).
+
 ## Next task (precise)
-Decide the sheet kit's minimum text size for phones (recompose, do not scale) and apply it to the 14 current plates; then restyle the pilots' Level-2 figures (UI design annotated interface and the interaction loop first); then migrate the "refine" plates one at a time in learning-path order (UX Fundamentals first: user-centred-design, gulfs-of-execution-and-evaluation, recognition-over-recall, cognitive-load-theory, jakobs-law, progressive-disclosure, nielsen-usability-heuristics, heuristic-evaluation, system-usability-scale); add the first Responsive & Adaptive figure when a responsive entry is written.
+Write `atomic-design` (methodology; Frost 2016 is in the registry) or `semantic-tokens`, the next Tier 5 entries, so the path's second and third stages gain published lessons; separately, the illustration work still open from session 21: decide the sheet kit's minimum phone text size (recompose, do not scale) and apply it to the current plates; restyle the pilots' Level-2 figures; migrate the "refine" plates one at a time in learning-path order.

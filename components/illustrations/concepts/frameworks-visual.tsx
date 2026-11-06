@@ -2,7 +2,7 @@
 import type { IllustrationEntry } from "../illustration-types";
 import { hciPlate, usabilityPlate, userExperiencePlate, wcagPlate } from "./foundation-sheets";
 import { uiDesignPlate } from "./sheet-plates";
-import { accessibilityPlate, informationArchitecturePlate, interactionDesignPlate } from "./viz-plates";
+import { accessibilityPlate, designSystemPlate, informationArchitecturePlate, interactionDesignPlate } from "./viz-plates";
 import { Arrow, C, CurveArrow, Cursor, HatchDefs, Label, Lines, STROKE } from "../primitives";
 
 /* ---------------- User-centred design (ISO 9241-210 activities) ---------------- */
@@ -406,6 +406,7 @@ const plates: IllustrationEntry[] = [
   colourContrastRatio,
   visualHierarchy,
   modularTypeScale,
+  designSystemPlate,
   designTokens,
 ];
 export default plates;
