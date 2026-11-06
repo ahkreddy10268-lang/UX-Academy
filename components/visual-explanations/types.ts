@@ -36,6 +36,8 @@ export type VisualExplanation = {
   takeaway: string;
   /** Text alternative: the diagram read in order. Also the mobile/list fallback. */
   summary: string[];
+  /** Explanation method (docs/ILLUSTRATION_SYSTEM.md § Visual Learning System); defaults from `type` via METHOD_FOR_TYPE. */
+  method?: "conceptual" | "process" | "relationship" | "comparison" | "hierarchy";
   /** "content-checked": every label restates the entry's sourced content. "illustrative": an example scenario, labelled as such. */
   verification: "content-checked" | "illustrative";
   /** Source ids the labels rest on (must be in the entry's references). */

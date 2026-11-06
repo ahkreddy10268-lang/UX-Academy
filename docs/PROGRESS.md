@@ -1,6 +1,6 @@
 # Progress register
 
-_Last updated: 2026-11-05 (session 19 — illustration v6: dark technical editorial system, accessibility pilot)_
+_Last updated: 2026-11-06 (session 20 — Visual Learning System: three dimensions, instructional sheet canvas, six pilots)_
 
 ## State
 
@@ -293,3 +293,16 @@ Not done: migration of the other 73 plates and their Level-2 figures (ordered li
 
 ## Next task (precise)
 Migrate the UX Fundamentals stage-1 plates to v6 one at a time, starting with `usability` and `user-experience` (family 3 infographics) and `ui-design` (family 1 exploded interface layers), each with its Level-2 figure; then resume Tier 1 content with `inclusive-design`.
+
+## Session 20 — Visual Learning System (uncommitted; awaiting owner review)
+
+Inspected: all 16 supplied references (extracted to `.local/visual-style-references/`, git-ignored; the five copies made in session 19 were replaced by the archive's originals), the Hairline README/site/docs/skills pages, NN/g's F-pattern article, component.gallery, Mobbin and Refero Styles (Apple HIG and refero.design returned no readable content). Rendered and reviewed all 74 registered plates as contact sheets; inventoried 21 Level-2 figures, 9 plate explorers and 14 entry labs.
+
+Done (D-089…D-092): three-dimension architecture — `components/illustrations/visual-taxonomy.ts` (12 categories, 5 methods, `METHOD_FOR_TYPE`, techniques, canvases) and `visual-register.ts` (one audited record per plate: category, secondaries, method, verdict retain/refine/replace with a reason); `VisualExplanation.method` (optional). New instructional `sheet` canvas (`.sheet` maps the Hairline tone roles onto app tokens; `system/sheet.tsx` kit: SheetCanvas, UiFrame, UiText, UiButton, UiField, UiChip, Measure, Marker, Verdict, Note, Pointer). `Slab` refined to Hairline construction (unstroked faces, one silhouette, quieter creases). Six pilots migrated individually, legacy definitions removed: Fitts's law (sheet; ID computed by lib/formulas; explorer kept; hero animation kept along the measured path), UI design (sheet), Double Diamond (sheet), information architecture (viz), interaction design (viz), accessibility (viz, refined). `docs/ILLUSTRATION_COVERAGE.md` now generates the per-category table with maturity, the method table, the full plate audit and the Level-2 list. Tests: 12 categories / 5 methods, one register record per plate and none extra, valid categories and methods, a method for every Level-2 figure, "retain" in the earlier style only where the audit says so. Docs: ILLUSTRATION_SYSTEM § Visual Learning System (dimensions, canvases, Hairline adopted/adapted/not used, reference catalogue with gaps, rules, anti-patterns, migration/QA procedure, pilots), DIAGRAM_DESIGN_GUIDELINES (Level-2 standard), VISUAL_KNOWLEDGE_SYSTEM, DESIGN_SYSTEM, CLAUDE.md.
+
+Audit result (generated): 74 plates — 6 in the current system, 68 in the earlier pastel style; verdicts 8 retain (6 pilots, confidence-intervals, serial-position-effect), 58 refine, 8 replace (mental-models, affordances, signifiers, usability-testing, usability, user-experience, human-computer-interaction, wcag). Category gaps: Responsive & Adaptive has no figure; Wireframe & Prototyping, User Research, Visual Design, Design Systems and Evaluation are weak.
+
+Verified: check (219 tests, typecheck, lint); docs:generate; build (877 pages); atlas 36/36; e2e 42/42; e2e-redesign 66/66 (after restoring the Fitts hero animation it had caught missing); keyboard 45/45; devices 155/155; crawl 0 problem pages; axe on the six pilot entries, /library and / in light and dark: 0 violations. Rendered: the six pilots at card and hero size in both page themes, and their hero plates inside the app at 1440, 1024, 820 and 390 px in both themes. Not done: real devices and screen readers; Level-2 restyling beyond accessibility; migration of the other 68 plates.
+
+## Next task (precise)
+Migrate the eight "replace" plates first, in learning-path order — `usability`, `user-experience`, `human-computer-interaction`, `mental-models`, `affordances`, `signifiers`, `usability-testing`, `wcag` — one at a time with the procedure in docs/ILLUSTRATION_SYSTEM.md § Migration; then restyle the pilots' Level-2 figures (UI design annotated interface and the interaction loop first) and add the first Responsive & Adaptive figure when a responsive entry is written.

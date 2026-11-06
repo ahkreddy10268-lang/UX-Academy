@@ -1,7 +1,8 @@
 /** Plates: frameworks-visual. Authored to docs/ILLUSTRATION_SYSTEM.md rules. */
 import type { IllustrationEntry } from "../illustration-types";
-import { hciPlate, interactionDesignPlate, uiDesignPlate } from "./editorial-plates";
-import { accessibilityPlate } from "./viz-plates";
+import { hciPlate } from "./editorial-plates";
+import { uiDesignPlate } from "./sheet-plates";
+import { accessibilityPlate, informationArchitecturePlate, interactionDesignPlate } from "./viz-plates";
 import { Arrow, C, CurveArrow, Cursor, HatchDefs, Label, Lines, Node, STROKE } from "../primitives";
 
 /* ---------------- Usability (ISO 9241-11) ---------------- */
@@ -455,49 +456,6 @@ const humanCentredDesign: IllustrationEntry = {
   },
 };
 
-/** Information architecture: the four systems in one picture — grouping, labels, a navigation path, search. */
-const informationArchitecture: IllustrationEntry = {
-  slug: "information-architecture",
-  title: "Information architecture plate",
-  description:
-    "Content tiles are sorted into three labelled groups, showing organisation and labelling. A dotted path runs from a start point through one group label to a highlighted tile, showing navigation that follows the label's scent. A magnifying lens over the same tile shows search reaching it directly.",
-  Art: ({ detail }) => {
-    const groups = [
-      { x: 40, label: "Visit", tiles: 4 },
-      { x: 152, label: "Borrow", tiles: 5 },
-      { x: 264, label: "Events", tiles: 3 },
-    ];
-    return (
-      <g>
-        {groups.map((g, gi) => (
-          <g key={g.label}>
-            <rect x={g.x} y={92} width={96} height={150} rx={8} fill={gi === 1 ? C.soft : C.surface} stroke={C.line} strokeWidth={STROKE.fine} />
-            <rect x={g.x + 10} y={78} width={76} height={24} rx={12} fill={gi === 1 ? C.ink : C.surface} stroke={C.line} strokeWidth={STROKE.fine} />
-            <text x={g.x + 48} y={94} textAnchor="middle" fontSize="11" fill={gi === 1 ? C.paper : C.line} fontFamily="var(--font-plex-mono), monospace">
-              {g.label}
-            </text>
-            {Array.from({ length: g.tiles }, (_, i) => (
-              <rect key={i} x={g.x + 14} y={116 + i * 24} width={68} height={14} rx={3} fill={gi === 1 && i === 2 ? C.base : C.wash} stroke={C.line} strokeWidth={STROKE.hair} />
-            ))}
-          </g>
-        ))}
-        {/* navigation path: start → label with scent → target tile */}
-        <circle cx={30} cy={40} r={7} fill={C.surface} stroke={C.line} strokeWidth={STROKE.main} />
-        <path d="M37 42 C 110 50, 190 40, 200 76" fill="none" stroke={C.line} strokeWidth={STROKE.main} strokeDasharray="1 6" strokeLinecap="round" />
-        <path d="M200 104 L200 162" fill="none" stroke={C.line} strokeWidth={STROKE.main} strokeDasharray="1 6" strokeLinecap="round" />
-        <Cursor x={206} y={162} />
-        {/* search lens reaching the same tile */}
-        <circle cx={262} cy={36} r={16} fill={C.surface} stroke={C.ink} strokeWidth={STROKE.main} />
-        <path d="M273 47 L283 57" stroke={C.ink} strokeWidth={STROKE.main * 1.4} strokeLinecap="round" />
-        <path d="M256 52 C 254 90, 250 130, 238 162" fill="none" stroke={C.ink} strokeWidth={STROKE.fine} strokeDasharray="4 4" />
-        <Label x={30} y={22} show={detail} tone="mute">start</Label>
-        <Label x={200} y={272} show={detail}>organisation · labels</Label>
-        <Label x={110} y={60} show={detail} tone="mute">navigation</Label>
-        <Label x={290} y={40} show={detail} anchor="start">search</Label>
-      </g>
-    );
-  },
-};
 
 /** User experience: a person's response across before / during / after use, built from pragmatic and hedonic qualities. */
 const userExperience: IllustrationEntry = {
@@ -544,7 +502,7 @@ const plates: IllustrationEntry[] = [
   uiDesignPlate,
   interactionDesignPlate,
   accessibilityPlate,
-  informationArchitecture,
+  informationArchitecturePlate,
   jobsToBeDone,
   heartFramework,
   progressiveDisclosure,

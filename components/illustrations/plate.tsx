@@ -9,6 +9,7 @@ import type { IllustrationEntry, PlateVariant } from "./illustration-types";
 import { H, W } from "./illustration-types";
 import { C } from "./primitives";
 import { VizCanvas, VizDefs } from "./system/viz";
+import { SheetCanvas } from "./system/sheet";
 
 export function Plate({
   entry,
@@ -32,10 +33,11 @@ export function Plate({
   const detail = variant === "hero";
   const { Art } = entry;
   const viz = entry.canvas === "viz";
+  const sheet = entry.canvas === "sheet";
   return (
     <svg
       viewBox={`0 0 ${W} ${H}`}
-      className={`ill ${viz ? "viz" : ""} block h-auto w-full ${palette ? `cat-${palette}` : ""} ${className}`}
+      className={`ill ${viz ? "viz" : sheet ? "sheet" : ""} block h-auto w-full ${palette ? `cat-${palette}` : ""} ${className}`}
       role={decorative ? undefined : "img"}
       aria-hidden={decorative || undefined}
       aria-labelledby={decorative ? undefined : `${uid}-t ${uid}-d`}
@@ -55,6 +57,8 @@ export function Plate({
       </defs>
       {viz ? (
         <VizCanvas uid={uid} w={W} h={H} grid={variant !== "thumb"} />
+      ) : sheet ? (
+        <SheetCanvas w={W} h={H} grid={variant !== "thumb"} />
       ) : (
         <>
           <rect width={W} height={H} fill={C.wash} />

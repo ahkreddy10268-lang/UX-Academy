@@ -123,15 +123,44 @@ console.log("docs/KNOWLEDGE_TAXONOMY.md, docs/RESEARCH_SOURCES.md, docs/CONTENT_
 /* ---------------- Illustration coverage ---------------- */
 {
   const { illustrations } = await import("../components/illustrations/registry");
+  const { visualRegister } = await import("../components/illustrations/visual-register");
+  const { VISUAL_CATEGORIES, EXPLANATION_METHODS, METHOD_FOR_TYPE } = await import("../components/illustrations/visual-taxonomy");
+  const { visualExplanations } = await import("../components/visual-explanations/registry");
   const pub = entries.filter((e) => e.status === "published");
-  let md = header("Illustration coverage register", "Plates live in components/illustrations; coverage is enforced by tests/illustrations.test.ts.");
+  let md = header("Illustration coverage register", "Plates live in components/illustrations; figure metadata in components/illustrations/visual-register.ts and visual-taxonomy.ts; coverage is enforced by tests/illustrations.test.ts. Nothing here is typed by hand.");
+  const plates = [...illustrations.values()];
+  const style = (c?: string) => (c === "viz" ? "current · dark technical" : c === "sheet" ? "current · instructional sheet" : "earlier (pastel)");
+  const current = plates.filter((p) => p.canvas).length;
   const covered = pub.filter((e) => illustrations.has(e.slug)).length;
-  md += `| Measure | Count |\n|---|---|\n| Registered plates | ${illustrations.size} |\n| Published entries with a plate | ${covered} / ${pub.length} |\n| Subject plates | ${domains.filter((d) => illustrations.has(d.id)).length} / ${domains.length} |\n| Animated plates | ${[...illustrations.values()].filter((p) => p.animated).length} |\n| Plates with an interactive explorer | ${[...illustrations.values()].filter((p) => p.explorer).length} |\n| Plates in the v6 dark technical system (D-086) | ${[...illustrations.values()].filter((p) => p.canvas === "viz").length} |\n\n`;
-  md += "| Slug | Kind | Style | Animated | Explorer | What it shows |\n|---|---|---|---|---|---|\n";
-  for (const p of illustrations.values()) {
+  md += `| Measure | Count |\n|---|---|\n| Registered Level-1 plates | ${illustrations.size} |\n| Published entries with a plate | ${covered} / ${pub.length} |\n| Subject plates | ${domains.filter((d) => illustrations.has(d.id)).length} / ${domains.length} |\n| Plates in the current system (dark technical or instructional sheet) | ${current} |\n| Plates still in the earlier pastel style | ${plates.length - current} |\n| Level-2 figures | ${visualExplanations.length} |\n| Level-3 explorers (on plates) | ${plates.filter((p) => p.explorer).length} |\n| Labs linked from entries | ${entries.filter((e) => e.lab).length} |\n| Animated plates | ${plates.filter((p) => p.animated).length} |\n\n`;
+  // categories
+  const catOf = (slug: string) => visualRegister[slug]?.category;
+  md += "## The 12 illustration categories\n\nA figure has one primary category (and may list secondaries). Level 2 and Level 3 are counted under the category of their entry's plate. Maturity: **mature** = every entry plate in the category is in the current system and has a Level-2 figure (Level-2 styling is tracked separately in docs/ILLUSTRATION_SYSTEM.md: only the accessibility figure uses the current language so far); **developing** = some plates are in the current system; **weak** = none are; **gap** = no figure at all.\n\n| # | Category | L1 plates | Current style | L2 figures | L3 | Retain / refine / replace | Maturity | Entries |\n|---|---|---:|---:|---:|---:|---|---|---|\n";
+  VISUAL_CATEGORIES.forEach((c, i) => {
+    const ps = plates.filter((p) => catOf(p.slug) === c.id);
+    const entryPs = ps.filter((p) => entries.some((e) => e.slug === p.slug));
+    const l2 = visualExplanations.filter((v) => catOf(v.slug) === c.id).length;
+    const l3 = ps.filter((p) => p.explorer).length + entries.filter((e) => e.lab && catOf(e.slug) === c.id).length;
+    const cur = ps.filter((p) => p.canvas).length;
+    const rv = (k: string) => ps.filter((p) => visualRegister[p.slug]?.review === k).length;
+    const done = entryPs.filter((p) => p.canvas && visualExplanations.some((v) => v.slug === p.slug)).length;
+    const maturity = !ps.length ? "gap" : entryPs.length && done === entryPs.length ? "mature" : done || cur ? "developing" : "weak";
+    md += `| ${i + 1} | ${c.title} | ${ps.length} | ${cur} | ${l2} | ${l3} | ${rv("retain")} / ${rv("refine")} / ${rv("replace")} | ${maturity} | ${entryPs.map((p) => `\`${p.slug}\``).join(", ") || "—"} |\n`;
+  });
+  md += "\n## The five explanation methods\n\n| Method | L1 plates (primary) | L2 figures |\n|---|---:|---:|\n";
+  for (const m of EXPLANATION_METHODS) md += `| ${m.title} | ${plates.filter((p) => visualRegister[p.slug]?.method === m.id).length} | ${visualExplanations.filter((v) => (v.method ?? METHOD_FOR_TYPE[v.type]) === m.id).length} |\n`;
+  md += "\n## Level 1 audit (every registered plate)\n\n| Slug | Kind | Category | Method | Style | Verdict | Audit note | L2 | L3 |\n|---|---|---|---|---|---|---|---:|---|\n";
+  for (const p of plates) {
+    const v = visualRegister[p.slug];
     const kind = domains.some((d) => d.id === p.slug) ? "subject" : entries.some((e) => e.slug === p.slug) ? "entry" : "planned topic";
-    md += `| \`${p.slug}\` | ${kind} | ${p.canvas === "viz" ? "v6 dark technical" : "earlier (pastel)"} | ${p.animated ? "yes" : "—"} | ${p.explorer ?? "—"} | ${p.description.replace(/\|/g, "/")} |\n`;
+    const l2 = visualExplanations.filter((x) => x.slug === p.slug).length;
+    const lab = entries.find((e) => e.slug === p.slug)?.lab;
+    md += `| \`${p.slug}\` | ${kind} | ${v?.category ?? "—"} | ${v?.method ?? "—"} | ${style(p.canvas)} | ${v?.review ?? "—"} | ${(v?.note ?? "").replace(/\|/g, "/")} | ${l2} | ${[p.explorer, lab].filter(Boolean).join(", ") || "—"} |\n`;
   }
+  md += "\n## Level 2 figures\n\n| Figure | Type | Method | Verification |\n|---|---|---|---|\n";
+  for (const v of visualExplanations) md += `| \`${v.id}\` | ${v.type} | ${v.method ?? METHOD_FOR_TYPE[v.type]} | ${v.verification} |\n`;
+  md += "\n## Plate descriptions (text alternatives)\n\n| Slug | What it shows |\n|---|---|\n";
+  for (const p of plates) md += `| \`${p.slug}\` | ${p.description.replace(/\|/g, "/")} |\n`;
   writeFileSync(join(docs, "ILLUSTRATION_COVERAGE.md"), md);
   console.log("docs/ILLUSTRATION_COVERAGE.md written");
 }

@@ -43,3 +43,35 @@ describe("dark technical editorial system (illustration v6, D-086)", () => {
     expect(illustrations.get("accessibility-concept")?.canvas).toBe("viz");
   });
 });
+
+describe("Visual Learning System metadata (D-089)", async () => {
+  const { visualRegister } = await import("../components/illustrations/visual-register");
+  const { VISUAL_CATEGORIES, EXPLANATION_METHODS, METHOD_FOR_TYPE } = await import("../components/illustrations/visual-taxonomy");
+  const { visualExplanations } = await import("../components/visual-explanations/registry");
+  const cats = new Set<string>(VISUAL_CATEGORIES.map((c) => c.id));
+  const methods = new Set<string>(EXPLANATION_METHODS.map((m) => m.id));
+  it("defines exactly 12 categories and 5 methods", () => {
+    expect(VISUAL_CATEGORIES).toHaveLength(12);
+    expect(EXPLANATION_METHODS).toHaveLength(5);
+  });
+  it("has one register record per registered plate, and none for unknown slugs", () => {
+    expect([...illustrations.keys()].filter((s) => !visualRegister[s])).toEqual([]);
+    expect(Object.keys(visualRegister).filter((s) => !illustrations.has(s))).toEqual([]);
+  });
+  it("uses only valid categories and methods, and never repeats the primary as a secondary", () => {
+    for (const [slug, v] of Object.entries(visualRegister)) {
+      expect(cats.has(v.category), slug).toBe(true);
+      expect(methods.has(v.method), slug).toBe(true);
+      for (const c of v.secondary ?? []) expect(cats.has(c) && c !== v.category, slug).toBe(true);
+      for (const m of v.secondaryMethods ?? []) expect(methods.has(m) && m !== v.method, slug).toBe(true);
+      expect(v.note.length, slug).toBeGreaterThan(10);
+    }
+  });
+  it("resolves a method for every Level-2 figure", () => {
+    for (const v of visualExplanations) expect(methods.has(v.method ?? METHOD_FOR_TYPE[v.type]), v.id).toBe(true);
+  });
+  it("only marks a plate 'retain' in the earlier pastel style when the audit says it already fits", () => {
+    const retainedPastel = Object.entries(visualRegister).filter(([s, v]) => v.review === "retain" && !illustrations.get(s)?.canvas).map(([s]) => s);
+    expect(retainedPastel.sort()).toEqual(["confidence-intervals", "serial-position-effect"]);
+  });
+});

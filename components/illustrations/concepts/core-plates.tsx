@@ -2,6 +2,7 @@
  * The first set of concept plates (the 15 flagship illustrations, minus Fitts).
  * Each draws the concept's *mechanism*, not a decorative metaphor.
  */
+import { doubleDiamondPlate } from "./sheet-plates";
 import type { IllustrationEntry } from "../illustration-types";
 import { cltPlate, mentalPlate } from "./editorial-plates";
 import { Arrow, Box, C, CurveArrow, Cursor, Label, Lines, Node, STROKE, Window } from "../primitives";
@@ -250,35 +251,6 @@ export const peakEnd: IllustrationEntry = {
   },
 };
 
-/* ---------------- Double Diamond ---------------- */
-export const doubleDiamond: IllustrationEntry = {
-  slug: "double-diamond",
-  title: "Double Diamond plate",
-  description:
-    "Two diamonds side by side. Each widens to explore many options, drawn as scattered dots, then narrows to a single point. The first diamond covers Discover and Define the problem; the second covers Develop and Deliver the solution. A dashed arrow loops back, indicating iteration.",
-  Art: ({ detail, animate }) => {
-    const dots = (cx: number) =>
-      [[-40, -18], [-30, 20], [-12, -34], [-4, 6], [14, -14], [22, 30], [36, -4], [-22, -2]].map(([dx, dy], i) => (
-        <circle key={i} cx={cx + dx} cy={150 + dy} r={4.5} fill={C.base} className={animate ? `anim-fade anim-delay-${(i % 4) + 1}` : undefined} />
-      ));
-    return (
-      <g>
-        <path d="M30 150 L110 70 L190 150 L110 230 Z" fill={C.soft} stroke={C.line} strokeWidth={STROKE.main} />
-        <path d="M210 150 L290 70 L370 150 L290 230 Z" fill={C.soft} stroke={C.line} strokeWidth={STROKE.main} />
-        <line x1="110" y1="70" x2="110" y2="230" stroke={C.line} strokeWidth={STROKE.hair} strokeDasharray="3 4" />
-        <line x1="290" y1="70" x2="290" y2="230" stroke={C.line} strokeWidth={STROKE.hair} strokeDasharray="3 4" />
-        {dots(110)}
-        {dots(290)}
-        <circle cx="200" cy="150" r="7" fill={C.paper} stroke={C.line} strokeWidth={STROKE.main} />
-        <CurveArrow d="M 290 244 C 250 290, 150 290, 112 246" tip={[112, 246]} angle={-2.1} dashed />
-        <Label x={70} y={52} show={detail}>discover</Label>
-        <Label x={150} y={52} show={detail}>define</Label>
-        <Label x={250} y={52} show={detail}>develop</Label>
-        <Label x={330} y={52} show={detail}>deliver</Label>
-      </g>
-    );
-  },
-};
 
 /* ---------------- Design thinking (planned topic): a non-linear loop ---------------- */
 export const designThinking: IllustrationEntry = {
@@ -427,5 +399,5 @@ export const atomicDesign: IllustrationEntry = {
   },
 };
 
-export const corePlates = [hickHyman, gestalt, cltPlate, millers, jakobs, mentalPlate, affordances, signifiers, peakEnd, doubleDiamond, designThinking, nielsenHeuristics, informationArchitecture, atomicDesign];
+export const corePlates = [hickHyman, gestalt, cltPlate, millers, jakobs, mentalPlate, affordances, signifiers, peakEnd, doubleDiamondPlate, designThinking, nielsenHeuristics, informationArchitecture, atomicDesign];
 

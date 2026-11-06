@@ -5,7 +5,7 @@
  * authored in parallel without merge conflicts.
  */
 import { corePlates } from "./concepts/core-plates";
-import { fittsPlate } from "./concepts/editorial-plates";
+import { fittsPlate } from "./concepts/sheet-plates";
 import type { IllustrationEntry } from "./illustration-types";
 import { fragments } from "./registry/_fragments";
 

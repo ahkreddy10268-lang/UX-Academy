@@ -53,3 +53,7 @@ Diagrams use only token colours, so dark mode is automatic. Check both themes, e
 
 New and migrated Level-2 figures sit on a dark `.viz-panel` (`bg-viz-bg`, engineering grid) inside the usual figure frame, which keeps its title, objective, takeaway, text version and sources. Inside the panel: graphite module cards (`bg-viz-surface-1/2`, `border-viz-edge`), white primary text and grey secondary text, small monospace section labels, bracket corners for annotations, one amber element for the main idea, positive green and warning coral only where they carry meaning and always with a second cue (dashed line, cross, label). Connectors are SVG and hidden when the layout stacks; miniature visuals are `aria-hidden` because the adjacent text states the same thing. Reference implementation: `components/visual-explanations/concepts/accessibility-concept.tsx`. Full art direction: docs/ILLUSTRATION_SYSTEM.md § Dark technical editorial.
 
+## Level 2 standard (v6.1, D-089)
+
+Every Level-2 figure has: a figure type and method; a clear title; a one-sentence objective; one dominant visual idea; parts and relationships drawn with real HTML text and token-coloured SVG; a key or legend whenever line styles or colours carry meaning; a takeaway; an ordered text version; sources from the entry's references; a verification kind. Use the instructional sheet language (light, theme-aware, app tokens) for anatomy, measurement and correction figures and the dark `.viz-panel` for systems and routed relationships; plain cards of paragraphs are not a Level-2 figure.
+

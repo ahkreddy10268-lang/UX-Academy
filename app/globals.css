@@ -591,6 +591,32 @@ textarea {
   --ill-act-wash: var(--viz-accent-soft);
   --ill-good: var(--viz-positive);
 }
+/* Instructional sheet canvas (D-089): a light/dark theme-aware drawing sheet
+   built only from application tokens, for anatomy, measurement, process and
+   comparison figures. Hairline roles: edge = silhouettes, mid = every other
+   stroke, lo = guides and what recedes, focal = the one lit element. */
+.sheet {
+  --ill-plate: var(--surface);
+  --ill-edge: color-mix(in srgb, var(--ink) 72%, var(--surface));
+  --ill-mid: color-mix(in srgb, var(--ink) 34%, var(--surface));
+  --ill-lo: var(--rule);
+  --ill-hi: var(--surface);
+  --ill-top: var(--soft);
+  --ill-left: var(--sunken);
+  --ill-right: color-mix(in srgb, var(--ink) 12%, var(--surface));
+  --ill-n-top: var(--surface);
+  --ill-n-left: var(--soft);
+  --ill-n-right: var(--sunken);
+  --ill-focal: var(--accent);
+  --ill-focal-left: var(--accent-ink);
+  --ill-focal-right: var(--accent-wash);
+  --ill-deep: var(--accent-ink);
+  --ill-shadow: color-mix(in srgb, var(--ink) 9%, transparent);
+  --ill-act: var(--accent);
+  --ill-act-wash: var(--accent-wash);
+  --ill-good: var(--ok);
+}
+
 /* HTML diagram panels on the viz canvas: the same faint engineering grid. */
 .viz-panel {
   background-image: linear-gradient(var(--viz-grid) 1px, transparent 1px), linear-gradient(90deg, var(--viz-grid) 1px, transparent 1px);

@@ -122,12 +122,18 @@ export function Slab({ o, uid, x = 0, y = 0, z = 0, w, d, h, state = "base", lab
           : { top: url(uid, "top"), left: url(uid, "side"), right: Z.s1 };
   const tone = labelTone ?? (state === "lit" ? "dark" : state === "glass" ? "accent" : "text");
   const fill = tone === "accent" ? Z.accent : tone === "dark" ? Z.bg : Z.text;
+  // Hairline construction: faces carry tone only; one silhouette outlines the solid and the
+  // internal creases are quieter, so form reads from the outside in.
+  const silhouette = [P(x, y, z + h), P(x + w, y, z + h), P(x + w, y, z), P(x + w, y + d, z), P(x, y + d, z), P(x, y + d, z + h)];
+  const crease = state === "lit" ? Z.accentDeep : state === "glass" ? Z.accentSoft : state === "dim" ? Z.edgeSoft : Z.edge;
   return (
     <g className={state === "lit" ? "glow" : undefined}>
-      <polygon points={pts(left)} fill={fills.left} stroke={stroke} strokeWidth="0.7" vectorEffect="non-scaling-stroke" strokeLinejoin="round" />
-      <polygon points={pts(right)} fill={fills.right} stroke={stroke} strokeWidth="0.7" vectorEffect="non-scaling-stroke" strokeLinejoin="round" />
-      <polygon points={pts(top)} fill={fills.top} stroke={stroke} strokeWidth="0.8" vectorEffect="non-scaling-stroke" strokeLinejoin="round" />
-      {state === "base" && <polyline points={pts([P(x + 1.2, y + d - 0.8, z + h), P(x + w - 0.8, y + d - 0.8, z + h), P(x + w - 0.8, y + 1.2, z + h)])} fill="none" stroke={Z.edgeHi} strokeWidth="0.5" opacity="0.6" vectorEffect="non-scaling-stroke" />}
+      <polygon points={pts(left)} fill={fills.left} />
+      <polygon points={pts(right)} fill={fills.right} />
+      <polygon points={pts(top)} fill={fills.top} />
+      <polyline points={pts([P(x, y + d, z + h), P(x + w, y + d, z + h), P(x + w, y, z + h)])} fill="none" stroke={crease} strokeWidth="0.6" vectorEffect="non-scaling-stroke" strokeLinejoin="round" />
+      <line x1={P(x + w, y + d, z + h)[0]} y1={P(x + w, y + d, z + h)[1]} x2={P(x + w, y + d, z)[0]} y2={P(x + w, y + d, z)[1]} stroke={crease} strokeWidth="0.6" vectorEffect="non-scaling-stroke" />
+      <polygon points={pts(silhouette)} fill="none" stroke={state === "base" ? Z.edgeHi : stroke} strokeWidth="0.85" vectorEffect="non-scaling-stroke" strokeLinejoin="round" />
       {label && (
         <g transform={plane.top(o, x + w / 2, y + d / 2, z + h)}>
           <text x={0} y={sub ? -1 : 2.2} textAnchor="middle" fontSize={labelSize} fontWeight={600} fill={fill} fontFamily={SANS} letterSpacing="0.02em">
@@ -267,7 +273,7 @@ export function Tag({ x, y, text, tone = "text2", anchor = "start", show = true,
   return (
     <g>
       {leader && <line x1={leader[0]} y1={leader[1]} x2={x + (anchor === "end" ? 2 : anchor === "start" ? -2 : 0)} y2={y - 2.4} stroke={Z.edge} strokeWidth="0.5" vectorEffect="non-scaling-stroke" />}
-      <text x={x} y={y} textAnchor={anchor} fontSize={6.4} fill={fill} fontFamily={MONO} letterSpacing="0.04em">
+      <text x={x} y={y} textAnchor={anchor} fontSize={7} fill={fill} fontFamily={MONO} letterSpacing="0.03em">
         {index && <tspan fill={Z.text3}>{index} </tspan>}
         {text}
       </text>

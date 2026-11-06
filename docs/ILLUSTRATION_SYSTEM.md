@@ -266,3 +266,100 @@ Migrate one figure at a time: read the entry, name the single visual lesson, cho
 
 Level-2 figures migrate with their entry. Quantitative figures with explorers (Fitts, Hick, colour) keep their formula-driven geometry; only their visual treatment changes.
 
+
+## Visual Learning System (illustration v6.1) — the governing model
+
+Decisions D-089…D-092 (2026-11-06). This section **governs all knowledge figures** and refines the v6 section above: the dark technical canvas is one language among several, chosen when the concept is a system or architecture, not the default for every topic.
+
+### Three independent dimensions
+
+| Dimension | Question | Where it lives | Rule |
+|---|---|---|---|
+| A · Category (12) | *What* does the figure teach? | `components/illustrations/visual-taxonomy.ts` (`VISUAL_CATEGORIES`), per plate in `visual-register.ts` | One primary, optional secondaries. **Not** the knowledge taxonomy, which stays frozen in `content/taxonomy.ts`. |
+| B · Method (5) | *How* does it explain? | `EXPLANATION_METHODS`; per plate in the register; per Level-2 figure via `method` or `METHOD_FOR_TYPE[type]` | One primary, optional secondaries. Techniques (anatomy, measurement, charts, state machines…) are tools inside a method, never a sixth method. |
+| C · Language | *How* does it look? | `IllustrationEntry.canvas` + kits | `sheet` (instructional, theme-aware), `viz` (dark technical), or the earlier pastel plate until migrated. |
+
+Levels stay as before: **L1 Understand** (plate: one idea, readable at card size), **L2 Explore** (`components/visual-explanations`: mechanism, parts, relationships, legend, takeaway, text version, sources, verification), **L3 Experiment** (explorers and labs, only where manipulating a variable teaches something; computed with `lib/formulas`).
+
+**The 12 categories:** 1 UX Concept · 2 UI Anatomy · 3 UX Process · 4 User Research · 5 Information Architecture · 6 Interaction Design · 7 Wireframe & Prototyping · 8 Visual Design & Composition · 9 Design Systems · 10 Usability & Accessibility · 11 Responsive & Adaptive · 12 UX Evaluation & Optimization (scopes in `visual-taxonomy.ts`).
+
+**The 5 methods:** Conceptual & Metaphorical (label metaphors; show the real mechanism) · Process & Sequential (correct order, decision points, feedback loops, inputs/outputs) · Relationship & Systems (real dependencies, boundaries) · Comparison & Contrast (same context, what changed, why it matters, no invented advantages) · Hierarchy & Classification (correct parent-child relations, directionality).
+
+### Choosing the language
+
+| Canvas | Use for | Built with | Theme |
+|---|---|---|---|
+| `sheet` | UI anatomy, measurement, formulas and geometry, processes, comparisons, corrections — the instructional references (07–16) | `system/sheet.tsx`: `SheetCanvas`, `UiFrame`, `UiText`, `UiButton`, `UiField`, `UiChip`, `Measure`, `Marker` (with leader), `Verdict` (✓/✗), `Note`, `Pointer` | Follows the app theme: only app tokens (`surface`, `ink`, `rule`, `accent`, `ok`, `error`, `--c-*`) |
+| `viz` | Architectures, layered systems, routed relationships, state flows with one illuminated path — references 01–06 | `system/viz.tsx`: `Slab` (base/lit/glass/dim, plane labels), `ModuleCard`, `Route`/`isoRoute` (accent/positive/blocked/neutral), `Junction`, `Guides`, `Bloom`, `ContactShadow`, `Callout`, `Tag`, `Brackets` | Dark in both themes (`--viz-*`) |
+| pastel (earlier) | Not for new work | v4/v5 primitives | Legacy until migrated |
+
+Do not force every concept into a dark panel, an isometric stack or a comparison card. Pick the method first, then the canvas that makes it clearest.
+
+### Hairline: adopted, adapted, not used
+
+Studied: the Hairline README, site, docs and skills pages (MIT, Lucas Marques). The package was **not installed** (it renders on the client into an empty server box; our plates must server-render and teach specific content; a dependency needs owner approval).
+
+| Hairline principle | In UX Academy |
+|---|---|
+| One constant stroke width in CSS pixels at any size | **Adopted:** every kit stroke uses `vector-effect: non-scaling-stroke`. |
+| Tone roles: edge = silhouettes, mid = every other stroke, lo = what recedes, hi = what is lit | **Adopted:** `.sheet` maps `--ill-edge/mid/lo/focal` to app tokens; `Slab` now draws faces without strokes, one silhouette outline and quieter internal creases (form reads from the outside in). |
+| The plate is filled and matches its background | **Adopted:** every canvas paints its own background (`SheetCanvas`, `VizCanvas`). |
+| Isometric construction on one grid | **Adopted:** `iso`/`plane`/`isoRoute` keep slabs, labels and routes on the same projection. |
+| Pointer response through one `intensity` (0–1), shared animation loop, rest when off screen, reduced motion holds still | **Deferred, not used yet:** plates are server-rendered and static-first; interaction belongs to L3 explorers. If pointer response is added, it must follow these rules (one intensity control, still under reduced motion, never the only way to see information). |
+| Stock figures (pillars, crates, dials…) | **Not used:** our figures are composed for each concept. |
+
+### Reference catalogue (`.local/visual-style-references/`, git-ignored; study, never copy)
+
+| # | Reference | Teaches | Category · method it informs |
+|---|---|---|---|
+| 01 | Isometric exploded architecture | layered system, one lit functional layer, routed inputs | Design systems, IA, accessibility · relationship |
+| 02 | Product swap workflow | real objects in interface cards, branching routes, junctions | Interaction, process · process |
+| 03 | Retention vs cancellation flow | decision, path semantics (solid/dashed), legend, consequence labels | Interaction, evaluation · process/comparison |
+| 04 | Agent runtime infrastructure | modules on a platform, highlighted module with a callout | Systems · relationship |
+| 05 | Editorial problem storytelling | modular cards with sparse highlighted data | Evaluation, metrics · conceptual |
+| 06 | Support analytics dashboard | one luminous focal value, target line on a chart | Metrics · conceptual/comparison |
+| 07 | F- and Z-pattern | numbered scan sequence on page wireframes | Visual design · comparison/process |
+| 08 | Corner-radius geometry | close-up cross-section, value chips, ✓/✗ correction | Visual design, UI anatomy · comparison |
+| 09 | Touch-target measurements | dimension lines on a target. *Caution: the reference labels the smaller target ✓ under "Poor touch areas"; the lesson is inverted — never inherit a reference's claim.* | UI anatomy, accessibility · comparison |
+| 10 | Colour contrast before/after | annotated leaders on a real banner, before/after | Visual design, accessibility · comparison |
+| 11 | UI card anatomy | numbered markers with arrows to parts | UI anatomy · hierarchy |
+| 12 | UI measurement and spacing spec | redline spacing and sizing chips | UI anatomy, design systems · relationship |
+| 13 | Colour contrast examples | ratio stated beside each sample | Visual design · comparison |
+| 14 | UX microcopy comparison | same card, one wording change, ✓/✗ | UI anatomy · comparison |
+| 15 | Design-to-code spec mapping | code lines connected to inspected properties | Design systems, practice · relationship |
+| 16 | Colour scale and tokens | scale with selected steps mapped to usage | Design systems · hierarchy |
+
+**Web references studied (2026-11-06):** NN/g, "F-Shaped Pattern of Reading on the Web" (Pernice, 2017, reviewed 2026): annotated heatmaps and gaze plots with numbered fixations; it presents the F as the default *when text lacks formatting cues*, names other patterns (layer-cake, spotted, marking, bypassing, commitment) and calls the F bad for users — so a future F-pattern figure must show it as a symptom of unformatted text, never as a layout to design for (the IDF comparison image 07 does not say this). component.gallery: anatomy by name, aliases and one-line definitions with faceted systems. Mobbin: screens, flows and patterns as a reference corpus, explicitly "evidence of how real products are designed, not proof that a pattern improved performance". Refero Styles: style cards with mood descriptors and machine-readable design specs. Apple Human Interface Guidelines and refero.design returned no readable content to the fetch and were not studied.
+
+**Gaps the catalogue exposes in our library:** no Responsive & Adaptive figures at all; no wireframe-fidelity figure; no microcopy before/after; no design-to-code mapping; research synthesis and evidence-traceability figures are missing; evaluation figures are mostly generic charts.
+
+### Rules (all canvases)
+
+- One dominant idea per L1 plate; structure readable at 300–360 px without labels; labels and notes in the hero variant; the description is the text alternative and must state what the figure shows, in order.
+- Interfaces are believable: real hierarchy, real control types, states, labels and feedback, fictional and labelled illustrative. No empty rectangles with grey bars as the whole interface.
+- Measurements state values that are real for the drawing or computed (Fitts's ID comes from `lib/formulas/pointing.ts`); illustrative inputs are labelled; no invented data, effects or advantages.
+- Meaning never by colour alone: ✓/✗ glyphs, dashed versus solid, crosses on blocked routes, words.
+- Colour only from tokens (tested for v6 files); positive = `ok`/`--viz-positive`, failure or barrier = `error`/`--viz-warning`, primary interaction or focus = `accent`/`--viz-accent`, structure neutral.
+- People only when the human activity is the concept, never instead of the mechanism; no `Figure` in current-system plates (tested).
+- Motion only to teach (Fitts's pointer travels the measured path), static first frame complete, off under reduced motion, pausable.
+
+### Anti-patterns (reject)
+
+Stick-figure scenes standing in for a system · icon grids that index rather than explain · generic grey-bar windows · decorative isometric stacks for flat ideas · neon glow on everything · one composition reused for unrelated topics · a metaphor presented as the mechanism · labels baked into images · copied or traced reference artwork.
+
+### Migration and QA procedure
+
+Per figure: read the entry → name the single learning outcome → choose category and method → choose canvas → design the hierarchy → build from the kits → check every label against the entry → set `canvas` and update `visual-register.ts` (verdict `retain` only once it passes) → render with `scripts/render-plates.tsx` (card and hero, light and dark) and inspect in the app at 1440, 1024, 820 and 390 px → run `npm run check`, the build and the browser suites → `npm run docs:generate`. The generated `docs/ILLUSTRATION_COVERAGE.md` shows every plate's category, method, style and verdict and each category's maturity; it is the only source for progress figures.
+
+### Pilots accepted (2026-11-06)
+
+| Concept | Category · method | Canvas | Composition |
+|---|---|---|---|
+| Fitts's law | UX Concept · conceptual (+ measurement) | sheet | start, target, ballistic + corrective path with speed dots, D and W dimension chips, ID computed (≈ 2.81 bits), MT–ID inset without invented coefficients; pointer travels the path in the hero |
+| UI design | UI Anatomy · relationship | sheet | believable booking screen, five numbered decisions with leaders, 16/12 spacing chips, states and feedback |
+| Double Diamond | UX Process · process | sheet | divergent notes → clusters → problem; prototypes → tested candidates → solution; loops back |
+| Information architecture | IA · hierarchy (+ relationship) | viz | navigation, organisation + labels, content as exploded layers; browse route through matching labels; search as a second route |
+| Accessibility | Usability & Accessibility · relationship | viz | exploded access architecture with Hairline silhouettes; one blocked route |
+| Interaction design | Interaction Design · process | viz | one control across ready, pressed, processing, paid; timeout branch and recovery |
+
+Level 2 figures meet the structural standard (objective, takeaway, ordered text version, sources, verification) but, except accessibility, still use the earlier light panel styling; they migrate with their entry.

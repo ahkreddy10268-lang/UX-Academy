@@ -32,8 +32,8 @@ export type IllustrationEntry = {
   animated?: boolean;
   /** Interactive explorer available on the concept page. */
   explorer?: ExplorerId;
-  /** "viz": the dark technical editorial canvas (illustration v6, D-086); default: the pastel editorial plate. */
-  canvas?: "viz";
+  /** "viz": dark technical canvas (D-086); "sheet": light/dark theme-aware instructional sheet (D-089); default: the earlier pastel plate. */
+  canvas?: "viz" | "sheet";
 };
 
 export const W = 400;

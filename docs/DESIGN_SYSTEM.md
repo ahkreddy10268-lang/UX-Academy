@@ -118,3 +118,8 @@ Source of truth: `brand/uxa-logo-kit-v0.1-draft/` (SVG symbol, lockup and wordma
 Rules from the kit: module s = U stem width; clear space ½s on every side; black, white and greys only (no coloured gradients, no effects); black or the gradient on light, white or the reversed gradient on dark; never stretch, crop, rotate, recolour or redraw. Minimum sizes: gradient symbol 120 px, flat standard 96 px, small cut 40–95 px, XS 16–39 px; full lockup 200 px (gradient) or 140 px (flat); wordmark 100 px. The component applies cut and treatment from the rendered size. **Owner decision:** the brand icon is always the gradient app-icon tile; flat black or white versions are not used in the product. The tile carries the gradient legibly at 36 px and in the 16–48 px favicons because the dark or light field behind the mark supplies the contrast that the kit's 120 px minimum protects for the bare symbol.
 
 Open points carried from the kit README: the symbol geometry and X diagonals await approval, the wordmark typeface is a stand-in (Manrope ExtraBold), and the kit's wordmark spells "UX-Academy" with a hyphen while the product name in the interface is "UX Academy". The product keeps "UX Academy" in text and in the manifest until the name is settled.
+
+## Illustrations and diagrams
+
+Knowledge figures follow the Visual Learning System (docs/ILLUSTRATION_SYSTEM.md § Visual Learning System, D-089): category × method × language. The instructional `sheet` canvas uses only the tokens above and follows the active theme; the `viz` canvas uses the theme-independent `--viz-*` tokens. Components never introduce their own colours.
+

@@ -5,9 +5,9 @@
  * plate; labels appear only in the hero variant (`detail`). Each drawing is
  * checked against its entry (see the comment on each plate).
  */
-import { Bars, Bubble, Check, Figure, Flow, IsoBox, IsoShadow, Laptop, Pill, Plant, V, Win, iso, plane, type Pt } from "../system/kit";
+import { Bars, Bubble, Check, Figure, Flow, IsoBox, IsoShadow, Laptop, Pill, V, Win, iso, plane, type Pt } from "../system/kit";
 import type { IllustrationEntry } from "../illustration-types";
-import { Cursor, Label } from "../primitives";
+import { Label } from "../primitives";
 
 const at = (o: Pt, x: number, y: number, z = 0) => iso(o, x, y, z);
 
@@ -186,62 +186,6 @@ const cltPlate: IllustrationEntry = {
 };
 
 /* ---------------------------------------------------------------- */
-/* Fitts's law — distance, width, aimed movement, time               */
-/* (drawn proportionally: D = 200, W = 24, so ID = log₂(D/W + 1) ≈ 3.2 bits) */
-/* ---------------------------------------------------------------- */
-const fittsPath = "M76 170 C 130 112, 214 104, 270 146 S 282 160, 278 156";
-const fittsPlate: IllustrationEntry = {
-  slug: "fitts-law",
-  title: "Fitts's law plate",
-  description:
-    "A screen shows a start point and a tall target 200 units away and 24 units wide. A pointer follows a fast curved movement toward the target and then small corrective adjustments near it. Dimension lines mark the distance D and the width W. Beside the screen, a small chart plots movement time against the index of difficulty as a straight rising line, with this movement's point (about 3.2 bits) highlighted: time grows with the logarithm of distance over width.",
-  animated: true,
-  explorer: "fitts",
-  Art: ({ detail, animate }) => (
-    <g>
-      {/* the screen */}
-      <rect x={30} y={44} width={276} height={196} rx={8} fill={V.hi} className="e" />
-      <rect x={30} y={44} width={276} height={14} rx={8} fill={V.top} className="h" />
-      {[0, 1, 2].map((i) => (
-        <circle key={i} cx={42 + i * 7} cy={51} r={2} fill={V.lo} />
-      ))}
-      {/* effective landing zone and the target */}
-      <rect x={258} y={78} width={36} height={140} fill={V.left} opacity={0.5} />
-      <rect x={264} y={78} width={24} height={140} rx={2} fill={V.focal} className="e" />
-      {/* the movement: ballistic phase, then corrections */}
-      <path d={fittsPath} fill="none" stroke={V.deep} strokeWidth={1.6} strokeDasharray="1.2 4" strokeLinecap="round" />
-      <circle cx={76} cy={170} r={7} fill={V.hi} className="e" />
-      <circle cx={76} cy={170} r={2.6} fill={V.edge} />
-      <g style={animate ? { offsetPath: `path("${fittsPath}")`, offsetRotate: "0deg" } : undefined} className={animate ? "anim-travel" : undefined}>
-        <Cursor x={animate ? 0 : 278} y={animate ? 0 : 156} />
-      </g>
-      {/* dimensions: D from start to target centre, W across the target */}
-      <line x1={76} y1={230} x2={276} y2={230} className="e" />
-      <line x1={76} y1={225} x2={76} y2={235} className="e" />
-      <line x1={276} y1={225} x2={276} y2={235} className="e" />
-      <line x1={264} y1={70} x2={288} y2={70} className="e" />
-      <line x1={264} y1={66} x2={264} y2={74} className="e" />
-      <line x1={288} y1={66} x2={288} y2={74} className="e" />
-      {/* movement time against index of difficulty */}
-      <g transform="translate(318 96)">
-        <rect width={70} height={96} rx={5} fill={V.hi} className="e" />
-        <line x1={10} y1={82} x2={62} y2={82} className="m" />
-        <line x1={10} y1={82} x2={10} y2={10} className="m" />
-        <line x1={12} y1={70} x2={60} y2={22} stroke={V.deep} strokeWidth={1.4} />
-        {[[16, 66], [26, 56], [44, 38], [56, 26]].map(([x, y], i) => (
-          <circle key={i} cx={x} cy={y} r={i === 2 ? 4 : 2.2} fill={i === 2 ? V.focal : V.right} className="e" />
-        ))}
-      </g>
-      <Label x={176} y={252} show={detail}>D distance</Label>
-      <Label x={276} y={62} show={detail}>W</Label>
-      <Label x={76} y={194} show={detail} tone="mute">start</Label>
-      <Label x={353} y={208} show={detail} tone="mute">time vs ID</Label>
-      <Label x={168} y={34} show={detail} tone="ink">MT = a + b · log₂(D/W + 1)</Label>
-    </g>
-  ),
-};
-
-/* ---------------------------------------------------------------- */
 /* Mental models — Norman's three models                            */
 /* (designer's conceptual model → system image → user's mental model; */
 /*  the designer and user communicate only through the system image)  */
@@ -398,149 +342,6 @@ const usabilityPlate: IllustrationEntry = {
   },
 };
 
-/* ---------------------------------------------------------------- */
-/* User Interface Design — the interface as the meeting surface      */
-/* (checked against the entry: the interface is the layer a person   */
-/*  perceives and acts on; the system stays behind it; a task drives */
-/*  the encounter and a context surrounds it; input goes in, feedback */
-/*  comes back through the same surface)                              */
-/* ---------------------------------------------------------------- */
-const uiDesignPlate: IllustrationEntry = {
-  slug: "ui-design",
-  title: "User interface design plate",
-  description:
-    "A person stands in front of an upright screen panel and reaches toward its primary button. The panel is the interface: a heading, a text field, two choice chips with one selected, and a button with a focus ring. Behind the panel, to the right, a large block of stacked layers stands for the system: data and logic the person never sees directly. Two arrows join panel and system, one carrying the person's input in and one bringing feedback back to the screen. Above the person, a thought card shows the task as a short checklist. The whole scene sits inside a dashed boundary on the floor, with a plant, marking the context of use: where, when and under what conditions the task happens.",
-  Art: ({ detail }) => {
-    const o: Pt = [196, 104];
-    const ring = [at(o, -64, -44), at(o, 134, -44), at(o, 134, 112), at(o, -64, 112)];
-    const [ux, uy] = at(o, 30, 82);
-    const sysIn = at(o, 86, 32, 42);
-    const sysOut = at(o, 96, 32, 14);
-    const panIn = at(o, 56, 38, 52);
-    const panOut = at(o, 56, 38, 26);
-    return (
-      <g transform="translate(-58 -10) scale(1.26)">
-        {/* context: the boundary of use */}
-        <path d={`M${ring.map((p) => p.join(" ")).join(" L")} Z`} fill={V.top} fillOpacity={0.35} className="m" strokeDasharray="4 3" />
-        <Plant o={o} x={-50} y={96} />
-        {/* the system: layers behind the surface */}
-        <IsoShadow o={o} x={84} y={-12} w={40} d={44} spread={4} />
-        {[0, 16, 32].map((z, i) => (
-          <IsoBox key={z} o={o} x={84} y={-12} z={z} w={40} d={44} h={14} tone={i === 2 ? "cat" : "neutral"} />
-        ))}
-        {[0, 16, 32].map((z) => (
-          <g key={z} transform={plane.right(o, 124, 32, z + 11)}>
-            {[0, 1, 2].map((k) => (
-              <circle key={k} cx={6 + k * 5} cy={4} r={1.3} fill={V.mid} />
-            ))}
-            <rect x={22} y={3} width={16} height={2} rx={1} fill={V.mid} opacity={0.7} />
-          </g>
-        ))}
-        {/* the interface: the surface the person perceives and acts on */}
-        <IsoShadow o={o} x={2} y={36} w={52} d={6} spread={3} />
-        <IsoBox o={o} x={22} y={34} z={0} w={12} d={8} h={2} tone="neutral" />
-        <IsoBox o={o} x={27} y={37} z={2} w={2} d={2} h={8} tone="neutral" />
-        <IsoBox o={o} x={2} y={37} z={10} w={52} d={3} h={62} tone="focal" />
-        <g transform={plane.left(o, 4, 40, 70)}>
-          <rect width={48} height={58} rx={1.5} fill={V.hi} className="m" />
-          <rect x={4} y={5} width={24} height={4} rx={1} fill={V.edge} opacity={0.85} />
-          <rect x={4} y={12} width={34} height={1.8} rx={0.9} fill={V.mid} />
-          <rect x={4} y={19} width={40} height={8} rx={1.5} fill={V.hi} className="e" />
-          <rect x={7} y={22.2} width={14} height={1.8} rx={0.9} fill={V.mid} />
-          <Pill x={4} y={31} w={16} h={6} fill={V.focal} />
-          <Check x={9} y={34} s={0.5} color={V.hi} />
-          <Pill x={23} y={31} w={16} h={6} fill={V.hi} />
-          <rect x={4} y={44} width={40} height={9} rx={4.5} fill="none" stroke={V.act} strokeWidth={1} strokeDasharray="2 1.4" />
-          <Pill x={6} y={45.5} w={36} h={6} fill={V.act} />
-        </g>
-        {/* input in, feedback back */}
-        <Flow d={`M${panIn[0]} ${panIn[1]} L ${sysIn[0]} ${sysIn[1]}`} tip={sysIn} angle={Math.atan2(sysIn[1] - panIn[1], sysIn[0] - panIn[0])} dashed={false} />
-        <Flow d={`M${sysOut[0]} ${sysOut[1]} L ${panOut[0]} ${panOut[1]}`} tip={panOut} angle={Math.atan2(panOut[1] - sysOut[1], panOut[0] - sysOut[0])} />
-        {/* the person and the task */}
-        <IsoShadow o={o} x={24} y={76} w={14} d={10} spread={2} />
-        <Figure x={ux} y={uy} s={1.02} pose="reach" skin={2} hair="short" hairTone={3} top={V.right} />
-        <Bubble x={ux - 74} y={uy - 98} w={44} h={34} tail="right">
-          {[0, 1, 2].map((i) => (
-            <g key={i}>
-              <rect x={ux - 68} y={uy - 92 + i * 9.5} width={5} height={5} rx={0.8} fill={i === 0 ? V.focal : V.hi} className="h" />
-              <rect x={ux - 60} y={uy - 90.4 + i * 9.5} width={22 - i * 4} height={1.8} rx={0.9} fill={V.mid} />
-            </g>
-          ))}
-        </Bubble>
-        <Label x={ux - 4} y={uy + 18} size={7.5} show={detail}>user</Label>
-        <Label x={ux - 52} y={uy - 104} size={7.5} show={detail}>task</Label>
-        <Label x={at(o, 2, 40, 76)[0] + 18} y={at(o, 2, 40, 76)[1] - 4} size={7.5} show={detail} tone="ink">interface</Label>
-        <Label x={at(o, 104, -12, 48)[0]} y={at(o, 104, -12, 48)[1] - 8} size={7.5} show={detail}>system</Label>
-        <Label x={ring[2][0] - 34} y={ring[2][1] - 6} size={7.5} show={detail} tone="mute">context of use</Label>
-      </g>
-    );
-  },
-};
 
-/* ---------------------------------------------------------------- */
-/* Interaction Design — two sides of an ongoing exchange             */
-/* (checked against the entry: a person acts, the system changes     */
-/*  state and responds, the person interprets the response and acts   */
-/*  again; the loop repeats, and feedback reports the new state)      */
-/* ---------------------------------------------------------------- */
-const interactionDesignPlate: IllustrationEntry = {
-  slug: "interaction-design-discipline",
-  title: "Interaction design plate",
-  description:
-    "A person stands on a platform on the left and points across to a machine on a platform on the right. The two are joined by a loop of two arrows. The upper arrow runs from the person to the machine and carries a small pressed-button token: the action. The lower arrow runs back from the machine to the person and carries a speech bubble with a tick: the feedback. On the machine's face, a column of three state lights has the middle one lit beside a short label bar, and a display shows a progress bar, so the machine's current state is visible. A thought bubble above the person shows a target symbol for their goal. The loop has no start or end, showing that the exchange repeats.",
-  Art: ({ detail }) => {
-    const o: Pt = [196, 128];
-    const [px, py] = at(o, -54, 40);
-    const top: Pt = [132, 54];
-    const sysTop: Pt = [252, 46];
-    const sysLow: Pt = [262, 140];
-    const low: Pt = [150, 150];
-    return (
-      <g transform="translate(-71 6) scale(1.416)">
-        {/* the two sides */}
-        <IsoShadow o={o} x={-74} y={22} w={40} d={36} spread={4} />
-        <IsoBox o={o} x={-74} y={22} z={0} w={40} d={36} h={6} tone="cat" />
-        <IsoShadow o={o} x={40} y={-36} w={44} d={40} spread={4} />
-        <IsoBox o={o} x={40} y={-36} z={0} w={44} d={40} h={6} tone="cat" />
-        {/* the system: a machine whose state is visible */}
-        <IsoBox o={o} x={48} y={-28} z={6} w={30} d={24} h={58} tone="neutral" />
-        <g transform={plane.left(o, 50, -4, 60)}>
-          <rect width={26} height={20} rx={1.2} fill={V.hi} className="m" />
-          <rect x={3} y={4} width={14} height={2} rx={1} fill={V.mid} />
-          <rect x={3} y={10} width={20} height={4} rx={2} fill={V.top} className="h" />
-          <rect x={3} y={10} width={12} height={4} rx={2} fill={V.focal} />
-          {[0, 1, 2].map((i) => (
-            <g key={i}>
-              <circle cx={5} cy={27 + i * 7} r={2.4} fill={i === 1 ? V.focal : V.hi} className="e" />
-              <rect x={10} y={26 + i * 7} width={i === 1 ? 13 : 9} height={2} rx={1} fill={i === 1 ? V.edge : V.mid} opacity={i === 1 ? 0.85 : 0.6} />
-            </g>
-          ))}
-        </g>
-        {/* the person and their goal */}
-        <Figure x={px} y={py} s={1.08} pose="point" skin={3} hair="long" hairTone={2} top={V.right} />
-        <Bubble x={px - 34} y={py - 104} w={30} h={24} tail="right">
-          <circle cx={px - 19} cy={py - 92} r={8} fill={V.hi} className="e" />
-          <circle cx={px - 19} cy={py - 92} r={4.6} fill={V.top} className="h" />
-          <circle cx={px - 19} cy={py - 92} r={1.8} fill={V.focal} />
-        </Bubble>
-        {/* the loop: action out, feedback back */}
-        <Flow d={`M${top[0]} ${top[1]} C ${top[0] + 30} ${top[1] - 34}, ${sysTop[0] - 40} ${sysTop[1] - 34}, ${sysTop[0]} ${sysTop[1]}`} tip={sysTop} angle={0.75} dashed={false} />
-        <Flow d={`M${sysLow[0]} ${sysLow[1]} C ${sysLow[0] - 20} ${sysLow[1] + 34}, ${low[0] + 44} ${low[1] + 30}, ${low[0]} ${low[1]}`} tip={low} angle={Math.PI + 0.9} />
-        <g transform="translate(184 26)">
-          <rect x={-12} y={-6} width={24} height={12} rx={6} fill={V.act} className="e" />
-          <circle cx={4} cy={0} r={2.6} fill={V.hi} />
-        </g>
-        <Bubble x={186} y={160} w={24} h={16} tail="none">
-          <Check x={198} y={168.5} s={0.7} />
-        </Bubble>
-        <Label x={px - 26} y={py + 22} size={7.5} show={detail}>person</Label>
-        <Label x={px - 40} y={py - 90} size={7.5} show={detail} tone="mute" anchor="end">goal</Label>
-        <Label x={184} y={13} size={7.5} show={detail} tone="ink">action</Label>
-        <Label x={at(o, 62, -4, 0)[0] + 22} y={at(o, 62, -4, 0)[1] + 25} size={7.5} show={detail}>system state</Label>
-        <Label x={198} y={190} size={7.5} show={detail} tone="ink">feedback</Label>
-      </g>
-    );
-  },
-};
 
-export { cltPlate, fittsPlate, hciPlate, interactionDesignPlate, mentalPlate, uiDesignPlate, usabilityPlate };
+export { cltPlate, hciPlate, mentalPlate, usabilityPlate };
