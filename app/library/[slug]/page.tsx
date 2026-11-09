@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { EntryActions } from "@/components/entry/entry-actions";
 import { ConceptIllustration } from "@/components/illustrations/concept-illustration";
+import { PlateKey } from "@/components/illustrations/plate-key";
 import { ConceptExplorer } from "@/components/illustrations/interactive/explorers";
 import { VisualFigure } from "@/components/visual-explanations/figure";
 import { quickTakeaways, visualsFor } from "@/components/visual-explanations/registry";
@@ -248,6 +249,7 @@ function Entry({ entry: e }: { entry: KnowledgeEntry }) {
                   </a>
                 )}
               </figcaption>
+              <PlateKey slug={e.slug} className="mt-3" />
               {glance && (
                 <p className="mt-3 rounded-lg bg-soft px-3.5 py-2.5 text-sm text-ink ring-1 ring-rule">
                   <span className="font-semibold text-ink">At a glance · </span>

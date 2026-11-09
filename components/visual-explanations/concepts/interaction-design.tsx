@@ -54,7 +54,7 @@ function Channel({ label, dir, className }: { label: string; dir: "right" | "lef
       <svg viewBox="0 0 24 24" className="h-6 w-6 @3xl:hidden" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 3v17M6 14l6 6 6-6" />
       </svg>
-      <span className="text-center text-[11px] font-semibold uppercase tracking-[0.06em] text-ink-2">{label}</span>
+      <span className="text-center text-xs font-semibold uppercase tracking-[0.06em] text-ink-2">{label}</span>
     </div>
   );
 }
@@ -106,7 +106,7 @@ export function InteractionLoop() {
         <li className="@3xl:col-start-3 @3xl:row-start-7 @3xl:row-span-2 @3xl:self-start">
           <div className="rounded-md border-2 border-error bg-error-wash p-3 text-sm">
             <p className="t-sub flex items-center gap-2 text-sm text-ink">
-              <span className="rounded-sm border border-error px-1.5 text-[11px] font-semibold uppercase tracking-[0.06em] text-error">Failure point</span>
+              <span className="rounded-sm border border-error px-1.5 text-xs font-semibold uppercase tracking-[0.06em] text-error">Failure point</span>
               Between 6 and 8
             </p>
             <p className="mt-1.5 text-ink">The payment network times out. If step 6 shows nothing, or the same spinner forever, the person cannot evaluate what happened.</p>

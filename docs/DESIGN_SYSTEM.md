@@ -131,3 +131,5 @@ Open points carried from the kit README: the symbol geometry and X diagonals awa
 
 Knowledge figures follow the Visual Learning System (docs/ILLUSTRATION_SYSTEM.md § Visual Learning System, D-089): category × method × language. The instructional `sheet` canvas uses only the tokens above and follows the active theme; the `viz` canvas uses the theme-independent `--viz-*` tokens. Components never introduce their own colours.
 
+
+**Figure text and keys (session 24, D-101 to D-104).** Plate text has three tiers: `T.min` 13 units (≈10 px on a 390 px phone; secondary interface copy), `T.strong`/`T.marker` 16 units (≈12.6 px; primary labels and marker numerals), `T.title` 17. Explanations sit in an HTML figure key under the hero (`components/illustrations/plate-key.tsx`: an ordered list with ink numeral badges, two columns from `sm`). Level-2 figure bodies take `.fig-sheet` (surface with a faint `--rule` grid) or `.fig-viz` (app roles remapped to `--viz-*`; every text pair contrast-tested in `tests/tokens.test.ts`). Level-2 labels and markers are ≥ 12 px.

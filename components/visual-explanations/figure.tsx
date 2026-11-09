@@ -33,7 +33,7 @@ export function VisualFigure({ v, headingLevel = 3 }: { v: VisualExplanation; he
           {v.objective}
         </p>
       </header>
-      <div className="@container p-4 sm:p-6">
+      <div className={`@container p-4 sm:p-6 ${v.language === "viz" ? "fig-viz" : v.language === "sheet" ? "fig-sheet" : ""}`}>
         <Component />
       </div>
       <figcaption className="space-y-3 border-t border-rule px-5 py-4">

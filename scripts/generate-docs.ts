@@ -135,7 +135,7 @@ console.log("docs/KNOWLEDGE_TAXONOMY.md, docs/RESEARCH_SOURCES.md, docs/CONTENT_
   md += `| Measure | Count |\n|---|---|\n| Registered Level-1 plates | ${illustrations.size} |\n| Published entries with a plate | ${covered} / ${pub.length} |\n| Subject plates | ${domains.filter((d) => illustrations.has(d.id)).length} / ${domains.length} |\n| Plates in the current system (dark technical or instructional sheet) | ${current} |\n| Plates still in the earlier pastel style | ${plates.length - current} |\n| Level-2 figures | ${visualExplanations.length} |\n| Level-3 explorers (on plates) | ${plates.filter((p) => p.explorer).length} |\n| Labs linked from entries | ${entries.filter((e) => e.lab).length} |\n| Animated plates | ${plates.filter((p) => p.animated).length} |\n\n`;
   // categories
   const catOf = (slug: string) => visualRegister[slug]?.category;
-  md += "## The 12 illustration categories\n\nA figure has one primary category (and may list secondaries). Level 2 and Level 3 are counted under the category of their entry's plate. Maturity: **mature** = every entry plate in the category is in the current system and has a Level-2 figure (Level-2 styling is tracked separately in docs/ILLUSTRATION_SYSTEM.md: only the accessibility and design-system figures use the current language so far); **developing** = some plates are in the current system; **weak** = none are; **gap** = no figure at all.\n\n| # | Category | L1 plates | Current style | L2 figures | L3 | Retain / refine / replace | Maturity | Entries |\n|---|---|---:|---:|---:|---:|---|---|---|\n";
+  md += "## The 12 illustration categories\n\nA figure has one primary category (and may list secondaries). Level 2 and Level 3 are counted under the category of their entry's plate. Maturity: **mature** = every entry plate in the category is in the current system and has a Level-2 figure (the language of each Level-2 figure is listed in the Level 2 table below); **developing** = some plates are in the current system; **weak** = none are; **gap** = no figure at all.\n\n| # | Category | L1 plates | Current style | L2 figures | L3 | Retain / refine / replace | Maturity | Entries |\n|---|---|---:|---:|---:|---:|---|---|---|\n";
   VISUAL_CATEGORIES.forEach((c, i) => {
     const ps = plates.filter((p) => catOf(p.slug) === c.id);
     const entryPs = ps.filter((p) => entries.some((e) => e.slug === p.slug));
@@ -157,8 +157,12 @@ console.log("docs/KNOWLEDGE_TAXONOMY.md, docs/RESEARCH_SOURCES.md, docs/CONTENT_
     const lab = entries.find((e) => e.slug === p.slug)?.lab;
     md += `| \`${p.slug}\` | ${kind} | ${v?.category ?? "—"} | ${v?.method ?? "—"} | ${style(p.canvas)} | ${v?.review ?? "—"} | ${(v?.note ?? "").replace(/\|/g, "/")} | ${l2} | ${[p.explorer, lab].filter(Boolean).join(", ") || "—"} |\n`;
   }
-  md += "\n## Level 2 figures\n\n| Figure | Type | Method | Verification |\n|---|---|---|---|\n";
-  for (const v of visualExplanations) md += `| \`${v.id}\` | ${v.type} | ${v.method ?? METHOD_FOR_TYPE[v.type]} | ${v.verification} |\n`;
+  // Language of a Level-2 figure: the registry's `language` (D-102); the accessibility and design-system figures draw their own viz panels inside the component.
+  const OWN_VIZ = new Set(["accessibility-concept", "design-system"]);
+  const l2Lang = (v: (typeof visualExplanations)[number]) => v.language ?? (OWN_VIZ.has(v.slug) ? "viz (own panel)" : "workspace (not yet restyled)");
+  const l2Current = visualExplanations.filter((v) => !l2Lang(v).startsWith("workspace")).length;
+  md += `\n## Level 2 figures\n\n${l2Current} of ${visualExplanations.length} Level-2 figures are drawn in a current language (sheet or viz).\n\n| Figure | Type | Method | Language | Verification |\n|---|---|---|---|---|\n`;
+  for (const v of visualExplanations) md += `| \`${v.id}\` | ${v.type} | ${v.method ?? METHOD_FOR_TYPE[v.type]} | ${l2Lang(v)} | ${v.verification} |\n`;
   md += "\n## Plate descriptions (text alternatives)\n\n| Slug | What it shows |\n|---|---|\n";
   for (const p of plates) md += `| \`${p.slug}\` | ${p.description.replace(/\|/g, "/")} |\n`;
   writeFileSync(join(docs, "ILLUSTRATION_COVERAGE.md"), md);

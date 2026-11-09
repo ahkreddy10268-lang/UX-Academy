@@ -2,6 +2,7 @@ import Link from "next/link";
 import { citationLine } from "@/components/entry/references";
 import { LearningPanel } from "@/components/home/learning-panel";
 import { ConceptIllustration } from "@/components/illustrations/concept-illustration";
+import { PlateKey } from "@/components/illustrations/plate-key";
 import { HomeHeroArt } from "@/components/illustrations/home-hero-art";
 import { CategoryTile } from "@/components/knowledge/knowledge-card";
 import { quickTakeaways, visualsFor } from "@/components/visual-explanations/registry";
@@ -130,8 +131,13 @@ export default function Home() {
       {/* ---------------- Featured concept ---------------- */}
       <Container>
         <section aria-labelledby="featured" className={`${catClass(fitts.domain)} bg-feature grid items-center gap-8 rounded-2xl border border-rule p-5 sm:p-8 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:gap-12`}>
-          <figure className="overflow-hidden rounded-xl border border-rule bg-surface shadow-card">
-            <ConceptIllustration slug="fitts-law" title={fitts.title} domain={fitts.domain} variant="hero" />
+          <figure>
+            <div className="overflow-hidden rounded-xl border border-rule bg-surface shadow-card">
+              <ConceptIllustration slug="fitts-law" title={fitts.title} domain={fitts.domain} variant="hero" />
+            </div>
+            <figcaption>
+              <PlateKey slug="fitts-law" className="mt-3" />
+            </figcaption>
           </figure>
           <div className="min-w-0">
             <p className="label !text-c-ink">Featured concept · {TYPE_LABEL[fitts.primaryType]}</p>

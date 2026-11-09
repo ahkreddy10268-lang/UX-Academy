@@ -38,6 +38,8 @@ export type VisualExplanation = {
   summary: string[];
   /** Explanation method (docs/ILLUSTRATION_SYSTEM.md § Visual Learning System); defaults from `type` via METHOD_FOR_TYPE. */
   method?: "conceptual" | "process" | "relationship" | "comparison" | "hierarchy";
+  /** Canvas the figure body is drawn on (D-102): "sheet" for anatomy, measurement and comparison; "viz" for systems and processes. Omitted: the plain workspace surface. */
+  language?: "sheet" | "viz";
   /** "content-checked": every label restates the entry's sourced content. "illustrative": an example scenario, labelled as such. */
   verification: "content-checked" | "illustrative";
   /** Source ids the labels rest on (must be in the entry's references). */

@@ -3,9 +3,14 @@
  * Learning System). For figures that teach by showing an interface, a
  * measurement, a sequence or a correction on a light/dark theme-aware sheet.
  * Colour comes only from application tokens (they follow the active theme);
- * strokes are non-scaling hairlines. Interface text is drawn as SVG text
- * because it is part of the depicted interface; explanatory labels appear only
- * in the hero variant and the plate's description carries the meaning.
+ * strokes are non-scaling hairlines.
+ *
+ * Text standard (D-101): the hero plate renders about 314 CSS px wide on a
+ * 390 px phone (scale 0.785), so every SVG text is at least T.min = 13 units
+ * (≈ 10.2 CSS px there) and marker numerals 15 units (≈ 11.8 px). Only
+ * essential interface strings and marker numerals are drawn as text;
+ * explanations live in the plate's HTML `key`, and non-essential interface copy
+ * is drawn as text bars. tests/illustrations.test.ts enforces the minimum.
  */
 import type { ReactNode } from "react";
 
@@ -33,6 +38,9 @@ export const S = {
 
 const MONO = "var(--font-plex-mono), ui-monospace, monospace";
 const SANS = "var(--font-plex-sans), ui-sans-serif, system-ui, sans-serif";
+/** Minimum and preferred SVG text sizes for sheet plates (plate units, 400-unit-wide viewBox). */
+export const T = { min: 13, ui: 13, strong: 16, title: 17, marker: 16 } as const;
+
 const hair = { vectorEffect: "non-scaling-stroke" as const, strokeLinecap: "round" as const, strokeLinejoin: "round" as const };
 
 /** The sheet: surface with a fine construction grid. */
@@ -55,7 +63,7 @@ export function SheetCanvas({ w, h, grid = true }: { w: number; h: number; grid?
 }
 
 /** Text drawn as part of a depicted interface. */
-export function UiText({ x, y, children, size = 7, weight = 400, tone = "ink", anchor = "start", mono = false }: { x: number; y: number; children: ReactNode; size?: number; weight?: number; tone?: "ink" | "ink2" | "ink3" | "accent" | "surface" | "ok" | "error"; anchor?: "start" | "middle" | "end"; mono?: boolean }) {
+export function UiText({ x, y, children, size = T.ui, weight = 400, tone = "ink", anchor = "start", mono = false }: { x: number; y: number; children: ReactNode; size?: number; weight?: number; tone?: "ink" | "ink2" | "ink3" | "accent" | "surface" | "ok" | "error"; anchor?: "start" | "middle" | "end"; mono?: boolean }) {
   const fill = { ink: S.ink, ink2: S.ink2, ink3: S.ink3, accent: S.accentInk, surface: S.surface, ok: S.ok, error: S.error }[tone];
   return (
     <text x={x} y={y} fontSize={size} fontWeight={weight} fill={fill} textAnchor={anchor} fontFamily={mono ? MONO : SANS}>
@@ -64,53 +72,46 @@ export function UiText({ x, y, children, size = 7, weight = 400, tone = "ink", a
   );
 }
 
-/** A browser or app frame with a title bar. Children are drawn in frame coordinates. */
-export function UiFrame({ x, y, w, h, url, children, shadow = true }: { x: number; y: number; w: number; h: number; url?: string; children?: ReactNode; shadow?: boolean }) {
+/** A browser or app frame with a 22-unit title bar. Children are drawn in frame coordinates below the bar. The address bar is drawn as a pill without text (decorative). */
+export function UiFrame({ x, y, w, h, children, shadow = true }: { x: number; y: number; w: number; h: number; url?: string; children?: ReactNode; shadow?: boolean }) {
   return (
     <g transform={`translate(${x} ${y})`}>
-      {shadow && <rect x={1.5} y={3} width={w} height={h} rx={6} fill="var(--ill-shadow)" />}
-      <rect width={w} height={h} rx={6} fill={S.surface} stroke={S.ruleStrong} strokeWidth="0.8" {...hair} />
-      <path d={`M0 14 H${w}`} stroke={S.rule} strokeWidth="0.8" {...hair} />
+      {shadow && <rect x={1.5} y={3} width={w} height={h} rx={8} fill="var(--ill-shadow)" />}
+      <rect width={w} height={h} rx={8} fill={S.surface} stroke={S.ruleStrong} strokeWidth="0.8" {...hair} />
+      <path d={`M0 22 H${w}`} stroke={S.rule} strokeWidth="0.8" {...hair} />
       {[0, 1, 2].map((i) => (
-        <circle key={i} cx={8 + i * 6} cy={7} r={1.6} fill={S.ruleStrong} />
+        <circle key={i} cx={12 + i * 9} cy={11} r={2.6} fill={S.ruleStrong} />
       ))}
-      {url && (
-        <g>
-          <rect x={30} y={3.5} width={Math.min(110, w - 40)} height={7} rx={3.5} fill={S.soft} />
-          <UiText x={35} y={8.8} size={4.6} tone="ink3" mono>
-            {url}
-          </UiText>
-        </g>
-      )}
-      <g transform="translate(0 14)">{children}</g>
+      {w > 120 && <rect x={46} y={6} width={Math.min(120, w - 60)} height={10} rx={5} fill={S.soft} />}
+      <g transform="translate(0 22)">{children}</g>
     </g>
   );
 }
 
-/** A button: primary (filled), secondary (outlined) or ghost (text). */
-export function UiButton({ x, y, w, h = 14, label, variant = "primary", focus = false }: { x: number; y: number; w: number; h?: number; label: string; variant?: "primary" | "secondary" | "ghost"; focus?: boolean }) {
+/** A button: primary (filled), secondary (outlined) or ghost (text). Height 26, label 13. */
+export function UiButton({ x, y, w, h = 26, label, variant = "primary", focus = false }: { x: number; y: number; w: number; h?: number; label: string; variant?: "primary" | "secondary" | "ghost"; focus?: boolean }) {
   return (
     <g>
-      {focus && <rect x={x - 2.5} y={y - 2.5} width={w + 5} height={h + 5} rx={h / 2 + 2.5} fill="none" stroke={S.accent} strokeWidth="1.2" {...hair} />}
-      {variant !== "ghost" && <rect x={x} y={y} width={w} height={h} rx={h / 2} fill={variant === "primary" ? S.accent : S.surface} stroke={variant === "primary" ? S.accent : S.control} strokeWidth="0.8" {...hair} />}
-      <UiText x={x + w / 2} y={y + h / 2 + 2.3} size={6.2} weight={600} tone={variant === "primary" ? "surface" : "accent"} anchor="middle">
+      {focus && <rect x={x - 3} y={y - 3} width={w + 6} height={h + 6} rx={9} fill="none" stroke={S.accent} strokeWidth="1.4" {...hair} />}
+      {variant !== "ghost" && <rect x={x} y={y} width={w} height={h} rx={6} fill={variant === "primary" ? S.ink : S.surface} stroke={variant === "primary" ? S.ink : S.control} strokeWidth="0.9" {...hair} />}
+      <UiText x={x + w / 2} y={y + h / 2 + 4.6} weight={600} tone={variant === "primary" ? "surface" : "ink"} anchor="middle">
         {label}
       </UiText>
     </g>
   );
 }
 
-/** A labelled text field. */
+/** A labelled text field: label 13 above a 28-unit control. */
 export function UiField({ x, y, w, label, value, state = "default" }: { x: number; y: number; w: number; label: string; value?: string; state?: "default" | "focus" | "error" }) {
   const stroke = state === "focus" ? S.accent : state === "error" ? S.error : S.control;
   return (
     <g>
-      <UiText x={x} y={y} size={5.4} weight={600} tone="ink2">
+      <UiText x={x} y={y} weight={600} tone="ink2">
         {label}
       </UiText>
-      <rect x={x} y={y + 3} width={w} height={13} rx={3} fill={S.surface} stroke={stroke} strokeWidth={state === "default" ? 0.8 : 1.2} {...hair} />
+      <rect x={x} y={y + 6} width={w} height={28} rx={5} fill={S.surface} stroke={stroke} strokeWidth={state === "default" ? 0.9 : 1.4} {...hair} />
       {value && (
-        <UiText x={x + 4} y={y + 11.6} size={6} tone="ink">
+        <UiText x={x + 8} y={y + 25}>
           {value}
         </UiText>
       )}
@@ -118,16 +119,22 @@ export function UiField({ x, y, w, label, value, state = "default" }: { x: numbe
   );
 }
 
-/** A small selectable chip (date, filter, tab). */
+/** A selectable chip (time slot, filter, tab): 24 high, label 13. Disabled chips are dashed and struck through, so the state never rests on colour. */
 export function UiChip({ x, y, w, label, selected = false, disabled = false }: { x: number; y: number; w: number; label: string; selected?: boolean; disabled?: boolean }) {
   return (
     <g>
-      <rect x={x} y={y} width={w} height={12} rx={3} fill={selected ? S.accentWash : disabled ? S.sunken : S.surface} stroke={selected ? S.accent : S.control} strokeWidth={selected ? 1.1 : 0.7} strokeDasharray={disabled ? "1.6 1.4" : undefined} {...hair} />
-      <UiText x={x + w / 2} y={y + 8} size={5.4} weight={selected ? 600 : 400} tone={selected ? "accent" : disabled ? "ink3" : "ink"} anchor="middle">
+      <rect x={x} y={y} width={w} height={24} rx={5} fill={selected ? S.accentWash : disabled ? S.sunken : S.surface} stroke={selected ? S.accent : S.control} strokeWidth={selected ? 1.4 : 0.8} strokeDasharray={disabled ? "2 1.8" : undefined} {...hair} />
+      <UiText x={x + w / 2} y={y + 16.5} weight={selected ? 700 : 400} tone={selected ? "accent" : disabled ? "ink3" : "ink"} anchor="middle">
         {label}
       </UiText>
+      {disabled && <line x1={x + 8} y1={y + 12} x2={x + w - 8} y2={y + 12} stroke={S.ink3} strokeWidth="0.9" {...hair} />}
     </g>
   );
+}
+
+/** Greeked copy: a line of text drawn as a bar, for interface copy that is not essential. */
+export function TextBar({ x, y, w, strong = false }: { x: number; y: number; w: number; strong?: boolean }) {
+  return <rect x={x} y={y} width={w} height={5} rx={2.5} fill={strong ? S.ink3 : S.ruleStrong} opacity={strong ? 0.55 : 0.8} />;
 }
 
 /**
@@ -137,10 +144,10 @@ export function UiChip({ x, y, w, label, selected = false, disabled = false }: {
 export function Measure({ x1, y1, x2, y2, value, tone = "ink", offset = 0, show = true }: { x1: number; y1: number; x2: number; y2: number; value?: string; tone?: "ink" | "accent" | "ok" | "error"; offset?: number; show?: boolean }) {
   const c = { ink: S.ink2, accent: S.accent, ok: S.ok, error: S.error }[tone];
   const horiz = Math.abs(y2 - y1) < Math.abs(x2 - x1);
-  const t = 3;
+  const t = 5;
   const mx = (x1 + x2) / 2;
   const my = (y1 + y2) / 2;
-  const chipW = value ? value.length * 3.6 + 6 : 0;
+  const chipW = value ? value.length * 7.8 + 12 : 0;
   return (
     <g>
       <line x1={x1} y1={y1} x2={x2} y2={y2} stroke={c} strokeWidth="0.8" {...hair} />
@@ -151,8 +158,8 @@ export function Measure({ x1, y1, x2, y2, value, tone = "ink", offset = 0, show 
       )}
       {value && show && (
         <g transform={`translate(${mx + (horiz ? 0 : offset)} ${my + (horiz ? offset : 0)})`}>
-          <rect x={-chipW / 2} y={-5} width={chipW} height={10} rx={2} fill={c} />
-          <text x={0} y={2.4} textAnchor="middle" fontSize={6} fontWeight={600} fill={S.surface} fontFamily={MONO}>
+          <rect x={-chipW / 2} y={-10} width={chipW} height={20} rx={4} fill={c} />
+          <text x={0} y={4.6} textAnchor="middle" fontSize={T.min} fontWeight={600} fill={S.surface} fontFamily={MONO}>
             {value}
           </text>
         </g>
@@ -168,12 +175,12 @@ export function Marker({ x, y, n, to, tone = "ink" }: { x: number; y: number; n:
     <g>
       {to && (
         <g>
-          <line x1={x} y1={y} x2={to[0]} y2={to[1]} stroke={S.ink2} strokeWidth="0.7" {...hair} />
-          <circle cx={to[0]} cy={to[1]} r={1.5} fill={S.ink2} />
+          <line x1={x} y1={y} x2={to[0]} y2={to[1]} stroke={S.ink2} strokeWidth="0.9" {...hair} />
+          <circle cx={to[0]} cy={to[1]} r={2.2} fill={S.ink2} />
         </g>
       )}
-      <circle cx={x} cy={y} r={6} fill={fill} />
-      <text x={x} y={y + 2.3} textAnchor="middle" fontSize={6.4} fontWeight={700} fill={S.surface} fontFamily={SANS}>
+      <circle cx={x} cy={y} r={11} fill={fill} stroke={S.surface} strokeWidth="1.5" {...hair} />
+      <text x={x} y={y + 5.6} textAnchor="middle" fontSize={T.marker} fontWeight={700} fill={S.surface} fontFamily={SANS}>
         {n}
       </text>
     </g>
@@ -181,7 +188,7 @@ export function Marker({ x, y, n, to, tone = "ink" }: { x: number; y: number; n:
 }
 
 /** Good/poor verdict badge: tick or cross, never colour alone. */
-export function Verdict({ x, y, ok, r = 7 }: { x: number; y: number; ok: boolean; r?: number }) {
+export function Verdict({ x, y, ok, r = 9 }: { x: number; y: number; ok: boolean; r?: number }) {
   return (
     <g>
       <circle cx={x} cy={y} r={r} fill={ok ? S.okWash : S.errorWash} stroke={ok ? S.ok : S.error} strokeWidth="0.9" {...hair} />
@@ -194,18 +201,9 @@ export function Verdict({ x, y, ok, r = 7 }: { x: number; y: number; ok: boolean
   );
 }
 
-/** Short explanatory label (hero only), in the annotation voice. */
-export function Note({ x, y, children, show = true, anchor = "start", tone = "ink2" }: { x: number; y: number; children: ReactNode; show?: boolean; anchor?: "start" | "middle" | "end"; tone?: "ink" | "ink2" | "accent" | "ok" | "error" }) {
-  if (!show) return null;
-  const fill = { ink: S.ink, ink2: S.ink2, accent: S.accentInk, ok: S.ok, error: S.error }[tone];
-  return (
-    <text x={x} y={y} fontSize={7.2} fill={fill} textAnchor={anchor} fontFamily={MONO} letterSpacing="0.02em">
-      {children}
-    </text>
-  );
-}
-
-/** A pointer cursor at (x, y). */
+/** A pointer cursor at (x, y), drawn at size s without a scale transform (the text test forbids scaled groups). */
 export function Pointer({ x, y, s = 1 }: { x: number; y: number; s?: number }) {
-  return <path transform={`translate(${x} ${y}) scale(${s})`} d="M0 0 L0 12 L3.2 9.2 L5.6 14 L7.6 13 L5.2 8.4 L9.4 8.4 Z" fill={S.ink} stroke={S.surface} strokeWidth="0.8" strokeLinejoin="round" />;
+  const pts: [number, number][] = [[0, 0], [0, 12], [3.2, 9.2], [5.6, 14], [7.6, 13], [5.2, 8.4], [9.4, 8.4]];
+  const d = pts.map(([a, b], i) => `${i ? "L" : "M"}${(x + a * s).toFixed(2)} ${(y + b * s).toFixed(2)}`).join(" ") + " Z";
+  return <path d={d} fill={S.ink} stroke={S.surface} strokeWidth="0.8" strokeLinejoin="round" />;
 }

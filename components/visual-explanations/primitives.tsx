@@ -11,7 +11,7 @@ import type { ReactNode } from "react";
 export function Marker({ n, tone = "accent" }: { n: number | string; tone?: "accent" | "c" | "ink" }) {
   const cls = tone === "c" ? "bg-c-ink text-surface" : tone === "ink" ? "bg-ink text-surface" : "bg-accent text-surface";
   return (
-    <span aria-hidden className={`formula inline-grid h-5 min-w-5 shrink-0 place-items-center rounded-full px-1 text-[11px] font-medium leading-none ${cls}`}>
+    <span aria-hidden className={`formula inline-grid h-6 min-w-6 shrink-0 place-items-center rounded-full px-1 text-xs font-semibold leading-none ${cls}`}>
       {n}
     </span>
   );
@@ -44,7 +44,7 @@ export function FlowArrow({ label, turn = "@3xl:rotate-0", fixed }: { label?: st
       <svg viewBox="0 0 24 24" className={`h-6 w-6 ${rotation}`} fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round">
         <path d="M3 12h17M14 6l6 6-6 6" />
       </svg>
-      {label && <span className="text-[11px] font-medium">{label}</span>}
+      {label && <span className="text-xs font-medium">{label}</span>}
     </span>
   );
 }
@@ -63,10 +63,10 @@ export function DiagramNode({ title, children, tone = "surface", className = "" 
 /** Small pill tag used for modes, systems and statuses inside diagrams. */
 export function Tag({ children, tone = "neutral" }: { children: ReactNode; tone?: "neutral" | "c" | "accent" }) {
   const cls = tone === "c" ? "bg-c-wash text-c-ink" : tone === "accent" ? "bg-accent-wash text-accent-ink" : "bg-sunken text-ink-2";
-  return <span className={`inline-flex items-center rounded-full px-2 py-0.5 text-[11px] font-semibold ${cls}`}>{children}</span>;
+  return <span className={`inline-flex items-center rounded-full px-2 py-0.5 text-xs font-semibold ${cls}`}>{children}</span>;
 }
 
 /** "Illustrative" badge — required on any scenario that is an example rather than a finding. */
 export function IllustrativeBadge({ children = "Illustrative example" }: { children?: ReactNode }) {
-  return <span className="inline-flex items-center rounded-full border border-dashed border-planned-line px-2 py-0.5 text-[11px] font-medium text-planned">{children}</span>;
+  return <span className="inline-flex items-center rounded-full border border-dashed border-planned-line px-2 py-0.5 text-xs font-medium text-planned">{children}</span>;
 }

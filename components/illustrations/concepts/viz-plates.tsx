@@ -2,11 +2,12 @@
  * Knowledge plates in the dark technical editorial system (illustration v6,
  * D-086; docs/ILLUSTRATION_SYSTEM.md § Dark technical editorial). Each plate
  * is composed for its subject from ./system/viz; colour comes only from
- * --viz-* tokens; labels appear in the hero variant.
+ * --viz-* tokens; the hero carries numbered markers explained by the HTML
+ * figure key (D-101), never microtext.
  */
 import type { IllustrationEntry } from "../illustration-types";
 import { iso, plane, type Pt } from "../system/kit";
-import { Bloom, Callout, ContactShadow, Guides, isoRoute, ModuleCard, Route, Slab, Tag, Z } from "../system/viz";
+import { Bloom, Callout, ContactShadow, Guides, isoRoute, ModuleCard, Route, Slab, VizMarker, Z } from "../system/viz";
 
 /* ---------------------------------------------------------------- */
 /* Accessibility — an exploded digital service and its access routes */
@@ -23,6 +24,15 @@ export const accessibilityPlate: IllustrationEntry = {
   canvas: "viz",
   description:
     "An exploded view of a digital service as stacked layers: content and semantic HTML at the base; above them the illuminated accessibility tree of names, roles and states; above that the interface people see and operate; and at the top two alternative presentations, captions and resizable text. On the left, five access channels lie as modules: keyboard, switch, screen reader, voice control and magnifier. Four of them are joined to the accessibility tree by solid illuminated routes. The switch route is dashed and stops at a cross before it reaches the service, marking a barrier: a drag-only control with no keyboard or switch alternative. A callout to the right shows a status message announced to assistive technology, the system's accessible feedback.",
+  key: [
+    { n: "1", label: "Alternative presentations", detail: "captions; text that resizes and reflows" },
+    { n: "2", label: "Interface", detail: "what people see and operate, with visible focus" },
+    { n: "3", label: "Accessibility tree", detail: "names, roles and states that assistive technologies read" },
+    { n: "4", label: "Structure", detail: "content and semantic HTML the tree is built from" },
+    { n: "5", label: "Access channels", detail: "keyboard, switch, screen reader, voice control, magnifier" },
+    { n: "6", label: "Barrier", detail: "a drag-only control: the switch route stops short" },
+    { n: "7", label: "Status announced", detail: "accessible feedback from the system" },
+  ],
   Art: ({ detail, uid = "p" }) => {
     const o: Pt = [206, 166];
     const W = 70;
@@ -66,13 +76,13 @@ export const accessibilityPlate: IllustrationEntry = {
         <Bloom uid={uid} x={bx} y={by} rx={96} ry={44} />
         <ContactShadow o={o} x={0} y={0} w={W} d={D} spread={8} />
         {/* base layers: content and semantic structure */}
-        <Slab o={o} uid={uid} x={0} y={0} z={0} w={W * 0.48} d={D} h={5} label={detail ? "Content" : undefined} labelSize={5} />
-        <Slab o={o} uid={uid} x={W * 0.52} y={0} z={0} w={W * 0.48} d={D} h={5} label={detail ? "Semantics" : undefined} labelSize={5} />
+        <Slab o={o} uid={uid} x={0} y={0} z={0} w={W * 0.48} d={D} h={5} />
+        <Slab o={o} uid={uid} x={W * 0.52} y={0} z={0} w={W * 0.48} d={D} h={5} />
         <Guides o={o} corners={corners} z0={5} z1={zLit} />
         {/* access channels: technologies people use, as modules level with the tree */}
         {channels.map((c, i) => (
           <g key={c} transform={`translate(0 ${-zc})`}>
-            <ModuleCard o={o} uid={uid} x={cardX(i)} y={cardY0} w={9} d={cardD} axis="y" label={detail ? c : undefined} state={i === 1 ? "blocked" : "base"} />
+            <ModuleCard o={o} uid={uid} x={cardX(i)} y={cardY0} w={9} d={cardD} axis="y" state={i === 1 ? "blocked" : "base"} />
           </g>
         ))}
         {[0, 2, 3, 4].map((i) => (
@@ -80,7 +90,7 @@ export const accessibilityPlate: IllustrationEntry = {
         ))}
         <Route points={blocked} kind="blocked" r={3} />
         {/* the accessibility tree: the layer assistive technologies read and operate */}
-        <Slab o={o} uid={uid} x={0} y={0} z={zLit} w={W} d={D} h={6} state="lit" label={detail ? "Accessibility tree" : undefined} sub={detail ? "names · roles · states" : undefined} />
+        <Slab o={o} uid={uid} x={0} y={0} z={zLit} w={W} d={D} h={6} state="lit" />
         <Guides o={o} corners={corners} z0={zLit + 6} z1={zUi} />
         {/* the interface people see and operate, with a visible focus */}
         <Slab o={o} uid={uid} x={0} y={0} z={zUi} w={W} d={D} h={3} state="glass" />
@@ -94,8 +104,8 @@ export const accessibilityPlate: IllustrationEntry = {
         </g>
         <Guides o={o} corners={corners} z0={zUi + 3} z1={zTop} />
         {/* alternative presentations */}
-        <Slab o={o} uid={uid} x={0} y={0} z={zTop} w={W * 0.48} d={D} h={4} label={detail ? "Captions" : undefined} labelSize={5.4} />
-        <Slab o={o} uid={uid} x={W * 0.52} y={0} z={zTop} w={W * 0.48} d={D} h={4} label={detail ? "Text size" : undefined} labelSize={5.4} sub={detail ? "reflow · zoom" : undefined} />
+        <Slab o={o} uid={uid} x={0} y={0} z={zTop} w={W * 0.48} d={D} h={4} />
+        <Slab o={o} uid={uid} x={W * 0.52} y={0} z={zTop} w={W * 0.48} d={D} h={4} />
         {/* accessible feedback: a status message announced to assistive technology */}
         <Route points={fb} kind="positive" r={3} end="none" />
         <Callout x={fb[2][0] - 10} y={fb[2][1] - 22} w={62} h={22} tone="positive">
@@ -105,12 +115,13 @@ export const accessibilityPlate: IllustrationEntry = {
         </Callout>
         {detail && (
           <g>
-            <Tag x={fb[2][0] + 6} y={fb[2][1] + 10} text="status announced" tone="positive" />
-            <Tag x={iso(o, cardX(4) + 9, cardY0 + cardD, zc)[0] + 6} y={iso(o, cardX(4) + 9, cardY0 + cardD, zc)[1] + 10} text="ACCESS CHANNELS" />
-            <Tag x={iso(o, -14, 60.4, zc)[0] - 30} y={iso(o, -14, 60.4, zc)[1] - 44} text="barrier: drag-only control" tone="warning" anchor="middle" leader={[iso(o, -14, 60.4, zc)[0] - 2, iso(o, -14, 60.4, zc)[1] - 5]} />
-            <Tag x={right(zTop + 4)[0] + 10} y={right(zTop + 4)[1] + 4} text="alternatives" />
-            <Tag x={right(zUi + 3)[0] + 10} y={right(zUi + 3)[1] + 4} text="interface · focus" tone="accent" />
-            <Tag x={right(5)[0] + 10} y={right(5)[1] + 4} text="structure" />
+            <VizMarker x={right(zTop + 4)[0] + 14} y={right(zTop + 4)[1]} n={1} />
+            <VizMarker x={right(zUi + 3)[0] + 14} y={right(zUi + 3)[1]} n={2} tone="accent" />
+            <VizMarker x={right(zLit + 6)[0] + 14} y={right(zLit + 6)[1] + 22} n={3} tone="accent" />
+            <VizMarker x={right(5)[0] + 14} y={right(5)[1]} n={4} />
+            <VizMarker x={iso(o, cardX(4) + 9, cardY0 + cardD, zc)[0] + 12} y={iso(o, cardX(4) + 9, cardY0 + cardD, zc)[1] + 14} n={5} />
+            <VizMarker x={iso(o, -14, 60.4, zc)[0] - 26} y={iso(o, -14, 60.4, zc)[1] - 30} n={6} tone="warning" to={[iso(o, -14, 60.4, zc)[0] - 2, iso(o, -14, 60.4, zc)[1] - 5]} />
+            <VizMarker x={fb[2][0] + 62} y={fb[2][1] - 11} n={7} tone="positive" />
           </g>
         )}
       </g>
@@ -131,6 +142,14 @@ export const informationArchitecturePlate: IllustrationEntry = {
   canvas: "viz",
   description:
     "An exploded view of a website's information architecture in three layers. At the top, the navigation system: a menu bar of four sections with one section active. In the middle, the organisation and labelling systems: a tree in which each node carries a short label. At the base, the content: a grid of pages, one of which is the destination. A browse route, illuminated, drops from the active menu section to its node in the tree, follows the tree down to a leaf and drops again to the destination page; each step matches a label the person can recognise. A second, dashed route runs from a search module beside the stack straight to the same page: searching reaches content without walking the hierarchy. Findability depends on the four systems agreeing.",
+  key: [
+    { n: "1", label: "Navigation system", detail: "the menu; one section is active" },
+    { n: "2", label: "Organisation and labelling", detail: "a tree of labelled groups" },
+    { n: "3", label: "Content", detail: "the pages themselves" },
+    { n: "4", label: "Browse route", detail: "each step matches a label the person recognises" },
+    { n: "5", label: "Search", detail: "a second route that skips the hierarchy" },
+    { n: "6", label: "Destination", detail: "both routes reach the same page" },
+  ],
   Art: ({ detail, uid = "p" }) => {
     const o: Pt = [196, 150];
     const W = 92;
@@ -166,7 +185,7 @@ export const informationArchitecturePlate: IllustrationEntry = {
         <Bloom uid={uid} x={bx} y={by} rx={80} ry={40} />
         <ContactShadow o={o} x={0} y={0} w={W} d={D} spread={8} />
         {/* content */}
-        <Slab o={o} uid={uid} x={0} y={0} z={zC} w={W} d={D} h={5} label={detail ? undefined : undefined} />
+        <Slab o={o} uid={uid} x={0} y={0} z={zC} w={W} d={D} h={5} />
         <g transform={plane.top(o, 0, 0, zC + 5)}>
           {Array.from({ length: 4 }, (_, i) =>
             Array.from({ length: 3 }, (_, j) => {
@@ -179,7 +198,7 @@ export const informationArchitecturePlate: IllustrationEntry = {
         </g>
         <Guides o={o} corners={[[0, D], [W, D], [W, 0]]} z0={zC + 5} z1={zO} />
         {/* search: a second route to the same content */}
-        <ModuleCard o={o} uid={uid} x={-74} y={74} w={30} d={16} label={detail ? "Search" : undefined} tab={false} />
+        <ModuleCard o={o} uid={uid} x={-74} y={74} w={30} d={16} tab={false} />
         <Route points={search} kind="neutral-dashed" r={3} end="dot" />
         {/* organisation + labelling */}
         <Slab o={o} uid={uid} x={0} y={0} z={zO} w={W} d={D} h={5} state="glass" />
@@ -210,12 +229,12 @@ export const informationArchitecturePlate: IllustrationEntry = {
         <Route points={browse} kind="accent" r={2} end="dot" />
         {detail && (
           <g>
-            <Tag x={iso(o, W, 0, zN + 4)[0] + 10} y={iso(o, W, 0, zN + 4)[1] + 4} text="navigation" />
-            <Tag x={iso(o, W, 0, zO + 5)[0] + 10} y={iso(o, W, 0, zO + 5)[1] + 4} text="organisation · labels" tone="accent" />
-            <Tag x={iso(o, W, 0, zC + 5)[0] + 10} y={iso(o, W, 0, zC + 5)[1] + 4} text="content" />
-            <Tag x={searchFrom[0] - 4} y={searchFrom[1] + 18} text="search: a second route" />
-            <Tag x={browse[0][0] + 8} y={browse[0][1] - 12} text="browse route" tone="accent" />
-            <Tag x={browse[3][0] + 10} y={browse[3][1] + 14} text="destination" tone="accent" />
+            <VizMarker x={iso(o, W, 0, zN + 4)[0] + 16} y={iso(o, W, 0, zN + 4)[1]} n={1} />
+            <VizMarker x={iso(o, W, 0, zO + 5)[0] + 16} y={iso(o, W, 0, zO + 5)[1]} n={2} tone="accent" />
+            <VizMarker x={iso(o, W, 0, zC + 5)[0] + 16} y={iso(o, W, 0, zC + 5)[1]} n={3} />
+            <VizMarker x={browse[0][0] - 16} y={browse[0][1] - 18} n={4} tone="accent" to={[browse[0][0], browse[0][1]]} />
+            <VizMarker x={searchFrom[0] - 4} y={searchFrom[1] + 22} n={5} />
+            <VizMarker x={browse[3][0] + 18} y={browse[3][1] + 16} n={6} tone="accent" to={[browse[3][0], browse[3][1]]} />
           </g>
         )}
       </g>
@@ -236,24 +255,33 @@ export const interactionDesignPlate: IllustrationEntry = {
   canvas: "viz",
   description:
     "One payment control shown in four successive states joined by an illuminated route: ready, with a Pay £45 button; pressed, with the pointer on it as the person acts; processing, with the button disabled, a progress ring and the words Paying…; and paid, with a tick, the amount and a reference: the feedback that closes the loop. From the processing state a dashed coral branch leads down to a failed state, Not confirmed, where the screen offers Check status instead of paying again; a dashed route returns from it to the start of the sequence. The states are an illustrative example of the general interaction loop: action, system response, state change, feedback and the next action.",
+  key: [
+    { n: "1", label: "Ready", detail: "the control invites the action" },
+    { n: "2", label: "Pressed", detail: "the person acts" },
+    { n: "3", label: "Processing", detail: "the system responds; the button is disabled" },
+    { n: "4", label: "Paid", detail: "feedback closes the loop" },
+    { n: "5", label: "Timeout", detail: "the state is unknown, not failed" },
+    { n: "6", label: "Recover", detail: "check status rather than pay again" },
+  ],
   Art: ({ detail }) => {
-    const cw = 74;
-    const ch = 62;
-    const gap = 16;
-    const x0 = 22;
-    const y0 = 96;
+    const cw = 84;
+    const ch = 76;
+    const gap = 12;
+    const x0 = 14;
+    const y0 = 50;
     const cx = (i: number) => x0 + i * (cw + gap);
-    const fx = cx(2);
-    const fy = 208;
-    const states = ["ready", "pressed", "processing", "paid"];
-    const card = (x: number, y: number, tone: "accent" | "neutral" | "positive" | "warning") => (
-      <rect x={x} y={y} width={cw} height={ch} rx={6} fill={tone === "warning" ? Z.warningSoft : Z.s2} stroke={tone === "accent" ? Z.accent : tone === "positive" ? Z.positive : tone === "warning" ? Z.warning : Z.edge} strokeWidth="0.9" vectorEffect="non-scaling-stroke" className={tone === "accent" ? "glow-soft" : undefined} />
+    const fw = 124;
+    const fx = cx(2) + cw / 2 - fw / 2;
+    const fy = 182;
+    const SANS = "var(--font-plex-sans), sans-serif";
+    const card = (x: number, y: number, tone: "accent" | "neutral" | "positive" | "warning", w = cw) => (
+      <rect x={x} y={y} width={w} height={ch} rx={6} fill={tone === "warning" ? Z.warningSoft : Z.s2} stroke={tone === "accent" ? Z.accent : tone === "positive" ? Z.positive : tone === "warning" ? Z.warning : Z.edge} strokeWidth="0.9" vectorEffect="non-scaling-stroke" className={tone === "accent" ? "glow-soft" : undefined} />
     );
-    const bar = (x: number, y: number, w: number, tone: "text2" | "text3" = "text3") => <rect x={x} y={y} width={w} height={2.2} rx={1.1} fill={tone === "text2" ? Z.text2 : Z.text3} />;
-    const btn = (x: number, y: number, kind: "outline" | "fill" | "disabled", label: string) => (
+    const bar = (x: number, y: number, w: number, tone: "text2" | "text3" = "text3") => <rect x={x} y={y} width={w} height={3} rx={1.5} fill={tone === "text2" ? Z.text2 : Z.text3} />;
+    const btn = (x: number, y: number, kind: "outline" | "fill" | "disabled" | "neutral", label: string, w = 64) => (
       <g>
-        <rect x={x} y={y} width={52} height={13} rx={6.5} fill={kind === "fill" ? Z.accent : kind === "disabled" ? Z.s3 : Z.bg} stroke={kind === "disabled" ? Z.edge : Z.accent} strokeWidth="0.9" vectorEffect="non-scaling-stroke" />
-        <text x={x + 26} y={y + 8.8} textAnchor="middle" fontSize={5.8} fontWeight={600} fill={kind === "fill" ? Z.bg : kind === "disabled" ? Z.text3 : Z.accent} fontFamily="var(--font-plex-sans), sans-serif">
+        <rect x={x} y={y} width={w} height={22} rx={11} fill={kind === "fill" ? Z.accent : kind === "disabled" ? Z.s3 : Z.bg} stroke={kind === "disabled" ? Z.edge : kind === "neutral" ? Z.text2 : Z.accent} strokeWidth="0.9" vectorEffect="non-scaling-stroke" />
+        <text x={x + w / 2} y={y + 15.4} textAnchor="middle" fontSize={13} fontWeight={600} fill={kind === "fill" ? Z.bg : kind === "disabled" ? Z.text3 : kind === "neutral" ? Z.text : Z.accent} fontFamily={SANS}>
           {label}
         </text>
       </g>
@@ -267,57 +295,50 @@ export const interactionDesignPlate: IllustrationEntry = {
         ))}
         {/* ready */}
         {card(cx(0), y0, "neutral")}
-        {bar(cx(0) + 10, y0 + 12, 40, "text2")}
-        {bar(cx(0) + 10, y0 + 18, 28)}
-        {btn(cx(0) + 11, y0 + 36, "outline", "Pay £45")}
+        {bar(cx(0) + 10, y0 + 14, 50, "text2")}
+        {bar(cx(0) + 10, y0 + 23, 34)}
+        {btn(cx(0) + 10, y0 + 42, "outline", "Pay £45")}
         {/* pressed */}
         {card(cx(1), y0, "accent")}
-        {bar(cx(1) + 10, y0 + 12, 40, "text2")}
-        {bar(cx(1) + 10, y0 + 18, 28)}
-        {btn(cx(1) + 11, y0 + 36, "fill", "Pay £45")}
-        <path transform={`translate(${cx(1) + 46} ${y0 + 42}) scale(0.8)`} d="M0 0 L0 12 L3.2 9.2 L5.6 14 L7.6 13 L5.2 8.4 L9.4 8.4 Z" fill={Z.text} stroke={Z.bg} strokeWidth="0.8" />
+        {bar(cx(1) + 10, y0 + 14, 50, "text2")}
+        {bar(cx(1) + 10, y0 + 23, 34)}
+        {btn(cx(1) + 10, y0 + 42, "fill", "Pay £45")}
+        <path d={`M${cx(1) + 70} ${y0 + 56} l0 13 l3.4 -3 l2.6 5.2 l2.2 -1.1 l-2.6 -5 l4.6 0 Z`} fill={Z.text} stroke={Z.bg} strokeWidth="0.8" />
         {/* processing */}
         {card(cx(2), y0, "accent")}
-        {bar(cx(2) + 10, y0 + 12, 40, "text2")}
-        <circle cx={cx(2) + 18} cy={y0 + 30} r={5} fill="none" stroke={Z.edge} strokeWidth="1.4" />
-        <path d={`M${cx(2) + 18} ${y0 + 25} A5 5 0 0 1 ${cx(2) + 23} ${y0 + 30}`} fill="none" stroke={Z.accent} strokeWidth="1.4" strokeLinecap="round" />
-        <text x={cx(2) + 28} y={y0 + 32} fontSize={5.6} fill={Z.text2} fontFamily="var(--font-plex-sans), sans-serif">
+        {bar(cx(2) + 10, y0 + 14, 50, "text2")}
+        <circle cx={cx(2) + 15} cy={y0 + 32} r={6} fill="none" stroke={Z.edge} strokeWidth="1.6" />
+        <path d={`M${cx(2) + 15} ${y0 + 26} A6 6 0 0 1 ${cx(2) + 21} ${y0 + 32}`} fill="none" stroke={Z.accent} strokeWidth="1.6" strokeLinecap="round" />
+        <text x={cx(2) + 25} y={y0 + 36.5} fontSize={13} fill={Z.text2} fontFamily={SANS}>
           Paying…
         </text>
-        {btn(cx(2) + 11, y0 + 42, "disabled", "Pay £45")}
+        {btn(cx(2) + 10, y0 + 46, "disabled", "Pay £45")}
         {/* paid: feedback */}
         {card(cx(3), y0, "positive")}
-        <circle cx={cx(3) + 16} cy={y0 + 18} r={6} fill={Z.positiveSoft} stroke={Z.positive} strokeWidth="0.9" />
-        <path d={`M${cx(3) + 13} ${y0 + 18} l2.2 2.2 l4.2 -4.4`} fill="none" stroke={Z.positive} strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
-        <text x={cx(3) + 26} y={y0 + 20} fontSize={6.2} fontWeight={600} fill={Z.text} fontFamily="var(--font-plex-sans), sans-serif">
+        <circle cx={cx(3) + 14} cy={y0 + 20} r={7} fill={Z.positiveSoft} stroke={Z.positive} strokeWidth="0.9" />
+        <path d={`M${cx(3) + 10.6} ${y0 + 20} l2.4 2.4 l4.6 -4.8`} fill="none" stroke={Z.positive} strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+        <text x={cx(3) + 25} y={y0 + 24.5} fontSize={13} fontWeight={600} fill={Z.text} fontFamily={SANS}>
           Paid £45
         </text>
-        {bar(cx(3) + 10, y0 + 34, 46, "text2")}
-        {bar(cx(3) + 10, y0 + 40, 34)}
-        {bar(cx(3) + 10, y0 + 46, 24)}
+        {bar(cx(3) + 10, y0 + 42, 60, "text2")}
+        {bar(cx(3) + 10, y0 + 51, 44)}
+        {bar(cx(3) + 10, y0 + 60, 30)}
         {/* failure and recovery */}
         <Route points={[[cx(2) + cw / 2, y0 + ch], [cx(2) + cw / 2, fy]]} kind="blocked" end="none" />
-        {card(fx, fy, "warning")}
-        <text x={fx + 10} y={fy + 16} fontSize={6.2} fontWeight={600} fill={Z.warning} fontFamily="var(--font-plex-sans), sans-serif">
+        {card(fx, fy, "warning", fw)}
+        <text x={fx + 12} y={fy + 22} fontSize={13} fontWeight={600} fill={Z.warning} fontFamily={SANS}>
           Not confirmed
         </text>
-        {bar(fx + 10, fy + 24, 50, "text2")}
-        {bar(fx + 10, fy + 30, 36)}
-        <rect x={fx + 11} y={fy + 40} width={52} height={13} rx={6.5} fill="none" stroke={Z.text2} strokeWidth="0.9" vectorEffect="non-scaling-stroke" />
-        <text x={fx + 37} y={fy + 48.8} textAnchor="middle" fontSize={5.6} fontWeight={600} fill={Z.text} fontFamily="var(--font-plex-sans), sans-serif">
-          Check status
-        </text>
+        {bar(fx + 12, fy + 31, 70, "text2")}
+        {btn(fx + 12, fy + 44, "neutral", "Check status", 100)}
         <Route points={[[fx, fy + ch / 2], [cx(0) + cw / 2, fy + ch / 2], [cx(0) + cw / 2, y0 + ch]]} kind="neutral-dashed" r={6} end="arrow" />
         {detail && (
           <g>
-            {states.map((t, i) => (
-              <Tag key={t} x={cx(i)} y={y0 - 8} text={`${String(i + 1).padStart(2, "0")} ${t}`} tone={i === 3 ? "positive" : i ? "accent" : "text2"} />
+            {[0, 1, 2, 3].map((i) => (
+              <VizMarker key={i} x={cx(i) + cw / 2} y={y0 - 18} n={i + 1} tone={i === 3 ? "positive" : i ? "accent" : "text"} />
             ))}
-            <Tag x={fx + cw / 2 - 6} y={fy - 10} text="timeout · state unknown" tone="warning" anchor="end" />
-            <Tag x={cx(0) + cw / 2 + 6} y={fy + ch / 2 + 12} text="recover: check status" />
-            <Tag x={cx(1) - 4} y={y0 - 26} text="action" tone="accent" anchor="middle" />
-            <Tag x={cx(3) + cw / 2} y={y0 - 26} text="feedback" tone="positive" anchor="middle" />
-            <Tag x={x0} y={40} text="ONE CONTROL · FOUR STATES · ONE RECOVERY PATH" tone="text" />
+            <VizMarker x={cx(2) + cw / 2 + 18} y={(y0 + ch + fy) / 2} n={5} tone="warning" />
+            <VizMarker x={(fx + cx(0) + cw / 2) / 2} y={fy + ch / 2} n={6} />
           </g>
         )}
       </g>
@@ -326,20 +347,21 @@ export const interactionDesignPlate: IllustrationEntry = {
 };
 
 /* ---------------------------------------------------------------- */
-/* Design system — one decision traced through the system            */
-/* (checked against the entry: principles inform foundations; tokens  */
-/*  record decisions that components consume; patterns combine        */
-/*  components; products use patterns; documentation and governance    */
-/*  run alongside every layer; feedback from products returns to the   */
-/*  system and changes are released; the layers are a teaching model,  */
-/*  not an order of construction)                                      */
-/* ---------------------------------------------------------------- */
 export const designSystemPlate: IllustrationEntry = {
   slug: "design-system",
   title: "Design system plate",
   canvas: "viz",
   description:
     "An exploded view of a design system in four layers, with one design decision traced through it. At the base, foundations and tokens: a row of colour swatches, a spacing scale and type samples; one swatch, the main action colour, is lit. Above it, components: a text input, a toggle and a button that uses the lit colour. Above that, a pattern: a sign-up form made from those components, whose button is the same component. At the top, three products (a website, a mobile app and a staff tool) each show that button. An illuminated route rises from the swatch through the button and the form, then branches into all three products: change the decision once and every product that takes the release receives it. A principles card on the ground feeds the foundations. Beside the stack, a vertical spine stands for documentation and governance and is linked to every layer; a dashed route carries feedback from the products back to the spine, which releases changes into the layers. The layers are a teaching model, not a fixed order of construction.",
+  key: [
+    { n: "1", label: "Foundations and tokens", detail: "one decision, the action colour, is lit and traced upward" },
+    { n: "2", label: "Components", detail: "the button consumes the token" },
+    { n: "3", label: "Patterns", detail: "a sign-up form made of the components" },
+    { n: "4", label: "Products", detail: "website, app and staff tool all receive the change" },
+    { n: "5", label: "Documentation and governance", detail: "linked to every layer; releases changes" },
+    { n: "6", label: "Feedback", detail: "products report back to the system" },
+    { n: "7", label: "Principles and needs", detail: "the ground the foundations stand on" },
+  ],
   Art: ({ detail, uid = "p" }) => {
     const o: Pt = [150, 156];
     const W = 84;
@@ -450,14 +472,13 @@ export const designSystemPlate: IllustrationEntry = {
 
         {detail && (
           <g>
-            <Tag x={iso(o, 0, D, zR + h)[0] - 6} y={iso(o, 0, D, zR + h)[1] + 2} text="products" anchor="end" />
-            <Tag x={iso(o, 0, D, zP + h)[0] - 6} y={iso(o, 0, D, zP + h)[1] + 2} text="patterns" anchor="end" />
-            <Tag x={iso(o, 0, D, zC + h)[0] - 6} y={iso(o, 0, D, zC + h)[1] + 2} text="components" anchor="end" />
-            <Tag x={iso(o, 0, D, zF + h)[0] - 6} y={iso(o, 0, D, zF + h)[1] + 8} text="foundations · tokens" anchor="end" tone="accent" />
-            <Tag x={iso(o, -10, D + 10, zU + 3)[0] - 6} y={iso(o, -10, D + 10, zU + 3)[1] + 4} text="principles · needs" anchor="end" />
-            <Tag x={iso(o, spineX + 26, -24, zR)[0] + 6} y={iso(o, spineX + 26, -24, zR)[1]} text="docs · governance" />
-            <Tag x={iso(o, pc(products[2]), -21, zR + h + 12)[0] - 8} y={iso(o, pc(products[2]), -21, zR + h + 12)[1] - 6} text="feedback" anchor="end" />
-            <Tag x={iso(o, -10, D + 10, zU)[0] + 44} y={iso(o, -10, D + 10, zU)[1] + 36} text="one decision, traced" anchor="end" tone="accent" leader={iso(o, key[0], key[1] + 5, zF + h)} />
+            <VizMarker x={iso(o, 0, D, zF + h)[0] - 16} y={iso(o, 0, D, zF + h)[1] + 2} n={1} tone="accent" />
+            <VizMarker x={iso(o, 0, D, zC + h)[0] - 16} y={iso(o, 0, D, zC + h)[1]} n={2} />
+            <VizMarker x={iso(o, 0, D, zP + h)[0] - 16} y={iso(o, 0, D, zP + h)[1]} n={3} />
+            <VizMarker x={iso(o, 0, D, zR + h)[0] - 16} y={iso(o, 0, D, zR + h)[1]} n={4} />
+            <VizMarker x={iso(o, spineX + 26, -24, zR)[0] + 16} y={iso(o, spineX + 26, -24, zR)[1]} n={5} />
+            <VizMarker x={iso(o, pc(products[2]), -21, zR + h + 12)[0] - 18} y={iso(o, pc(products[2]), -21, zR + h + 12)[1] - 8} n={6} />
+            <VizMarker x={iso(o, -10, D + 10, zU + 3)[0] - 16} y={iso(o, -10, D + 10, zU + 3)[1] + 4} n={7} />
           </g>
         )}
       </g>

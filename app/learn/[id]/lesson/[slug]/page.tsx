@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { EntryActions } from "@/components/entry/entry-actions";
 import { ConceptIllustration } from "@/components/illustrations/concept-illustration";
+import { PlateKey } from "@/components/illustrations/plate-key";
 import { ConceptExplorer } from "@/components/illustrations/interactive/explorers";
 import { illustrationFor } from "@/components/illustrations/registry";
 import { Quiz } from "@/components/practice/quiz";
@@ -93,8 +94,13 @@ export default async function LessonPage({ params }: PageProps<"/learn/[id]/less
             {TYPE_LABEL[e.primaryType]} · est. reading ≈ {minutesForLevel(e, level)} min at this level · {questions.length} knowledge {questions.length === 1 ? "check" : "checks"}
           </p>
         </div>
-        <figure className="overflow-hidden rounded-xl border border-rule bg-surface shadow-raise">
-          <ConceptIllustration slug={e.slug} title={e.title} domain={e.domain} variant="hero" />
+        <figure>
+          <div className="overflow-hidden rounded-xl border border-rule bg-surface shadow-raise">
+            <ConceptIllustration slug={e.slug} title={e.title} domain={e.domain} variant="hero" />
+          </div>
+          <figcaption>
+            <PlateKey slug={e.slug} className="mt-3" />
+          </figcaption>
         </figure>
         </div>
       </Container>

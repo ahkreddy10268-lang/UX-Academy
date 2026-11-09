@@ -32,6 +32,18 @@ describe("visual explanation registry", () => {
     expect(new Set(lead).size).toBe(gold.length);
     for (const g of gold) expect(quickTakeaways[g], g).toBeTruthy();
   });
+  it("draws the seven pilot figures in the language their knowledge calls for (D-102)", () => {
+    const want: Record<string, "sheet" | "viz"> = {
+      "fitts-law.anatomy": "sheet",
+      "fitts-law.placement": "sheet",
+      "ui-design.annotated": "sheet",
+      "double-diamond.process": "viz",
+      "information-architecture.ecology": "viz",
+      "information-architecture.hierarchy": "viz",
+      "interaction-design-discipline.loop": "viz",
+    };
+    for (const [id, lang] of Object.entries(want)) expect(visualExplanations.find((v) => v.id === id)?.language, id).toBe(lang);
+  });
   it("labels every comparison and scenario honestly", () => {
     for (const v of visualExplanations.filter((x) => x.type === "comparison" || x.type === "hierarchy")) expect(["illustrative", "content-checked"]).toContain(v.verification);
   });

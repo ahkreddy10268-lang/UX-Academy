@@ -99,5 +99,21 @@ describe("visualisation canvas tokens (theme-independent, D-086)", () => {
   });
   it("is not redefined by the dark theme (one canvas in both themes)", () => {
     expect(Object.keys(themes.dark).filter((k) => k.startsWith("viz-"))).toEqual([]);
+  });  // Level-2 figures in the viz language (.fig-viz, D-102) remap the app roles onto
+  // these tokens; status and accent text then sits on its own soft wash, and
+  // text set on a filled accent uses the surface colour.
+  it.each([
+    ["viz-text", "viz-accent-soft"],
+    ["viz-text-2", "viz-accent-soft"],
+    ["viz-accent", "viz-accent-soft"],
+    ["viz-text", "viz-positive-soft"],
+    ["viz-positive", "viz-positive-soft"],
+    ["viz-text", "viz-warning-soft"],
+    ["viz-text-2", "viz-warning-soft"],
+    ["viz-warning", "viz-warning-soft"],
+    ["viz-surface-1", "viz-accent"],
+    ["viz-surface-1", "viz-text"],
+  ])("fig-viz pair %s on %s ≥ 4.5:1", (fg, bg) => {
+    expect(contrastRatio(v(fg), v(bg))).toBeGreaterThanOrEqual(4.5);
   });
 });

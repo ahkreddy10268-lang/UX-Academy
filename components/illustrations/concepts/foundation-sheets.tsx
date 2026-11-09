@@ -1,26 +1,25 @@
 /**
- * Replacement plates for the foundations audit (D-093; docs/ILLUSTRATION_SYSTEM.md
- * § Visual Learning System). Each replaces a plate the audit marked "replace";
- * slugs, registry order and explorer flags are unchanged. Built from
- * ../system/sheet on the instructional canvas; explanatory labels appear only
- * in the hero (`detail`) and the description carries the meaning. Every label
- * is checked against its entry (see the comment on each plate).
+ * Replacement plates for the foundations audit (D-093), recomposed for the
+ * text standard (D-101): every SVG text ≥ 13 units; non-essential interface
+ * copy is drawn as text bars; the hero adds numbered markers whose
+ * explanations are the plate's HTML `key`. Built from ../system/sheet on the
+ * instructional canvas. Every label is checked against its entry.
  */
 import type { ReactNode } from "react";
 import type { IllustrationEntry } from "../illustration-types";
-import { Measure, Note, S, UiFrame, UiText, Verdict } from "../system/sheet";
+import { Marker, S, T, TextBar, UiButton, UiFrame, UiText, Verdict } from "../system/sheet";
 
 const hair = { vectorEffect: "non-scaling-stroke" as const, strokeLinecap: "round" as const, strokeLinejoin: "round" as const };
 
-/** A labelled node in a model diagram. */
-function Node({ cx, cy, w = 62, label, tone = "ink", ghost = false }: { cx: number; cy: number; w?: number; label?: string; tone?: "ink" | "accent" | "error"; ghost?: boolean }) {
+/** A labelled node in a model diagram (26 high, label 13). */
+function Node({ cx, cy, w = 100, label, tone = "ink", ghost = false }: { cx: number; cy: number; w?: number; label?: string; tone?: "ink" | "accent" | "error"; ghost?: boolean }) {
   const stroke = ghost ? S.ink3 : tone === "accent" ? S.accent : tone === "error" ? S.error : S.ink2;
   const fill = ghost ? "none" : tone === "accent" ? S.accentWash : tone === "error" ? S.errorWash : S.surface;
   return (
     <g>
-      <rect x={cx - w / 2} y={cy - 8} width={w} height={16} rx={8} fill={fill} stroke={stroke} strokeWidth={ghost ? 0.8 : 1} strokeDasharray={ghost ? "2 2" : undefined} {...hair} />
+      <rect x={cx - w / 2} y={cy - 13} width={w} height={26} rx={13} fill={fill} stroke={stroke} strokeWidth={ghost ? 0.9 : 1.1} strokeDasharray={ghost ? "2.4 2.2" : undefined} {...hair} />
       {label && (
-        <UiText x={cx} y={cy + 2.2} size={6.2} weight={600} anchor="middle" tone={tone === "error" ? "error" : tone === "accent" ? "accent" : "ink"}>
+        <UiText x={cx} y={cy + 4.6} weight={600} anchor="middle" tone={tone === "error" ? "error" : tone === "accent" ? "accent" : "ink"}>
           {label}
         </UiText>
       )}
@@ -36,17 +35,29 @@ function Arrow({ x1, y1, x2, y2, tone = "ink", dashed = false, head = 4 }: { x1:
   const [l, r] = [p(head * 1.6, head * 0.8), p(head * 1.6, -head * 0.8)];
   return (
     <g>
-      <line x1={x1} y1={y1} x2={x2 - Math.cos(a) * head} y2={y2 - Math.sin(a) * head} stroke={c} strokeWidth="1" strokeDasharray={dashed ? "2.4 2" : undefined} {...hair} />
+      <line x1={x1} y1={y1} x2={x2 - Math.cos(a) * head} y2={y2 - Math.sin(a) * head} stroke={c} strokeWidth="1.1" strokeDasharray={dashed ? "2.6 2.2" : undefined} {...hair} />
       <polygon points={`${x2},${y2} ${l[0]},${l[1]} ${r[0]},${r[1]}`} fill={c} />
     </g>
   );
 }
 
-/** A panel that holds a model diagram. */
-function Panel({ x, y, w, h, children, tone = "soft" }: { x: number; y: number; w: number; h: number; children?: ReactNode; tone?: "soft" | "surface" }) {
+/** A small text label on a connector, with a background so lines never cross the text. */
+function Pill({ cx, cy, text, tone = "ink3", mono = true }: { cx: number; cy: number; text: string; tone?: "ink3" | "error" | "accent"; mono?: boolean }) {
+  const w = text.length * (mono ? 7.9 : 7.2) + 12;
   return (
     <g>
-      <rect x={x} y={y} width={w} height={h} rx={8} fill={tone === "soft" ? S.soft : S.surface} stroke={S.rule} strokeWidth="0.8" {...hair} />
+      <rect x={cx - w / 2} y={cy - 10} width={w} height={20} rx={10} fill={tone === "error" ? S.errorWash : S.surface} stroke={tone === "error" ? S.error : S.rule} strokeWidth="0.8" {...hair} />
+      <UiText x={cx} y={cy + 4.5} anchor="middle" mono={mono} tone={tone === "ink3" ? "ink2" : tone}>
+        {text}
+      </UiText>
+    </g>
+  );
+}
+
+function Panel({ x, y, w, h, children, dashed = false }: { x: number; y: number; w: number; h: number; children?: ReactNode; dashed?: boolean }) {
+  return (
+    <g>
+      <rect x={x} y={y} width={w} height={h} rx={8} fill={dashed ? "none" : S.soft} stroke={dashed ? S.ink3 : S.rule} strokeWidth="0.9" strokeDasharray={dashed ? "3.4 2.6" : undefined} {...hair} />
       {children}
     </g>
   );
@@ -54,89 +65,79 @@ function Panel({ x, y, w, h, children, tone = "soft" }: { x: number; y: number; 
 
 /* ---------------------------------------------------------------- */
 /* Mental models — conceptual model, system image, user's model      */
-/* (checked against the entry: Norman's three models; the designer   */
-/*  communicates only through the system image; users' models are    */
-/*  incomplete; the entry's own example is an autosaving editor whose */
-/*  system image does not show saved state, so users keep pressing    */
-/*  Save and believe the work lives on this laptop)                  */
+/* (Norman's three models; the designer communicates only through    */
+/*  the system image; the entry's autosaving-editor example)          */
 /* ---------------------------------------------------------------- */
 export const mentalModelsPlate: IllustrationEntry = {
   slug: "mental-models",
   title: "Mental models plate",
   canvas: "sheet",
   description:
-    "Three panels joined by arrows, using an autosaving notes editor as the example. On the left, the designer's conceptual model is complete: each edit is saved automatically to a cloud copy, which syncs to the phone. In the middle, the system image is the editor itself: a document titled Trip notes with a toolbar, and an empty space where a saved-state message could be but is not. On the right, the user's mental model, formed only from that screen, is wrong in one link and incomplete: it says an edit needs Save and is stored on this laptop, and the cloud copy and the phone are missing, shown as an empty dashed node. Arrows run from the conceptual model to the system image and from the system image to the user's model; a dashed arc straight from designer to user is crossed out, because designers cannot hand their model to users directly.",
+    "Three panels joined by arrows, using an autosaving notes editor as the example. On the left, the designer's conceptual model is complete: an edit is saved automatically to a cloud copy, which syncs to the phone. In the middle, the system image is the editor itself: a document titled Trip notes with a toolbar, and an empty space where a saved-state message could be but is not. On the right, the user's mental model, formed only from that screen, has one wrong link and missing parts: it says an edit needs Save and is stored on this laptop, and the cloud copy and phone are missing, shown as an empty dashed node. Arrows run from the conceptual model to the system image and from the system image to the user's model; a dashed arc straight from designer to user is crossed out, because designers cannot hand their model to users directly.",
+  key: [
+    { n: "1", label: "Conceptual model", detail: "the designer's: every edit is saved to the cloud copy and synced" },
+    { n: "2", label: "System image", detail: "the editor; it never shows whether work is saved" },
+    { n: "3", label: "User's mental model", detail: "built from the screen alone: one wrong link and missing parts" },
+    { n: "4", label: "No direct channel", detail: "designers cannot hand their model to users" },
+  ],
   Art: ({ detail }) => {
-    const cy = [116, 154, 192];
+    const ys = [110, 180, 250];
     return (
       <g>
-        {/* the direct channel that does not exist */}
-        <path d="M70 88 Q 204 6 336 88" fill="none" stroke={S.ink3} strokeWidth="0.9" strokeDasharray="3 2.6" {...hair} />
-        <Verdict x={204} y={47} ok={false} r={7} />
-        <Note x={204} y={30} show={detail} anchor="middle" tone="error">no direct channel</Note>
-
-        {/* designer's conceptual model: complete */}
-        <Panel x={18} y={88} w={104} h={128}>
-          <Node cx={70} cy={cy[0]} label="Edit" />
-          <Arrow x1={70} y1={cy[0] + 8} x2={70} y2={cy[1] - 9} />
-          <UiText x={75} y={(cy[0] + cy[1]) / 2 + 2} size={5} tone="ink3" mono>
-            auto
-          </UiText>
-          <Node cx={70} cy={cy[1]} label="Cloud copy" tone="accent" />
-          <Arrow x1={70} y1={cy[1] + 8} x2={70} y2={cy[2] - 9} />
-          <UiText x={75} y={(cy[1] + cy[2]) / 2 + 2} size={5} tone="ink3" mono>
-            sync
-          </UiText>
-          <Node cx={70} cy={cy[2]} label="Phone" />
+        <path d="M67 74 Q 200 -6 333 74" fill="none" stroke={S.ink3} strokeWidth="1" strokeDasharray="3.4 2.8" {...hair} />
+        <Verdict x={200} y={34} ok={false} r={11} />
+        {/* conceptual model */}
+        <Panel x={8} y={74} w={118} h={212}>
+          <Node cx={67} cy={ys[0]} label="Edit" />
+          <Arrow x1={67} y1={ys[0] + 13} x2={67} y2={ys[1] - 14} />
+          <Pill cx={67} cy={(ys[0] + ys[1]) / 2} text="auto" />
+          <Node cx={67} cy={ys[1]} label="Cloud copy" tone="accent" />
+          <Arrow x1={67} y1={ys[1] + 13} x2={67} y2={ys[2] - 14} />
+          <Pill cx={67} cy={(ys[1] + ys[2]) / 2} text="sync" />
+          <Node cx={67} cy={ys[2]} label="Phone" />
         </Panel>
-
-        {/* the system image: the editor, with no saved state shown */}
-        <UiFrame x={142} y={74} w={124} h={156} url="notes.example">
-          <rect x={0} y={0} width={124} height={16} fill={S.soft} />
-          <UiText x={8} y={10.6} size={6.4} weight={700}>
+        {/* system image */}
+        <UiFrame x={141} y={74} w={118} h={212}>
+          <rect x={0} y={0} width={118} height={28} fill={S.soft} />
+          <UiText x={10} y={19} weight={700}>
             B
           </UiText>
-          <UiText x={18} y={10.6} size={6.4} tone="ink2">
+          <UiText x={26} y={19} tone="ink2">
             I
           </UiText>
-          <rect x={27} y={5} width={0.8} height={7} fill={S.rule} />
-          <rect x={32} y={6} width={14} height={5} rx={1} fill={S.ruleStrong} opacity={0.6} />
-          <rect x={78} y={3.5} width={40} height={9} rx={2} fill="none" stroke={S.error} strokeWidth="0.8" strokeDasharray="2 1.6" {...hair} />
-          <UiText x={10} y={34} size={9} weight={700}>
+          <rect x={64} y={6} width={46} height={16} rx={3} fill="none" stroke={S.error} strokeWidth="1" strokeDasharray="2.4 2" {...hair} />
+          <UiText x={10} y={56} size={T.strong} weight={700}>
             Trip notes
           </UiText>
-          {[46, 56, 66, 80, 90].map((y, i) => (
-            <rect key={y} x={10} y={y} width={[96, 88, 60, 92, 70][i]} height={3.2} rx={1.6} fill={S.ruleStrong} opacity={0.7} />
+          {[70, 82, 94, 112, 124].map((y, i) => (
+            <TextBar key={y} x={10} y={y} w={[96, 84, 60, 92, 70][i]} />
           ))}
-          <UiText x={10} y={110} size={6} tone="ink">
-            Ferry leaves 07:40
+          <UiText x={10} y={160}>
+            Ferry 07:40
           </UiText>
-          <rect x={67} y={104} width={0.9} height={8} fill={S.accent} />
+          <rect x={90} y={149} width={1.2} height={14} fill={S.accent} />
         </UiFrame>
-        <Note x={266} y={70} show={detail} anchor="end" tone="error">saved state not shown</Note>
-
-        {/* user's mental model: one wrong link, one missing part */}
-        <Panel x={286} y={88} w={100} h={128}>
-          <Node cx={336} cy={cy[0]} label="Edit" />
-          <Arrow x1={336} y1={cy[0] + 8} x2={336} y2={cy[1] - 9} tone="error" dashed />
-          <UiText x={341} y={(cy[0] + cy[1]) / 2 + 2} size={5} tone="error" mono>
-            needs Save
-          </UiText>
-          <Node cx={336} cy={cy[1]} label="This laptop" tone="error" />
-          <Node cx={336} cy={cy[2]} ghost />
-          <UiText x={336} y={cy[2] + 2.2} size={6.4} tone="ink3" anchor="middle">
+        {/* user's mental model */}
+        <Panel x={274} y={74} w={118} h={212}>
+          <Node cx={333} cy={ys[0]} label="Edit" />
+          <Arrow x1={333} y1={ys[0] + 13} x2={333} y2={ys[1] - 14} tone="error" dashed />
+          <Pill cx={333} cy={(ys[0] + ys[1]) / 2} text="needs Save" tone="error" />
+          <Node cx={333} cy={ys[1]} label="This laptop" tone="error" />
+          <Node cx={333} cy={ys[2]} ghost />
+          <UiText x={333} y={ys[2] + 5} anchor="middle" tone="ink3" weight={700}>
             ?
           </UiText>
         </Panel>
-
-        {/* the only channel: designer → system image → user */}
-        <Arrow x1={124} y1={154} x2={140} y2={154} tone="accent" />
-        <Arrow x1={268} y1={154} x2={284} y2={154} tone="accent" />
-
-        <Note x={70} y={232} show={detail} anchor="middle">conceptual model</Note>
-        <Note x={204} y={246} show={detail} anchor="middle">system image</Note>
-        <Note x={336} y={232} show={detail} anchor="middle">user&apos;s mental model</Note>
-        <Note x={204} y={276} show={detail} anchor="middle" tone="ink2">users build their model from what they perceive</Note>
+        <Arrow x1={127} y1={180} x2={140} y2={180} tone="accent" head={3.4} />
+        <Arrow x1={260} y1={180} x2={273} y2={180} tone="accent" head={3.4} />
+        {detail && (
+          <>
+            <Marker x={22} y={88} n={1} />
+            <Marker x={154} y={62} n={2} />
+            <Marker x={378} y={88} n={3} />
+            <Marker x={228} y={34} n={4} />
+          </>
+        )}
       </g>
     );
   },
@@ -144,123 +145,79 @@ export const mentalModelsPlate: IllustrationEntry = {
 
 /* ---------------------------------------------------------------- */
 /* Affordances — possible versus perceived (Gaver, 1991)             */
-/* (checked against the entry: an affordance is an action            */
-/*  possibility; Gaver separates perceptible (possible and visible),  */
-/*  hidden (possible, not perceptible: an unlabelled gesture) and     */
-/*  false (perceptible, not real: looks like a link, does nothing))   */
 /* ---------------------------------------------------------------- */
 export const affordancesPlate: IllustrationEntry = {
   slug: "affordances",
   title: "Affordances plate",
   canvas: "sheet",
   description:
-    "A phone inbox beside a two-by-two grid that sorts what can be done against what can be seen (Gaver's classification). 1, perceptible affordance: an Archive button on the first message, possible and visible. 2, hidden affordance: the second message can be swiped left to reveal Delete, but nothing on screen shows it; the swipe and the revealed action are drawn dashed. 3, false affordance: the section heading Promotions is coloured and underlined like a link but does nothing. In the grid, columns are perceived (tick) and not perceived (cross), rows are possible (tick) and not possible (cross); 1 sits in possible and perceived, 2 in possible but not perceived, 3 in perceived but not possible, and the fourth cell, neither possible nor perceived, is empty.",
+    "A phone inbox beside a two-by-two grid that sorts what can be done against what can be seen (Gaver's classification). 1, perceptible affordance: an Archive button on the first message, possible and visible. 2, hidden affordance: the second message can be swiped left to reveal Delete, but nothing on screen shows it; the swipe and the revealed action are drawn dashed. 3, false affordance: the section heading Promotions is coloured and underlined like a link but does nothing. In the grid, columns are perceived (tick) and not perceived (cross), rows are possible (tick) and not possible (cross); 1 sits in possible and perceived, 2 in possible but not perceived, 3 in perceived but not possible, and the fourth cell, neither, is empty.",
+  key: [
+    { n: "1", label: "Perceptible affordance", detail: "Archive: possible and visible" },
+    { n: "2", label: "Hidden affordance", detail: "swipe left to delete: possible, but nothing shows it" },
+    { n: "3", label: "False affordance", detail: "Promotions looks like a link but does nothing" },
+    { n: "4", label: "The grid", detail: "columns: perceived ✓ or not ✗; rows: possible ✓ or not ✗" },
+  ],
   Art: ({ detail }) => {
-    const fx = 30;
-    const fy = 34;
-    const fw = 150;
-    const row = (i: number) => 28 + i * 36;
-    const A = (x: number, y: number): [number, number] => [fx + x, fy + 14 + y];
-    const cols = [236, 308];
+    const ox = 8;
+    const oy = 42; // frame content origin (frame y 20 + bar 22)
+    const row = (i: number) => 42 + i * 48;
+    const cols = [244, 310];
     const rows = [96, 164];
-    const cw = 72;
+    const cw = 66;
     const rh = 68;
-    const cells: [number, number, string, string][] = [
-      [0, 0, "1", "perceptible"],
-      [1, 0, "2", "hidden"],
-      [0, 1, "3", "false"],
-    ];
+    const cell = (ci: number, ri: number): [number, number] => [cols[ci] + cw / 2, rows[ri] + rh / 2];
     return (
       <g>
-        <UiFrame x={fx} y={fy} w={fw} h={232} url="mail.example">
-          <UiText x={10} y={18} size={9} weight={700}>
+        <UiFrame x={ox} y={20} w={200} h={268}>
+          <UiText x={14} y={28} size={T.strong} weight={700}>
             Inbox
           </UiText>
           {["Ana Ruiz", "Port office", "Library"].map((s, i) => (
             <g key={s}>
-              <line x1={0} y1={row(i)} x2={fw} y2={row(i)} stroke={S.rule} strokeWidth="0.7" {...hair} />
-              <UiText x={10} y={row(i) + 13} size={6.4} weight={600}>
+              <line x1={0} y1={row(i)} x2={200} y2={row(i)} stroke={S.rule} strokeWidth="0.8" {...hair} />
+              <UiText x={14} y={row(i) + 21} weight={600}>
                 {s}
               </UiText>
-              <rect x={10} y={row(i) + 19} width={[70, 62, 76][i]} height={3} rx={1.5} fill={S.ruleStrong} opacity={0.7} />
+              <TextBar x={14} y={row(i) + 30} w={[80, 60, 86][i]} />
             </g>
           ))}
-          <line x1={0} y1={row(3)} x2={fw} y2={row(3)} stroke={S.rule} strokeWidth="0.7" {...hair} />
-          {/* 1 — perceptible: a visible button */}
-          <rect x={96} y={row(0) + 9} width={44} height={13} rx={6.5} fill={S.surface} stroke={S.control} strokeWidth="0.8" {...hair} />
-          <UiText x={118} y={row(0) + 17.6} size={6} weight={600} tone="accent" anchor="middle">
-            Archive
-          </UiText>
-          {/* 2 — hidden: swipe to reveal Delete */}
-          <rect x={112} y={row(1) + 2} width={36} height={30} rx={3} fill="none" stroke={S.ink3} strokeWidth="0.8" strokeDasharray="2 1.8" {...hair} />
-          <UiText x={130} y={row(1) + 19} size={5.6} tone="ink3" anchor="middle">
+          <line x1={0} y1={row(3)} x2={200} y2={row(3)} stroke={S.rule} strokeWidth="0.8" {...hair} />
+          <UiButton x={110} y={row(0) + 11} w={78} h={26} label="Archive" variant="secondary" />
+          <rect x={128} y={row(1) + 4} width={64} height={40} rx={4} fill="none" stroke={S.ink3} strokeWidth="0.9" strokeDasharray="2.4 2" {...hair} />
+          <UiText x={160} y={row(1) + 28} anchor="middle" tone="ink3">
             Delete
           </UiText>
-          <Arrow x1={104} y1={row(1) + 27} x2={66} y2={row(1) + 27} tone="mute" dashed head={3} />
-          {/* 3 — false: looks like a link, does nothing */}
-          <UiText x={10} y={row(3) + 20} size={7} weight={600} tone="accent">
+          <Arrow x1={120} y1={row(1) + 40} x2={88} y2={row(1) + 40} tone="mute" dashed head={3} />
+          <UiText x={14} y={row(3) + 28} weight={600} tone="accent">
             Promotions
           </UiText>
-          <rect x={10} y={row(3) + 22.4} width={41} height={0.9} fill={S.accent} />
-          {[0, 1].map((k) => (
-            <g key={k}>
-              <rect x={10} y={row(3) + 34 + k * 22} width={54} height={3.4} rx={1.7} fill={S.ruleStrong} opacity={0.6} />
-              <rect x={10} y={row(3) + 41 + k * 22} width={84} height={3} rx={1.5} fill={S.rule} />
-            </g>
-          ))}
+          <rect x={14} y={row(3) + 32} width={82} height={1.4} fill={S.accent} />
+          <TextBar x={14} y={row(3) + 48} w={120} />
         </UiFrame>
         {/* numbered leaders from the interface */}
         {(
           [
-            [1, A(140, row(0) + 15)],
-            [2, A(148, row(1) + 17)],
-            [3, A(54, row(3) + 17)],
+            [1, ox + 188, oy + row(0) + 24],
+            [2, ox + 192, oy + row(1) + 24],
+            [3, ox + 98, oy + row(3) + 24],
           ] as const
-        ).map(([n, to]) => (
-          <g key={n}>
-            <line x1={198} y1={to[1]} x2={to[0]} y2={to[1]} stroke={S.ink2} strokeWidth="0.7" {...hair} />
-            <circle cx={to[0]} cy={to[1]} r={1.5} fill={S.ink2} />
-            <circle cx={198} cy={to[1]} r={6} fill={S.ink} />
-            <text x={198} y={to[1] + 2.3} textAnchor="middle" fontSize={6.4} fontWeight={700} fill={S.surface}>
-              {n}
-            </text>
-          </g>
+        ).map(([n, x, y]) => (
+          <Marker key={n} x={226} y={y} n={n} to={[x, y]} />
         ))}
-        {/* the grid: possible × perceived */}
-        {rows.map((y, ri) =>
-          cols.map((x, ci) => (
-            <rect key={`${ri}${ci}`} x={x} y={y} width={cw} height={rh} fill={ri === 0 && ci === 0 ? S.okWash : S.surface} stroke={S.ruleStrong} strokeWidth="0.8" {...hair} />
-          )),
-        )}
-        <Verdict x={cols[0] + cw / 2} y={rows[0] - 12} ok />
-        <Verdict x={cols[1] + cw / 2} y={rows[0] - 12} ok={false} />
-        <Verdict x={cols[0] - 14} y={rows[0] + rh / 2} ok />
-        <Verdict x={cols[0] - 14} y={rows[1] + rh / 2} ok={false} />
-        {cells.map(([ci, ri, n, label]) => {
-          const x = cols[ci] + cw / 2;
-          const y = rows[ri] + rh / 2 - (detail ? 6 : 0);
-          return (
-            <g key={n}>
-              <circle cx={x} cy={y} r={9} fill={S.ink} />
-              <text x={x} y={y + 3.4} textAnchor="middle" fontSize={9.6} fontWeight={700} fill={S.surface}>
-                {n}
-              </text>
-              <Note x={x} y={y + 22} show={detail} anchor="middle">
-                {label}
-              </Note>
-            </g>
-          );
-        })}
-        <UiText x={cols[1] + cw / 2} y={rows[1] + rh / 2 + 2.4} size={8} tone="ink3" anchor="middle">
+        {/* the grid */}
+        {rows.map((y, ri) => cols.map((x, ci) => <rect key={`${ri}${ci}`} x={x} y={y} width={cw} height={rh} fill={ri === 0 && ci === 0 ? S.okWash : S.surface} stroke={S.ruleStrong} strokeWidth="0.9" {...hair} />))}
+        <Verdict x={cols[0] + cw / 2} y={rows[0] - 16} ok />
+        <Verdict x={cols[1] + cw / 2} y={rows[0] - 16} ok={false} />
+        <Verdict x={cols[1] + cw + 13} y={rows[0] + rh / 2} ok r={8} />
+        <Verdict x={cols[1] + cw + 13} y={rows[1] + rh / 2} ok={false} r={8} />
+        <Marker x={cell(0, 0)[0]} y={cell(0, 0)[1]} n={1} />
+        <Marker x={cell(1, 0)[0]} y={cell(1, 0)[1]} n={2} />
+        <Marker x={cell(0, 1)[0]} y={cell(0, 1)[1]} n={3} />
+        <UiText x={cell(1, 1)[0]} y={cell(1, 1)[1] + 5} size={T.strong} anchor="middle" tone="ink3">
           —
         </UiText>
-        <Note x={cols[1]} y={rows[0] - 26} show={detail} anchor="middle">perceived</Note>
-        <g transform={`rotate(-90 ${cols[0] - 26} ${rows[1]})`}>
-          <Note x={cols[0] - 26} y={rows[1]} show={detail} anchor="middle">
-            possible
-          </Note>
-        </g>
-        <Note x={308} y={256} show={detail} anchor="middle" tone="ink2">can it be done? can it be seen?</Note>
+        {detail && <Marker x={226} y={rows[0] - 16} n={4} tone="accent" />}
       </g>
     );
   },
@@ -268,40 +225,34 @@ export const affordancesPlate: IllustrationEntry = {
 
 /* ---------------------------------------------------------------- */
 /* Signifiers — the same control with and without cues               */
-/* (checked against the entry: the affordance (clickable here) is     */
-/*  identical; signifiers communicate it: visual form, conventions    */
-/*  (a download icon), text, state change on approach and the cursor; */
-/*  redundant cues are robust; plain text is read as non-interactive) */
 /* ---------------------------------------------------------------- */
 function ReportScreen({ x, cues }: { x: number; cues: boolean }) {
   return (
-    <UiFrame x={x} y={50} w={172} h={170} url="reports.example">
-      <UiText x={12} y={20} size={8} weight={700}>
+    <UiFrame x={x} y={38} w={188} h={224}>
+      <UiText x={12} y={28} size={T.strong} weight={700}>
         Reports
       </UiText>
-      <UiText x={12} y={40} size={6.4} weight={600}>
+      <UiText x={12} y={52} weight={600}>
         March report
       </UiText>
-      <rect x={12} y={45} width={86} height={3} rx={1.5} fill={S.ruleStrong} opacity={0.7} />
       {[0, 1, 2, 3].map((i) => (
         <g key={i}>
-          <line x1={12} y1={60 + i * 12} x2={160} y2={60 + i * 12} stroke={S.rule} strokeWidth="0.6" {...hair} />
-          <rect x={12} y={64 + i * 12} width={[40, 34, 46, 30][i]} height={3} rx={1.5} fill={S.rule} />
-          <rect x={128} y={64 + i * 12} width={32} height={3} rx={1.5} fill={S.rule} />
+          <line x1={12} y1={66 + i * 18} x2={176} y2={66 + i * 18} stroke={S.rule} strokeWidth="0.7" {...hair} />
+          <TextBar x={12} y={72 + i * 18} w={[50, 42, 58, 36][i]} />
+          <TextBar x={136} y={72 + i * 18} w={40} />
         </g>
       ))}
-      {/* same hit area in both versions: the affordance */}
-      <rect x={98} y={110} width={68} height={22} rx={4} fill="none" stroke={S.ink3} strokeWidth="0.6" strokeDasharray="1.6 1.6" {...hair} />
+      <rect x={60} y={150} width={120} height={36} rx={5} fill="none" stroke={S.ink3} strokeWidth="0.8" strokeDasharray="2 2" {...hair} />
       {cues ? (
         <g>
-          <rect x={101} y={113} width={62} height={16} rx={8} fill={S.accentWash} stroke={S.accent} strokeWidth="1.1" {...hair} />
-          <path d="M110 117 v6 m-2.6 -2.6 l2.6 2.6 l2.6 -2.6 M106.6 126 h6.8" fill="none" stroke={S.accentInk} strokeWidth="1" {...hair} />
-          <UiText x={135} y={123.6} size={6} weight={600} tone="accent" anchor="middle">
+          <rect x={66} y={155} width={108} height={26} rx={6} fill={S.accentWash} stroke={S.accent} strokeWidth="1.3" {...hair} />
+          <path d="M80 161 v9 m-3.8 -3.8 l3.8 3.8 l3.8 -3.8 M75 175 h10" fill="none" stroke={S.accentInk} strokeWidth="1.3" {...hair} />
+          <UiText x={132} y={172.5} weight={600} tone="accent" anchor="middle">
             Export CSV
           </UiText>
         </g>
       ) : (
-        <UiText x={106} y={124} size={6.4} tone="ink2">
+        <UiText x={72} y={173} tone="ink2">
           Export
         </UiText>
       )}
@@ -316,77 +267,51 @@ export const signifiersPlate: IllustrationEntry = {
   explorer: "signifiers",
   description:
     "Two copies of the same reports screen. In both, the same area beside the March report can be clicked to export it, outlined with a faint dashed hit area: the affordance is identical. On the left, the control is the word Export in the same plain grey style as the body text, so nothing says it can be clicked; it is marked with a cross. On the right, it carries four redundant signifiers, numbered: 1, shape, a filled rounded button with a border; 2, a download icon, a learned convention; 3, a label naming the result, Export CSV; 4, a pointer cursor and hover colour as the pointer approaches. It is marked with a tick. Only the signifiers differ.",
+  key: [
+    { n: "1", label: "Shape", detail: "a filled, bordered button" },
+    { n: "2", label: "Icon", detail: "download: a learned convention" },
+    { n: "3", label: "Label", detail: "names the result: Export CSV" },
+    { n: "4", label: "Hover and cursor", detail: "the state changes as the pointer approaches" },
+    { n: "5", label: "Same hit area", detail: "the affordance is identical; the left version has no cue" },
+  ],
   Art: ({ detail }) => {
-    const ox = 208;
-    const oy = 64;
-    const marker = (x: number, y: number, n: number) => (
-      <g>
-        <circle cx={x} cy={y} r={6} fill={S.ink} />
-        <text x={x} y={y + 2.3} textAnchor="middle" fontSize={6.4} fontWeight={700} fill={S.surface}>
-          {n}
-        </text>
-      </g>
-    );
-    const below: [number, number][] = [
-      [ox + 110, oy + 127],
-      [ox + 135, oy + 127],
-      [ox + 160, oy + 136],
-    ];
+    const ox = 204;
+    const base = 38 + 22; // frame content origin y
     return (
       <g>
-        <ReportScreen x={20} cues={false} />
+        <ReportScreen x={8} cues={false} />
         <ReportScreen x={ox} cues />
-        <g transform={`translate(${ox + 154} ${oy + 122})`}>
-          <path d="M0 0 L0 12 L3.2 9.2 L5.6 14 L7.6 13 L5.2 8.4 L9.4 8.4 Z" fill={S.ink} stroke={S.surface} strokeWidth="0.8" strokeLinejoin="round" />
-        </g>
-        <Verdict x={106} y={34} ok={false} />
-        <Verdict x={294} y={34} ok />
-        {/* 1 shape: from the left */}
-        <line x1={ox + 84} y1={oy + 121} x2={ox + 101} y2={oy + 121} stroke={S.ink2} strokeWidth="0.7" {...hair} />
-        <circle cx={ox + 101} cy={oy + 121} r={1.5} fill={S.ink2} />
-        {marker(ox + 78, oy + 121, 1)}
-        {/* 2 icon, 3 label, 4 hover + cursor: from below */}
-        {below.map(([tx, ty], i) => {
-          const mx = ox + 104 + i * 26;
-          return (
-            <g key={i}>
-              <path d={`M${mx} 238 L${mx} 230 L${tx} ${Math.max(ty + 8, 222)} L${tx} ${ty}`} fill="none" stroke={S.ink2} strokeWidth="0.7" {...hair} />
-              <circle cx={tx} cy={ty} r={1.5} fill={S.ink2} />
-              {marker(mx, 244, i + 2)}
-            </g>
-          );
-        })}
-        <Note x={106} y={244} show={detail} anchor="middle" tone="error">no cue: reads as text</Note>
-        <Note x={300} y={266} show={detail} anchor="middle">1 shape · 2 icon · 3 label · 4 hover</Note>
-        <Note x={200} y={290} show={detail} anchor="middle" tone="ink2">same affordance; only the signifiers differ</Note>
+        <Pointer2 x={ox + 166} y={base + 168} />
+        <Verdict x={102} y={20} ok={false} />
+        <Verdict x={298} y={20} ok />
+        {detail && (
+          <>
+            <Marker x={ox + 46} y={base + 168} n={1} to={[ox + 66, base + 168]} />
+            <Marker x={ox + 80} y={286} n={2} to={[ox + 80, base + 182]} />
+            <Marker x={ox + 130} y={286} n={3} to={[ox + 130, base + 182]} />
+            <Marker x={ox + 172} y={286} n={4} to={[ox + 172, base + 186]} />
+            <Marker x={44} y={base + 168} n={5} to={[68, base + 168]} />
+          </>
+        )}
       </g>
     );
   },
 };
 
-/* ---------------------------------------------------------------- */
-/* Usability testing — task, observed behaviour, record, findings    */
-/* (checked against the entry: a realistic task written without the   */
-/*  answer (its own train example), a participant thinking aloud, the */
-/*  researcher noting behaviour and quotes per task, time on task,    */
-/*  then problems synthesised and rated by severity after sessions;   */
-/*  the session is illustrative, so the plate shows no frequencies)   */
-/* ---------------------------------------------------------------- */
-function Severity({ x, y, n }: { x: number; y: number; n: number }) {
-  return (
-    <g>
-      {[0, 1, 2].map((k) => (
-        <rect key={k} x={x + k * 5} y={y - 6 + (2 - k) * 0} width={3.6} height={7} rx={1} fill={k < n ? S.error : "none"} stroke={k < n ? S.error : S.ink3} strokeWidth="0.6" {...hair} />
-      ))}
-    </g>
-  );
+function Pointer2({ x, y }: { x: number; y: number }) {
+  const pts: [number, number][] = [[0, 0], [0, 14], [3.7, 10.7], [6.5, 16.3], [8.8, 15.1], [6, 9.8], [10.9, 9.8]];
+  return <path d={pts.map(([a, b], i) => `${i ? "L" : "M"}${x + a} ${y + b}`).join(" ") + " Z"} fill={S.ink} stroke={S.surface} strokeWidth="0.9" strokeLinejoin="round" />;
 }
 
+/* ---------------------------------------------------------------- */
+/* Usability testing — task, observed behaviour, record, findings    */
+/* (illustrative session; no frequencies)                             */
+/* ---------------------------------------------------------------- */
 function Obs({ x, y, n }: { x: number; y: number; n: number }) {
   return (
     <g>
-      <circle cx={x} cy={y} r={5} fill={S.accent} />
-      <text x={x} y={y + 2} textAnchor="middle" fontSize={5.6} fontWeight={700} fill={S.surface}>
+      <circle cx={x} cy={y} r={10} fill={S.accent} stroke={S.surface} strokeWidth="1.4" {...hair} />
+      <text x={x} y={y + 4.6} textAnchor="middle" fontSize={T.min} fontWeight={700} fill={S.surface} fontFamily="var(--font-plex-sans), ui-sans-serif, system-ui, sans-serif">
         {n}
       </text>
     </g>
@@ -398,117 +323,107 @@ export const usabilityTestingPlate: IllustrationEntry = {
   title: "Usability testing plate",
   canvas: "sheet",
   description:
-    "An illustrative moderated session, read from the task to the findings. A task card asks: find a train to Leeds that arrives before 10:00. Below it, the interface under test lists three trains from Manchester to Leeds with a filter that offers only a departure time. Three numbered observations are marked on it: 1, the participant hesitates at the departure filter; 2, thinking aloud, they ask whether a time is when the train leaves or when it arrives; 3, they choose the 08:42 train, arriving 09:41, and succeed. A session record on the right places these on a timeline, with the hesitation as a shaded span and the time on task measured at 1:32. Beneath it, findings are synthesised from the observations and rated by severity with one to three bars: the filter offers departure time only (high, from observations 1 and 2); times are read as departures (medium, from observation 2); and what worked, comparing results was easy (observation 3).",
+    "An illustrative moderated session, read from the task to the findings. A task card asks: find a train to Leeds arriving before 10:00. Below it, the interface under test lists three trains from Manchester to Leeds with a filter that offers only a departure time. Three numbered observations are marked on it: 1, the participant hesitates at the departure filter; 2, thinking aloud, they ask whether a time is when the train leaves or arrives; 3, they choose the 08:42 train, arriving 09:41, and succeed. A session record on the right places these on a timeline, with the hesitation as a shaded span and the time on task measured at 1:32. Beneath it, findings are synthesised from the observations and rated by severity with one to three bars: the filter offers departure time only (high); times are misread as departures (medium); and what worked, comparing results was easy.",
+  key: [
+    { n: "1", label: "Hesitation", detail: "at the departure-only filter" },
+    { n: "2", label: "Thinking aloud", detail: "asks whether times are departures or arrivals" },
+    { n: "3", label: "Success", detail: "chooses 08:42, arriving 09:41; time on task 1:32" },
+    { n: "4", label: "Findings", detail: "synthesised from observations, rated by severity after all sessions (bars: high, medium; tick: what worked)" },
+  ],
   Art: ({ detail }) => {
-    const t0 = 226;
+    const t0 = 232;
     const ts = (s: number) => t0 + s * 1.48;
+    const fy = 52 + 22; // frame content origin y
     return (
       <g>
-        {/* the task */}
-        <rect x={18} y={22} width={180} height={46} rx={6} fill={S.soft} stroke={S.rule} strokeWidth="0.8" {...hair} />
-        <UiText x={28} y={35} size={5.4} tone="ink3" mono>
-          TASK 2
+        <rect x={8} y={8} width={384} height={32} rx={6} fill={S.soft} stroke={S.rule} strokeWidth="0.9" {...hair} />
+        <UiText x={18} y={29} tone="ink3" mono>
+          TASK
         </UiText>
-        <UiText x={28} y={47} size={6.6} weight={600}>
-          Find a train to Leeds that arrives
+        <UiText x={62} y={29} weight={600}>
+          Find a train to Leeds arriving before 10:00
         </UiText>
-        <UiText x={28} y={57} size={6.6} weight={600}>
-          before 10:00.
-        </UiText>
-        <Arrow x1={108} y1={69} x2={108} y2={82} tone="mute" head={3} />
-
-        {/* the interface under test, with observations */}
-        <UiFrame x={18} y={84} w={180} h={172} url="rail.example">
-          <rect x={0} y={0} width={180} height={18} fill={S.soft} />
-          <UiText x={8} y={12} size={6.6} weight={700}>
+        {/* interface under test */}
+        <UiFrame x={8} y={52} w={196} h={238}>
+          <UiText x={10} y={20} weight={700}>
             Manchester → Leeds
           </UiText>
-          <rect x={8} y={25} width={70} height={12} rx={3} fill={S.surface} stroke={S.control} strokeWidth="0.7" {...hair} />
-          <UiText x={13} y={33} size={5.4}>
-            Depart after 08:00 ▾
+          <rect x={10} y={30} width={124} height={24} rx={5} fill={S.surface} stroke={S.control} strokeWidth="0.8" {...hair} />
+          <UiText x={18} y={46.5}>
+            Depart after ▾
           </UiText>
-          <ellipse cx={43} cy={31} rx={42} ry={11} fill="none" stroke={S.accent} strokeWidth="0.9" strokeDasharray="1.4 1.6" {...hair} />
+          <ellipse cx={72} cy={42} rx={70} ry={18} fill="none" stroke={S.accent} strokeWidth="1" strokeDasharray="1.8 2" {...hair} />
           {[
-            ["08:12", "09:05", "53 min"],
-            ["08:42", "09:41", "59 min"],
-            ["09:12", "10:05", "53 min"],
-          ].map(([d, a, m], i) => (
-            <g key={d}>
-              <rect x={8} y={46 + i * 25} width={164} height={21} rx={3} fill={i === 1 ? S.okWash : S.surface} stroke={i === 1 ? S.ok : S.rule} strokeWidth={i === 1 ? 1 : 0.7} {...hair} />
-              <UiText x={15} y={59 + i * 25} size={6.6} weight={600} mono>
-                {`${d} → ${a}`}
-              </UiText>
-              <UiText x={122} y={59 + i * 25} size={5.4} tone="ink3">
-                {m}
+            ["08:12 → 09:05", false],
+            ["08:42 → 09:41", true],
+            ["09:12 → 10:05", false],
+          ].map(([t, ok], i) => (
+            <g key={t as string}>
+              <rect x={10} y={70 + i * 36} width={176} height={30} rx={5} fill={ok ? S.okWash : S.surface} stroke={ok ? S.ok : S.rule} strokeWidth={ok ? 1.1 : 0.8} {...hair} />
+              <UiText x={20} y={90 + i * 36} weight={600} mono>
+                {t as string}
               </UiText>
             </g>
           ))}
-          <rect x={22} y={126} width={140} height={22} rx={6} fill={S.surface} stroke={S.ink2} strokeWidth="0.8" {...hair} />
-          <path d="M40 126 l4 -5 l3 5" fill={S.surface} stroke={S.ink2} strokeWidth="0.8" {...hair} />
-          <rect x={39.4} y={125.2} width={8.2} height={1.6} fill={S.surface} />
-          <UiText x={92} y={140} size={6} tone="ink" anchor="middle">
-            “Is that when it leaves or arrives?”
+          <rect x={10} y={182} width={176} height={32} rx={8} fill={S.surface} stroke={S.ink2} strokeWidth="0.9" {...hair} />
+          <UiText x={98} y={203} anchor="middle">
+            “Leaves or arrives?”
           </UiText>
         </UiFrame>
-        <Obs x={98} y={115} n={1} />
-        <Obs x={176} y={224} n={2} />
-        <Verdict x={184} y={169} ok r={5.5} />
-        <Obs x={184} y={185} n={3} />
-
-        {/* the session record */}
-        <rect x={214} y={22} width={172} height={84} rx={6} fill={S.surface} stroke={S.ruleStrong} strokeWidth="0.8" {...hair} />
-        <UiText x={224} y={36} size={6.4} weight={700}>
-          Session record · P2 · task 2
+        <Obs x={166} y={fy + 42} n={1} />
+        <Obs x={192} y={fy + 198} n={2} />
+        <Verdict x={178} y={fy + 121} ok r={8} />
+        <Obs x={196} y={fy + 106} n={3} />
+        {/* session record */}
+        <rect x={216} y={52} width={176} height={118} rx={6} fill={S.surface} stroke={S.ruleStrong} strokeWidth="0.9" {...hair} />
+        <UiText x={226} y={72} weight={600}>
+          Session · task 2
         </UiText>
-        <line x1={t0} y1={68} x2={ts(100)} y2={68} stroke={S.ink3} strokeWidth="0.8" {...hair} />
-        {[0, 30, 60, 90].map((s) => (
+        <line x1={t0} y1={112} x2={ts(100)} y2={112} stroke={S.ink3} strokeWidth="0.9" {...hair} />
+        {[0, 60].map((s) => (
           <g key={s}>
-            <line x1={ts(s)} y1={66} x2={ts(s)} y2={70} stroke={S.ink3} strokeWidth="0.7" {...hair} />
-            <UiText x={ts(s)} y={78} size={5} tone="ink3" anchor="middle" mono>
+            <line x1={ts(s)} y1={108} x2={ts(s)} y2={116} stroke={S.ink3} strokeWidth="0.8" {...hair} />
+            <UiText x={ts(s)} y={132} tone="ink3" anchor={s ? "middle" : "start"} mono>
               {`${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`}
             </UiText>
           </g>
         ))}
-        <rect x={ts(15)} y={64} width={ts(27) - ts(15)} height={8} rx={1.5} fill={S.accentWash} stroke={S.accent} strokeWidth="0.6" {...hair} />
-        <circle cx={t0} cy={68} r={2.4} fill={S.ink} />
-        <Obs x={(ts(15) + ts(27)) / 2} y={54} n={1} />
-        <line x1={ts(40)} y1={60} x2={ts(40)} y2={72} stroke={S.accent} strokeWidth="1" {...hair} />
-        <Obs x={ts(40)} y={54} n={2} />
-        <Obs x={ts(92)} y={54} n={3} />
-        <Verdict x={ts(92)} y={68} ok r={4.6} />
-        <Measure x1={t0} y1={94} x2={ts(92)} y2={94} value="1:32" tone="ink" />
-
-        <Arrow x1={199} y1={110} x2={212} y2={92} tone="mute" head={3} />
-        <Arrow x1={300} y1={107} x2={300} y2={120} tone="mute" head={3} />
-
-        {/* findings, rated after the sessions */}
-        <rect x={214} y={122} width={172} height={134} rx={6} fill={S.soft} stroke={S.rule} strokeWidth="0.8" {...hair} />
-        <UiText x={224} y={137} size={6.8} weight={700}>
+        <rect x={ts(15)} y={106} width={ts(27) - ts(15)} height={12} rx={2} fill={S.accentWash} stroke={S.accent} strokeWidth="0.8" {...hair} />
+        <circle cx={t0} cy={112} r={3} fill={S.ink} />
+        <Obs x={(ts(15) + ts(27)) / 2} y={92} n={1} />
+        <Obs x={ts(40)} y={92} n={2} />
+        <line x1={ts(40)} y1={104} x2={ts(40)} y2={118} stroke={S.accent} strokeWidth="1.2" {...hair} />
+        <Obs x={ts(92)} y={92} n={3} />
+        <Verdict x={ts(92)} y={112} ok r={6} />
+        <line x1={t0} y1={152} x2={ts(92)} y2={152} stroke={S.ink2} strokeWidth="0.9" {...hair} />
+        <path d={`M${t0} 147 V157 M${ts(92)} 147 V157`} stroke={S.ink2} strokeWidth="0.9" {...hair} />
+        <rect x={(t0 + ts(92)) / 2 - 22} y={143} width={44} height={18} rx={4} fill={S.ink2} />
+        <text x={(t0 + ts(92)) / 2} y={156.5} textAnchor="middle" fontSize={T.min} fontWeight={600} fill={S.surface} fontFamily="var(--font-plex-mono), ui-monospace, monospace">
+          1:32
+        </text>
+        {/* findings */}
+        <rect x={216} y={180} width={176} height={110} rx={6} fill={S.soft} stroke={S.rule} strokeWidth="0.9" {...hair} />
+        <UiText x={226} y={200} weight={700}>
           Findings
         </UiText>
         {(
           [
-            [3, "Filter offers departure time only", "obs 1, 2"],
-            [2, "Times are read as departures", "obs 2"],
-            [0, "Comparing results was easy", "obs 3"],
+            [3, "Filter: depart only"],
+            [2, "Times misread"],
+            [0, "Easy to compare"],
           ] as const
-        ).map(([sev, text, ev], i) => {
-          const y = 158 + i * 32;
+        ).map(([sev, text], i) => {
+          const y = 222 + i * 26;
           return (
             <g key={text}>
-              <rect x={222} y={y - 12} width={156} height={26} rx={4} fill={S.surface} stroke={S.rule} strokeWidth="0.7" {...hair} />
-              {sev ? <Severity x={230} y={y + 2} n={sev} /> : <Verdict x={235} y={y} ok r={4.6} />}
-              <UiText x={250} y={y - 1} size={6} weight={600}>
+              {sev ? [0, 1, 2].map((k) => <rect key={k} x={226 + k * 6} y={y - 11} width={4.4} height={13} rx={1} fill={k < sev ? S.error : "none"} stroke={k < sev ? S.error : S.ink3} strokeWidth="0.7" {...hair} />) : <Verdict x={234} y={y - 4.5} ok r={7} />}
+              <UiText x={252} y={y}>
                 {text}
-              </UiText>
-              <UiText x={250} y={y + 8} size={5.2} tone="ink3" mono>
-                {ev}
               </UiText>
             </g>
           );
         })}
-        <Note x={200} y={276} show={detail} anchor="middle">task → observed behaviour → record → findings</Note>
-        <Note x={200} y={290} show={detail} anchor="middle" tone="ink2">illustrative session · severity rated after all sessions</Note>
+        {detail && <Marker x={374} y={196} n={4} />}
       </g>
     );
   },
@@ -516,62 +431,41 @@ export const usabilityTestingPlate: IllustrationEntry = {
 
 /* ---------------------------------------------------------------- */
 /* Usability — one product, two contexts of use (ISO 9241-11)         */
-/* (checked against the entry: usability is a quality of the          */
-/*  interaction between specified users, goals and context, measured  */
-/*  as effectiveness, efficiency and satisfaction; its own analogy is */
-/*  a station ticket machine that suits a commuter and fails a hurried */
-/*  visitor; step counts are read from the drawn routes, the rest is   */
-/*  an illustrative outcome)                                          */
+/* (step counts follow the drawn routes; outcomes are illustrative)  */
 /* ---------------------------------------------------------------- */
-function ContextStrip({ y, tag, chips, ok, steps, rating, outcome }: { y: number; tag: string; chips: string[]; ok: boolean; steps: number; rating: number; outcome: string }) {
-  const x = 172;
-  const cells = [x + 8, x + 78, x + 148];
+function Context({ y, tag, who, ok, steps, rating, outcome }: { y: number; tag: string; who: string; ok: boolean; steps: number; rating: number; outcome: string }) {
+  const x = 150;
+  const rowY = (i: number) => y + 50 + i * 28;
   return (
     <g>
-      <rect x={x} y={y} width={214} height={104} rx={8} fill="none" stroke={S.ink3} strokeWidth="0.8" strokeDasharray="3 2.4" {...hair} />
-      <circle cx={x + 14} cy={y + 15} r={6} fill={S.ink} />
-      <text x={x + 14} y={y + 17.3} textAnchor="middle" fontSize={6.4} fontWeight={700} fill={S.surface}>
+      <rect x={x} y={y} width={242} height={128} rx={8} fill="none" stroke={S.ink3} strokeWidth="0.9" strokeDasharray="3.4 2.6" {...hair} />
+      <circle cx={x + 18} cy={y + 20} r={10} fill={S.ink} />
+      <text x={x + 18} y={y + 24.6} textAnchor="middle" fontSize={T.min} fontWeight={700} fill={S.surface} fontFamily="var(--font-plex-sans), ui-sans-serif, sans-serif">
         {tag}
       </text>
-      {chips.reduce<{ els: ReturnType<typeof UiText>[]; cx: number }>(
-        (acc, c, i) => {
-          const w = c.length * 3.3 + 10;
-          acc.els.push(
-            <g key={i}>
-              <rect x={acc.cx} y={y + 9} width={w} height={12} rx={6} fill={S.soft} stroke={S.rule} strokeWidth="0.7" {...hair} />
-              <UiText x={acc.cx + w / 2} y={y + 17} size={5.4} anchor="middle" tone="ink2">
-                {c}
-              </UiText>
-            </g>,
-          );
-          acc.cx += w + 4;
-          return acc;
-        },
-        { els: [], cx: x + 26 },
-      ).els}
+      <UiText x={x + 36} y={y + 25} tone="ink2">
+        {who}
+      </UiText>
       {["Effectiveness", "Efficiency", "Satisfaction"].map((h, i) => (
-        <g key={h}>
-          <rect x={cells[i]} y={y + 30} width={62} height={64} rx={5} fill={S.surface} stroke={S.rule} strokeWidth="0.7" {...hair} />
-          <UiText x={cells[i] + 31} y={y + 42} size={5.4} weight={600} tone="ink2" anchor="middle">
-            {h}
-          </UiText>
-        </g>
+        <UiText key={h} x={x + 12} y={rowY(i)} weight={600} tone="ink2">
+          {h}
+        </UiText>
       ))}
-      <Verdict x={cells[0] + 31} y={y + 60} ok={ok} r={8} />
-      <UiText x={cells[0] + 31} y={y + 84} size={5.6} anchor="middle">
+      <Verdict x={x + 120} y={rowY(0) - 4.5} ok={ok} r={8} />
+      <UiText x={x + 134} y={rowY(0)}>
         {outcome}
       </UiText>
       {Array.from({ length: steps }, (_, k) => (
-        <circle key={k} cx={cells[1] + 31 - ((steps - 1) * 6) / 2 + k * 6} cy={y + 60} r={2.2} fill={S.ink2} />
+        <circle key={k} cx={x + 114 + k * 10} cy={rowY(1) - 4.5} r={3.2} fill={S.ink2} />
       ))}
-      <UiText x={cells[1] + 31} y={y + 84} size={5.6} anchor="middle" mono>
+      <UiText x={x + 114 + steps * 10 + 4} y={rowY(1)} mono>
         {`${steps} steps`}
       </UiText>
       {[1, 2, 3, 4, 5].map((k) => (
-        <rect key={k} x={cells[2] + 8 + (k - 1) * 9.6} y={y + 55} width={7.4} height={10} rx={1.5} fill={k === rating ? S.ink : "none"} stroke={S.ink3} strokeWidth="0.7" {...hair} />
+        <rect key={k} x={x + 112 + (k - 1) * 12} y={rowY(2) - 11} width={9} height={13} rx={2} fill={k === rating ? S.ink : "none"} stroke={S.ink3} strokeWidth="0.8" {...hair} />
       ))}
-      <UiText x={cells[2] + 31} y={y + 84} size={5.6} anchor="middle" mono>
-        {`${rating} of 5`}
+      <UiText x={x + 176} y={rowY(2)} mono>
+        {`${rating}/5`}
       </UiText>
     </g>
   );
@@ -582,69 +476,76 @@ export const usabilityPlate: IllustrationEntry = {
   title: "Usability plate",
   canvas: "sheet",
   description:
-    "One station ticket machine on the left, used in two contexts of use on the right, each inside its own dashed boundary. Context A: a daily commuter with no luggage taps Recent: Leeds return and pays; the goal is reached correctly (tick), in 2 steps, and they rate the experience 5 of 5. Context B: a first-time visitor in a hurry with luggage has to search for the station, type it, choose it, pick a ticket type and pay; they leave with the wrong ticket (cross), after 5 steps, and rate it 2 of 5. Each context is measured by the same three components, effectiveness, efficiency and satisfaction. Because the machine is the same and the outcomes differ, usability belongs to the interaction between these users, their goal and their context, not to the product alone. The step counts follow the routes drawn on the screen; the outcomes and ratings are illustrative.",
+    "One station ticket machine on the left, used in two contexts of use on the right, each inside its own dashed boundary. Context A: a daily commuter with no bags taps Leeds return under Recent and pays; the goal is reached correctly (tick), in 2 steps, and they rate the experience 5 of 5. Context B: a rushed visitor with luggage has to find the station, type it, choose it, pick a ticket type and pay; they leave with the wrong ticket (cross), after 5 steps, and rate it 2 of 5. Each context is measured by the same three components: effectiveness, efficiency and satisfaction. Because the machine is the same and the outcomes differ, usability belongs to the interaction between these users, their goal and their context, not to the product alone. The step counts follow the routes drawn on the screen; the outcomes and ratings are illustrative.",
+  key: [
+    { n: "1", label: "Same product", detail: "one ticket machine for both contexts" },
+    { n: "2", label: "Three measures", detail: "effectiveness, efficiency and satisfaction (ISO 9241-11)" },
+    { n: "A", label: "Commuter's route", detail: "Recent → Leeds return, then pay: 2 steps" },
+    { n: "B", label: "Visitor's route", detail: "find station, type, choose, ticket type, pay: 5 steps" },
+  ],
   Art: ({ detail }) => {
-    const kx = 22;
-    const ky = 46;
+    const kx = 8;
     return (
       <g>
-        {/* the product: a ticket machine */}
-        <rect x={kx} y={ky} width={126} height={208} rx={10} fill={S.soft} stroke={S.ruleStrong} strokeWidth="0.9" {...hair} />
-        <rect x={kx + 10} y={ky + 12} width={106} height={130} rx={4} fill={S.surface} stroke={S.ruleStrong} strokeWidth="0.8" {...hair} />
-        <UiText x={kx + 18} y={ky + 28} size={7.4} weight={700}>
+        <rect x={kx} y={22} width={130} height={256} rx={10} fill={S.soft} stroke={S.ruleStrong} strokeWidth="1" {...hair} />
+        <rect x={kx + 8} y={34} width={114} height={196} rx={5} fill={S.surface} stroke={S.ruleStrong} strokeWidth="0.9" {...hair} />
+        <UiText x={kx + 16} y={56} weight={700}>
           Buy a ticket
         </UiText>
-        <rect x={kx + 18} y={ky + 36} width={90} height={18} rx={4} fill={S.accent} />
-        <UiText x={kx + 63} y={ky + 47.6} size={6} weight={600} tone="surface" anchor="middle">
-          Recent: Leeds return
+        <UiText x={kx + 16} y={78} tone="ink3" mono>
+          RECENT
         </UiText>
-        {["Search station", "Ticket types", "Pay"].map((t, i) => (
+        <UiButton x={kx + 14} y={86} w={98} label="Leeds return" />
+        {["Find station", "Ticket types", "Pay"].map((t, i) => (
+          <UiButton key={t} x={kx + 14} y={122 + i * 34} w={98} label={t} variant="secondary" />
+        ))}
+        <rect x={kx + 36} y={242} width={58} height={8} rx={4} fill={S.sunken} stroke={S.ruleStrong} strokeWidth="0.8" {...hair} />
+        <rect x={kx + 26} y={258} width={78} height={10} rx={2} fill={S.sunken} stroke={S.ruleStrong} strokeWidth="0.8" {...hair} />
+        {(
+          [
+            ["A", 99],
+            ["B", 135],
+          ] as const
+        ).map(([t, y]) => (
           <g key={t}>
-            <rect x={kx + 18} y={ky + 60 + i * 22} width={90} height={18} rx={4} fill={S.surface} stroke={S.control} strokeWidth="0.8" {...hair} />
-            <UiText x={kx + 63} y={ky + 71.6 + i * 22} size={6} weight={600} tone="accent" anchor="middle">
+            <circle cx={kx + 128} cy={y} r={10} fill={S.ink} stroke={S.surface} strokeWidth="1.4" {...hair} />
+            <text x={kx + 128} y={y + 4.6} textAnchor="middle" fontSize={T.min} fontWeight={700} fill={S.surface} fontFamily="var(--font-plex-sans), ui-sans-serif, sans-serif">
               {t}
-            </UiText>
+            </text>
           </g>
         ))}
-        <rect x={kx + 38} y={ky + 156} width={50} height={6} rx={3} fill={S.sunken} stroke={S.ruleStrong} strokeWidth="0.7" {...hair} />
-        <rect x={kx + 30} y={ky + 176} width={66} height={10} rx={2} fill={S.sunken} stroke={S.ruleStrong} strokeWidth="0.7" {...hair} />
-        {/* the two routes on the same screen */}
-        <circle cx={kx + 121} cy={ky + 45} r={5} fill={S.ink} />
-        <text x={kx + 121} y={ky + 47.2} textAnchor="middle" fontSize={6} fontWeight={700} fill={S.surface}>A</text>
-        <circle cx={kx + 121} cy={ky + 69} r={5} fill={S.ink} />
-        <text x={kx + 121} y={ky + 71.2} textAnchor="middle" fontSize={6} fontWeight={700} fill={S.surface}>B</text>
-        {/* same product, two contexts */}
-        <path d={`M${kx + 126} ${ky + 80} H160 V94 H172 M160 ${ky + 80} V214 H172`} fill="none" stroke={S.ink3} strokeWidth="0.8" {...hair} />
-        <ContextStrip y={42} tag="A" chips={["commuter", "daily", "no luggage"]} ok steps={2} rating={5} outcome="right ticket" />
-        <ContextStrip y={162} tag="B" chips={["visitor", "first time", "luggage", "hurry"]} ok={false} steps={5} rating={2} outcome="wrong ticket" />
-        <Note x={85} y={270} show={detail} anchor="middle">same product</Note>
-        <Note x={279} y={282} show={detail} anchor="middle">context of use: users · goal · environment</Note>
-        <Note x={279} y={30} show={detail} anchor="middle" tone="ink2">usable for whom, doing what, where?</Note>
+        <path d={`M${kx + 130} 150 H144 V86 H150 M144 150 V214 H150`} fill="none" stroke={S.ink3} strokeWidth="0.9" {...hair} />
+        <Context y={12} tag="A" who="Commuter, daily, no bags" ok steps={2} rating={5} outcome="right ticket" />
+        <Context y={152} tag="B" who="Visitor, rushed, luggage" ok={false} steps={5} rating={2} outcome="wrong ticket" />
+        {detail && (
+          <>
+            <Marker x={kx + 65} y={288} n={1} />
+            <Marker x={378} y={62} n={2} />
+          </>
+        )}
       </g>
     );
   },
 };
 
 /* ---------------------------------------------------------------- */
-/* User experience — before, during and after use, beyond the screen */
-/* (checked against the entry: ISO 9241-210 — perceptions and         */
-/*  responses from use or anticipated use, before, during and after;  */
-/*  its own train example: booking, the ticket at the barrier and a   */
-/*  refund that takes six weeks; UX design shapes the touchpoints,    */
-/*  the experience happens in the person)                             */
+/* User experience — before, during and after use                     */
 /* ---------------------------------------------------------------- */
+const RESPONSE_WIDTH: Record<string, number> = { "Expects fast": 77, Confident: 62, Smooth: 48, Frustrated: 65 };
+
 function Response({ cx, y, text, trend }: { cx: number; y: number; text: string; trend: "up" | "flat" | "down" }) {
   const c = trend === "up" ? S.ok : trend === "down" ? S.error : S.ink2;
-  const w = 80;
+  const glyph = trend !== "flat";
+  // measured advance widths (Plex Sans 600, 13 units); estimate for any other label
+  const tw = RESPONSE_WIDTH[text] ?? text.length * 7;
+  const inner = tw + (glyph ? 14 : 0);
+  const w = Math.round(inner + 22);
+  const x0 = cx - inner / 2;
   return (
     <g>
-      <rect x={cx - w / 2} y={y} width={w} height={18} rx={9} fill={trend === "up" ? S.okWash : trend === "down" ? S.errorWash : S.soft} stroke={c} strokeWidth="0.8" {...hair} />
-      {trend === "flat" ? (
-        <path d={`M${cx - w / 2 + 9} ${y + 9} h7`} stroke={c} strokeWidth="1.3" {...hair} />
-      ) : (
-        <path d={trend === "up" ? `M${cx - w / 2 + 9} ${y + 12} l3.5 -6 l3.5 6` : `M${cx - w / 2 + 9} ${y + 6} l3.5 6 l3.5 -6`} fill="none" stroke={c} strokeWidth="1.3" {...hair} />
-      )}
-      <UiText x={cx + 6} y={y + 11.4} size={6} weight={600} anchor="middle" tone={trend === "up" ? "ok" : trend === "down" ? "error" : "ink2"}>
+      <rect x={cx - w / 2} y={y} width={w} height={26} rx={13} fill={trend === "up" ? S.okWash : trend === "down" ? S.errorWash : S.soft} stroke={c} strokeWidth="0.9" {...hair} />
+      {glyph && <path d={trend === "up" ? `M${x0} ${y + 17} l4 -7 l4 7` : `M${x0} ${y + 9} l4 7 l4 -7`} fill="none" stroke={c} strokeWidth="1.4" {...hair} />}
+      <UiText x={x0 + (glyph ? 14 : 0)} y={y + 17.5} weight={600} tone={trend === "up" ? "ok" : trend === "down" ? "error" : "ink2"}>
         {text}
       </UiText>
     </g>
@@ -653,9 +554,9 @@ function Response({ cx, y, text, trend }: { cx: number; y: number; text: string;
 
 function Phone({ x, y, children }: { x: number; y: number; children?: ReactNode }) {
   return (
-    <g transform={`translate(${x} ${y})`}>
-      <rect width={64} height={112} rx={9} fill={S.surface} stroke={S.ruleStrong} strokeWidth="0.9" {...hair} />
-      <rect x={24} y={5} width={16} height={3} rx={1.5} fill={S.rule} />
+    <g>
+      <rect x={x} y={y} width={86} height={140} rx={10} fill={S.surface} stroke={S.ruleStrong} strokeWidth="1" {...hair} />
+      <rect x={x + 33} y={y + 6} width={20} height={3.4} rx={1.7} fill={S.rule} />
       {children}
     </g>
   );
@@ -666,107 +567,108 @@ export const userExperiencePlate: IllustrationEntry = {
   title: "User experience plate",
   canvas: "sheet",
   description:
-    "A train journey seen as one experience across four touchpoints, grouped before, during and after use. Before: an advert promises booking in two minutes, and the person expects it to be quick. During: on the phone they book the 08:42 to Leeds and pay, and feel confident when it says Booked; at the station the e-ticket opens the barrier, and it feels smooth. After: an email says the train was cancelled and the refund will take six weeks, and the person is frustrated. A dashed line separates the top row, the touchpoints a team can design, from the bottom row, the perceptions and responses that happen in the person and cannot be designed directly. A good booking form does not rescue the refund.",
+    "A train journey seen as one experience across four touchpoints, grouped before, during and after use. Before: an advert promises booking in 2 minutes, and the person expects it to be fast. During: on the phone they book the 08:42 to Leeds and pay, and feel confident when it says Booked; at the station the e-ticket opens the barrier, and it feels smooth. After: an email says the train was cancelled and the refund will take 6 weeks, and the person is frustrated. A dashed line separates the top row, the touchpoints a team can design, from the bottom row, the perceptions and responses that happen in the person and cannot be designed directly. A good booking form does not rescue the refund.",
+  key: [
+    { n: "1", label: "Designed touchpoints / responses", detail: "above the line, what a team designs; below it, what happens in the person" },
+    { n: "2", label: "The refund decides the memory", detail: "a good booking form does not rescue a six-week refund" },
+    { n: "3", label: "Before, during and after use", detail: "UX covers anticipated use and what follows it (ISO 9241-210)" },
+  ],
   Art: ({ detail }) => {
-    const top = 48;
-    const zones: [number, number, string][] = [
-      [16, 104, "Before"],
-      [110, 290, "During"],
-      [296, 386, "After"],
-    ];
-    const cxs = [60, 155, 245, 341];
+    const cx = [53, 153, 247, 347];
     return (
       <g>
-        {zones.map(([a, b, t]) => (
+        {(
+          [
+            [6, 100, "Before"],
+            [104, 296, "During"],
+            [300, 394, "After"],
+          ] as const
+        ).map(([a, b, t]) => (
           <g key={t}>
-            <rect x={a} y={top - 18} width={b - a} height={144} rx={7} fill={t === "During" ? S.soft : "none"} stroke={S.rule} strokeWidth="0.8" {...hair} />
-            <UiText x={(a + b) / 2} y={top - 6} size={6.4} weight={700} tone="ink2" anchor="middle">
+            <rect x={a} y={16} width={b - a} height={180} rx={7} fill={t === "During" ? S.soft : "none"} stroke={S.rule} strokeWidth="0.9" {...hair} />
+            <UiText x={(a + b) / 2} y={35} size={T.strong} weight={700} tone="ink2" anchor="middle">
               {t}
             </UiText>
           </g>
         ))}
-        {/* before: the promise that sets expectations */}
-        <g transform={`translate(22 ${top + 8})`}>
-          <rect width={76} height={92} rx={5} fill={S.accentWash} stroke={S.accent} strokeWidth="0.9" {...hair} />
-          <UiText x={8} y={14} size={5} tone="ink3" mono>
-            AD · RAIL APP
+        {/* before: the advert */}
+        <rect x={12} y={46} width={82} height={136} rx={6} fill={S.accentWash} stroke={S.accent} strokeWidth="1" {...hair} />
+        <UiText x={20} y={66} tone="ink3" mono>
+          AD
+        </UiText>
+        <UiText x={20} y={96} size={14} weight={700}>
+          Book in
+        </UiText>
+        <UiText x={20} y={114} size={14} weight={700}>
+          2 minutes
+        </UiText>
+        <UiButton x={20} y={144} w={66} h={24} label="Get app" />
+        {/* during: booking */}
+        <Phone x={110} y={44}>
+          <UiText x={120} y={74} size={T.strong} weight={700}>
+            08:42
           </UiText>
-          <UiText x={8} y={34} size={8.6} weight={700}>
-            Book in
+          <UiText x={120} y={92} tone="ink2">
+            to Leeds
           </UiText>
-          <UiText x={8} y={46} size={8.6} weight={700}>
-            two minutes
-          </UiText>
-          <rect x={8} y={68} width={50} height={13} rx={6.5} fill={S.accent} />
-          <UiText x={33} y={76.6} size={5.6} weight={600} tone="surface" anchor="middle">
-            Get the app
-          </UiText>
-        </g>
-        {/* during: booking on the phone */}
-        <Phone x={123} y={top + 2}>
-          <UiText x={8} y={24} size={6.6} weight={700}>
-            Leeds · 08:42
-          </UiText>
-          <UiText x={8} y={34} size={5.4} tone="ink2">
-            Return · £24.50
-          </UiText>
-          <rect x={8} y={44} width={48} height={14} rx={7} fill={S.accent} />
-          <UiText x={32} y={53.4} size={6} weight={600} tone="surface" anchor="middle">
-            Pay
-          </UiText>
-          <rect x={8} y={68} width={48} height={16} rx={3} fill={S.okWash} stroke={S.ok} strokeWidth="0.8" {...hair} />
-          <path d="M13 76 l2 2 l4 -4.4" fill="none" stroke={S.ok} strokeWidth="1.1" {...hair} />
-          <UiText x={23} y={78.4} size={5.6} weight={600}>
+          <UiButton x={120} y={102} w={66} h={24} label="Pay" />
+          <rect x={118} y={138} width={70} height={26} rx={5} fill={S.okWash} stroke={S.ok} strokeWidth="0.9" {...hair} />
+          <path d="M124 151 l3 3 l6 -6.6" fill="none" stroke={S.ok} strokeWidth="1.5" {...hair} />
+          <UiText x={137} y={155.5} weight={600}>
             Booked
           </UiText>
         </Phone>
         {/* during: the ticket at the barrier */}
-        <Phone x={213} y={top + 2}>
-          <UiText x={8} y={22} size={5.4} tone="ink2">
+        <Phone x={204} y={44}>
+          <UiText x={212} y={70} tone="ink2">
             Platform 4
           </UiText>
-          <g transform="translate(13 30)">
+          <g>
             {Array.from({ length: 49 }, (_, k) => {
               const i = k % 7;
               const j = Math.floor(k / 7);
               const corner = (i < 2 && j < 2) || (i > 4 && j < 2) || (i < 2 && j > 4);
-              return (corner || (k * 37) % 5 < 2) && <rect key={k} x={i * 5.4} y={j * 5.4} width={4.6} height={4.6} fill={S.ink} />;
+              return (corner || (k * 37) % 5 < 2) && <rect key={k} x={222 + i * 7.4} y={80 + j * 7.4} width={6.4} height={6.4} fill={S.ink} />;
             })}
           </g>
-          <UiText x={32} y={88} size={5.4} weight={600} anchor="middle">
+          <UiText x={247} y={154} weight={600} anchor="middle">
             Gate open
           </UiText>
-          <path d="M18 98 h28" stroke={S.ok} strokeWidth="1.4" {...hair} />
+          <path d="M229 166 h36" stroke={S.ok} strokeWidth="1.8" {...hair} />
         </Phone>
         {/* after: the refund */}
-        <g transform={`translate(304 ${top + 8})`}>
-          <rect width={76} height={92} rx={5} fill={S.surface} stroke={S.ruleStrong} strokeWidth="0.9" {...hair} />
-          <rect width={76} height={14} rx={5} fill={S.soft} />
-          <UiText x={8} y={10} size={5} tone="ink3" mono>
-            FROM: RAIL APP
-          </UiText>
-          <UiText x={8} y={30} size={6.8} weight={700} tone="error">
-            Train cancelled
-          </UiText>
-          <UiText x={8} y={42} size={5.8}>
-            Refund in 6 weeks
-          </UiText>
-          {[54, 62, 70].map((y, i) => (
-            <rect key={y} x={8} y={y} width={[58, 50, 36][i]} height={3} rx={1.5} fill={S.rule} />
-          ))}
-        </g>
+        <rect x={306} y={46} width={82} height={136} rx={6} fill={S.surface} stroke={S.ruleStrong} strokeWidth="1" {...hair} />
+        <rect x={306} y={46} width={82} height={24} rx={6} fill={S.soft} />
+        <UiText x={312} y={63} tone="ink3" mono>
+          EMAIL
+        </UiText>
+        <UiText x={312} y={94} size={14} weight={700} tone="error">
+          Cancelled
+        </UiText>
+        <UiText x={312} y={118}>
+          Refund in
+        </UiText>
+        <UiText x={312} y={136}>
+          6 weeks
+        </UiText>
+        <TextBar x={312} y={152} w={60} />
+        <TextBar x={312} y={164} w={44} />
         {/* designed touchpoints | responses in the person */}
-        <line x1={16} y1={192} x2={386} y2={192} stroke={S.ink3} strokeWidth="0.8" strokeDasharray="3 2.4" {...hair} />
-        {cxs.map((cx) => (
-          <line key={cx} x1={cx} y1={top + 116} x2={cx} y2={206} stroke={S.ink3} strokeWidth="0.7" {...hair} />
+        <line x1={6} y1={208} x2={394} y2={208} stroke={S.ink3} strokeWidth="1" strokeDasharray="3.4 2.6" {...hair} />
+        {cx.map((x) => (
+          <line key={x} x1={x} y1={186} x2={x} y2={226} stroke={S.ink3} strokeWidth="0.8" {...hair} />
         ))}
-        <Response cx={cxs[0]} y={206} text="expects: quick" trend="flat" />
-        <Response cx={cxs[1]} y={206} text="confident" trend="up" />
-        <Response cx={cxs[2]} y={206} text="smooth" trend="up" />
-        <Response cx={cxs[3]} y={206} text="frustrated" trend="down" />
-        <Note x={16} y={187} show={detail}>touchpoints a team designs</Note>
-        <Note x={16} y={240} show={detail}>perceptions and responses, in the person</Note>
-        <Note x={200} y={270} show={detail} anchor="middle" tone="ink2">a good booking form does not rescue the refund</Note>
+        <Response cx={cx[0]} y={226} text="Expects fast" trend="flat" />
+        <Response cx={cx[1]} y={226} text="Confident" trend="up" />
+        <Response cx={cx[2]} y={226} text="Smooth" trend="up" />
+        <Response cx={cx[3]} y={226} text="Frustrated" trend="down" />
+        {detail && (
+          <>
+            <Marker x={200} y={208} n={1} />
+            <Marker x={cx[3]} y={272} n={2} />
+            <Marker x={200} y={272} n={3} />
+          </>
+        )}
       </g>
     );
   },
@@ -774,21 +676,15 @@ export const userExperiencePlate: IllustrationEntry = {
 
 /* ---------------------------------------------------------------- */
 /* Human-computer interaction — person, task, technology, context     */
-/* (checked against the entry: every interaction involves a person,   */
-/*  a task, the technology and the context, and changing one shifts   */
-/*  the others — its own example is a touchscreen that works at a     */
-/*  desk and is hard to use in a moving car; the interaction is the   */
-/*  exchange of actions, feedback and interpretation; HCI studies     */
-/*  people, designs technology and evaluates the fit)                 */
 /* ---------------------------------------------------------------- */
 function Facet({ x, y, kind, children, changed = false }: { x: number; y: number; kind: string; children?: ReactNode; changed?: boolean }) {
   return (
     <g>
-      <rect x={x} y={y} width={112} height={58} rx={7} fill={changed ? S.accentWash : S.surface} stroke={changed ? S.accent : S.ruleStrong} strokeWidth={changed ? 1.1 : 0.8} {...hair} />
-      <UiText x={x + 9} y={y + 12} size={5} tone="ink3" mono>
+      <rect x={x} y={y} width={128} height={72} rx={8} fill={changed ? S.accentWash : S.surface} stroke={changed ? S.accent : S.ruleStrong} strokeWidth={changed ? 1.3 : 0.9} {...hair} />
+      <UiText x={x + 12} y={y + 22} tone="ink3" mono>
         {kind}
       </UiText>
-      <g transform={`translate(${x} ${y})`}>{children}</g>
+      {children}
     </g>
   );
 }
@@ -806,16 +702,22 @@ export const hciPlate: IllustrationEntry = {
   canvas: "sheet",
   explorer: "hci-methods",
   description:
-    "Four linked elements surround an interaction loop. Person: a driver with eyes on the road. Task: find a charger on the route. Technology: a touchscreen map with small targets. Context: a moving car, changed from a desk, which is crossed out. Every element is joined to every other. At the centre, the interaction is a loop: the person acts, the system responds, its feedback is perceived and interpreted, and the next action follows. Because the context changed, two links are highlighted: the moving car means the driver can only glance, and it makes the small targets hard to hit, even though the screen itself did not change. Along the bottom, the discipline's three strands form a cycle: study people, design technology, evaluate the fit.",
+    "Four linked elements surround an interaction loop. Person: a driver with eyes on the road. Task: find a charger on the route. Technology: a touchscreen map with small targets. Context: a moving car, changed from a desk, which is crossed out. Every element is joined to every other. At the centre, the interaction is a loop: the person acts, the system responds, its feedback is perceived and interpreted, and the next action follows. Because the context changed, two links are highlighted: the moving car means the driver can only glance, and it makes the small targets hard to hit, even though the screen itself did not change. Along the bottom, the discipline's three strands: study people, design technology, evaluate the fit.",
+  key: [
+    { n: "1", label: "Interaction", detail: "a loop: act, the system responds, feedback is interpreted, act again" },
+    { n: "2", label: "Context changed", detail: "from a desk to a moving car" },
+    { n: "3", label: "Context → person", detail: "the driver can only glance at the screen" },
+    { n: "4", label: "Context → technology", detail: "the same small targets become hard to hit" },
+    { n: "5", label: "HCI's three strands", detail: "study people, design technology, evaluate the fit: a cycle" },
+  ],
   Art: ({ detail }) => {
     const cx = 200;
-    const cy = 124;
-    const R = 34;
-    const segs = [0, 1, 2, 3].map((k) => arc(cx, cy, R, -Math.PI / 2 + k * (Math.PI / 2) + 0.28, -Math.PI / 2 + (k + 1) * (Math.PI / 2) - 0.28));
-    const P = { person: [74, 50], task: [326, 50], context: [74, 198], tech: [326, 198] } as const;
+    const cy = 134;
+    const R = 40;
+    const segs = [0, 1, 2, 3].map((k) => arc(cx, cy, R, -Math.PI / 2 + k * (Math.PI / 2) + 0.42, -Math.PI / 2 + (k + 1) * (Math.PI / 2) - 0.42));
+    const P = { person: [70, 44], task: [330, 44], context: [70, 222], tech: [330, 222] } as const;
     return (
       <g>
-        {/* every element links to every other */}
         {(
           [
             [P.person, P.task],
@@ -824,144 +726,115 @@ export const hciPlate: IllustrationEntry = {
             [P.task, P.tech],
           ] as const
         ).map(([a, b], i) => (
-          <line key={i} x1={a[0]} y1={a[1]} x2={b[0]} y2={b[1]} stroke={S.ruleStrong} strokeWidth="0.8" {...hair} />
+          <line key={i} x1={a[0]} y1={a[1]} x2={b[0]} y2={b[1]} stroke={S.ruleStrong} strokeWidth="0.9" {...hair} />
         ))}
-        {/* the links the changed context shifts */}
-        <line x1={P.context[0]} y1={P.context[1]} x2={P.person[0]} y2={P.person[1]} stroke={S.accent} strokeWidth="1.3" {...hair} />
-        <line x1={P.context[0]} y1={P.context[1]} x2={P.tech[0]} y2={P.tech[1]} stroke={S.accent} strokeWidth="1.3" {...hair} />
-        <rect x={40} y={112} width={68} height={24} rx={4} fill={S.surface} stroke={S.accent} strokeWidth="0.7" {...hair} />
-        <UiText x={74} y={122} size={5.4} weight={600} tone="accent" anchor="middle">
-          can only glance
-        </UiText>
-        <UiText x={74} y={130.6} size={5} tone="ink2" anchor="middle">
-          at the screen
-        </UiText>
-        <rect x={152} y={190} width={96} height={16} rx={4} fill={S.surface} stroke={S.accent} strokeWidth="0.7" {...hair} />
-        <UiText x={200} y={200.4} size={5.4} weight={600} tone="accent" anchor="middle">
-          small targets hard to hit
-        </UiText>
-
-        {/* the interaction loop */}
-        <circle cx={cx} cy={cy} r={R + 14} fill={S.soft} stroke={S.rule} strokeWidth="0.8" {...hair} />
+        <line x1={P.context[0]} y1={P.context[1]} x2={P.person[0]} y2={P.person[1]} stroke={S.accent} strokeWidth="1.5" {...hair} />
+        <line x1={P.context[0]} y1={P.context[1]} x2={P.tech[0]} y2={P.tech[1]} stroke={S.accent} strokeWidth="1.5" {...hair} />
+        <Pill cx={70} cy={102} text="glance only" tone="accent" mono={false} />
+        <Pill cx={200} cy={222} text="targets too small" tone="accent" mono={false} />
+        {/* interaction loop */}
+        <circle cx={cx} cy={cy} r={R + 16} fill={S.soft} stroke={S.rule} strokeWidth="0.9" {...hair} />
         {segs.map((s, k) => {
           const [ex, ey] = s.end;
           const a = s.tan;
-          const h = 3.4;
+          const h = 4;
           return (
             <g key={k}>
-              <path d={s.d} fill="none" stroke={S.ink2} strokeWidth="1" {...hair} />
+              <path d={s.d} fill="none" stroke={S.ink2} strokeWidth="1.1" {...hair} />
               <polygon points={`${ex + Math.cos(a) * h},${ey + Math.sin(a) * h} ${ex - Math.cos(a) * h * 0.4 + Math.cos(a - Math.PI / 2) * h},${ey - Math.sin(a) * h * 0.4 + Math.sin(a - Math.PI / 2) * h} ${ex - Math.cos(a) * h * 0.4 - Math.cos(a - Math.PI / 2) * h},${ey - Math.sin(a) * h * 0.4 - Math.sin(a - Math.PI / 2) * h}`} fill={S.ink2} />
             </g>
           );
         })}
-        {(
-          [
-            [cx, cy - R + 3, "act"],
-            [cx + R + 4, cy + 2, "respond"],
-            [cx, cy + R + 1, "feedback"],
-            [cx - R - 5, cy + 2, "interpret"],
-          ] as const
-        ).map(([x, y, t]) => (
-          <g key={t}>
-            <rect x={x - t.length * 1.75 - 3} y={y - 6} width={t.length * 3.5 + 6} height={9} rx={4.5} fill={S.surface} stroke={S.rule} strokeWidth="0.6" {...hair} />
-            <UiText x={x} y={y + 0.8} size={5.4} anchor="middle" tone="ink" mono>
-              {t}
-            </UiText>
-          </g>
-        ))}
-        <UiText x={cx} y={cy + 2.2} size={5.8} weight={700} anchor="middle">
-          interaction
+        <Pill cx={cx} cy={cy - R} text="act" />
+        <Pill cx={cx + R + 26} cy={cy} text="respond" />
+        <Pill cx={cx} cy={cy + R} text="feedback" />
+        <Pill cx={cx - R - 30} cy={cy} text="interpret" />
+        <UiText x={cx} y={cy + 4.5} weight={700} anchor="middle">
+          you ⇄ it
         </UiText>
-
         {/* the four elements */}
-        <Facet x={18} y={22} kind="PERSON">
-          <UiText x={9} y={30} size={7.4} weight={700}>
+        <Facet x={6} y={8} kind="PERSON">
+          <UiText x={18} y={50} size={T.strong} weight={700}>
             Driver
           </UiText>
-          <UiText x={9} y={42} size={5.6} tone="ink2">
+          <UiText x={18} y={68} tone="ink2">
             eyes on the road
           </UiText>
         </Facet>
-        <Facet x={270} y={22} kind="TASK">
-          <UiText x={9} y={30} size={7.4} weight={700}>
+        <Facet x={266} y={8} kind="TASK">
+          <UiText x={278} y={50} size={14} weight={700}>
             Find a charger
           </UiText>
-          <UiText x={9} y={42} size={5.6} tone="ink2">
+          <UiText x={278} y={68} tone="ink2">
             on the route
           </UiText>
         </Facet>
-        <Facet x={18} y={170} kind="CONTEXT" changed>
-          <UiText x={9} y={30} size={7.4} weight={700}>
+        <Facet x={6} y={186} kind="CONTEXT" changed>
+          <UiText x={18} y={228} size={T.strong} weight={700}>
             Moving car
           </UiText>
-          <UiText x={9} y={42} size={5.6} tone="ink3">
+          <UiText x={18} y={246} tone="ink3">
             Desk
           </UiText>
-          <line x1={8} y1={40} x2={24} y2={40} stroke={S.ink3} strokeWidth="0.8" {...hair} />
-          <rect x={70} y={6} width={34} height={10} rx={5} fill={S.accent} />
-          <UiText x={87} y={12.8} size={5} weight={600} tone="surface" anchor="middle">
-            changed
-          </UiText>
+          <line x1={17} y1={241.5} x2={50} y2={241.5} stroke={S.ink3} strokeWidth="1" {...hair} />
         </Facet>
-        <Facet x={270} y={170} kind="TECHNOLOGY">
-          <rect x={9} y={18} width={54} height={34} rx={3} fill={S.sunken} stroke={S.ruleStrong} strokeWidth="0.7" {...hair} />
-          <path d="M12 44 C 24 30, 36 46, 60 24" fill="none" stroke={S.ruleStrong} strokeWidth="1.6" {...hair} />
+        <Facet x={266} y={186} kind="TECH">
+          <rect x={278} y={214} width={60} height={36} rx={3} fill={S.sunken} stroke={S.ruleStrong} strokeWidth="0.8" {...hair} />
+          <path d="M281 244 C 292 230, 304 246, 334 222" fill="none" stroke={S.ruleStrong} strokeWidth="1.8" {...hair} />
           {[
-            [18, 26],
-            [30, 40],
-            [44, 30],
-            [54, 44],
+            [287, 224],
+            [299, 240],
+            [314, 230],
+            [326, 244],
           ].map(([x, y], i) => (
-            <circle key={i} cx={x} cy={y} r={1.8} fill={S.accent} />
+            <circle key={i} cx={x} cy={y} r={2.2} fill={S.accent} />
           ))}
-          <UiText x={68} y={30} size={6} weight={600}>
+          <UiText x={344} y={230} weight={600}>
             Touch
           </UiText>
-          <UiText x={68} y={39} size={6} weight={600}>
+          <UiText x={344} y={246} weight={600}>
             map
           </UiText>
         </Facet>
-
         {/* the discipline's three strands */}
         {(
           [
-            [60, "study people"],
-            [200, "design technology"],
-            [340, "evaluate the fit"],
+            [6, 104, "study people"],
+            [114, 140, "design technology"],
+            [262, 132, "evaluate the fit"],
           ] as const
-        ).map(([x, t], i) => (
+        ).map(([x, w, t]) => (
           <g key={t}>
-            <rect x={x - 52} y={246} width={104} height={16} rx={8} fill={S.soft} stroke={S.rule} strokeWidth="0.8" {...hair} />
-            <UiText x={x} y={256.4} size={6} weight={600} tone="ink2" anchor="middle">
+            <rect x={x} y={268} width={w} height={26} rx={13} fill={S.soft} stroke={S.rule} strokeWidth="0.9" {...hair} />
+            <UiText x={x + w / 2} y={285.5} weight={600} tone="ink2" anchor="middle">
               {t}
             </UiText>
-            {i < 2 && <Arrow x1={x + 54} y1={254} x2={x + 86} y2={254} tone="mute" head={3} />}
           </g>
         ))}
-        <path d="M340 263 Q 340 280 200 280 Q 60 280 60 263" fill="none" stroke={S.ink3} strokeWidth="0.8" strokeDasharray="2.4 2" {...hair} />
-        <polygon points="57,266 63,266 60,262" fill={S.ink3} />
-        <Note x={200} y={238} show={detail} anchor="middle" tone="ink2">change one element and the others shift</Note>
+        {detail && (
+          <>
+            <Marker x={250} y={86} n={1} />
+            <Marker x={148} y={198} n={2} />
+            <Marker x={128} y={102} n={3} />
+            <Marker x={200} y={250} n={4} />
+            <Marker x={394 - 12} y={262} n={5} />
+          </>
+        )}
       </g>
     );
   },
 };
 
 /* ---------------------------------------------------------------- */
-/* WCAG 2.2 — principles, guidelines, success criteria, levels       */
-/* (checked against the entry and W3C numbering: four principles     */
-/*  hold 13 guidelines (1.1–1.4, 2.1–2.5, 3.1–3.3, 4.1); guidelines   */
-/*  are not testable, success criteria are and carry a level;        */
-/*  1.4.3 Contrast (Minimum) AA, 1.4.6 Contrast (Enhanced) AAA,       */
-/*  1.4.11 Non-text Contrast AA, 2.1.1 Keyboard A, 2.5.8 Target Size  */
-/*  (Minimum) AA; AA means every A and AA criterion; Understanding    */
-/*  and Techniques are non-normative)                                 */
+/* WCAG 2.2 — principle, guideline, success criteria, levels         */
+/* (one branch opened in full: 1 → 1.4 → 1.4.3, 1.4.6, 1.4.11)       */
 /* ---------------------------------------------------------------- */
 function Level({ x, y, l }: { x: number; y: number; l: "A" | "AA" | "AAA" }) {
-  const w = l.length * 4.2 + 6;
+  const w = l.length * 8.4 + 10;
   return (
     <g>
-      <rect x={x - w} y={y - 5} width={w} height={10} rx={2} fill={l === "AA" ? S.accent : l === "A" ? S.ink : S.surface} stroke={l === "AAA" ? S.ink2 : "none"} strokeWidth="0.7" {...hair} />
-      <UiText x={x - w / 2} y={y + 2.2} size={5.6} weight={700} tone={l === "AAA" ? "ink" : "surface"} anchor="middle" mono>
+      <rect x={x} y={y - 10} width={w} height={20} rx={3} fill={l === "AA" ? S.ink : l === "A" ? S.ink2 : S.surface} stroke={l === "AAA" ? S.ink2 : "none"} strokeWidth="0.9" {...hair} />
+      <UiText x={x + w / 2} y={y + 4.6} weight={700} tone={l === "AAA" ? "ink" : "surface"} anchor="middle" mono>
         {l}
       </UiText>
     </g>
@@ -973,124 +846,110 @@ export const wcagPlate: IllustrationEntry = {
   title: "WCAG plate",
   canvas: "sheet",
   description:
-    "WCAG 2.2 drawn as a hierarchy that reads left to right. Four principles: 1 Perceivable, 2 Operable, 3 Understandable and 4 Robust. Under them sit 13 guidelines, which are not testable themselves; two principles are opened. Under 1 Perceivable, guideline 1.4 Distinguishable leads to three testable success criteria: 1.4.3 Contrast (Minimum) at level AA, 1.4.6 Contrast (Enhanced) at AAA and 1.4.11 Non-text Contrast at AA. Under 2 Operable, guideline 2.1 Keyboard Accessible leads to 2.1.1 Keyboard at level A, and 2.5 Input Modalities to 2.5.8 Target Size (Minimum) at AA. The other guidelines are shown collapsed by number range. On the right, the conformance levels nest: A inside AA inside AAA, with AA, meaning every A and AA criterion, marked as the usual target. A dashed card linked to 1.4.3 stands for the non-normative Understanding and Techniques documents that explain how to meet a criterion.",
+    "WCAG 2.2 drawn as an indented hierarchy with one branch opened in full. Principle 1, Perceivable, contains guidelines; 1.1 to 1.3 are collapsed and guideline 1.4, Distinguishable, is opened. Under it sit three testable success criteria with their levels: 1.4.3 Contrast (Minimum) at AA, 1.4.6 Contrast (Enhanced) at AAA and 1.4.11 Non-text Contrast at AA. A dashed row at the end of the branch stands for the non-normative Understanding and Techniques documents that explain how to meet each criterion. The other principles, 2 Operable, 3 Understandable and 4 Robust, are shown collapsed. On the right, the conformance levels nest: A inside AA inside AAA, with AA, meaning every A and AA criterion, marked as the usual target.",
+  key: [
+    { n: "1", label: "Principle", detail: "four: perceivable, operable, understandable, robust" },
+    { n: "2", label: "Guideline", detail: "13 in WCAG 2.2; guidelines are not testable" },
+    { n: "3", label: "Success criterion", detail: "testable, each with a level" },
+    { n: "4", label: "Conformance levels", detail: "A ⊂ AA ⊂ AAA; AA means every A and AA criterion, the usual target" },
+    { n: "5", label: "Techniques", detail: "non-normative: how to meet a criterion" },
+  ],
   Art: ({ detail }) => {
-    const col = [16, 98, 196, 326];
-    const principle = (y: number, h: number, n: string, name: string, open: boolean, sub?: string) => (
-      <g>
-        <rect x={col[0]} y={y} width={70} height={h} rx={6} fill={open ? S.soft : S.surface} stroke={open ? S.ink2 : S.rule} strokeWidth="0.8" {...hair} />
-        <UiText x={col[0] + 8} y={y + 13} size={8} weight={700} mono>
-          {n}
-        </UiText>
-        <UiText x={col[0] + 18} y={y + 13} size={5.8} weight={600}>
-          {name}
-        </UiText>
-        {sub && (
-          <UiText x={col[0] + 8} y={y + h - 6} size={5} tone="ink3" mono>
-            {sub}
-          </UiText>
-        )}
-      </g>
-    );
-    const guide = (y: number, h: number, n: string, name?: string) => (
-      <g>
-        <rect x={col[1]} y={y} width={86} height={h} rx={4} fill={name ? S.surface : "none"} stroke={name ? S.ink2 : S.ruleStrong} strokeWidth="0.8" strokeDasharray={name ? undefined : "2 1.8"} {...hair} />
-        <UiText x={col[1] + 6} y={y + (name ? 9.6 : h / 2 + 2)} size={5.6} weight={600} tone={name ? "ink" : "ink3"} mono>
-          {n}
-        </UiText>
-        {name && (
-          <UiText x={col[1] + 6} y={y + 18} size={5.6} tone="ink2">
-            {name}
-          </UiText>
-        )}
-      </g>
-    );
-    const sc = (y: number, n: string, name: string, l: "A" | "AA" | "AAA") => (
-      <g>
-        <rect x={col[2]} y={y} width={118} height={20} rx={4} fill={S.surface} stroke={S.ruleStrong} strokeWidth="0.8" {...hair} />
-        <rect x={col[2] + 6} y={y + 6} width={8} height={8} rx={1.5} fill="none" stroke={S.ink2} strokeWidth="0.8" {...hair} />
-        <path d={`M${col[2] + 7.6} ${y + 10} l1.8 1.8 l3.2 -3.6`} fill="none" stroke={S.ok} strokeWidth="1" {...hair} />
-        <UiText x={col[2] + 18} y={y + 8.6} size={5.4} weight={700} mono>
-          {n}
-        </UiText>
-        <UiText x={col[2] + 18} y={y + 16} size={5.2} tone="ink2">
-          {name}
-        </UiText>
-        <Level x={col[2] + 114} y={y + 10} l={l} />
-      </g>
-    );
-    const link = (x1: number, y1: number, x2: number, y2: number) => <path d={`M${x1} ${y1} H${(x1 + x2) / 2} V${y2} H${x2}`} fill="none" stroke={S.ink3} strokeWidth="0.8" {...hair} />;
+    const rows = [52, 84, 116, 148, 178, 208, 238];
+    const tick = (x1: number, y1: number, x2: number, y2: number) => <path d={`M${x1} ${y1} V${y2} H${x2}`} fill="none" stroke={S.ink3} strokeWidth="0.9" {...hair} />;
     return (
       <g>
-        {["PRINCIPLES", "GUIDELINES", "SUCCESS CRITERIA", "LEVELS"].map((t, i) => (
-          <UiText key={t} x={col[i]} y={26} size={5.2} tone="ink3" mono>
-            {t}
-          </UiText>
-        ))}
-        {/* links */}
-        {link(86, 84, 98, 44)}
-        {link(86, 84, 98, 84)}
-        {link(184, 84, 196, 46)}
-        {link(184, 84, 196, 72)}
-        {link(184, 84, 196, 98)}
-        {link(86, 172, 98, 141)}
-        {link(86, 172, 98, 165)}
-        {link(86, 172, 98, 189)}
-        {link(184, 141, 196, 141)}
-        {link(184, 189, 196, 189)}
-        {link(86, 226, 98, 226)}
-        {link(86, 256, 98, 256)}
-        {/* principles */}
-        {principle(36, 96, "1", "Perceivable", true, "4 guidelines")}
-        {principle(138, 70, "2", "Operable", true, "5 guidelines")}
-        {principle(214, 26, "3", "Understandable", false)}
-        {principle(244, 26, "4", "Robust", false)}
+        <UiText x={12} y={24} tone="ink3" mono>
+          WCAG 2.2
+        </UiText>
+        {/* principle 1 */}
+        <rect x={10} y={rows[0] - 18} width={150} height={28} rx={6} fill={S.soft} stroke={S.ink2} strokeWidth="1" {...hair} />
+        <UiText x={20} y={rows[0] + 1} weight={700} mono>
+          1
+        </UiText>
+        <UiText x={36} y={rows[0] + 1} size={T.strong} weight={700}>
+          Perceivable
+        </UiText>
+        {tick(24, rows[0] + 10, 40, rows[1] - 5)}
+        {tick(24, rows[1] - 5, 40, rows[2] - 5)}
         {/* guidelines */}
-        {guide(37, 14, "1.1 – 1.3")}
-        {guide(72, 24, "1.4", "Distinguishable")}
-        {guide(130, 22, "2.1", "Keyboard Accessible")}
-        {guide(158, 14, "2.2 – 2.4")}
-        {guide(178, 22, "2.5", "Input Modalities")}
-        {guide(219, 14, "3.1 – 3.3")}
-        {guide(249, 14, "4.1")}
-        {/* testable success criteria with levels */}
-        {sc(36, "1.4.3", "Contrast (Minimum)", "AA")}
-        {sc(62, "1.4.6", "Contrast (Enhanced)", "AAA")}
-        {sc(88, "1.4.11", "Non-text Contrast", "AA")}
-        {sc(131, "2.1.1", "Keyboard", "A")}
-        {sc(179, "2.5.8", "Target Size (Minimum)", "AA")}
+        <rect x={40} y={rows[1] - 17} width={96} height={24} rx={5} fill="none" stroke={S.ruleStrong} strokeWidth="0.9" strokeDasharray="2.4 2" {...hair} />
+        <UiText x={50} y={rows[1]} tone="ink3" mono>
+          1.1 – 1.3
+        </UiText>
+        <rect x={40} y={rows[2] - 17} width={172} height={24} rx={5} fill={S.surface} stroke={S.ink2} strokeWidth="1" {...hair} />
+        <UiText x={50} y={rows[2]} weight={700} mono>
+          1.4
+        </UiText>
+        <UiText x={84} y={rows[2]} weight={600}>
+          Distinguishable
+        </UiText>
+        {/* success criteria */}
+        {(
+          [
+            [rows[3], "1.4.3", "Contrast (Minimum)", "AA"],
+            [rows[4], "1.4.6", "Contrast (Enhanced)", "AAA"],
+            [rows[5], "1.4.11", "Non-text Contrast", "AA"],
+          ] as const
+        ).map(([y, n, name, l]) => (
+          <g key={n}>
+            {tick(54, rows[2] + 7, 70, y - 5)}
+            <UiText x={72} y={y} weight={700} mono>
+              {n}
+            </UiText>
+            <UiText x={124} y={y}>
+              {name}
+            </UiText>
+            <Level x={258} y={y - 4.5} l={l} />
+          </g>
+        ))}
+        {/* non-normative support */}
+        <path d={`M54 ${rows[5] - 5} V${rows[6] - 5} H102`} fill="none" stroke={S.ink3} strokeWidth="0.9" strokeDasharray="2.4 2" {...hair} />
+        <rect x={102} y={rows[6] - 17} width={190} height={24} rx={5} fill="none" stroke={S.ink3} strokeWidth="0.9" strokeDasharray="2.4 2" {...hair} />
+        <UiText x={112} y={rows[6]} tone="ink2">
+          Techniques · non-normative
+        </UiText>
+        {/* other principles, collapsed */}
+        {(
+          [
+            [10, 96, "2 Operable"],
+            [112, 140, "3 Understandable"],
+            [258, 86, "4 Robust"],
+          ] as const
+        ).map(([x, w, t]) => (
+          <g key={t}>
+            <rect x={x} y={262} width={w} height={26} rx={6} fill="none" stroke={S.ruleStrong} strokeWidth="0.9" strokeDasharray="2.4 2" {...hair} />
+            <UiText x={x + 10} y={279.5} weight={600} tone="ink2">
+              {t}
+            </UiText>
+          </g>
+        ))}
         {/* conformance levels nest */}
-        <rect x={col[3]} y={36} width={60} height={92} rx={6} fill={S.surface} stroke={S.ink2} strokeWidth="0.8" {...hair} />
-        <rect x={col[3] + 6} y={52} width={48} height={70} rx={5} fill={S.accentWash} stroke={S.accent} strokeWidth="1.2" {...hair} />
-        <rect x={col[3] + 12} y={68} width={36} height={48} rx={4} fill={S.surface} stroke={S.ink} strokeWidth="0.8" {...hair} />
-        <UiText x={col[3] + 30} y={46.4} size={5.6} weight={700} anchor="middle" mono>
+        <rect x={302} y={40} width={90} height={150} rx={6} fill={S.surface} stroke={S.ink2} strokeWidth="1" {...hair} />
+        <rect x={312} y={70} width={70} height={110} rx={5} fill={S.accentWash} stroke={S.accent} strokeWidth="1.4" {...hair} />
+        <rect x={322} y={100} width={50} height={70} rx={4} fill={S.surface} stroke={S.ink} strokeWidth="0.9" {...hair} />
+        <UiText x={347} y={60} weight={700} anchor="middle" mono>
           AAA
         </UiText>
-        <UiText x={col[3] + 30} y={62.4} size={5.6} weight={700} tone="accent" anchor="middle" mono>
+        <UiText x={347} y={90} weight={700} tone="accent" anchor="middle" mono>
           AA
         </UiText>
-        <UiText x={col[3] + 30} y={94} size={5.6} weight={700} anchor="middle" mono>
+        <UiText x={347} y={140} weight={700} anchor="middle" mono>
           A
         </UiText>
-        <rect x={col[3] + 4} y={134} width={52} height={12} rx={6} fill={S.accent} />
-        <UiText x={col[3] + 30} y={142} size={5.4} weight={600} tone="surface" anchor="middle">
+        <rect x={302} y={198} width={90} height={24} rx={12} fill={S.ink} />
+        <UiText x={347} y={214.5} weight={600} tone="surface" anchor="middle">
           usual target
         </UiText>
-        {/* non-normative support */}
-        <path d={`M${col[2] + 118} 42 H320 V182 H${col[3]}`} fill="none" stroke={S.ink3} strokeWidth="0.8" strokeDasharray="2 1.8" {...hair} />
-        <rect x={col[3]} y={160} width={60} height={44} rx={5} fill="none" stroke={S.ink3} strokeWidth="0.8" strokeDasharray="2 1.8" {...hair} />
-        <UiText x={col[3] + 6} y={172} size={5.6} weight={700}>
-          Techniques
-        </UiText>
-        <UiText x={col[3] + 6} y={182} size={5} tone="ink2">
-          how to meet it
-        </UiText>
-        <UiText x={col[3] + 6} y={196} size={4.8} tone="ink3" mono>
-          non-normative
-        </UiText>
-        <Note x={col[3] + 30} y={226} show={detail} anchor="middle">AA = every</Note>
-        <Note x={col[3] + 30} y={236} show={detail} anchor="middle">A + AA</Note>
-        <Note x={200} y={290} show={detail} anchor="middle" tone="ink2">principle → guideline → testable criterion → level</Note>
+        {detail && (
+          <>
+            <Marker x={176} y={rows[0] - 4} n={1} />
+            <Marker x={228} y={rows[2] - 5} n={2} />
+            <Marker x={44} y={rows[4] - 5} n={3} />
+            <Marker x={290} y={30} n={4} />
+            <Marker x={306} y={rows[6] - 5} n={5} />
+          </>
+        )}
       </g>
     );
   },

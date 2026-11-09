@@ -616,6 +616,57 @@ textarea {
   --ill-good: var(--ok);
 }
 
+/* Level-2 figure languages (D-102). A figure body is drawn on one of the two
+   knowledge canvases. `.fig-sheet`: the instructional sheet (theme-aware, a
+   faint drawing grid). `.fig-viz`: the dark technical canvas; the application
+   roles are remapped to viz tokens inside it, so the same HTML/CSS diagram
+   templates render as graphite, light text and one amber accent. Every pair
+   used for text is contrast-tested (tests/tokens.test.ts). */
+.fig-sheet {
+  background-color: var(--surface);
+  background-image: linear-gradient(color-mix(in srgb, var(--rule) 55%, transparent) 1px, transparent 1px), linear-gradient(90deg, color-mix(in srgb, var(--rule) 55%, transparent) 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-position: -1px -1px;
+}
+.fig-viz {
+  color-scheme: dark;
+  --paper: var(--viz-bg);
+  --surface: var(--viz-surface-1);
+  --soft: var(--viz-surface-2);
+  --sunken: var(--viz-bg);
+  --ink: var(--viz-text);
+  --ink-2: var(--viz-text-2);
+  --ink-3: var(--viz-text-3);
+  --rule: var(--viz-edge-soft);
+  --rule-strong: var(--viz-edge);
+  --line-control: var(--viz-edge-hi);
+  --accent: var(--viz-accent);
+  --accent-ink: var(--viz-accent);
+  --accent-wash: var(--viz-accent-soft);
+  --ok: var(--viz-positive);
+  --ok-wash: var(--viz-positive-soft);
+  --error: var(--viz-warning);
+  --error-wash: var(--viz-warning-soft);
+  --warn: var(--viz-warning);
+  --warn-wash: var(--viz-warning-soft);
+  --c: var(--viz-accent);
+  --c-ink: var(--viz-accent);
+  --c-wash: var(--viz-surface-2);
+  --c-soft: var(--viz-surface-3);
+  --info: var(--viz-text);
+  --info-wash: var(--viz-surface-2);
+  --evidence: var(--viz-text);
+  --evidence-wash: var(--viz-surface-2);
+  --planned: var(--viz-text-2);
+  --planned-line: var(--viz-edge-hi);
+  --published: var(--viz-positive);
+  color: var(--viz-text);
+  background-color: var(--viz-bg);
+  background-image: linear-gradient(var(--viz-grid) 1px, transparent 1px), linear-gradient(90deg, var(--viz-grid) 1px, transparent 1px);
+  background-size: 24px 24px;
+  background-position: -1px -1px;
+}
+
 /* HTML diagram panels on the viz canvas: the same faint engineering grid. */
 .viz-panel {
   background-image: linear-gradient(var(--viz-grid) 1px, transparent 1px), linear-gradient(90deg, var(--viz-grid) 1px, transparent 1px);

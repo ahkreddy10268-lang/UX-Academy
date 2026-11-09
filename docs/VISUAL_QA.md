@@ -1,5 +1,35 @@
 # Visual QA log
 
+## 2026-11-09 — session 24: figure readability and Level-2 languages
+
+### Method
+- Measured rendered text on the built site (`next start`) with Playwright: for every `<text>` in the hero plate, computed font size × `getScreenCTM()` scale, at 390 and 1440 px; for every text node in the seven pilot Level-2 figures, the same at 390, 820, 1024 and 1440 px in both themes, plus a horizontal-overflow check.
+- Rendered every current plate (11 sheet, 4 viz) at card and hero size in both page themes (`scripts/render-plates.tsx`) and inspected each; captured each hero with its figure key at 390 and 1440 in both themes (60 images) and each pilot Level-2 figure at four widths in both themes (56 images). Screenshots stay in the session scratchpad and are not committed.
+
+### Measured
+| | Before (390 / 1440) | After (390 / 1440) |
+|---|---|---|
+| Sheet plates, smallest text | 3.6 / 5.7 px | 10.2 / 16 px |
+| Sheet plates, primary labels and markers | 3.6–5.7 / 5.7–8.9 px | ≥ 12.6 / 19.7 px |
+| Viz plates, smallest text | 3.7 / 5.7 px | ≥ 10.2 / 16 px (no plane text; markers ≥ 12.6 px) |
+| Pilot Level-2 figures, smallest label | 8.9 / 10 px | 12 / 12 px (mock interface copy 11 px) |
+
+### Problems found and fixed
+- Double Diamond: Define clusters and Develop prototypes crossed the diamond edges; loop-back arrows ran through the lower vertex. Recomposed inside the halves; loops drawn below both diamonds.
+- Affordances: a text bar overflowed the inbox frame. Removed.
+- User experience: response pills touched and the glyph collided with "Smooth". Pills sized from measured word widths, glyph and word laid out as one group.
+- WCAG: the AAA badge touched "Contrast (Enhanced)"; the Techniques connector crossed 1.4.6 and 1.4.11. Badges moved; connector re-routed from the branch trunk (description updated).
+- Interaction-design viz plate: button and status text at 5.6–6.2 units. Rebuilt with 84-unit cards and 13-unit copy.
+- Fitts anatomy (L2): the formula broke "+ 1)" onto its own line at 390; geometry text 8.9 px on a whole pastel panel. Formula set at 16 px on phones; symbol and meaning stacked below `@md`; geometry redrawn in a 360-unit viewBox with 15-unit text on a neutral panel.
+
+### Automated results (final build)
+- `npm run check`: all tests (including the new plate-text, viz-pair contrast and figure-language tests), typecheck, lint.
+- Browser: e2e 42/42, e2e-redesign 66/66, keyboard 45/45, devices 155/155, crawl 0 problem pages.
+- axe-core on 20 routes (home, 15 plate entries, a lesson with a figure key, `/learn/ux-fundamentals`, `/system`, `/ai`) in light and dark: 0 violations.
+
+### Could not be tested
+- Real phones and tablets (only device emulation), and real screen readers (VoiceOver, NVDA, TalkBack). The figure key's reading order and the sr-only "Marker n" prefixes were checked in the DOM only.
+
 ## 2026-11-04 — session 5: new visuals, colour and Jakob models, keyboard and device testing
 
 ### Method

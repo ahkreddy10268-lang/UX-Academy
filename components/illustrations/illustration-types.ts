@@ -34,6 +34,12 @@ export type IllustrationEntry = {
   explorer?: ExplorerId;
   /** "viz": dark technical canvas (D-086); "sheet": light/dark theme-aware instructional sheet (D-089); default: the earlier pastel plate. */
   canvas?: "viz" | "sheet";
+  /**
+   * Figure key (D-101): the explanation for each numbered marker the hero
+   * variant draws. Rendered as real HTML text under the hero, so explanatory
+   * labels never depend on SVG text that shrinks with the drawing.
+   */
+  key?: { n: string; label: string; detail?: string }[];
 };
 
 export const W = 400;

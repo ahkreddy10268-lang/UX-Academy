@@ -1,6 +1,6 @@
 # Progress register
 
-_Last updated: 2026-11-09 (session 23 — site-wide redesign v4, AI UX pattern library, design-system docs, resources, learning areas)_
+_Last updated: 2026-11-09 (session 24 — figure readability standard, plate keys, Level-2 figure languages)_
 
 ## State
 
@@ -322,7 +322,7 @@ Done (D-094…D-096): `content/knowledge/design-systems/design-system.ts` (three
 
 Generated result: 52 published entries (9.3%); 75 plates, 15 in the current system; 23 Level-2 figures; Design Systems illustration category moved from weak to developing; the entry's maturity is complete in explanation, evidence, practice and editorial, developing in visual (no Level 3, by decision).
 
-## Session 23 — site-wide redesign v4 and new reference sections (uncommitted; awaiting owner review)
+## Session 23 — site-wide redesign v4 and new reference sections (committed 199b972)
 
 Inspected once: routes, shell, tokens, button and field usage (28 ad-hoc controls), concept template; Laws of UX's stylesheet (IBM Plex Sans + Mono, perfect-fourth scale, off-white/ink palette, quiet borders) and the structure of AX Patterns, UX4G and Uxcel. Research read first-hand for the AI library: Microsoft HAX Toolkit, Apple HIG generative AI (Markdown version), Carbon for AI, Cloudscape generative-AI loading states and follow-up questions, AX Patterns home.
 
@@ -338,5 +338,22 @@ Done (D-097…D-100):
 
 Verified: npm run check (all tests, typecheck, lint); build (934 pages); atlas, e2e, e2e-redesign, keyboard, devices, crawl all passing; axe 0 violations on 15 routes in both themes; 22/22 scripted demo interactions; screenshots of all route types at 1440 and 390 px in both themes without overflow or page errors. Not done: real devices and screen readers; the remaining pastel-era illustrations keep their own washes (by design, migrated per figure).
 
+## Session 24 — visual system quality: phone readability and Level-2 languages (uncommitted; awaiting owner review)
+
+Started from 199b972 with a clean tree and `npm run check` green (226 tests). Measured first: every label in the 15 current plates rendered below 10 px on a 390 px phone (smallest 3.6 px), and the pilot Level-2 figures had labels at 8.9–11 px.
+
+Done (D-101…D-104):
+- **Plate text standard**: size tiers `T` in the sheet kit (13 / 16 / 16 / 17 units), `Note` removed, `TextBar` added, kit parts resized; HTML figure key (`IllustrationEntry.key`, `components/illustrations/plate-key.tsx`) under the hero on entry, lesson and home pages.
+- **11 sheet plates recomposed** (Fitts, UI design, Double Diamond, mental models, affordances, signifiers, usability testing, usability, user experience, HCI, WCAG) with markers in the drawing and explanations in the key; slugs, explorers and the Fitts animation unchanged; descriptions updated where the drawing changed.
+- **4 viz plates** (information architecture, accessibility, interaction design, design system): plane text and microtags replaced by `VizMarker`s and keys; the interaction-design plate rebuilt at readable sizes.
+- **Level-2 languages**: `VisualExplanation.language`; `.fig-sheet` / `.fig-viz` scopes; seven pilots assigned (Fitts ×2 and UI design on sheet; Double Diamond, IA ×2 and the interaction loop on viz); shared markers and tags raised to 24 px / 13 px; Fitts geometry redrawn and the formula kept on one line on phones; IA and interaction-loop small labels raised.
+- Generated `docs/ILLUSTRATION_COVERAGE.md` now lists each Level-2 figure's language (10 of 23 in a current language).
+- Tests: `tests/plate-text.test.ts` (new; every sheet and viz plate, card and hero), viz-scope contrast pairs in `tests/tokens.test.ts`, figure languages in `tests/visuals.test.ts`.
+- Docs: DECISION_LOG D-101–D-104, ILLUSTRATION_SYSTEM § Text standard, DIAGRAM_DESIGN_GUIDELINES, VISUAL_KNOWLEDGE_SYSTEM, DESIGN_SYSTEM, VISUAL_QA, CLAUDE.md, README counts.
+
+Measured after (built site): sheet plates ≥ 10.2 px at 390 and 16 px at 1440, primary labels and markers ≥ 12.6 px; viz plates ≥ 10.2 px (markers 12.6–13.9 px); pilot Level-2 figures ≥ 12 px at 390, 820, 1024 and 1440 in both themes except depicted mock interface copy at 11 px; no horizontal overflow.
+
+Verified: `npm run check` (266 tests, typecheck, lint); `npm run docs:generate`; `npm run build`; e2e 42/42; e2e-redesign 66/66; keyboard 45/45; devices 155/155 (emulation); crawl 0 problem pages; axe 0 violations on 20 routes in light and dark. Screenshots (plates card and hero in both themes; heroes with keys at 390 and 1440; Level-2 pilots at four widths in both themes) kept in the session scratchpad, not committed. Not done: real devices and screen readers; the other 13 Level-2 figures; the 60 pastel-era plates.
+
 ## Next task (precise)
-Write `atomic-design` (methodology; Frost 2016 is in the registry) or `semantic-tokens`, the next Tier 5 entries, so the path's second and third stages gain published lessons; separately, the illustration work still open from session 21: decide the sheet kit's minimum phone text size (recompose, do not scale) and apply it to the current plates; restyle the pilots' Level-2 figures; migrate the "refine" plates one at a time in learning-path order.
+Content (unchanged priority): write `atomic-design` (methodology; Frost 2016 is in the registry) or `semantic-tokens`, the next Tier 5 entries, so the design-systems path's second and third stages gain published lessons. Illustration (separate track): restyle the remaining 13 Level-2 figures one at a time in learning-path order (HCI, UCD, Gestalt, heuristic evaluation, cognitive load), choosing `language` from the method and measuring every label at 390 px; then migrate the "refine" plates one at a time with a figure key from the start.

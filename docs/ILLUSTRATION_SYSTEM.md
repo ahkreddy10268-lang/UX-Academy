@@ -392,3 +392,28 @@ The v5.1 pilot table above (HCI, Mental Models, Usability Testing) is kept as hi
 | L2 `design-system.contribution` | process | viz panel (HTML) | seven steps from a product's need to adoption, with GOV.UK's two checkpoints outlined, coral stop paths and grey return paths, and the loop back to new needs | GOV.UK's published proposal, development and review pages, read 2026-11-06 |
 
 QA performed: plate at card and hero size in both page themes; the page in the app at 1440, 1024, 820 and 390 px in both themes, with no horizontal overflow; the label that touched the left edge on narrow heroes was moved. No Level 3 (D-095).
+
+## Text standard and mobile composition (session 24, D-101 to D-104)
+
+**Measured, not assumed.** The hero plate renders at 314 CSS px on a 390 px phone (scale 0.785) and 492 px at 1440. Before this standard every label in the 15 current plates was below 10 px at 390 (smallest 3.6 px). Measure with a browser: computed font size × `getScreenCTM()` scale, per `<text>`.
+
+| Role | Plate units (400-unit viewBox) | At 390 px | At 1440 px |
+|---|---|---|---|
+| Secondary interface copy (`T.min`, `T.ui`) | 13 | ≈10.2 px (floor) | 16 px |
+| Primary labels, phase and zone headers (`T.strong`) | 16 | ≈12.6 px | 19.7 px |
+| Marker numerals (`T.marker`, `VizMarker`) | 16 | ≈12.6 px | 19.7 px |
+| Interface titles (`T.title`) | 17 | ≈13.3 px | 20.9 px |
+
+**Recompose, do not scale.**
+1. The drawing keeps only what must be read in place: interface copy that makes the depicted screen believable, phase names, and numbered markers.
+2. Every explanation moves to the HTML **figure key** (`IllustrationEntry.key`: `{ n, label, detail }[]`), rendered by `PlateKey` directly under the hero (entry, lesson and home pages). The key reflows, is selectable and is read in order by screen readers (an `ol` labelled "Figure key", each item prefixed "Marker n:" for assistive technology).
+3. Interface copy that does not carry the idea becomes a `TextBar`. The sheet kit no longer has `Note`.
+4. No `scale()` transforms in sheet plates. Viz plates may scale the whole figure up to fit the canvas, never down.
+5. Isometric plane text (labels on slabs and modules) is not used in heroes: it skews with the projection and cannot reach the floor on a slab. Use a `VizMarker` beside the layer and a key item.
+6. Cards are decorative thumbnails and carry no markers, but their text obeys the same floor (tested).
+
+**Gate:** `tests/plate-text.test.ts` renders every sheet and viz plate as card and hero and fails on any text below `T.min`, text without an explicit size, a shrinking `scale()`, a missing key, or size tiers that would fall below 10 / 12 px at 390.
+
+**Result (measured on the built site):** all 11 sheet plates at 10.2 px minimum at 390 and 16 px at 1440; the 4 viz plates (information-architecture, accessibility-concept, interaction-design-discipline, design-system) recomposed with markers and keys and covered by the same test. Compositions changed in this pass: Double Diamond (Define clusters and Develop prototypes kept inside their halves; loop-back arrows moved below both diamonds), affordances (an overflowing text bar removed), user experience (response pills sized to their words), WCAG (badges moved clear of criterion names; the Techniques row hangs from the branch instead of crossing the criteria), the interaction-design viz plate (state cards rebuilt at 84 units).
+
+**Level 2 (D-102, D-104).** Figures declare `language`: `sheet` for anatomy, measurement and comparison; `viz` for processes and systems. The figure body takes `.fig-sheet` or `.fig-viz`; inside `.fig-viz` the app roles map onto `--viz-*` tokens, so the HTML templates need no dark variants. Labels, markers and tags are ≥ 12 px at every width; depicted interface copy may be 11 px, never below 10.

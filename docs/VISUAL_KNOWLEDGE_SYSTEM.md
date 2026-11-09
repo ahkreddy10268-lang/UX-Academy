@@ -100,3 +100,7 @@ Rules for drawing are in `docs/DIAGRAM_DESIGN_GUIDELINES.md`.
 | Concept | Strategy | Level 2 | Level 3 |
 |---|---|---|---|
 | **Design System** | System (relationship) + process | *Architecture*: six layers from principles to product interfaces, each with what it holds, an illustrative Harbourline example and what a change there reaches, with documentation and governance beside every layer and a core-versus-extension note. *Contribution*: from a product's need to a release and back, following GOV.UK's published proposal, development and review process, with the paths that stop or return a proposal. Both in the `viz` language | — (D-094: a component explorer would mostly restate token theming already taught by Design Tokens; no variable has a computed, checkable output) |
+
+### Figure languages (session 24, D-102)
+
+`VisualExplanation.language` is optional: `"sheet"` or `"viz"`. `components/visual-explanations/figure.tsx` wraps the figure body in `.fig-sheet` or `.fig-viz` (`app/globals.css`); the header, takeaway, text version and sources stay on the workspace surface. Seven pilots declare it (tested in `tests/visuals.test.ts`); the accessibility and design-system figures draw their own viz panels; the other 13 figures are still on the plain workspace surface and are listed as "not yet restyled" in the generated `docs/ILLUSTRATION_COVERAGE.md`. Restyle them one at a time, choosing the language from the method, and check every label at 390 px.

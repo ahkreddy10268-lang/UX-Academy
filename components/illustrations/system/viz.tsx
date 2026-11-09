@@ -273,7 +273,7 @@ export function Tag({ x, y, text, tone = "text2", anchor = "start", show = true,
   return (
     <g>
       {leader && <line x1={leader[0]} y1={leader[1]} x2={x + (anchor === "end" ? 2 : anchor === "start" ? -2 : 0)} y2={y - 2.4} stroke={Z.edge} strokeWidth="0.5" vectorEffect="non-scaling-stroke" />}
-      <text x={x} y={y} textAnchor={anchor} fontSize={7} fill={fill} fontFamily={MONO} letterSpacing="0.03em">
+      <text x={x} y={y} textAnchor={anchor} fontSize={13} fill={fill} fontFamily={MONO} letterSpacing="0.03em">
         {index && <tspan fill={Z.text3}>{index} </tspan>}
         {text}
       </text>
@@ -296,6 +296,29 @@ export function Callout({ x, y, w, h, tone = "neutral", children }: { x: number;
     <g>
       <rect x={x} y={y} width={w} height={h} rx={3} fill={fill} stroke={edge} strokeWidth="0.8" vectorEffect="non-scaling-stroke" className={tone === "accent" ? "glow-soft" : undefined} />
       {children}
+    </g>
+  );
+}
+
+/**
+ * Numbered marker in screen space (D-101): the viz counterpart of the sheet
+ * Marker. Explanations live in the plate's HTML figure key, so the figure
+ * carries a numeral at a readable size instead of microtext. Hero only.
+ */
+export function VizMarker({ x, y, n, tone = "text", to }: { x: number; y: number; n: number | string; tone?: "text" | "accent" | "positive" | "warning"; to?: Pt }) {
+  const fill = tone === "accent" ? Z.accent : tone === "positive" ? Z.positive : tone === "warning" ? Z.warning : Z.text;
+  return (
+    <g>
+      {to && (
+        <g>
+          <line x1={x} y1={y} x2={to[0]} y2={to[1]} stroke={Z.text2} strokeWidth="0.8" vectorEffect="non-scaling-stroke" />
+          <circle cx={to[0]} cy={to[1]} r={2} fill={Z.text2} />
+        </g>
+      )}
+      <circle cx={x} cy={y} r={11} fill={fill} stroke={Z.bg} strokeWidth="1.5" vectorEffect="non-scaling-stroke" />
+      <text x={x} y={y + 5.6} textAnchor="middle" fontSize={16} fontWeight={700} fill={Z.bg} fontFamily={SANS}>
+        {n}
+      </text>
     </g>
   );
 }

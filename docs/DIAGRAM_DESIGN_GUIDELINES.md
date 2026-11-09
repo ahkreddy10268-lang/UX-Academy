@@ -57,3 +57,11 @@ Level-2 figures that explain a system, an architecture or a process (see § Leve
 
 Every Level-2 figure has: a figure type and method; a clear title; a one-sentence objective; one dominant visual idea; parts and relationships drawn with real HTML text and token-coloured SVG; a key or legend whenever line styles or colours carry meaning; a takeaway; an ordered text version; sources from the entry's references; a verification kind. Use the instructional sheet language (light, theme-aware, app tokens) for anatomy, measurement and correction figures and the dark `.viz-panel` for systems and routed relationships; plain cards of paragraphs are not a Level-2 figure.
 
+
+## Text size and language (session 24, D-102, D-104)
+
+- Labels, markers, tags and legends: ≥ 12 CSS px at every width from 390 to 1440 px. Markers are 24 px circles with 13 px numerals (`primitives.tsx`). Depicted interface copy inside a mock: ≥ 11 px where possible, never below 10.
+- SVG inside a figure: choose the viewBox so text ≥ 12 px at the narrowest panel (Fitts geometry: 360-unit viewBox, 15-unit text). Do not shrink a whole SVG to fit; restructure or move words to HTML.
+- Declare `language` in the registry: `sheet` (anatomy, measurement, comparison) or `viz` (process, system, architecture). Do not add colours inside a figure to compensate; `.fig-viz` remaps the tokens.
+- The formula-anatomy template sets the expression at 16 px on phones so it does not break across lines, and stacks symbol and meaning below `@md`.
+- Verify by measurement (computed size × SVG scale) and by screenshot at 390, 820, 1024 and 1440 in both themes. Compiling is not visual QA.

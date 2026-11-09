@@ -21,6 +21,7 @@ import type { VisualExplanation } from "./types";
 export const visualExplanations: VisualExplanation[] = [
   {
     id: "fitts-law.anatomy",
+    language: "sheet",
     slug: "fitts-law",
     type: "formula",
     level: 2,
@@ -41,6 +42,7 @@ export const visualExplanations: VisualExplanation[] = [
   },
   {
     id: "fitts-law.placement",
+    language: "sheet",
     slug: "fitts-law",
     type: "comparison",
     level: 2,
@@ -59,6 +61,7 @@ export const visualExplanations: VisualExplanation[] = [
   },
   {
     id: "double-diamond.process",
+    language: "viz",
     slug: "double-diamond",
     type: "process",
     level: 2,
@@ -117,6 +120,7 @@ export const visualExplanations: VisualExplanation[] = [
   },
   {
     id: "information-architecture.ecology",
+    language: "viz",
     slug: "information-architecture",
     type: "system",
     level: 2,
@@ -134,6 +138,7 @@ export const visualExplanations: VisualExplanation[] = [
   },
   {
     id: "information-architecture.hierarchy",
+    language: "viz",
     slug: "information-architecture",
     type: "hierarchy",
     level: 2,
@@ -374,6 +379,7 @@ export const visualExplanations: VisualExplanation[] = [
   },
   {
     id: "ui-design.annotated",
+    language: "sheet",
     slug: "ui-design",
     type: "annotated-interface",
     level: 2,
@@ -396,6 +402,7 @@ export const visualExplanations: VisualExplanation[] = [
   },
   {
     id: "interaction-design-discipline.loop",
+    language: "viz",
     slug: "interaction-design-discipline",
     type: "system",
     level: 2,

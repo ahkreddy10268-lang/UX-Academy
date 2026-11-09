@@ -30,8 +30,17 @@ export function IaEcology() {
               <text x={i === 0 ? c.cx : i === 1 ? c.cx - 30 : c.cx + 30} y={c.ly} textAnchor="middle" fontSize="14" fontWeight="600" fill="var(--ink)" fontFamily="var(--font-plex-sans), sans-serif">
                 {c.label}
               </text>
-              <text x={i === 0 ? c.cx : i === 1 ? c.cx - 30 : c.cx + 30} y={c.ly + 16} textAnchor="middle" fontSize="10.5" fill="var(--ink-2)" fontFamily="var(--font-plex-sans), sans-serif">
-                {c.sub}
+              <text x={i === 0 ? c.cx : i === 1 ? c.cx - 30 : c.cx + 30} y={c.ly + 16} textAnchor="middle" fontSize="12" fill="var(--ink-2)" fontFamily="var(--font-plex-sans), sans-serif">
+                {c.sub.length > 20 ? (
+                  <>
+                    <tspan>{c.sub.slice(0, c.sub.lastIndexOf(",", 16) + 1)}</tspan>
+                    <tspan x={i === 0 ? c.cx : i === 1 ? c.cx - 30 : c.cx + 30} dy={14}>
+                      {c.sub.slice(c.sub.lastIndexOf(",", 16) + 2)}
+                    </tspan>
+                  </>
+                ) : (
+                  c.sub
+                )}
               </text>
             </g>
           ))}

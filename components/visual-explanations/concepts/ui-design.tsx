@@ -22,7 +22,7 @@ function BookingScreen() {
         {/* 2 location */}
         <div className="relative">
           <Pin n={2} className="-left-[2.6rem] -top-1" />
-          <p className="text-[10px] text-ink-3">
+          <p className="text-[12px] text-ink-3">
             <span className="underline">Library</span> › <span className="underline">Study rooms</span> › <span className="font-semibold text-ink-2">Book</span>
           </p>
         </div>
@@ -30,26 +30,26 @@ function BookingScreen() {
         <div className="relative mt-2">
           <Pin n={1} className="-left-[2.6rem] top-0" />
           <p className="text-[17px] font-semibold leading-tight text-ink">Book a study room</p>
-          <p className="mt-0.5 text-[11px] text-ink-2">Thursday 12 March · up to 2 hours</p>
+          <p className="mt-0.5 text-[12px] text-ink-2">Thursday 12 March · up to 2 hours</p>
         </div>
         {/* 4 content presentation */}
         <div className="relative mt-4 rounded-md border border-rule bg-soft p-2.5">
           <Pin n={4} className="-left-[2.6rem] top-1" />
           <div className="flex items-baseline justify-between">
             <p className="text-[12px] font-semibold text-ink">Room 2B</p>
-            <p className="text-[10px] text-ink-2">Seats 4</p>
+            <p className="text-[12px] text-ink-2">Seats 4</p>
           </div>
-          <p className="mt-0.5 text-[10px] text-ink-2">Screen · whiteboard · step-free access</p>
+          <p className="mt-0.5 text-[12px] text-ink-2">Screen · whiteboard · step-free access</p>
         </div>
         {/* 3 controls, 5 states, 7 focus and targets */}
-        <p className="mt-4 text-[11px] font-semibold text-ink">Start time</p>
+        <p className="mt-4 text-[12px] font-semibold text-ink">Start time</p>
         <div className="relative mt-1.5 grid grid-cols-4 gap-1.5">
           <Pin n={3} className="-left-[2.6rem] top-1" />
           <Pin n={5} className="-right-2 -top-3" />
           {slots.map((s) => (
             <span
               key={s.t}
-              className={`flex min-h-9 flex-col items-center justify-center rounded-sm border text-[10px] leading-tight ${
+              className={`flex min-h-9 flex-col items-center justify-center rounded-sm border text-[11px] leading-tight ${
                 s.state === "selected"
                   ? "border-accent bg-accent text-surface outline-2 outline-offset-2 outline-accent"
                   : s.state === "booked"
@@ -64,17 +64,17 @@ function BookingScreen() {
         </div>
         <div className="relative mt-3">
           <Pin n={7} className="-left-[2.6rem] top-3" />
-          <p className="text-[11px] font-medium text-ink-2">Group name (shown on the door)</p>
-          <div className="mt-1 h-7 rounded-sm border border-line-control bg-surface px-2 text-[11px] leading-7 text-ink">Thesis group</div>
+          <p className="text-[12px] font-medium text-ink-2">Group name (shown on the door)</p>
+          <div className="mt-1 h-7 rounded-sm border border-line-control bg-surface px-2 text-[12px] leading-7 text-ink">Thesis group</div>
         </div>
         {/* 6 feedback */}
-        <div className="relative mt-3 rounded-sm border border-ok bg-ok-wash px-2 py-1.5 text-[10px] text-ink">
+        <div className="relative mt-3 rounded-sm border border-ok bg-ok-wash px-2 py-1.5 text-[12px] text-ink">
           <Pin n={6} className="-left-[2.6rem] top-0" />
           <span className="font-semibold text-ok">Held for 10 minutes.</span> Confirm to keep 11:00–13:00.
         </div>
         <div className="mt-4 flex items-center justify-between">
-          <span className="text-[11px] text-ink-2 underline">Choose another room</span>
-          <span className="rounded-sm bg-accent px-3 py-1.5 text-[11px] font-semibold text-surface">Confirm booking</span>
+          <span className="text-[12px] text-ink-2 underline">Choose another room</span>
+          <span className="rounded-sm bg-accent px-3 py-1.5 text-[12px] font-semibold text-surface">Confirm booking</span>
         </div>
       </div>
     </div>

@@ -7,31 +7,50 @@
  *     needs a and b fitted to a device and person).
  */
 import { fittsId } from "@/lib/formulas/pointing";
-import { C, Cursor, Dim, Label, STROKE } from "../../illustrations/primitives";
+import { Cursor } from "../../illustrations/primitives";
 import { ComparisonDiagram } from "../diagrams/comparison";
 import { FormulaAnatomy } from "../diagrams/formula-anatomy";
 
+/** Geometry in the sheet language: text ≥ 15 units in a 360-unit viewBox, so ≥ 12 px in a phone-width panel (D-101). */
 function Geometry() {
+  const SANS = "var(--font-plex-sans), sans-serif";
+  const MONO = "var(--font-plex-mono), monospace";
+  const sx = 46;
+  const sy = 140;
+  const tx = 262;
+  const tw = 40;
+  const tcx = tx + tw / 2;
+  const mark = (x: number, y: number, n: number) => (
+    <g key={n}>
+      <circle cx={x} cy={y} r={12} fill="var(--accent)" />
+      <text x={x} y={y + 5.4} textAnchor="middle" fontSize="15" fontWeight={600} fill="var(--surface)" fontFamily={MONO}>
+        {n}
+      </text>
+    </g>
+  );
   return (
-    <svg viewBox="0 0 400 230" className="h-auto w-full" role="img" aria-label="A start point on the left, a vertical target bar on the right. Marker 3 labels the distance D from the start to the target's centre; marker 4 labels the target width W measured along the direction of movement.">
-      <rect x={300} y={40} width={34} height={150} fill={C.base} stroke={C.line} strokeWidth={STROKE.fine} />
-      <path d="M60 150 C 140 70, 240 70, 314 112" fill="none" stroke={C.line} strokeWidth={STROKE.main} strokeDasharray="1 6" strokeLinecap="round" />
-      <circle cx={60} cy={150} r={7} fill={C.surface} stroke={C.line} strokeWidth={STROKE.main} />
-      <Label x={60} y={176} tone="line">start</Label>
-      <Cursor x={312} y={108} />
-      <Dim x1={60} y1={206} x2={317} y2={206} label="D" />
-      <Dim x1={300} y1={24} x2={334} y2={24} label="W" />
-      {[
-        [188, 206, 3],
-        [356, 24, 4],
-      ].map(([x, y, n]) => (
-        <g key={n}>
-          <circle cx={x} cy={y - (n === 3 ? 18 : 0)} r={9} fill="var(--accent)" />
-          <text x={x} y={y - (n === 3 ? 18 : 0) + 4} textAnchor="middle" fontSize="11" fill="var(--surface)" fontFamily="var(--font-plex-mono), monospace">
-            {n}
-          </text>
-        </g>
-      ))}
+    <svg viewBox="0 0 360 230" className="h-auto w-full" role="img" aria-label="A start point on the left, a vertical target bar on the right. Marker 3 labels the distance D from the start to the target's centre; marker 4 labels the target width W measured along the direction of movement.">
+      <rect x={tx} y={44} width={tw} height={140} rx={4} fill="var(--accent-wash)" stroke="var(--accent)" strokeWidth={1.2} />
+      <line x1={tcx} y1={44} x2={tcx} y2={196} stroke="var(--rule-strong)" strokeWidth={1} strokeDasharray="3 3" />
+      <path d={`M${sx} ${sy} C 110 64, 200 64, ${tcx - 4} 108`} fill="none" stroke="var(--ink-2)" strokeWidth={1.6} strokeDasharray="1 6" strokeLinecap="round" />
+      <circle cx={sx} cy={sy} r={7} fill="var(--surface)" stroke="var(--ink)" strokeWidth={1.6} />
+      <circle cx={sx} cy={sy} r={2.4} fill="var(--ink)" />
+      <text x={sx} y={sy + 28} textAnchor="middle" fontSize="15" fill="var(--ink-2)" fontFamily={SANS}>
+        start
+      </text>
+      <Cursor x={tcx - 6} y={104} />
+      {/* D: start to the target's centre */}
+      <path d={`M${sx} 206 H${tcx} M${sx} 199 V213 M${tcx} 199 V213`} stroke="var(--ink)" strokeWidth={1.2} fill="none" />
+      <text x={(sx + tcx) / 2 + 20} y={226} fontSize="15" fontWeight={600} fill="var(--ink)" fontFamily={MONO}>
+        D
+      </text>
+      {/* W: width along the direction of movement */}
+      <path d={`M${tx} 26 H${tx + tw} M${tx} 19 V33 M${tx + tw} 19 V33`} stroke="var(--ink)" strokeWidth={1.2} fill="none" />
+      <text x={tcx} y={16} textAnchor="middle" fontSize="15" fontWeight={600} fill="var(--ink)" fontFamily={MONO}>
+        W
+      </text>
+      {mark((sx + tcx) / 2, 206, 3)}
+      {mark(tx + tw + 22, 26, 4)}
     </svg>
   );
 }
@@ -60,21 +79,21 @@ function Dialog({ variant }: { variant: "before" | "after" }) {
   return (
     <svg viewBox="0 0 320 190" className="h-auto w-full" role="img" aria-label={after ? "A form whose Save button sits directly under the last field, full width." : "A form whose only Save control is a small icon in the far top-right corner."}>
       <rect x={10} y={10} width={300} height={170} rx={10} fill="var(--surface)" stroke="var(--rule-strong)" />
-      <rect x={10} y={10} width={300} height={28} rx={10} fill="var(--soft)" />
-      <text x={24} y={29} fontSize="11" fill="var(--ink-2)" fontFamily="var(--font-plex-sans), sans-serif">Edit profile</text>
+      <rect x={10} y={10} width={300} height={32} rx={10} fill="var(--soft)" />
+      <text x={24} y={31} fontSize="15" fontWeight={600} fill="var(--ink-2)" fontFamily="var(--font-plex-sans), sans-serif">Edit profile</text>
       {[54, 84, 114].map((y) => (
         <rect key={y} x={24} y={y} width={272} height={20} rx={5} fill="var(--soft)" stroke="var(--line-control)" strokeWidth={0.8} />
       ))}
       {after ? (
         <>
-          <rect x={24} y={142} width={272} height={26} rx={6} fill="var(--accent)" />
-          <text x={160} y={159} textAnchor="middle" fontSize="11" fill="var(--surface)" fontFamily="var(--font-plex-sans), sans-serif">Save</text>
+          <rect x={24} y={142} width={272} height={30} rx={6} fill="var(--accent)" />
+          <text x={160} y={162} textAnchor="middle" fontSize="15" fontWeight={600} fill="var(--surface)" fontFamily="var(--font-plex-sans), sans-serif">Save</text>
           <path d="M200 124 L200 140" stroke="var(--ink)" strokeWidth={1.5} strokeDasharray="1 4" strokeLinecap="round" />
           <Cursor x={198} y={150} />
         </>
       ) : (
         <>
-          <rect x={286} y={16} width={16} height={16} rx={3} fill="var(--accent)" />
+          <rect x={284} y={16} width={20} height={20} rx={4} fill="var(--accent)" />
           <path d="M200 124 C 240 90, 270 50, 292 28" fill="none" stroke="var(--ink)" strokeWidth={1.5} strokeDasharray="1 4" strokeLinecap="round" />
           <Cursor x={290} y={26} />
         </>
