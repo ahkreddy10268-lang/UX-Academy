@@ -269,7 +269,7 @@ export function ContrastCalculator() {
               </label>
               <div className="mt-1 flex gap-2">
                 <input aria-label={`${label} colour picker`} type="color" value={/^#[0-9a-f]{6}$/i.test(value) ? value : "#000000"} onChange={(e) => set(e.target.value)} className="h-10 w-12 rounded-xs border border-line-control bg-surface" />
-                <input id={`c-${label}`} value={value} onChange={(e) => set(e.target.value)} className="formula h-10 flex-1 rounded-sm border border-line-control bg-surface px-3" />
+                <input id={`c-${label}`} value={value} onChange={(e) => set(e.target.value)} className="field formula flex-1" />
               </div>
             </div>
           ))}

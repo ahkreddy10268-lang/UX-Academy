@@ -87,7 +87,7 @@ export function QuizBuilder({ questions, links, domains }: { questions: Q[]; lin
         <p className="text-sm text-ink-2" aria-live="polite">
           {pool.length} matching {pool.length === 1 ? "question" : "questions"}
         </p>
-        <button disabled={!pool.length} className="h-10 rounded-sm bg-accent px-5 text-sm font-medium text-surface disabled:opacity-40">
+        <button disabled={!pool.length} className="btn btn-primary">
           Start quiz
         </button>
       </div>

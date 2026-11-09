@@ -13,6 +13,11 @@ import { workshops as rawWorkshops } from "../../content/workshops";
 import { learningPaths as rawPaths } from "../../content/learning-paths";
 import { standaloneFormulas as rawFormulas } from "../../content/formulas";
 import { labs } from "../../content/labs";
+import { aiMoments as rawAiMoments } from "../../content/ai/moments";
+import { aiPatterns as rawAiPatterns } from "../../content/ai/patterns";
+import { aiMomentSchema, aiPatternSchema, type AiPattern } from "./ai";
+import { systemDocs as rawSystemDocs } from "../../content/system/docs";
+import { systemDocSchema, type SystemDoc } from "./system";
 import {
   comparisonSchema,
   glossaryTermSchema,
@@ -50,6 +55,24 @@ export const workshops = parseAll("workshop", workshopSchema, rawWorkshops, keyO
 export const learningPaths = parseAll("learning path", learningPathSchema, rawPaths, keyOf);
 export const standaloneFormulas = parseAll("formula", standaloneFormulaSchema, rawFormulas, keyOf);
 export { domains, labs };
+
+/* AI UX pattern library (D-098): documentation records, separate from knowledge entries. */
+export const aiMoments = rawAiMoments.map((m) => aiMomentSchema.parse(m));
+export const aiPatterns: AiPattern[] = rawAiPatterns.map((p) => {
+  const r = aiPatternSchema.safeParse(p);
+  if (!r.success) throw new Error(`AI pattern ${p.id}: ${r.error.message}`);
+  return r.data;
+});
+export const aiPatternById = new Map(aiPatterns.map((p) => [p.id, p]));
+export const aiPatternsFor = (moment: string) => aiPatterns.filter((p) => p.moment === moment);
+
+/* Design-system documentation (D-099). */
+export const systemDocs: SystemDoc[] = rawSystemDocs.map((d) => {
+  const r = systemDocSchema.safeParse(d);
+  if (!r.success) throw new Error(`System doc ${d.id}: ${r.error.message}`);
+  return r.data;
+});
+export const systemDocFor = (section: string, id: string) => systemDocs.find((d) => d.section === section && d.id === id);
 
 /* ------------------------------------------------------------------ */
 /* Lookups                                                             */

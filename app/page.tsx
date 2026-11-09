@@ -77,7 +77,7 @@ export default function Home() {
                 <HeroSearch placeholder="Search concepts, formulas, methods…" />
               </div>
               <div className="mt-7 flex flex-wrap gap-3">
-                <Link href="/library" className="inline-flex h-11 items-center gap-2 rounded-sm bg-accent px-5 font-medium text-surface shadow-card hover:bg-accent-ink">
+                <Link href="/library" className="btn btn-primary btn-lg">
                   Browse the library <Icon name="arrow-right" size={18} />
                 </Link>
                 <Link href="/learn" className="inline-flex h-11 items-center rounded-sm border border-rule-strong bg-surface px-5 font-medium text-ink hover:border-ink-3">
@@ -144,7 +144,7 @@ export default function Home() {
               <footer className="t-caption mt-2">Only the ratio D/W enters the law — the source of most good target-sizing decisions.</footer>
             </blockquote>
             <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-3">
-              <Link href="/library/fitts-law" className="inline-flex h-11 items-center gap-2 rounded-sm bg-accent px-5 font-medium text-surface hover:bg-accent-ink">
+              <Link href="/library/fitts-law" className="btn btn-primary btn-lg">
                 Read the concept <Icon name="arrow-right" size={18} />
               </Link>
               <Link href="/labs/fitts-lab" className="link tap text-sm">
@@ -292,7 +292,7 @@ export default function Home() {
                     </div>
                     <div className="flex flex-1 flex-col p-4">
                       <p className="flex items-center gap-2 text-xs">
-                        <span className="rounded-full bg-c-wash px-2 py-0.5 font-semibold text-c-ink">{VISUAL_TYPE_LABEL[v.type]}</span>
+                        <span className="subject-tag">{VISUAL_TYPE_LABEL[v.type]}</span>
                         <span className="text-ink-3">{visualsFor(slug).length} diagram{visualsFor(slug).length > 1 ? "s" : ""}</span>
                       </p>
                       <h3 className="t-sub mt-2 text-base group-hover:text-accent-ink">

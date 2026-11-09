@@ -87,7 +87,7 @@ export function ContrastLab() {
             </label>
             <div className="mt-1 flex gap-2">
               <input aria-label={`${label} picker`} type="color" value={valid ? toHex(parseHex(v)) : "#000000"} onChange={(e) => set(e.target.value)} className="h-10 w-12 rounded-xs border border-line-control" />
-              <input id={`cl-${label}`} value={v} onChange={(e) => set(e.target.value)} className="formula h-10 flex-1 rounded-sm border border-line-control bg-surface px-3" />
+              <input id={`cl-${label}`} value={v} onChange={(e) => set(e.target.value)} className="field formula flex-1" />
             </div>
           </div>
         ))}
@@ -297,7 +297,7 @@ export function HierarchyLab() {
         <div className={`${box} p-6`}>
           {els.map((e) =>
             e.id === "cta" ? (
-              <button key={e.id} type="button" className="rounded-sm bg-accent px-4 py-2 text-surface" style={{ fontSize: e.size, fontWeight: e.weight, opacity: e.contrast / 100 }}>
+              <button key={e.id} type="button" className="btn btn-primary" style={{ fontSize: e.size, fontWeight: e.weight, opacity: e.contrast / 100 }}>
                 {e.text}
               </button>
             ) : (
@@ -373,7 +373,7 @@ export function DisclosureLab() {
               {g.items.map((i) => (
                 <label key={i} className="text-sm">
                   {i}
-                  <input className="mt-1 h-9 w-full rounded-xs border border-line-control bg-surface px-2" />
+                  <input className="field mt-1 w-full" />
                 </label>
               ))}
             </div>
@@ -390,10 +390,10 @@ export function DisclosureLab() {
               Step {stage + 1} of {SETTINGS.length}
             </span>
             <div className="flex gap-2">
-              <button type="button" disabled={stage === 0} onClick={() => setStage((s) => s - 1)} className="h-9 rounded-sm border border-rule px-3 text-sm disabled:opacity-40">
+              <button type="button" disabled={stage === 0} onClick={() => setStage((s) => s - 1)} className="btn btn-secondary btn-sm">
                 Back
               </button>
-              <button type="button" disabled={stage === SETTINGS.length - 1} onClick={() => setStage((s) => s + 1)} className="h-9 rounded-sm bg-accent px-3 text-sm text-surface disabled:opacity-40">
+              <button type="button" disabled={stage === SETTINGS.length - 1} onClick={() => setStage((s) => s + 1)} className="btn btn-primary">
                 Continue
               </button>
             </div>
@@ -467,7 +467,7 @@ export function FeedbackLab() {
         <p className="label">Document · Q3 research plan</p>
         <p className="mt-2 text-sm text-ink-2">Status: {saved ? "All changes saved" : "Unsaved changes"}</p>
         <div className="mt-5 flex flex-wrap items-center gap-4">
-          <button type="button" onClick={run} disabled={state === "pending" && strategy !== "none"} className="inline-flex h-10 items-center gap-2 rounded-sm bg-accent px-4 text-sm font-medium text-surface disabled:opacity-70">
+          <button type="button" onClick={run} disabled={state === "pending" && strategy !== "none"} className="btn btn-primary">
             {state === "pending" && strategy === "spinner" && <span aria-hidden className="h-3.5 w-3.5 animate-spin rounded-full border-2 border-paper border-t-transparent" />}
             {state === "pending" && strategy !== "none" && strategy !== "optimistic" ? "Saving…" : "Save"}
           </button>
@@ -557,7 +557,7 @@ export function SerialPositionLab() {
         {phase === "ready" && (
           <div className="flex flex-wrap items-center justify-between gap-4">
             <p className="text-ink-2">{LIST_LEN} words will appear one per second. Then type every word you remember, in any order.</p>
-            <button type="button" onClick={start} className="h-10 rounded-sm bg-accent px-4 text-sm font-medium text-surface">
+            <button type="button" onClick={start} className="btn btn-primary">
               Start
             </button>
           </div>
@@ -578,7 +578,7 @@ export function SerialPositionLab() {
               Type the words you remember
             </label>
             <textarea id="sp-recall" autoFocus rows={3} value={answer} onChange={(e) => setAnswer(e.target.value)} className="mt-1 w-full rounded-sm border border-line-control bg-surface px-3 py-2" />
-            <button className="mt-3 h-10 rounded-sm bg-accent px-4 text-sm font-medium text-surface">Score my recall</button>
+            <button className="btn btn-primary mt-3">Score my recall</button>
           </form>
         )}
         {phase === "scored" && (
@@ -594,7 +594,7 @@ export function SerialPositionLab() {
                 </li>
               ))}
             </ol>
-            <button type="button" onClick={start} className="mt-4 h-9 rounded-sm border border-rule px-3 text-sm font-medium">
+            <button type="button" onClick={start} className="btn btn-secondary btn-sm mt-4">
               Another list
             </button>
           </div>

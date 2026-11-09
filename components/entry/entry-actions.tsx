@@ -59,7 +59,7 @@ function CollectionMenu({ slug }: { slug: string }) {
         type="button"
         aria-expanded={open}
         onClick={() => setOpen((o) => !o)}
-        className="inline-flex h-9 items-center gap-2 rounded-sm border border-rule bg-surface px-3 text-sm font-medium text-ink-2 hover:border-rule-strong hover:text-ink"
+        className="btn btn-secondary btn-sm"
       >
         Collections{count > 0 ? ` (${count})` : ""}
       </button>
@@ -95,9 +95,9 @@ function CollectionMenu({ slug }: { slug: string }) {
               value={name}
               onChange={(e) => setName(e.target.value)}
               placeholder="New collection"
-              className="h-8 min-w-0 flex-1 rounded-xs border border-line-control bg-surface px-2 text-sm"
+              className="field min-w-0 flex-1"
             />
-            <button className="h-8 rounded-xs bg-accent px-2.5 text-sm font-medium text-surface">Add</button>
+            <button className="btn btn-primary btn-sm">Add</button>
           </form>
         </div>
       )}

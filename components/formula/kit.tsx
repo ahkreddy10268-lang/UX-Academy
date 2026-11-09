@@ -103,7 +103,7 @@ export function SelectField<T extends string>({ label, value, onChange, options 
         id={id}
         value={value}
         onChange={(e) => onChange(e.target.value as T)}
-        className="mt-1 h-10 w-full rounded-sm border border-line-control bg-surface px-2 text-base"
+        className="field mt-1 w-full"
       >
         {options.map((o) => (
           <option key={o.value} value={o.value}>
@@ -163,7 +163,7 @@ export function CalculatorShell({
                 setSaved(true);
                 setTimeout(() => setSaved(false), 2000);
               }}
-              className="h-8 rounded-xs border border-rule px-2.5 text-sm font-medium text-ink hover:border-rule-strong"
+              className="btn btn-secondary btn-sm"
             >
               {saved ? "Saved to My learning" : "Save result"}
             </button>

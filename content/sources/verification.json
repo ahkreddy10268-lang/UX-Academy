@@ -67,6 +67,11 @@
     "checkedAt": "2026-11-03",
     "httpStatus": 200
   },
+  "apple-hig-generative-ai": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-09",
+    "httpStatus": 200
+  },
   "atkinson-shiffrin-1968": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",
@@ -78,6 +83,11 @@
   "atlassian-design": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "ax-patterns": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-09",
     "httpStatus": 200
   },
   "baddeley-1994": {
@@ -230,6 +240,11 @@
     "checkedAt": "2026-11-06",
     "httpStatus": 200
   },
+  "carbon-for-ai": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-09",
+    "httpStatus": 200
+  },
   "card-english-burr-1978": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",
@@ -294,6 +309,16 @@
   "christensen-et-al-2016": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "cloudscape-genai-follow-up": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-09",
+    "httpStatus": 200
+  },
+  "cloudscape-genai-loading": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-09",
     "httpStatus": 200
   },
   "cockburn-gutwin-greenberg-2007": {
@@ -637,6 +662,11 @@
     "registeredYear": 2006,
     "registeredContainer": "Behaviour &amp; Information Technology",
     "similarity": 1
+  },
+  "hax-toolkit-guidelines": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-09",
+    "httpStatus": 200
   },
   "hcibib": {
     "status": "url-reachable",

@@ -304,7 +304,7 @@ function ChunkingExplorer() {
             <label htmlFor={id} className="text-sm font-medium">
               Digits to remember
             </label>
-            <input id={id} value={text} onChange={(e) => setText(e.target.value)} inputMode="numeric" className="formula mt-1 h-10 w-full rounded-sm border border-line-control bg-surface px-3" />
+            <input id={id} value={text} onChange={(e) => setText(e.target.value)} inputMode="numeric" className="field formula mt-1 w-full" />
           </div>
           <Slider label="Group size" value={size} min={1} max={5} onChange={setSize} />
         </>
@@ -502,7 +502,7 @@ function ColourExplorer() {
           <Slider label="Hue" value={h} min={0} max={359} onChange={setH} format={(v) => `${v}° ${hueName(v)}`} />
           <Slider label="Saturation" value={sat} min={0} max={100} onChange={setSat} unit="%" />
           <Slider label="Value" value={val} min={0} max={100} onChange={setVal} unit="%" />
-          <button type="button" onClick={() => { setH(220); setSat(60); setVal(70); }} className="self-start rounded-sm border border-line-control bg-surface px-3 py-1.5 text-sm hover:border-ink-3">
+          <button type="button" onClick={() => { setH(220); setSat(60); setVal(70); }} className="btn btn-secondary btn-sm self-start">
             Reset
           </button>
         </>

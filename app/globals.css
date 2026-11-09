@@ -12,22 +12,22 @@
 :root {
   color-scheme: light;
   /* Surfaces — cool neutral canvas, white workspace, soft and sunken insets */
-  --paper: #f3f6fa; /* canvas behind the app frame */
-  --surface: #ffffff; /* workspace, cards, panels, inputs */
-  --soft: #f8fafc; /* quiet panels inside the workspace */
-  --sunken: #ecf0f5; /* wells: formulas, code, tracks */
+  --paper: #f4f3ef; /* canvas behind the app frame */
+  --surface: #fdfdfb; /* workspace, cards, panels, inputs */
+  --soft: #f8f7f3; /* quiet panels inside the workspace */
+  --sunken: #ecebe5; /* wells: formulas, code, tracks */
   /* Ink (min contrast on every surface and pastel wash, checked) */
-  --ink: #1f2532; /* primary ≥12.3:1 */
-  --ink-2: #475266; /* secondary ≥6.3:1 */
-  --ink-3: #5a6476; /* muted/meta ≥4.8:1 */
+  --ink: #15161b; /* primary ≥12.3:1 */
+  --ink-2: #43454e; /* secondary ≥6.3:1 */
+  --ink-3: #5a5c64; /* muted/meta ≥4.8:1 */
   /* Lines */
-  --rule: #e4e9f0; /* hairlines (decorative) */
-  --rule-strong: #cfd7e2; /* emphasised dividers (decorative) */
-  --line-control: #7c879a; /* control borders ≥3:1 on surfaces (WCAG 1.4.11) */
+  --rule: #e4e2db; /* hairlines (decorative) */
+  --rule-strong: #cdcac1; /* emphasised dividers (decorative) */
+  --line-control: #7a7870; /* control borders ≥3:1 on surfaces (WCAG 1.4.11) */
   /* Action — calm indigo for interactive elements */
-  --accent: #4c5ead; /* buttons, active nav, links ≥4.8:1; white on it 5.98:1 */
-  --accent-ink: #3d4e99; /* link text, hover ≥6.1:1 */
-  --accent-wash: #e7ebf8; /* selected states, active nav background */
+  --accent: #255a8c; /* buttons, active nav, links ≥4.8:1; white on it 5.98:1 */
+  --accent-ink: #1d4a74; /* link text, hover ≥6.1:1 */
+  --accent-wash: #e5edf5; /* selected states, active nav background */
   /* Rubric — heritage editorial red: wordmark §, editorial markers */
   --rubric: #a33320;
   /* Signals (always with a text label) */
@@ -45,13 +45,13 @@
   --planned: #5a6476; /* planned-topic text and dashed outlines */
   --planned-line: #9aa3b3;
   --published: #2e6a4c;
-  --focus: #4c5ead;
+  --focus: #255a8c;
   /* Elevation — soft, low-contrast */
-  --shadow-card: 0 1px 2px rgb(31 37 50 / 0.04), 0 1px 3px rgb(31 37 50 / 0.04);
-  --shadow-hover: 0 2px 4px rgb(31 37 50 / 0.05), 0 8px 20px rgb(31 37 50 / 0.07);
-  --shadow-raise: 0 1px 2px rgb(31 37 50 / 0.05), 0 12px 32px rgb(31 37 50 / 0.08);
-  --shadow-dialog: 0 4px 12px rgb(31 37 50 / 0.08), 0 24px 64px rgb(31 37 50 / 0.18);
-  --overlay: rgb(31 37 50 / 0.36);
+  --shadow-card: 0 1px 2px rgb(21 22 27 / 0.05);
+  --shadow-hover: 0 2px 4px rgb(21 22 27 / 0.09);
+  --shadow-raise: 0 1px 2px rgb(21 22 27 / 0.05), 0 10px 28px rgb(21 22 27 / 0.08);
+  --shadow-dialog: 0 4px 12px rgb(21 22 27 / 0.08), 0 24px 64px rgb(21 22 27 / 0.18);
+  --overlay: rgb(21 22 27 / 0.4);
   /* Subject palettes — base (solid shapes), ink (text/lines on wash), wash (pastel field) */
   --cat-core: #c2553f;
   --cat-core-ink: #8a2d1c;
@@ -87,26 +87,26 @@
   --cat-slate-ink: #30554f;
   --cat-slate-wash: #e1f0ec;
   /* Selective gradient — hero and featured panels only */
-  --grad-hero: linear-gradient(120deg, var(--cat-violet-wash) 0%, var(--cat-blue-wash) 48%, var(--cat-teal-wash) 100%);
+  --grad-hero: linear-gradient(180deg, var(--soft) 0%, var(--paper) 100%);
 
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     color-scheme: dark;
-    --paper: #10131a;
-    --surface: #171b24;
-    --soft: #1c212b;
-    --sunken: #0c0f15;
-    --ink: #e6e9f0;
-    --ink-2: #b3bbc9;
-    --ink-3: #99a2b3;
-    --rule: #262c38;
-    --rule-strong: #353d4c;
-    --line-control: #737d90;
-    --accent: #99a5ec;
-    --accent-ink: #bac3f6;
-    --accent-wash: #232a45;
+    --paper: #0f1013;
+    --surface: #16171c;
+    --soft: #1b1c22;
+    --sunken: #0b0c0f;
+    --ink: #ecebe5;
+    --ink-2: #bab9b2;
+    --ink-3: #a09f98;
+    --rule: #25262d;
+    --rule-strong: #34353d;
+    --line-control: #77767d;
+    --accent: #8fb8e0;
+    --accent-ink: #b6d1ec;
+    --accent-wash: #18232f;
     --rubric: #e8826b;
     --ok: #7fc4a0;
     --ok-wash: #16261d;
@@ -121,9 +121,9 @@
     --planned: #99a2b3;
     --planned-line: #525b6c;
     --published: #7fc4a0;
-    --focus: #99a5ec;
-    --shadow-card: 0 1px 2px rgb(0 0 0 / 0.3);
-    --shadow-hover: 0 2px 4px rgb(0 0 0 / 0.3), 0 8px 20px rgb(0 0 0 / 0.3);
+    --focus: #8fb8e0;
+    --shadow-card: 0 1px 2px rgb(0 0 0 / 0.35);
+    --shadow-hover: 0 2px 4px rgb(0 0 0 / 0.45);
     --shadow-raise: 0 1px 2px rgb(0 0 0 / 0.4), 0 12px 32px rgb(0 0 0 / 0.4);
     --shadow-dialog: 0 4px 12px rgb(0 0 0 / 0.4), 0 24px 64px rgb(0 0 0 / 0.55);
     --overlay: rgb(0 0 0 / 0.6);
@@ -165,19 +165,19 @@
 
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --paper: #10131a;
-  --surface: #171b24;
-  --soft: #1c212b;
-  --sunken: #0c0f15;
-  --ink: #e6e9f0;
-  --ink-2: #b3bbc9;
-  --ink-3: #99a2b3;
-  --rule: #262c38;
-  --rule-strong: #353d4c;
-  --line-control: #737d90;
-  --accent: #99a5ec;
-  --accent-ink: #bac3f6;
-  --accent-wash: #232a45;
+  --paper: #0f1013;
+  --surface: #16171c;
+  --soft: #1b1c22;
+  --sunken: #0b0c0f;
+  --ink: #ecebe5;
+  --ink-2: #bab9b2;
+  --ink-3: #a09f98;
+  --rule: #25262d;
+  --rule-strong: #34353d;
+  --line-control: #77767d;
+  --accent: #8fb8e0;
+  --accent-ink: #b6d1ec;
+  --accent-wash: #18232f;
   --rubric: #e8826b;
   --ok: #7fc4a0;
   --ok-wash: #16261d;
@@ -192,9 +192,9 @@
   --planned: #99a2b3;
   --planned-line: #525b6c;
   --published: #7fc4a0;
-  --focus: #99a5ec;
-  --shadow-card: 0 1px 2px rgb(0 0 0 / 0.3);
-  --shadow-hover: 0 2px 4px rgb(0 0 0 / 0.3), 0 8px 20px rgb(0 0 0 / 0.3);
+  --focus: #8fb8e0;
+  --shadow-card: 0 1px 2px rgb(0 0 0 / 0.35);
+  --shadow-hover: 0 2px 4px rgb(0 0 0 / 0.45);
   --shadow-raise: 0 1px 2px rgb(0 0 0 / 0.4), 0 12px 32px rgb(0 0 0 / 0.4);
   --shadow-dialog: 0 4px 12px rgb(0 0 0 / 0.4), 0 24px 64px rgb(0 0 0 / 0.55);
   --overlay: rgb(0 0 0 / 0.6);
@@ -295,7 +295,7 @@
 }
 
 @theme {
-  /* Type scale — major third (1.25) on a 16px root, with an 18px reading size. */
+  /* Type scale — major third (1.25) for UI sizes, perfect fourth (1.333) for display sizes (xl–4xl), 16px root, 18px reading size. */
   --text-2xs: 0.75rem; /* 12 — labels only, uppercase tracking */
   --text-2xs--line-height: 1rem;
   --text-xs: 0.8125rem; /* 13 */
@@ -308,23 +308,23 @@
   --text-read--line-height: 1.75rem;
   --text-lg: 1.25rem; /* 20 */
   --text-lg--line-height: 1.75rem;
-  --text-xl: 1.5625rem; /* 25 */
-  --text-xl--line-height: 2rem;
-  --text-2xl: 1.953rem; /* 31 */
-  --text-2xl--line-height: 2.375rem;
-  --text-3xl: 2.441rem; /* 39 */
+  --text-xl: 1.333rem; /* 21 */
+  --text-xl--line-height: 1.875rem;
+  --text-2xl: 1.777rem; /* 28 */
+  --text-2xl--line-height: 2.25rem;
+  --text-3xl: 2.369rem; /* 38 */
   --text-3xl--line-height: 2.75rem;
-  --text-4xl: 3.052rem; /* 49 */
-  --text-4xl--line-height: 3.25rem;
+  --text-4xl: 3.157rem; /* 51 */
+  --text-4xl--line-height: 3.4rem;
 
-  /* Radii — v3 rounded geometry. xs chips/badges · sm inputs/buttons · md cards ·
-     lg panels · xl feature panels · 2xl the app frame and hero. */
-  --radius-xs: 6px;
-  --radius-sm: 10px;
-  --radius-md: 12px;
-  --radius-lg: 16px;
-  --radius-xl: 20px;
-  --radius-2xl: 24px;
+  /* Radii — v4 restrained geometry. xs chips/badges · sm inputs/buttons · md cards ·
+     lg panels · xl feature panels · 2xl the app frame. */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 14px;
+  --radius-2xl: 18px;
 
   /* Measure */
   --container-read: 42rem; /* ≈ 68ch at 18px */
@@ -388,20 +388,19 @@ body {
 }
 
 .display {
-  font-family: var(--font-serif);
-  font-variation-settings: "opsz" 72;
-  letter-spacing: -0.015em;
-  font-weight: 500;
+  font-family: var(--font-sans);
+  letter-spacing: -0.024em;
+  font-weight: 600;
 }
 
 /* Eyebrow / label style used for section kickers and metadata. */
 .label {
-  font-family: var(--font-sans);
+  font-family: var(--font-mono);
   font-size: var(--text-2xs);
   line-height: var(--text-2xs--line-height);
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--ink-3);
 }
 
@@ -657,15 +656,15 @@ textarea {
 /* ------------------------------------------------------------------ */
 /* Type roles (see docs/DESIGN_SYSTEM.md)                              */
 /* ------------------------------------------------------------------ */
-.t-hero { font-family: var(--font-sans); font-weight: 600; letter-spacing: -0.028em; line-height: 1.06; }
-.t-page { font-family: var(--font-sans); font-weight: 600; letter-spacing: -0.022em; line-height: 1.12; }
+.t-hero { font-family: var(--font-sans); font-weight: 600; letter-spacing: -0.034em; line-height: 1.04; }
+.t-page { font-family: var(--font-sans); font-weight: 600; letter-spacing: -0.026em; line-height: 1.1; }
 .t-section { font-family: var(--font-sans); font-weight: 600; letter-spacing: -0.014em; line-height: 1.2; }
 .t-sub { font-family: var(--font-sans); font-weight: 600; letter-spacing: -0.005em; line-height: 1.3; }
-/* Editorial voice — Newsreader for concept and lesson titles, quotes and hero accents */
-.t-editorial { font-family: var(--font-serif); font-variation-settings: "opsz" 60; font-weight: 500; letter-spacing: -0.015em; line-height: 1.08; }
+/* Titles are Plex Sans throughout (v4, D-097); Newsreader is kept for long-form reading and quotes */
+.t-editorial { font-family: var(--font-sans); font-weight: 600; letter-spacing: -0.03em; line-height: 1.06; }
 .t-quote { font-family: var(--font-serif); font-variation-settings: "opsz" 24; font-style: italic; line-height: 1.45; }
 .t-lede { font-family: var(--font-sans); line-height: 1.6; color: var(--ink-2); }
-.t-lede-serif { font-family: var(--font-serif); font-variation-settings: "opsz" 24; line-height: 1.5; color: var(--ink-2); }
+.t-lede-serif { font-family: var(--font-sans); line-height: 1.55; color: var(--ink-2); }
 .t-caption { font-family: var(--font-sans); font-size: var(--text-xs); line-height: var(--text-xs--line-height); color: var(--ink-3); }
 
 /* ------------------------------------------------------------------ */
@@ -745,11 +744,11 @@ dialog::backdrop { background: var(--overlay); }
 .panel { background: var(--surface); border: 1px solid var(--rule); border-radius: var(--radius-lg); box-shadow: var(--shadow-card); }
 .panel-soft { background: var(--soft); border: 1px solid var(--rule); border-radius: var(--radius-lg); }
 .card { background: var(--surface); border: 1px solid var(--rule); border-radius: var(--radius-md); box-shadow: var(--shadow-card); transition: border-color var(--dur-2) var(--ease-standard), box-shadow var(--dur-2) var(--ease-standard); }
-.card:hover { border-color: var(--rule-strong); box-shadow: var(--shadow-hover); }
+.card:hover { border-color: var(--ink-3); box-shadow: var(--shadow-hover); }
 .bg-hero { background: var(--grad-hero); }
 .bg-feature { background: linear-gradient(135deg, var(--c-wash) 0%, var(--surface) 100%); }
-.chip { display: inline-flex; align-items: center; gap: 0.375rem; border-radius: 999px; border: 1px solid var(--rule); background: var(--surface); padding: 0.25rem 0.75rem; font-size: var(--text-xs); line-height: var(--text-xs--line-height); color: var(--ink-2); }
-.chip[aria-pressed="true"], .chip[aria-current="true"], .chip[data-active="true"] { background: var(--accent-wash); border-color: color-mix(in srgb, var(--accent) 40%, transparent); color: var(--accent-ink); font-weight: 600; }
+.chip { display: inline-flex; align-items: center; gap: 0.375rem; border-radius: var(--radius-xs); border: 1px solid var(--rule); background: var(--surface); padding: 0.25rem 0.75rem; font-size: var(--text-xs); line-height: var(--text-xs--line-height); color: var(--ink-2); }
+.chip[aria-pressed="true"], .chip[aria-current="true"], .chip[data-active="true"] { background: var(--ink); border-color: var(--ink); color: var(--surface); font-weight: 600; }
 
 /* Diagram textures — a pattern, not a colour, so a segment is distinguishable without hue (WCAG 1.4.1). */
 .hatch-extraneous { background-color: var(--sunken); background-image: repeating-linear-gradient(135deg, transparent 0 6px, var(--rule-strong) 6px 8px); }
@@ -779,3 +778,48 @@ summary { min-height: 24px; padding-block: 2px; }
 }
 :root[data-theme="dark"] .brand-only-light { display: none; }
 :root[data-theme="dark"] .brand-only-dark { display: block; }
+
+/* ------------------------------------------------------------------ */
+/* Buttons and fields (v4, D-097; docs/DESIGN_SYSTEM.md § Buttons)      */
+/* One family for every action. Sizes: sm 32px, md 40px, lg 48px tall   */
+/* (all ≥ 24px, WCAG 2.5.8). Hover changes colour, never position.      */
+/* ------------------------------------------------------------------ */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  height: 2.5rem; padding-inline: 1rem; border-radius: var(--radius-sm); border: 1px solid transparent;
+  font-family: var(--font-sans); font-size: var(--text-sm); line-height: 1; font-weight: 600; letter-spacing: -0.003em;
+  white-space: nowrap; cursor: pointer; text-decoration: none;
+  transition: background-color var(--dur-2) var(--ease-standard), border-color var(--dur-2) var(--ease-standard), color var(--dur-2) var(--ease-standard);
+}
+.btn:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.btn-sm { height: 2rem; padding-inline: 0.75rem; font-size: var(--text-xs); }
+.btn-lg { height: 3rem; padding-inline: 1.25rem; font-size: var(--text-base); }
+.btn-primary { background: var(--ink); color: var(--surface); }
+.btn-primary:hover { background: var(--ink-2); }
+.btn-secondary { background: var(--surface); color: var(--ink); border-color: var(--line-control); }
+.btn-secondary:hover { border-color: var(--ink); background: var(--soft); }
+.btn-tertiary { background: var(--sunken); color: var(--ink); }
+.btn-tertiary:hover { background: var(--rule); }
+.btn-text { height: auto; min-height: 24px; padding-inline: 0; color: var(--accent-ink); text-decoration-line: underline; text-decoration-color: color-mix(in srgb, var(--accent) 45%, transparent); text-underline-offset: 0.2em; }
+.btn-text:hover { text-decoration-color: var(--accent); }
+.btn-icon { width: 2.5rem; padding-inline: 0; }
+.btn-icon.btn-sm { width: 2rem; }
+.btn[aria-pressed="true"] { background: var(--ink); color: var(--surface); border-color: var(--ink); }
+.btn:disabled, .btn[aria-disabled="true"] { cursor: not-allowed; opacity: 1; background: var(--sunken); color: var(--ink-3); border-color: var(--rule); }
+.btn[aria-busy="true"] { cursor: progress; }
+.btn[aria-busy="true"]::before { content: ""; width: 0.875rem; height: 0.875rem; border-radius: 999px; border: 2px solid currentColor; border-right-color: transparent; animation: spin 0.8s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.field {
+  display: block; width: 100%; min-height: 2.5rem; padding: 0.5rem 0.75rem; border-radius: var(--radius-sm);
+  border: 1px solid var(--line-control); background: var(--surface); color: var(--ink); font-size: var(--text-sm);
+}
+.field:hover { border-color: var(--ink-3); }
+.field:focus-visible { outline: 2px solid var(--focus); outline-offset: 1px; border-color: var(--ink); }
+.field[aria-invalid="true"] { border-color: var(--error); }
+.field-label { display: block; font-size: var(--text-sm); font-weight: 600; color: var(--ink); }
+.field-hint { display: block; font-size: var(--text-xs); color: var(--ink-3); }
+
+/* Subject tag: mono label with a dot in the subject colour (the colour is redundant; the name is the label). */
+.subject-tag { display: inline-flex; align-items: center; gap: 0.375rem; border: 1px solid var(--rule); border-radius: var(--radius-xs); padding: 0.0625rem 0.4375rem; font-family: var(--font-mono); font-size: 0.6875rem; line-height: 1.125rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink-2); background: var(--surface); }
+.subject-tag::before { content: ""; width: 0.4375rem; height: 0.4375rem; border-radius: 999px; background: var(--c, var(--ink-3)); flex-shrink: 0; }

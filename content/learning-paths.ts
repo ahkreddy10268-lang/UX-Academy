@@ -1,11 +1,11 @@
-import type { LearningPath } from "../lib/content/schema";
+import type { LearningPathInput } from "../lib/content/schema";
 
 /**
  * Structured learning paths (spec 10.9). Steps are entry slugs or planned
  * taxonomy slugs — planned steps are shown as such, never as content.
  * Practice items are lab ids or workshop ids.
  */
-export const learningPaths: LearningPath[] = [
+export const learningPaths: LearningPathInput[] = [
   {
     id: "ux-fundamentals",
     title: "UX Design Fundamentals",
@@ -204,9 +204,9 @@ export const learningPaths: LearningPath[] = [
     ],
     prerequisites: ["UI Design Fundamentals"],
     stages: [
-      { title: "Understand the system", level: "beginner", description: "What a design system is, how its layers relate, and the token layer that records its decisions.", steps: ["design-system", "design-tokens"], practice: [] },
+      { title: "Understand the system", level: "beginner", description: "What a design system is, how its layers relate, and the token layer that records its decisions.", steps: ["design-system", "design-tokens"], practice: [], links: [{ href: "/system/foundations/colour", label: "This site's colour foundation" }, { href: "/system/foundations/typography", label: "This site's typography" }] },
       { title: "Foundations and architecture", level: "intermediate", description: "The design language, the token tiers and the scales every component relies on, and how themes and brands are built from them.", steps: ["design-language", "primitive-tokens", "semantic-tokens", "theme-architecture", "colour-systems", "typography-scales", "modular-type-scale", "spacing-scales", "colour-contrast-ratio"], practice: ["type-scale-lab"] },
-      { title: "Components and patterns", level: "intermediate", description: "Component structure, properties, variants and states, and the patterns that combine components for recurring tasks.", steps: ["atomic-design", "component-libraries", "component-architecture", "variants", "component-properties", "component-state-management", "interaction-states", "empty-states", "error-states"], practice: ["accessible-component"] },
+      { title: "Components and patterns", level: "intermediate", description: "Component structure, properties, variants and states, and the patterns that combine components for recurring tasks.", steps: ["atomic-design", "component-libraries", "component-architecture", "variants", "component-properties", "component-state-management", "interaction-states", "empty-states", "error-states"], practice: ["accessible-component"], links: [{ href: "/system/components/button", label: "A documented component: Button" }, { href: "/system/patterns/empty-states", label: "A documented pattern: empty, loading and error states" }] },
       { title: "Governance and operations", level: "advanced", description: "Who decides, how changes are released and migrated, how quality is checked, and how one system serves several brands.", steps: ["design-governance", "design-system-versioning", "design-qa", "design-system-audits", "multi-brand-systems"], practice: [] },
     ],
     completion: ["Accessible component workshop submitted", "A component contract and a governance proposal written for the Design System entry's exercises"],
@@ -262,16 +262,16 @@ export const learningPaths: LearningPath[] = [
   {
     id: "ai-ux",
     title: "AI UX",
-    summary: "Designing for systems that are probabilistic, generative and increasingly agentic.",
+    summary: "Designing for systems that are probabilistic, generative and increasingly agentic: the human-AI interaction guidelines, and the interface patterns for each moment from discovering a feature to delegating work to an agent.",
     audience: "Designers working on AI-powered products.",
-    objectives: ["Apply human-AI interaction guidelines.", "Design for calibrated trust and recoverable errors.", "Recognise where classical heuristics need adapting."],
+    objectives: ["Apply human-AI interaction guidelines.", "Design for calibrated trust and recoverable errors.", "Recognise where classical heuristics need adapting.", "Choose and specify patterns for asking, waiting, reading, refining, trusting and delegating."],
     prerequisites: ["UX Design Fundamentals"],
     stages: [
-      { title: "Foundations", level: "intermediate", description: "What changes when the system is uncertain.", steps: ["human-ai-interaction", "ai-ux", "mental-models", "visibility-of-system-status"], practice: [] },
-      { title: "Trust & transparency", level: "advanced", description: "Explanations, uncertainty and control.", steps: ["ai-trust", "explainable-ai", "ai-transparency", "user-autonomy"], practice: [] },
-      { title: "New interface forms", level: "advanced", description: "Generative and agentic patterns.", steps: ["generative-ai-interfaces", "agentic-ai-interfaces", "conversational-ux", "responsible-ai"], practice: [] },
+      { title: "Foundations", level: "intermediate", description: "What changes when the system is uncertain, and how people discover and instruct it.", steps: ["human-ai-interaction", "ai-ux", "mental-models", "visibility-of-system-status"], practice: [], links: [{ href: "/ai/capability-disclosure", label: "Capability disclosure" }, { href: "/ai/suggested-prompts", label: "Suggested prompts" }, { href: "/ai/prompt-composer", label: "Prompt composer" }, { href: "/ai/processing-states", label: "Thinking and processing states" }] },
+      { title: "Trust & transparency", level: "advanced", description: "Explanations, sources, uncertainty, errors and control.", steps: ["ai-trust", "explainable-ai", "ai-transparency", "user-autonomy"], practice: [], links: [{ href: "/ai/ai-labels", label: "AI-generated content labels" }, { href: "/ai/citations-and-sources", label: "Citations and sources" }, { href: "/ai/explanations", label: "Explanations and transparency" }, { href: "/ai/error-handling", label: "Error handling" }, { href: "/ai/refusals", label: "Refusals" }] },
+      { title: "New interface forms", level: "advanced", description: "Generative and agentic patterns: streaming, refinement, generated interfaces and delegation.", steps: ["generative-ai-interfaces", "agentic-ai-interfaces", "conversational-ux", "responsible-ai"], practice: [], links: [{ href: "/ai/streaming-responses", label: "Streaming responses" }, { href: "/ai/follow-up-suggestions", label: "Follow-up suggestions" }, { href: "/ai/generative-ui", label: "Generative UI" }, { href: "/ai/intent-preview", label: "Intent preview" }, { href: "/ai/human-approval", label: "Human approval" }, { href: "/ai/delegation", label: "Delegation and progress" }] },
     ],
-    completion: ["Most steps are planned topics — this path is a research agenda until its entries are written"],
+    completion: ["Most lessons are planned topics; until they are written, the AI UX pattern library is the practical reference for each stage, with live demos", "One AI feature reviewed against the seven moments"],
   },
   {
     id: "service-design",

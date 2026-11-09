@@ -75,7 +75,7 @@ export function CognitiveLoadLab() {
       <div className="rounded-sm border border-rule bg-surface">
         <div className="flex flex-wrap items-center justify-between gap-3 border-b border-rule px-5 py-3">
           <p className="text-sm text-ink-2">{cur ? `Layout ${step + 1} of 2 — ${QUESTION}` : step < 0 ? "You will answer the same question in two layouts. The order is randomised." : "Done."}</p>
-          <button type="button" onClick={start} className="h-9 rounded-sm bg-accent px-4 text-sm font-medium text-surface">
+          <button type="button" onClick={start} className="btn btn-primary">
             {step < 0 ? "Start" : "Run again"}
           </button>
         </div>
@@ -153,7 +153,7 @@ function Structured({ plans, onChoose }: { plans: Plan[]; onChoose: (n: string) 
               <td>{p.offline ? "Yes" : "No"}</td>
               <td className="formula tabular">{p.seats}</td>
               <td className="text-right">
-                <button type="button" onClick={() => onChoose(p.name)} className="h-8 rounded-xs border border-rule px-2.5 text-sm hover:border-ink-3">
+                <button type="button" onClick={() => onChoose(p.name)} className="btn btn-secondary btn-sm">
                   Choose
                 </button>
               </td>

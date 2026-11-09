@@ -100,7 +100,7 @@ export function HickLab() {
             {n > 0 && `Block ${block + 1} of ${BLOCK.length}: ${n} ${n === 1 ? "alternative" : "alternatives"} · trial ${trial + 1} of ${TRIALS}`}
             {done && "Finished — results below."}
           </p>
-          <button type="button" onClick={start} className="h-9 rounded-sm bg-accent px-4 text-sm font-medium text-surface hover:bg-accent-ink">
+          <button type="button" onClick={start} className="btn btn-primary">
             {block < 0 ? "Start" : "Restart"}
           </button>
         </div>

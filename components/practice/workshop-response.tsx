@@ -27,10 +27,10 @@ export function WorkshopResponse({ id }: { id: string }) {
         className="w-full rounded-sm border border-line-control bg-surface px-4 py-3 font-serif text-base leading-relaxed"
       />
       <div className="mt-3 flex flex-wrap items-center gap-3">
-        <button type="button" onClick={() => save("started")} className="h-10 rounded-sm border border-rule px-4 text-sm font-medium hover:border-rule-strong">
+        <button type="button" onClick={() => save("started")} className="btn btn-secondary">
           Save draft
         </button>
-        <button type="button" onClick={() => save("submitted")} className="h-10 rounded-sm bg-accent px-4 text-sm font-medium text-surface">
+        <button type="button" onClick={() => save("submitted")} className="btn btn-primary">
           Mark as complete
         </button>
         <span className="text-sm text-ink-3" role="status">

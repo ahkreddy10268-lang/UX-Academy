@@ -24,7 +24,7 @@ export function PathCard({ path, stats, writtenSteps }: { path: LearningPath; st
       <div className="flex flex-1 flex-col p-5">
         <p className="flex flex-wrap gap-1.5 text-[11px] font-semibold">
           {levels.map((l) => (
-            <span key={l} className="rounded-full bg-c-wash px-2 py-0.5 text-c-ink">
+            <span key={l} className="subject-tag">
               {DIFFICULTY_LABEL[l]}
             </span>
           ))}

@@ -103,7 +103,7 @@ export function FittsLab() {
             {running && `Trial ${index + 1} of ${order.length} · ${phase === "home" ? "click the dot" : "click the bar"}`}
             {done && "Finished — results below."}
           </p>
-          <button type="button" onClick={begin} className="h-9 rounded-sm bg-accent px-4 text-sm font-medium text-surface hover:bg-accent-ink">
+          <button type="button" onClick={begin} className="btn btn-primary">
             {running ? "Restart" : done ? "Run again" : "Start experiment"}
           </button>
         </div>

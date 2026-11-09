@@ -78,7 +78,8 @@ function Entry({ entry: e }: { entry: KnowledgeEntry }) {
     ...(e.standard ? [["standard", "Standard"]] : []),
     ...(e.origin ? [["origin", "Origin"]] : []),
     ["application", "Application"],
-    ["use", "When to use"],
+    ...(e.application.steps.length ? [["checklist", "Practical checklist"]] : []),
+    ["use", "When to use · common mistakes"],
     ["connections", "Connections"],
     ["practice", "Practice"],
     ["evidence", "Evidence & references"],
@@ -182,13 +183,14 @@ function Entry({ entry: e }: { entry: KnowledgeEntry }) {
               { label: e.title },
             ]}
           />
-          <div className="mt-5 grid items-center gap-8 rounded-2xl bg-c-wash p-5 sm:p-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-12 lg:p-10">
+          <div className="relative mt-5 grid items-center gap-8 overflow-hidden rounded-2xl border border-rule bg-surface p-5 shadow-card sm:p-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-12 lg:p-10">
+            <span aria-hidden className="absolute inset-x-0 top-0 h-1 bg-c" />
             <div className="rise-in">
               <p className="flex flex-wrap items-center gap-x-3 gap-y-1">
                 <TypeMark type={e.primaryType} secondary={e.secondaryTypes} />
-                <span className="rounded-full bg-surface px-2.5 py-0.5 text-xs font-semibold text-c-ink">{domain.shortTitle}</span>
+                <span className="inline-flex items-center gap-1.5 rounded-xs border border-rule px-2 py-0.5 font-mono text-[11px] font-medium uppercase tracking-[0.06em] text-ink-2"><span aria-hidden className="h-2 w-2 rounded-full bg-c" />{domain.shortTitle}</span>
               </p>
-              <h1 className="t-editorial mt-3 text-[2.4rem] sm:text-[3.2rem]">{e.title}</h1>
+              <h1 className="t-editorial mt-3 text-[2.4rem] sm:text-[3.4rem]">{e.title}</h1>
               {e.alternateNames.length > 0 && <p className="mt-3 text-sm text-ink-2">Also known as {e.alternateNames.join(" · ")}</p>}
               <p className="t-lede-serif mt-4 text-xl">
                 <Rich text={e.summary} ctx={ctx} />
@@ -247,8 +249,8 @@ function Entry({ entry: e }: { entry: KnowledgeEntry }) {
                 )}
               </figcaption>
               {glance && (
-                <p className="mt-3 rounded-lg bg-surface/80 px-3.5 py-2.5 text-sm text-ink ring-1 ring-rule">
-                  <span className="font-semibold text-c-ink">At a glance · </span>
+                <p className="mt-3 rounded-lg bg-soft px-3.5 py-2.5 text-sm text-ink ring-1 ring-rule">
+                  <span className="font-semibold text-ink">At a glance · </span>
                   {glance}
                 </p>
               )}
@@ -413,7 +415,7 @@ function Entry({ entry: e }: { entry: KnowledgeEntry }) {
                 <p className="t-sub mt-1 text-lg">{lab.title}</p>
                 <p className="mt-1 text-sm text-ink-2">{lab.summary}</p>
               </div>
-              <Link href={`/labs/${lab.id}`} className="inline-flex h-10 shrink-0 items-center rounded-sm bg-accent px-4 text-sm font-medium text-surface hover:bg-accent-ink">
+              <Link href={`/labs/${lab.id}`} className="btn btn-primary shrink-0">
                 Open the lab
               </Link>
             </aside>
@@ -471,12 +473,17 @@ function Entry({ entry: e }: { entry: KnowledgeEntry }) {
             </div>
             {e.application.steps.length > 0 && (
               <div className="mt-10">
-                <p className="label">Practical steps</p>
-                <ol className="mt-3 space-y-3">
+                <h3 id="checklist" className="t-sub scroll-mt-24 text-lg">
+                  Practical checklist
+                </h3>
+                <p className="mt-1 text-sm text-ink-3">Steps for applying it in your own work.</p>
+                <ol className="mt-3 divide-y divide-rule rounded-md border border-rule bg-surface">
                   {e.application.steps.map((s, i) => (
-                    <li key={i} className="grid grid-cols-[2rem_1fr] gap-2">
-                      <span className="formula grid h-6 w-6 place-items-center rounded-full bg-accent-wash text-xs text-accent-ink">{i + 1}</span>
-                      <span className="text-ink-2">
+                    <li key={i} className="flex gap-3 px-4 py-2.5 text-sm text-ink">
+                      <span aria-hidden className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-xs border border-line-control font-mono text-[11px] text-ink-3">
+                        {i + 1}
+                      </span>
+                      <span>
                         <Rich text={s} ctx={ctx} />
                       </span>
                     </li>
@@ -496,7 +503,7 @@ function Entry({ entry: e }: { entry: KnowledgeEntry }) {
                 <Bullets className="mt-3 text-ink-2" items={e.whenToUse.map((x, i) => <Rich key={i} text={x} ctx={ctx} />)} />
               </div>
               <div>
-                <p className="label !text-accent-ink">Avoid when</p>
+                <p className="label !text-error">Avoid when</p>
                 <Bullets className="mt-3 text-ink-2" items={e.whenNotToUse.map((x, i) => <Rich key={i} text={x} ctx={ctx} />)} />
               </div>
               {e.advantages.length > 0 && (
@@ -765,7 +772,7 @@ function TocList({ toc }: { toc: [string, string][] }) {
     <ol className="space-y-1 px-4 pb-3 pt-2 text-sm lg:px-0 lg:pt-3">
       {toc.map(([id, label]) => (
         <li key={id}>
-          <a href={`#${id}`} className="block rounded-xs border-l-2 border-transparent py-1 pl-3 text-ink-2 hover:border-accent hover:bg-surface hover:text-ink">
+          <a href={`#${id}`} className="block rounded-xs border-l-2 border-transparent py-1 pl-3 text-ink-2 hover:border-ink hover:bg-surface hover:text-ink">
             {label}
           </a>
         </li>

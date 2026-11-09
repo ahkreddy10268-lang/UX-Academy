@@ -32,8 +32,8 @@ export function Breadcrumbs({ items }: { items: Crumb[] }) {
 
 /**
  * Page header. Workspace pages get a quiet title block; with `cat` the header
- * becomes a pastel panel in the subject's wash (the v3 "category hero").
- * `editorial` sets the title in Newsreader — for concepts, lessons and essays.
+ * becomes a neutral panel marked by a thin bar in the subject colour (v4, D-097).
+ * `editorial` gives concepts, lessons and essays the larger display title.
  */
 export function PageHeader({
   eyebrow,
@@ -60,7 +60,7 @@ export function PageHeader({
     <div className={aside ? "grid items-center gap-8 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:gap-12" : ""}>
       <div className="min-w-0">
         {eyebrow && <p className={`label ${cat ? "!text-c-ink" : ""}`}>{eyebrow}</p>}
-        <h1 className={`${editorial ? "t-editorial" : "t-page"} mt-2.5 max-w-4xl text-[2rem] sm:text-[2.6rem]`}>{title}</h1>
+        <h1 className={`${editorial ? "t-editorial" : "t-page"} mt-2.5 max-w-4xl text-[2rem] sm:text-[2.75rem]`}>{title}</h1>
         {lede && <div className="t-lede mt-3 max-w-read text-base sm:text-lg">{lede}</div>}
         {children}
       </div>
@@ -75,7 +75,7 @@ export function PageHeader({
             <Breadcrumbs items={crumbs} />
           </div>
         )}
-        {cat ? <div className="rounded-xl bg-c-wash px-5 py-7 sm:px-8 sm:py-9">{body}</div> : <div className="pb-2">{body}</div>}
+        {cat ? <div className="relative overflow-hidden rounded-xl border border-rule bg-surface px-5 py-7 shadow-card sm:px-8 sm:py-9"><span aria-hidden className="absolute inset-x-0 top-0 h-1 bg-c" />{body}</div> : <div className="pb-2">{body}</div>}
       </Container>
     </header>
   );

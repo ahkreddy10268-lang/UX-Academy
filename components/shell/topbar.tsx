@@ -25,7 +25,7 @@ export function Topbar() {
           <ThemeToggle />
           <Link
             href="/me"
-            className="inline-flex h-10 items-center gap-2 rounded-sm border border-rule bg-surface px-2.5 text-sm font-medium text-ink-2 shadow-card hover:border-rule-strong hover:text-ink sm:px-3"
+            className="btn btn-secondary"
           >
             <Icon name="me" />
             <span className="hidden sm:inline">My Learning</span>

@@ -317,7 +317,7 @@ export function LibraryExplorer({
                 {f.scope === "published" ? "Try including planned topics, or clear a filter." : "Clear a filter or broaden your search."}
               </p>
               {active > 0 && (
-                <button type="button" className="mt-4 h-9 rounded-sm border border-line-control bg-surface px-3 text-sm" onClick={clear}>
+                <button type="button" className="btn btn-secondary btn-sm mt-4" onClick={clear}>
                   Clear filters
                 </button>
               )}
@@ -332,7 +332,7 @@ export function LibraryExplorer({
                   <div>
                     <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
                       <TypeMark type={d.type} secondary={d.secondary} />
-                      <span className="rounded-full bg-c-wash px-2 py-0.5 text-xs font-semibold text-c-ink">{d.subject}</span>
+                      <span className="subject-tag">{d.subject}</span>
                     </div>
                     <h2 className="mt-1">
                       <Link href={`/library/${d.slug}`} className={`t-sub text-lg hover:text-accent-ink ${d.status === "planned" ? "text-ink-2" : ""}`}>
@@ -370,7 +370,7 @@ export function LibraryExplorer({
                   </ul>
                   {published.length > shown && (
                     <div className="mt-6 flex flex-col items-center gap-2">
-                      <button type="button" onClick={() => setShown((n) => n + PAGE)} className="inline-flex h-10 items-center rounded-sm border border-line-control bg-surface px-4 text-sm font-medium hover:border-ink-3">
+                      <button type="button" onClick={() => setShown((n) => n + PAGE)} className="btn btn-secondary">
                         Show {Math.min(PAGE, published.length - shown)} more
                       </button>
                       <p className="tabular text-xs text-ink-3">
@@ -422,7 +422,7 @@ export function LibraryExplorer({
             )}
           </div>
           <div className="border-t border-rule px-5 py-3">
-            <button type="button" onClick={() => setDrawer(false)} className="h-11 w-full rounded-sm bg-accent text-sm font-medium text-surface hover:bg-accent-ink">
+            <button type="button" onClick={() => setDrawer(false)} className="btn btn-primary btn-lg w-full">
               Show {results.length} {results.length === 1 ? "result" : "results"}
             </button>
           </div>

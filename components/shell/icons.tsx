@@ -36,7 +36,9 @@ export type IconName =
   | "bookmark"
   | "check"
   | "clock"
-  | "spark";
+  | "spark"
+  | "ai"
+  | "layers";
 
 const paths: Record<IconName, React.ReactNode> = {
   home: <path d="M3.5 9 10 3.75 16.5 9v6.75a.75.75 0 0 1-.75.75H12.5v-4.5h-5v4.5H4.25a.75.75 0 0 1-.75-.75z" />,
@@ -183,6 +185,21 @@ const paths: Record<IconName, React.ReactNode> = {
     </>
   ),
   spark: <path d="M10 3v4M10 13v4M3 10h4M13 10h4M5.5 5.5l2 2M12.5 12.5l2 2M5.5 14.5l2-2M12.5 7.5l2-2" />,
+  // a message bubble with a small four-point star — a conversation with an AI system
+  ai: (
+    <>
+      <path d="M4.25 4.5h11.5a.75.75 0 0 1 .75.75v7.5a.75.75 0 0 1-.75.75H9l-3.5 2.75V13.5H4.25a.75.75 0 0 1-.75-.75v-7.5a.75.75 0 0 1 .75-.75z" />
+      <path d="M10 6.5v4M8 8.5h4" />
+    </>
+  ),
+  // three stacked layers — foundations under components under patterns
+  layers: (
+    <>
+      <path d="m10 3.5 6.5 3.25L10 10 3.5 6.75z" />
+      <path d="m3.5 10 6.5 3.25L16.5 10" />
+      <path d="m3.5 13.25 6.5 3.25 6.5-3.25" />
+    </>
+  ),
 };
 
 export function Icon({ name, size = 20, ...rest }: { name: IconName; size?: number } & SVGProps<SVGSVGElement>) {

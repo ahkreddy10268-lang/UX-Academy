@@ -82,7 +82,7 @@ export function Quiz({
             setResults([]);
             setChoice(null);
           }}
-          className="mt-5 h-9 rounded-sm border border-rule px-3 text-sm font-medium hover:border-rule-strong"
+          className="btn btn-secondary btn-sm mt-5"
         >
           Try again
         </button>
@@ -179,7 +179,7 @@ export function Quiz({
                   </Link>
                 </p>
               )}
-              <button type="button" onClick={next} className="mt-4 h-9 rounded-sm bg-accent px-4 text-sm font-medium text-surface hover:bg-accent-ink">
+              <button type="button" onClick={next} className="btn btn-primary mt-4">
                 {index + 1 < questions.length ? "Next question" : "See result"}
               </button>
             </div>

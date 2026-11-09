@@ -104,7 +104,7 @@ export function KnowledgeCard({ d, variant, plate, headingLevel = 3 }: { d: Card
 
   const eyebrow = (
     <p className="flex min-w-0 items-center gap-2 text-xs">
-      <span className="shrink-0 rounded-full bg-c-wash px-2 py-0.5 font-semibold text-c-ink">{d.subject}</span>
+      <span className="subject-tag shrink-0">{d.subject}</span>
       <span className="truncate text-ink-3">{TYPE_LABEL[d.type]}</span>
     </p>
   );
@@ -185,7 +185,7 @@ export function KnowledgeCard({ d, variant, plate, headingLevel = 3 }: { d: Card
         <div className="pt-3">{meta}</div>
       </div>
       {v === "lab" && (
-        <p className="flex items-center justify-between border-t border-rule bg-c-wash px-4 py-2 text-xs font-medium text-c-ink">
+        <p className="flex items-center justify-between border-t border-rule bg-soft px-4 py-2 font-mono text-[11px] font-medium uppercase tracking-[0.06em] text-ink-2">
           Includes an interactive lab <span aria-hidden>→</span>
         </p>
       )}
@@ -197,12 +197,12 @@ export function KnowledgeCard({ d, variant, plate, headingLevel = 3 }: { d: Card
 /** Subject tile: plate + name + description + real published count. */
 export function CategoryTile({ id, title, description, published, total, plate }: { id: string; title: string; description: string; published: number; total: number; plate: ReactNode }) {
   return (
-    <article className={`${catClass(id)} group relative flex h-full flex-col overflow-hidden rounded-lg bg-c-wash transition-shadow hover:shadow-hover`}>
+    <article className={`${catClass(id)} card group relative flex h-full flex-col overflow-hidden`}>
       <div className="px-3 pt-3">
         <div className="overflow-hidden rounded-md">{plate}</div>
       </div>
       <div className="flex flex-1 flex-col p-4 pt-3">
-        <h3 className="t-sub text-base text-ink group-hover:text-c-ink">
+        <h3 className="t-sub text-base text-ink group-hover:underline group-hover:decoration-1 group-hover:underline-offset-4">
           <Link href={`/topics/${id}`} className="after:absolute after:inset-0">
             {title}
           </Link>

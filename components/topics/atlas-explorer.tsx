@@ -325,15 +325,15 @@ export function AtlasExplorer({ atlas }: { atlas: Atlas }) {
           </p>
           <div className="flex flex-wrap gap-2">
             {filtering ? (
-              <button type="button" onClick={clearAll} className="tap rounded-sm border border-rule-strong bg-surface px-3 py-1.5 text-sm font-medium text-ink hover:bg-sunken">
+              <button type="button" onClick={clearAll} className="btn btn-secondary btn-sm">
                 Clear search and filters
               </button>
             ) : (
               <>
-                <button type="button" onClick={() => setOpenDomains(new Set(atlas.domains.map((d) => d.id)))} className="tap rounded-sm border border-rule-strong bg-surface px-3 py-1.5 text-sm font-medium text-ink hover:bg-sunken">
+                <button type="button" onClick={() => setOpenDomains(new Set(atlas.domains.map((d) => d.id)))} className="btn btn-secondary btn-sm">
                   Expand all domains
                 </button>
-                <button type="button" onClick={() => setOpenDomains(new Set())} className="tap rounded-sm border border-rule-strong bg-surface px-3 py-1.5 text-sm font-medium text-ink hover:bg-sunken">
+                <button type="button" onClick={() => setOpenDomains(new Set())} className="btn btn-secondary btn-sm">
                   Collapse all
                 </button>
               </>

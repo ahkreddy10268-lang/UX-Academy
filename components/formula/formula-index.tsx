@@ -20,7 +20,7 @@ export function FormulaIndex({ rows, groups, plates }: { rows: FormulaRow[]; gro
           <label htmlFor={`${id}-q`} className="text-sm font-medium">
             Find a formula
           </label>
-          <input id={`${id}-q`} type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="e.g. SUS, contrast, power" className="mt-1 h-10 w-full rounded-sm border border-line-control bg-surface px-3" />
+          <input id={`${id}-q`} type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="e.g. SUS, contrast, power" className="field mt-1 w-full" />
           <nav aria-label="Formula categories" className="mt-6">
             <p className="label">Categories</p>
             <ul className="mt-2 space-y-1 text-sm">

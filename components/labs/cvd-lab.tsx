@@ -69,20 +69,20 @@ export function CvdLab() {
                   aria-label={`Name of colour ${i + 1}`}
                   value={p.label}
                   onChange={(e) => setPalette((ps) => ps.map((x, k) => (k === i ? { ...x, label: e.target.value } : x)))}
-                  className="h-10 min-w-0 rounded-sm border border-line-control bg-surface px-2 text-sm"
+                  className="field min-w-0"
                 />
                 <input
                   aria-label={`Hex value of ${p.label}`}
                   value={p.hex}
                   aria-invalid={!valid(p.hex)}
                   onChange={(e) => setPalette((ps) => ps.map((x, k) => (k === i ? { ...x, hex: e.target.value } : x)))}
-                  className="formula h-10 min-w-0 rounded-sm border border-line-control bg-surface px-2 text-sm aria-[invalid=true]:border-warn"
+                  className="field formula min-w-0 aria-[invalid=true]:border-warn"
                 />
               </li>
             ))}
           </ul>
           <div className="mt-3 flex gap-2">
-            <button type="button" disabled={palette.length >= 6} onClick={() => setPalette((ps) => [...ps, { hex: "#6a1b9a", label: `Colour ${ps.length + 1}` }])} className="h-9 rounded-sm border border-line-control bg-surface px-3 text-sm disabled:opacity-50">
+            <button type="button" disabled={palette.length >= 6} onClick={() => setPalette((ps) => [...ps, { hex: "#6a1b9a", label: `Colour ${ps.length + 1}` }])} className="btn btn-secondary btn-sm">
               Add colour
             </button>
             <button type="button" onClick={() => { setPalette(DEFAULT); setFg("#1f2532"); setBg("#ffffff"); }} className="h-9 rounded-sm px-3 text-sm text-ink-2 hover:bg-sunken">
@@ -101,7 +101,7 @@ export function CvdLab() {
                 <label htmlFor={`${ids}-${label}`} className="text-xs font-medium text-ink-2">
                   {label}
                 </label>
-                <input id={`${ids}-${label}`} value={v} aria-invalid={!valid(v)} onChange={(e) => set(e.target.value)} className="formula mt-1 h-10 w-full rounded-sm border border-line-control bg-surface px-2 text-sm aria-[invalid=true]:border-warn" />
+                <input id={`${ids}-${label}`} value={v} aria-invalid={!valid(v)} onChange={(e) => set(e.target.value)} className="field formula mt-1 w-full aria-[invalid=true]:border-warn" />
               </div>
             ))}
           </div>

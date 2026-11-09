@@ -62,7 +62,7 @@ export function HeroSearch({ placeholder = "Search 45 concepts, formulas and met
             autoComplete="off"
             className="h-14 min-w-0 flex-1 bg-transparent px-3 text-lg outline-none placeholder:text-ink-3"
           />
-          <button className="mr-2 h-10 rounded-sm bg-accent px-4 text-sm font-medium text-surface hover:bg-accent-ink">Search</button>
+          <button className="btn btn-primary mr-2">Search</button>
         </div>
       </form>
       {open && (

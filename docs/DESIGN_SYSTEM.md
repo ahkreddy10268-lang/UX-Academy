@@ -1,4 +1,12 @@
-# Design system — v3 "Pastel Editorial Workspace"
+# Design system — v4 "Monochrome Editorial Workspace"
+
+> **v4 (2026-11-09, D-097).** The live, maintained documentation of the system is now the site itself: **/system** (foundations, components and patterns with anatomy, states, usage, accessibility and live examples rendered from the real classes; content in `content/system/docs.ts`). This file keeps the history and the reasoning.
+>
+> What changed from v3: a near-monochrome palette (warm off-white paper `#f4f3ef`, ink `#15161b`, blue accent `#255a8c` only for links, focus and selection) replaces the cool canvas and indigo action colour; **primary buttons are ink**; all titles are Plex Sans (Newsreader kept for long reading and quotes); labels and metadata are Plex Mono uppercase; display sizes follow a perfect fourth (21, 28, 38, 51 px); radii are smaller (4–18 px); subject colour appears as a dot, a thin header or callout rule and in illustrations, no longer as whole pastel panels; hover darkens borders. One button family (`.btn-*`) and one field family (`.field`) replace the ad-hoc utility strings that had drifted across 28 controls. Contrast of every text token on every surface and wash in both themes still passes tests/tokens.test.ts. The visual direction studied Laws of UX (IBM Plex type pairing, mono metadata, quiet borders) without copying it.
+
+---
+
+## v3 "Pastel Editorial Workspace" (history)
 
 _v3, 2026-11-03. Supersedes the v1 "rubric" system and the v2 additions. History is in DECISION_LOG D-014 → D-017 → D-026…D-033._
 

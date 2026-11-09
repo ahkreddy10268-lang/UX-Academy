@@ -80,7 +80,7 @@ export function Dashboard({ meta, paths, questionEntry }: { meta: Record<string,
             ["Notes", notes.length, "cat-teal"],
           ] as const
         ).map(([k, v, cat]) => (
-          <div key={k} className={`${cat} rounded-lg bg-c-wash p-4`}>
+          <div key={k} className={`${cat} rounded-lg border border-rule border-t-[3px] border-t-c bg-surface p-4`}>
             <dt className="text-xs font-semibold text-c-ink">{k}</dt>
             <dd className="t-page tabular mt-1 text-3xl text-ink">{v}</dd>
           </div>
@@ -213,7 +213,7 @@ export function Dashboard({ meta, paths, questionEntry }: { meta: Record<string,
             Notes
           </h2>
           {notes.length > 0 && (
-            <button type="button" onClick={exportNotes} className="h-9 rounded-sm border border-line-control bg-surface px-3 text-sm font-medium hover:border-ink-3">
+            <button type="button" onClick={exportNotes} className="btn btn-secondary btn-sm">
               Export notes as Markdown
             </button>
           )}
@@ -325,10 +325,10 @@ export function Dashboard({ meta, paths, questionEntry }: { meta: Record<string,
           Stored in this browser&apos;s local storage only. Export a JSON backup to keep it safe or move it to another browser; importing replaces what is here.
         </p>
         <div className="mt-4 flex flex-wrap gap-3">
-          <button type="button" onClick={() => download(`ux-academy-backup-${new Date().toISOString().slice(0, 10)}.json`, exportJson(), "application/json")} className="h-10 rounded-sm bg-accent px-4 text-sm font-medium text-surface">
+          <button type="button" onClick={() => download(`ux-academy-backup-${new Date().toISOString().slice(0, 10)}.json`, exportJson(), "application/json")} className="btn btn-primary">
             Export backup (JSON)
           </button>
-          <button type="button" onClick={() => fileInput.current?.click()} className="h-10 rounded-sm border border-rule px-4 text-sm font-medium hover:border-rule-strong">
+          <button type="button" onClick={() => fileInput.current?.click()} className="btn btn-secondary">
             Import backup…
           </button>
           <input

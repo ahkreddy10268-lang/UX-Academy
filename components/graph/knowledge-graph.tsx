@@ -106,7 +106,7 @@ export function KnowledgeGraph({ nodes, edges, domains }: { nodes: GNode[]; edge
         <div className="mb-3 flex flex-wrap items-end gap-4 text-sm">
           <label className="font-medium">
             Focus on
-            <select className="mt-1 block h-9 rounded-sm border border-line-control bg-surface px-2" value={focus ?? ""} onChange={(e) => setFocus(e.target.value || null)}>
+            <select className="field mt-1" value={focus ?? ""} onChange={(e) => setFocus(e.target.value || null)}>
               <option value="">— nothing selected —</option>
               {nodes
                 .filter((n) => !n.planned)
@@ -120,7 +120,7 @@ export function KnowledgeGraph({ nodes, edges, domains }: { nodes: GNode[]; edge
           </label>
           <label className="font-medium">
             Subject
-            <select className="mt-1 block h-9 rounded-sm border border-line-control bg-surface px-2" value={domain} onChange={(e) => setDomain(e.target.value)}>
+            <select className="field mt-1" value={domain} onChange={(e) => setDomain(e.target.value)}>
               <option value="">All</option>
               {domains.map((d) => (
                 <option key={d.id} value={d.id}>

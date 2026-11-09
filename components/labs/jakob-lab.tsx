@@ -124,7 +124,7 @@ export function JakobLab() {
             {trial && `Trial ${index + 1} of ${queue.length}${practice ? " · practice" : ""} · find “${trial.target}”`}
             {done && "Finished. Your results are below."}
           </p>
-          <button type="button" onClick={start} className="h-9 rounded-sm bg-accent px-4 text-sm font-medium text-surface hover:bg-accent-ink">
+          <button type="button" onClick={start} className="btn btn-primary">
             {index < 0 ? "Start" : "Restart"}
           </button>
         </div>
@@ -154,7 +154,7 @@ export function JakobLab() {
                 <p className="mb-3 text-sm text-ink-2">
                   Next: find <strong className="text-ink">“{trial.target}”</strong>
                 </p>
-                <button type="button" onClick={begin} className="h-10 rounded-sm border border-line-control bg-surface px-4 text-sm font-medium hover:border-ink-3">
+                <button type="button" onClick={begin} className="btn btn-secondary">
                   Start trial
                 </button>
               </div>

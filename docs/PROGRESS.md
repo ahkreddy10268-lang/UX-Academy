@@ -1,6 +1,6 @@
 # Progress register
 
-_Last updated: 2026-11-06 (session 22 — the foundational Design System entry, its visuals and the revised Design Systems path)_
+_Last updated: 2026-11-09 (session 23 — site-wide redesign v4, AI UX pattern library, design-system docs, resources, learning areas)_
 
 ## State
 
@@ -312,7 +312,7 @@ Generated result: 74 plates — 14 in the current system, 60 in the earlier past
 
 Verified: check (219 tests, typecheck, lint); docs:generate; build; atlas 36/36; e2e 42/42; e2e-redesign 66/66; keyboard 45/45; devices 155/155; crawl 0 problem pages; axe on the eight entry pages and /library: 0 violations. Rendered: each plate at card and hero size in both page themes, and the hero inside the app at 1440, 1024, 820 and 390 px in both themes. Known limit: on a 390 px phone the smallest plate text renders at about 4–4.5 CSS px (also true of the pilots); see ILLUSTRATION_SYSTEM § Replacements accepted. Not done: real devices and screen readers; Level-2 restyling.
 
-## Session 22 — Design System entry (uncommitted; awaiting owner review)
+## Session 22 — Design System entry (committed 52408f4)
 
 Inspected first: git state (clean, in sync with origin at c35177d), the schema and completeness gates, the Design Tokens and Fitts entries, the source registry, the visual registry and Level-2 API, and the tests. Confirmed from the live repository: slug `design-system`, type `concept`, domain `design-systems`, subcategory `foundations`; `design-tokens` published; path id `design-systems`; visual category `design-systems`; taxonomy frozen and unchanged.
 
@@ -321,6 +321,22 @@ Researched (pages read first-hand on 2026-11-06): GOV.UK Design System (home; pr
 Done (D-094…D-096): `content/knowledge/design-systems/design-system.ts` (three levels; architecture, foundations, components as contracts, patterns and templates, documentation, governance and contribution, lifecycle and versioning, tooling, multi-brand and cross-platform, adoption and measurement, when not to build one; Harbourline illustrative worked example; quiz ×9, 3 per level; exercises ×4 with criteria and model answers; flashcards ×10; 19 relations; evidence `practitioner-recommendation`). Sources fragment `content/sources/design-systems.ts` (5 added, URLs verified). Plate `design-system` (viz) and Level-2 figures `design-system.architecture` and `design-system.contribution` (viz); no Level 3. Path `design-systems` reordered with the entry first (id, earlier steps and practice kept). Visual documentation reconciled with D-089.
 
 Generated result: 52 published entries (9.3%); 75 plates, 15 in the current system; 23 Level-2 figures; Design Systems illustration category moved from weak to developing; the entry's maturity is complete in explanation, evidence, practice and editorial, developing in visual (no Level 3, by decision).
+
+## Session 23 — site-wide redesign v4 and new reference sections (uncommitted; awaiting owner review)
+
+Inspected once: routes, shell, tokens, button and field usage (28 ad-hoc controls), concept template; Laws of UX's stylesheet (IBM Plex Sans + Mono, perfect-fourth scale, off-white/ink palette, quiet borders) and the structure of AX Patterns, UX4G and Uxcel. Research read first-hand for the AI library: Microsoft HAX Toolkit, Apple HIG generative AI (Markdown version), Carbon for AI, Cloudscape generative-AI loading states and follow-up questions, AX Patterns home.
+
+Done (D-097…D-100):
+- **Design system v4** in app/globals.css (palette both themes, type scale, radii, shadows, mono labels, sans titles, `.btn`/`.field`/`.subject-tag`), shared components restyled at the source (PageHeader, concept and lesson headers, callouts, cards, tags, My Learning tiles), 28 controls converted to the shared classes. Token contrast gate passes.
+- **Navigation** regrouped (Learn · Practise · Reference · Explore · Personal · About) with two new icons in the existing family.
+- **AI UX pattern library** `/ai` + `/ai/[id]`: 7 moments, 23 patterns, 7 interactive demos (`components/ai/demos.tsx`), 6 sources added and verified (`content/sources/ai-ux.ts`); `ai-ux` path stages link to patterns.
+- **Design-system documentation** `/system` + `/system/[section]/[id]`: 24 documents with live examples; shared `DocLayout` and documentation blocks (`components/ui/doc-layout.tsx`).
+- **Resources** `/sources` grouped by kind with jump links.
+- **Learning areas** (A–L) and the core curriculum sequence on `/learn` (`content/learning-areas.ts`); path stages can carry reference links (schema `links`, tested).
+- **Concept template**: Practical checklist section and On this page entries.
+- Tests: `tests/ai.test.ts` (library integrity, path links, learning areas); `tests/atlas.test.ts` nav expectation updated for the regrouped Explore group.
+
+Verified: npm run check (all tests, typecheck, lint); build (934 pages); atlas, e2e, e2e-redesign, keyboard, devices, crawl all passing; axe 0 violations on 15 routes in both themes; 22/22 scripted demo interactions; screenshots of all route types at 1440 and 390 px in both themes without overflow or page errors. Not done: real devices and screen readers; the remaining pastel-era illustrations keep their own washes (by design, migrated per figure).
 
 ## Next task (precise)
 Write `atomic-design` (methodology; Frost 2016 is in the registry) or `semantic-tokens`, the next Tier 5 entries, so the path's second and third stages gain published lessons; separately, the illustration work still open from session 21: decide the sheet kit's minimum phone text size (recompose, do not scale) and apply it to the current plates; restyle the pilots' Level-2 figures; migrate the "refine" plates one at a time in learning-path order.

@@ -135,7 +135,7 @@ export function SteeringLab() {
             {running && `Tunnel ${index + 1} of ${queue.length} · A = ${A} px, W = ${W} px · ID = ${(A / W).toFixed(1)}`}
             {done && "Finished — your results are below."}
           </p>
-          <button type="button" onClick={start} className="h-9 rounded-sm bg-accent px-4 text-sm font-medium text-surface hover:bg-accent-ink">
+          <button type="button" onClick={start} className="btn btn-primary">
             {index < 0 ? "Start" : "Restart"}
           </button>
         </div>

@@ -66,7 +66,7 @@ export default async function PathPage({ params }: PageProps<"/learn/[id]">) {
           <PathProgress steps={written} />
         </div>
         {firstLesson && (
-          <Link href={`/learn/${p.id}/lesson/${firstLesson}`} className="mt-6 inline-flex h-11 items-center rounded-sm bg-accent px-5 font-medium text-surface hover:bg-accent-ink">
+          <Link href={`/learn/${p.id}/lesson/${firstLesson}`} className="btn btn-primary btn-lg mt-6">
             Start with lesson 1
           </Link>
         )}
@@ -168,6 +168,19 @@ export default async function PathPage({ params }: PageProps<"/learn/[id]">) {
                           </li>
                         )}
                       </ul>
+                      {s.links.length > 0 && (
+                        <p className="border-t border-rule px-5 py-3 text-sm">
+                          <span className="label mr-2">Reference</span>
+                          {s.links.map((l, i) => (
+                            <span key={l.href}>
+                              {i > 0 && " · "}
+                              <Link className="link" href={l.href}>
+                                {l.label}
+                              </Link>
+                            </span>
+                          ))}
+                        </p>
+                      )}
                       {s.practice.length > 0 && (
                         <p className="border-t border-rule px-5 py-3 text-sm">
                           <span className="label mr-2">Practise</span>

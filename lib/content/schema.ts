@@ -470,12 +470,15 @@ export const learningPathSchema = z.object({
         description: z.string(),
         steps: z.array(slug).min(1), // entry slugs or planned taxonomy slugs
         practice: z.array(z.string()).default([]), // lab ids, workshop ids
+        /** Reference pages for the stage inside the site: AI patterns (/ai/…) or design-system docs (/system/…). Validated by tests. */
+        links: z.array(z.object({ href: z.string().regex(/^\/(ai|system)\//), label: z.string() })).default([]),
       }),
     )
     .min(1),
   completion: z.array(z.string()).min(1),
 });
 export type LearningPath = z.infer<typeof learningPathSchema>;
+export type LearningPathInput = z.input<typeof learningPathSchema>;
 
 export const comparisonSchema = z.object({
   id: slug,

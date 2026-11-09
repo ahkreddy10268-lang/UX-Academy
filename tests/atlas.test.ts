@@ -139,7 +139,8 @@ describe("Navigation: Domains & Topics", () => {
     const explore = navGroups.find((g) => g.id === "explore")!;
     expect(explore.items[0]).toBe(atlasItem);
     expect(atlasItem.href).toBe("/topics");
-    expect(explore.items.map((i) => i.label)).toEqual(["Domains & Topics", "Graph", "Glossary"]);
+    // D-100: Glossary moved to the Reference group with Design System, Resources and Comparisons.
+    expect(explore.items.map((i) => i.label)).toEqual(["Domains & Topics", "Graph"]);
   });
 
   it("activates for /topics and domain pages, while /library activates the Library", () => {

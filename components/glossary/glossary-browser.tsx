@@ -22,7 +22,7 @@ export function GlossaryBrowser({ items }: { items: GlossaryItem[] }) {
           <label htmlFor={id} className="sr-only">
             Filter terms
           </label>
-          <input id={id} type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="Filter terms and definitions…" className="h-10 w-full max-w-xs rounded-sm border border-line-control bg-surface px-3" />
+          <input id={id} type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="Filter terms and definitions…" className="field w-full max-w-xs" />
           <nav aria-label="Letters" className="flex flex-wrap gap-0.5">
             {[...groups.keys()].map((k) => (
               <a key={k} href={`#letter-${k}`} className="formula inline-flex h-8 w-8 items-center justify-center rounded-xs text-sm text-ink-2 hover:bg-sunken hover:text-ink">

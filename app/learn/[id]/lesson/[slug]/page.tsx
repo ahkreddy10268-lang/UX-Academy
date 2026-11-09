@@ -80,7 +80,7 @@ export default async function LessonPage({ params }: PageProps<"/learn/[id]/less
       </Container>
 
       <Container className="pb-10 pt-6">
-        <div className="grid items-center gap-8 rounded-2xl bg-c-wash p-5 sm:p-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)] lg:gap-12">
+        <div className="relative grid items-center gap-8 overflow-hidden rounded-2xl border border-rule bg-surface p-5 shadow-card sm:p-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)] lg:gap-12">
         <div className="min-w-0">
           <p className="label !text-c-ink">
             Lesson {index + 1} of {lessons.length} · Level {stageIndex + 1} · {DIFFICULTY_LABEL[level]} — {LEVEL_PURPOSE[level]}
