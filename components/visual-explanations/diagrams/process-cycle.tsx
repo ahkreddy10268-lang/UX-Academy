@@ -83,7 +83,7 @@ export function ProcessCycle({ entry, activities, hub, decision, footer }: { ent
         <li className="@3xl:col-start-1 @3xl:row-start-3">
           <Activity a={a4} n={4} />
         </li>
-        <li aria-hidden className={`${ring} @3xl:col-start-1 @3xl:row-start-2 flex-col gap-0.5 py-1 text-[11px] font-medium text-accent-ink`}>
+        <li aria-hidden className={`${ring} @3xl:col-start-1 @3xl:row-start-2 flex-col gap-0.5 py-1 text-xs font-medium text-accent-ink`}>
           <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" strokeDasharray="3 3">
             <path d="M12 21V4M6 10l6-6 6 6" />
           </svg>

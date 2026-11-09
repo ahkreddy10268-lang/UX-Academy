@@ -1,5 +1,33 @@
 # Visual QA log
 
+## 2026-11-09 — session 25: Level-1 migration and Level-2 completion
+
+### Method
+- Rendered every migrated plate at card and hero size in light and dark page themes with `scripts/render-plates.tsx` (58 plates in eleven render batches, re-rendered after each fix) and inspected each contact sheet.
+- Measured every hero `<text>` on the built site (computed size × SVG scale) for all 52 entry pages and 20 subject pages at 390 and 1440 px.
+- Captured and measured the 13 newly restyled Level-2 figures and the 3 re-wrapped ones at 390, 820, 1024 and 1440 px in both themes (128 screenshots), plus hero-with-key screenshots for ten pages at 390 and 1440 in both themes (40). Screenshots stay in the session scratchpad.
+
+### Measured
+| | Result |
+|---|---|
+| Current-language plates in the app, smallest text at 390 px | 10.2 px (all 70 hero plates shown on entry and subject pages) |
+| Same at 1440 px | 14.7 px or more |
+| Retained earlier-style plates at 390 px | 7.9 px (confidence intervals), 8.6 px (serial position effect): known limit |
+| Level-2 figures, smallest label | 12 px at every width and theme; mock interface copy 11 px |
+
+### Problems found and fixed (examples)
+- Overlaps found only in renders: working-memory and long-term-memory labels touching (CLT), markers placed in frame coordinates rather than page coordinates (Nielsen, golden rules), a severity marker on a scale box (heuristic evaluation), a field label colliding with a dialog title and a button overflowing its frame (progressive disclosure), axis labels over tick labels (Hick, choice overload), crowded type-scale labels, a reading path crossing text (visual hierarchy), text overflowing cells (HEART, JTBD), a site map running off the canvas (IA subject).
+- Meaning problems: step circles in the cognitive-walkthrough plate looked like key markers (now squares); a monotone dot spread in the choice-overload plate read as a trend (reordered); response-pill labels misaligned.
+- Missing key: subject pages showed markers without a key (key added); the 404 page now uses the marker-free card variant.
+
+### Automated results (final build)
+- `npm run check`: 386 tests (plate-text covers every sheet and viz plate; new sample-token and figure-language tests), typecheck, lint.
+- Browser: e2e 42/42, e2e-redesign 66/66, keyboard 45/45, devices 155/155, atlas 36/36, crawl 0 problem pages.
+- axe-core on 27 routes in light and dark (home, library, 15 entry pages including planned topics, 6 subject pages, a lesson, /system, /ai, the 404 page): 0 violations.
+
+### Could not be tested
+- Real phones and tablets (emulation only) and real screen readers. Figure keys, marker prefixes and reading order were checked in the DOM only.
+
 ## 2026-11-09 — session 24: figure readability and Level-2 languages
 
 ### Method

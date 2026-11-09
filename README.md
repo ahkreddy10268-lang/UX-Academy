@@ -22,6 +22,7 @@ npm run build && npm start
 | Area | Route | What it does |
 |---|---|---|
 | Library | `/library`, `/library/[slug]` | 52 published entries of 558 taxonomy topics (10 more addressed within other entries, 496 planned); full-text search, filters, A–Z. Live figures: `docs/CONTENT_COVERAGE.md` |
+| Visuals | entry, subject and lesson pages | 75 Level-1 plates (73 on the current instructional or technical canvas, 2 earlier-style retained); every current plate has a numbered figure key; 23 Level-2 explanations; 9 explorers. Live figures: `docs/ILLUSTRATION_COVERAGE.md` |
 | Domains & Topics (Knowledge Atlas) | `/topics`, `/topics/[domain]` | The whole frozen taxonomy v1.0 (docs/CONTENT_AUDIT.md § 7) as an expandable directory of every domain, subcategory and topic with its computed status; search including aliases, status/type/domain filters, shareable `?q=&status=&type=&domain=`; per-domain subject pages |
 | Learn | `/learn`, `/learn/[id]` | 16 learning paths, beginner → advanced |
 | Formula Lab | `/formulas`, `/formulas/[id]` | 25 documented formulas with unit-tested calculators |

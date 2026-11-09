@@ -65,3 +65,8 @@ Every Level-2 figure has: a figure type and method; a clear title; a one-sentenc
 - Declare `language` in the registry: `sheet` (anatomy, measurement, comparison) or `viz` (process, system, architecture). Do not add colours inside a figure to compensate; `.fig-viz` remaps the tokens.
 - The formula-anatomy template sets the expression at 16 px on phones so it does not break across lines, and stacks symbol and meaning below `@md`.
 - Verify by measurement (computed size × SVG scale) and by screenshot at 390, 820, 1024 and 1440 in both themes. Compiling is not visual QA.
+
+## Session 25 additions
+
+- Every Level-2 figure declares `language`; do not draw a dark panel inside a figure body, `.fig-viz` provides the canvas.
+- Inside an SVG chart that sits in a two-column comparison, size text for the narrowest column at every breakpoint (the split-attention chart needed 16 units at 1024 px, where the columns are narrowest).

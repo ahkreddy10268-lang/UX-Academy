@@ -19,13 +19,13 @@ function CapacityBar({ who, load, note }: { who: string; load: Load; note: strin
         <span className="text-ink-3">{note}</span>
       </p>
       <div className="mt-1.5 flex h-7 overflow-hidden rounded-md ring-1 ring-rule" role="img" aria-label={`${who}: intrinsic load ${load.intrinsic}%, extraneous load ${load.extraneous}%, ${free}% capacity left for learning (illustrative proportions).`}>
-        <span className="flex items-center justify-center bg-c-ink text-[11px] font-semibold text-surface" style={{ width: `${load.intrinsic}%` }}>
+        <span className="flex items-center justify-center bg-c-ink text-xs font-semibold text-surface" style={{ width: `${load.intrinsic}%` }}>
           1
         </span>
-        <span className="hatch-extraneous flex items-center justify-center text-[11px] font-semibold text-ink" style={{ width: `${load.extraneous}%` }}>
+        <span className="hatch-extraneous flex items-center justify-center text-xs font-semibold text-ink" style={{ width: `${load.extraneous}%` }}>
           2
         </span>
-        <span className="flex items-center justify-center bg-surface text-[11px] font-semibold text-ink-3" style={{ width: `${free}%` }}>
+        <span className="flex items-center justify-center bg-surface text-xs font-semibold text-ink-3" style={{ width: `${free}%` }}>
           3
         </span>
       </div>
@@ -47,10 +47,10 @@ export function CltArchitecture() {
           <div className="mt-3 space-y-3">
             <CapacityBar who="Novice" load={{ intrinsic: 55, extraneous: 35 }} note="same screen" />
             <CapacityBar who="Expert" load={{ intrinsic: 20, extraneous: 35 }} note="schemas chunk the elements" />
-            <p className="text-[11px] leading-snug text-ink-2">Extraneous load is drawn the same for both. In practice it can differ: guidance that helps a novice can burden an expert (expertise reversal).</p>
+            <p className="text-xs leading-snug text-ink-2">Extraneous load is drawn the same for both. In practice it can differ: guidance that helps a novice can burden an expert (expertise reversal).</p>
           </div>
         </div>
-        <span className="flex flex-col items-center gap-1 text-[11px] font-medium text-ink-3">
+        <span className="flex flex-col items-center gap-1 text-xs font-medium text-ink-3">
           <FlowArrow turn="@4xl:rotate-0" />
           <span className="text-center @4xl:max-w-20">schemas built · schemas retrieved</span>
         </span>
@@ -60,9 +60,9 @@ export function CltArchitecture() {
       </div>
       <Legend
         items={[
-          { key: <span className="inline-flex h-5 w-7 items-center justify-center rounded-xs bg-c-ink text-[11px] font-semibold text-surface">1</span>, label: <><strong className="text-ink">Intrinsic load</strong>: set by element interactivity relative to what the person already knows.</> },
-          { key: <span className="hatch-extraneous inline-flex h-5 w-7 items-center justify-center rounded-xs text-[11px] font-semibold text-ink ring-1 ring-rule">2</span>, label: <><strong className="text-ink">Extraneous load</strong>: imposed by presentation, the part design can remove.</> },
-          { key: <span className="inline-flex h-5 w-7 items-center justify-center rounded-xs bg-surface text-[11px] font-semibold text-ink-3 ring-1 ring-rule">3</span>, label: <><strong className="text-ink">Remaining capacity</strong>: available for understanding. The revised theory treats &ldquo;germane&rdquo; processing as these resources, not a third load.</> },
+          { key: <span className="inline-flex h-5 w-7 items-center justify-center rounded-xs bg-c-ink text-xs font-semibold text-surface">1</span>, label: <><strong className="text-ink">Intrinsic load</strong>: set by element interactivity relative to what the person already knows.</> },
+          { key: <span className="hatch-extraneous inline-flex h-5 w-7 items-center justify-center rounded-xs text-xs font-semibold text-ink ring-1 ring-rule">2</span>, label: <><strong className="text-ink">Extraneous load</strong>: imposed by presentation, the part design can remove.</> },
+          { key: <span className="inline-flex h-5 w-7 items-center justify-center rounded-xs bg-surface text-xs font-semibold text-ink-3 ring-1 ring-rule">3</span>, label: <><strong className="text-ink">Remaining capacity</strong>: available for understanding. The revised theory treats &ldquo;germane&rdquo; processing as these resources, not a third load.</> },
         ]}
       />
       <p className="text-xs text-ink-3">A conceptual model of the theory&apos;s assumptions, not a diagram of the brain. Bar proportions are illustrative; the theory does not measure load in units.</p>
@@ -82,7 +82,7 @@ function Chart({ labelled }: { labelled: boolean }) {
         <g key={s.name}>
           <path d={s.d} fill="none" stroke={i === 0 ? "var(--c)" : "var(--ink-2)"} strokeWidth={2.5} strokeDasharray={i === 0 ? undefined : "5 4"} strokeLinecap="round" />
           {labelled && (
-            <text x={266} y={s.y + 4} fontSize="11" fill="var(--ink)" fontFamily="var(--font-plex-sans), sans-serif">
+            <text x={266} y={s.y + 5} fontSize="16" fontWeight={600} fill="var(--ink)" fontFamily="var(--font-plex-sans), sans-serif">
               {s.name}
             </text>
           )}
@@ -90,13 +90,13 @@ function Chart({ labelled }: { labelled: boolean }) {
       ))}
       {!labelled && (
         <g>
-          <rect x={286} y={20} width={66} height={44} rx={5} fill="var(--soft)" stroke="var(--rule-strong)" />
-          <line x1={292} y1={34} x2={308} y2={34} stroke="var(--c)" strokeWidth={2.5} />
-          <text x={312} y={38} fontSize="10" fill="var(--ink)" fontFamily="var(--font-plex-sans), sans-serif">
+          <rect x={272} y={14} width={84} height={56} rx={5} fill="var(--soft)" stroke="var(--rule-strong)" />
+          <line x1={278} y1={33} x2={294} y2={33} stroke="var(--c)" strokeWidth={2.5} />
+          <text x={298} y={38} fontSize="16" fill="var(--ink)" fontFamily="var(--font-plex-sans), sans-serif">
             Search
           </text>
-          <line x1={292} y1={52} x2={308} y2={52} stroke="var(--ink-2)" strokeWidth={2.5} strokeDasharray="5 4" />
-          <text x={312} y={56} fontSize="10" fill="var(--ink)" fontFamily="var(--font-plex-sans), sans-serif">
+          <line x1={278} y1={55} x2={294} y2={55} stroke="var(--ink-2)" strokeWidth={2.5} strokeDasharray="5 4" />
+          <text x={298} y={60} fontSize="16" fill="var(--ink)" fontFamily="var(--font-plex-sans), sans-serif">
             Browse
           </text>
         </g>

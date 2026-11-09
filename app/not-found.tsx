@@ -21,7 +21,7 @@ export default function NotFound() {
         </p>
       </div>
       <figure className="overflow-hidden rounded-sm border border-rule">
-        <ConceptIllustration slug="ia" title="Information architecture" domain="ia" variant="hero" />
+        <ConceptIllustration slug="ia" title="Information architecture" domain="ia" variant="card" />
       </figure>
     </Container>
   );

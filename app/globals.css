@@ -538,6 +538,19 @@ textarea {
   --ill-good: var(--ok);
 }
 
+/* Illustration samples (D-106): fixed sRGB values that a figure measures and
+   prints, such as the two greys whose contrast ratio the colour-contrast plate
+   computes with lib/formulas. Theme-independent on purpose, because the
+   printed ratio must stay true; never used for interface text or surfaces.
+   Kept equal to CONTRAST_SAMPLES in components/illustrations/concepts/
+   learning-sheets.tsx (tests/tokens.test.ts). */
+:root {
+  /* Illustration samples */
+  --sample-white: #ffffff;
+  --sample-grey-pass: #767676;
+  --sample-grey-fail: #949494;
+}
+
 /* Visualisation canvas — dark technical editorial (illustration v6, D-086).
    The same values in both themes on purpose: knowledge figures keep one dark
    canvas while the application keeps its light and dark themes. Text roles are

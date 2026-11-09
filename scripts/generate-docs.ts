@@ -157,9 +157,8 @@ console.log("docs/KNOWLEDGE_TAXONOMY.md, docs/RESEARCH_SOURCES.md, docs/CONTENT_
     const lab = entries.find((e) => e.slug === p.slug)?.lab;
     md += `| \`${p.slug}\` | ${kind} | ${v?.category ?? "—"} | ${v?.method ?? "—"} | ${style(p.canvas)} | ${v?.review ?? "—"} | ${(v?.note ?? "").replace(/\|/g, "/")} | ${l2} | ${[p.explorer, lab].filter(Boolean).join(", ") || "—"} |\n`;
   }
-  // Language of a Level-2 figure: the registry's `language` (D-102); the accessibility and design-system figures draw their own viz panels inside the component.
-  const OWN_VIZ = new Set(["accessibility-concept", "design-system"]);
-  const l2Lang = (v: (typeof visualExplanations)[number]) => v.language ?? (OWN_VIZ.has(v.slug) ? "viz (own panel)" : "workspace (not yet restyled)");
+  // Language of a Level-2 figure: the registry's `language` (D-102).
+  const l2Lang = (v: (typeof visualExplanations)[number]) => v.language ?? "workspace (not yet restyled)";
   const l2Current = visualExplanations.filter((v) => !l2Lang(v).startsWith("workspace")).length;
   md += `\n## Level 2 figures\n\n${l2Current} of ${visualExplanations.length} Level-2 figures are drawn in a current language (sheet or viz).\n\n| Figure | Type | Method | Language | Verification |\n|---|---|---|---|---|\n`;
   for (const v of visualExplanations) md += `| \`${v.id}\` | ${v.type} | ${v.method ?? METHOD_FOR_TYPE[v.type]} | ${l2Lang(v)} | ${v.verification} |\n`;

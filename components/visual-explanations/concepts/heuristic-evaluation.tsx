@@ -18,7 +18,7 @@ function Problems({ found }: { found: string[] }) {
       {ALL.map((p) => {
         const on = found.includes(p);
         return (
-          <li key={p} className={`formula rounded-xs px-1.5 py-0.5 text-[11px] ${on ? "bg-c-ink text-surface" : "border border-dashed border-planned-line text-ink-3"}`}>
+          <li key={p} className={`formula rounded-xs px-1.5 py-0.5 text-xs ${on ? "bg-c-ink text-surface" : "border border-dashed border-planned-line text-ink-3"}`}>
             {p}
             <span className="sr-only">{on ? " found" : " missed"}</span>
           </li>

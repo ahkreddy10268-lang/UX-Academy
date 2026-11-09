@@ -40,9 +40,9 @@ function SocialVisual() {
         <g key={i} transform={`translate(${4 + i * 39} 4)`}>
           <rect width={34} height={30} rx={2.5} fill="var(--viz-surface-2)" stroke="var(--viz-edge)" strokeWidth={0.8} {...stroke} />
           <path d="M13 9 L22 14.5 L13 20 Z" fill="var(--viz-edge-hi)" />
-          <rect x={4} y={24} width={18} height={3} rx={1.5} fill="var(--viz-text-2)" />
-          <rect x={24} y={22.5} width={7} height={6} rx={1.2} fill="var(--viz-positive-soft)" stroke="var(--viz-positive)" strokeWidth={0.8} {...stroke} />
-          <text x={27.5} y={27} textAnchor="middle" fontSize={4} fontWeight={700} fill="var(--viz-positive)" fontFamily="var(--font-plex-mono), monospace">
+          <rect x={4} y={24} width={13} height={3} rx={1.5} fill="var(--viz-text-2)" />
+          <rect x={20} y={21} width={12} height={8.5} rx={1.4} fill="var(--viz-positive-soft)" stroke="var(--viz-positive)" strokeWidth={0.8} {...stroke} />
+          <text x={26} y={27.4} textAnchor="middle" fontSize={6} fontWeight={700} fill="var(--viz-positive)" fontFamily="var(--font-plex-mono), monospace">
             CC
           </text>
         </g>
@@ -74,7 +74,7 @@ function IcfVisual() {
       {n.map(([x, y, t, hi]) => (
         <g key={t}>
           <circle cx={x} cy={y} r={3.4} fill={hi ? "var(--viz-accent)" : "var(--viz-surface-3)"} stroke={hi ? "var(--viz-accent)" : "var(--viz-edge-hi)"} strokeWidth={0.8} {...stroke} />
-          <text x={x} y={y + (y > 20 ? 10 : 9.5)} textAnchor="middle" fontSize={5.2} fill={hi ? "var(--viz-accent)" : "var(--viz-text-3)"} fontFamily="var(--font-plex-mono), monospace">
+          <text x={x} y={y + (y > 20 ? 10 : 9.5)} textAnchor="middle" fontSize={5.8} fill={hi ? "var(--viz-accent)" : "var(--viz-text-3)"} fontFamily="var(--font-plex-mono), monospace">
             {t}
           </text>
         </g>
@@ -179,12 +179,12 @@ export function DisabilityPerspectives() {
         Simplified for comparison: not a complete history of disability theory, and the perspectives overlap in practice.
       </p>
 
-      <div className="viz-panel rounded-xl border border-viz-edge bg-viz-bg p-4 text-viz-text sm:p-6">
+      <div className="text-viz-text">
         {/* Scenario */}
         <section aria-labelledby="dp-scenario" className="relative">
           <div className="relative mb-3 px-3 py-2 @4xl:absolute @4xl:left-0 @4xl:top-1 @4xl:mb-0 @4xl:w-44">
             <Brackets />
-            <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-viz-text-2">Scenario · illustrative</p>
+            <p className="font-mono text-[12px] uppercase tracking-[0.12em] text-viz-text-2">Scenario · illustrative</p>
             <p className="mt-1 text-xs text-viz-text-2">A deaf student cannot follow the recordings.</p>
           </div>
           <div className="mx-auto max-w-sm rounded-lg border border-viz-edge bg-viz-surface-2 p-3 shadow-[0_8px_24px_var(--viz-shadow)]">
@@ -193,7 +193,7 @@ export function DisabilityPerspectives() {
                 <svg viewBox="0 0 24 24" className="h-5 w-5">
                   <path d="M9 7 L17 12 L9 17 Z" fill="var(--viz-edge-hi)" />
                 </svg>
-                <span className="absolute bottom-1 right-1 rounded-sm border border-dashed border-viz-warning px-1 font-mono text-[9px] font-bold leading-tight text-viz-warning line-through">CC</span>
+                <span className="absolute bottom-1 right-1 rounded-sm border border-dashed border-viz-warning px-1 font-mono text-[12px] font-bold leading-tight text-viz-warning line-through">CC</span>
                 <span className="absolute bottom-1.5 left-1.5 h-0.5 w-10 rounded-full bg-viz-edge-hi" />
               </div>
               <div className="min-w-0">
@@ -222,21 +222,21 @@ export function DisabilityPerspectives() {
                   </span>
                   <span className="t-sub text-sm leading-snug text-viz-text">{l.name}</span>
                 </h4>
-                <p className="mt-1 pl-8 font-mono text-[11px] text-viz-text-3">{l.origin}</p>
+                <p className="mt-1 pl-8 font-mono text-[12px] text-viz-text-3">{l.origin}</p>
               </div>
               <div className="p-3.5">
-                <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-viz-text-3">Question it asks</p>
+                <p className="font-mono text-[12px] uppercase tracking-[0.12em] text-viz-text-3">Question it asks</p>
                 <p className="mt-1 text-[15px] font-semibold leading-snug text-viz-text">{l.question}</p>
                 <div className="mt-3 rounded-md border border-viz-edge-soft bg-viz-bg p-2">{l.visual}</div>
                 <p className="mt-2 text-sm text-viz-text-2">
-                  <span className="font-mono text-[10px] uppercase tracking-[0.12em] text-viz-text-3">Response · </span>
+                  <span className="font-mono text-[12px] uppercase tracking-[0.12em] text-viz-text-3">Response · </span>
                   {l.response}
                 </p>
               </div>
               <dl className="mt-auto border-t border-viz-edge-soft px-3.5 py-3">
                 {ASPECTS.map((a, i) => (
                   <div key={a} className={`py-1.5 ${i ? "border-t border-viz-edge-soft" : ""}`}>
-                    <dt className={`font-mono text-[10px] uppercase tracking-[0.1em] ${i === 4 ? "text-viz-warning" : "text-viz-text-3"}`}>
+                    <dt className={`font-mono text-[12px] uppercase tracking-[0.1em] ${i === 4 ? "text-viz-warning" : "text-viz-text-3"}`}>
                       {i + 1} · {a}
                     </dt>
                     <dd className="mt-0.5 text-[13px] leading-snug text-viz-text-2">{l.rows[i]}</dd>
@@ -253,7 +253,7 @@ export function DisabilityPerspectives() {
         {/* Rights band: a different kind of framework */}
         <section aria-labelledby="dp-rights" className="rounded-lg border border-viz-accent bg-viz-accent-soft/40 p-4 shadow-[0_0_28px_var(--viz-accent-glow)]">
           <h4 id="dp-rights" className="flex flex-wrap items-center gap-2">
-            <span className="rounded-sm border border-viz-accent px-1.5 font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-viz-accent">Not a fourth model</span>
+            <span className="rounded-sm border border-viz-accent px-1.5 font-mono text-[12px] font-semibold uppercase tracking-[0.12em] text-viz-accent">Not a fourth model</span>
             <span className="t-sub text-sm text-viz-text">Rights-based lens · UN Convention on the Rights of Persons with Disabilities (2006)</span>
           </h4>
           <p className="mt-2 text-sm text-viz-text-2">
@@ -267,7 +267,7 @@ export function DisabilityPerspectives() {
             ))}
           </ul>
           <p className="mt-3 border-t border-viz-edge-soft pt-2 text-sm text-viz-text">
-            <span className="font-mono text-[10px] uppercase tracking-[0.12em] text-viz-accent">In the scenario · </span>
+            <span className="font-mono text-[12px] uppercase tracking-[0.12em] text-viz-accent">In the scenario · </span>
             Equal access to education and information in accessible formats; reasonable accommodation, such as an interpreter for live seminars, where still needed.
           </p>
         </section>

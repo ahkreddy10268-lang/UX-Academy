@@ -10,7 +10,7 @@ import { AnnotatedInterface, Pin } from "../diagrams/annotated-interface";
 function Field({ label, tight = true }: { label: string; tight?: boolean }) {
   return (
     <div>
-      <p className={`text-[11px] font-medium text-ink-2 ${tight ? "mb-1" : "mb-3"}`}>{label}</p>
+      <p className={`text-xs font-medium text-ink-2 ${tight ? "mb-1" : "mb-3"}`}>{label}</p>
       <div className="h-7 rounded-sm border border-line-control bg-surface" />
     </div>
   );
@@ -27,8 +27,8 @@ function Checkout() {
           <span aria-hidden className="absolute left-3 right-3 top-1/2 h-0.5 -translate-y-1/2 bg-rule-strong" />
           {["Basket", "Delivery", "Pay"].map((s, i) => (
             <span key={s} className="relative flex flex-col items-center gap-1 bg-surface px-1">
-              <span className={`grid h-5 w-5 place-items-center rounded-full text-[10px] font-semibold ${i < 2 ? "bg-accent text-surface" : "border border-rule-strong bg-surface text-ink-3"}`}>{i + 1}</span>
-              <span className="text-[10px] text-ink-2">{s}</span>
+              <span className={`grid h-5 w-5 place-items-center rounded-full text-[11px] font-semibold ${i < 2 ? "bg-accent text-surface" : "border border-rule-strong bg-surface text-ink-3"}`}>{i + 1}</span>
+              <span className="text-[11px] text-ink-2">{s}</span>
             </span>
           ))}
         </div>
@@ -80,7 +80,7 @@ function Form({ even }: { even: boolean }) {
     <div className="space-y-0 p-4" aria-hidden>
       {["Email", "Password", "Confirm password"].map((l) => (
         <div key={l} className={even ? "" : "mb-5"}>
-          <p className={`text-[11px] font-medium text-ink-2 ${even ? "mb-3" : "mb-1"}`}>{l}</p>
+          <p className={`text-xs font-medium text-ink-2 ${even ? "mb-3" : "mb-1"}`}>{l}</p>
           <div className={`h-7 rounded-sm border border-line-control bg-surface ${even ? "mb-3" : ""}`} />
         </div>
       ))}

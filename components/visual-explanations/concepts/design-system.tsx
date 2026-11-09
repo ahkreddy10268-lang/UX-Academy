@@ -44,7 +44,7 @@ export function DesignSystemArchitecture() {
         <span className="rounded-full border border-rule-strong bg-soft px-2.5 py-0.5 font-semibold text-ink">Teaching model</span>
         Layers to reason with, not an order of construction: real systems often start from an audit of existing components.
       </p>
-      <div className="viz-panel rounded-xl border border-viz-edge bg-viz-bg p-4 text-viz-text sm:p-6">
+      <div className="text-viz-text">
         <div className="grid gap-3 @4xl:grid-cols-[minmax(0,1fr)_15rem]">
           {/* the layers, top = what users see */}
           <ol aria-label="Layers, from product interfaces down to principles" className="space-y-0.5">
@@ -69,11 +69,11 @@ export function DesignSystemArchitecture() {
                   </div>
                 </div>
                 <p className="text-[13px] leading-snug text-viz-text-2">
-                  <span className="block font-mono text-[10px] uppercase tracking-[0.12em] text-viz-text-3">Harbourline · illustrative</span>
+                  <span className="block font-mono text-[12px] uppercase tracking-[0.12em] text-viz-text-3">Harbourline · illustrative</span>
                   {l.example}
                 </p>
                 <p className="text-[13px] leading-snug text-viz-text-2">
-                  <span className={`block font-mono text-[10px] uppercase tracking-[0.12em] ${l.key ? "text-viz-accent" : "text-viz-text-3"}`}>A change here reaches</span>
+                  <span className={`block font-mono text-[12px] uppercase tracking-[0.12em] ${l.key ? "text-viz-accent" : "text-viz-text-3"}`}>A change here reaches</span>
                   {l.reach}
                 </p>
                 </div>
@@ -110,7 +110,7 @@ export function DesignSystemArchitecture() {
 
         {/* core and extension */}
         <div className="mt-3 rounded-lg border border-viz-edge bg-viz-surface-1 p-3 text-sm text-viz-text-2">
-          <span className="font-mono text-[10px] uppercase tracking-[0.12em] text-viz-text-3">Core and extension · </span>
+          <span className="font-mono text-[12px] uppercase tracking-[0.12em] text-viz-text-3">Core and extension · </span>
           The staff tool needs a dense data table the public products do not. It lives in the staff tool&apos;s own extension, built from the shared tokens, and moves into the core only if another product needs it.
         </div>
 
@@ -162,7 +162,7 @@ export function ContributionLifecycle() {
         <span className="rounded-full border border-rule-strong bg-soft px-2.5 py-0.5 font-semibold text-ink">One documented model</span>
         Steps 2 to 6 follow the GOV.UK Design System&apos;s published process; other systems differ in detail.
       </p>
-      <div className="viz-panel rounded-xl border border-viz-edge bg-viz-bg p-4 text-viz-text sm:p-6">
+      <div className="text-viz-text">
         <ol aria-label="From a need to a release and back" className="grid gap-2 @4xl:grid-cols-7">
           {STEPS.map((s) => (
             <li key={s.n} className="flex min-w-0 flex-col">
@@ -174,14 +174,14 @@ export function ContributionLifecycle() {
                   <span className="t-sub text-sm leading-snug text-viz-text">{s.name}</span>
                 </p>
                 <p className="mt-1.5 text-xs leading-snug text-viz-text-2">{s.what}</p>
-                <p className="mt-auto pt-2 font-mono text-[10px] uppercase tracking-[0.1em] text-viz-text-3">
+                <p className="mt-auto pt-2 font-mono text-[12px] uppercase tracking-[0.1em] text-viz-text-3">
                   Output · <span className="normal-case tracking-normal text-viz-text">{s.out}</span>
                 </p>
               </div>
               {EXITS[s.n] && (
                 <ul aria-label={`Paths that stop or return at step ${s.n}`} className="mt-1.5 space-y-1.5">
                   {EXITS[s.n].map((x) => (
-                    <li key={x.text} className={`rounded-md border border-dashed px-2 py-1.5 text-[11px] leading-snug ${x.tone === "stop" ? "border-viz-warning text-viz-text-2" : "border-viz-edge-hi text-viz-text-2"}`}>
+                    <li key={x.text} className={`rounded-md border border-dashed px-2 py-1.5 text-[12px] leading-snug ${x.tone === "stop" ? "border-viz-warning text-viz-text-2" : "border-viz-edge-hi text-viz-text-2"}`}>
                       <span className={`mr-1 font-mono font-semibold ${x.tone === "stop" ? "text-viz-warning" : "text-viz-text"}`}>{x.tone === "stop" ? "✕" : "↺"}</span>
                       {x.text}
                     </li>

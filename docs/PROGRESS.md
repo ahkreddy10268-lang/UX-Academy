@@ -1,6 +1,6 @@
 # Progress register
 
-_Last updated: 2026-11-09 (session 24 — figure readability standard, plate keys, Level-2 figure languages)_
+_Last updated: 2026-11-09 (session 25 — Level-1 migration completed, all Level-2 figures in a current language)_
 
 ## State
 
@@ -338,7 +338,7 @@ Done (D-097…D-100):
 
 Verified: npm run check (all tests, typecheck, lint); build (934 pages); atlas, e2e, e2e-redesign, keyboard, devices, crawl all passing; axe 0 violations on 15 routes in both themes; 22/22 scripted demo interactions; screenshots of all route types at 1440 and 390 px in both themes without overflow or page errors. Not done: real devices and screen readers; the remaining pastel-era illustrations keep their own washes (by design, migrated per figure).
 
-## Session 24 — visual system quality: phone readability and Level-2 languages (uncommitted; awaiting owner review)
+## Session 24 — visual system quality: phone readability and Level-2 languages (committed d5c0a72)
 
 Started from 199b972 with a clean tree and `npm run check` green (226 tests). Measured first: every label in the 15 current plates rendered below 10 px on a 390 px phone (smallest 3.6 px), and the pilot Level-2 figures had labels at 8.9–11 px.
 
@@ -355,5 +355,20 @@ Measured after (built site): sheet plates ≥ 10.2 px at 390 and 16 px at 1440, 
 
 Verified: `npm run check` (266 tests, typecheck, lint); `npm run docs:generate`; `npm run build`; e2e 42/42; e2e-redesign 66/66; keyboard 45/45; devices 155/155 (emulation); crawl 0 problem pages; axe 0 violations on 20 routes in light and dark. Screenshots (plates card and hero in both themes; heroes with keys at 390 and 1440; Level-2 pilots at four widths in both themes) kept in the session scratchpad, not committed. Not done: real devices and screen readers; the other 13 Level-2 figures; the 60 pastel-era plates.
 
+## Session 25 — Level-1 migration and Level-2 completion (uncommitted; awaiting owner review)
+
+Started from d5c0a72 with a clean tree and `npm run check` green (266 tests). No CI workflows exist on the repository and no deployment status is visible from this session. Recalculated from the live register: 58 `refine` plates (the brief's list plus `gestalt-principles` and `keystroke-level-model`), 13 Level-2 figures without a language.
+
+Done (D-105…D-109):
+- **Level 2:** all 23 figures declare a language (13 newly); the accessibility and design-system figures use the shared canvas; remaining sub-12 px text raised; every figure measured at four widths in both themes.
+- **Level 1:** 58 plates redrawn on the sheet, one at a time in learning-path order, each with a figure key and a register note; numbers from `lib/formulas`; planned-topic plates labelled planned. New files `components/illustrations/concepts/learning-sheets.tsx` and `subject-sheets.tsx`; old definitions and `editorial-plates.tsx` removed; slugs, order, plate numbers and explorers unchanged; animated plates still 12.
+- Subject pages show the figure key; the 404 page uses the card variant.
+- Sample colour tokens for the contrast plate (D-106); Responsive & Adaptive category documented as a content-dependent gap (D-109).
+- Tests: sample tokens, every Level-2 figure has a language; plate-text now covers 70 current plates.
+
+Generated result: 73 of 75 plates current, 2 retained earlier-style, 0 refine; 23 of 23 Level-2 figures current; categories mature: UI Anatomy, UX Process, Information Architecture; gap: Responsive & Adaptive.
+
+Verified: `npm run check` (386 tests, typecheck, lint); `npm run content:index`; `npm run docs:generate`; `npm run build` (934 pages); e2e 42/42; e2e-redesign 66/66; keyboard 45/45; devices 155/155; atlas 36/36; crawl 0 problem pages; axe 0 violations on 27 routes in both themes; hero text measured on 72 pages at 390 and 1440 px. Not done: real devices and screen readers; migrating the two retained plates; stronger relationship layouts for three card-based HCI figures; new Level-3 explorers.
+
 ## Next task (precise)
-Content (unchanged priority): write `atomic-design` (methodology; Frost 2016 is in the registry) or `semantic-tokens`, the next Tier 5 entries, so the design-systems path's second and third stages gain published lessons. Illustration (separate track): restyle the remaining 13 Level-2 figures one at a time in learning-path order (HCI, UCD, Gestalt, heuristic evaluation, cognitive load), choosing `language` from the method and measuring every label at 390 px; then migrate the "refine" plates one at a time with a figure key from the start.
+Content (unchanged priority): write `atomic-design` (methodology; Frost 2016 is in the registry) or `semantic-tokens`, the next Tier 5 entries. Visual track: decide whether to migrate the two retained plates (`serial-position-effect`, `confidence-intervals`, both below the phone text floor); redesign the HCI ecosystem, paradigms and perspectives Level-2 figures as relationship compositions; add a Responsive & Adaptive plate only when a responsive topic is published.

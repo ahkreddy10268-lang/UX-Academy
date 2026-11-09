@@ -417,3 +417,20 @@ QA performed: plate at card and hero size in both page themes; the page in the a
 **Result (measured on the built site):** all 11 sheet plates at 10.2 px minimum at 390 and 16 px at 1440; the 4 viz plates (information-architecture, accessibility-concept, interaction-design-discipline, design-system) recomposed with markers and keys and covered by the same test. Compositions changed in this pass: Double Diamond (Define clusters and Develop prototypes kept inside their halves; loop-back arrows moved below both diamonds), affordances (an overflowing text bar removed), user experience (response pills sized to their words), WCAG (badges moved clear of criterion names; the Techniques row hangs from the branch instead of crossing the criteria), the interaction-design viz plate (state cards rebuilt at 84 units).
 
 **Level 2 (D-102, D-104).** Figures declare `language`: `sheet` for anatomy, measurement and comparison; `viz` for processes and systems. The figure body takes `.fig-sheet` or `.fig-viz`; inside `.fig-viz` the app roles map onto `--viz-*` tokens, so the HTML templates need no dark variants. Labels, markers and tags are ≥ 12 px at every width; depicted interface copy may be 11 px, never below 10.
+
+## Session 25: Level-1 migration and Level-2 completion (D-105 to D-109)
+
+**Result (generated, docs/ILLUSTRATION_COVERAGE.md):** 73 of 75 plates in a current language (15 before), 2 earlier-style plates retained by decision (`serial-position-effect`, `confidence-intervals`), 0 `refine` and 0 `replace` verdicts; 23 of 23 Level-2 figures in a current language.
+
+**How each plate was migrated.** Read the entry (summary, definition, mechanism, limits, evidence) → one-sentence objective → keep the register's category and method unless wrong → sheet canvas → a composition specific to the concept → figure key → render card and hero in both themes → fix collisions → measure → register `retain` with a note. Batches in learning-path order: UX Fundamentals (UCD, gulfs, recognition over recall, CLT, Jakob, progressive disclosure, Nielsen, heuristic evaluation, SUS); HCI (working memory model, Hick-Hyman, steering, KLM); UI (Gestalt, visual hierarchy, modular type scale, colour contrast, design tokens, aesthetic-usability); interaction and evaluation (Doherty, Tesler, golden rules, cognitive walkthrough, task success, NASA-TLX, sample size, A/B, card sorting); the remaining entries (Miller, peak-end, von Restorff, choice overload, NPS, JTBD, HEART); then 20 subject plates and 3 planned-topic plates.
+
+**Rules confirmed in this pass.**
+- Numbers in a plate come from `lib/formulas` at render time; illustrative inputs are labelled in the description and key (e.g. "illustrative", "the numbers are an example, not data").
+- Evidence status is drawn, not implied: Doherty is labelled a rule of thumb; choice overload shows an illustrative spread around zero; Jakob's and Tesler's laws are principles; the aesthetic-usability effect is a judgement, not a measurement.
+- Planned-topic plates carry a "planned" tag in the drawing and say "A planned topic" first in their description.
+- Subject plates map a domain by its taxonomy subcategories, using artefacts and interfaces (blueprints, consent dialogs, code, scales), never people icons.
+- Colours that a figure measures use the theme-independent `--sample-*` tokens (D-106); everything else uses app tokens.
+
+**Category gap.** Responsive & Adaptive has no plate because no published entry belongs to it (D-109).
+
+**Known limits.** The two retained earlier-style plates measure 7.9–8.6 px at 390 px; they predate the text standard and are the next candidates if they are ever migrated. Several Level-2 figures (HCI ecosystem, paradigms, perspectives) remain card-based compositions; they are accurate and readable but are candidates for a stronger relationship layout.

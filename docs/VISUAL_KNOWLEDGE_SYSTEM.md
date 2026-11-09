@@ -104,3 +104,7 @@ Rules for drawing are in `docs/DIAGRAM_DESIGN_GUIDELINES.md`.
 ### Figure languages (session 24, D-102)
 
 `VisualExplanation.language` is optional: `"sheet"` or `"viz"`. `components/visual-explanations/figure.tsx` wraps the figure body in `.fig-sheet` or `.fig-viz` (`app/globals.css`); the header, takeaway, text version and sources stay on the workspace surface. Seven pilots declare it (tested in `tests/visuals.test.ts`); the accessibility and design-system figures draw their own viz panels; the other 13 figures are still on the plain workspace surface and are listed as "not yet restyled" in the generated `docs/ILLUSTRATION_COVERAGE.md`. Restyle them one at a time, choosing the language from the method, and check every label at 390 px.
+
+### All figures in a language (session 25, D-107)
+
+Every one of the 23 Level-2 figures now declares `language`, and `tests/visuals.test.ts` requires it. Thirteen were moved this session: on `viz`, the cognitive-load architecture, the human-centred design cycle, the HCI interaction model, ecosystem and research cycle, and the heuristic-evaluation flow and decision tree; on `sheet`, the split-attention comparison, the HCI timeline, paradigms and perspectives, and both Gestalt figures. The accessibility and design-system figures no longer draw their own dark panels inside the body; `.fig-viz` supplies the canvas. Labels, markers and tags are at least 12 px at 390, 820, 1024 and 1440 px in both themes (measured), with depicted mock-interface copy at 11 px.

@@ -6,6 +6,7 @@
  */
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
+import { CONTRAST_SAMPLES } from "../components/illustrations/concepts/learning-sheets";
 import { contrastRatio } from "../lib/formulas/visual";
 
 const css = readFileSync(new URL("../app/globals.css", import.meta.url), "utf8");
@@ -115,5 +116,22 @@ describe("visualisation canvas tokens (theme-independent, D-086)", () => {
     ["viz-surface-1", "viz-text"],
   ])("fig-viz pair %s on %s ≥ 4.5:1", (fg, bg) => {
     expect(contrastRatio(v(fg), v(bg))).toBeGreaterThanOrEqual(4.5);
+  });
+});
+
+describe("illustration sample colours (theme-independent, D-106)", () => {
+  const samples = block(":root {\n  /* Illustration samples */");
+  it("match the values the contrast plate computes with", () => {
+    expect(samples["sample-white"]).toBe(CONTRAST_SAMPLES.white);
+    expect(samples["sample-grey-pass"]).toBe(CONTRAST_SAMPLES.pass);
+    expect(samples["sample-grey-fail"]).toBe(CONTRAST_SAMPLES.fail);
+  });
+  it("show one pass and one fail at the 4.5:1 text threshold", () => {
+    expect(contrastRatio(CONTRAST_SAMPLES.pass, CONTRAST_SAMPLES.white)).toBeGreaterThanOrEqual(4.5);
+    expect(contrastRatio(CONTRAST_SAMPLES.fail, CONTRAST_SAMPLES.white)).toBeLessThan(4.5);
+    expect(contrastRatio(CONTRAST_SAMPLES.fail, CONTRAST_SAMPLES.white)).toBeGreaterThanOrEqual(3);
+  });
+  it("are not redefined by the dark theme", () => {
+    expect(Object.keys(themes.dark).filter((k) => k.startsWith("sample-"))).toEqual([]);
   });
 });

@@ -81,6 +81,7 @@ export const visualExplanations: VisualExplanation[] = [
   },
   {
     id: "cognitive-load-theory.architecture",
+    language: "viz",
     slug: "cognitive-load-theory",
     type: "conceptual",
     level: 2,
@@ -102,6 +103,7 @@ export const visualExplanations: VisualExplanation[] = [
   },
   {
     id: "cognitive-load-theory.split-attention",
+    language: "sheet",
     slug: "cognitive-load-theory",
     type: "comparison",
     level: 2,
@@ -157,6 +159,7 @@ export const visualExplanations: VisualExplanation[] = [
   },
   {
     id: "user-centred-design.cycle",
+    language: "viz",
     slug: "user-centred-design",
     type: "process",
     level: 2,
@@ -179,6 +182,7 @@ export const visualExplanations: VisualExplanation[] = [
   },
   {
     id: "human-computer-interaction.interaction-model",
+    language: "viz",
     slug: "human-computer-interaction",
     type: "conceptual",
     level: 2,
@@ -200,6 +204,7 @@ export const visualExplanations: VisualExplanation[] = [
   },
   {
     id: "human-computer-interaction.ecosystem",
+    language: "viz",
     slug: "human-computer-interaction",
     type: "system",
     level: 2,
@@ -222,6 +227,7 @@ export const visualExplanations: VisualExplanation[] = [
   },
   {
     id: "human-computer-interaction.timeline",
+    language: "sheet",
     slug: "human-computer-interaction",
     type: "timeline",
     level: 2,
@@ -241,6 +247,7 @@ export const visualExplanations: VisualExplanation[] = [
   },
   {
     id: "human-computer-interaction.paradigms",
+    language: "sheet",
     slug: "human-computer-interaction",
     type: "conceptual",
     level: 2,
@@ -262,6 +269,7 @@ export const visualExplanations: VisualExplanation[] = [
   },
   {
     id: "human-computer-interaction.cycle",
+    language: "viz",
     slug: "human-computer-interaction",
     type: "process",
     level: 2,
@@ -284,6 +292,7 @@ export const visualExplanations: VisualExplanation[] = [
   },
   {
     id: "human-computer-interaction.perspectives",
+    language: "sheet",
     slug: "human-computer-interaction",
     type: "conceptual",
     level: 2,
@@ -305,6 +314,7 @@ export const visualExplanations: VisualExplanation[] = [
   },
   {
     id: "gestalt-principles.annotated",
+    language: "sheet",
     slug: "gestalt-principles",
     type: "annotated-interface",
     level: 2,
@@ -324,6 +334,7 @@ export const visualExplanations: VisualExplanation[] = [
   },
   {
     id: "gestalt-principles.spacing",
+    language: "sheet",
     slug: "gestalt-principles",
     type: "comparison",
     level: 2,
@@ -341,6 +352,7 @@ export const visualExplanations: VisualExplanation[] = [
   },
   {
     id: "heuristic-evaluation.flow",
+    language: "viz",
     slug: "heuristic-evaluation",
     type: "process",
     level: 2,
@@ -361,6 +373,7 @@ export const visualExplanations: VisualExplanation[] = [
   },
   {
     id: "heuristic-evaluation.decision",
+    language: "viz",
     slug: "heuristic-evaluation",
     type: "decision",
     level: 2,
@@ -425,6 +438,7 @@ export const visualExplanations: VisualExplanation[] = [
   },
   {
     id: "accessibility-concept.perspectives",
+    language: "viz",
     slug: "accessibility-concept",
     type: "comparison",
     level: 2,
@@ -445,6 +459,7 @@ export const visualExplanations: VisualExplanation[] = [
   },
   {
     id: "design-system.architecture",
+    language: "viz",
     slug: "design-system",
     type: "system",
     level: 2,
@@ -469,6 +484,7 @@ export const visualExplanations: VisualExplanation[] = [
   },
   {
     id: "design-system.contribution",
+    language: "viz",
     slug: "design-system",
     type: "process",
     level: 2,

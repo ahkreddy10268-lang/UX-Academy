@@ -44,6 +44,9 @@ describe("visual explanation registry", () => {
     };
     for (const [id, lang] of Object.entries(want)) expect(visualExplanations.find((v) => v.id === id)?.language, id).toBe(lang);
   });
+  it("draws every Level-2 figure in a current language (D-102, session 25)", () => {
+    for (const v of visualExplanations) expect(v.language, v.id).toMatch(/^(sheet|viz)$/);
+  });
   it("labels every comparison and scenario honestly", () => {
     for (const v of visualExplanations.filter((x) => x.type === "comparison" || x.type === "hierarchy")) expect(["illustrative", "content-checked"]).toContain(v.verification);
   });

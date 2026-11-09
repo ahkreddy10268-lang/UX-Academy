@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ConceptIllustration } from "@/components/illustrations/concept-illustration";
+import { PlateKey } from "@/components/illustrations/plate-key";
 import { KnowledgeCard } from "@/components/knowledge/knowledge-card";
 import { PathCard } from "@/components/learn/path-card";
 import { CoverageBar } from "@/components/ui/coverage-bar";
@@ -42,7 +43,14 @@ export default async function DomainPage({ params }: PageProps<"/topics/[domain]
         title={d.title}
         lede={d.description}
         crumbs={[{ href: "/topics", label: "Knowledge Atlas" }, { label: d.shortTitle }]}
-        aside={<ConceptIllustration slug={id} title={d.title} domain={id} variant="hero" />}
+        aside={
+          <figure>
+            <ConceptIllustration slug={id} title={d.title} domain={id} variant="hero" />
+            <figcaption>
+              <PlateKey slug={id} className="mt-3" />
+            </figcaption>
+          </figure>
+        }
       >
         <div className="mt-6 max-w-xs">
           <CoverageBar published={cov.published} total={cov.total} label={d.title} />

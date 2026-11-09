@@ -133,3 +133,5 @@ Knowledge figures follow the Visual Learning System (docs/ILLUSTRATION_SYSTEM.md
 
 
 **Figure text and keys (session 24, D-101 to D-104).** Plate text has three tiers: `T.min` 13 units (≈10 px on a 390 px phone; secondary interface copy), `T.strong`/`T.marker` 16 units (≈12.6 px; primary labels and marker numerals), `T.title` 17. Explanations sit in an HTML figure key under the hero (`components/illustrations/plate-key.tsx`: an ordered list with ink numeral badges, two columns from `sm`). Level-2 figure bodies take `.fig-sheet` (surface with a faint `--rule` grid) or `.fig-viz` (app roles remapped to `--viz-*`; every text pair contrast-tested in `tests/tokens.test.ts`). Level-2 labels and markers are ≥ 12 px.
+
+**Illustration sample colours (session 25, D-106).** `--sample-white`, `--sample-grey-pass` and `--sample-grey-fail` are fixed sRGB values for figures that print a measured colour value (the colour-contrast plate). They are theme-independent, never used for interface text or surfaces, and tested equal to the values the plate computes with.
