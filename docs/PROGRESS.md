@@ -1,6 +1,6 @@
 # Progress register
 
-_Last updated: 2026-11-09 (session 25 — Level-1 migration completed, all Level-2 figures in a current language)_
+_Last updated: 2026-11-10 (session 26 — Design Systems curriculum, Phase 1 research and blueprint)_
 
 ## State
 
@@ -355,7 +355,7 @@ Measured after (built site): sheet plates ≥ 10.2 px at 390 and 16 px at 1440, 
 
 Verified: `npm run check` (266 tests, typecheck, lint); `npm run docs:generate`; `npm run build`; e2e 42/42; e2e-redesign 66/66; keyboard 45/45; devices 155/155 (emulation); crawl 0 problem pages; axe 0 violations on 20 routes in light and dark. Screenshots (plates card and hero in both themes; heroes with keys at 390 and 1440; Level-2 pilots at four widths in both themes) kept in the session scratchpad, not committed. Not done: real devices and screen readers; the other 13 Level-2 figures; the 60 pastel-era plates.
 
-## Session 25 — Level-1 migration and Level-2 completion (uncommitted; awaiting owner review)
+## Session 25 — Level-1 migration and Level-2 completion (committed 6b37b10)
 
 Started from d5c0a72 with a clean tree and `npm run check` green (266 tests). No CI workflows exist on the repository and no deployment status is visible from this session. Recalculated from the live register: 58 `refine` plates (the brief's list plus `gestalt-principles` and `keystroke-level-model`), 13 Level-2 figures without a language.
 
@@ -372,3 +372,16 @@ Verified: `npm run check` (386 tests, typecheck, lint); `npm run content:index`;
 
 ## Next task (precise)
 Content (unchanged priority): write `atomic-design` (methodology; Frost 2016 is in the registry) or `semantic-tokens`, the next Tier 5 entries. Visual track: decide whether to migrate the two retained plates (`serial-position-effect`, `confidence-intervals`, both below the phone text floor); redesign the HCI ecosystem, paradigms and perspectives Level-2 figures as relationship compositions; add a Responsive & Adaptive plate only when a responsive topic is published.
+
+## Session 26 — Design Systems curriculum, Phase 1 (uncommitted; awaiting owner review)
+
+Started from 6b37b10, clean tree, `npm run check` green. Research and blueprint only: no content, code, taxonomy, source-registry, test or dependency changes.
+
+Done: eight documents in `docs/design-systems/` (README, REFERENCE_AUDIT, TOPIC_RESEARCH_MATRIX, CURRICULUM_ARCHITECTURE, TOPIC_LESSON_SPECIFICATION, PRACTICE_AND_INTERACTION_PLAN, SOURCE_AND_EVIDENCE_PLAN, IMPLEMENTATION_ROADMAP). They cover all 29 `design-systems` topics (2 published, 27 planned), nine reference systems (UX4G 3.0, GOV.UK, Carbon, Atlassian, Spectrum 2, Fluent 2, USWDS, Apple HIG, Material 3) and three authorities (DTCG 2025.10, WCAG 2.2, WAI-ARIA APG), each finding tied to the page it came from. Pages that could not be read are listed as gaps, not filled from memory.
+
+Findings that need owner decisions (README § Decisions): five-stage path restructure (places the 7 topics the current path omits; moves `multi-brand-systems` after governance); an optional structured `practice` block on entries; a "practice concept" completeness family; page-level vs root source records. Registry check: `dtcg-format-2025` lists five authors, the 2025.10 index names six editors.
+
+Verified: all 29 topic IDs match the generated taxonomy; all internal links between the eight documents resolve; `npm run check` (386 tests, typecheck, lint). No build needed (docs only).
+
+## Next task (precise)
+Phase 2, Batch 1 (docs/design-systems/IMPLEMENTATION_ROADMAP.md): verify and add the new token source records first, then write `semantic-tokens`, then `primitive-tokens`, each with plate, key, register record and comparison figure, every gate green before the next. Owner decision on the optional `practice` block is wanted before starting, because it changes where good/poor examples are stored.
