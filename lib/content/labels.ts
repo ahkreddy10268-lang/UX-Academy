@@ -1,5 +1,5 @@
 /** Human-readable labels and descriptions for controlled vocabularies. Safe for client import. */
-import type { ContentStatus, Difficulty, EvidenceClass, KnowledgeType, RelationType } from "./schema";
+import type { ContentStatus, Difficulty, EvidenceClass, KnowledgeType, RelationType, RuleKind } from "./schema";
 
 export const TYPE_LABEL: Record<KnowledgeType, string> = {
   theory: "Theory",
@@ -157,4 +157,14 @@ export const TIER_LABEL: Record<number, string> = {
   2: "Tier 2 · Authoritative professional",
   3: "Tier 3 · Established educational",
   4: "Tier 4 · Discovery only",
+};
+
+/** Rule kinds for practice items: where a recommendation's authority comes from. */
+export const RULE_KIND_LABEL: Record<RuleKind, string> = {
+  standard: "Standard",
+  platform: "Platform convention",
+  system: "System-specific",
+  industry: "Industry practice",
+  context: "Depends on context",
+  team: "Team decision",
 };

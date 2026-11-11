@@ -12,6 +12,7 @@ import { illustrationFor, plateNumber } from "@/components/illustrations/registr
 import { citationLine } from "@/components/entry/references";
 import { FormulaBlock } from "@/components/entry/formula-block";
 import { LevelTabs } from "@/components/entry/level-tabs";
+import { PracticeBlock } from "@/components/entry/practice-block";
 import { NotesPanel } from "@/components/entry/notes-panel";
 import { ReferenceList } from "@/components/entry/references";
 import { PlannedTopic } from "@/components/entry/planned-topic";
@@ -80,6 +81,7 @@ function Entry({ entry: e }: { entry: KnowledgeEntry }) {
     ...(e.origin ? [["origin", "Origin"]] : []),
     ["application", "Application"],
     ...(e.application.steps.length ? [["checklist", "Practical checklist"]] : []),
+    ...(e.practice ? [["in-practice", "Do and don't"]] : []),
     ["use", "When to use · common mistakes"],
     ["connections", "Connections"],
     ["practice", "Practice"],
@@ -494,6 +496,16 @@ function Entry({ entry: e }: { entry: KnowledgeEntry }) {
               </div>
             )}
           </section>
+
+          {e.practice && (
+            <section aria-labelledby="in-practice" className="pt-16">
+              <SectionHeading id="in-practice" kicker="In practice">
+                Do and don&apos;t
+              </SectionHeading>
+              <p className="mb-6 text-sm text-ink-3">Each recommendation gives its reason and, where it matters, whether it comes from a standard, a platform, one system&apos;s choice or common industry practice.</p>
+              <PracticeBlock practice={e.practice} ctx={ctx} />
+            </section>
+          )}
 
           <section aria-labelledby="use" className="pt-16">
             <SectionHeading id="use" kicker="Appropriate use">
