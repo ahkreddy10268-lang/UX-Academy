@@ -23,7 +23,7 @@ import { Rich, RichParagraphs } from "@/components/ui/rich";
 import { domainById, edgesFor, entries, entryBySlug, knownSlugs, labById, sourceById, subcategoryTitle, taxonomyBySlug, titleFor, unlockedBy, verification } from "@/lib/content";
 import { linkMapFor, resolveSlug, richContext } from "@/lib/content/context";
 import { catClass } from "@/lib/content/categories";
-import { EVIDENCE_DESCRIPTION, EVIDENCE_LABEL, EVIDENCE_ORDER, LEVEL_PURPOSE, RELATION_LABEL, TYPE_LABEL } from "@/lib/content/labels";
+import { DEPTH_LABEL, EVIDENCE_DESCRIPTION, EVIDENCE_LABEL, EVIDENCE_ORDER, LEVEL_PURPOSE, RELATION_LABEL, TYPE_LABEL } from "@/lib/content/labels";
 import { readingMinutes } from "@/lib/content/learning";
 import { collectStrings, extractCitations, richToPlain } from "@/lib/content/rich";
 import type { KnowledgeEntry } from "@/lib/content/schema";
@@ -325,7 +325,7 @@ function Entry({ entry: e }: { entry: KnowledgeEntry }) {
               Understand it
             </SectionHeading>
             <p className="mb-4 text-sm text-ink-3">
-              Choose a depth: {Object.entries(LEVEL_PURPOSE).map(([k, v]) => `${k} — ${v.toLowerCase()}`).join(" · ")}. Your choice is remembered across entries.
+              Choose a depth: {(["beginner", "intermediate", "advanced"] as const).map((k) => `${DEPTH_LABEL[k]} — ${LEVEL_PURPOSE[k].toLowerCase()}`).join(" · ")}. Every concept opens at the depth you last chose.
             </p>
             <LevelTabs slug={e.slug} panels={panels} />
           </section>

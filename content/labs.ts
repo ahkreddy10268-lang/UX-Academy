@@ -44,7 +44,8 @@ export const labs: Lab[] = [
     kind: "tool",
     assumptions: [
       "Implements the WCAG 2.x relative-luminance formula for sRGB colours.",
-      "Does not model APCA (proposed for WCAG 3, not a standard), transparency, anti-aliasing or font weight beyond the large-text definition.",
+      "Does not compute APCA or any other perceptual contrast model: they are research in progress, and the WCAG 3 Working Draft (10 September 2026) has not chosen a contrast algorithm. The lab explains what the ratio misses instead.",
+      "Does not model transparency, anti-aliasing or font weight beyond the large-text definition.",
     ],
   },
   {

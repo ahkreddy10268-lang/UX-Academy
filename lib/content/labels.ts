@@ -112,6 +112,23 @@ export const LEVEL_PURPOSE: Record<Difficulty, string> = {
   advanced: "Analyse & evaluate",
 };
 
+/**
+ * Reading-depth personas for the explanation tabs. Quiz difficulty and
+ * learning-path stages keep DIFFICULTY_LABEL: a question is "advanced", a reader is not.
+ */
+export const DEPTH_LABEL: Record<Difficulty, string> = {
+  beginner: "Beginner",
+  intermediate: "Practitioner",
+  advanced: "Systems Architect",
+};
+
+/** What each depth panel actually contains (app/library/[slug]/page.tsx). */
+export const DEPTH_COVERS: Record<Difficulty, string> = {
+  beginner: "Plain-language explanation, an analogy, everyday examples and the key vocabulary.",
+  intermediate: "How it works, implementation guidance and common scenarios for applying it in product work.",
+  advanced: "Evidence and its limits, open debates and competing models, for judging and defending a decision.",
+};
+
 export const RELATION_LABEL: Record<RelationType | "prerequisite-of", string> = {
   "prerequisite-of": "Prerequisite of",
   "related-to": "Related to",

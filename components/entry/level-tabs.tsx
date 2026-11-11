@@ -1,13 +1,15 @@
 "use client";
 
 import { useEffect, useRef, type ReactNode } from "react";
+import { DEPTH_COVERS, DEPTH_LABEL, LEVEL_PURPOSE } from "@/lib/content/labels";
 import { actions, useLearner, type Level } from "@/lib/store/store";
 
-const LEVELS: { id: Level; label: string; purpose: string }[] = [
-  { id: "beginner", label: "Beginner", purpose: "Understand" },
-  { id: "intermediate", label: "Intermediate", purpose: "Apply" },
-  { id: "advanced", label: "Advanced", purpose: "Analyse & evaluate" },
-];
+const LEVELS: { id: Level; label: string; purpose: string; covers: string }[] = (["beginner", "intermediate", "advanced"] as const).map((id) => ({
+  id,
+  label: DEPTH_LABEL[id],
+  purpose: LEVEL_PURPOSE[id],
+  covers: DEPTH_COVERS[id],
+}));
 
 /**
  * Accessible tabs (WAI-ARIA APG "Tabs, manual activation is not needed": automatic activation).
@@ -64,6 +66,7 @@ export function LevelTabs({ slug, panels }: { slug: string; panels: Record<Level
       </div>
       {LEVELS.map((l) => (
         <div key={l.id} role="tabpanel" id={`panel-${l.id}`} aria-labelledby={`tab-${l.id}`} hidden={l.id !== level} tabIndex={0} className="pt-6 outline-none">
+          <p className="mb-6 text-sm text-ink-3">{l.covers}</p>
           {panels[l.id]}
         </div>
       ))}

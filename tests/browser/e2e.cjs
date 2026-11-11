@@ -38,11 +38,11 @@ const check = (name, ok, detail = '') => results.push({ name, ok: !!ok, detail }
   await p.keyboard.press('Escape');
 
   // 3. Level tabs + persistence
-  await p.getByRole('tab', { name: /Advanced/ }).click();
+  await p.getByRole('tab', { name: /Systems Architect/ }).click();
   check('advanced panel visible', await p.locator('#panel-advanced').isVisible());
   check('beginner panel hidden', !(await p.locator('#panel-beginner').isVisible()));
-  await p.getByRole('tab', { name: /Advanced/ }).press('ArrowLeft');
-  check('arrow key moves to intermediate', (await p.getByRole('tab', { name: /Intermediate/ }).getAttribute('aria-selected')) === 'true');
+  await p.getByRole('tab', { name: /Systems Architect/ }).press('ArrowLeft');
+  check('arrow key moves to intermediate', (await p.getByRole('tab', { name: /Practitioner/ }).getAttribute('aria-selected')) === 'true');
 
   // 4. Bookmark + complete + notes
   await p.getByRole('button', { name: 'Save', exact: true }).click();
@@ -53,7 +53,7 @@ const check = (name, ok, detail = '') => results.push({ name, ok: !!ok, detail }
   check('bookmark persists after reload', (await p.getByRole('button', { name: 'Saved' }).getAttribute('aria-pressed')) === 'true');
   check('completion persists', await p.getByRole('button', { name: 'Completed' }).isVisible());
   check('note persists', (await p.getByLabel(/My notes on Fitts/).inputValue()) === 'Ratio of D to W is what matters.');
-  check('level preference persists', (await p.getByRole('tab', { name: /Intermediate/ }).getAttribute('aria-selected')) === 'true');
+  check('level preference persists', (await p.getByRole('tab', { name: /Practitioner/ }).getAttribute('aria-selected')) === 'true');
 
   // 5. Calculator: Fitts D=300 W=20 → 4 bits
   const calc = p.getByRole('region', { name: /Fitts's law calculator/ });

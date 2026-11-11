@@ -1,6 +1,6 @@
 # Progress register
 
-_Last updated: 2026-11-10 (session 26 — Design Systems curriculum, Phase 1 research and blueprint)_
+_Last updated: 2026-11-11 (session 27 — search chips, contrast-lab limits, reading-depth personas)_
 
 ## State
 
@@ -373,7 +373,7 @@ Verified: `npm run check` (386 tests, typecheck, lint); `npm run content:index`;
 ## Next task (precise)
 Content (unchanged priority): write `atomic-design` (methodology; Frost 2016 is in the registry) or `semantic-tokens`, the next Tier 5 entries. Visual track: decide whether to migrate the two retained plates (`serial-position-effect`, `confidence-intervals`, both below the phone text floor); redesign the HCI ecosystem, paradigms and perspectives Level-2 figures as relationship compositions; add a Responsive & Adaptive plate only when a responsive topic is published.
 
-## Session 26 — Design Systems curriculum, Phase 1 (uncommitted; awaiting owner review)
+## Session 26 — Design Systems curriculum, Phase 1 (committed 9067d6c)
 
 Started from 6b37b10, clean tree, `npm run check` green. Research and blueprint only: no content, code, taxonomy, source-registry, test or dependency changes.
 
@@ -382,6 +382,15 @@ Done: eight documents in `docs/design-systems/` (README, REFERENCE_AUDIT, TOPIC_
 Findings that need owner decisions (README § Decisions): five-stage path restructure (places the 7 topics the current path omits; moves `multi-brand-systems` after governance); an optional structured `practice` block on entries; a "practice concept" completeness family; page-level vs root source records. Registry check: `dtcg-format-2025` lists five authors, the 2025.10 index names six editors.
 
 Verified: all 29 topic IDs match the generated taxonomy; all internal links between the eight documents resolve; `npm run check` (386 tests, typecheck, lint). No build needed (docs only).
+
+## Session 27 — search chips, contrast-lab limits, reading-depth personas (D-110–D-112)
+
+The owner's six-task brief was checked against the code first: the taxonomy rename, ownership boundaries and P1 topics, the three-level reader, the Fitts, contrast and CVD labs, typed relations and the ⌘K search over all 558 topics already existed. Built only the gaps, on the owner's choices:
+- ⌘K knowledge-type filter chips (committed d6da298).
+- `contrast-lab`: "What the ratio cannot tell you" (polarity, equal ratios that look unequal, the large-text switch); APCA linked as research, not computed (licence and WCAG 3 status); lab assumptions corrected.
+- Depth tabs relabelled Beginner / Practitioner / Systems Architect with a one-line note of what each panel contains; home "Reading level" uses the same labels; `tests/browser/e2e.cjs` tab names updated to match.
+
+Verified: `npm run check` (386 tests, typecheck, lint); `npm run build`; e2e 42/42; keyboard 45/45; a11y suite 0 violations; axe on `/labs/contrast-lab`, `/library/fitts-law` and `/` in both themes 0 violations; contrast lab and tabs at 390 px in both themes, no horizontal overflow.
 
 ## Next task (precise)
 Phase 2, Batch 1 (docs/design-systems/IMPLEMENTATION_ROADMAP.md): verify and add the new token source records first, then write `semantic-tokens`, then `primitive-tokens`, each with plate, key, register record and comparison figure, every gate green before the next. Owner decision on the optional `practice` block is wanted before starting, because it changes where good/poor examples are stored.

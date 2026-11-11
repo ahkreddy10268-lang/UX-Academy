@@ -151,9 +151,86 @@ export function ContrastLab() {
           <p className="text-sm text-ink-3">
             The ratio ignores font weight beyond WCAG&apos;s “large text” definition, anti-aliasing and surrounding colours. Passing is necessary, not sufficient, for readable text.
           </p>
+          <RatioLimits fg={toHex(parseHex(fg))} bg={toHex(parseHex(bg))} />
         </div>
       )}
     </div>
+  );
+}
+
+/** Two pairs chosen so their WCAG 2 ratios are almost equal; the numbers are computed, not stated. */
+const LIGHT_PAIR = { fg: "#767676", bg: "#ffffff" };
+const DARK_PAIR = { fg: "#7d7d7d", bg: "#121212" };
+
+function PairSample({ fg, bg, caption }: { fg: string; bg: string; caption: string }) {
+  return (
+    <figure className="min-w-0">
+      <div className="rounded-sm border border-rule px-4 py-3" style={{ background: bg, color: fg }}>
+        <p className="text-base">Order confirmed. Your library card is ready.</p>
+        <p className="mt-1 text-xs">Collect it from the front desk.</p>
+      </div>
+      <figcaption className="mt-1.5 text-xs text-ink-3">
+        <span className="formula">{fg}</span> on <span className="formula">{bg}</span> · {caption} ·{" "}
+        <span className="formula text-ink-2">{contrastRatio(fg, bg).toFixed(2)}:1</span>
+      </figcaption>
+    </figure>
+  );
+}
+
+/**
+ * Teaches what the WCAG 2 ratio cannot express, using only the WCAG 2 formula.
+ * APCA is described, not computed: its licence restricts use and naming, and the
+ * WCAG 3 Working Draft (10 September 2026) has not chosen a contrast algorithm.
+ */
+function RatioLimits({ fg, bg }: { fg: string; bg: string }) {
+  return (
+    <section aria-labelledby="ratio-limits" className="border-t border-rule pt-6">
+      <h3 id="ratio-limits" className="t-sub text-base">
+        What the ratio cannot tell you
+      </h3>
+      <div className="mt-4 space-y-6 text-sm text-ink-2">
+        <div>
+          <p className="font-medium text-ink">1. It ignores polarity</p>
+          <p className="mt-1">
+            The ratio is the lighter luminance divided by the darker one, so swapping text and background gives exactly the same number. Compare your pair both ways and judge whether they read the same.
+          </p>
+          <div className="mt-3 grid gap-3 sm:grid-cols-2">
+            <PairSample fg={fg} bg={bg} caption="as chosen" />
+            <PairSample fg={bg} bg={fg} caption="swapped" />
+          </div>
+        </div>
+        <div>
+          <p className="font-medium text-ink">2. Equal ratios can look unequal</p>
+          <p className="mt-1">
+            These two pairs score almost the same, and both pass AA by a small margin. One is mid-grey on white, the other mid-grey on near-black. Look at the 12px line in each.
+          </p>
+          <div className="mt-3 grid gap-3 sm:grid-cols-2">
+            <PairSample {...LIGHT_PAIR} caption="light pair" />
+            <PairSample {...DARK_PAIR} caption="dark pair" />
+          </div>
+        </div>
+        <div>
+          <p className="font-medium text-ink">3. Size and weight are a single switch</p>
+          <p className="mt-1">
+            WCAG 2 lowers the requirement to 3:1 only for “large” text (at least 18 point, or 14 point bold). A 13px light weight and a 17px regular weight face the same 4.5:1 target.
+          </p>
+        </div>
+        <div className="rounded-sm border border-rule bg-soft p-4">
+          <p className="label">Research in progress — not a standard</p>
+          <p className="mt-2">
+            Perceptual contrast models try to account for polarity, the darkness of the pair, and text size and weight. The best known is the{" "}
+            <a className="link" href="https://github.com/Myndex/apca-w3" target="_blank" rel="noreferrer">
+              Accessible Perceptual Contrast Algorithm (APCA)
+            </a>
+            , a public beta whose authors argue that the WCAG 2 ratio misjudges dark pairs. It is not part of any W3C Recommendation, and the{" "}
+            <a className="link" href="https://www.w3.org/TR/wcag-3.0/" target="_blank" rel="noreferrer">
+              WCAG 3 Working Draft
+            </a>{" "}
+            of 10 September 2026 has not chosen a contrast algorithm. This lab does not compute APCA scores. Conformance today is measured with the WCAG 2.2 ratio above.
+          </p>
+        </div>
+      </div>
+    </section>
   );
 }
 
