@@ -80,6 +80,11 @@
     "registeredContainer": "Psychology of Learning and Motivation",
     "similarity": 1
   },
+  "atlassian-color": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
   "atlassian-design": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
@@ -243,6 +248,11 @@
   "carbon-for-ai": {
     "status": "url-reachable",
     "checkedAt": "2026-11-09",
+    "httpStatus": 200
+  },
+  "carbon-themes": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
     "httpStatus": 200
   },
   "card-english-burr-1978": {
@@ -422,9 +432,19 @@
     "checkedAt": "2026-11-03",
     "httpStatus": 200
   },
+  "dtcg-color-2025": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
   "dtcg-format-2025": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "dtcg-resolver-2025": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
     "httpStatus": 200
   },
   "engelbart-1962": {
@@ -485,6 +505,11 @@
   "fluent-2": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "fluent-2-design-tokens": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
     "httpStatus": 200
   },
   "fornell-1992": {
@@ -1021,6 +1046,16 @@
     "registeredYear": 1993,
     "registeredContainer": "Psychological Review",
     "similarity": 1
+  },
+  "m3-color-roles": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "m3-design-tokens": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
   },
   "machado-oliveira-fernandes-2009": {
     "status": "doi-verified",
@@ -1679,6 +1714,11 @@
   "uswds": {
     "status": "url-reachable",
     "checkedAt": "2026-11-06",
+    "httpStatus": 200
+  },
+  "uswds-color": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
     "httpStatus": 200
   },
   "uxcel": {

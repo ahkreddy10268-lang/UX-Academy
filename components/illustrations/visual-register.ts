@@ -80,6 +80,8 @@ export const visualRegister: Record<string, VisualRecord> = {
   "modular-type-scale": r("visual-design", "hierarchy", "retain", "Sheet (S25): specimens at base × 1.25ⁱ from lib/formulas modularScale, and roles that use them.", { techniques: ["measurement", "numbered-annotation"] }),
   "design-system": r("design-systems", "relationship", "retain", "Exploded foundations · components · patterns · products with one decision traced from a token into three products; documentation and governance spine linked to every layer; feedback route back to the spine.", { secondaryMethods: ["hierarchy"], techniques: ["exploded-layers", "routed-connectors"] }),
   "design-tokens": r("design-systems", "hierarchy", "retain", "Sheet (S25): primitive → semantic → component references, the button they produce and platform outputs.", { secondaryMethods: ["relationship"], techniques: ["code-mapping", "routed-connectors"] }),
+  "primitive-tokens": r("design-systems", "hierarchy", "retain", "Sheet (B1): a grey ramp numbered with gaps, semantic roles choosing steps, a crossed component-to-primitive link, and a spacing scale.", { secondaryMethods: ["relationship"], techniques: ["routed-connectors", "numbered-annotation"] }),
+  "semantic-tokens": r("design-systems", "relationship", "retain", "Sheet (B1): one column of role names mapped to light and dark primitives, a contrast pair, and components that point only at roles.", { secondaryMethods: ["comparison"], techniques: ["routed-connectors", "code-mapping"] }),
 
   /* ---- planned-topic plates ---- */
   "design-thinking": r("ux-process", "process", "retain", "Sheet (S25, planned topic, labelled): five stages with artefacts and iteration returns.", { techniques: ["timeline", "numbered-annotation"] }),

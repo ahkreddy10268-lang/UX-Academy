@@ -76,7 +76,7 @@ export default defineEntry({
       explanation: [
         "Tokens are best understood as an **architecture for design decisions**, not a file of variables. Each layer of aliasing trades flexibility for complexity: two layers (primitive → semantic) cover most needs; component tokens add precision for multi-brand or white-label systems but multiply the number of names to govern.",
         "Interoperability between tools has long been the weak point: each design tool and transformer used its own JSON dialect. The W3C **Design Tokens Community Group** addressed this with the *Design Tokens Format Module*. Its version 2025.10, published 28 October 2025, is a **Final Community Group Report** — the group's first stable version. It explicitly states that it is **not a W3C Standard nor on the W3C Standards Track**; Community Group reports are published under W3C's community process without the consensus and review of the Recommendation track {{src:dtcg-format-2025}}.",
-        "The format specifies a media type (`application/design-tokens+json`), file extensions (`.tokens`, `.tokens.json`), simple types (color, dimension, fontFamily, fontWeight, duration, cubicBezier, number) and composite types, along with group inheritance and two reference syntaxes: curly-brace aliases and JSON Pointer `$ref` {{src:dtcg-format-2025}}.",
+        "The format specifies a media type (`application/design-tokens+json`), file extensions (`.tokens`, `.tokens.json`), simple types (color, dimension, fontFamily, fontWeight, duration, cubicBezier, number) and composite types, along with group inheritance and two reference syntaxes: curly-brace aliases and JSON Pointer `$ref` {{src:dtcg-format-2025}}. Two companion reports were published the same day: the **Color module**, which makes a colour's value an object with a colour space, components and an optional hex fallback {{src:dtcg-color-2025}}, and the **Resolver module**, which models themes as modifiers with contexts such as light and dark, combined in a stated resolution order {{src:dtcg-resolver-2025}}. The tiers are worked through in [[primitive-tokens]] and [[semantic-tokens]].",
       ],
       evidence: [
         "Evidence for design tokens is **practice-based**: adoption across major design systems (Material Design, Fluent, Carbon and others document token architectures) and the industry effort to standardise a format {{src:material-3}} {{src:fluent-2}} {{src:carbon-design-system}}. There is little controlled research on their effect on consistency or delivery speed; claims of specific efficiency gains are anecdotal.",
@@ -285,6 +285,8 @@ export default defineEntry({
   references: [
     { source: "dtcg-format-2025", role: "primary", note: "Interchange format, types, aliasing, status." },
     { source: "dtcg-2026-thank-you-jina", role: "explanatory", note: "Attribution of the term to Jina Anne and Jon Levine." },
+    { source: "dtcg-color-2025", role: "explanatory", note: "Colour value object and colour spaces." },
+    { source: "dtcg-resolver-2025", role: "explanatory", note: "Themes as modifiers with contexts and a resolution order." },
     { source: "material-3", role: "explanatory", note: "Token architecture in Material Design 3." },
     { source: "fluent-2", role: "explanatory", note: "Token practice in Fluent 2." },
     { source: "carbon-design-system", role: "explanatory", note: "Token practice in Carbon." },
@@ -307,5 +309,5 @@ export default defineEntry({
     sources: true,
     activities: true,
   },
-  lastVerifiedAt: "2026-11-03",
+  lastVerifiedAt: "2026-11-11",
 });

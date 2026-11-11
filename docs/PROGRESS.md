@@ -1,6 +1,6 @@
 # Progress register
 
-_Last updated: 2026-11-11 (session 27 — search chips, contrast-lab limits, reading-depth personas)_
+_Last updated: 2026-11-11 (session 28 — Design Systems Batch 1: practice block, primitive and semantic tokens)_
 
 ## State
 
@@ -383,7 +383,7 @@ Findings that need owner decisions (README § Decisions): five-stage path restru
 
 Verified: all 29 topic IDs match the generated taxonomy; all internal links between the eight documents resolve; `npm run check` (386 tests, typecheck, lint). No build needed (docs only).
 
-## Session 27 — search chips, contrast-lab limits, reading-depth personas (D-110–D-112)
+## Session 27 — search chips, contrast-lab limits, reading-depth personas (D-110–D-112; committed 2b968c0, 81bfac0)
 
 The owner's six-task brief was checked against the code first: the taxonomy rename, ownership boundaries and P1 topics, the three-level reader, the Fitts, contrast and CVD labs, typed relations and the ⌘K search over all 558 topics already existed. Built only the gaps, on the owner's choices:
 - ⌘K knowledge-type filter chips (committed d6da298).
@@ -394,5 +394,13 @@ The owner's six-task brief was checked against the code first: the taxonomy rena
 
 Verified: `npm run check` (386 tests, typecheck, lint); `npm run build`; e2e 42/42; keyboard 45/45; a11y suite 0 violations; axe on `/labs/contrast-lab`, `/library/fitts-law` and `/` in both themes 0 violations; contrast lab and tabs at 390 px in both themes, no horizontal overflow.
 
+## Session 28 — Design Systems Batch 1 (D-113–D-114)
+
+- Optional `practice` block (schema, renderer, rule-kind labels), on the owner's decision.
+- Published `primitive-tokens` and `semantic-tokens`: three depths, practice block with DTCG 2025.10 JSON (primitives, light and dark semantic layers, component tokens, a resolver document, CSS output), correction exercises with computed ratios, quizzes at three levels, flashcards; plates with figure keys and register records; eight new verified source records; `design-tokens` updated with the Color and Resolver modules and links to both entries.
+- Not done: a Level-2 comparison figure for either entry; a link from the lessons to `/system/foundations/colour` (rich text links entries only).
+
+Verified: `npm run check` (391 tests); `npm run test:taxonomy` (54 published, Design Systems 4 of 29); `npm run sources:verify` for the 8 new records; `npm run docs:generate`; `npm run build`; e2e 42/42; keyboard 45/45; axe 0 violations on the three token entries at 1440 and 390 px in both themes; no horizontal overflow; plates rendered in both themes.
+
 ## Next task (precise)
-Phase 2, Batch 1 (docs/design-systems/IMPLEMENTATION_ROADMAP.md): verify and add the new token source records first, then write `semantic-tokens`, then `primitive-tokens`, each with plate, key, register record and comparison figure, every gate green before the next. Owner decision on the optional `practice` block is wanted before starting, because it changes where good/poor examples are stored.
+Phase 2, Batch 2 (docs/design-systems/IMPLEMENTATION_ROADMAP.md): write `theme-architecture` (source `dtcg-resolver-2025` now in the registry), then build the Design Token Lab (L3) on the palette and pairs used in Batch 1, computing contrast only with `lib/formulas`.

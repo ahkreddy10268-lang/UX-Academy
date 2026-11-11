@@ -1294,6 +1294,10 @@ export const modularTypeScalePlate: IllustrationEntry = {
 /** Fixed sRGB sample values; mirrored as --sample-* in app/globals.css (tested). */
 export const CONTRAST_SAMPLES = { white: "#ffffff", pass: "#767676", fail: "#949494" } as const;
 
+/** The illustrative palette of the token lessons; mirrored by --sample-token-* in globals.css (D-114). */
+export const TOKEN_SAMPLES = {"grey-0": "#ffffff", "grey-50": "#f6f6f4", "grey-300": "#c9c8c3", "grey-500": "#8a8983", "grey-600": "#6b6a64", "grey-700": "#4f4e49", "grey-900": "#1f1e1c", "grey-950": "#141413", "red-700": "#b42318", "red-400": "#f07a6e", "blue-600": "#2457c5", "blue-400": "#5f92e8"} as const;
+const tok = (k: keyof typeof TOKEN_SAMPLES) => `var(--sample-token-${k})`;
+
 export const colourContrastPlate: IllustrationEntry = {
   slug: "colour-contrast-ratio",
   title: "Colour contrast ratio plate",
@@ -2743,6 +2747,169 @@ export const heartPlate: IllustrationEntry = {
             <Marker x={212} y={14} n={3} />
             <Marker x={304} y={14} n={4} />
             <Marker x={392} y={192} n={5} />
+          </>
+        )}
+      </g>
+    );
+  },
+};
+
+/* ------------------------------------------------------------------ */
+/* Semantic tokens: one set of names, two mappings                      */
+/* ------------------------------------------------------------------ */
+export const semanticTokensPlate: IllustrationEntry = {
+  slug: "semantic-tokens",
+  title: "Semantic tokens plate",
+  canvas: "sheet",
+  description:
+    "Three columns joined by arrows. In the middle, four semantic tokens named by purpose: color.surface.default, color.text.default, color.text.danger and color.action.background. Each refers to a primitive on the left in the light theme — grey.0, grey.900, red.700, blue.600 — and to a different primitive on the right in the dark theme — grey.950, grey.50, red.400, blue.400. A bracket joins text.default and surface.default as a pair whose contrast must be checked in each theme. Below, a Renew button and an error message point only at the middle column, so they follow either theme without changing.",
+  key: [
+    { n: "1", label: "Semantic tokens", detail: "names for the job a value does; components use only these" },
+    { n: "2", label: "Light mapping", detail: "each name refers to a primitive in the light theme" },
+    { n: "3", label: "Dark mapping", detail: "the same names refer to different primitives; only the references change" },
+    { n: "4", label: "A pair", detail: "text on a surface; contrast is checked for the pair, in every theme" },
+    { n: "5", label: "Components", detail: "point at roles, never at primitives, so a theme cannot be half-applied" },
+  ],
+  Art: ({ detail }) => {
+    const rows = [
+      { name: "surface.default", light: "grey.0", dark: "grey.950", lf: tok("grey-0"), df: tok("grey-950") },
+      { name: "text.default", light: "grey.900", dark: "grey.50", lf: tok("grey-900"), df: tok("grey-50") },
+      { name: "text.danger", light: "red.700", dark: "red.400", lf: tok("red-700"), df: tok("red-400") },
+      { name: "action.background", light: "blue.600", dark: "blue.400", lf: tok("blue-600"), df: tok("blue-400") },
+    ];
+    const ry = (i: number) => 44 + i * 38;
+    const chip = (x: number, y: number, label: string, fill: string) => (
+      <g>
+        <rect x={x} y={y} width={100} height={28} rx={6} fill={S.surface} stroke={S.ruleStrong} strokeWidth="0.9" {...hair} />
+        <rect x={x + 7} y={y + 7} width={14} height={14} rx={3} fill={fill} stroke={S.ink2} strokeWidth="0.7" {...hair} />
+        <UiText x={x + 27} y={y + 19} mono>
+          {label}
+        </UiText>
+      </g>
+    );
+    return (
+      <g>
+        <UiText x={58} y={30} mono tone="ink3" anchor="middle">
+          light
+        </UiText>
+        <UiText x={200} y={30} mono tone="ink3" anchor="middle">
+          semantic
+        </UiText>
+        <UiText x={342} y={30} mono tone="ink3" anchor="middle">
+          dark
+        </UiText>
+        {/* the pair: text.default on surface.default */}
+        <rect x={119} y={ry(0) - 5} width={162} height={ry(1) - ry(0) + 38} rx={9} fill="none" stroke={S.accent} strokeWidth="1.2" strokeDasharray="4 3" {...hair} />
+        {rows.map((r, i) => (
+          <g key={r.name}>
+            {chip(8, ry(i), r.light, r.lf)}
+            {chip(292, ry(i), r.dark, r.df)}
+            <rect x={124} y={ry(i)} width={152} height={28} rx={6} fill={S.soft} stroke={S.ink2} strokeWidth="1.1" {...hair} />
+            <UiText x={200} y={ry(i) + 19} mono weight={600} anchor="middle">
+              {r.name}
+            </UiText>
+            <Link from={[124, ry(i) + 14]} to={[110, ry(i) + 14]} />
+            <Link from={[276, ry(i) + 14]} to={[290, ry(i) + 14]} />
+          </g>
+        ))}
+        <line x1={8} y1={204} x2={392} y2={204} stroke={S.rule} strokeWidth="0.9" {...hair} />
+        <UiButton x={152} y={224} w={96} label="Renew" />
+        <UiText x={292} y={242} tone="error">
+          Card expired
+        </UiText>
+        <Link from={[200, 224]} to={[200, ry(3) + 30]} tone="mute" dashed />
+        <Link from={[330, 228]} to={[270, ry(2) + 28]} via={[330, 176]} tone="mute" dashed />
+        <UiText x={8} y={276} tone="ink3">
+          components use roles; a theme chooses a column
+        </UiText>
+        {detail && (
+          <>
+            <Marker x={200} y={44} n={1} />
+            <Marker x={8} y={44} n={2} />
+            <Marker x={392} y={44} n={3} />
+            <Marker x={281} y={58} n={4} tone="accent" />
+            <Marker x={152} y={224} n={5} />
+          </>
+        )}
+      </g>
+    );
+  },
+};
+
+/* ------------------------------------------------------------------ */
+/* Primitive tokens: the options, chosen from by semantic tokens        */
+/* ------------------------------------------------------------------ */
+export const primitiveTokensPlate: IllustrationEntry = {
+  slug: "primitive-tokens",
+  title: "Primitive tokens plate",
+  canvas: "sheet",
+  description:
+    "A grey ramp of eight swatches from lightest to darkest, labelled 0, 50, 300, 500, 600, 700, 900 and 950, with gaps in the numbering so steps can be added later. Below it, two semantic tokens, surface.default and text.default, point up to the steps they use: grey.0 and grey.900. A component token, button.label, points to text.default; a dashed line from button.label straight to the ramp is crossed out, because components should not use primitives. At the bottom, a spacing scale of six steps, space.100 to space.800, drawn as blocks of 4, 8, 12, 16, 24 and 32 pixels.",
+  key: [
+    { n: "1", label: "A colour ramp", detail: "the greys that exist; numbered with gaps so a step can be inserted" },
+    { n: "2", label: "Semantic tokens choose", detail: "roles refer to steps; the ramp itself has no meaning" },
+    { n: "3", label: "Not from components", detail: "a component that names a primitive cannot follow a theme" },
+    { n: "4", label: "A spacing scale", detail: "dimension primitives, 4 to 32 px, in the same naming pattern" },
+  ],
+  Art: ({ detail }) => {
+    const steps = ["0", "50", "300", "500", "600", "700", "900", "950"] as const;
+    const sx = (i: number) => 8 + i * 48;
+    const space = [
+      ["100", 4],
+      ["200", 8],
+      ["300", 12],
+      ["400", 16],
+      ["600", 24],
+      ["800", 32],
+    ] as const;
+    return (
+      <g>
+        <UiText x={8} y={20} mono tone="ink3">
+          color.grey
+        </UiText>
+        {steps.map((n, i) => (
+          <g key={n}>
+            <rect x={sx(i)} y={30} width={44} height={40} rx={5} fill={tok(`grey-${n}`)} stroke={S.ruleStrong} strokeWidth="0.9" {...hair} />
+            <UiText x={sx(i) + 22} y={88} mono anchor="middle" tone="ink2">
+              {n}
+            </UiText>
+          </g>
+        ))}
+        <rect x={40} y={118} width={144} height={28} rx={6} fill={S.soft} stroke={S.ink2} strokeWidth="1.1" {...hair} />
+        <UiText x={112} y={137} mono weight={600} anchor="middle">
+          surface.default
+        </UiText>
+        <rect x={248} y={118} width={144} height={28} rx={6} fill={S.soft} stroke={S.ink2} strokeWidth="1.1" {...hair} />
+        <UiText x={320} y={137} mono weight={600} anchor="middle">
+          text.default
+        </UiText>
+        <Link from={[60, 118]} to={[30, 94]} via={[36, 112]} />
+        <Link from={[320, 118]} to={[sx(6) + 22, 94]} />
+        <rect x={248} y={170} width={144} height={28} rx={6} fill={S.surface} stroke={S.ruleStrong} strokeWidth="0.9" {...hair} />
+        <UiText x={320} y={189} mono anchor="middle">
+          button.label
+        </UiText>
+        <Link from={[320, 170]} to={[320, 148]} />
+        <Link from={[248, 184]} to={[sx(6) + 6, 94]} via={[206, 124]} tone="error" dashed />
+        <Verdict x={220} y={164} ok={false} />
+        <line x1={8} y1={212} x2={392} y2={212} stroke={S.rule} strokeWidth="0.9" {...hair} />
+        <UiText x={8} y={234} mono tone="ink3">
+          space
+        </UiText>
+        {space.map(([n, v], i) => (
+          <g key={n}>
+            <rect x={72 + i * 54 + (40 - v * 1.25) / 2} y={224} width={v * 1.25} height={14} rx={2} fill={S.accent} fillOpacity={0.8} />
+            <UiText x={72 + i * 54 + 20} y={262} mono anchor="middle" tone="ink2">
+              {n}
+            </UiText>
+          </g>
+        ))}
+        {detail && (
+          <>
+            <Marker x={8} y={30} n={1} />
+            <Marker x={40} y={118} n={2} />
+            <Marker x={220} y={164} n={3} />
+            <Marker x={60} y={224} n={4} />
           </>
         )}
       </g>

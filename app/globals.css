@@ -543,12 +543,26 @@ textarea {
    computes with lib/formulas. Theme-independent on purpose, because the
    printed ratio must stay true; never used for interface text or surfaces.
    Kept equal to CONTRAST_SAMPLES in components/illustrations/concepts/
-   learning-sheets.tsx (tests/tokens.test.ts). */
+   learning-sheets.tsx (tests/tokens.test.ts); the --sample-token-* values
+   equal TOKEN_SAMPLES there. */
 :root {
   /* Illustration samples */
   --sample-white: #ffffff;
   --sample-grey-pass: #767676;
   --sample-grey-fail: #949494;
+  /* The illustrative token palette of the primitive- and semantic-tokens lessons (D-114) */
+  --sample-token-grey-0: #ffffff;
+  --sample-token-grey-50: #f6f6f4;
+  --sample-token-grey-300: #c9c8c3;
+  --sample-token-grey-500: #8a8983;
+  --sample-token-grey-600: #6b6a64;
+  --sample-token-grey-700: #4f4e49;
+  --sample-token-grey-900: #1f1e1c;
+  --sample-token-grey-950: #141413;
+  --sample-token-red-700: #b42318;
+  --sample-token-red-400: #f07a6e;
+  --sample-token-blue-600: #2457c5;
+  --sample-token-blue-400: #5f92e8;
 }
 
 /* Visualisation canvas — dark technical editorial (illustration v6, D-086).
