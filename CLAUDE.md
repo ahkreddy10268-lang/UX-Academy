@@ -23,6 +23,7 @@ classified, evidenced, connected and practised.
 | `npm run content:index` | Regenerate `content/*/_index.ts` after adding/removing content files |
 | `npm run sources:verify [-- --all \| id…]` | Verify DOIs against Crossref and URLs by HTTP; writes `content/sources/verification.json` |
 | `npm test` | Content integrity + formula unit tests (Vitest) |
+| `npm run test:taxonomy` | Terminal report: slug/type integrity, link resolution, three-depth checks for published entries, coverage by domain (exits 1 on failure) |
 | `npm run docs:generate` | Regenerate docs/KNOWLEDGE_TAXONOMY.md, RESEARCH_SOURCES.md, CONTENT_COVERAGE.md from content |
 | `npm run check` | Index → typecheck → tests → lint (everything except build) |
 | `tests/browser/*.cjs` | Crawl, e2e (`e2e.cjs`, `e2e-redesign.cjs`) and axe audits against `next start` — see tests/browser/README.md |

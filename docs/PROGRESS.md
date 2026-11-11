@@ -390,6 +390,8 @@ The owner's six-task brief was checked against the code first: the taxonomy rena
 - `contrast-lab`: "What the ratio cannot tell you" (polarity, equal ratios that look unequal, the large-text switch); APCA linked as research, not computed (licence and WCAG 3 status); lab assumptions corrected.
 - Depth tabs relabelled Beginner / Practitioner / Systems Architect with a one-line note of what each panel contains; home "Reading level" uses the same labels; `tests/browser/e2e.cjs` tab names updated to match.
 
+- `npm run test:taxonomy` (`scripts/validate-taxonomy.ts`): terminal integrity and coverage report reusing the loader, completeness gates and coverage register; exits 1 on a broken link, malformed slug, unknown type or an unmet depth check.
+
 Verified: `npm run check` (386 tests, typecheck, lint); `npm run build`; e2e 42/42; keyboard 45/45; a11y suite 0 violations; axe on `/labs/contrast-lab`, `/library/fitts-law` and `/` in both themes 0 violations; contrast lab and tabs at 390 px in both themes, no horizontal overflow.
 
 ## Next task (precise)
