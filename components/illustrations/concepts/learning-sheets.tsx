@@ -3647,3 +3647,72 @@ export const themeArchitecturePlate: IllustrationEntry = {
     );
   },
 };
+
+/* ------------------------------------------------------------------ */
+/* Design language: principle → decisions → tokens → component          */
+/* ------------------------------------------------------------------ */
+export const designLanguagePlate: IllustrationEntry = {
+  slug: "design-language",
+  title: "Design language plate",
+  canvas: "sheet",
+  description:
+    "A principle, 'calm and precise', at the top left, traced by arrows into four foundation decisions: type (one heading style), space (one spacing rhythm), colour (ink with one accent) and motion (productive by default, expressive only for rare moments). Each decision points to a named token beside it — font.heading, space.inset, color.action, motion.productive — and all four tokens feed one card component at the bottom right that expresses them. Reading the drawing from left to right traces any value in the component back to the principle that justifies it.",
+  key: [
+    { n: "1", label: "Principle", detail: "a short statement of intent that can settle a decision" },
+    { n: "2", label: "Foundation decisions", detail: "type, space, colour and motion choices that follow from it" },
+    { n: "3", label: "Tokens", detail: "each decision named once so components can consume it" },
+    { n: "4", label: "Component", detail: "expresses the language; every value traces back to the principle" },
+  ],
+  Art: ({ detail }) => {
+    const rows = [
+      ["type", "one heading style", "font.heading"],
+      ["space", "one spacing rhythm", "space.inset"],
+      ["colour", "ink + one accent", "color.action"],
+      ["motion", "productive first", "motion.productive"],
+    ] as const;
+    const ry = (i: number) => 64 + i * 40;
+    return (
+      <g>
+        <rect x={8} y={12} width={150} height={32} rx={8} fill={S.soft} stroke={S.ink} strokeWidth="1.2" {...hair} />
+        <UiText x={83} y={33} weight={600} anchor="middle">
+          calm and precise
+        </UiText>
+        {rows.map(([f, d, t], i) => (
+          <g key={f}>
+            <Link from={[30, 44]} to={[40, ry(i) + 14]} via={[30, ry(i) + 14]} tone="mute" />
+            <rect x={42} y={ry(i)} width={150} height={28} rx={6} fill={S.surface} stroke={S.ruleStrong} strokeWidth="0.9" {...hair} />
+            <UiText x={52} y={ry(i) + 19}>
+              {d}
+            </UiText>
+            <Link from={[192, ry(i) + 14]} to={[214, ry(i) + 14]} />
+            <rect x={216} y={ry(i)} width={176} height={28} rx={6} fill={S.soft} stroke={S.ink2} strokeWidth="1.1" {...hair} />
+            <UiText x={304} y={ry(i) + 19} mono weight={600} anchor="middle">
+              {t}
+            </UiText>
+          </g>
+        ))}
+        <line x1={8} y1={232} x2={392} y2={232} stroke={S.rule} strokeWidth="0.9" {...hair} />
+        <rect x={216} y={244} width={176} height={40} rx={8} fill={S.surface} stroke={S.ink2} strokeWidth="1" {...hair} />
+        <UiText x={228} y={268} weight={600}>
+          Card
+        </UiText>
+        <rect x={318} y={252} width={64} height={24} rx={5} fill={S.accent} />
+        <UiText x={350} y={268} weight={600} anchor="middle" tone="surface">
+          Renew
+        </UiText>
+        <Link from={[304, 220]} to={[304, 242]} />
+        <UiText x={8} y={268} tone="ink3">
+          every value traces back
+        </UiText>
+        {detail && (
+          <>
+            <Marker x={8} y={12} n={1} />
+            <Marker x={42} y={ry(0)} n={2} />
+            <Marker x={392} y={ry(0)} n={3} />
+            <Marker x={216} y={244} n={4} />
+          </>
+        )}
+      </g>
+    );
+  },
+};

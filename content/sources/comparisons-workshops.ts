@@ -93,7 +93,7 @@ export default defineSources([
     access: "open",
     verification: "url-checked",
     lastVerifiedAt: "2026-11-03",
-    notes: "Full text is freely readable online.",
+    notes: "Full text is freely readable online. Chapters 2 (methodology: five stages; \"not a linear process, but rather a mental model\"; naming may be adapted, e.g. GE) and 4 (the atomic workflow and interface inventory: all disciplines in the room, 30–90 minutes for a first screenshot pass, categorise, present, regroup) read 2026-11-11.",
   },
   {
     id: "marcotte-2010",

@@ -258,6 +258,11 @@
     "checkedAt": "2026-11-09",
     "httpStatus": 200
   },
+  "carbon-motion": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
   "carbon-themes": {
     "status": "url-reachable",
     "checkedAt": "2026-11-11",
@@ -552,9 +557,14 @@
     "registeredContainer": "Journal of Personality and Social Psychology",
     "similarity": 1
   },
+  "frost-2013": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
   "frost-2016": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-06",
+    "checkedAt": "2026-11-11",
     "httpStatus": 200
   },
   "furnas-et-al-1987": {
@@ -818,6 +828,11 @@
     "registeredYear": 1953,
     "registeredContainer": "Journal of Experimental Psychology",
     "similarity": 1
+  },
+  "ibm-design-language": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
   },
   "ideo-design-kit": {
     "status": "url-reachable",

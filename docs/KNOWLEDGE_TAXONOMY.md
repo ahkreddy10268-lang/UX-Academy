@@ -464,8 +464,8 @@ Tokens, components, governance and the architecture of interface systems.
 ### System foundations (`foundations`)
 
 - ✅ Design System — *Concept* · `design-system`
-- ◻️ Atomic Design — *Methodology* · `atomic-design`
-- ◻️ Design Language — *Concept* · `design-language`
+- ✅ Atomic Design — *Methodology* · `atomic-design`
+- ✅ Design Language — *Concept* · `design-language`
 - ✅ Design Tokens — *Concept* · `design-tokens`
 - ✅ Primitive Tokens — *Concept* · `primitive-tokens`
 - ✅ Semantic Tokens — *Concept* · `semantic-tokens`

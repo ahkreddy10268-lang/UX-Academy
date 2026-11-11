@@ -1,6 +1,6 @@
 # Progress register
 
-_Last updated: 2026-11-11 (session 32 — Design Systems Batch 2: theme architecture and the Design Token Lab)_
+_Last updated: 2026-11-11 (session 33 — Design Systems Batch 3 and path proposal)_
 
 ## State
 
@@ -423,11 +423,17 @@ Verified: `npm run check` (399 tests); `npm run test:taxonomy` (58 published); b
 - Published `error-recovery` and `help-and-documentation`: three depths (Systems Architect: field and form state machines, server-error mapping, safe retry with idempotency keys, non-colour error cues; escalating help architecture, keyboard and hover rules, help-search telemetry), practice blocks with 3 dos, 3 don'ts and two worked examples each, correction exercises, quizzes at three levels, flashcards, plates and register records.
 - All ten Nielsen heuristics now have published coverage.
 
-## Session 32 — Design Systems Batch 2 (D-120)
+## Session 32 — Design Systems Batch 2 (D-120; committed 9562451)
 
 - Published `theme-architecture` (three depths, practice block with a DTCG resolver and a Next.js + Tailwind v4 example, correction exercise, quizzes at three levels, flashcards, plate and register record).
 - Built the Design Token Lab (`/labs/token-lab`): light, dark and high-contrast presets; remap any role to any primitive; edit a primitive's value; live preview (card, badge, input, error, button, focus ring); contrast of all 12 documented pairs; export as DTCG JSON, CSS variables or Tailwind v4 `@theme inline`, with copy. Linked from `theme-architecture` and `semantic-tokens`.
 - New pure module `lib/formulas/tokens.ts` with 7 unit tests; 7 documentation sources added and verified.
 
+## Session 33 — Design Systems Batch 3 (D-121)
+
+- Published `design-language` and `atomic-design` (methodology, with method detail from Frost's interface inventory), each with three depths, practice block and two worked examples, correction exercise, quizzes at three levels, flashcards, plate and register record. The atomic-design plate is no longer labelled planned.
+- Sources added and verified: Frost 2013 (blog post), IBM Design Language, Carbon motion; frost-2016 notes updated with the chapters read.
+- Five-stage path restructure written as a proposal (docs/design-systems/PATH_RESTRUCTURE_PROPOSAL.md), not applied. Stages 1 and 2 are now fully published.
+
 ## Next task (precise)
-Design Systems Batch 3 (docs/design-systems/IMPLEMENTATION_ROADMAP.md): `design-language` and `atomic-design` (methodology: method detail required), then the five-stage learning-path restructure in `content/learning-paths.ts` placing all 29 Design Systems topics (owner approval of the restructure is still pending).
+Owner decision on docs/design-systems/PATH_RESTRUCTURE_PROPOSAL.md. If approved: apply the five-stage `design-systems` path and add the coverage assertion. Then Design Systems Batch 4 (scales): `spacing-scales`, `typography-scales`, `colour-systems`, `elevation-systems`, `icon-systems`, `responsive-systems`.

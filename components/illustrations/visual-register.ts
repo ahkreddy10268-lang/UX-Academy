@@ -83,6 +83,7 @@ export const visualRegister: Record<string, VisualRecord> = {
   "primitive-tokens": r("design-systems", "hierarchy", "retain", "Sheet (B1): a grey ramp numbered with gaps, semantic roles choosing steps, a crossed component-to-primitive link, and a spacing scale.", { secondaryMethods: ["relationship"], techniques: ["routed-connectors", "numbered-annotation"] }),
   "semantic-tokens": r("design-systems", "relationship", "retain", "Sheet (B1): one column of role names mapped to light and dark primitives, a contrast pair, and components that point only at roles.", { secondaryMethods: ["comparison"], techniques: ["routed-connectors", "code-mapping"] }),
   "theme-architecture": r("design-systems", "comparison", "retain", "Sheet (S32): one card component in light, dark and high-contrast themes drawn in the lessons' sample colours, the shared role names, each theme's mapping and two theme axes in resolution order.", { secondaryMethods: ["hierarchy"], techniques: ["code-mapping", "numbered-annotation"] }),
+  "design-language": r("design-systems", "hierarchy", "retain", "Sheet (S33): a principle traced through four foundation decisions (type, space, colour, motion) to tokens and one component that expresses them.", { secondaryMethods: ["relationship"], techniques: ["routed-connectors", "numbered-annotation"] }),
   "visibility-of-system-status": r("interaction-design", "process", "retain", "Sheet (S29): feedback matched to duration on a 0.1 / 1 / 10 s timeline, from pressed state to determinate progress with Cancel, and an announced status message.", { techniques: ["timeline", "interface-anatomy", "numbered-annotation"] }),
   "user-control-and-freedom": r("interaction-design", "conceptual", "retain", "Sheet (S29): immediate removal with a visible Undo, Escape and ⌘Z as exits, and a labelled Cancel against an ambiguous ×.", { secondaryMethods: ["comparison"], techniques: ["interface-anatomy", "good-bad", "numbered-annotation"] }),
   "consistency-principle": r("ux-concept", "comparison", "retain", "Sheet (S29): one action shown three ways across three screens versus one component, name and position on all three.", { secondary: ["design-systems"], techniques: ["good-bad", "numbered-annotation"] }),
@@ -95,7 +96,7 @@ export const visualRegister: Record<string, VisualRecord> = {
 
   /* ---- planned-topic plates ---- */
   "design-thinking": r("ux-process", "process", "retain", "Sheet (S25, planned topic, labelled): five stages with artefacts and iteration returns.", { techniques: ["timeline", "numbered-annotation"] }),
-  "atomic-design": r("design-systems", "hierarchy", "retain", "Sheet (S25, planned topic, labelled): atoms → molecule → organism → template → page, each built from the last.", { techniques: ["interface-anatomy", "numbered-annotation"] }),
+  "atomic-design": r("design-systems", "hierarchy", "retain", "Sheet (S25; entry plate since S33, planned label removed): atoms → molecule → organism → template → page, each built from the last.", { techniques: ["interface-anatomy", "numbered-annotation"] }),
   "human-centred-design": r("ux-process", "process", "retain", "Sheet (S25, planned topic, labelled): users, people affected and context as rings with an iterating path.", { techniques: ["numbered-annotation"] }),
 
   /* ---- subject plates ---- */

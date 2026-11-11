@@ -8,7 +8,7 @@ import { progressiveDisclosurePlate as progressiveDisclosure } from "./learning-
 import { visualHierarchyPlate as visualHierarchy } from "./learning-sheets";
 import { modularTypeScalePlate as modularTypeScale } from "./learning-sheets";
 import { colourContrastPlate as colourContrastRatio } from "./learning-sheets";
-import { designTokensPlate as designTokens, primitiveTokensPlate as primitiveTokens, semanticTokensPlate as semanticTokens, visibilityOfSystemStatusPlate as visibilityOfSystemStatus, userControlAndFreedomPlate as userControlAndFreedom, consistencyPrinciplePlate as consistencyPrinciple, errorPreventionPlate as errorPrevention, mappingPlate as mapping, flexibilityEfficiencyPlate as flexibilityEfficiency, aestheticMinimalistPlate as aestheticMinimalist, errorRecoveryPlate as errorRecovery, helpDocumentationPlate as helpDocumentation, themeArchitecturePlate as themeArchitecture } from "./learning-sheets";
+import { designTokensPlate as designTokens, primitiveTokensPlate as primitiveTokens, semanticTokensPlate as semanticTokens, visibilityOfSystemStatusPlate as visibilityOfSystemStatus, userControlAndFreedomPlate as userControlAndFreedom, consistencyPrinciplePlate as consistencyPrinciple, errorPreventionPlate as errorPrevention, mappingPlate as mapping, flexibilityEfficiencyPlate as flexibilityEfficiency, aestheticMinimalistPlate as aestheticMinimalist, errorRecoveryPlate as errorRecovery, helpDocumentationPlate as helpDocumentation, themeArchitecturePlate as themeArchitecture, designLanguagePlate as designLanguage } from "./learning-sheets";
 import { jtbdPlate as jobsToBeDone } from "./learning-sheets";
 import { heartPlate as heartFramework } from "./learning-sheets";
 import { humanCentredDesignPlanned as humanCentredDesign } from "./subject-sheets";
@@ -45,6 +45,7 @@ const plates: IllustrationEntry[] = [
   errorRecovery,
   helpDocumentation,
   themeArchitecture,
+  designLanguage,
 ];
 export default plates;
 
