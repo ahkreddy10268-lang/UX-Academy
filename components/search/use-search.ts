@@ -36,7 +36,7 @@ function loadIndex() {
 
 export type Hit = SearchDoc & { score: number; terms: string[] };
 
-export function useSearch(query: string, enabled = true) {
+export function useSearch(query: string, enabled = true, limit = 60) {
   const q = query.trim();
   const [state, setState] = useState<{ query: string; status: "ready" | "error"; hits: Hit[]; error?: string } | null>(null);
 
@@ -48,7 +48,7 @@ export function useSearch(query: string, enabled = true) {
         if (cancelled) return;
         let results: SearchResult[] = mini.search(q);
         if (!results.length) results = mini.search(q, { combineWith: "OR" });
-        const hits = results.slice(0, 60).map((r) => ({ ...docs.get(r.id as string)!, score: r.score, terms: r.terms }));
+        const hits = results.slice(0, limit).map((r) => ({ ...docs.get(r.id as string)!, score: r.score, terms: r.terms }));
         // Published entries outrank planned stubs with similar scores.
         hits.sort((a, b) => b.score * weight(b) - a.score * weight(a));
         setState({ query: q, status: "ready", hits });
@@ -57,7 +57,7 @@ export function useSearch(query: string, enabled = true) {
     return () => {
       cancelled = true;
     };
-  }, [q, enabled]);
+  }, [q, enabled, limit]);
 
   if (!q) return { status: "idle" as const, hits: [] as Hit[], error: undefined };
   if (!state || state.query !== q) return { status: "loading" as const, hits: state?.hits ?? [], error: undefined };
