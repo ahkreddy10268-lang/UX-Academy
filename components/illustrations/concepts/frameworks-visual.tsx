@@ -10,6 +10,7 @@ import { modularTypeScalePlate as modularTypeScale } from "./learning-sheets";
 import { colourContrastPlate as colourContrastRatio } from "./learning-sheets";
 import { designTokensPlate as designTokens, primitiveTokensPlate as primitiveTokens, semanticTokensPlate as semanticTokens, visibilityOfSystemStatusPlate as visibilityOfSystemStatus, userControlAndFreedomPlate as userControlAndFreedom, consistencyPrinciplePlate as consistencyPrinciple, errorPreventionPlate as errorPrevention, mappingPlate as mapping, flexibilityEfficiencyPlate as flexibilityEfficiency, aestheticMinimalistPlate as aestheticMinimalist, errorRecoveryPlate as errorRecovery, helpDocumentationPlate as helpDocumentation, themeArchitecturePlate as themeArchitecture, designLanguagePlate as designLanguage } from "./learning-sheets";
 import { jtbdPlate as jobsToBeDone } from "./learning-sheets";
+import { colourSystemsPlate, elevationSystemsPlate, iconSystemsPlate, responsiveSystemsPlate, spacingScalesPlate, typographyScalesPlate } from "./scales-sheets";
 import { heartPlate as heartFramework } from "./learning-sheets";
 import { humanCentredDesignPlanned as humanCentredDesign } from "./subject-sheets";
 
@@ -46,6 +47,12 @@ const plates: IllustrationEntry[] = [
   helpDocumentation,
   themeArchitecture,
   designLanguage,
+  spacingScalesPlate,
+  typographyScalesPlate,
+  colourSystemsPlate,
+  elevationSystemsPlate,
+  iconSystemsPlate,
+  responsiveSystemsPlate,
 ];
 export default plates;
 

@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { entryBySlug, learningPaths } from "@/lib/content";
+import { entryBySlug, learningPaths, taxonomyItems } from "@/lib/content";
 import { levelQuestionCounts, stageStats } from "@/lib/content/learning";
 import { visualsFor } from "@/components/visual-explanations/registry";
 import { PATH_PALETTE } from "@/components/learn/path-art";
@@ -13,6 +13,17 @@ describe("learning paths", () => {
         const direct = s.steps.reduce((n, slug) => n + (entryBySlug.get(slug)?.quiz.filter((q) => q.level === s.level).length ?? 0), 0);
         expect(matching).toBe(direct);
       }
+  });
+
+  it("the design-systems path places every Design Systems topic exactly once (five-stage restructure, D-122)", () => {
+    const path = learningPaths.find((p) => p.id === "design-systems")!;
+    expect(path.stages.length).toBe(5);
+    const steps = path.stages.flatMap((s) => s.steps);
+    const domainSlugs = taxonomyItems.filter((t) => t.domain === "design-systems").map((t) => t.slug);
+    const placed = steps.filter((slug) => domainSlugs.includes(slug));
+    expect(domainSlugs.length).toBe(29);
+    expect([...placed].sort()).toEqual([...domainSlugs].sort()); // no omissions
+    expect(new Set(steps).size).toBe(steps.length); // no duplicates, including supporting topics
   });
 
   it("every path has its own artwork palette entry", () => {

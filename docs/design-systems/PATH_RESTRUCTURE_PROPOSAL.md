@@ -1,6 +1,6 @@
 # Proposal — five-stage Design Systems learning path
 
-> Session 33, 2026-11-11. **Proposal only; nothing in `content/learning-paths.ts`, routes or the schema has changed.** Awaiting owner approval (README § Decisions needed, item 1).
+> Session 33, 2026-11-11. **Applied in session 34 (D-122)** after owner approval: `content/learning-paths.ts` has the five stages below and `tests/learning.test.ts` places all 29 topics exactly once. Stage 3 is now fully published.
 
 ## Scope: one learning path, not the taxonomy
 

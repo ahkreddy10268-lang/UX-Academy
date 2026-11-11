@@ -5,10 +5,10 @@
 
 | Measure | Count |
 |---|---|
-| Registered Level-1 plates | 88 |
-| Published entries with a plate | 66 / 66 |
+| Registered Level-1 plates | 94 |
+| Published entries with a plate | 72 / 72 |
 | Subject plates | 20 / 20 |
-| Plates in the current system (dark technical or instructional sheet) | 86 |
+| Plates in the current system (dark technical or instructional sheet) | 92 |
 | Plates still in the earlier pastel style | 2 |
 | Level-2 figures | 23 |
 | Level-3 explorers (on plates) | 9 |
@@ -29,20 +29,20 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 | 6 | Interaction Design Illustrations | 13 | 13 | 1 | 4 | 13 / 0 / 0 | developing | `signifiers`, `doherty-threshold`, `gulfs-of-execution-and-evaluation`, `interaction-design-discipline`, `progressive-disclosure`, `visibility-of-system-status`, `user-control-and-freedom`, `error-prevention`, `mapping`, `flexibility-and-efficiency-of-use`, `error-recovery` |
 | 7 | Wireframe & Prototyping Illustrations | 1 | 1 | 0 | 0 | 1 / 0 / 0 | developing | — |
 | 8 | Visual Design & Composition Illustrations | 8 | 8 | 2 | 6 | 8 / 0 / 0 | developing | `gestalt-principles`, `colour-contrast-ratio`, `visual-hierarchy`, `modular-type-scale`, `aesthetic-and-minimalist-design` |
-| 9 | Design Systems Illustrations | 8 | 8 | 2 | 2 | 8 / 0 / 0 | developing | `atomic-design`, `design-system`, `design-tokens`, `primitive-tokens`, `semantic-tokens`, `theme-architecture`, `design-language` |
+| 9 | Design Systems Illustrations | 13 | 13 | 2 | 2 | 13 / 0 / 0 | developing | `atomic-design`, `design-system`, `design-tokens`, `primitive-tokens`, `semantic-tokens`, `theme-architecture`, `design-language`, `spacing-scales`, `typography-scales`, `colour-systems`, `elevation-systems`, `icon-systems` |
 | 10 | Usability & Accessibility Illustrations | 4 | 4 | 1 | 0 | 4 / 0 / 0 | developing | `usability`, `accessibility-concept`, `wcag` |
-| 11 | Responsive & Adaptive Design Illustrations | 0 | 0 | 0 | 0 | 0 / 0 / 0 | gap | — |
+| 11 | Responsive & Adaptive Design Illustrations | 1 | 1 | 0 | 0 | 1 / 0 / 0 | developing | `responsive-systems` |
 | 12 | UX Evaluation & Optimization Illustrations | 16 | 15 | 2 | 1 | 16 / 0 / 0 | developing | `nielsen-usability-heuristics`, `keystroke-level-model`, `shneiderman-golden-rules`, `heuristic-evaluation`, `cognitive-walkthrough`, `usability-testing`, `system-usability-scale`, `nasa-tlx`, `net-promoter-score`, `task-success-rate`, `ab-testing`, `confidence-intervals`, `sample-size-estimation`, `heart-framework` |
 
 ## The five explanation methods
 
 | Method | L1 plates (primary) | L2 figures |
 |---|---:|---:|
-| Conceptual & Metaphorical | 17 | 7 |
+| Conceptual & Metaphorical | 18 | 7 |
 | Process & Sequential | 17 | 7 |
-| Relationship & Systems | 16 | 4 |
-| Comparison & Contrast | 24 | 4 |
-| Hierarchy & Classification | 14 | 1 |
+| Relationship & Systems | 17 | 4 |
+| Comparison & Contrast | 26 | 4 |
+| Hierarchy & Classification | 16 | 1 |
 
 ## Level 1 audit (every registered plate)
 
@@ -117,6 +117,12 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 | `help-and-documentation` | entry | ux-concept | hierarchy | current · instructional sheet | retain | Sheet (S31): help at four depths on one screen — inline hint, toggletip, non-modal panel, full article — each linking to the next. | 0 | — |
 | `theme-architecture` | entry | design-systems | comparison | current · instructional sheet | retain | Sheet (S32): one card component in light, dark and high-contrast themes drawn in the lessons' sample colours, the shared role names, each theme's mapping and two theme axes in resolution order. | 0 | token-lab |
 | `design-language` | entry | design-systems | hierarchy | current · instructional sheet | retain | Sheet (S33): a principle traced through four foundation decisions (type, space, colour, motion) to tokens and one component that expresses them. | 0 | — |
+| `spacing-scales` | entry | design-systems | comparison | current · instructional sheet | retain | Sheet (S34): six spacing steps to relative size, a card whose small and large gaps encode grouping, concentric corners (outer = inner + padding) and a 24 px target. | 0 | — |
+| `typography-scales` | entry | design-systems | hierarchy | current · instructional sheet | retain | Sheet (S34): four role styles drawn in their line boxes with size/line height, role values remapped at two breakpoints, and heading levels chosen by structure. | 0 | — |
+| `colour-systems` | entry | design-systems | relationship | current · instructional sheet | retain | Sheet (S34): sample-token ramps, one role mapped per theme, pair checks from lib/formulas contrastRatio (light pass, dark fail, dark remapped pass) and a status that does not rely on colour alone. | 0 | — |
+| `elevation-systems` | entry | design-systems | hierarchy | current · instructional sheet | retain | Sheet (S34): five named levels in side view with stacking bands, and one card raised by shadow in a light theme and by a lighter surface in a dark theme. | 0 | — |
+| `icon-systems` | entry | design-systems | conceptual | current · instructional sheet | retain | Sheet (S34): a 24-unit artboard with keylines and one icon, icon/text size pairs, a 16 px glyph in a 24 px target with its accessible name, and one glyph per concept. | 0 | — |
+| `responsive-systems` | entry | responsive-adaptive | comparison | current · instructional sheet | retain | Sheet (S34, first Responsive & Adaptive plate, closes the D-109 gap): one grid at three Carbon breakpoints with columns from lib/formulas gridColumns, and one card in a narrow and a wide container (container query). | 0 | — |
 | `foundations` | subject | ux-concept | relationship | current · instructional sheet | retain | Sheet (S25, subject): interface inside the experience band, an approach loop and a history line. | 0 | — |
 | `laws-effects` | subject | ux-concept | conceptual | current · instructional sheet | retain | Sheet (S25, subject): six tiles for the domain's families, ending with evidence labels. | 0 | — |
 | `psychology` | subject | ux-concept | conceptual | current · instructional sheet | retain | Sheet (S25, subject): memory slots, a cue–action–outcome loop, pop-out search and a reach arc. | 0 | — |
@@ -240,6 +246,12 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 | `help-and-documentation` | A renewal screen with help at four depths, each linking to the next. A one-line hint sits under the date field: 'Up to 4 weeks from today'. Beside a term, a toggletip button 'What is a hold?' opens a short definition. A non-modal help panel at the side lists three numbered steps for renewing a book while the page stays usable. At the bottom, a link to the full article. The deeper the level, the more it says and the less often it is needed. |
 | `theme-architecture` | The same library card component shown three times, in light, dark and high-contrast themes, drawn in the fixed colours of the token lessons' palette. Above the cards, one row of semantic role names — surface, text, action — that every card uses. Between the roles and each card, the theme's mapping: light points the roles to grey.0, grey.900 and blue.600; dark to grey.950, grey.50 and blue.400; high contrast to grey.0, grey.950 and blue.700. The component never changes; only the mapping does. Below, two theme axes, mode and contrast, combine in a stated order. |
 | `design-language` | A principle, 'calm and precise', at the top left, traced by arrows into four foundation decisions: type (one heading style), space (one spacing rhythm), colour (ink with one accent) and motion (productive by default, expressive only for rare moments). Each decision points to a named token beside it — font.heading, space.inset, color.action, motion.productive — and all four tokens feed one card component at the bottom right that expresses them. Reading the drawing from left to right traces any value in the component back to the principle that justifies it. |
+| `spacing-scales` | A row of six spacing steps drawn to relative size — 4, 8, 12, 16, 24, 32 px — as the only distances the product may use. Below left, a library book card uses them: a small 4 px gap binds the title to its author, and a larger 24 px gap separates that group from the Renew button, so proximity shows grouping. Below right, a rounded card with a 12 px corner holds a button 8 px from its edge; the button's corner is 4 px, so the two curves share a centre (outer radius = inner radius + padding). Beside the button, a 16 px icon sits inside a 24 px target. |
+| `typography-scales` | Four named text styles stacked as specimens, each drawn inside its line box so size and line height are seen together: headline 28/35, title 20/28, body 16/24, label 14/20 (size / line height in px). On the right, the same role names keep their meaning across two breakpoints while the headline value changes from 24 px on small screens to 28 px on large ones. Below, a page outline shows heading levels h1 and h2 chosen by structure, with each level labelled by the role style it uses, so a visual size never decides a heading level. |
+| `colour-systems` | Tonal ramps of the token lessons' palette at the top: eight greys from white to near-black, three blues and two reds, drawn in their fixed sample colours. Below, the role text.danger points to red 700 in the light theme and to red 400 in the dark theme. Pair checks on the right show why: red 700 on white is 6.57:1 (passes 4.5:1), red 700 on near-black is 2.80:1 (fails), and red 400 on near-black is 6.77:1 (passes). At the bottom, an overdue status shows a red warning icon and the word 'Overdue', so the meaning does not depend on colour alone. |
+| `elevation-systems` | On the left, a side view of five named levels stacked up the z-axis — page, raised, menu, dialog and toast — each a thin slab with its stacking band (page and raised cards share the base band; menus 200, dialogs 400, toasts 500), so whatever looks highest is also drawn on top. On the right, the same library card in a light theme, lifted by a soft offset shadow, and in a dark theme, where the shadow disappears against the near-black page and the card is instead shown as a lighter surface (tonal elevation). Below, a menu keeps a visible border so its boundary does not depend on the shadow. |
+| `icon-systems` | On the left, a 24-unit icon artboard with its keyline grid — a circle, a square and two upright rectangles — and a bookmark icon drawn on it with one fixed stroke weight. In the middle, icon sizes paired with text sizes: a 16 px icon beside 14 px text and a 20 px icon beside 16 px text. On the right, a 16 px glyph inside a 24 px target, with the accessible name 'Renew loan' attached to the button. At the bottom, one glyph keeps one meaning: the circular arrow means Refresh, and Renew gets its own calendar-plus icon and label. |
+| `responsive-systems` | Three frames drawn to the same scale show one grid at three breakpoints with 32 px gutters — sm 320 px: 4 columns of 56 px; md 672 px: 8 columns of 52 px; lg 1056 px: 16 columns of 34 px — each column computed as (container − 2 × margin − gutters) ÷ columns. Below, the same book card appears in a narrow sidebar slot, where a container query stacks its cover above the text, and in a wide main slot, where cover and text sit side by side; the screen is the same, only the container differs. The smallest frame, 320 px wide, is also the reflow floor: every layout must work in one column at 320 CSS px. |
 | `foundations` | Nested frames read from the inside out. At the centre, an interface: a booking screen with a title, a field and a button, the part UI design shapes. Around it, a band of before, during and after touchpoints, the whole experience UX design is concerned with. A loop arrow around the band stands for design approaches that put people's needs and evaluation at the centre. Along the bottom, a short timeline marks that the field has a history in design and human-computer interaction. |
 | `laws-effects` | Six tiles, one for each family of regularities in this subject. Human performance laws: a pointer moving a distance D to a target of width W. Popular laws and rules of thumb: a card stamped 'rule of thumb'. Memory and attention: a list in which one item stands out. Gestalt grouping: dots grouped by spacing. Decision-making biases: two options, one marked as the default. A sixth tile shows evidence labels, because these items range from measured laws to popular claims. |
 | `psychology` | Four panels for the four strands of the subject, each shown through what it explains in an interface rather than as a picture of a head. Cognitive psychology, memory and learning: four memory slots, three filled. Behavioural science, motivation and emotion: a loop from a cue to an action to an outcome that feeds back. Visual cognition: a field of outlined shapes in which one filled shape stands out at once (in the hero it pulses, as attention is captured). Human factors and ergonomics: a control panel with a large stop button within reach and a reach arc drawn around it. |

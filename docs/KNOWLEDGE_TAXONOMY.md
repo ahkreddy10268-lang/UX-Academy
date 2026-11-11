@@ -474,12 +474,12 @@ Tokens, components, governance and the architecture of interface systems.
 
 ### Scales & visual systems (`scales`)
 
-- ◻️ Spacing Scales — *Concept* · `spacing-scales`
-- ◻️ Typography Scales — *Concept* · `typography-scales`
-- ◻️ Colour Systems — *Concept* · `colour-systems` · also: Semantic Colour Systems
-- ◻️ Elevation Systems — *Concept* · `elevation-systems`
-- ◻️ Icon Systems — *Concept* · `icon-systems`
-- ◻️ Responsive Systems — *Concept* · `responsive-systems`
+- ✅ Spacing Scales — *Concept* · `spacing-scales`
+- ✅ Typography Scales — *Concept* · `typography-scales`
+- ✅ Colour Systems — *Concept* · `colour-systems` · also: Semantic Colour Systems
+- ✅ Elevation Systems — *Concept* · `elevation-systems`
+- ✅ Icon Systems — *Concept* · `icon-systems`
+- ✅ Responsive Systems — *Concept* · `responsive-systems`
 
 ### Components & patterns (`components`)
 

@@ -52,11 +52,11 @@ All IDs match `content/taxonomy.ts` and the generated `docs/KNOWLEDGE_TAXONOMY.m
 
 ## Decisions needed from the owner
 
-1. Approve the five-stage path restructure (moves `multi-brand-systems` after governance; places all 29 topics). Detailed impact: [PATH_RESTRUCTURE_PROPOSAL.md](PATH_RESTRUCTURE_PROPOSAL.md).
-2. Approve or decline an optional structured `practice` block for entries (comparisons, corrections, rule kinds).
+1. ~~Approve the five-stage path restructure~~ — approved and applied in session 34 (D-122); see [PATH_RESTRUCTURE_PROPOSAL.md](PATH_RESTRUCTURE_PROPOSAL.md).
+2. ~~Optional `practice` block~~ — approved and built (D-113).
 3. Consider a "practice concept" completeness family for design-system concepts.
 4. Prefer page-level source records or root records with precise notes.
 
 ## Next phase
 
-Phase 2, Batch 1: write `semantic-tokens` then `primitive-tokens` (see IMPLEMENTATION_ROADMAP.md).
+Stages 1–3 are published (Batches 1–4). Next: Batch 5, Stage 4 components (see IMPLEMENTATION_ROADMAP.md and docs/PROGRESS.md).

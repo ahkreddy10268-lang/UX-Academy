@@ -3,69 +3,75 @@ import type { KnowledgeEntryInput } from "../../lib/content/schema";
 import m0 from "./accessibility/accessibility-concept";
 import m1 from "./accessibility/wcag";
 import m2 from "./design-systems/atomic-design";
-import m3 from "./design-systems/design-language";
-import m4 from "./design-systems/design-system";
-import m5 from "./design-systems/design-tokens";
-import m6 from "./design-systems/primitive-tokens";
-import m7 from "./design-systems/semantic-tokens";
-import m8 from "./design-systems/theme-architecture";
-import m9 from "./foundations/human-computer-interaction";
-import m10 from "./foundations/interaction-design-discipline";
-import m11 from "./foundations/ui-design";
-import m12 from "./foundations/usability";
-import m13 from "./foundations/user-centred-design";
-import m14 from "./foundations/user-experience";
-import m15 from "./frameworks/double-diamond";
-import m16 from "./frameworks/heart-framework";
-import m17 from "./frameworks/jobs-to-be-done";
-import m18 from "./frameworks/keystroke-level-model";
-import m19 from "./heuristics/aesthetic-and-minimalist-design";
-import m20 from "./heuristics/consistency-principle";
-import m21 from "./heuristics/flexibility-and-efficiency-of-use";
-import m22 from "./heuristics/help-and-documentation";
-import m23 from "./heuristics/nielsen-usability-heuristics";
-import m24 from "./heuristics/shneiderman-golden-rules";
-import m25 from "./heuristics/user-control-and-freedom";
-import m26 from "./ia/information-architecture";
-import m27 from "./interaction/error-prevention";
-import m28 from "./interaction/error-recovery";
-import m29 from "./interaction/mapping";
-import m30 from "./interaction/progressive-disclosure";
-import m31 from "./interaction/visibility-of-system-status";
-import m32 from "./laws-effects/aesthetic-usability-effect";
-import m33 from "./laws-effects/choice-overload";
-import m34 from "./laws-effects/doherty-threshold";
-import m35 from "./laws-effects/fitts-law";
-import m36 from "./laws-effects/gestalt-principles";
-import m37 from "./laws-effects/hick-hyman-law";
-import m38 from "./laws-effects/jakobs-law";
-import m39 from "./laws-effects/millers-law";
-import m40 from "./laws-effects/peak-end-rule";
-import m41 from "./laws-effects/serial-position-effect";
-import m42 from "./laws-effects/steering-law";
-import m43 from "./laws-effects/teslers-law";
-import m44 from "./laws-effects/von-restorff-effect";
-import m45 from "./metrics/confidence-intervals";
-import m46 from "./metrics/nasa-tlx";
-import m47 from "./metrics/net-promoter-score";
-import m48 from "./metrics/sample-size-estimation";
-import m49 from "./metrics/system-usability-scale";
-import m50 from "./metrics/task-success-rate";
-import m51 from "./psychology/affordances";
-import m52 from "./psychology/cognitive-load-theory";
-import m53 from "./psychology/gulfs-of-execution-and-evaluation";
-import m54 from "./psychology/mental-models";
-import m55 from "./psychology/recognition-over-recall";
-import m56 from "./psychology/signifiers";
-import m57 from "./psychology/working-memory-model";
-import m58 from "./research/ab-testing";
-import m59 from "./research/card-sorting";
-import m60 from "./research/cognitive-walkthrough";
-import m61 from "./research/heuristic-evaluation";
-import m62 from "./research/usability-testing";
-import m63 from "./type-colour/colour-contrast-ratio";
-import m64 from "./type-colour/modular-type-scale";
-import m65 from "./visual/visual-hierarchy";
+import m3 from "./design-systems/colour-systems";
+import m4 from "./design-systems/design-language";
+import m5 from "./design-systems/design-system";
+import m6 from "./design-systems/design-tokens";
+import m7 from "./design-systems/elevation-systems";
+import m8 from "./design-systems/icon-systems";
+import m9 from "./design-systems/primitive-tokens";
+import m10 from "./design-systems/responsive-systems";
+import m11 from "./design-systems/semantic-tokens";
+import m12 from "./design-systems/spacing-scales";
+import m13 from "./design-systems/theme-architecture";
+import m14 from "./design-systems/typography-scales";
+import m15 from "./foundations/human-computer-interaction";
+import m16 from "./foundations/interaction-design-discipline";
+import m17 from "./foundations/ui-design";
+import m18 from "./foundations/usability";
+import m19 from "./foundations/user-centred-design";
+import m20 from "./foundations/user-experience";
+import m21 from "./frameworks/double-diamond";
+import m22 from "./frameworks/heart-framework";
+import m23 from "./frameworks/jobs-to-be-done";
+import m24 from "./frameworks/keystroke-level-model";
+import m25 from "./heuristics/aesthetic-and-minimalist-design";
+import m26 from "./heuristics/consistency-principle";
+import m27 from "./heuristics/flexibility-and-efficiency-of-use";
+import m28 from "./heuristics/help-and-documentation";
+import m29 from "./heuristics/nielsen-usability-heuristics";
+import m30 from "./heuristics/shneiderman-golden-rules";
+import m31 from "./heuristics/user-control-and-freedom";
+import m32 from "./ia/information-architecture";
+import m33 from "./interaction/error-prevention";
+import m34 from "./interaction/error-recovery";
+import m35 from "./interaction/mapping";
+import m36 from "./interaction/progressive-disclosure";
+import m37 from "./interaction/visibility-of-system-status";
+import m38 from "./laws-effects/aesthetic-usability-effect";
+import m39 from "./laws-effects/choice-overload";
+import m40 from "./laws-effects/doherty-threshold";
+import m41 from "./laws-effects/fitts-law";
+import m42 from "./laws-effects/gestalt-principles";
+import m43 from "./laws-effects/hick-hyman-law";
+import m44 from "./laws-effects/jakobs-law";
+import m45 from "./laws-effects/millers-law";
+import m46 from "./laws-effects/peak-end-rule";
+import m47 from "./laws-effects/serial-position-effect";
+import m48 from "./laws-effects/steering-law";
+import m49 from "./laws-effects/teslers-law";
+import m50 from "./laws-effects/von-restorff-effect";
+import m51 from "./metrics/confidence-intervals";
+import m52 from "./metrics/nasa-tlx";
+import m53 from "./metrics/net-promoter-score";
+import m54 from "./metrics/sample-size-estimation";
+import m55 from "./metrics/system-usability-scale";
+import m56 from "./metrics/task-success-rate";
+import m57 from "./psychology/affordances";
+import m58 from "./psychology/cognitive-load-theory";
+import m59 from "./psychology/gulfs-of-execution-and-evaluation";
+import m60 from "./psychology/mental-models";
+import m61 from "./psychology/recognition-over-recall";
+import m62 from "./psychology/signifiers";
+import m63 from "./psychology/working-memory-model";
+import m64 from "./research/ab-testing";
+import m65 from "./research/card-sorting";
+import m66 from "./research/cognitive-walkthrough";
+import m67 from "./research/heuristic-evaluation";
+import m68 from "./research/usability-testing";
+import m69 from "./type-colour/colour-contrast-ratio";
+import m70 from "./type-colour/modular-type-scale";
+import m71 from "./visual/visual-hierarchy";
 
 export const rawEntries: KnowledgeEntryInput[] = [
   m0,
@@ -133,5 +139,11 @@ export const rawEntries: KnowledgeEntryInput[] = [
   m62,
   m63,
   m64,
-  m65
+  m65,
+  m66,
+  m67,
+  m68,
+  m69,
+  m70,
+  m71
 ];
