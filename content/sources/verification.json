@@ -95,6 +95,11 @@
     "checkedAt": "2026-11-11",
     "httpStatus": 200
   },
+  "ark-ui": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
   "atkinson-shiffrin-1968": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",
@@ -353,6 +358,11 @@
     "registeredContainer": "Proceedings of the SIGCHI Conference on Human Factors in Computing Systems",
     "similarity": 1
   },
+  "chakra-ui-installation": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
   "chandler-sweller-1991": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",
@@ -445,6 +455,11 @@
   "curtis-2009": {
     "status": "url-reachable",
     "checkedAt": "2026-11-06",
+    "httpStatus": 200
+  },
+  "cva-variants": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
     "httpStatus": 200
   },
   "de-jong-2010": {
@@ -542,9 +557,19 @@
     "registeredContainer": "Behavior Research Methods, Instruments, &amp; Computers",
     "similarity": 1
   },
+  "figma-component-properties": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
   "figma-learn": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "figma-variants": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
     "httpStatus": 200
   },
   "finstad-2010": {
@@ -732,6 +757,14 @@
     "registeredTitle": "Mental models and problem solving in using a calculator",
     "registeredYear": 1983,
     "registeredContainer": "Proceedings of the SIGCHI conference on Human Factors in Computing Systems  - CHI '83",
+    "similarity": 1
+  },
+  "harel-1987": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-11",
+    "registeredTitle": "Statecharts: a visual formalism for complex systems",
+    "registeredYear": 1987,
+    "registeredContainer": "Science of Computer Programming",
     "similarity": 1
   },
   "harrison-sengers-tatar-2011": {
@@ -1317,6 +1350,11 @@
     "checkedAt": "2026-11-03",
     "httpStatus": 200
   },
+  "mui-overview": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
   "muller-kuhn-1993": {
     "status": "doi-verified",
     "checkedAt": "2026-11-04",
@@ -1547,6 +1585,11 @@
     "registeredYear": 1983,
     "similarity": 1
   },
+  "open-ui": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
   "paas-1992": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",
@@ -1608,7 +1651,47 @@
     "registeredContainer": "Human–Computer Interaction",
     "similarity": 1
   },
+  "primer-component-status": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "primer-react-philosophy": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "radix-composition": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "radix-primitives": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "react-aria": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
   "react-hydrateroot": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "react-reacting-to-input": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "react-sharing-state": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "react-use-client": {
     "status": "url-reachable",
     "checkedAt": "2026-11-11",
     "httpStatus": 200
@@ -1791,6 +1874,11 @@
     "checkedAt": "2026-11-03",
     "httpStatus": 503
   },
+  "shopify-polaris": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
   "sigchi-about": {
     "status": "url-reachable",
     "checkedAt": "2026-11-04",
@@ -1925,6 +2013,11 @@
     "checkedAt": "2026-11-11",
     "httpStatus": 200
   },
+  "typescript-narrowing": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
   "un-crpd-2006": {
     "status": "url-reachable",
     "checkedAt": "2026-11-05",
@@ -1989,6 +2082,21 @@
     "registeredContainer": "Psychologische Forschung",
     "similarity": 1
   },
+  "w3c-apg-button": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "w3c-apg-keyboard": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "w3c-apg-tabs": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
   "w3c-aria-apg": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
@@ -2002,6 +2110,11 @@
   "w3c-wai": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "w3c-wai-aria-12": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
     "httpStatus": 200
   },
   "w3c-wcag-21": {

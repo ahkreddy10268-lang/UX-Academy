@@ -483,11 +483,11 @@ Tokens, components, governance and the architecture of interface systems.
 
 ### Components & patterns (`components`)
 
-- ◻️ Component Libraries — *Concept* · `component-libraries`
-- ◻️ Component Architecture — *Concept* · `component-architecture`
-- ◻️ Variants — *Concept* · `variants`
-- ◻️ Component Properties — *Concept* · `component-properties`
-- ◻️ Component State Management — *Concept* · `component-state-management`
+- ✅ Component Libraries — *Concept* · `component-libraries`
+- ✅ Component Architecture — *Concept* · `component-architecture`
+- ✅ Variants — *Concept* · `variants`
+- ✅ Component Properties — *Concept* · `component-properties`
+- ✅ Component State Management — *Concept* · `component-state-management`
 - ◻️ Data Tables — *Pattern* · `data-tables`
 - ◻️ Empty States — *Pattern* · `empty-states`
 - ◻️ Loading States — *Pattern* · `loading-states`

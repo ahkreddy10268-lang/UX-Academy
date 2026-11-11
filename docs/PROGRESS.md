@@ -1,6 +1,6 @@
 # Progress register
 
-_Last updated: 2026-11-11 (session 34 — five-stage Design Systems path applied; Batch 4, scales)_
+_Last updated: 2026-11-11 (session 35 — Design Systems Batch 5, component foundations)_
 
 ## State
 
@@ -109,5 +109,13 @@ After that: `ui-design`, `interaction-design-discipline`, `accessibility-concept
 - `responsive-systems` is the first Responsive & Adaptive plate, closing the D-109 gap.
 - Stage 3 of the path is now fully published; Stages 1–3 (16 steps) can be completed today.
 
+## Session 35 — Design Systems Batch 5: component foundations (D-123)
+
+- Owner approved splitting Stage 4: concepts first (Batch 5), state patterns next (Batch 6).
+- Published `component-libraries`, `component-architecture`, `variants`, `component-properties`, `component-state-management`. Each has three depths (Beginner analogies; Practitioner naming, prop sprawl, design reviews, Figma ↔ code parity; Systems Architect typed contracts, headless vs encapsulated styling, state machines, bundle and React Server Components boundaries, WAI-ARIA/APG keyboard models), a practice block with exactly three dos and three don'ts plus production-style code (headless wrapper with a client boundary, compound Tabs with context and roving tabindex, cva variants, a discriminated-union button contract, a typed async state machine), a correction exercise, quizzes at three levels, four flashcards, a sheet plate with figure key and a register record.
+- 24 sources added and checked: Radix (introduction, composition), React Aria, Ark UI, Material UI, Chakra UI, Shopify Polaris (now web components at shopify.dev), Primer (philosophy, component status), Open UI (W3C Community Group), cva variants, TypeScript narrowing, React (sharing state, reacting to input, context, props, 'use client'), Figma (variants, component properties), WAI-ARIA 1.2 (Recommendation), APG (keyboard interface, tabs, button), and Harel 1987 (DOI-verified; full text not readable, cited bibliographically for nested and concurrent states). Frost 2016 notes extended with chapters 1 and 5.
+- New tested formulas `lib/formulas/components.ts`: `variantCount` (reproduces Figma's documented 24-variant button) and `booleanVsEnum`; the variants entry and plate use them.
+- Stage 4 now has 5 of 12 steps published.
+
 ## Next task (precise)
-Design Systems Batch 5 (Stage 4, components): `component-libraries`, `component-architecture`, `variants`, `component-properties`, `component-state-management`, sources verified first, then the patterns (`empty-states`, `loading-states`, `skeleton-screens`, `progressive-loading`, `error-states`, `data-tables`).
+Design Systems Batch 6 (Stage 4 patterns): `empty-states`, `loading-states`, `skeleton-screens`, `progressive-loading`, `error-states`, `data-tables` — sources verified first; reuse the state-machine model from `component-state-management` and the async status example.
