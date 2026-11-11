@@ -128,6 +128,11 @@
     "checkedAt": "2026-11-11",
     "httpStatus": 200
   },
+  "aws-backoff-jitter": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
   "ax-patterns": {
     "status": "url-reachable",
     "checkedAt": "2026-11-09",
@@ -1282,7 +1287,17 @@
     "checkedAt": "2026-11-11",
     "httpStatus": 200
   },
+  "mdn-lazy-loading": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
   "mdn-prefers-color-scheme": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "mdn-prefers-reduced-motion": {
     "status": "url-reachable",
     "checkedAt": "2026-11-11",
     "httpStatus": 200
@@ -1489,6 +1504,11 @@
     "checkedAt": "2026-11-11",
     "httpStatus": 200
   },
+  "nng-empty-states": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
   "nng-error-messages": {
     "status": "url-reachable",
     "checkedAt": "2026-11-11",
@@ -1504,7 +1524,22 @@
     "checkedAt": "2026-11-11",
     "httpStatus": 200
   },
+  "nng-mobile-tables": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
   "nng-natural-mappings": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "nng-progress-indicators": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "nng-skeleton-screens": {
     "status": "url-reachable",
     "checkedAt": "2026-11-11",
     "httpStatus": 200
@@ -1676,6 +1711,11 @@
     "checkedAt": "2026-11-11",
     "httpStatus": 200
   },
+  "react-error-boundaries": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
   "react-hydrateroot": {
     "status": "url-reachable",
     "checkedAt": "2026-11-11",
@@ -1691,7 +1731,17 @@
     "checkedAt": "2026-11-11",
     "httpStatus": 200
   },
+  "react-suspense": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
   "react-use-client": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "react-use-optimistic": {
     "status": "url-reachable",
     "checkedAt": "2026-11-11",
     "httpStatus": 200
@@ -1722,6 +1772,11 @@
   "reichheld-2003": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "rfc-9110": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
     "httpStatus": 200
   },
   "rodden-hutchinson-fu-2010": {
@@ -1974,6 +2029,11 @@
     "checkedAt": "2026-11-11",
     "httpStatus": 200
   },
+  "tanstack-virtual": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
   "tesler-nomodes": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
@@ -2087,7 +2147,17 @@
     "checkedAt": "2026-11-11",
     "httpStatus": 200
   },
+  "w3c-apg-grid": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
   "w3c-apg-keyboard": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "w3c-apg-table": {
     "status": "url-reachable",
     "checkedAt": "2026-11-11",
     "httpStatus": 200
@@ -2102,6 +2172,21 @@
     "checkedAt": "2026-11-03",
     "httpStatus": 200
   },
+  "w3c-resource-timing": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "w3c-understanding-pause-stop-hide": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "w3c-understanding-status-messages": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
   "w3c-understanding-wcag-22": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
@@ -2113,6 +2198,11 @@
     "httpStatus": 200
   },
   "w3c-wai-aria-12": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "w3c-wai-tables-tutorial": {
     "status": "url-reachable",
     "checkedAt": "2026-11-11",
     "httpStatus": 200
@@ -2158,6 +2248,26 @@
     "checkedAt": "2026-11-03",
     "httpStatus": 200
   },
+  "webdev-cls": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "webdev-inp": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "webdev-lazy-images": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "webdev-lcp": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
   "weiser-1991": {
     "status": "doi-verified",
     "checkedAt": "2026-11-04",
@@ -2196,6 +2306,11 @@
     "registeredYear": 2004,
     "registeredContainer": "Nature Reviews Neuroscience",
     "similarity": 1
+  },
+  "wroblewski-2013-spinner": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
   },
   "yonelinas-2002": {
     "status": "doi-verified",

@@ -25,3 +25,21 @@ export function booleanVsEnum(flags: number) {
   const meaningful = flags + 1;
   return { booleanCombinations, meaningful, invalid: booleanCombinations - meaningful, enumValues: meaningful };
 }
+
+export type WaitTier = "none" | "state-only" | "looped" | "percent-done";
+
+/**
+ * Feedback tier for an expected wait, after Nielsen's 0.1 / 1 / 10 s limits
+ * (1993, citing Miller 1968 and Card et al. 1991) and NN/g's indicator
+ * guidance (looped animations for 2–10 s, distracting under 1 s;
+ * percent-done above 10 s). The 1–2 s band, which neither source assigns
+ * to an indicator, is treated as "state-only": keep the control's own busy
+ * state without a looping animation.
+ */
+export function waitFeedback(seconds: number): WaitTier {
+  if (!Number.isFinite(seconds) || seconds < 0) throw new FormulaInputError("Enter a wait of zero seconds or more.");
+  if (seconds <= 0.1) return "none";
+  if (seconds < 2) return "state-only";
+  if (seconds <= 10) return "looped";
+  return "percent-done";
+}

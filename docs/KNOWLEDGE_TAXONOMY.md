@@ -488,12 +488,12 @@ Tokens, components, governance and the architecture of interface systems.
 - ✅ Variants — *Concept* · `variants`
 - ✅ Component Properties — *Concept* · `component-properties`
 - ✅ Component State Management — *Concept* · `component-state-management`
-- ◻️ Data Tables — *Pattern* · `data-tables`
-- ◻️ Empty States — *Pattern* · `empty-states`
-- ◻️ Loading States — *Pattern* · `loading-states`
-- ◻️ Error States — *Pattern* · `error-states`
-- ◻️ Skeleton Screens — *Pattern* · `skeleton-screens`
-- ◻️ Progressive Loading — *Pattern* · `progressive-loading`
+- ✅ Data Tables — *Pattern* · `data-tables`
+- ✅ Empty States — *Pattern* · `empty-states`
+- ✅ Loading States — *Pattern* · `loading-states`
+- ✅ Error States — *Pattern* · `error-states`
+- ✅ Skeleton Screens — *Pattern* · `skeleton-screens`
+- ✅ Progressive Loading — *Pattern* · `progressive-loading`
 
 ### Governance & operations (`operations`)
 

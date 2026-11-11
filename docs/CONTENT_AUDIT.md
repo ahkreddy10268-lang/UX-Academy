@@ -264,3 +264,7 @@ Published the six topics of Design Systems › Scales & visual systems as their 
 ### Session 35 — Design Systems Stage 4, Batch 5 published (D-123); no taxonomy change
 
 Published the five concept topics of Design Systems › Components & patterns: `component-libraries`, `component-architecture`, `variants`, `component-properties`, `component-state-management`. Boundaries kept: `variants` (chosen design dimensions) contrasts with `interaction-states` (Interaction; caused at run time); `component-state-management` links to `state-transitions` and `aria` (planned) rather than absorbing them; `component-libraries` defers release mechanics to `design-system-versioning` (planned). Stage 4's six state patterns follow in Batch 6.
+
+### Session 36 — Design Systems Stage 4, Batch 6 published (D-124); no taxonomy change
+
+Published the six pattern topics of Design Systems › Components & patterns: `empty-states`, `loading-states`, `skeleton-screens`, `progressive-loading`, `error-states`, `data-tables`. Boundaries kept: `error-states` (the state and its engineering) links to `error-recovery` (messages and recovery steps, Interaction) and `error-messages` (UX Writing, planned) instead of repeating them; `empty-states` links to `empty-state-writing` (planned); `progressive-loading` contrasts with `progressive-disclosure`. Stage 4 is complete.

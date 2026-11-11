@@ -1,6 +1,6 @@
 # Progress register
 
-_Last updated: 2026-11-11 (session 35 — Design Systems Batch 5, component foundations)_
+_Last updated: 2026-11-11 (session 36 — Design Systems Batch 6, state patterns; Stage 4 complete)_
 
 ## State
 
@@ -117,5 +117,13 @@ After that: `ui-design`, `interaction-design-discipline`, `accessibility-concept
 - New tested formulas `lib/formulas/components.ts`: `variantCount` (reproduces Figma's documented 24-variant button) and `booleanVsEnum`; the variants entry and plate use them.
 - Stage 4 now has 5 of 12 steps published.
 
+## Session 36 — Design Systems Batch 6: state patterns (D-124)
+
+- Owner approved unifying the six patterns under the async state model of `component-state-management` (idle → loading → success | error; success → populated | empty).
+- Published `empty-states`, `loading-states`, `skeleton-screens`, `progressive-loading`, `error-states`, `data-tables` (all `pattern`, Design Systems › components). Each has three depths, a practice block with exactly three dos and three don'ts and production-style code (async result with an empty branch; delayed indicator with ignored repeat presses; dimension-locked skeleton with composited shimmer; streamed page with Suspense, LCP priority and lazy media; typed error payload with backoff, jitter and an idempotency key; accessible sortable table with all async states), a correction exercise, quizzes at three levels, four flashcards, telemetry signals, explicit WCAG 2.2 criteria, a sheet plate with figure key and a register record.
+- 23 sources added and checked: NN/g (empty states, skeleton screens, progress indicators, mobile tables), Wroblewski 2013, web.dev (CLS, LCP, INP, image lazy loading), W3C Resource Timing (CRD), MDN (lazy loading, prefers-reduced-motion), WCAG Understanding 4.1.3 and 2.2.2, APG table and grid, WAI tables tutorial, TanStack Virtual, React (Suspense, useOptimistic, error boundaries), AWS backoff with jitter, RFC 9110. Existing records reused: Miller 1968, Card et al. 1991, Nielsen 1993, Myers 1985, Reason 1990, NN/g error messages and help.
+- New tested formula `waitFeedback` in `lib/formulas/components.ts`; the loading entry and plate use it.
+- Stage 4 of the Design Systems path is fully published (12 of 12); Stages 1–4 are complete.
+
 ## Next task (precise)
-Design Systems Batch 6 (Stage 4 patterns): `empty-states`, `loading-states`, `skeleton-screens`, `progressive-loading`, `error-states`, `data-tables` — sources verified first; reuse the state-machine model from `component-state-management` and the async status example.
+Design Systems Batch 7 (Stage 5, governance and operations): `design-governance`, `design-system-versioning`, `design-qa`, `design-system-audits`, `multi-brand-systems` — sources verified first (Primer component status and semver are already in the registry).

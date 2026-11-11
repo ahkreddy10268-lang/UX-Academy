@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { booleanVsEnum, variantCount } from "./components";
+import { booleanVsEnum, variantCount, waitFeedback } from "./components";
 import { FormulaInputError } from "./math";
 
 describe("variantCount", () => {
@@ -20,4 +20,16 @@ describe("booleanVsEnum", () => {
     expect(booleanVsEnum(3)).toEqual({ booleanCombinations: 8, meaningful: 4, invalid: 4, enumValues: 4 });
   });
   it("rejects zero", () => expect(() => booleanVsEnum(0)).toThrow(FormulaInputError));
+});
+
+describe("waitFeedback", () => {
+  it("follows the 0.1 / 2 / 10 s boundaries", () => {
+    expect(waitFeedback(0.05)).toBe("none");
+    expect(waitFeedback(0.1)).toBe("none");
+    expect(waitFeedback(0.8)).toBe("state-only");
+    expect(waitFeedback(2)).toBe("looped");
+    expect(waitFeedback(10)).toBe("looped");
+    expect(waitFeedback(15)).toBe("percent-done");
+  });
+  it("rejects negative input", () => expect(() => waitFeedback(-1)).toThrow(FormulaInputError));
 });

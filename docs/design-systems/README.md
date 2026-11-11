@@ -59,4 +59,4 @@ All IDs match `content/taxonomy.ts` and the generated `docs/KNOWLEDGE_TAXONOMY.m
 
 ## Next phase
 
-Stages 1–3 are published (Batches 1–4) and Stage 4 concepts (Batch 5). Next: Batch 6, the Stage 4 state patterns (see docs/PROGRESS.md).
+Stages 1–4 are published (Batches 1–6). Next: Batch 7, Stage 5 governance and operations (see docs/PROGRESS.md).
