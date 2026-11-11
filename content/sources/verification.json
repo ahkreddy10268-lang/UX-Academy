@@ -1341,7 +1341,17 @@
     "checkedAt": "2026-11-11",
     "httpStatus": 200
   },
+  "nng-error-messages": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
   "nng-flexibility-efficiency": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "nng-help-documentation": {
     "status": "url-reachable",
     "checkedAt": "2026-11-11",
     "httpStatus": 200
@@ -1819,6 +1829,14 @@
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
     "httpStatus": 200
+  },
+  "van-der-meij-carroll-1998": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-11",
+    "registeredTitle": "Principles and Heuristics for Designing Minimalist Instruction",
+    "registeredYear": 1998,
+    "registeredContainer": "Minimalism Beyond the Nurnberg Funnel",
+    "similarity": 1
   },
   "virzi-1992": {
     "status": "doi-verified",

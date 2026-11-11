@@ -3430,3 +3430,145 @@ export const aestheticMinimalistPlate: IllustrationEntry = {
     </g>
   ),
 };
+
+/* ------------------------------------------------------------------ */
+/* Error recovery: recognise, diagnose, recover — input kept            */
+/* ------------------------------------------------------------------ */
+export const errorRecoveryPlate: IllustrationEntry = {
+  slug: "error-recovery",
+  title: "Error recovery plate",
+  canvas: "sheet",
+  description:
+    "A sign-up form after a failed submit. At the top, an error summary titled 'There are 2 problems' lists each problem as a link to its field. Below, the card-number field still holds what the person typed, has a thicker border, an error icon and the text 'Enter all 14 digits' directly above it. A third field that was correct keeps its value without any error. Beside the form, three labels mark the steps of recovery: recognise (the summary and the marked field), diagnose (the precise message) and recover (the kept input and the suggested fix).",
+  key: [
+    { n: "1", label: "Recognise", detail: "a summary that takes focus and links to each problem" },
+    { n: "2", label: "Diagnose", detail: "a precise message in plain words beside the field, with an icon, not colour alone" },
+    { n: "3", label: "Recover", detail: "the typed value is kept and the message says how to fix it" },
+    { n: "4", label: "Nothing else lost", detail: "correct fields keep their values" },
+  ],
+  Art: ({ detail }) => (
+    <g>
+      <UiFrame x={8} y={8} w={236} h={262}>
+        <rect x={10} y={20} width={216} height={64} rx={6} fill={S.errorWash} stroke={S.error} strokeWidth="1.4" {...hair} />
+        <UiText x={20} y={40} weight={600}>
+          There are 2 problems
+        </UiText>
+        <UiText x={20} y={60} tone="accent">
+          Card number
+        </UiText>
+        <UiText x={20} y={76} tone="accent">
+          Email address
+        </UiText>
+        <rect x={10} y={98} width={4} height={74} rx={2} fill={S.error} />
+        <UiText x={22} y={112} weight={600}>
+          Library card number
+        </UiText>
+        <Verdict x={30} y={130} ok={false} r={7} />
+        <UiText x={42} y={135} tone="error">
+          Enter all 14 digits
+        </UiText>
+        <rect x={22} y={144} width={204} height={26} rx={5} fill={S.surface} stroke={S.error} strokeWidth="2" {...hair} />
+        <UiText x={32} y={162} mono>
+          1234 5678 9012
+        </UiText>
+        <UiField x={22} y={196} w={204} label="Name" value="Ada Byron" />
+      </UiFrame>
+      <UiText x={262} y={52} weight={600}>
+        recognise
+      </UiText>
+      <UiText x={262} y={136} weight={600}>
+        diagnose
+      </UiText>
+      <UiText x={262} y={166} weight={600}>
+        recover
+      </UiText>
+      <UiText x={262} y={232} tone="ink2">
+        other input kept
+      </UiText>
+      <Link from={[258, 48]} to={[238, 48]} tone="mute" />
+      <Link from={[258, 132]} to={[238, 132]} tone="mute" />
+      <Link from={[258, 162]} to={[238, 160]} tone="mute" />
+      {detail && (
+        <>
+          <Marker x={18} y={28} n={1} />
+          <Marker x={392} y={132} n={2} />
+          <Marker x={392} y={162} n={3} />
+          <Marker x={392} y={228} n={4} />
+        </>
+      )}
+    </g>
+  ),
+};
+
+/* ------------------------------------------------------------------ */
+/* Help and documentation: help that escalates only as far as needed    */
+/* ------------------------------------------------------------------ */
+export const helpDocumentationPlate: IllustrationEntry = {
+  slug: "help-and-documentation",
+  title: "Help and documentation plate",
+  canvas: "sheet",
+  description:
+    "A renewal screen with help at four depths, each linking to the next. A one-line hint sits under the date field: 'Up to 4 weeks from today'. Beside a term, a toggletip button 'What is a hold?' opens a short definition. A non-modal help panel at the side lists three numbered steps for renewing a book while the page stays usable. At the bottom, a link to the full article. The deeper the level, the more it says and the less often it is needed.",
+  key: [
+    { n: "1", label: "Inline hint", detail: "always visible, one sentence, where the question arises" },
+    { n: "2", label: "Toggletip", detail: "opens on request (click, not hover only), a short definition" },
+    { n: "3", label: "Help panel", detail: "non-modal steps people can follow while doing the task" },
+    { n: "4", label: "Full article", detail: "comprehensive, searchable, titled in people's words" },
+  ],
+  Art: ({ detail }) => (
+    <g>
+      <UiFrame x={8} y={8} w={214} h={250}>
+        <UiText x={14} y={26} weight={600}>
+          Renew loans
+        </UiText>
+        <UiField x={14} y={58} w={180} label="Renew until" value="26 Nov" />
+        <UiText x={14} y={106} tone="ink2">
+          Up to 4 weeks from today
+        </UiText>
+        <rect x={14} y={118} width={130} height={24} rx={5} fill={S.surface} stroke={S.control} strokeWidth="0.9" {...hair} />
+        <UiText x={22} y={135}>
+          What is a hold?
+        </UiText>
+        <rect x={14} y={148} width={186} height={44} rx={6} fill={S.soft} stroke={S.ruleStrong} strokeWidth="0.9" {...hair} />
+        <UiText x={22} y={166} tone="ink2">
+          Another reader reserved it,
+        </UiText>
+        <UiText x={22} y={182} tone="ink2">
+          so it cannot be renewed.
+        </UiText>
+        <UiButton x={14} y={212} w={120} label="Renew" />
+      </UiFrame>
+      <rect x={232} y={8} width={160} height={192} rx={8} fill={S.surface} stroke={S.ink2} strokeWidth="1" {...hair} />
+      <UiText x={244} y={30} weight={600}>
+        Renew a book
+      </UiText>
+      {["Open Loans", "Select books", "Renew selected"].map((t, i) => (
+        <g key={t}>
+          <circle cx={252} cy={52 + i * 28} r={8} fill={S.soft} stroke={S.ink2} strokeWidth="0.9" {...hair} />
+          <UiText x={252} y={56 + i * 28} mono anchor="middle">
+            {String(i + 1)}
+          </UiText>
+          <UiText x={266} y={56 + i * 28}>
+            {t}
+          </UiText>
+        </g>
+      ))}
+      <UiText x={244} y={150} tone="accent">
+        Full guide to renewals
+      </UiText>
+      <UiButton x={244} y={164} w={84} h={24} label="Close" variant="secondary" />
+      <line x1={232} y1={222} x2={392} y2={222} stroke={S.rule} strokeWidth="0.9" {...hair} />
+      <UiText x={232} y={246} tone="ink3">
+        each level links to the next
+      </UiText>
+      {detail && (
+        <>
+          <Marker x={8} y={100} n={1} />
+          <Marker x={160} y={146} n={2} />
+          <Marker x={392} y={20} n={3} />
+          <Marker x={232} y={146} n={4} />
+        </>
+      )}
+    </g>
+  ),
+};

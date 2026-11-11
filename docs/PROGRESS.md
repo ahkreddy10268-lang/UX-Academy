@@ -1,6 +1,6 @@
 # Progress register
 
-_Last updated: 2026-11-11 (session 30 — Batch B: mapping, heuristics 6–8)_
+_Last updated: 2026-11-11 (session 31 — heuristics 9 and 10; all ten covered)_
 
 ## State
 
@@ -410,12 +410,18 @@ Verified: `npm run check` (391 tests); `npm run test:taxonomy` (54 published, De
 
 Verified: `npm run check` (399 tests); `npm run test:taxonomy` (58 published); build; e2e 42/42; keyboard 45/45; axe 0 violations on the four entries at 1440 and 390 px in both themes.
 
-## Session 30 — Batch B (D-117, D-118)
+## Session 30 — Batch B (D-117, D-118; committed 3d66ff8)
 
 - Taxonomy: added `flexibility-and-efficiency-of-use` and `aesthetic-and-minimalist-design` (owner decision; 560 topics).
 - Published `mapping`, `flexibility-and-efficiency-of-use`, `aesthetic-and-minimalist-design` with three depths, practice blocks (3 dos, 3 don'ts, worked examples), correction exercises, quizzes at three levels, flashcards, plates and register records.
 - Upgraded `recognition-over-recall` (published since v1) with a practice block, a systems-level paragraph and WCAG 2.2 SC 3.3.2, 3.3.7 and 3.3.8.
 - Sources added and verified: NN/g heuristics 7 and 8 articles and NN/g natural mappings (read 2026-11-11), Fitts & Seeger 1953, Chapanis & Lindenbaum 1959 and Anderson et al. 2004 (DOI-verified), Tufte 1983 (book page). Re-issued brief reconciled in D-118.
 
+## Session 31 — heuristics 9 and 10 (D-119)
+
+- Taxonomy: added `help-and-documentation` (owner decision; 561 topics).
+- Published `error-recovery` and `help-and-documentation`: three depths (Systems Architect: field and form state machines, server-error mapping, safe retry with idempotency keys, non-colour error cues; escalating help architecture, keyboard and hover rules, help-search telemetry), practice blocks with 3 dos, 3 don'ts and two worked examples each, correction exercises, quizzes at three levels, flashcards, plates and register records.
+- All ten Nielsen heuristics now have published coverage.
+
 ## Next task (precise)
-Remaining Nielsen heuristics without their own entry: 9 (`error-recovery`, planned topic in Interaction) and 10 (help and documentation, no topic; needs an owner decision like D-117). Design Systems Batch 2 (`theme-architecture`, Token Lab) remains queued.
+Design Systems Batch 2 (docs/design-systems/IMPLEMENTATION_ROADMAP.md): write `theme-architecture` (source `dtcg-resolver-2025` in the registry), then build the Design Token Lab on the Batch 1 palette, computing contrast only with `lib/formulas`.

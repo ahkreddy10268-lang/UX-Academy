@@ -180,7 +180,7 @@ export const domains: Domain[] = [
         items: [
           ...g("heuristic", "Nielsen's 10 Usability Heuristics|nielsen-usability-heuristics", "Shneiderman's Eight Golden Rules|shneiderman-golden-rules", "Norman's Design Principles", "Tognazzini's First Principles|tognazzini-principles", "Gerhardt-Powals' Cognitive Engineering Principles|gerhardt-powals-principles", "Bastien & Scapin Ergonomic Criteria|bastien-scapin-criteria"),
           ...g("standard", "ISO 9241-110 Interaction Principles|iso-9241-110"),
-          ...g("principle", "Consistency and Standards|consistency-principle", "User Control and Freedom", "Flexibility and Efficiency of Use", "Aesthetic and Minimalist Design"),
+          ...g("principle", "Consistency and Standards|consistency-principle", "User Control and Freedom", "Flexibility and Efficiency of Use", "Aesthetic and Minimalist Design", "Help and Documentation"),
         ],
       },
     ],
