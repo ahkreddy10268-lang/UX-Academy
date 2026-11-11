@@ -170,6 +170,8 @@ export default defineEntry({
     { target: "design-system-versioning", type: "related-to", note: "Renaming or removing a semantic token is a breaking change for every consumer." },
   ],
 
+  lab: "token-lab",
+
   practice: {
     dos: [
       { text: "Name tokens by role and relationship: `color.text.danger`, `color.surface.raised`.", why: "The name survives a rebrand or a new theme because it never described the value.", kind: "industry" },

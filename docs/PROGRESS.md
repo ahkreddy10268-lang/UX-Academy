@@ -1,6 +1,6 @@
 # Progress register
 
-_Last updated: 2026-11-11 (session 31 — heuristics 9 and 10; all ten covered)_
+_Last updated: 2026-11-11 (session 32 — Design Systems Batch 2: theme architecture and the Design Token Lab)_
 
 ## State
 
@@ -417,11 +417,17 @@ Verified: `npm run check` (399 tests); `npm run test:taxonomy` (58 published); b
 - Upgraded `recognition-over-recall` (published since v1) with a practice block, a systems-level paragraph and WCAG 2.2 SC 3.3.2, 3.3.7 and 3.3.8.
 - Sources added and verified: NN/g heuristics 7 and 8 articles and NN/g natural mappings (read 2026-11-11), Fitts & Seeger 1953, Chapanis & Lindenbaum 1959 and Anderson et al. 2004 (DOI-verified), Tufte 1983 (book page). Re-issued brief reconciled in D-118.
 
-## Session 31 — heuristics 9 and 10 (D-119)
+## Session 31 — heuristics 9 and 10 (D-119; committed a73b1aa)
 
 - Taxonomy: added `help-and-documentation` (owner decision; 561 topics).
 - Published `error-recovery` and `help-and-documentation`: three depths (Systems Architect: field and form state machines, server-error mapping, safe retry with idempotency keys, non-colour error cues; escalating help architecture, keyboard and hover rules, help-search telemetry), practice blocks with 3 dos, 3 don'ts and two worked examples each, correction exercises, quizzes at three levels, flashcards, plates and register records.
 - All ten Nielsen heuristics now have published coverage.
 
+## Session 32 — Design Systems Batch 2 (D-120)
+
+- Published `theme-architecture` (three depths, practice block with a DTCG resolver and a Next.js + Tailwind v4 example, correction exercise, quizzes at three levels, flashcards, plate and register record).
+- Built the Design Token Lab (`/labs/token-lab`): light, dark and high-contrast presets; remap any role to any primitive; edit a primitive's value; live preview (card, badge, input, error, button, focus ring); contrast of all 12 documented pairs; export as DTCG JSON, CSS variables or Tailwind v4 `@theme inline`, with copy. Linked from `theme-architecture` and `semantic-tokens`.
+- New pure module `lib/formulas/tokens.ts` with 7 unit tests; 7 documentation sources added and verified.
+
 ## Next task (precise)
-Design Systems Batch 2 (docs/design-systems/IMPLEMENTATION_ROADMAP.md): write `theme-architecture` (source `dtcg-resolver-2025` in the registry), then build the Design Token Lab on the Batch 1 palette, computing contrast only with `lib/formulas`.
+Design Systems Batch 3 (docs/design-systems/IMPLEMENTATION_ROADMAP.md): `design-language` and `atomic-design` (methodology: method detail required), then the five-stage learning-path restructure in `content/learning-paths.ts` placing all 29 Design Systems topics (owner approval of the restructure is still pending).

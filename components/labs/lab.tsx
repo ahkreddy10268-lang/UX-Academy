@@ -8,6 +8,7 @@ import { HickLab } from "./hick-lab";
 import { JakobLab } from "./jakob-lab";
 import { ResponsiveLab } from "./responsive-lab";
 import { SteeringLab } from "./steering-lab";
+import { TokenLab } from "./token-lab";
 import { ContrastLab, DisclosureLab, FeedbackLab, GestaltLab, HierarchyLab, SerialPositionLab, TypeScaleLab } from "./simple-labs";
 
 const REGISTRY: Record<string, () => React.JSX.Element> = {
@@ -26,6 +27,7 @@ const REGISTRY: Record<string, () => React.JSX.Element> = {
   "cvd-lab": CvdLab,
   "jakob-lab": JakobLab,
   "colour-lab": () => <ConceptExplorer id="colour" />,
+  "token-lab": TokenLab,
 };
 
 export function LabView({ id }: { id: string }) {

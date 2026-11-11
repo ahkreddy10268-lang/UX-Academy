@@ -1144,6 +1144,21 @@
     "checkedAt": "2026-11-03",
     "httpStatus": 403
   },
+  "mdn-color-scheme": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "mdn-custom-properties": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "mdn-prefers-color-scheme": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
   "miller-1956": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",
@@ -1498,6 +1513,11 @@
     "registeredContainer": "Human–Computer Interaction",
     "similarity": 1
   },
+  "react-hydrateroot": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
   "reason-1990": {
     "status": "doi-verified",
     "checkedAt": "2026-11-11",
@@ -1721,6 +1741,11 @@
     "registeredContainer": "Quarterly Journal of Experimental Psychology",
     "similarity": 0.67
   },
+  "style-dictionary-dtcg": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
   "sweller-1988": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",
@@ -1761,9 +1786,19 @@
     "registeredContainer": "Educational Psychology Review",
     "similarity": 1
   },
+  "tailwind-theme": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
   "tesler-nomodes": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "tokens-studio-docs": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
     "httpStatus": 200
   },
   "tractinsky-1997": {

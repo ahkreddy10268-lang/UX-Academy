@@ -5,14 +5,14 @@
 
 | Measure | Count |
 |---|---|
-| Registered Level-1 plates | 86 |
-| Published entries with a plate | 63 / 63 |
+| Registered Level-1 plates | 87 |
+| Published entries with a plate | 64 / 64 |
 | Subject plates | 20 / 20 |
-| Plates in the current system (dark technical or instructional sheet) | 84 |
+| Plates in the current system (dark technical or instructional sheet) | 85 |
 | Plates still in the earlier pastel style | 2 |
 | Level-2 figures | 23 |
 | Level-3 explorers (on plates) | 9 |
-| Labs linked from entries | 15 |
+| Labs linked from entries | 17 |
 | Animated plates | 12 |
 
 ## The 12 illustration categories
@@ -29,7 +29,7 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 | 6 | Interaction Design Illustrations | 13 | 13 | 1 | 4 | 13 / 0 / 0 | developing | `signifiers`, `doherty-threshold`, `gulfs-of-execution-and-evaluation`, `interaction-design-discipline`, `progressive-disclosure`, `visibility-of-system-status`, `user-control-and-freedom`, `error-prevention`, `mapping`, `flexibility-and-efficiency-of-use`, `error-recovery` |
 | 7 | Wireframe & Prototyping Illustrations | 1 | 1 | 0 | 0 | 1 / 0 / 0 | developing | — |
 | 8 | Visual Design & Composition Illustrations | 8 | 8 | 2 | 6 | 8 / 0 / 0 | developing | `gestalt-principles`, `colour-contrast-ratio`, `visual-hierarchy`, `modular-type-scale`, `aesthetic-and-minimalist-design` |
-| 9 | Design Systems Illustrations | 6 | 6 | 2 | 0 | 6 / 0 / 0 | developing | `design-system`, `design-tokens`, `primitive-tokens`, `semantic-tokens` |
+| 9 | Design Systems Illustrations | 7 | 7 | 2 | 2 | 7 / 0 / 0 | developing | `design-system`, `design-tokens`, `primitive-tokens`, `semantic-tokens`, `theme-architecture` |
 | 10 | Usability & Accessibility Illustrations | 4 | 4 | 1 | 0 | 4 / 0 / 0 | developing | `usability`, `accessibility-concept`, `wcag` |
 | 11 | Responsive & Adaptive Design Illustrations | 0 | 0 | 0 | 0 | 0 / 0 / 0 | gap | — |
 | 12 | UX Evaluation & Optimization Illustrations | 16 | 15 | 2 | 1 | 16 / 0 / 0 | developing | `nielsen-usability-heuristics`, `keystroke-level-model`, `shneiderman-golden-rules`, `heuristic-evaluation`, `cognitive-walkthrough`, `usability-testing`, `system-usability-scale`, `nasa-tlx`, `net-promoter-score`, `task-success-rate`, `ab-testing`, `confidence-intervals`, `sample-size-estimation`, `heart-framework` |
@@ -41,7 +41,7 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 | Conceptual & Metaphorical | 17 | 7 |
 | Process & Sequential | 17 | 7 |
 | Relationship & Systems | 16 | 4 |
-| Comparison & Contrast | 23 | 4 |
+| Comparison & Contrast | 24 | 4 |
 | Hierarchy & Classification | 13 | 1 |
 
 ## Level 1 audit (every registered plate)
@@ -105,7 +105,7 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 | `design-system` | entry | design-systems | relationship | current · dark technical | retain | Exploded foundations · components · patterns · products with one decision traced from a token into three products; documentation and governance spine linked to every layer; feedback route back to the spine. | 2 | — |
 | `design-tokens` | entry | design-systems | hierarchy | current · instructional sheet | retain | Sheet (S25): primitive → semantic → component references, the button they produce and platform outputs. | 0 | — |
 | `primitive-tokens` | entry | design-systems | hierarchy | current · instructional sheet | retain | Sheet (B1): a grey ramp numbered with gaps, semantic roles choosing steps, a crossed component-to-primitive link, and a spacing scale. | 0 | — |
-| `semantic-tokens` | entry | design-systems | relationship | current · instructional sheet | retain | Sheet (B1): one column of role names mapped to light and dark primitives, a contrast pair, and components that point only at roles. | 0 | — |
+| `semantic-tokens` | entry | design-systems | relationship | current · instructional sheet | retain | Sheet (B1): one column of role names mapped to light and dark primitives, a contrast pair, and components that point only at roles. | 0 | token-lab |
 | `visibility-of-system-status` | entry | interaction-design | process | current · instructional sheet | retain | Sheet (S29): feedback matched to duration on a 0.1 / 1 / 10 s timeline, from pressed state to determinate progress with Cancel, and an announced status message. | 0 | feedback-lab |
 | `user-control-and-freedom` | entry | interaction-design | conceptual | current · instructional sheet | retain | Sheet (S29): immediate removal with a visible Undo, Escape and ⌘Z as exits, and a labelled Cancel against an ambiguous ×. | 0 | — |
 | `consistency-principle` | entry | ux-concept | comparison | current · instructional sheet | retain | Sheet (S29): one action shown three ways across three screens versus one component, name and position on all three. | 0 | — |
@@ -115,6 +115,7 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 | `aesthetic-and-minimalist-design` | entry | visual-design | comparison | current · instructional sheet | retain | Sheet (S30): a cluttered home screen versus one that keeps the primary tasks labelled and defers secondary content behind one link. | 0 | — |
 | `error-recovery` | entry | interaction-design | process | current · instructional sheet | retain | Sheet (S31): a failed form with a linked error summary, a precise inline message with icon, kept input, and the three steps recognise, diagnose, recover. | 0 | — |
 | `help-and-documentation` | entry | ux-concept | hierarchy | current · instructional sheet | retain | Sheet (S31): help at four depths on one screen — inline hint, toggletip, non-modal panel, full article — each linking to the next. | 0 | — |
+| `theme-architecture` | entry | design-systems | comparison | current · instructional sheet | retain | Sheet (S32): one card component in light, dark and high-contrast themes drawn in the lessons' sample colours, the shared role names, each theme's mapping and two theme axes in resolution order. | 0 | token-lab |
 | `foundations` | subject | ux-concept | relationship | current · instructional sheet | retain | Sheet (S25, subject): interface inside the experience band, an approach loop and a history line. | 0 | — |
 | `laws-effects` | subject | ux-concept | conceptual | current · instructional sheet | retain | Sheet (S25, subject): six tiles for the domain's families, ending with evidence labels. | 0 | — |
 | `psychology` | subject | ux-concept | conceptual | current · instructional sheet | retain | Sheet (S25, subject): memory slots, a cue–action–outcome loop, pop-out search and a reach arc. | 0 | — |
@@ -236,6 +237,7 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 | `aesthetic-and-minimalist-design` | Two versions of a library app's home screen. On the left, marked wrong, a small search box competes with a banner, a carousel, a long news list and decorative blocks; the Renew action is buried at the bottom. On the right, marked correct, the search box is prominent, the two most common tasks, Renew loans and Opening hours, are labelled buttons, and news and events are reachable through one 'More' link rather than removed. Nothing a primary task needs is missing; only what competes with it has moved. |
 | `error-recovery` | A sign-up form after a failed submit. At the top, an error summary titled 'There are 2 problems' lists each problem as a link to its field. Below, the card-number field still holds what the person typed, has a thicker border, an error icon and the text 'Enter all 14 digits' directly above it. A third field that was correct keeps its value without any error. Beside the form, three labels mark the steps of recovery: recognise (the summary and the marked field), diagnose (the precise message) and recover (the kept input and the suggested fix). |
 | `help-and-documentation` | A renewal screen with help at four depths, each linking to the next. A one-line hint sits under the date field: 'Up to 4 weeks from today'. Beside a term, a toggletip button 'What is a hold?' opens a short definition. A non-modal help panel at the side lists three numbered steps for renewing a book while the page stays usable. At the bottom, a link to the full article. The deeper the level, the more it says and the less often it is needed. |
+| `theme-architecture` | The same library card component shown three times, in light, dark and high-contrast themes, drawn in the fixed colours of the token lessons' palette. Above the cards, one row of semantic role names — surface, text, action — that every card uses. Between the roles and each card, the theme's mapping: light points the roles to grey.0, grey.900 and blue.600; dark to grey.950, grey.50 and blue.400; high contrast to grey.0, grey.950 and blue.700. The component never changes; only the mapping does. Below, two theme axes, mode and contrast, combine in a stated order. |
 | `foundations` | Nested frames read from the inside out. At the centre, an interface: a booking screen with a title, a field and a button, the part UI design shapes. Around it, a band of before, during and after touchpoints, the whole experience UX design is concerned with. A loop arrow around the band stands for design approaches that put people's needs and evaluation at the centre. Along the bottom, a short timeline marks that the field has a history in design and human-computer interaction. |
 | `laws-effects` | Six tiles, one for each family of regularities in this subject. Human performance laws: a pointer moving a distance D to a target of width W. Popular laws and rules of thumb: a card stamped 'rule of thumb'. Memory and attention: a list in which one item stands out. Gestalt grouping: dots grouped by spacing. Decision-making biases: two options, one marked as the default. A sixth tile shows evidence labels, because these items range from measured laws to popular claims. |
 | `psychology` | Four panels for the four strands of the subject, each shown through what it explains in an interface rather than as a picture of a head. Cognitive psychology, memory and learning: four memory slots, three filled. Behavioural science, motivation and emotion: a loop from a cue to an action to an outcome that feeds back. Visual cognition: a field of outlined shapes in which one filled shape stands out at once (in the hero it pulses, as attention is captured). Human factors and ergonomics: a control panel with a large stop button within reach and a reach arc drawn around it. |

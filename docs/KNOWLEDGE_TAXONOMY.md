@@ -469,7 +469,7 @@ Tokens, components, governance and the architecture of interface systems.
 - ✅ Design Tokens — *Concept* · `design-tokens`
 - ✅ Primitive Tokens — *Concept* · `primitive-tokens`
 - ✅ Semantic Tokens — *Concept* · `semantic-tokens`
-- ◻️ Theme Architecture — *Concept* · `theme-architecture`
+- ✅ Theme Architecture — *Concept* · `theme-architecture`
 - ◻️ Multi-Brand Systems — *Concept* · `multi-brand-systems`
 
 ### Scales & visual systems (`scales`)

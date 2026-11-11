@@ -179,4 +179,16 @@ export const labs: Lab[] = [
       "Contrast against pure white and pure black only; check real foreground and background pairs in the contrast checker.",
     ],
   },
+  {
+    id: "token-lab",
+    title: "Design Token Lab",
+    summary: "Switch between light, dark and high-contrast themes, remap semantic roles to primitives, edit a primitive's value and watch a live preview, the contrast of every documented pair and the exported token files update together.",
+    concepts: ["theme-architecture", "semantic-tokens", "primitive-tokens", "design-tokens", "colour-contrast-ratio"],
+    kind: "tool",
+    assumptions: [
+      "Uses the illustrative library-app palette from the token lessons; the high-contrast theme's 7:1 text target (WCAG 2.2 SC 1.4.6, AAA) is this lab's choice.",
+      "Contrast is the WCAG 2.x ratio from lib/formulas, checked only for the documented role pairs; a passing table is necessary, not sufficient, for an accessible theme.",
+      "Colour roles only: no typography, spacing or motion tokens. Exports show the shape of DTCG, CSS and Tailwind v4 output, not any one build tool's exact files.",
+    ],
+  },
 ];

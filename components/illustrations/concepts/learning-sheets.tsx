@@ -1295,7 +1295,7 @@ export const modularTypeScalePlate: IllustrationEntry = {
 export const CONTRAST_SAMPLES = { white: "#ffffff", pass: "#767676", fail: "#949494" } as const;
 
 /** The illustrative palette of the token lessons; mirrored by --sample-token-* in globals.css (D-114). */
-export const TOKEN_SAMPLES = {"grey-0": "#ffffff", "grey-50": "#f6f6f4", "grey-300": "#c9c8c3", "grey-500": "#8a8983", "grey-600": "#6b6a64", "grey-700": "#4f4e49", "grey-900": "#1f1e1c", "grey-950": "#141413", "red-700": "#b42318", "red-400": "#f07a6e", "blue-600": "#2457c5", "blue-400": "#5f92e8"} as const;
+export const TOKEN_SAMPLES = {"grey-0": "#ffffff", "grey-50": "#f6f6f4", "grey-300": "#c9c8c3", "grey-500": "#8a8983", "grey-600": "#6b6a64", "grey-700": "#4f4e49", "grey-900": "#1f1e1c", "grey-950": "#141413", "red-700": "#b42318", "red-400": "#f07a6e", "blue-600": "#2457c5", "blue-400": "#5f92e8", "blue-700": "#1b449c"} as const;
 const tok = (k: keyof typeof TOKEN_SAMPLES) => `var(--sample-token-${k})`;
 
 export const colourContrastPlate: IllustrationEntry = {
@@ -3571,4 +3571,79 @@ export const helpDocumentationPlate: IllustrationEntry = {
       )}
     </g>
   ),
+};
+
+/* ------------------------------------------------------------------ */
+/* Theme architecture: one component, roles, themes on separate axes    */
+/* ------------------------------------------------------------------ */
+export const themeArchitecturePlate: IllustrationEntry = {
+  slug: "theme-architecture",
+  title: "Theme architecture plate",
+  canvas: "sheet",
+  description:
+    "The same library card component shown three times, in light, dark and high-contrast themes, drawn in the fixed colours of the token lessons' palette. Above the cards, one row of semantic role names — surface, text, action — that every card uses. Between the roles and each card, the theme's mapping: light points the roles to grey.0, grey.900 and blue.600; dark to grey.950, grey.50 and blue.400; high contrast to grey.0, grey.950 and blue.700. The component never changes; only the mapping does. Below, two theme axes, mode and contrast, combine in a stated order.",
+  key: [
+    { n: "1", label: "Semantic roles", detail: "the names components use; identical in every theme" },
+    { n: "2", label: "One mapping per theme", detail: "each theme points the roles at different primitives" },
+    { n: "3", label: "Same component", detail: "rendered three ways without any change to its code" },
+    { n: "4", label: "Theme axes", detail: "mode and contrast vary independently and combine in a resolution order" },
+  ],
+  Art: ({ detail }) => {
+    const themes = [
+      { x: 8, name: "light", s: "grey-0", t: "grey-900", a: "blue-600", on: "grey-0" },
+      { x: 140, name: "dark", s: "grey-950", t: "grey-50", a: "blue-400", on: "grey-950" },
+      { x: 272, name: "high contrast", s: "grey-0", t: "grey-950", a: "blue-700", on: "grey-0" },
+    ] as const;
+    const hc = (k: keyof typeof TOKEN_SAMPLES) => tok(k);
+    return (
+      <g>
+        {["surface", "text", "action"].map((r, i) => (
+          <g key={r}>
+            <rect x={70 + i * 92} y={12} width={80} height={26} rx={6} fill={S.soft} stroke={S.ink2} strokeWidth="1.1" {...hair} />
+            <UiText x={110 + i * 92} y={30} mono weight={600} anchor="middle">
+              {r}
+            </UiText>
+          </g>
+        ))}
+        {themes.map((th) => (
+          <g key={th.name}>
+            <UiText x={th.x + 60} y={64} mono tone="ink3" anchor="middle">
+              {th.name}
+            </UiText>
+            <Link from={[th.x + 60, 42]} to={[th.x + 60, 52]} tone="mute" />
+            <rect x={th.x} y={74} width={120} height={112} rx={8} fill={hc(th.s)} stroke={S.ruleStrong} strokeWidth="0.9" {...hair} />
+            <text x={th.x + 12} y={100} fontSize={T.ui} fontWeight={600} fill={hc(th.t)} fontFamily="var(--font-plex-sans), sans-serif">
+              Middlemarch
+            </text>
+            <rect x={th.x + 12} y={110} width={70} height={5} rx={2.5} fill={hc(th.t)} opacity={0.55} />
+            <rect x={th.x + 12} y={146} width={84} height={26} rx={5} fill={hc(th.a)} />
+            <text x={th.x + 54} y={163} fontSize={T.ui} fontWeight={600} fill={hc(th.on)} textAnchor="middle" fontFamily="var(--font-plex-sans), sans-serif">
+              Renew
+            </text>
+          </g>
+        ))}
+        <line x1={8} y1={206} x2={392} y2={206} stroke={S.rule} strokeWidth="0.9" {...hair} />
+        <rect x={8} y={220} width={110} height={26} rx={6} fill={S.surface} stroke={S.ruleStrong} strokeWidth="0.9" {...hair} />
+        <UiText x={63} y={238} mono anchor="middle">
+          mode
+        </UiText>
+        <rect x={146} y={220} width={110} height={26} rx={6} fill={S.surface} stroke={S.ruleStrong} strokeWidth="0.9" {...hair} />
+        <UiText x={201} y={238} mono anchor="middle">
+          contrast
+        </UiText>
+        <Link from={[118, 233]} to={[144, 233]} />
+        <UiText x={268} y={238} tone="ink2">
+          later one wins
+        </UiText>
+        {detail && (
+          <>
+            <Marker x={70} y={12} n={1} />
+            <Marker x={140} y={64} n={2} />
+            <Marker x={392} y={74} n={3} />
+            <Marker x={8} y={220} n={4} />
+          </>
+        )}
+      </g>
+    );
+  },
 };
