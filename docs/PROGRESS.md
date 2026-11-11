@@ -1,6 +1,6 @@
 # Progress register
 
-_Last updated: 2026-11-11 (session 28 — Design Systems Batch 1: practice block, primitive and semantic tokens)_
+_Last updated: 2026-11-11 (session 29 — four heuristic topics)_
 
 ## State
 
@@ -394,7 +394,7 @@ The owner's six-task brief was checked against the code first: the taxonomy rena
 
 Verified: `npm run check` (386 tests, typecheck, lint); `npm run build`; e2e 42/42; keyboard 45/45; a11y suite 0 violations; axe on `/labs/contrast-lab`, `/library/fitts-law` and `/` in both themes 0 violations; contrast lab and tabs at 390 px in both themes, no horizontal overflow.
 
-## Session 28 — Design Systems Batch 1 (D-113–D-114)
+## Session 28 — Design Systems Batch 1 (D-113–D-114; committed 7a8bd07, 2b02695)
 
 - Optional `practice` block (schema, renderer, rule-kind labels), on the owner's decision.
 - Published `primitive-tokens` and `semantic-tokens`: three depths, practice block with DTCG 2025.10 JSON (primitives, light and dark semantic layers, component tokens, a resolver document, CSS output), correction exercises with computed ratios, quizzes at three levels, flashcards; plates with figure keys and register records; eight new verified source records; `design-tokens` updated with the Color and Resolver modules and links to both entries.
@@ -402,5 +402,13 @@ Verified: `npm run check` (386 tests, typecheck, lint); `npm run build`; e2e 42/
 
 Verified: `npm run check` (391 tests); `npm run test:taxonomy` (54 published, Design Systems 4 of 29); `npm run sources:verify` for the 8 new records; `npm run docs:generate`; `npm run build`; e2e 42/42; keyboard 45/45; axe 0 violations on the three token entries at 1440 and 390 px in both themes; no horizontal overflow; plates rendered in both themes.
 
+## Session 29 — four heuristic topics (D-115, D-116)
+
+- Published `visibility-of-system-status`, `user-control-and-freedom`, `consistency-principle`, `error-prevention`: three depths (Systems Architect covers component states, tokens, telemetry as signals, WCAG 2.2 criteria by level), practice blocks with 3 dos, 3 don'ts and two worked examples each, correction exercises, quizzes at three levels, flashcards, plates with keys and register records.
+- Sources added and verified: four NN/g heuristic and error articles (read 2026-11-11), Norman 1981 and Reason 1990 (DOI-verified, cited for classification only).
+- "Match between system and the real world" stays within `nielsen-usability-heuristics` (owner decision), tagged for search.
+
+Verified: `npm run check` (399 tests); `npm run test:taxonomy` (58 published); build; e2e 42/42; keyboard 45/45; axe 0 violations on the four entries at 1440 and 390 px in both themes.
+
 ## Next task (precise)
-Phase 2, Batch 2 (docs/design-systems/IMPLEMENTATION_ROADMAP.md): write `theme-architecture` (source `dtcg-resolver-2025` now in the registry), then build the Design Token Lab (L3) on the palette and pairs used in Batch 1, computing contrast only with `lib/formulas`.
+Batch B (owner request): `mapping` (Interaction › principles; tag "match between system and the real world") and `recognition-over-recall` (Cognition). "Flexibility and efficiency of use" and "aesthetic and minimalist design" have no taxonomy topic and need an owner decision before writing. Design Systems Batch 2 (`theme-architecture`, Token Lab) remains queued.

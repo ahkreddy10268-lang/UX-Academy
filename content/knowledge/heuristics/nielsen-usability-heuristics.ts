@@ -13,7 +13,7 @@ export default defineEntry({
   secondaryTypes: ["principle", "guideline"],
   domain: "heuristics",
   subcategory: "heuristic-sets",
-  tags: ["usability", "inspection", "design principles", "heuristic evaluation", "Nielsen"],
+  tags: ["usability", "inspection", "design principles", "heuristic evaluation", "Nielsen", "match between system and the real world", "speak the user's language"],
   difficulty: "beginner",
   disciplines: ["Usability engineering", "Interaction design", "Human-computer interaction"],
   learningObjectives: [

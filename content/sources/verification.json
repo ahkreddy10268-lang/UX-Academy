@@ -273,7 +273,7 @@
   },
   "card-robertson-mackinlay-1991": {
     "status": "doi-verified",
-    "checkedAt": "2026-11-03",
+    "checkedAt": "2026-11-11",
     "registeredTitle": "The information visualizer, an information workspace",
     "registeredYear": 1991,
     "registeredContainer": "Proceedings of the SIGCHI conference on Human factors in computing systems Reaching through technology - CHI '91",
@@ -1307,10 +1307,43 @@
     "checkedAt": "2026-11-03",
     "httpStatus": 200
   },
+  "nng-consistency-standards": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "nng-slips": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "nng-user-control-freedom": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "nng-user-mistakes": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "nng-visibility-system-status": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
   "nngroup-articles": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
     "httpStatus": 200
+  },
+  "norman-1981": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-11",
+    "registeredTitle": "Categorization of action slips.",
+    "registeredYear": 1981,
+    "registeredContainer": "Psychological Review",
+    "similarity": 1
   },
   "norman-1986": {
     "status": "doi-verified",
@@ -1414,6 +1447,13 @@
     "registeredTitle": "Theory-Based Design for Easily Learned Interfaces",
     "registeredYear": 1990,
     "registeredContainer": "Human–Computer Interaction",
+    "similarity": 1
+  },
+  "reason-1990": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-11",
+    "registeredTitle": "Human Error",
+    "registeredYear": 1990,
     "similarity": 1
   },
   "redelmeier-kahneman-1996": {

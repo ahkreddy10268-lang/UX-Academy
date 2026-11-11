@@ -192,8 +192,8 @@ The rule-sets practitioners use to judge interfaces — where they came from, ho
 - ◻️ Gerhardt-Powals' Cognitive Engineering Principles — *Heuristic* · `gerhardt-powals-principles`
 - ◻️ Bastien & Scapin Ergonomic Criteria — *Heuristic* · `bastien-scapin-criteria`
 - ◻️ ISO 9241-110 Interaction Principles — *Standard* · `iso-9241-110`
-- ◻️ Consistency and Standards — *Principle* · `consistency-principle`
-- ◻️ User Control and Freedom — *Principle* · `user-control-and-freedom`
+- ✅ Consistency and Standards — *Principle* · `consistency-principle`
+- ✅ User Control and Freedom — *Principle* · `user-control-and-freedom`
 
 ## 5. UX Research (`research`)
 
@@ -341,7 +341,7 @@ How people act on interfaces and how interfaces respond.
 ### Interaction principles (`principles`)
 
 - ◻️ Discoverability — *Principle* · `discoverability`
-- ◻️ Visibility of System Status — *Principle* · `visibility-of-system-status`
+- ✅ Visibility of System Status — *Principle* · `visibility-of-system-status`
 - ◻️ Direct Manipulation — *Principle* · `direct-manipulation`
 - ✅ Progressive Disclosure — *Principle* · `progressive-disclosure`
 - ◻️ Error Recovery — *Principle* · `error-recovery`
@@ -350,7 +350,7 @@ How people act on interfaces and how interfaces respond.
 - ◻️ Feedback — *Concept* · `feedback-principle`
 - ◻️ Constraints — *Concept* · `constraints`
 - ◻️ Mapping — *Concept* · `mapping`
-- ◻️ Error Prevention — *Principle* · `error-prevention`
+- ✅ Error Prevention — *Principle* · `error-prevention`
 
 ### Interaction patterns, state & forms (`patterns`)
 

@@ -244,3 +244,7 @@ See `docs/TAXONOMY_BACKLOG.md` (P2 specialist backlog, optional topics, rejected
 ### 7.10 Freeze
 
 Taxonomy v1.0 is frozen: no new top-level domains during the next content cycle; changes follow `docs/CONTENT_MODEL.md` § Taxonomy governance and are recorded here.
+
+### Session 29 — heuristic topics (D-115, D-116)
+
+Published: `visibility-of-system-status`, `error-prevention` (Interaction › principles), `user-control-and-freedom`, `consistency-principle` (Heuristics › heuristic sets). Not a taxonomy change. "Match between system and the real world" has no topic of its own and stays addressed within `nielsen-usability-heuristics` (owner decision). Batch B candidates checked against the taxonomy: `mapping` and `recognition-over-recall` exist; "flexibility and efficiency of use" and "aesthetic and minimalist design" do not.

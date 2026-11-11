@@ -2916,3 +2916,298 @@ export const primitiveTokensPlate: IllustrationEntry = {
     );
   },
 };
+
+/* ------------------------------------------------------------------ */
+/* Visibility of system status: feedback scaled to duration             */
+/* ------------------------------------------------------------------ */
+export const visibilityOfSystemStatusPlate: IllustrationEntry = {
+  slug: "visibility-of-system-status",
+  title: "Visibility of system status plate",
+  canvas: "sheet",
+  description:
+    "A timeline of how long an operation takes, marked at about 0.1 s, 1 s and 10 s, divided into four zones. Above each zone, the feedback that fits it: under 0.1 s a Save button simply pressed; up to 1 s the button changes to 'Saving…'; up to 10 s a skeleton of the content that is loading; beyond 10 s a determinate progress bar reading 3 of 5 with a Cancel button. Below the timeline, the confirmed result 'Saved · 10:42' tagged role=\"status\", meaning it is also announced to screen-reader users without moving focus.",
+  key: [
+    { n: "1", label: "Under about 0.1 s", detail: "feels instantaneous; the pressed state and the result are enough" },
+    { n: "2", label: "Up to about 1 s", detail: "acknowledge at once; the flow of thought continues" },
+    { n: "3", label: "Up to about 10 s", detail: "show work in progress where it happens, such as a skeleton" },
+    { n: "4", label: "Beyond about 10 s", detail: "show determinate progress, allow Cancel, notify when done" },
+    { n: "5", label: "Announced status", detail: "the confirmed result in a status message, so screen readers hear it too" },
+  ],
+  Art: ({ detail }) => {
+    const ticks = [
+      [100, "0.1 s"],
+      [196, "1 s"],
+      [296, "10 s"],
+    ] as const;
+    return (
+      <g>
+        <Pointer x={70} y={98} />
+        <UiButton x={18} y={78} w={72} label="Save" />
+        <UiButton x={108} y={78} w={80} label="Saving…" />
+        <rect x={204} y={44} width={84} height={96} rx={6} fill={S.surface} stroke={S.ruleStrong} strokeWidth="0.9" {...hair} />
+        <TextBar x={214} y={58} w={60} strong />
+        <TextBar x={214} y={74} w={64} />
+        <TextBar x={214} y={88} w={52} />
+        <TextBar x={214} y={108} w={64} />
+        <TextBar x={214} y={122} w={44} />
+        <UiText x={304} y={74} tone="ink2">
+          3 of 5
+        </UiText>
+        <rect x={304} y={84} width={84} height={8} rx={4} fill={S.sunken} />
+        <rect x={304} y={84} width={50} height={8} rx={4} fill={S.accent} />
+        <UiButton x={304} y={104} w={72} label="Cancel" variant="secondary" />
+        <line x1={8} y1={176} x2={392} y2={176} stroke={S.ink} strokeWidth="1.2" {...hair} />
+        {ticks.map(([x, t]) => (
+          <g key={t}>
+            <line x1={x} y1={168} x2={x} y2={184} stroke={S.ink2} strokeWidth="1" {...hair} />
+            <UiText x={x} y={202} mono anchor="middle" tone="ink2">
+              {t}
+            </UiText>
+          </g>
+        ))}
+        <rect x={70} y={226} width={180} height={34} rx={6} fill={S.soft} stroke={S.ruleStrong} strokeWidth="0.9" {...hair} />
+        <Verdict x={88} y={243} ok />
+        <UiText x={104} y={248} weight={600}>
+          Saved · 10:42
+        </UiText>
+        <UiText x={262} y={248} mono tone="ink3">
+          {`role="status"`}
+        </UiText>
+        {detail && (
+          <>
+            <Marker x={18} y={78} n={1} />
+            <Marker x={108} y={78} n={2} />
+            <Marker x={204} y={44} n={3} />
+            <Marker x={392} y={88} n={4} />
+            <Marker x={70} y={226} n={5} />
+          </>
+        )}
+      </g>
+    );
+  },
+};
+
+/* ------------------------------------------------------------------ */
+/* User control and freedom: undo, labelled exits, keyboard escape      */
+/* ------------------------------------------------------------------ */
+export const userControlAndFreedomPlate: IllustrationEntry = {
+  slug: "user-control-and-freedom",
+  title: "User control and freedom plate",
+  canvas: "sheet",
+  description:
+    "On the left, a reading list where one book has just been removed: its row is faded and a message at the bottom reads 'Removed Middlemarch' with an Undo button. On the right, two keys: Escape, which closes a dialog and returns focus to where it was, and Ctrl or Command plus Z, which undoes the last action. Below the keys, two ways to leave a dialog: a button labelled Cancel, marked correct, and a bare × icon, marked wrong because it could mean either close or cancel.",
+  key: [
+    { n: "1", label: "Undo, visible", detail: "the action happens at once and can be reversed; the message stays until dismissed" },
+    { n: "2", label: "Escape", detail: "closes a dialog and returns focus to the control that opened it" },
+    { n: "3", label: "Undo shortcut", detail: "Ctrl+Z or ⌘Z reverses the last action" },
+    { n: "4", label: "Labelled exit", detail: "'Cancel' in words; a bare × could mean close or cancel" },
+  ],
+  Art: ({ detail }) => {
+    const rows = ["Middlemarch", "Persuasion", "Bleak House"];
+    const key = (x: number, y: number, label: string, w = 52) => (
+      <g>
+        <rect x={x} y={y} width={w} height={30} rx={6} fill={S.surface} stroke={S.ink2} strokeWidth="1.1" {...hair} />
+        <rect x={x + 2} y={y + 26} width={w - 4} height={2} rx={1} fill={S.ruleStrong} />
+        <UiText x={x + w / 2} y={y + 20} mono weight={600} anchor="middle">
+          {label}
+        </UiText>
+      </g>
+    );
+    return (
+      <g>
+        <UiFrame x={8} y={14} w={190} h={196}>
+          <UiText x={14} y={26} weight={600}>
+            Reading list
+          </UiText>
+          {rows.map((t, i) => (
+            <g key={t} opacity={i === 0 ? 0.35 : 1}>
+              <rect x={10} y={40 + i * 34} width={170} height={28} rx={5} fill={S.surface} stroke={S.rule} strokeWidth="0.8" {...hair} />
+              <UiText x={20} y={59 + i * 34}>
+                {t}
+              </UiText>
+            </g>
+          ))}
+          <rect x={10} y={150} width={170} height={36} rx={6} fill={S.ink} />
+          <UiText x={20} y={173} tone="surface">
+            Removed
+          </UiText>
+          <rect x={118} y={156} width={54} height={24} rx={5} fill={S.surface} />
+          <UiText x={145} y={173} weight={600} anchor="middle">
+            Undo
+          </UiText>
+        </UiFrame>
+        {key(222, 24, "Esc")}
+        <UiText x={284} y={44} tone="ink2">
+          close, focus back
+        </UiText>
+        {key(222, 74, "⌘Z")}
+        <UiText x={284} y={94} tone="ink2">
+          undo last action
+        </UiText>
+        <line x1={214} y1={126} x2={392} y2={126} stroke={S.rule} strokeWidth="0.9" {...hair} />
+        <UiButton x={222} y={146} w={84} label="Cancel" variant="secondary" />
+        <Verdict x={326} y={159} ok />
+        <rect x={222} y={186} width={30} height={26} rx={6} fill={S.surface} stroke={S.control} strokeWidth="0.9" {...hair} />
+        <UiText x={237} y={204} weight={600} anchor="middle">
+          ×
+        </UiText>
+        <Verdict x={274} y={199} ok={false} />
+        <UiText x={8} y={240} tone="ink3">
+          act at once, offer a way back; exits are labelled
+        </UiText>
+        {detail && (
+          <>
+            <Marker x={196} y={182} n={1} />
+            <Marker x={222} y={24} n={2} />
+            <Marker x={222} y={74} n={3} />
+            <Marker x={222} y={146} n={4} />
+          </>
+        )}
+      </g>
+    );
+  },
+};
+
+/* ------------------------------------------------------------------ */
+/* Consistency and standards: one action, one name, one place           */
+/* ------------------------------------------------------------------ */
+export const consistencyPrinciplePlate: IllustrationEntry = {
+  slug: "consistency-principle",
+  title: "Consistency and standards plate",
+  canvas: "sheet",
+  description:
+    "Two rows of three small screens from the same app, each with a way to save a search. In the top row, marked wrong, the action is a text button 'Save' at the top of the first screen, a 'Bookmark' button at the top right of the second, and an unlabelled star at the end of a row on the third: three names, three icons, three places. In the bottom row, marked correct, all three screens use the same labelled 'Save' button in the same position. The same component also carries the same accessible name everywhere.",
+  key: [
+    { n: "1", label: "Inconsistent", detail: "one action with three names, icons and positions; people wonder whether they are the same" },
+    { n: "2", label: "Consistent", detail: "one name, one component, one place, so what is learned once keeps working" },
+    { n: "3", label: "Same identification", detail: "the same function keeps the same label and accessible name (WCAG 2.2 SC 3.2.4)" },
+  ],
+  Art: ({ detail }) => {
+    const screen = (x: number, y: number) => (
+      <g>
+        <rect x={x} y={y} width={116} height={84} rx={7} fill={S.surface} stroke={S.ruleStrong} strokeWidth="0.9" {...hair} />
+        <TextBar x={x + 10} y={y + 40} w={70} />
+        <TextBar x={x + 10} y={y + 54} w={84} />
+        <TextBar x={x + 10} y={y + 68} w={58} />
+      </g>
+    );
+    const xs = [8, 142, 276];
+    return (
+      <g>
+        {xs.map((x) => screen(x, 20))}
+        <UiButton x={18} y={28} w={56} h={24} label="Save" variant="ghost" />
+        <rect x={204} y={28} width={78} height={24} rx={5} fill={S.surface} stroke={S.control} strokeWidth="0.9" {...hair} />
+        <UiText x={243} y={45} anchor="middle">
+          Bookmark
+        </UiText>
+        <path d="M371 60 l3.5 7 7.5 1 -5.5 5.2 1.3 7.6 -6.8 -3.6 -6.8 3.6 1.3 -7.6 -5.5 -5.2 7.5 -1 z" fill="none" stroke={S.ink} strokeWidth="1.1" {...hair} />
+        <Verdict x={200} y={118} ok={false} />
+        <line x1={8} y1={136} x2={392} y2={136} stroke={S.rule} strokeWidth="0.9" {...hair} />
+        {xs.map((x) => (
+          <g key={x}>
+            {screen(x, 152)}
+            <UiButton x={x + 54} y={160} w={52} h={24} label="Save" />
+          </g>
+        ))}
+        <Verdict x={200} y={252} ok />
+        <UiText x={8} y={276} tone="ink3">
+          same action, same name, same place
+        </UiText>
+        {detail && (
+          <>
+            <Marker x={8} y={20} n={1} />
+            <Marker x={8} y={152} n={2} />
+            <Marker x={392} y={186} n={3} />
+          </>
+        )}
+      </g>
+    );
+  },
+};
+
+/* ------------------------------------------------------------------ */
+/* Error prevention: slips constrained, mistakes previewed              */
+/* ------------------------------------------------------------------ */
+export const errorPreventionPlate: IllustrationEntry = {
+  slug: "error-prevention",
+  title: "Error prevention plate",
+  canvas: "sheet",
+  description:
+    "Two halves. On the left, preventing slips: a calendar in which the days before the departure date are disabled so a return date cannot be picked before it, and a card-number field that accepts the number typed with spaces, marked correct. On the right, preventing mistakes: a confirmation that previews the consequence, 'Delete folder Reports — 24 files will be deleted', with the buttons 'Delete 24 files' and 'Cancel'. Beneath each half, the kind of error it addresses: a slip is the right goal carried out wrongly; a mistake is the wrong goal from a misunderstanding.",
+  key: [
+    { n: "1", label: "Constraint", detail: "dates before departure cannot be chosen, so the slip is impossible" },
+    { n: "2", label: "Forgiving format", detail: "the number is accepted with spaces and normalised" },
+    { n: "3", label: "Preview the consequence", detail: "say exactly what will happen before a costly, irreversible action" },
+    { n: "4", label: "Slips and mistakes", detail: "slips need constraints at the point of action; mistakes need better information" },
+  ],
+  Art: ({ detail }) => {
+    const cell = (i: number) => ({ x: 14 + (i % 7) * 24, y: 44 + Math.floor(i / 7) * 22 });
+    return (
+      <g>
+        <UiText x={8} y={24} mono tone="ink3">
+          slips
+        </UiText>
+        <UiText x={214} y={24} mono tone="ink3">
+          mistakes
+        </UiText>
+        <rect x={8} y={34} width={180} height={78} rx={6} fill={S.surface} stroke={S.ruleStrong} strokeWidth="0.9" {...hair} />
+        {Array.from({ length: 21 }, (_, i) => {
+          const c = cell(i);
+          const off = i < 9;
+          const dep = i === 9;
+          const ret = i === 13;
+          return (
+            <rect
+              key={i}
+              x={c.x}
+              y={c.y}
+              width={20}
+              height={18}
+              rx={3}
+              fill={dep || ret ? S.accent : off ? S.sunken : S.surface}
+              stroke={off ? S.rule : S.control}
+              strokeWidth="0.8"
+              strokeDasharray={off ? "2 1.8" : undefined}
+              {...hair}
+            />
+          );
+        })}
+        <UiField x={8} y={134} w={180} label="Card number" value="1234 5678 9012 34" />
+        <Verdict x={176} y={170} ok />
+        <rect x={214} y={34} width={178} height={130} rx={8} fill={S.surface} stroke={S.ruleStrong} strokeWidth="0.9" {...hair} />
+        <UiText x={226} y={58} weight={600}>
+          {`Delete folder "Reports"?`}
+        </UiText>
+        <UiText x={226} y={80} tone="ink2">
+          24 files will be deleted.
+        </UiText>
+        <UiText x={226} y={98} tone="ink2">
+          This cannot be undone.
+        </UiText>
+        <UiButton x={226} y={122} w={104} label="Delete 24 files" />
+        <UiButton x={334} y={122} w={52} label="Cancel" variant="secondary" />
+        <line x1={8} y1={206} x2={392} y2={206} stroke={S.rule} strokeWidth="0.9" {...hair} />
+        <UiText x={8} y={230} weight={600}>
+          right goal, wrong action
+        </UiText>
+        <UiText x={8} y={250} tone="ink2">
+          constrain, default, suggest
+        </UiText>
+        <UiText x={214} y={230} weight={600}>
+          wrong goal
+        </UiText>
+        <UiText x={214} y={250} tone="ink2">
+          inform, preview
+        </UiText>
+        {detail && (
+          <>
+            <Marker x={8} y={34} n={1} />
+            <Marker x={196} y={152} n={2} />
+            <Marker x={214} y={34} n={3} />
+            <Marker x={200} y={218} n={4} />
+          </>
+        )}
+      </g>
+    );
+  },
+};

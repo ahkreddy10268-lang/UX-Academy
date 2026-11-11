@@ -5,14 +5,14 @@
 
 | Measure | Count |
 |---|---|
-| Registered Level-1 plates | 77 |
-| Published entries with a plate | 54 / 54 |
+| Registered Level-1 plates | 81 |
+| Published entries with a plate | 58 / 58 |
 | Subject plates | 20 / 20 |
-| Plates in the current system (dark technical or instructional sheet) | 75 |
+| Plates in the current system (dark technical or instructional sheet) | 79 |
 | Plates still in the earlier pastel style | 2 |
 | Level-2 figures | 23 |
 | Level-3 explorers (on plates) | 9 |
-| Labs linked from entries | 14 |
+| Labs linked from entries | 15 |
 | Animated plates | 12 |
 
 ## The 12 illustration categories
@@ -21,12 +21,12 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 
 | # | Category | L1 plates | Current style | L2 figures | L3 | Retain / refine / replace | Maturity | Entries |
 |---|---|---:|---:|---:|---:|---|---|---|
-| 1 | UX Concept Illustrations | 22 | 21 | 10 | 13 | 22 / 0 / 0 | developing | `fitts-law`, `hick-hyman-law`, `cognitive-load-theory`, `millers-law`, `jakobs-law`, `mental-models`, `affordances`, `peak-end-rule`, `steering-law`, `teslers-law`, `serial-position-effect`, `von-restorff-effect`, `aesthetic-usability-effect`, `choice-overload`, `working-memory-model`, `recognition-over-recall`, `user-experience`, `human-computer-interaction` |
+| 1 | UX Concept Illustrations | 23 | 22 | 10 | 13 | 23 / 0 / 0 | developing | `fitts-law`, `hick-hyman-law`, `cognitive-load-theory`, `millers-law`, `jakobs-law`, `mental-models`, `affordances`, `peak-end-rule`, `steering-law`, `teslers-law`, `serial-position-effect`, `von-restorff-effect`, `aesthetic-usability-effect`, `choice-overload`, `working-memory-model`, `recognition-over-recall`, `user-experience`, `human-computer-interaction`, `consistency-principle` |
 | 2 | UI Anatomy Illustrations | 2 | 2 | 1 | 0 | 2 / 0 / 0 | mature | `ui-design` |
 | 3 | UX Process Illustrations | 7 | 7 | 2 | 0 | 7 / 0 / 0 | mature | `double-diamond`, `user-centred-design` |
 | 4 | User Research Illustrations | 3 | 3 | 0 | 0 | 3 / 0 / 0 | developing | `card-sorting`, `jobs-to-be-done` |
 | 5 | Information Architecture Illustrations | 2 | 2 | 2 | 0 | 2 / 0 / 0 | mature | `information-architecture` |
-| 6 | Interaction Design Illustrations | 7 | 7 | 1 | 3 | 7 / 0 / 0 | developing | `signifiers`, `doherty-threshold`, `gulfs-of-execution-and-evaluation`, `interaction-design-discipline`, `progressive-disclosure` |
+| 6 | Interaction Design Illustrations | 10 | 10 | 1 | 4 | 10 / 0 / 0 | developing | `signifiers`, `doherty-threshold`, `gulfs-of-execution-and-evaluation`, `interaction-design-discipline`, `progressive-disclosure`, `visibility-of-system-status`, `user-control-and-freedom`, `error-prevention` |
 | 7 | Wireframe & Prototyping Illustrations | 1 | 1 | 0 | 0 | 1 / 0 / 0 | developing | — |
 | 8 | Visual Design & Composition Illustrations | 7 | 7 | 2 | 6 | 7 / 0 / 0 | developing | `gestalt-principles`, `colour-contrast-ratio`, `visual-hierarchy`, `modular-type-scale` |
 | 9 | Design Systems Illustrations | 6 | 6 | 2 | 0 | 6 / 0 / 0 | developing | `design-system`, `design-tokens`, `primitive-tokens`, `semantic-tokens` |
@@ -38,10 +38,10 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 
 | Method | L1 plates (primary) | L2 figures |
 |---|---:|---:|
-| Conceptual & Metaphorical | 16 | 7 |
-| Process & Sequential | 15 | 7 |
+| Conceptual & Metaphorical | 17 | 7 |
+| Process & Sequential | 16 | 7 |
 | Relationship & Systems | 15 | 4 |
-| Comparison & Contrast | 19 | 4 |
+| Comparison & Contrast | 21 | 4 |
 | Hierarchy & Classification | 12 | 1 |
 
 ## Level 1 audit (every registered plate)
@@ -106,6 +106,10 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 | `design-tokens` | entry | design-systems | hierarchy | current · instructional sheet | retain | Sheet (S25): primitive → semantic → component references, the button they produce and platform outputs. | 0 | — |
 | `primitive-tokens` | entry | design-systems | hierarchy | current · instructional sheet | retain | Sheet (B1): a grey ramp numbered with gaps, semantic roles choosing steps, a crossed component-to-primitive link, and a spacing scale. | 0 | — |
 | `semantic-tokens` | entry | design-systems | relationship | current · instructional sheet | retain | Sheet (B1): one column of role names mapped to light and dark primitives, a contrast pair, and components that point only at roles. | 0 | — |
+| `visibility-of-system-status` | entry | interaction-design | process | current · instructional sheet | retain | Sheet (S29): feedback matched to duration on a 0.1 / 1 / 10 s timeline, from pressed state to determinate progress with Cancel, and an announced status message. | 0 | feedback-lab |
+| `user-control-and-freedom` | entry | interaction-design | conceptual | current · instructional sheet | retain | Sheet (S29): immediate removal with a visible Undo, Escape and ⌘Z as exits, and a labelled Cancel against an ambiguous ×. | 0 | — |
+| `consistency-principle` | entry | ux-concept | comparison | current · instructional sheet | retain | Sheet (S29): one action shown three ways across three screens versus one component, name and position on all three. | 0 | — |
+| `error-prevention` | entry | interaction-design | comparison | current · instructional sheet | retain | Sheet (S29): slips prevented by a date constraint and a forgiving card-number format; a mistake prevented by previewing the consequence of a delete. | 0 | — |
 | `foundations` | subject | ux-concept | relationship | current · instructional sheet | retain | Sheet (S25, subject): interface inside the experience band, an approach loop and a history line. | 0 | — |
 | `laws-effects` | subject | ux-concept | conceptual | current · instructional sheet | retain | Sheet (S25, subject): six tiles for the domain's families, ending with evidence labels. | 0 | — |
 | `psychology` | subject | ux-concept | conceptual | current · instructional sheet | retain | Sheet (S25, subject): memory slots, a cue–action–outcome loop, pop-out search and a reach arc. | 0 | — |
@@ -218,6 +222,10 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 | `design-tokens` | Three columns of named tokens with arrows showing which token refers to which. Primitive tokens on the left hold raw values: blue-600, grey-900 and space-4 (16 px). Semantic tokens in the middle record decisions by referring to primitives: color.action refers to blue-600, color.text to grey-900, space.inset to space-4. Component tokens on the right refer to semantic ones: button.background, button.label and button.padding. At the bottom, the button those tokens produce, and the outputs a build step generates from the same source: CSS custom properties, iOS and Android values. A theme changes what a semantic token refers to, and every component follows. |
 | `primitive-tokens` | A grey ramp of eight swatches from lightest to darkest, labelled 0, 50, 300, 500, 600, 700, 900 and 950, with gaps in the numbering so steps can be added later. Below it, two semantic tokens, surface.default and text.default, point up to the steps they use: grey.0 and grey.900. A component token, button.label, points to text.default; a dashed line from button.label straight to the ramp is crossed out, because components should not use primitives. At the bottom, a spacing scale of six steps, space.100 to space.800, drawn as blocks of 4, 8, 12, 16, 24 and 32 pixels. |
 | `semantic-tokens` | Three columns joined by arrows. In the middle, four semantic tokens named by purpose: color.surface.default, color.text.default, color.text.danger and color.action.background. Each refers to a primitive on the left in the light theme — grey.0, grey.900, red.700, blue.600 — and to a different primitive on the right in the dark theme — grey.950, grey.50, red.400, blue.400. A bracket joins text.default and surface.default as a pair whose contrast must be checked in each theme. Below, a Renew button and an error message point only at the middle column, so they follow either theme without changing. |
+| `visibility-of-system-status` | A timeline of how long an operation takes, marked at about 0.1 s, 1 s and 10 s, divided into four zones. Above each zone, the feedback that fits it: under 0.1 s a Save button simply pressed; up to 1 s the button changes to 'Saving…'; up to 10 s a skeleton of the content that is loading; beyond 10 s a determinate progress bar reading 3 of 5 with a Cancel button. Below the timeline, the confirmed result 'Saved · 10:42' tagged role="status", meaning it is also announced to screen-reader users without moving focus. |
+| `user-control-and-freedom` | On the left, a reading list where one book has just been removed: its row is faded and a message at the bottom reads 'Removed Middlemarch' with an Undo button. On the right, two keys: Escape, which closes a dialog and returns focus to where it was, and Ctrl or Command plus Z, which undoes the last action. Below the keys, two ways to leave a dialog: a button labelled Cancel, marked correct, and a bare × icon, marked wrong because it could mean either close or cancel. |
+| `consistency-principle` | Two rows of three small screens from the same app, each with a way to save a search. In the top row, marked wrong, the action is a text button 'Save' at the top of the first screen, a 'Bookmark' button at the top right of the second, and an unlabelled star at the end of a row on the third: three names, three icons, three places. In the bottom row, marked correct, all three screens use the same labelled 'Save' button in the same position. The same component also carries the same accessible name everywhere. |
+| `error-prevention` | Two halves. On the left, preventing slips: a calendar in which the days before the departure date are disabled so a return date cannot be picked before it, and a card-number field that accepts the number typed with spaces, marked correct. On the right, preventing mistakes: a confirmation that previews the consequence, 'Delete folder Reports — 24 files will be deleted', with the buttons 'Delete 24 files' and 'Cancel'. Beneath each half, the kind of error it addresses: a slip is the right goal carried out wrongly; a mistake is the wrong goal from a misunderstanding. |
 | `foundations` | Nested frames read from the inside out. At the centre, an interface: a booking screen with a title, a field and a button, the part UI design shapes. Around it, a band of before, during and after touchpoints, the whole experience UX design is concerned with. A loop arrow around the band stands for design approaches that put people's needs and evaluation at the centre. Along the bottom, a short timeline marks that the field has a history in design and human-computer interaction. |
 | `laws-effects` | Six tiles, one for each family of regularities in this subject. Human performance laws: a pointer moving a distance D to a target of width W. Popular laws and rules of thumb: a card stamped 'rule of thumb'. Memory and attention: a list in which one item stands out. Gestalt grouping: dots grouped by spacing. Decision-making biases: two options, one marked as the default. A sixth tile shows evidence labels, because these items range from measured laws to popular claims. |
 | `psychology` | Four panels for the four strands of the subject, each shown through what it explains in an interface rather than as a picture of a head. Cognitive psychology, memory and learning: four memory slots, three filled. Behavioural science, motivation and emotion: a loop from a cue to an action to an outcome that feeds back. Visual cognition: a field of outlined shapes in which one filled shape stands out at once (in the hero it pulses, as attention is captured). Human factors and ergonomics: a control panel with a large stop button within reach and a reach arc drawn around it. |
