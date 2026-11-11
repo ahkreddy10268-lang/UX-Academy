@@ -3211,3 +3211,222 @@ export const errorPreventionPlate: IllustrationEntry = {
     );
   },
 };
+
+/* ------------------------------------------------------------------ */
+/* Mapping: control layout mirrors the layout of what it controls       */
+/* ------------------------------------------------------------------ */
+export const mappingPlate: IllustrationEntry = {
+  slug: "mapping",
+  title: "Mapping plate",
+  canvas: "sheet",
+  description:
+    "Two cooker tops, each with four rings in a square. On the left, the four knobs sit in a straight line below, and dashed lines from knobs to rings cross each other, so which knob controls which ring must be worked out; marked wrong. On the right, the four knobs are arranged in the same square as the rings, so the correspondence is seen at once; marked correct. Below, two directional mappings: a slider whose value rises as it is dragged right, and a pair of buttons with plus above minus, following the convention that up means more.",
+  key: [
+    { n: "1", label: "Knobs in a line", detail: "the layout does not match the rings, so people must translate and make errors" },
+    { n: "2", label: "Natural mapping", detail: "knobs in the same square as the rings; the right knob is found by looking" },
+    { n: "3", label: "Directional mapping", detail: "movement of the control matches movement of the value" },
+    { n: "4", label: "Conventional mapping", detail: "plus above minus: up means more" },
+  ],
+  Art: ({ detail }) => {
+    const rings = (ox: number) => [
+      [ox + 44, 48],
+      [ox + 108, 48],
+      [ox + 44, 100],
+      [ox + 108, 100],
+    ] as const;
+    const left = rings(8);
+    const right = rings(208);
+    const lineKnobs = [32, 68, 104, 140].map((x) => [x + 8, 158] as const);
+    const order = [2, 0, 3, 1];
+    const sqKnobs = [
+      [248, 144],
+      [280, 144],
+      [248, 168],
+      [280, 168],
+    ] as const;
+    const hob = (x: number) => <rect x={x} y={20} width={176} height={168} rx={10} fill={S.surface} stroke={S.ruleStrong} strokeWidth="0.9" {...hair} />;
+    const ring = ([x, y]: readonly [number, number], i: number) => (
+      <g key={i}>
+        <circle cx={x} cy={y} r={18} fill="none" stroke={S.ink2} strokeWidth="1.2" {...hair} />
+        <circle cx={x} cy={y} r={10} fill="none" stroke={S.ruleStrong} strokeWidth="0.9" {...hair} />
+      </g>
+    );
+    const knob = ([x, y]: readonly [number, number], i: number) => (
+      <g key={`k${i}`}>
+        <circle cx={x} cy={y} r={9} fill={S.soft} stroke={S.ink} strokeWidth="1.1" {...hair} />
+        <line x1={x} y1={y - 8} x2={x} y2={y - 2} stroke={S.ink} strokeWidth="1.4" {...hair} />
+      </g>
+    );
+    return (
+      <g>
+        {hob(8)}
+        {hob(208)}
+        {left.map(ring)}
+        {right.map(ring)}
+        {lineKnobs.map((k, i) => (
+          <path key={`l${i}`} d={`M${k[0]} ${k[1] - 9} L${left[order[i]][0]} ${left[order[i]][1] + 18}`} fill="none" stroke={S.ink3} strokeWidth="0.9" strokeDasharray="3 2.6" {...hair} />
+        ))}
+        {lineKnobs.map(knob)}
+        {sqKnobs.map(knob)}
+        <rect x={232} y={130} width={64} height={52} rx={6} fill="none" stroke={S.accent} strokeWidth="1.1" strokeDasharray="4 3" {...hair} />
+        <Verdict x={176} y={176} ok={false} />
+        <Verdict x={376} y={176} ok />
+        <line x1={8} y1={206} x2={392} y2={206} stroke={S.rule} strokeWidth="0.9" {...hair} />
+        <rect x={8} y={236} width={180} height={6} rx={3} fill={S.sunken} />
+        <rect x={8} y={236} width={118} height={6} rx={3} fill={S.accent} />
+        <circle cx={126} cy={239} r={9} fill={S.surface} stroke={S.ink} strokeWidth="1.2" {...hair} />
+        <Link from={[140, 222]} to={[184, 222]} tone="accent" />
+        <UiText x={8} y={268} tone="ink2">
+          drag right, value up
+        </UiText>
+        <UiButton x={232} y={218} w={40} h={22} label="+" variant="secondary" />
+        <UiButton x={232} y={244} w={40} h={22} label="−" variant="secondary" />
+        <UiText x={284} y={248} tone="ink2">
+          up means more
+        </UiText>
+        {detail && (
+          <>
+            <Marker x={8} y={158} n={1} />
+            <Marker x={232} y={130} n={2} />
+            <Marker x={8} y={226} n={3} />
+            <Marker x={226} y={218} n={4} />
+          </>
+        )}
+      </g>
+    );
+  },
+};
+
+/* ------------------------------------------------------------------ */
+/* Flexibility and efficiency: visible path plus a discoverable shortcut */
+/* ------------------------------------------------------------------ */
+export const flexibilityEfficiencyPlate: IllustrationEntry = {
+  slug: "flexibility-and-efficiency-of-use",
+  title: "Flexibility and efficiency of use plate",
+  canvas: "sheet",
+  description: (() => {
+    const menu = klmTotal(parseKlm("H M P B B P B B H")).total.toFixed(2);
+    const key = klmTotal(parseKlm("M K K")).total.toFixed(2);
+    return `Two routes to the same command in a library staff tool. Above, the visible path: a Loans menu is open and its item 'Renew selected' shows its keyboard shortcut, ⌘R, beside the label, so people who use the menu see the shortcut every time. Below, the accelerator: the keys ⌘ and R pressed together. Both arrive at the same result, '12 loans renewed'. Beside each route, its estimated time from the keystroke-level model computed in UX Academy's calculator: ${menu} s through the menu and ${key} s with the shortcut.`;
+  })(),
+  key: [
+    { n: "1", label: "Visible path", detail: "a menu everyone can find; it stays for novices and occasional users" },
+    { n: "2", label: "Shortcut shown beside the command", detail: "repeated exposure teaches the faster route without getting in the way" },
+    { n: "3", label: "Accelerator", detail: "the same command in two keystrokes for people who have learned it" },
+    { n: "4", label: "Time saved", detail: "keystroke-level model estimates for a skilled user making no errors" },
+  ],
+  Art: ({ detail }) => {
+    const menu = klmTotal(parseKlm("H M P B B P B B H")).total;
+    const key = klmTotal(parseKlm("M K K")).total;
+    const cap = (x: number, y: number, label: string) => (
+      <g>
+        <rect x={x} y={y} width={40} height={34} rx={6} fill={S.surface} stroke={S.ink2} strokeWidth="1.1" {...hair} />
+        <rect x={x + 2} y={y + 30} width={36} height={2} rx={1} fill={S.ruleStrong} />
+        <UiText x={x + 20} y={y + 22} size={T.strong} mono weight={600} anchor="middle">
+          {label}
+        </UiText>
+      </g>
+    );
+    return (
+      <g>
+        <rect x={8} y={14} width={64} height={26} rx={5} fill={S.soft} stroke={S.ruleStrong} strokeWidth="0.9" {...hair} />
+        <UiText x={18} y={32} weight={600}>
+          Loans
+        </UiText>
+        <rect x={8} y={42} width={200} height={92} rx={7} fill={S.surface} stroke={S.ruleStrong} strokeWidth="0.9" {...hair} />
+        <UiText x={20} y={64}>
+          Open loan
+        </UiText>
+        <rect x={12} y={74} width={192} height={26} rx={4} fill={S.accentWash} />
+        <UiText x={20} y={92} weight={600}>
+          Renew selected
+        </UiText>
+        <UiText x={196} y={92} mono anchor="end" tone="ink2">
+          ⌘R
+        </UiText>
+        <UiText x={20} y={122}>
+          Return
+        </UiText>
+        {cap(8, 172, "⌘")}
+        {cap(56, 172, "R")}
+        <Link from={[212, 87]} to={[262, 128]} via={[250, 90]} />
+        <Link from={[100, 189]} to={[262, 150]} via={[230, 190]} />
+        <rect x={264} y={120} width={128} height={38} rx={7} fill={S.soft} stroke={S.ink2} strokeWidth="1" {...hair} />
+        <Verdict x={282} y={139} ok />
+        <UiText x={296} y={144} weight={600}>
+          12 renewed
+        </UiText>
+        <UiText x={8} y={160} mono tone="ink2">
+          {`menu ≈ ${menu.toFixed(2)} s`}
+        </UiText>
+        <UiText x={8} y={232} mono tone="ink2">
+          {`shortcut ≈ ${key.toFixed(2)} s`}
+        </UiText>
+        {detail && (
+          <>
+            <Marker x={8} y={14} n={1} />
+            <Marker x={204} y={74} n={2} />
+            <Marker x={104} y={172} n={3} />
+            <Marker x={170} y={226} n={4} />
+          </>
+        )}
+      </g>
+    );
+  },
+};
+
+/* ------------------------------------------------------------------ */
+/* Aesthetic and minimalist design: signal kept, noise removed          */
+/* ------------------------------------------------------------------ */
+export const aestheticMinimalistPlate: IllustrationEntry = {
+  slug: "aesthetic-and-minimalist-design",
+  title: "Aesthetic and minimalist design plate",
+  canvas: "sheet",
+  description:
+    "Two versions of a library app's home screen. On the left, marked wrong, a small search box competes with a banner, a carousel, a long news list and decorative blocks; the Renew action is buried at the bottom. On the right, marked correct, the search box is prominent, the two most common tasks, Renew loans and Opening hours, are labelled buttons, and news and events are reachable through one 'More' link rather than removed. Nothing a primary task needs is missing; only what competes with it has moved.",
+  key: [
+    { n: "1", label: "Noise competes with signal", detail: "banners, carousels and long lists lower the visibility of the tasks people came for" },
+    { n: "2", label: "Primary tasks kept and labelled", detail: "everything the main tasks need stays visible" },
+    { n: "3", label: "Rarely needed, deferred", detail: "secondary content is one step away, not deleted" },
+  ],
+  Art: ({ detail }) => (
+    <g>
+      <UiFrame x={8} y={10} w={180} h={232}>
+        <rect x={10} y={20} width={110} height={22} rx={5} fill={S.surface} stroke={S.control} strokeWidth="0.8" {...hair} />
+        <rect x={10} y={50} width={160} height={38} rx={5} fill={S.sunken} />
+        <circle cx={80} cy={96} r={2.5} fill={S.ink3} />
+        <circle cx={90} cy={96} r={2.5} fill={S.ruleStrong} />
+        <circle cx={100} cy={96} r={2.5} fill={S.ruleStrong} />
+        <TextBar x={10} y={110} w={150} strong />
+        <TextBar x={10} y={122} w={140} />
+        <TextBar x={10} y={134} w={156} />
+        <TextBar x={10} y={146} w={120} />
+        <rect x={10} y={156} width={74} height={30} rx={5} fill={S.sunken} />
+        <rect x={92} y={156} width={78} height={30} rx={5} fill={S.sunken} />
+        <UiText x={10} y={208} tone="ink3">
+          Renew
+        </UiText>
+      </UiFrame>
+      <Verdict x={176} y={232} ok={false} />
+      <UiFrame x={212} y={10} w={180} h={232}>
+        <UiField x={10} y={24} w={160} label="Search the catalogue" />
+        <UiButton x={10} y={92} w={160} h={30} label="Renew loans" />
+        <UiButton x={10} y={130} w={160} h={30} label="Opening hours" variant="secondary" />
+        <UiText x={10} y={190} tone="accent">
+          More: news and events
+        </UiText>
+      </UiFrame>
+      <Verdict x={380} y={232} ok />
+      <UiText x={8} y={272} tone="ink3">
+        keep what tasks need; move what competes
+      </UiText>
+      {detail && (
+        <>
+          <Marker x={18} y={60} n={1} />
+          <Marker x={216} y={102} n={2} />
+          <Marker x={216} y={196} n={3} />
+        </>
+      )}
+    </g>
+  ),
+};

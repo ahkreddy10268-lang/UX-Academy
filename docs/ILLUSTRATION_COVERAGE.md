@@ -5,10 +5,10 @@
 
 | Measure | Count |
 |---|---|
-| Registered Level-1 plates | 81 |
-| Published entries with a plate | 58 / 58 |
+| Registered Level-1 plates | 84 |
+| Published entries with a plate | 61 / 61 |
 | Subject plates | 20 / 20 |
-| Plates in the current system (dark technical or instructional sheet) | 79 |
+| Plates in the current system (dark technical or instructional sheet) | 82 |
 | Plates still in the earlier pastel style | 2 |
 | Level-2 figures | 23 |
 | Level-3 explorers (on plates) | 9 |
@@ -26,9 +26,9 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 | 3 | UX Process Illustrations | 7 | 7 | 2 | 0 | 7 / 0 / 0 | mature | `double-diamond`, `user-centred-design` |
 | 4 | User Research Illustrations | 3 | 3 | 0 | 0 | 3 / 0 / 0 | developing | `card-sorting`, `jobs-to-be-done` |
 | 5 | Information Architecture Illustrations | 2 | 2 | 2 | 0 | 2 / 0 / 0 | mature | `information-architecture` |
-| 6 | Interaction Design Illustrations | 10 | 10 | 1 | 4 | 10 / 0 / 0 | developing | `signifiers`, `doherty-threshold`, `gulfs-of-execution-and-evaluation`, `interaction-design-discipline`, `progressive-disclosure`, `visibility-of-system-status`, `user-control-and-freedom`, `error-prevention` |
+| 6 | Interaction Design Illustrations | 12 | 12 | 1 | 4 | 12 / 0 / 0 | developing | `signifiers`, `doherty-threshold`, `gulfs-of-execution-and-evaluation`, `interaction-design-discipline`, `progressive-disclosure`, `visibility-of-system-status`, `user-control-and-freedom`, `error-prevention`, `mapping`, `flexibility-and-efficiency-of-use` |
 | 7 | Wireframe & Prototyping Illustrations | 1 | 1 | 0 | 0 | 1 / 0 / 0 | developing | — |
-| 8 | Visual Design & Composition Illustrations | 7 | 7 | 2 | 6 | 7 / 0 / 0 | developing | `gestalt-principles`, `colour-contrast-ratio`, `visual-hierarchy`, `modular-type-scale` |
+| 8 | Visual Design & Composition Illustrations | 8 | 8 | 2 | 6 | 8 / 0 / 0 | developing | `gestalt-principles`, `colour-contrast-ratio`, `visual-hierarchy`, `modular-type-scale`, `aesthetic-and-minimalist-design` |
 | 9 | Design Systems Illustrations | 6 | 6 | 2 | 0 | 6 / 0 / 0 | developing | `design-system`, `design-tokens`, `primitive-tokens`, `semantic-tokens` |
 | 10 | Usability & Accessibility Illustrations | 4 | 4 | 1 | 0 | 4 / 0 / 0 | developing | `usability`, `accessibility-concept`, `wcag` |
 | 11 | Responsive & Adaptive Design Illustrations | 0 | 0 | 0 | 0 | 0 / 0 / 0 | gap | — |
@@ -40,8 +40,8 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 |---|---:|---:|
 | Conceptual & Metaphorical | 17 | 7 |
 | Process & Sequential | 16 | 7 |
-| Relationship & Systems | 15 | 4 |
-| Comparison & Contrast | 21 | 4 |
+| Relationship & Systems | 16 | 4 |
+| Comparison & Contrast | 23 | 4 |
 | Hierarchy & Classification | 12 | 1 |
 
 ## Level 1 audit (every registered plate)
@@ -110,6 +110,9 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 | `user-control-and-freedom` | entry | interaction-design | conceptual | current · instructional sheet | retain | Sheet (S29): immediate removal with a visible Undo, Escape and ⌘Z as exits, and a labelled Cancel against an ambiguous ×. | 0 | — |
 | `consistency-principle` | entry | ux-concept | comparison | current · instructional sheet | retain | Sheet (S29): one action shown three ways across three screens versus one component, name and position on all three. | 0 | — |
 | `error-prevention` | entry | interaction-design | comparison | current · instructional sheet | retain | Sheet (S29): slips prevented by a date constraint and a forgiving card-number format; a mistake prevented by previewing the consequence of a delete. | 0 | — |
+| `mapping` | entry | interaction-design | comparison | current · instructional sheet | retain | Sheet (S30): cooker knobs in a line with crossing links versus knobs arranged like the rings; directional slider and plus-above-minus conventions. | 0 | — |
+| `flexibility-and-efficiency-of-use` | entry | interaction-design | relationship | current · instructional sheet | retain | Sheet (S30): a menu path showing its shortcut and the shortcut itself converging on one result, with keystroke-level-model times from lib/formulas. | 0 | — |
+| `aesthetic-and-minimalist-design` | entry | visual-design | comparison | current · instructional sheet | retain | Sheet (S30): a cluttered home screen versus one that keeps the primary tasks labelled and defers secondary content behind one link. | 0 | — |
 | `foundations` | subject | ux-concept | relationship | current · instructional sheet | retain | Sheet (S25, subject): interface inside the experience band, an approach loop and a history line. | 0 | — |
 | `laws-effects` | subject | ux-concept | conceptual | current · instructional sheet | retain | Sheet (S25, subject): six tiles for the domain's families, ending with evidence labels. | 0 | — |
 | `psychology` | subject | ux-concept | conceptual | current · instructional sheet | retain | Sheet (S25, subject): memory slots, a cue–action–outcome loop, pop-out search and a reach arc. | 0 | — |
@@ -226,6 +229,9 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 | `user-control-and-freedom` | On the left, a reading list where one book has just been removed: its row is faded and a message at the bottom reads 'Removed Middlemarch' with an Undo button. On the right, two keys: Escape, which closes a dialog and returns focus to where it was, and Ctrl or Command plus Z, which undoes the last action. Below the keys, two ways to leave a dialog: a button labelled Cancel, marked correct, and a bare × icon, marked wrong because it could mean either close or cancel. |
 | `consistency-principle` | Two rows of three small screens from the same app, each with a way to save a search. In the top row, marked wrong, the action is a text button 'Save' at the top of the first screen, a 'Bookmark' button at the top right of the second, and an unlabelled star at the end of a row on the third: three names, three icons, three places. In the bottom row, marked correct, all three screens use the same labelled 'Save' button in the same position. The same component also carries the same accessible name everywhere. |
 | `error-prevention` | Two halves. On the left, preventing slips: a calendar in which the days before the departure date are disabled so a return date cannot be picked before it, and a card-number field that accepts the number typed with spaces, marked correct. On the right, preventing mistakes: a confirmation that previews the consequence, 'Delete folder Reports — 24 files will be deleted', with the buttons 'Delete 24 files' and 'Cancel'. Beneath each half, the kind of error it addresses: a slip is the right goal carried out wrongly; a mistake is the wrong goal from a misunderstanding. |
+| `mapping` | Two cooker tops, each with four rings in a square. On the left, the four knobs sit in a straight line below, and dashed lines from knobs to rings cross each other, so which knob controls which ring must be worked out; marked wrong. On the right, the four knobs are arranged in the same square as the rings, so the correspondence is seen at once; marked correct. Below, two directional mappings: a slider whose value rises as it is dragged right, and a pair of buttons with plus above minus, following the convention that up means more. |
+| `flexibility-and-efficiency-of-use` | Two routes to the same command in a library staff tool. Above, the visible path: a Loans menu is open and its item 'Renew selected' shows its keyboard shortcut, ⌘R, beside the label, so people who use the menu see the shortcut every time. Below, the accelerator: the keys ⌘ and R pressed together. Both arrive at the same result, '12 loans renewed'. Beside each route, its estimated time from the keystroke-level model computed in UX Academy's calculator: 4.75 s through the menu and 1.91 s with the shortcut. |
+| `aesthetic-and-minimalist-design` | Two versions of a library app's home screen. On the left, marked wrong, a small search box competes with a banner, a carousel, a long news list and decorative blocks; the Renew action is buried at the bottom. On the right, marked correct, the search box is prominent, the two most common tasks, Renew loans and Opening hours, are labelled buttons, and news and events are reachable through one 'More' link rather than removed. Nothing a primary task needs is missing; only what competes with it has moved. |
 | `foundations` | Nested frames read from the inside out. At the centre, an interface: a booking screen with a title, a field and a button, the part UI design shapes. Around it, a band of before, during and after touchpoints, the whole experience UX design is concerned with. A loop arrow around the band stands for design approaches that put people's needs and evaluation at the centre. Along the bottom, a short timeline marks that the field has a history in design and human-computer interaction. |
 | `laws-effects` | Six tiles, one for each family of regularities in this subject. Human performance laws: a pointer moving a distance D to a target of width W. Popular laws and rules of thumb: a card stamped 'rule of thumb'. Memory and attention: a list in which one item stands out. Gestalt grouping: dots grouped by spacing. Decision-making biases: two options, one marked as the default. A sixth tile shows evidence labels, because these items range from measured laws to popular claims. |
 | `psychology` | Four panels for the four strands of the subject, each shown through what it explains in an interface rather than as a picture of a head. Cognitive psychology, memory and learning: four memory slots, three filled. Behavioural science, motivation and emotion: a loop from a cue to an action to an outcome that feeds back. Visual cognition: a field of outlined shapes in which one filled shape stands out at once (in the hero it pulses, as attention is captured). Human factors and ergonomics: a control panel with a large stop button within reach and a reach arc drawn around it. |

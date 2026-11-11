@@ -248,3 +248,7 @@ Taxonomy v1.0 is frozen: no new top-level domains during the next content cycle;
 ### Session 29 — heuristic topics (D-115, D-116)
 
 Published: `visibility-of-system-status`, `error-prevention` (Interaction › principles), `user-control-and-freedom`, `consistency-principle` (Heuristics › heuristic sets). Not a taxonomy change. "Match between system and the real world" has no topic of its own and stays addressed within `nielsen-usability-heuristics` (owner decision). Batch B candidates checked against the taxonomy: `mapping` and `recognition-over-recall` exist; "flexibility and efficiency of use" and "aesthetic and minimalist design" do not.
+
+### Session 30 — taxonomy addition: Nielsen heuristics 7 and 8 (owner decision, D-117)
+
+Added to Heuristics › heuristic sets as `principle`: **Flexibility and Efficiency of Use** (`flexibility-and-efficiency-of-use`) and **Aesthetic and Minimalist Design** (`aesthetic-and-minimalist-design`). Reason: the subcategory already holds two single-heuristic topics (`user-control-and-freedom`, `consistency-principle`) and these two had no canonical home; each has a dedicated NN/g article and distinct WCAG 2.2 requirements. Boundaries: `aesthetic-and-minimalist-design` (relevance of elements) is not `aesthetic-usability-effect` (perceived usability; Laws & Effects); `flexibility-and-efficiency-of-use` (accelerators) is measured by, not merged with, `keystroke-level-model`. No slug removed or renamed; 558 → 560 topics.

@@ -62,6 +62,14 @@
     "registeredContainer": "Proceedings of the 2019 CHI Conference on Human Factors in Computing Systems",
     "similarity": 1
   },
+  "anderson-2004": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-11",
+    "registeredTitle": "An Integrated Theory of the Mind.",
+    "registeredYear": 2004,
+    "registeredContainer": "Psychological Review",
+    "similarity": 1
+  },
   "apple-hig": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
@@ -229,7 +237,7 @@
   },
   "budiu-recognition-recall": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-03",
+    "checkedAt": "2026-11-11",
     "httpStatus": 200
   },
   "burmistrov-et-al-2015": {
@@ -306,6 +314,14 @@
     "registeredTitle": "Cognitive Load Theory and the Format of Instruction",
     "registeredYear": 1991,
     "registeredContainer": "Cognition and Instruction",
+    "similarity": 1
+  },
+  "chapanis-lindenbaum-1959": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-11",
+    "registeredTitle": "A Reaction Time Study of Four Control-Display Linkages",
+    "registeredYear": 1959,
+    "registeredContainer": "Human Factors: The Journal of the Human Factors and Ergonomics Society",
     "similarity": 1
   },
   "chernev-bockenholt-goodman-2015": {
@@ -499,6 +515,14 @@
     "checkedAt": "2026-11-03",
     "registeredTitle": "The information capacity of the human motor system in controlling the amplitude of movement.",
     "registeredYear": 1954,
+    "registeredContainer": "Journal of Experimental Psychology",
+    "similarity": 1
+  },
+  "fitts-seeger-1953": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-11",
+    "registeredTitle": "S-R compatibility: spatial characteristics of stimulus and response codes.",
+    "registeredYear": 1953,
     "registeredContainer": "Journal of Experimental Psychology",
     "similarity": 1
   },
@@ -1307,7 +1331,22 @@
     "checkedAt": "2026-11-03",
     "httpStatus": 200
   },
+  "nng-aesthetic-minimalist": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
   "nng-consistency-standards": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "nng-flexibility-efficiency": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "nng-natural-mappings": {
     "status": "url-reachable",
     "checkedAt": "2026-11-11",
     "httpStatus": 200
@@ -1740,6 +1779,11 @@
     "registeredYear": 1980,
     "registeredContainer": "Cognitive Psychology",
     "similarity": 1
+  },
+  "tufte-1983": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
   },
   "un-crpd-2006": {
     "status": "url-reachable",

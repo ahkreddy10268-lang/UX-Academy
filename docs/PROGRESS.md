@@ -1,6 +1,6 @@
 # Progress register
 
-_Last updated: 2026-11-11 (session 29 — four heuristic topics)_
+_Last updated: 2026-11-11 (session 30 — Batch B: mapping, heuristics 6–8)_
 
 ## State
 
@@ -402,7 +402,7 @@ Verified: `npm run check` (386 tests, typecheck, lint); `npm run build`; e2e 42/
 
 Verified: `npm run check` (391 tests); `npm run test:taxonomy` (54 published, Design Systems 4 of 29); `npm run sources:verify` for the 8 new records; `npm run docs:generate`; `npm run build`; e2e 42/42; keyboard 45/45; axe 0 violations on the three token entries at 1440 and 390 px in both themes; no horizontal overflow; plates rendered in both themes.
 
-## Session 29 — four heuristic topics (D-115, D-116)
+## Session 29 — four heuristic topics (D-115, D-116; committed b70b1ce)
 
 - Published `visibility-of-system-status`, `user-control-and-freedom`, `consistency-principle`, `error-prevention`: three depths (Systems Architect covers component states, tokens, telemetry as signals, WCAG 2.2 criteria by level), practice blocks with 3 dos, 3 don'ts and two worked examples each, correction exercises, quizzes at three levels, flashcards, plates with keys and register records.
 - Sources added and verified: four NN/g heuristic and error articles (read 2026-11-11), Norman 1981 and Reason 1990 (DOI-verified, cited for classification only).
@@ -410,5 +410,12 @@ Verified: `npm run check` (391 tests); `npm run test:taxonomy` (54 published, De
 
 Verified: `npm run check` (399 tests); `npm run test:taxonomy` (58 published); build; e2e 42/42; keyboard 45/45; axe 0 violations on the four entries at 1440 and 390 px in both themes.
 
+## Session 30 — Batch B (D-117, D-118)
+
+- Taxonomy: added `flexibility-and-efficiency-of-use` and `aesthetic-and-minimalist-design` (owner decision; 560 topics).
+- Published `mapping`, `flexibility-and-efficiency-of-use`, `aesthetic-and-minimalist-design` with three depths, practice blocks (3 dos, 3 don'ts, worked examples), correction exercises, quizzes at three levels, flashcards, plates and register records.
+- Upgraded `recognition-over-recall` (published since v1) with a practice block, a systems-level paragraph and WCAG 2.2 SC 3.3.2, 3.3.7 and 3.3.8.
+- Sources added and verified: NN/g heuristics 7 and 8 articles and NN/g natural mappings (read 2026-11-11), Fitts & Seeger 1953, Chapanis & Lindenbaum 1959 and Anderson et al. 2004 (DOI-verified), Tufte 1983 (book page). Re-issued brief reconciled in D-118.
+
 ## Next task (precise)
-Batch B (owner request): `mapping` (Interaction › principles; tag "match between system and the real world") and `recognition-over-recall` (Cognition). "Flexibility and efficiency of use" and "aesthetic and minimalist design" have no taxonomy topic and need an owner decision before writing. Design Systems Batch 2 (`theme-architecture`, Token Lab) remains queued.
+Remaining Nielsen heuristics without their own entry: 9 (`error-recovery`, planned topic in Interaction) and 10 (help and documentation, no topic; needs an owner decision like D-117). Design Systems Batch 2 (`theme-architecture`, Token Lab) remains queued.
