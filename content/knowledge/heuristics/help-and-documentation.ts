@@ -345,6 +345,8 @@ function searchHelp(query: string, index: HelpIndex, track: (e: HelpEvent) => vo
   evidenceNote:
     "Help and documentation is professional guidance. Its task-oriented approach draws on research into minimalist instruction and learning by doing, cited here from bibliographic records and an abstract. NN/g's push and pull guidance comes from practice. The accessibility requirements are WCAG 2.2 success criteria, a W3C Recommendation.",
 
+  guide: { id: "nielsen-heuristics", anchor: "h10", label: "Heuristic 10 in the Nielsen heuristics guide" },
+
   status: "published",
   quality: {
     classification: true,

@@ -17,7 +17,12 @@ content/
   formulas.ts                 Formula Library specs for metrics without a full entry
   labs.ts                     interactive labs metadata (components/labs)
   learning-paths.ts, comparisons.ts, glossary.ts, workshops.ts
+  guides/<id>/                long-form guides (schema lib/content/guide.ts, D-127)
 ```
+
+### Guides (D-127)
+
+A guide is a documentation record, not a knowledge entry: it adds narrative, mockups (typed mock DSL), comparisons, a method, a case study and an assessment, and **reads** per-topic depth (analogy, scenario, practice, implementation, platform notes, misconceptions, quiz question and exercise by id) from published entries by slug. Never copy entry text into a guide. A topic without an entry may carry an `own` block with `addressedIn` pointing at the entry that covers it. Guides do not count towards coverage. Entries can link back with the optional `guide: { id, anchor, label }` field. `tests/guide.test.ts` checks that every slug, question, exercise, citation and heuristic number resolves.
 
 ## Knowledge entry anatomy (spec Part 8 → schema fields)
 

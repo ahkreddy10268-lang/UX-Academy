@@ -327,6 +327,8 @@ function ReviewStep({ draft }: { draft: Draft }) {
   evidenceNote:
     "The underlying memory finding — recognition outperforms free recall in most conditions — is robust experimental evidence. The interface principle is a heuristic derived from it and from practitioner analysis; its benefit in a given design depends on option similarity, set size and user expertise, and should be checked by testing.",
 
+  guide: { id: "nielsen-heuristics", anchor: "h6", label: "Heuristic 6 in the Nielsen heuristics guide" },
+
   status: "published",
   quality: {
     classification: true,

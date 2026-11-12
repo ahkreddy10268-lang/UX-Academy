@@ -321,6 +321,8 @@ Check     Consistent Identification [WCAG 2.2 SC 3.2.4]: same accessible name "S
   evidenceNote:
     "Consistency and standards is professional guidance with long use in heuristic evaluation; NN/g's recommendations come from practice and usability testing. Three specific forms of consistency are normative WCAG 2.2 success criteria (a W3C Recommendation). Claims about learnability are well grounded in practice but were not measured for particular products here.",
 
+  guide: { id: "nielsen-heuristics", anchor: "h4", label: "Heuristic 4 in the Nielsen heuristics guide" },
+
   status: "published",
   quality: {
     classification: true,

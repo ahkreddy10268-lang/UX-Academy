@@ -530,8 +530,9 @@ export default defineSources([
     topics: ["heuristic evaluation", "procedure"],
     access: "open",
     verification: "url-checked",
-    lastVerifiedAt: "2026-11-03",
-    notes: "Recommends three to five independent evaluators, 1–2 hour time-boxed sessions, then consolidation.",
+    lastVerifiedAt: "2026-11-12",
+    notes:
+      "Published 25 June 2023; read 2026-11-12. Three steps: prepare (choose and train a team — ideally three to five people evaluating independently, a practice round, set the scope), evaluate independently (timebox about 1–2 hours, become familiar with the product, inspect, note issues, heuristics and recommendations), consolidate (affinity diagramming, discuss, rate severity). Any heuristic set can be used; Nielsen's ten are recommended for usability. Notes that a pattern can violate a heuristic (e.g. hamburger menus and recognition rather than recall) yet be a reasonable trade-off in context.",
   },
   {
     id: "polson-lewis-1990",
@@ -918,5 +919,22 @@ export default defineSources([
     verification: "bibliographic",
     lastVerifiedAt: "2026-11-11",
     notes: "Crossref metadata confirmed 2026-11-11 (no abstract). Full text not read here; cited only as a statement of the principles of minimalist instruction that Carroll introduced in The Nurnberg Funnel (1990), which could not be verified online from this session.",
+  },
+  {
+    id: "nng-match-real-world",
+    title: "Match Between the System and the Real World (Usability Heuristic #2)",
+    authors: ["Kaley, A."],
+    organisation: "Nielsen Norman Group",
+    container: "Nielsen Norman Group articles",
+    year: 2018,
+    url: "https://www.nngroup.com/articles/match-system-real-world/",
+    type: "professional-article",
+    tier: 3,
+    topics: ["match between system and the real world", "heuristic 2", "jargon", "conventions"],
+    access: "open",
+    verification: "url-checked",
+    lastVerifiedAt: "2026-11-12",
+    notes:
+      "Published 1 July 2018; read 2026-11-12. Systems should speak the users' language with familiar words, phrases and concepts rather than system-oriented terms, follow real-world conventions and present information in a natural, logical order; gives examples of unexplained jargon and acronyms; discusses physical and cultural metaphors and natural mappings.",
   },
 ]);

@@ -38,7 +38,8 @@ export const learningPaths: LearningPathInput[] = [
         level: "intermediate",
         description: "Judge interfaces with heuristics and watch people use them.",
         steps: ["nielsen-usability-heuristics", "heuristic-evaluation", "usability-testing", "think-aloud-protocol", "system-usability-scale"],
-        practice: ["heuristic-evaluation-practice", "interface-critique"],
+        practice: ["heuristic-evaluation-practice", "interface-critique", "heuristic-report-lab"],
+        links: [{ href: "/guides/nielsen-heuristics", label: "Guide: Nielsen's 10 usability heuristics" }],
       },
     ],
     completion: ["All published steps marked complete", "Workshop: heuristic evaluation submitted", "Mixed quiz on the path's entries: at least 80% correct"],
@@ -156,7 +157,7 @@ export const learningPaths: LearningPathInput[] = [
     objectives: ["Run heuristic evaluations and cognitive walkthroughs.", "Choose sample sizes for discovery and for measurement.", "Report usability metrics with confidence intervals."],
     prerequisites: ["UX Research — Planning stage"],
     stages: [
-      { title: "Inspection", level: "intermediate", description: "Expert review methods and their limits.", steps: ["nielsen-usability-heuristics", "shneiderman-golden-rules", "heuristic-evaluation", "cognitive-walkthrough"], practice: ["heuristic-evaluation-practice"] },
+      { title: "Inspection", level: "intermediate", description: "Expert review methods and their limits.", steps: ["nielsen-usability-heuristics", "shneiderman-golden-rules", "heuristic-evaluation", "cognitive-walkthrough"], practice: ["heuristic-evaluation-practice", "heuristic-report-lab"], links: [{ href: "/guides/nielsen-heuristics", label: "Guide: Nielsen's 10 usability heuristics" }] },
       { title: "Testing", level: "intermediate", description: "Observing users, and how many you need.", steps: ["usability-testing", "think-aloud-protocol", "task-success-rate", "nasa-tlx"], practice: [] },
       { title: "Benchmarking", level: "advanced", description: "Comparable, defensible numbers.", steps: ["system-usability-scale", "confidence-intervals", "sample-size-estimation", "ab-testing"], practice: ["usability-metrics-calculation"] },
     ],

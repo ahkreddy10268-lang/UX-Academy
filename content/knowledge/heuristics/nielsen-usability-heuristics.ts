@@ -308,6 +308,8 @@ export default defineEntry({
   evidenceNote:
     "A practitioner framework partly derived from data (a factor analysis of real usability problems). The evidence supports the heuristics as a **broad classification of common problem types**; it does not show that each heuristic predicts usability outcomes, nor that evaluations using them are reliable across evaluators.",
 
+  guide: { id: "nielsen-heuristics", label: "Learn, compare and apply all ten heuristics" },
+
   status: "published",
   quality: {
     classification: true,

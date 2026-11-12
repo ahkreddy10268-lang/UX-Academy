@@ -356,6 +356,8 @@ async function submit(data: Renewal, set: (s: FormState) => void, attempt = 1): 
   evidenceNote:
     "Error recovery is professional guidance from Nielsen's heuristics and NN/g's practice-based guidelines; individual guidelines are not experimentally tested here. The accessibility requirements are WCAG 2.2 success criteria, a W3C Recommendation.",
 
+  guide: { id: "nielsen-heuristics", anchor: "h9", label: "Heuristic 9 in the Nielsen heuristics guide" },
+
   status: "published",
   quality: {
     classification: true,

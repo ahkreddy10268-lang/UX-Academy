@@ -203,4 +203,16 @@ export const labs: Lab[] = [
       "Announcements are what the lab writes to a polite role=status region; real screen readers may queue, shorten or skip them depending on settings.",
     ],
   },
+  {
+    id: "heuristic-report-lab",
+    title: "Heuristic Evaluation Report",
+    summary: "Record findings with the fields of a professional heuristic evaluation report — screen, task, observation, heuristic, evidence, impact, severity, recommendation — see them ordered by severity and effort, compare with a completed case-study report, and export Markdown or CSV.",
+    concepts: ["heuristic-evaluation", "nielsen-usability-heuristics"],
+    kind: "tool",
+    assumptions: [
+      "Severity uses Nielsen's 0–4 scale; ordering by severity and then by lower effort is this lab's convention for a first draft, not a rule — teams adjust priorities for business context.",
+      "Findings stay in this browser tab and are cleared when you leave the page; export them to keep them.",
+      "The example report comes from the guide's illustrative case study of a fictional shop.",
+    ],
+  },
 ];

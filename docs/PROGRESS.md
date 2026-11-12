@@ -1,6 +1,6 @@
 # Progress register
 
-_Last updated: 2026-11-12 (session 38 — Async State Lab)_
+_Last updated: 2026-11-12 (session 39 — Nielsen heuristics guide)_
 
 ## State
 
@@ -138,6 +138,16 @@ After that: `ui-design`, `interaction-design-discipline`, `accessibility-concept
 - Model in `lib/formulas/async-state.ts` (20 unit tests): the unified async machine (idle → loading → populated | empty | error, retry, reset) with ignored events and the user's query kept in every state; `indicatorPlan` (≤ 100 ms nothing; ≤ 1000 ms busy state only; > 1000 ms the chosen indicator from 1000 ms, visible at least 400 ms; anti-pattern shows it at 0 ms); `announcement` text for a polite status region.
 - Lab features: latency slider 50–3000 ms with a timeline of what people see; skeleton, spinner and progressive modes; network-error switch with kept input and retry; loans table and card list with reserved height; live announcement log; measured layout shift (Layout Instability API, Chromium); reduced-motion switch (defaults to the OS preference); broken preset (fetch per keystroke, indicator at 0 ms, no reserved height, wiped input, error shown as "No loans", vague announcements) with a five-step correction walkthrough citing WCAG 2.2 SC 3.3.1, 3.3.7 and 4.1.3.
 - e2e suite gains two lab checks (input kept on error; retry resolves and announces the count): 44/44.
+
+## Session 39 — Nielsen heuristics guide (D-127)
+
+- New content type **guide** (`lib/content/guide.ts`, `content/guides/`, loader `guides`/`guideById`) and routes `/guides` and `/guides/nielsen-heuristics`. The guide composes the ten heuristic entries by slug (no copied content): Chapter 1 problem story with a live double-transfer demo; Chapter 2 framework, 1990–1994 timeline and the original nine principles; overview grid; ten chapters (everyday meaning, analogy, why, psychology, behaviour, poor/better mockups, demo where useful, consequences, scenario, do/don't, implementation, web/mobile/enterprise, accessibility, misreadings, relations, checklist, knowledge check, exercise, link to the entry); seven comparisons; a 7-stage evaluation process; the 0–4 severity scale; a fictional 12-finding e-commerce case study with before/after mocks; report fields; ten advanced topics; six common mistakes; collected exercises; a 15-question final assessment; 21 sources.
+- Mock DSL renderer `components/guide/mock-screen.tsx`; demos `components/guide/demos.tsx` (transfer, save, undo, date); chapter renderer `components/guide/heuristic-chapter.tsx`.
+- **Heuristic Evaluation Report lab** (`heuristic-report-lab`, kind tool): finding form with validation and focus on errors, priority table (severity, then effort), severity counts, load the case-study report, Markdown/CSV export. Rules in `lib/formulas/heuristic-report.ts` (5 tests).
+- Entries link back (`guide` field) — nine heuristic entries to their chapter, `nielsen-usability-heuristics` and `heuristic-evaluation` to the guide and its process section; "Evaluate a design" and "Inspection" path stages link the guide and lab.
+- Tests: `tests/guide.test.ts` (entries, questions, exercises, citations, links, heuristic numbers, mock alt text and notes), guide strings added to the editorial gate, path links may target `/guides/` and `/labs/`.
+- Sidebar: "Guides" added to the Learn group (new `guide` signpost icon). Shared fixes found by QA: `DocLayout`'s TOC wrapper is no longer an unlabelled `aside` (duplicated the sidebar landmark on every doc page); `Callout` takes `landmark={false}` to render a note where a page repeats a role; scroll containers holding tables with `sr-only` cells are `relative` so the hidden cells cannot widen the page at 390 px.
+- Verified: `npm run check` (510 tests), `test:taxonomy`, build (978 pages); guide QA script 40/40 (axe with every disclosure open at 1440 light / 390 dark / 390 light, no overflow, no console errors, mock text ≥ 11 px at 390, demos and lab flows); e2e 44/44, e2e-redesign 66/66, atlas 36/36, keyboard 45/45, devices 155/155, a11y 0 violations, crawl 0 problems.
 
 ## Next task (precise)
 Publish `interaction-states` (Interaction domain; the last planned step inside the Design Systems path), sources verified first. Then choose the next domain in docs/CONTENT_AUDIT.md §6 order.

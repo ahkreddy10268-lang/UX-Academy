@@ -38,6 +38,7 @@ export type IconName =
   | "clock"
   | "spark"
   | "ai"
+  | "guide"
   | "layers";
 
 const paths: Record<IconName, React.ReactNode> = {
@@ -190,6 +191,13 @@ const paths: Record<IconName, React.ReactNode> = {
     <>
       <path d="M4.25 4.5h11.5a.75.75 0 0 1 .75.75v7.5a.75.75 0 0 1-.75.75H9l-3.5 2.75V13.5H4.25a.75.75 0 0 1-.75-.75v-7.5a.75.75 0 0 1 .75-.75z" />
       <path d="M10 6.5v4M8 8.5h4" />
+    </>
+  ),
+  // a signpost — a guide points the way through a subject
+  guide: (
+    <>
+      <path d="M10 3v14M7.5 17h5" />
+      <path d="M10 5h5.25L17 6.75 15.25 8.5H10M10 10.5H4.75L3 12.25 4.75 14H10" />
     </>
   ),
   // three stacked layers — foundations under components under patterns

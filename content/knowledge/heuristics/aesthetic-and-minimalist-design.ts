@@ -322,6 +322,8 @@ Decorative banner     none                    —          remove
   evidenceNote:
     "Aesthetic and minimalist design is professional guidance from Nielsen's heuristics and NN/g's practice. Its mechanism is consistent with research on attention and cognitive load, but the heuristic has not been tested as a single claim. The accessibility checks are WCAG 2.2 success criteria, a W3C Recommendation.",
 
+  guide: { id: "nielsen-heuristics", anchor: "h8", label: "Heuristic 8 in the Nielsen heuristics guide" },
+
   status: "published",
   quality: {
     classification: true,

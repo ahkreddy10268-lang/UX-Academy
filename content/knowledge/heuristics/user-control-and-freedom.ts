@@ -329,6 +329,8 @@ Pick a return date             high       n/a          prevent: disable dates be
   evidenceNote:
     "User control and freedom is professional guidance from Nielsen's heuristics and NN/g's observation of usability tests; its specific recommendations are not experimentally tested. Its accessibility requirements are WCAG 2.2 success criteria (a W3C Recommendation), and the ARIA Authoring Practices are informative guidance.",
 
+  guide: { id: "nielsen-heuristics", anchor: "h3", label: "Heuristic 3 in the Nielsen heuristics guide" },
+
   status: "published",
   quality: {
     classification: true,

@@ -335,6 +335,8 @@ async function save(draft: Draft, set: (s: SaveState, msg: string) => void) {
   evidenceNote:
     "Visibility of system status is professional guidance with a long record of use in heuristic evaluation and support from Nielsen's 1994 analysis of real usability problems. The response-time limits are a synthesis, and the preference for progress indicators comes from a small early study. The accessibility requirement for status messages is a WCAG 2.2 success criterion, a W3C Recommendation.",
 
+  guide: { id: "nielsen-heuristics", anchor: "h1", label: "Heuristic 1 in the Nielsen heuristics guide" },
+
   status: "published",
   quality: {
     classification: true,

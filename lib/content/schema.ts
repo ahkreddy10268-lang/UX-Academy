@@ -425,6 +425,8 @@ export const knowledgeEntrySchema = z.object({
   method: methodDetailSchema.optional(),
   standard: standardDetailSchema.optional(),
   lab: slug.optional(), // interactive simulation id in content/labs
+  /** Long-form guide that teaches this entry in context (content/guides, D-127). */
+  guide: z.object({ id: slug, anchor: z.string().regex(/^[a-z0-9-]+$/).optional(), label: z.string().optional() }).optional(),
   practice: practiceBlockSchema.optional(),
 
   /* 8.9 Practice */
@@ -501,7 +503,7 @@ export const learningPathSchema = z.object({
         steps: z.array(slug).min(1), // entry slugs or planned taxonomy slugs
         practice: z.array(z.string()).default([]), // lab ids, workshop ids
         /** Reference pages for the stage inside the site: AI patterns (/ai/…) or design-system docs (/system/…). Validated by tests. */
-        links: z.array(z.object({ href: z.string().regex(/^\/(ai|system)\//), label: z.string() })).default([]),
+        links: z.array(z.object({ href: z.string().regex(/^\/(ai|system|guides|labs)\//), label: z.string() })).default([]),
       }),
     )
     .min(1),

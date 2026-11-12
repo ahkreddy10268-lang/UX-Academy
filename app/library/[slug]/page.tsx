@@ -21,7 +21,7 @@ import { Callout } from "@/components/ui/callout";
 import { Breadcrumbs, Bullets, Container, SectionHeading } from "@/components/ui/layout";
 import { DifficultyMark, EvidenceMark, StatusMark, TypeMark } from "@/components/ui/marks";
 import { Rich, RichParagraphs } from "@/components/ui/rich";
-import { domainById, edgesFor, entries, entryBySlug, knownSlugs, labById, sourceById, subcategoryTitle, taxonomyBySlug, titleFor, unlockedBy, verification } from "@/lib/content";
+import { domainById, edgesFor, entries, entryBySlug, guideById, knownSlugs, labById, sourceById, subcategoryTitle, taxonomyBySlug, titleFor, unlockedBy, verification } from "@/lib/content";
 import { linkMapFor, resolveSlug, richContext } from "@/lib/content/context";
 import { catClass } from "@/lib/content/categories";
 import { DEPTH_LABEL, EVIDENCE_DESCRIPTION, EVIDENCE_LABEL, EVIDENCE_ORDER, LEVEL_PURPOSE, RELATION_LABEL, TYPE_LABEL } from "@/lib/content/labels";
@@ -228,6 +228,15 @@ function Entry({ entry: e }: { entry: KnowledgeEntry }) {
               <div className="mt-6">
                 <EntryActions slug={e.slug} cards={e.flashcards.map((c) => ({ id: c.id }))} />
               </div>
+              {e.guide && guideById.get(e.guide.id) && (
+                <Link href={`/guides/${e.guide.id}${e.guide.anchor ? `#${e.guide.anchor}` : ""}`} className="card mt-5 flex items-center justify-between gap-4 p-4">
+                  <span>
+                    <span className="label block">Interactive guide</span>
+                    <span className="mt-1 block font-semibold text-ink">{e.guide.label ?? guideById.get(e.guide.id)!.title}</span>
+                  </span>
+                  <span aria-hidden className="text-ink-2">→</span>
+                </Link>
+              )}
             </div>
             <figure className="rise-in">
               <div className="overflow-hidden rounded-xl border border-rule bg-surface shadow-raise">

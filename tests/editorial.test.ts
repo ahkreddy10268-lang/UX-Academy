@@ -6,7 +6,7 @@
 import { readFileSync, readdirSync, statSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
-import { comparisons, domains, entries, glossary, labs, learningPaths, workshops } from "../lib/content";
+import { comparisons, domains, entries, glossary, guides, labs, learningPaths, workshops } from "../lib/content";
 import { collectStrings, richToPlain } from "../lib/content/rich";
 
 /** Phrases with no place in UX Academy copy. Technical uses ("robust statistics", WCAG "Robust") are deliberately not listed. */
@@ -38,6 +38,7 @@ const contentStrings = (): { where: string; text: string }[] => [
   ...workshops.map((w) => ({ where: `workshop:${w.id}`, text: JSON.stringify(w) })),
   ...domains.map((d) => ({ where: `domain:${d.id}`, text: d.description })),
   ...labs.map((l) => ({ where: `lab:${l.id}`, text: [l.summary, ...l.assumptions].join(" ") })),
+  ...guides.flatMap((g) => collectStrings(g).map((text) => ({ where: `guide:${g.id}`, text: richToPlain(text) }))),
 ];
 
 function uiFiles(dir: string): string[] {

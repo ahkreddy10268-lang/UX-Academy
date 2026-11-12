@@ -337,6 +337,8 @@ Deleted the whole folder, meant a file  mistake   preview what will be deleted +
   evidenceNote:
     "Error prevention is professional guidance grounded in research on human error (Norman 1981; Reason 1990, cited here for their classification only) and in NN/g's practice and usability testing. The specific techniques are not tested here as controlled experiments. The accessibility requirements are WCAG 2.2 success criteria, a W3C Recommendation.",
 
+  guide: { id: "nielsen-heuristics", anchor: "h5", label: "Heuristic 5 in the Nielsen heuristics guide" },
+
   status: "published",
   quality: {
     classification: true,

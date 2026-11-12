@@ -27,13 +27,13 @@ describe("AI UX pattern library", () => {
 });
 
 describe("learning-path reference links", () => {
-  it("point to existing AI patterns and design-system docs", async () => {
-    const { learningPaths, aiPatternById: ai, systemDocs } = await import("../lib/content");
+  it("point to existing AI patterns, design-system docs, guides and labs", async () => {
+    const { learningPaths, aiPatternById: ai, systemDocs, guideById, labById } = await import("../lib/content");
     for (const p of learningPaths)
       for (const st of p.stages)
         for (const l of st.links) {
           const [, kind, a, b] = l.href.split("/");
-          const ok = kind === "ai" ? ai.has(a) : systemDocs.some((d) => d.section === a && d.id === b);
+          const ok = kind === "ai" ? ai.has(a) : kind === "guides" ? guideById.has(a) : kind === "labs" ? labById.has(a) : systemDocs.some((d) => d.section === a && d.id === b);
           expect(ok, `${p.id} → ${l.href}`).toBe(true);
         }
   });

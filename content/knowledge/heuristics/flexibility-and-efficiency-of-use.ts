@@ -323,6 +323,8 @@ H home hands 0.40 · M mentally prepare 1.35 · P point 1.10 · B button press/r
   evidenceNote:
     "Flexibility and efficiency of use is professional guidance from Nielsen's heuristics and NN/g's practice. Time savings can be estimated with the keystroke-level model, an empirically derived model of skilled performance; adoption and learning effects are not captured by it. The accessibility requirements are WCAG 2.2 success criteria, a W3C Recommendation.",
 
+  guide: { id: "nielsen-heuristics", anchor: "h7", label: "Heuristic 7 in the Nielsen heuristics guide" },
+
   status: "published",
   quality: {
     classification: true,

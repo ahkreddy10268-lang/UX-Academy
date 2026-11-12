@@ -18,12 +18,12 @@
 | Quiz questions | 325 |
 | Exercises | 259 |
 | Flashcards | 310 |
-| Labs | 17 |
+| Labs | 18 |
 | Workshops | 11 |
 | Comparisons | 10 |
 | Learning paths | 16 |
 | Glossary terms | 114 |
-| Sources | 413 |
+| Sources | 414 |
 
 ## By domain
 
