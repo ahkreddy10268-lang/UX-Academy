@@ -122,7 +122,7 @@ Write in this order. Each entry must pass the gates above, cite only sources tha
 `information-foraging-theory` (Pirolli & Card 1999, registry): conceptual. `information-scent` (Chi, Pirolli et al. 2001†): annotated interface. `taxonomies` and `labelling-systems` (Rosenfeld et al. 2015, registry; Furnas et al. 1987, registry): hierarchy. `navigation-patterns` and `faceted-navigation` (Hearst 2006†): annotated interface.
 
 ### Tier 5 — Design systems
-✅ `design-system` (session 22: GOV.UK Design System, Carbon, USWDS (added), Adobe Spectrum (added), Frost 2016 (registry), Kholmatova 2017 and Curtis 2009 (added, scope only), Semantic Versioning 2.0.0 (added); quiz ×9, exercises ×4, flashcards ×10; plate + two L2 figures; no L3, D-095), `atomic-design` (Frost, registry), `semantic-tokens` (W3C DTCG format, registry), `component-architecture`, `design-governance`. L2: hierarchy (token → component → pattern) and process (contribution model).
+✅ `design-system` (session 22: GOV.UK Design System, Carbon, USWDS (added), Adobe Spectrum (added), Frost 2016 (registry), Kholmatova 2017 and Curtis 2009 (added, scope only), Semantic Versioning 2.0.0 (added); quiz ×9, exercises ×4, flashcards ×10; plate + two L2 figures; no L3, D-095), `atomic-design` (Frost, registry), ✅ `semantic-tokens` and ✅ `primitive-tokens` (session 28, Batch 1: DTCG Format, Color and Resolver 2025.10 (Color and Resolver added), WCAG 2.2 SC 1.4.1/1.4.3/1.4.11, Fluent 2, Material 3, Carbon, Atlassian, USWDS page records (added); practice block with DTCG JSON tier and resolver examples; plates; D-113–D-114), `component-architecture`, `design-governance`. L2: hierarchy (token → component → pattern) and process (contribution model).
 
 ### Tier 6 — Accessibility
 `pour`, `keyboard-accessibility`, `focus-management`, `semantic-html`, `aria` (W3C WAI-ARIA 1.2†, APG†), `screen-readers` (WebAIM screen reader survey†), `accessible-forms`, `en-301-549` (ETSI†), `european-accessibility-act` (Directive (EU) 2019/882†, EUR-Lex). L2: hierarchy (WCAG structure), annotated interface (focus order).
@@ -244,3 +244,31 @@ See `docs/TAXONOMY_BACKLOG.md` (P2 specialist backlog, optional topics, rejected
 ### 7.10 Freeze
 
 Taxonomy v1.0 is frozen: no new top-level domains during the next content cycle; changes follow `docs/CONTENT_MODEL.md` § Taxonomy governance and are recorded here.
+
+### Session 29 — heuristic topics (D-115, D-116)
+
+Published: `visibility-of-system-status`, `error-prevention` (Interaction › principles), `user-control-and-freedom`, `consistency-principle` (Heuristics › heuristic sets). Not a taxonomy change. "Match between system and the real world" has no topic of its own and stays addressed within `nielsen-usability-heuristics` (owner decision). Batch B candidates checked against the taxonomy: `mapping` and `recognition-over-recall` exist; "flexibility and efficiency of use" and "aesthetic and minimalist design" do not.
+
+### Session 30 — taxonomy addition: Nielsen heuristics 7 and 8 (owner decision, D-117)
+
+Added to Heuristics › heuristic sets as `principle`: **Flexibility and Efficiency of Use** (`flexibility-and-efficiency-of-use`) and **Aesthetic and Minimalist Design** (`aesthetic-and-minimalist-design`). Reason: the subcategory already holds two single-heuristic topics (`user-control-and-freedom`, `consistency-principle`) and these two had no canonical home; each has a dedicated NN/g article and distinct WCAG 2.2 requirements. Boundaries: `aesthetic-and-minimalist-design` (relevance of elements) is not `aesthetic-usability-effect` (perceived usability; Laws & Effects); `flexibility-and-efficiency-of-use` (accelerators) is measured by, not merged with, `keystroke-level-model`. No slug removed or renamed; 558 → 560 topics.
+
+### Session 31 — taxonomy addition: Nielsen heuristic 10 (owner decision, D-119)
+
+Added **Help and Documentation** (`help-and-documentation`, `principle`) to Heuristics › heuristic sets, matching D-117. Reason: heuristic 10 had no canonical home, has a dedicated NN/g article and distinct WCAG 2.2 requirements (3.2.6 Consistent Help, 3.3.5 Help). Boundaries: `form-instructions` and `onboarding-copy` (UX Writing) are forms of help written as copy and are linked, not merged; `progressive-disclosure` is the technique help escalates through. 560 → 561 topics. With `error-recovery` published in the same session, all ten Nielsen heuristics now have published coverage (heuristic 2 addressed within `nielsen-usability-heuristics` by D-116).
+
+### Session 34 — Design Systems Stage 3 published (D-122); no taxonomy change
+
+Published the six topics of Design Systems › Scales & visual systems as their canonical slugs: `spacing-scales`, `typography-scales`, `colour-systems`, `elevation-systems`, `icon-systems`, `responsive-systems`. Boundaries kept: `typography-scales` (named role styles) links to `modular-type-scale` (the ratio formula, Type & Colour); `icon-systems` (running icons as a family) leaves `iconography` (Visual Design › elements) planned; `responsive-systems` (system breakpoints, grid, container-aware components) leaves `responsive-breakpoints`, `responsive-composition` and `grid-systems` planned. Radius is taught inside `spacing-scales` and `elevation-systems` and motion scales inside `design-language`, so no topic is added. The `design-systems` learning path now has five stages and places all 29 domain topics exactly once (tested).
+
+### Session 35 — Design Systems Stage 4, Batch 5 published (D-123); no taxonomy change
+
+Published the five concept topics of Design Systems › Components & patterns: `component-libraries`, `component-architecture`, `variants`, `component-properties`, `component-state-management`. Boundaries kept: `variants` (chosen design dimensions) contrasts with `interaction-states` (Interaction; caused at run time); `component-state-management` links to `state-transitions` and `aria` (planned) rather than absorbing them; `component-libraries` defers release mechanics to `design-system-versioning` (planned). Stage 4's six state patterns follow in Batch 6.
+
+### Session 36 — Design Systems Stage 4, Batch 6 published (D-124); no taxonomy change
+
+Published the six pattern topics of Design Systems › Components & patterns: `empty-states`, `loading-states`, `skeleton-screens`, `progressive-loading`, `error-states`, `data-tables`. Boundaries kept: `error-states` (the state and its engineering) links to `error-recovery` (messages and recovery steps, Interaction) and `error-messages` (UX Writing, planned) instead of repeating them; `empty-states` links to `empty-state-writing` (planned); `progressive-loading` contrasts with `progressive-disclosure`. Stage 4 is complete.
+
+### Session 37 — Design Systems Stage 5 published (D-125); domain complete; no taxonomy change
+
+Published `design-governance`, `design-system-versioning`, `design-qa`, `design-system-audits` (Design Systems › Governance & operations, type strategy) and `multi-brand-systems` (System foundations, type concept). Boundaries kept: `design-system-audits` (system inventory and adoption) links to but does not absorb `accessibility-audits` (Accessibility, planned); `design-qa` (pre-release parity) is distinct from `usability-testing` and `heuristic-evaluation`; `multi-brand-systems` builds on `theme-architecture` without repeating mode mechanics. Every topic of the Design Systems domain is now published.

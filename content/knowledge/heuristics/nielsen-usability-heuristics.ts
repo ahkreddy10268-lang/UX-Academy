@@ -13,7 +13,7 @@ export default defineEntry({
   secondaryTypes: ["principle", "guideline"],
   domain: "heuristics",
   subcategory: "heuristic-sets",
-  tags: ["usability", "inspection", "design principles", "heuristic evaluation", "Nielsen"],
+  tags: ["usability", "inspection", "design principles", "heuristic evaluation", "Nielsen", "match between system and the real world", "speak the user's language"],
   difficulty: "beginner",
   disciplines: ["Usability engineering", "Interaction design", "Human-computer interaction"],
   learningObjectives: [
@@ -307,6 +307,8 @@ export default defineEntry({
   evidence: "professional-guideline",
   evidenceNote:
     "A practitioner framework partly derived from data (a factor analysis of real usability problems). The evidence supports the heuristics as a **broad classification of common problem types**; it does not show that each heuristic predicts usability outcomes, nor that evaluations using them are reliable across evaluators.",
+
+  guide: { id: "nielsen-heuristics", label: "Learn, compare and apply all ten heuristics" },
 
   status: "published",
   quality: {

@@ -93,7 +93,7 @@ export default defineSources([
     access: "open",
     verification: "url-checked",
     lastVerifiedAt: "2026-11-03",
-    notes: "Full text is freely readable online.",
+    notes: "Full text is freely readable online. Chapters 2 (methodology: five stages; \"not a linear process, but rather a mental model\"; naming may be adapted, e.g. GE) and 4 (the atomic workflow and interface inventory: all disciplines in the room, 30–90 minutes for a first screenshot pass, categorise, present, regroup) read 2026-11-11. Chapter 1: pattern libraries are 'also known as front-end style guides, UI libraries, or component libraries'; frameworks such as Bootstrap give speed but similar-looking results. Chapter 5: makers and users of the system, 'make it official' (a product, not a side project), context-agnostic names ('carousel', not 'homepage carousel'); a pattern library that stops reflecting live products becomes obsolete. Read 2026-11-11.",
   },
   {
     id: "marcotte-2010",

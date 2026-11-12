@@ -13,7 +13,7 @@ export default defineEntry({
   secondaryTypes: ["heuristic"],
   domain: "psychology",
   subcategory: "cognitive",
-  tags: ["memory", "heuristics", "menus", "autocomplete", "command line", "discoverability"],
+  tags: ["memory", "heuristics", "menus", "autocomplete", "command line", "discoverability", "recognition rather than recall", "authentication"],
   difficulty: "beginner",
   disciplines: ["Cognitive psychology", "Human-computer interaction", "Interaction design"],
   learningObjectives: [
@@ -76,6 +76,8 @@ export default defineEntry({
         "Dual-process theories explain recognition with two mechanisms: **familiarity**, a fast, context-free sense of having encountered something, and **recollection**, slower retrieval of specific details {{src:mandler-1980}}. Yonelinas's review of three decades of research supports this distinction {{src:yonelinas-2002}}. Recognition can succeed on familiarity alone, which helps explain its advantage over recall — and also its characteristic error: confidently accepting a familiar but wrong option.",
         "The size of the recognition advantage depends on the test. With dissimilar distractors, recognition is easy; with highly similar distractors, it approaches the difficulty of recall. For interfaces this matters: a menu of ten near-identical labels ('Export', 'Export as', 'Export selection', 'Publish') offers less recognition benefit than a menu of distinct ones.",
         "The principle interacts with search costs. Recognition requires scanning visible options; when the set becomes very large, visual search time grows and a recall-based route (typing a known name) can win. Command palettes combine both: the user recalls part of a name and the system shows matches for recognition.",
+        "Cognitive architectures explain why cues matter. In ACT-R, retrieving an item from memory depends on its activation, which rises with practice and recency and with cues present in the current context {{src:anderson-2004}}; NN/g uses the same three factors to explain why recognition beats recall {{src:budiu-recognition-recall}}. Information carried from one screen to the next must otherwise be held in working memory, whose capacity is limited {{src:baddeley-hitch-1974}} — a reason to keep context visible instead.",
+        "In a design system, recognition is delivered by components that carry context forward: comboboxes with suggestions, recent and frequent items, persistent labels and hints, visible applied filters and step summaries. Their states — empty, suggesting, selected, no results — need defined copy and announcements. Recall surfaces most painfully at sign-in, and WCAG 2.2 now addresses it: authentication must not depend on a cognitive function test such as remembering a password or transcribing a code unless an alternative or assistance exists, for example allowing paste and password managers [WCAG 2.2 SC 3.3.8 Accessible Authentication (Minimum), AA] {{src:w3c-wcag-22}}. Useful product signals include zero-result searches (people could not recall the right term), heavy use of suggestions, and repeated re-entry of the same data.",
       ],
       evidence: [
         "Laboratory research on recognition memory, including Shepard (1967) and Standing (1973), provides strong evidence for high recognition accuracy {{src:shepard-1967}} {{src:standing-1973}}.",
@@ -173,6 +175,57 @@ export default defineEntry({
     },
   ],
 
+  practice: {
+    dos: [
+      { text: "Show options, recent items and suggestions instead of asking people to type from memory.", why: "Recognition offers more cues than recall, so the right item is easier to retrieve {{src:budiu-recognition-recall}}.", kind: "industry" },
+      { text: "Keep labels and format hints visible next to fields, not only as placeholders.", why: "Placeholder text disappears when typing begins; labels or instructions must be provided [WCAG 2.2 SC 3.3.2 Labels or Instructions, A] {{src:w3c-wcag-22}}.", kind: "standard" },
+      { text: "Carry information forward between steps, and let people pick what they entered before.", why: "People should not have to remember or re-enter information [WCAG 2.2 SC 3.3.7 Redundant Entry, A] {{src:w3c-wcag-22}}.", kind: "standard" },
+    ],
+    donts: [
+      { text: "Don't block paste or password managers at sign-in.", why: "Remembering a password is a cognitive function test; assistance must be allowed [WCAG 2.2 SC 3.3.8, AA] {{src:w3c-wcag-22}}.", kind: "standard" },
+      { text: "Don't make hidden gestures or shortcuts the only way to reach a function.", why: "They rely on recall; keep a visible path and offer accelerators on top.", kind: "industry" },
+      { text: "Don't fill a menu with near-identical labels ('Export', 'Export as', 'Export selection').", why: "Similar options weaken the recognition advantage, because recognition gets harder as distractors become similar.", kind: "industry" },
+    ],
+    examples: [
+      {
+        title: "Turning recall into recognition in a catalogue search",
+        language: "text",
+        code: `Before (recall)                         After (recognition)
+--------------------------------------  ----------------------------------------------
+Empty box: "Enter exact title"          Suggestions as you type (titles, authors, series)
+Zero results for "Midlemarch"           Typo-tolerant match: "Showing results for Middlemarch"
+Filters reset after each search         Applied filters shown as removable chips
+Re-type library card on every visit     Card remembered; password manager and paste allowed
+Shortcut only in help pages             Shortcut shown next to the menu command`,
+        caption: "Illustrative before-and-after analysis for a library app.",
+      },
+      {
+        title: "A multi-step form that carries context forward",
+        language: "ts",
+        code: `// Step 3 of a renewal flow: show, don't ask people to remember.
+type Draft = { cardLast4: string; loans: { id: string; title: string }[]; until: string };
+
+function ReviewStep({ draft }: { draft: Draft }) {
+  return (
+    <section aria-labelledby="review-heading">
+      <h2 id="review-heading">Check your renewal</h2>
+      <dl>
+        <dt>Library card</dt><dd>ending {draft.cardLast4}</dd>          {/* carried from step 1 */}
+        <dt>Books</dt><dd>{draft.loans.map((l) => l.title).join(", ")}</dd>  {/* from step 2 */}
+        <dt>Renew until</dt><dd>{draft.until}</dd>
+      </dl>
+      <a href="?step=2">Change books</a>                                   {/* edit in place, nothing re-typed */}
+      <button type="submit">Renew {draft.loans.length} books</button>
+    </section>
+  );
+}
+// The draft is saved between steps (session storage or server) so Back, a reload
+// or a timeout does not force people to recall and re-enter it (WCAG 2.2 SC 3.3.7).`,
+        caption: "Illustrative React component. The summary turns recall into recognition: people check what they chose instead of remembering it.",
+      },
+    ],
+  },
+
   relations: [
     { target: "nielsen-usability-heuristics", type: "derived-from", note: "Recognition rather than recall is the sixth of Nielsen's ten usability heuristics." },
     { target: "working-memory-model", type: "related-to", note: "Recognition support reduces the information that must be held in working memory." },
@@ -266,10 +319,15 @@ export default defineEntry({
     { source: "nielsen-1993", role: "primary", note: "Usability heuristics including recognition rather than recall." },
     { source: "norman-2013", role: "explanatory", note: "Knowledge in the head vs. knowledge in the world." },
     { source: "budiu-recognition-recall", role: "explanatory", note: "Practitioner explanation of the heuristic." },
+    { source: "w3c-wcag-22", role: "standard", note: "SC 3.3.2 (A), 3.3.7 Redundant Entry (A), 3.3.8 Accessible Authentication (Minimum) (AA)." },
+    { source: "anderson-2004", role: "primary", note: "ACT-R: retrieval depends on activation (bibliographic record only)." },
+    { source: "baddeley-hitch-1974", role: "primary", note: "Working memory model; limited capacity for carried information." },
   ],
   evidence: "professional-guideline",
   evidenceNote:
     "The underlying memory finding — recognition outperforms free recall in most conditions — is robust experimental evidence. The interface principle is a heuristic derived from it and from practitioner analysis; its benefit in a given design depends on option similarity, set size and user expertise, and should be checked by testing.",
+
+  guide: { id: "nielsen-heuristics", anchor: "h6", label: "Heuristic 6 in the Nielsen heuristics guide" },
 
   status: "published",
   quality: {
@@ -284,5 +342,5 @@ export default defineEntry({
     sources: true,
     activities: true,
   },
-  lastVerifiedAt: "2026-11-03",
+  lastVerifiedAt: "2026-11-11",
 });

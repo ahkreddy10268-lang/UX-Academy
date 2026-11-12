@@ -13,7 +13,8 @@ export function DocLayout({ toc, children, aside }: { toc: TocItem[]; children: 
   return (
     <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_14rem]">
       <div className="min-w-0 space-y-14">{children}</div>
-      <aside className="hidden lg:block">
+      {/* A plain wrapper: the nav inside is the landmark, so the shell's sidebar stays the only complementary region. */}
+      <div className="hidden lg:block">
         <nav aria-label="On this page" className="sticky top-24 space-y-1 border-l border-rule pl-4 text-sm">
           <p className="label mb-2">On this page</p>
           {toc.map(([id, label]) => (
@@ -23,7 +24,7 @@ export function DocLayout({ toc, children, aside }: { toc: TocItem[]; children: 
           ))}
           {aside && <div className="pt-4">{aside}</div>}
         </nav>
-      </aside>
+      </div>
     </div>
   );
 }

@@ -12,6 +12,7 @@
     "sources:verify": "tsx scripts/verify-sources.ts",
     "test": "vitest run",
     "test:watch": "vitest",
+    "test:taxonomy": "tsx scripts/validate-taxonomy.ts",
     "typecheck": "next typegen && tsc --noEmit",
     "check": "npm run content:index && npm run typecheck && npm run test && npm run lint",
     "docs:generate": "tsx scripts/generate-docs.ts"

@@ -12,6 +12,7 @@ export const navGroups: readonly NavGroup[] = [
     items: [
       { href: "/learn", label: "Learn", icon: "learn", match: ["/learn"] },
       { href: "/library", label: "Knowledge Library", icon: "library", match: ["/library"] },
+      { href: "/guides", label: "Guides", icon: "guide", match: ["/guides"] },
       { href: "/ai", label: "AI UX Patterns", icon: "ai", match: ["/ai"] },
     ],
   },

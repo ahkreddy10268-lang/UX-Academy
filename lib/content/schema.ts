@@ -317,6 +317,35 @@ export const qualityGateSchema = z.object({
 });
 export type QualityGate = z.infer<typeof qualityGateSchema>;
 
+/**
+ * Optional structured practice block (D-113): paired recommendations and
+ * anti-patterns, each with its reason and, where useful, the kind of rule it is
+ * (docs/design-systems/TOPIC_LESSON_SPECIFICATION.md §5), plus worked examples
+ * such as token files. Entries without it remain valid.
+ */
+export const RULE_KINDS = ["standard", "platform", "system", "industry", "context", "team"] as const;
+export type RuleKind = (typeof RULE_KINDS)[number];
+const practiceItemSchema = z.object({
+  text: rich,
+  why: rich,
+  kind: z.enum(RULE_KINDS).optional(),
+});
+export const practiceBlockSchema = z.object({
+  dos: z.array(practiceItemSchema).min(1),
+  donts: z.array(practiceItemSchema).min(1),
+  examples: z
+    .array(
+      z.object({
+        title: z.string().min(1),
+        language: z.enum(["json", "css", "ts", "text"]),
+        code: z.string().min(1),
+        caption: rich.optional(),
+      }),
+    )
+    .default([]),
+});
+export type PracticeBlock = z.infer<typeof practiceBlockSchema>;
+
 export const knowledgeEntrySchema = z.object({
   /* 8.1 Identity */
   id: slug, // stable; never change once published
@@ -396,6 +425,9 @@ export const knowledgeEntrySchema = z.object({
   method: methodDetailSchema.optional(),
   standard: standardDetailSchema.optional(),
   lab: slug.optional(), // interactive simulation id in content/labs
+  /** Long-form guide that teaches this entry in context (content/guides, D-127). */
+  guide: z.object({ id: slug, anchor: z.string().regex(/^[a-z0-9-]+$/).optional(), label: z.string().optional() }).optional(),
+  practice: practiceBlockSchema.optional(),
 
   /* 8.9 Practice */
   exercises: z.array(exerciseSchema).default([]),
@@ -471,7 +503,7 @@ export const learningPathSchema = z.object({
         steps: z.array(slug).min(1), // entry slugs or planned taxonomy slugs
         practice: z.array(z.string()).default([]), // lab ids, workshop ids
         /** Reference pages for the stage inside the site: AI patterns (/ai/…) or design-system docs (/system/…). Validated by tests. */
-        links: z.array(z.object({ href: z.string().regex(/^\/(ai|system)\//), label: z.string() })).default([]),
+        links: z.array(z.object({ href: z.string().regex(/^\/(ai|system|guides|labs)\//), label: z.string() })).default([]),
       }),
     )
     .min(1),

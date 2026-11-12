@@ -1,5 +1,5 @@
 /** Human-readable labels and descriptions for controlled vocabularies. Safe for client import. */
-import type { ContentStatus, Difficulty, EvidenceClass, KnowledgeType, RelationType } from "./schema";
+import type { ContentStatus, Difficulty, EvidenceClass, KnowledgeType, RelationType, RuleKind } from "./schema";
 
 export const TYPE_LABEL: Record<KnowledgeType, string> = {
   theory: "Theory",
@@ -112,6 +112,23 @@ export const LEVEL_PURPOSE: Record<Difficulty, string> = {
   advanced: "Analyse & evaluate",
 };
 
+/**
+ * Reading-depth personas for the explanation tabs. Quiz difficulty and
+ * learning-path stages keep DIFFICULTY_LABEL: a question is "advanced", a reader is not.
+ */
+export const DEPTH_LABEL: Record<Difficulty, string> = {
+  beginner: "Beginner",
+  intermediate: "Practitioner",
+  advanced: "Systems Architect",
+};
+
+/** What each depth panel actually contains (app/library/[slug]/page.tsx). */
+export const DEPTH_COVERS: Record<Difficulty, string> = {
+  beginner: "Plain-language explanation, an analogy, everyday examples and the key vocabulary.",
+  intermediate: "How it works, implementation guidance and common scenarios for applying it in product work.",
+  advanced: "Evidence and its limits, open debates and competing models, for judging and defending a decision.",
+};
+
 export const RELATION_LABEL: Record<RelationType | "prerequisite-of", string> = {
   "prerequisite-of": "Prerequisite of",
   "related-to": "Related to",
@@ -140,4 +157,14 @@ export const TIER_LABEL: Record<number, string> = {
   2: "Tier 2 · Authoritative professional",
   3: "Tier 3 · Established educational",
   4: "Tier 4 · Discovery only",
+};
+
+/** Rule kinds for practice items: where a recommendation's authority comes from. */
+export const RULE_KIND_LABEL: Record<RuleKind, string> = {
+  standard: "Standard",
+  platform: "Platform convention",
+  system: "System-specific",
+  industry: "Industry practice",
+  context: "Depends on context",
+  team: "Team decision",
 };

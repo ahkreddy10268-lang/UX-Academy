@@ -5,7 +5,23 @@ import { useRouter } from "next/navigation";
 import { useEffect, useId, useRef, useState } from "react";
 import { KIND_LABEL, TYPE_LABEL } from "@/lib/content/labels";
 import { Icon } from "../shell/icons";
-import { prefetchSearch, snippet, useSearch } from "./use-search";
+import { prefetchSearch, snippet, useSearch, type Hit } from "./use-search";
+
+/** Filter chips group knowledge types (primaryType), never topics by convenience. */
+const TYPE_FILTERS = [
+  { id: "all", label: "All", types: null },
+  { id: "laws", label: "Laws", types: ["law"] },
+  { id: "heuristics", label: "Heuristics", types: ["heuristic", "rule-of-thumb"] },
+  { id: "methods", label: "Research methods", types: ["method", "methodology", "technique", "research-instrument"] },
+  { id: "formulas", label: "Formulas & metrics", types: ["formula", "metric"] },
+] as const;
+type FilterId = (typeof TYPE_FILTERS)[number]["id"];
+
+function matchesFilter(h: Hit, id: FilterId): boolean {
+  const f = TYPE_FILTERS.find((x) => x.id === id);
+  if (!f || !f.types) return true;
+  return h.type !== undefined && (f.types as readonly string[]).includes(h.type);
+}
 
 export function SearchTrigger() {
   const dialog = useRef<HTMLDialogElement>(null);
@@ -62,10 +78,13 @@ export function SearchTrigger() {
 function SearchPanel({ onDone }: { onDone: () => void }) {
   const [query, setQuery] = useState("");
   const [active, setActive] = useState(0);
-  const { status, hits, error } = useSearch(query);
+  const [filter, setFilter] = useState<FilterId>("all");
+  const { status, hits: allHits, error } = useSearch(query, true, 200);
+  const hits = allHits.filter((h) => matchesFilter(h, filter));
   const router = useRouter();
   const listId = useId();
   const shown = hits.slice(0, 12);
+  const filterLabel = TYPE_FILTERS.find((f) => f.id === filter)!.label;
 
   function go(href: string) {
     onDone();
@@ -112,11 +131,29 @@ function SearchPanel({ onDone }: { onDone: () => void }) {
           Esc
         </button>
       </div>
+      <div role="group" aria-label="Filter by knowledge type" className="flex flex-wrap gap-1.5 border-b border-rule px-4 py-2.5">
+        {TYPE_FILTERS.map((f) => (
+          <button
+            key={f.id}
+            type="button"
+            aria-pressed={filter === f.id}
+            onClick={() => {
+              setFilter(f.id);
+              setActive(0);
+            }}
+            className="chip h-9 hover:border-rule-strong hover:text-ink"
+          >
+            {f.label}
+          </button>
+        ))}
+      </div>
       <div className="overflow-y-auto" aria-live="polite">
         {status === "error" && <p className="px-4 py-6 text-sm text-ink-2">The search index could not be loaded. {error}</p>}
         {status === "ready" && query.trim() && shown.length === 0 && (
           <p className="px-4 py-6 text-sm text-ink-2">
-            No matches for “{query}”. Try a broader term, or browse the{" "}
+            {filter === "all"
+              ? `No matches for “${query}”. Try a broader term, or browse the `
+              : `No ${filterLabel.toLowerCase()} match “${query}”. Choose All, try a broader term, or browse the `}
             <Link className="link" href="/topics" onClick={onDone}>
               Knowledge Atlas
             </Link>
@@ -155,7 +192,7 @@ function SearchPanel({ onDone }: { onDone: () => void }) {
             ))}
           </ul>
         )}
-        {hits.length > shown.length && (
+        {filter === "all" && hits.length > shown.length && (
           <button
             type="button"
             onClick={() => go(`/library?q=${encodeURIComponent(query.trim())}`)}

@@ -12,6 +12,7 @@ import { illustrationFor, plateNumber } from "@/components/illustrations/registr
 import { citationLine } from "@/components/entry/references";
 import { FormulaBlock } from "@/components/entry/formula-block";
 import { LevelTabs } from "@/components/entry/level-tabs";
+import { PracticeBlock } from "@/components/entry/practice-block";
 import { NotesPanel } from "@/components/entry/notes-panel";
 import { ReferenceList } from "@/components/entry/references";
 import { PlannedTopic } from "@/components/entry/planned-topic";
@@ -20,10 +21,10 @@ import { Callout } from "@/components/ui/callout";
 import { Breadcrumbs, Bullets, Container, SectionHeading } from "@/components/ui/layout";
 import { DifficultyMark, EvidenceMark, StatusMark, TypeMark } from "@/components/ui/marks";
 import { Rich, RichParagraphs } from "@/components/ui/rich";
-import { domainById, edgesFor, entries, entryBySlug, knownSlugs, labById, sourceById, subcategoryTitle, taxonomyBySlug, titleFor, unlockedBy, verification } from "@/lib/content";
+import { domainById, edgesFor, entries, entryBySlug, guideById, knownSlugs, labById, sourceById, subcategoryTitle, taxonomyBySlug, titleFor, unlockedBy, verification } from "@/lib/content";
 import { linkMapFor, resolveSlug, richContext } from "@/lib/content/context";
 import { catClass } from "@/lib/content/categories";
-import { EVIDENCE_DESCRIPTION, EVIDENCE_LABEL, EVIDENCE_ORDER, LEVEL_PURPOSE, RELATION_LABEL, TYPE_LABEL } from "@/lib/content/labels";
+import { DEPTH_LABEL, EVIDENCE_DESCRIPTION, EVIDENCE_LABEL, EVIDENCE_ORDER, LEVEL_PURPOSE, RELATION_LABEL, TYPE_LABEL } from "@/lib/content/labels";
 import { readingMinutes } from "@/lib/content/learning";
 import { collectStrings, extractCitations, richToPlain } from "@/lib/content/rich";
 import type { KnowledgeEntry } from "@/lib/content/schema";
@@ -80,6 +81,7 @@ function Entry({ entry: e }: { entry: KnowledgeEntry }) {
     ...(e.origin ? [["origin", "Origin"]] : []),
     ["application", "Application"],
     ...(e.application.steps.length ? [["checklist", "Practical checklist"]] : []),
+    ...(e.practice ? [["in-practice", "Do and don't"]] : []),
     ["use", "When to use · common mistakes"],
     ["connections", "Connections"],
     ["practice", "Practice"],
@@ -226,6 +228,15 @@ function Entry({ entry: e }: { entry: KnowledgeEntry }) {
               <div className="mt-6">
                 <EntryActions slug={e.slug} cards={e.flashcards.map((c) => ({ id: c.id }))} />
               </div>
+              {e.guide && guideById.get(e.guide.id) && (
+                <Link href={`/guides/${e.guide.id}${e.guide.anchor ? `#${e.guide.anchor}` : ""}`} className="card mt-5 flex items-center justify-between gap-4 p-4">
+                  <span>
+                    <span className="label block">Interactive guide</span>
+                    <span className="mt-1 block font-semibold text-ink">{e.guide.label ?? guideById.get(e.guide.id)!.title}</span>
+                  </span>
+                  <span aria-hidden className="text-ink-2">→</span>
+                </Link>
+              )}
             </div>
             <figure className="rise-in">
               <div className="overflow-hidden rounded-xl border border-rule bg-surface shadow-raise">
@@ -325,7 +336,7 @@ function Entry({ entry: e }: { entry: KnowledgeEntry }) {
               Understand it
             </SectionHeading>
             <p className="mb-4 text-sm text-ink-3">
-              Choose a depth: {Object.entries(LEVEL_PURPOSE).map(([k, v]) => `${k} — ${v.toLowerCase()}`).join(" · ")}. Your choice is remembered across entries.
+              Choose a depth: {(["beginner", "intermediate", "advanced"] as const).map((k) => `${DEPTH_LABEL[k]} — ${LEVEL_PURPOSE[k].toLowerCase()}`).join(" · ")}. Every concept opens at the depth you last chose.
             </p>
             <LevelTabs slug={e.slug} panels={panels} />
           </section>
@@ -494,6 +505,16 @@ function Entry({ entry: e }: { entry: KnowledgeEntry }) {
               </div>
             )}
           </section>
+
+          {e.practice && (
+            <section aria-labelledby="in-practice" className="pt-16">
+              <SectionHeading id="in-practice" kicker="In practice">
+                Do and don&apos;t
+              </SectionHeading>
+              <p className="mb-6 text-sm text-ink-3">Each recommendation gives its reason and, where it matters, whether it comes from a standard, a platform, one system&apos;s choice or common industry practice.</p>
+              <PracticeBlock practice={e.practice} ctx={ctx} />
+            </section>
+          )}
 
           <section aria-labelledby="use" className="pt-16">
             <SectionHeading id="use" kicker="Appropriate use">

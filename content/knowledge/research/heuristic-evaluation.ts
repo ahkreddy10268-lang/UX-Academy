@@ -331,6 +331,8 @@ export default defineEntry({
   evidenceNote:
     "Peer-reviewed studies support the method's cost-effectiveness for finding many problems and the benefit of multiple and expert evaluators. The same literature documents a strong evaluator effect and false positives, so findings are predictions with limited reliability — they do not measure usability and should be validated with users for consequential decisions.",
 
+  guide: { id: "nielsen-heuristics", anchor: "process", label: "The evaluation method, a case study and a report lab" },
+
   status: "published",
   quality: {
     classification: true,

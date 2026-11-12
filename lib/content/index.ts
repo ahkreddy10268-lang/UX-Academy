@@ -16,6 +16,8 @@ import { labs } from "../../content/labs";
 import { aiMoments as rawAiMoments } from "../../content/ai/moments";
 import { aiPatterns as rawAiPatterns } from "../../content/ai/patterns";
 import { aiMomentSchema, aiPatternSchema, type AiPattern } from "./ai";
+import { guides as rawGuides } from "../../content/guides";
+import { guideSchema, type Guide } from "./guide";
 import { systemDocs as rawSystemDocs } from "../../content/system/docs";
 import { systemDocSchema, type SystemDoc } from "./system";
 import {
@@ -64,6 +66,12 @@ export const aiPatterns: AiPattern[] = rawAiPatterns.map((p) => {
   return r.data;
 });
 export const aiPatternById = new Map(aiPatterns.map((p) => [p.id, p]));
+export const guides: Guide[] = rawGuides.map((g) => {
+  const r = guideSchema.safeParse(g);
+  if (!r.success) throw new Error(`Invalid guide ${g.id}: ${r.error.issues.map((i) => `${i.path.join(".")}: ${i.message}`).join("; ")}`);
+  return r.data;
+});
+export const guideById = new Map(guides.map((g) => [g.id, g]));
 export const aiPatternsFor = (moment: string) => aiPatterns.filter((p) => p.moment === moment);
 
 /* Design-system documentation (D-099). */

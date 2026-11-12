@@ -44,7 +44,8 @@ export const labs: Lab[] = [
     kind: "tool",
     assumptions: [
       "Implements the WCAG 2.x relative-luminance formula for sRGB colours.",
-      "Does not model APCA (proposed for WCAG 3, not a standard), transparency, anti-aliasing or font weight beyond the large-text definition.",
+      "Does not compute APCA or any other perceptual contrast model: they are research in progress, and the WCAG 3 Working Draft (10 September 2026) has not chosen a contrast algorithm. The lab explains what the ratio misses instead.",
+      "Does not model transparency, anti-aliasing or font weight beyond the large-text definition.",
     ],
   },
   {
@@ -176,6 +177,42 @@ export const labs: Lab[] = [
       "Colours are sRGB on a standard display; luminance and contrast use the WCAG 2.x formulas.",
       "HSV's value is max(R, G, B). It is a convenient way to pick colours, not a measure of perceived lightness.",
       "Contrast against pure white and pure black only; check real foreground and background pairs in the contrast checker.",
+    ],
+  },
+  {
+    id: "token-lab",
+    title: "Design Token Lab",
+    summary: "Switch between light, dark and high-contrast themes, remap semantic roles to primitives, edit a primitive's value and watch a live preview, the contrast of every documented pair and the exported token files update together.",
+    concepts: ["theme-architecture", "semantic-tokens", "primitive-tokens", "design-tokens", "colour-contrast-ratio"],
+    kind: "tool",
+    assumptions: [
+      "Uses the illustrative library-app palette from the token lessons; the high-contrast theme's 7:1 text target (WCAG 2.2 SC 1.4.6, AAA) is this lab's choice.",
+      "Contrast is the WCAG 2.x ratio from lib/formulas, checked only for the documented role pairs; a passing table is necessary, not sufficient, for an accessible theme.",
+      "Colour roles only: no typography, spacing or motion tokens. Exports show the shape of DTCG, CSS and Tailwind v4 output, not any one build tool's exact files.",
+    ],
+  },
+  {
+    id: "async-state-lab",
+    title: "Async State Lab",
+    summary: "Drive one async state machine — idle, loading, populated, empty, error — through a loans table and card list. Change the response time, switch between skeleton, spinner and progressive loading, simulate a network error, and watch the live-region announcements and measured layout shift. A broken preset shows spinner thrashing and wiped input, then the corrections.",
+    concepts: ["component-state-management", "loading-states", "skeleton-screens", "data-tables", "empty-states", "error-states", "progressive-loading"],
+    kind: "simulation",
+    assumptions: [
+      "Responses are simulated with timers; nothing is fetched. The response-time bands use Nielsen's 0.1 s and 1 s limits (after Miller 1968 and Card et al. 1991); the 1000 ms show-after delay and 400 ms minimum display are this lab's product choices, the same ones used in the loading-states entry.",
+      "Layout shift is measured with the browser's Layout Instability API where it exists (Chromium); shifts within 500 ms of your own input are excluded, as in CLS, so a shift right after a click may not be counted.",
+      "Announcements are what the lab writes to a polite role=status region; real screen readers may queue, shorten or skip them depending on settings.",
+    ],
+  },
+  {
+    id: "heuristic-report-lab",
+    title: "Heuristic Evaluation Report",
+    summary: "Record findings with the fields of a professional heuristic evaluation report — screen, task, observation, heuristic, evidence, impact, severity, recommendation — see them ordered by severity and effort, compare with a completed case-study report, and export Markdown or CSV.",
+    concepts: ["heuristic-evaluation", "nielsen-usability-heuristics"],
+    kind: "tool",
+    assumptions: [
+      "Severity uses Nielsen's 0–4 scale; ordering by severity and then by lower effort is this lab's convention for a first draft, not a rule — teams adjust priorities for business context.",
+      "Findings stay in this browser tab and are cleared when you leave the page; export them to keep them.",
+      "The example report comes from the guide's illustrative case study of a fictional shop.",
     ],
   },
 ];

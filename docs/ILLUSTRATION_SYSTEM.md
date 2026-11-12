@@ -431,6 +431,6 @@ QA performed: plate at card and hero size in both page themes; the page in the a
 - Subject plates map a domain by its taxonomy subcategories, using artefacts and interfaces (blueprints, consent dialogs, code, scales), never people icons.
 - Colours that a figure measures use the theme-independent `--sample-*` tokens (D-106); everything else uses app tokens.
 
-**Category gap.** Responsive & Adaptive has no plate because no published entry belongs to it (D-109).
+**Category gap (closed in session 34).** Responsive & Adaptive had no plate because no published entry belonged to it (D-109). `responsive-systems` (D-122) is its first entry and plate: a grid at three breakpoints with columns from `gridColumns` and one card in two containers.
 
 **Known limits.** The two retained earlier-style plates measure 7.9–8.6 px at 390 px; they predate the text standard and are the next candidates if they are ever migrated. Several Level-2 figures (HCI ecosystem, paradigms, perspectives) remain card-based compositions; they are accurate and readable but are candidates for a stronger relationship layout.

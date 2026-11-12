@@ -1294,6 +1294,13 @@ export const modularTypeScalePlate: IllustrationEntry = {
 /** Fixed sRGB sample values; mirrored as --sample-* in app/globals.css (tested). */
 export const CONTRAST_SAMPLES = { white: "#ffffff", pass: "#767676", fail: "#949494" } as const;
 
+/** The illustrative palette of the token lessons; mirrored by --sample-token-* in globals.css (D-114). */
+export const TOKEN_SAMPLES = {"grey-0": "#ffffff", "grey-50": "#f6f6f4", "grey-300": "#c9c8c3", "grey-500": "#8a8983", "grey-600": "#6b6a64", "grey-700": "#4f4e49", "grey-900": "#1f1e1c", "grey-950": "#141413", "red-700": "#b42318", "red-400": "#f07a6e", "blue-600": "#2457c5", "blue-400": "#5f92e8", "blue-700": "#1b449c"} as const;
+
+/** Second-brand colours for the multi-brand lesson; mirrored by --sample-token-orange-* in globals.css (D-125). */
+export const BRAND_SAMPLES = { "orange-500": "#e8742a", "orange-700": "#c2410c" } as const;
+const tok = (k: keyof typeof TOKEN_SAMPLES) => `var(--sample-token-${k})`;
+
 export const colourContrastPlate: IllustrationEntry = {
   slug: "colour-contrast-ratio",
   title: "Colour contrast ratio plate",
@@ -2743,6 +2750,969 @@ export const heartPlate: IllustrationEntry = {
             <Marker x={212} y={14} n={3} />
             <Marker x={304} y={14} n={4} />
             <Marker x={392} y={192} n={5} />
+          </>
+        )}
+      </g>
+    );
+  },
+};
+
+/* ------------------------------------------------------------------ */
+/* Semantic tokens: one set of names, two mappings                      */
+/* ------------------------------------------------------------------ */
+export const semanticTokensPlate: IllustrationEntry = {
+  slug: "semantic-tokens",
+  title: "Semantic tokens plate",
+  canvas: "sheet",
+  description:
+    "Three columns joined by arrows. In the middle, four semantic tokens named by purpose: color.surface.default, color.text.default, color.text.danger and color.action.background. Each refers to a primitive on the left in the light theme — grey.0, grey.900, red.700, blue.600 — and to a different primitive on the right in the dark theme — grey.950, grey.50, red.400, blue.400. A bracket joins text.default and surface.default as a pair whose contrast must be checked in each theme. Below, a Renew button and an error message point only at the middle column, so they follow either theme without changing.",
+  key: [
+    { n: "1", label: "Semantic tokens", detail: "names for the job a value does; components use only these" },
+    { n: "2", label: "Light mapping", detail: "each name refers to a primitive in the light theme" },
+    { n: "3", label: "Dark mapping", detail: "the same names refer to different primitives; only the references change" },
+    { n: "4", label: "A pair", detail: "text on a surface; contrast is checked for the pair, in every theme" },
+    { n: "5", label: "Components", detail: "point at roles, never at primitives, so a theme cannot be half-applied" },
+  ],
+  Art: ({ detail }) => {
+    const rows = [
+      { name: "surface.default", light: "grey.0", dark: "grey.950", lf: tok("grey-0"), df: tok("grey-950") },
+      { name: "text.default", light: "grey.900", dark: "grey.50", lf: tok("grey-900"), df: tok("grey-50") },
+      { name: "text.danger", light: "red.700", dark: "red.400", lf: tok("red-700"), df: tok("red-400") },
+      { name: "action.background", light: "blue.600", dark: "blue.400", lf: tok("blue-600"), df: tok("blue-400") },
+    ];
+    const ry = (i: number) => 44 + i * 38;
+    const chip = (x: number, y: number, label: string, fill: string) => (
+      <g>
+        <rect x={x} y={y} width={100} height={28} rx={6} fill={S.surface} stroke={S.ruleStrong} strokeWidth="0.9" {...hair} />
+        <rect x={x + 7} y={y + 7} width={14} height={14} rx={3} fill={fill} stroke={S.ink2} strokeWidth="0.7" {...hair} />
+        <UiText x={x + 27} y={y + 19} mono>
+          {label}
+        </UiText>
+      </g>
+    );
+    return (
+      <g>
+        <UiText x={58} y={30} mono tone="ink3" anchor="middle">
+          light
+        </UiText>
+        <UiText x={200} y={30} mono tone="ink3" anchor="middle">
+          semantic
+        </UiText>
+        <UiText x={342} y={30} mono tone="ink3" anchor="middle">
+          dark
+        </UiText>
+        {/* the pair: text.default on surface.default */}
+        <rect x={119} y={ry(0) - 5} width={162} height={ry(1) - ry(0) + 38} rx={9} fill="none" stroke={S.accent} strokeWidth="1.2" strokeDasharray="4 3" {...hair} />
+        {rows.map((r, i) => (
+          <g key={r.name}>
+            {chip(8, ry(i), r.light, r.lf)}
+            {chip(292, ry(i), r.dark, r.df)}
+            <rect x={124} y={ry(i)} width={152} height={28} rx={6} fill={S.soft} stroke={S.ink2} strokeWidth="1.1" {...hair} />
+            <UiText x={200} y={ry(i) + 19} mono weight={600} anchor="middle">
+              {r.name}
+            </UiText>
+            <Link from={[124, ry(i) + 14]} to={[110, ry(i) + 14]} />
+            <Link from={[276, ry(i) + 14]} to={[290, ry(i) + 14]} />
+          </g>
+        ))}
+        <line x1={8} y1={204} x2={392} y2={204} stroke={S.rule} strokeWidth="0.9" {...hair} />
+        <UiButton x={152} y={224} w={96} label="Renew" />
+        <UiText x={292} y={242} tone="error">
+          Card expired
+        </UiText>
+        <Link from={[200, 224]} to={[200, ry(3) + 30]} tone="mute" dashed />
+        <Link from={[330, 228]} to={[270, ry(2) + 28]} via={[330, 176]} tone="mute" dashed />
+        <UiText x={8} y={276} tone="ink3">
+          components use roles; a theme chooses a column
+        </UiText>
+        {detail && (
+          <>
+            <Marker x={200} y={44} n={1} />
+            <Marker x={8} y={44} n={2} />
+            <Marker x={392} y={44} n={3} />
+            <Marker x={281} y={58} n={4} tone="accent" />
+            <Marker x={152} y={224} n={5} />
+          </>
+        )}
+      </g>
+    );
+  },
+};
+
+/* ------------------------------------------------------------------ */
+/* Primitive tokens: the options, chosen from by semantic tokens        */
+/* ------------------------------------------------------------------ */
+export const primitiveTokensPlate: IllustrationEntry = {
+  slug: "primitive-tokens",
+  title: "Primitive tokens plate",
+  canvas: "sheet",
+  description:
+    "A grey ramp of eight swatches from lightest to darkest, labelled 0, 50, 300, 500, 600, 700, 900 and 950, with gaps in the numbering so steps can be added later. Below it, two semantic tokens, surface.default and text.default, point up to the steps they use: grey.0 and grey.900. A component token, button.label, points to text.default; a dashed line from button.label straight to the ramp is crossed out, because components should not use primitives. At the bottom, a spacing scale of six steps, space.100 to space.800, drawn as blocks of 4, 8, 12, 16, 24 and 32 pixels.",
+  key: [
+    { n: "1", label: "A colour ramp", detail: "the greys that exist; numbered with gaps so a step can be inserted" },
+    { n: "2", label: "Semantic tokens choose", detail: "roles refer to steps; the ramp itself has no meaning" },
+    { n: "3", label: "Not from components", detail: "a component that names a primitive cannot follow a theme" },
+    { n: "4", label: "A spacing scale", detail: "dimension primitives, 4 to 32 px, in the same naming pattern" },
+  ],
+  Art: ({ detail }) => {
+    const steps = ["0", "50", "300", "500", "600", "700", "900", "950"] as const;
+    const sx = (i: number) => 8 + i * 48;
+    const space = [
+      ["100", 4],
+      ["200", 8],
+      ["300", 12],
+      ["400", 16],
+      ["600", 24],
+      ["800", 32],
+    ] as const;
+    return (
+      <g>
+        <UiText x={8} y={20} mono tone="ink3">
+          color.grey
+        </UiText>
+        {steps.map((n, i) => (
+          <g key={n}>
+            <rect x={sx(i)} y={30} width={44} height={40} rx={5} fill={tok(`grey-${n}`)} stroke={S.ruleStrong} strokeWidth="0.9" {...hair} />
+            <UiText x={sx(i) + 22} y={88} mono anchor="middle" tone="ink2">
+              {n}
+            </UiText>
+          </g>
+        ))}
+        <rect x={40} y={118} width={144} height={28} rx={6} fill={S.soft} stroke={S.ink2} strokeWidth="1.1" {...hair} />
+        <UiText x={112} y={137} mono weight={600} anchor="middle">
+          surface.default
+        </UiText>
+        <rect x={248} y={118} width={144} height={28} rx={6} fill={S.soft} stroke={S.ink2} strokeWidth="1.1" {...hair} />
+        <UiText x={320} y={137} mono weight={600} anchor="middle">
+          text.default
+        </UiText>
+        <Link from={[60, 118]} to={[30, 94]} via={[36, 112]} />
+        <Link from={[320, 118]} to={[sx(6) + 22, 94]} />
+        <rect x={248} y={170} width={144} height={28} rx={6} fill={S.surface} stroke={S.ruleStrong} strokeWidth="0.9" {...hair} />
+        <UiText x={320} y={189} mono anchor="middle">
+          button.label
+        </UiText>
+        <Link from={[320, 170]} to={[320, 148]} />
+        <Link from={[248, 184]} to={[sx(6) + 6, 94]} via={[206, 124]} tone="error" dashed />
+        <Verdict x={220} y={164} ok={false} />
+        <line x1={8} y1={212} x2={392} y2={212} stroke={S.rule} strokeWidth="0.9" {...hair} />
+        <UiText x={8} y={234} mono tone="ink3">
+          space
+        </UiText>
+        {space.map(([n, v], i) => (
+          <g key={n}>
+            <rect x={72 + i * 54 + (40 - v * 1.25) / 2} y={224} width={v * 1.25} height={14} rx={2} fill={S.accent} fillOpacity={0.8} />
+            <UiText x={72 + i * 54 + 20} y={262} mono anchor="middle" tone="ink2">
+              {n}
+            </UiText>
+          </g>
+        ))}
+        {detail && (
+          <>
+            <Marker x={8} y={30} n={1} />
+            <Marker x={40} y={118} n={2} />
+            <Marker x={220} y={164} n={3} />
+            <Marker x={60} y={224} n={4} />
+          </>
+        )}
+      </g>
+    );
+  },
+};
+
+/* ------------------------------------------------------------------ */
+/* Visibility of system status: feedback scaled to duration             */
+/* ------------------------------------------------------------------ */
+export const visibilityOfSystemStatusPlate: IllustrationEntry = {
+  slug: "visibility-of-system-status",
+  title: "Visibility of system status plate",
+  canvas: "sheet",
+  description:
+    "A timeline of how long an operation takes, marked at about 0.1 s, 1 s and 10 s, divided into four zones. Above each zone, the feedback that fits it: under 0.1 s a Save button simply pressed; up to 1 s the button changes to 'Saving…'; up to 10 s a skeleton of the content that is loading; beyond 10 s a determinate progress bar reading 3 of 5 with a Cancel button. Below the timeline, the confirmed result 'Saved · 10:42' tagged role=\"status\", meaning it is also announced to screen-reader users without moving focus.",
+  key: [
+    { n: "1", label: "Under about 0.1 s", detail: "feels instantaneous; the pressed state and the result are enough" },
+    { n: "2", label: "Up to about 1 s", detail: "acknowledge at once; the flow of thought continues" },
+    { n: "3", label: "Up to about 10 s", detail: "show work in progress where it happens, such as a skeleton" },
+    { n: "4", label: "Beyond about 10 s", detail: "show determinate progress, allow Cancel, notify when done" },
+    { n: "5", label: "Announced status", detail: "the confirmed result in a status message, so screen readers hear it too" },
+  ],
+  Art: ({ detail }) => {
+    const ticks = [
+      [100, "0.1 s"],
+      [196, "1 s"],
+      [296, "10 s"],
+    ] as const;
+    return (
+      <g>
+        <Pointer x={70} y={98} />
+        <UiButton x={18} y={78} w={72} label="Save" />
+        <UiButton x={108} y={78} w={80} label="Saving…" />
+        <rect x={204} y={44} width={84} height={96} rx={6} fill={S.surface} stroke={S.ruleStrong} strokeWidth="0.9" {...hair} />
+        <TextBar x={214} y={58} w={60} strong />
+        <TextBar x={214} y={74} w={64} />
+        <TextBar x={214} y={88} w={52} />
+        <TextBar x={214} y={108} w={64} />
+        <TextBar x={214} y={122} w={44} />
+        <UiText x={304} y={74} tone="ink2">
+          3 of 5
+        </UiText>
+        <rect x={304} y={84} width={84} height={8} rx={4} fill={S.sunken} />
+        <rect x={304} y={84} width={50} height={8} rx={4} fill={S.accent} />
+        <UiButton x={304} y={104} w={72} label="Cancel" variant="secondary" />
+        <line x1={8} y1={176} x2={392} y2={176} stroke={S.ink} strokeWidth="1.2" {...hair} />
+        {ticks.map(([x, t]) => (
+          <g key={t}>
+            <line x1={x} y1={168} x2={x} y2={184} stroke={S.ink2} strokeWidth="1" {...hair} />
+            <UiText x={x} y={202} mono anchor="middle" tone="ink2">
+              {t}
+            </UiText>
+          </g>
+        ))}
+        <rect x={70} y={226} width={180} height={34} rx={6} fill={S.soft} stroke={S.ruleStrong} strokeWidth="0.9" {...hair} />
+        <Verdict x={88} y={243} ok />
+        <UiText x={104} y={248} weight={600}>
+          Saved · 10:42
+        </UiText>
+        <UiText x={262} y={248} mono tone="ink3">
+          {`role="status"`}
+        </UiText>
+        {detail && (
+          <>
+            <Marker x={18} y={78} n={1} />
+            <Marker x={108} y={78} n={2} />
+            <Marker x={204} y={44} n={3} />
+            <Marker x={392} y={88} n={4} />
+            <Marker x={70} y={226} n={5} />
+          </>
+        )}
+      </g>
+    );
+  },
+};
+
+/* ------------------------------------------------------------------ */
+/* User control and freedom: undo, labelled exits, keyboard escape      */
+/* ------------------------------------------------------------------ */
+export const userControlAndFreedomPlate: IllustrationEntry = {
+  slug: "user-control-and-freedom",
+  title: "User control and freedom plate",
+  canvas: "sheet",
+  description:
+    "On the left, a reading list where one book has just been removed: its row is faded and a message at the bottom reads 'Removed Middlemarch' with an Undo button. On the right, two keys: Escape, which closes a dialog and returns focus to where it was, and Ctrl or Command plus Z, which undoes the last action. Below the keys, two ways to leave a dialog: a button labelled Cancel, marked correct, and a bare × icon, marked wrong because it could mean either close or cancel.",
+  key: [
+    { n: "1", label: "Undo, visible", detail: "the action happens at once and can be reversed; the message stays until dismissed" },
+    { n: "2", label: "Escape", detail: "closes a dialog and returns focus to the control that opened it" },
+    { n: "3", label: "Undo shortcut", detail: "Ctrl+Z or ⌘Z reverses the last action" },
+    { n: "4", label: "Labelled exit", detail: "'Cancel' in words; a bare × could mean close or cancel" },
+  ],
+  Art: ({ detail }) => {
+    const rows = ["Middlemarch", "Persuasion", "Bleak House"];
+    const key = (x: number, y: number, label: string, w = 52) => (
+      <g>
+        <rect x={x} y={y} width={w} height={30} rx={6} fill={S.surface} stroke={S.ink2} strokeWidth="1.1" {...hair} />
+        <rect x={x + 2} y={y + 26} width={w - 4} height={2} rx={1} fill={S.ruleStrong} />
+        <UiText x={x + w / 2} y={y + 20} mono weight={600} anchor="middle">
+          {label}
+        </UiText>
+      </g>
+    );
+    return (
+      <g>
+        <UiFrame x={8} y={14} w={190} h={196}>
+          <UiText x={14} y={26} weight={600}>
+            Reading list
+          </UiText>
+          {rows.map((t, i) => (
+            <g key={t} opacity={i === 0 ? 0.35 : 1}>
+              <rect x={10} y={40 + i * 34} width={170} height={28} rx={5} fill={S.surface} stroke={S.rule} strokeWidth="0.8" {...hair} />
+              <UiText x={20} y={59 + i * 34}>
+                {t}
+              </UiText>
+            </g>
+          ))}
+          <rect x={10} y={150} width={170} height={36} rx={6} fill={S.ink} />
+          <UiText x={20} y={173} tone="surface">
+            Removed
+          </UiText>
+          <rect x={118} y={156} width={54} height={24} rx={5} fill={S.surface} />
+          <UiText x={145} y={173} weight={600} anchor="middle">
+            Undo
+          </UiText>
+        </UiFrame>
+        {key(222, 24, "Esc")}
+        <UiText x={284} y={44} tone="ink2">
+          close, focus back
+        </UiText>
+        {key(222, 74, "⌘Z")}
+        <UiText x={284} y={94} tone="ink2">
+          undo last action
+        </UiText>
+        <line x1={214} y1={126} x2={392} y2={126} stroke={S.rule} strokeWidth="0.9" {...hair} />
+        <UiButton x={222} y={146} w={84} label="Cancel" variant="secondary" />
+        <Verdict x={326} y={159} ok />
+        <rect x={222} y={186} width={30} height={26} rx={6} fill={S.surface} stroke={S.control} strokeWidth="0.9" {...hair} />
+        <UiText x={237} y={204} weight={600} anchor="middle">
+          ×
+        </UiText>
+        <Verdict x={274} y={199} ok={false} />
+        <UiText x={8} y={240} tone="ink3">
+          act at once, offer a way back; exits are labelled
+        </UiText>
+        {detail && (
+          <>
+            <Marker x={196} y={182} n={1} />
+            <Marker x={222} y={24} n={2} />
+            <Marker x={222} y={74} n={3} />
+            <Marker x={222} y={146} n={4} />
+          </>
+        )}
+      </g>
+    );
+  },
+};
+
+/* ------------------------------------------------------------------ */
+/* Consistency and standards: one action, one name, one place           */
+/* ------------------------------------------------------------------ */
+export const consistencyPrinciplePlate: IllustrationEntry = {
+  slug: "consistency-principle",
+  title: "Consistency and standards plate",
+  canvas: "sheet",
+  description:
+    "Two rows of three small screens from the same app, each with a way to save a search. In the top row, marked wrong, the action is a text button 'Save' at the top of the first screen, a 'Bookmark' button at the top right of the second, and an unlabelled star at the end of a row on the third: three names, three icons, three places. In the bottom row, marked correct, all three screens use the same labelled 'Save' button in the same position. The same component also carries the same accessible name everywhere.",
+  key: [
+    { n: "1", label: "Inconsistent", detail: "one action with three names, icons and positions; people wonder whether they are the same" },
+    { n: "2", label: "Consistent", detail: "one name, one component, one place, so what is learned once keeps working" },
+    { n: "3", label: "Same identification", detail: "the same function keeps the same label and accessible name (WCAG 2.2 SC 3.2.4)" },
+  ],
+  Art: ({ detail }) => {
+    const screen = (x: number, y: number) => (
+      <g>
+        <rect x={x} y={y} width={116} height={84} rx={7} fill={S.surface} stroke={S.ruleStrong} strokeWidth="0.9" {...hair} />
+        <TextBar x={x + 10} y={y + 40} w={70} />
+        <TextBar x={x + 10} y={y + 54} w={84} />
+        <TextBar x={x + 10} y={y + 68} w={58} />
+      </g>
+    );
+    const xs = [8, 142, 276];
+    return (
+      <g>
+        {xs.map((x) => screen(x, 20))}
+        <UiButton x={18} y={28} w={56} h={24} label="Save" variant="ghost" />
+        <rect x={204} y={28} width={78} height={24} rx={5} fill={S.surface} stroke={S.control} strokeWidth="0.9" {...hair} />
+        <UiText x={243} y={45} anchor="middle">
+          Bookmark
+        </UiText>
+        <path d="M371 60 l3.5 7 7.5 1 -5.5 5.2 1.3 7.6 -6.8 -3.6 -6.8 3.6 1.3 -7.6 -5.5 -5.2 7.5 -1 z" fill="none" stroke={S.ink} strokeWidth="1.1" {...hair} />
+        <Verdict x={200} y={118} ok={false} />
+        <line x1={8} y1={136} x2={392} y2={136} stroke={S.rule} strokeWidth="0.9" {...hair} />
+        {xs.map((x) => (
+          <g key={x}>
+            {screen(x, 152)}
+            <UiButton x={x + 54} y={160} w={52} h={24} label="Save" />
+          </g>
+        ))}
+        <Verdict x={200} y={252} ok />
+        <UiText x={8} y={276} tone="ink3">
+          same action, same name, same place
+        </UiText>
+        {detail && (
+          <>
+            <Marker x={8} y={20} n={1} />
+            <Marker x={8} y={152} n={2} />
+            <Marker x={392} y={186} n={3} />
+          </>
+        )}
+      </g>
+    );
+  },
+};
+
+/* ------------------------------------------------------------------ */
+/* Error prevention: slips constrained, mistakes previewed              */
+/* ------------------------------------------------------------------ */
+export const errorPreventionPlate: IllustrationEntry = {
+  slug: "error-prevention",
+  title: "Error prevention plate",
+  canvas: "sheet",
+  description:
+    "Two halves. On the left, preventing slips: a calendar in which the days before the departure date are disabled so a return date cannot be picked before it, and a card-number field that accepts the number typed with spaces, marked correct. On the right, preventing mistakes: a confirmation that previews the consequence, 'Delete folder Reports — 24 files will be deleted', with the buttons 'Delete 24 files' and 'Cancel'. Beneath each half, the kind of error it addresses: a slip is the right goal carried out wrongly; a mistake is the wrong goal from a misunderstanding.",
+  key: [
+    { n: "1", label: "Constraint", detail: "dates before departure cannot be chosen, so the slip is impossible" },
+    { n: "2", label: "Forgiving format", detail: "the number is accepted with spaces and normalised" },
+    { n: "3", label: "Preview the consequence", detail: "say exactly what will happen before a costly, irreversible action" },
+    { n: "4", label: "Slips and mistakes", detail: "slips need constraints at the point of action; mistakes need better information" },
+  ],
+  Art: ({ detail }) => {
+    const cell = (i: number) => ({ x: 14 + (i % 7) * 24, y: 44 + Math.floor(i / 7) * 22 });
+    return (
+      <g>
+        <UiText x={8} y={24} mono tone="ink3">
+          slips
+        </UiText>
+        <UiText x={214} y={24} mono tone="ink3">
+          mistakes
+        </UiText>
+        <rect x={8} y={34} width={180} height={78} rx={6} fill={S.surface} stroke={S.ruleStrong} strokeWidth="0.9" {...hair} />
+        {Array.from({ length: 21 }, (_, i) => {
+          const c = cell(i);
+          const off = i < 9;
+          const dep = i === 9;
+          const ret = i === 13;
+          return (
+            <rect
+              key={i}
+              x={c.x}
+              y={c.y}
+              width={20}
+              height={18}
+              rx={3}
+              fill={dep || ret ? S.accent : off ? S.sunken : S.surface}
+              stroke={off ? S.rule : S.control}
+              strokeWidth="0.8"
+              strokeDasharray={off ? "2 1.8" : undefined}
+              {...hair}
+            />
+          );
+        })}
+        <UiField x={8} y={134} w={180} label="Card number" value="1234 5678 9012 34" />
+        <Verdict x={176} y={170} ok />
+        <rect x={214} y={34} width={178} height={130} rx={8} fill={S.surface} stroke={S.ruleStrong} strokeWidth="0.9" {...hair} />
+        <UiText x={226} y={58} weight={600}>
+          {`Delete folder "Reports"?`}
+        </UiText>
+        <UiText x={226} y={80} tone="ink2">
+          24 files will be deleted.
+        </UiText>
+        <UiText x={226} y={98} tone="ink2">
+          This cannot be undone.
+        </UiText>
+        <UiButton x={226} y={122} w={104} label="Delete 24 files" />
+        <UiButton x={334} y={122} w={52} label="Cancel" variant="secondary" />
+        <line x1={8} y1={206} x2={392} y2={206} stroke={S.rule} strokeWidth="0.9" {...hair} />
+        <UiText x={8} y={230} weight={600}>
+          right goal, wrong action
+        </UiText>
+        <UiText x={8} y={250} tone="ink2">
+          constrain, default, suggest
+        </UiText>
+        <UiText x={214} y={230} weight={600}>
+          wrong goal
+        </UiText>
+        <UiText x={214} y={250} tone="ink2">
+          inform, preview
+        </UiText>
+        {detail && (
+          <>
+            <Marker x={8} y={34} n={1} />
+            <Marker x={196} y={152} n={2} />
+            <Marker x={214} y={34} n={3} />
+            <Marker x={200} y={218} n={4} />
+          </>
+        )}
+      </g>
+    );
+  },
+};
+
+/* ------------------------------------------------------------------ */
+/* Mapping: control layout mirrors the layout of what it controls       */
+/* ------------------------------------------------------------------ */
+export const mappingPlate: IllustrationEntry = {
+  slug: "mapping",
+  title: "Mapping plate",
+  canvas: "sheet",
+  description:
+    "Two cooker tops, each with four rings in a square. On the left, the four knobs sit in a straight line below, and dashed lines from knobs to rings cross each other, so which knob controls which ring must be worked out; marked wrong. On the right, the four knobs are arranged in the same square as the rings, so the correspondence is seen at once; marked correct. Below, two directional mappings: a slider whose value rises as it is dragged right, and a pair of buttons with plus above minus, following the convention that up means more.",
+  key: [
+    { n: "1", label: "Knobs in a line", detail: "the layout does not match the rings, so people must translate and make errors" },
+    { n: "2", label: "Natural mapping", detail: "knobs in the same square as the rings; the right knob is found by looking" },
+    { n: "3", label: "Directional mapping", detail: "movement of the control matches movement of the value" },
+    { n: "4", label: "Conventional mapping", detail: "plus above minus: up means more" },
+  ],
+  Art: ({ detail }) => {
+    const rings = (ox: number) => [
+      [ox + 44, 48],
+      [ox + 108, 48],
+      [ox + 44, 100],
+      [ox + 108, 100],
+    ] as const;
+    const left = rings(8);
+    const right = rings(208);
+    const lineKnobs = [32, 68, 104, 140].map((x) => [x + 8, 158] as const);
+    const order = [2, 0, 3, 1];
+    const sqKnobs = [
+      [248, 144],
+      [280, 144],
+      [248, 168],
+      [280, 168],
+    ] as const;
+    const hob = (x: number) => <rect x={x} y={20} width={176} height={168} rx={10} fill={S.surface} stroke={S.ruleStrong} strokeWidth="0.9" {...hair} />;
+    const ring = ([x, y]: readonly [number, number], i: number) => (
+      <g key={i}>
+        <circle cx={x} cy={y} r={18} fill="none" stroke={S.ink2} strokeWidth="1.2" {...hair} />
+        <circle cx={x} cy={y} r={10} fill="none" stroke={S.ruleStrong} strokeWidth="0.9" {...hair} />
+      </g>
+    );
+    const knob = ([x, y]: readonly [number, number], i: number) => (
+      <g key={`k${i}`}>
+        <circle cx={x} cy={y} r={9} fill={S.soft} stroke={S.ink} strokeWidth="1.1" {...hair} />
+        <line x1={x} y1={y - 8} x2={x} y2={y - 2} stroke={S.ink} strokeWidth="1.4" {...hair} />
+      </g>
+    );
+    return (
+      <g>
+        {hob(8)}
+        {hob(208)}
+        {left.map(ring)}
+        {right.map(ring)}
+        {lineKnobs.map((k, i) => (
+          <path key={`l${i}`} d={`M${k[0]} ${k[1] - 9} L${left[order[i]][0]} ${left[order[i]][1] + 18}`} fill="none" stroke={S.ink3} strokeWidth="0.9" strokeDasharray="3 2.6" {...hair} />
+        ))}
+        {lineKnobs.map(knob)}
+        {sqKnobs.map(knob)}
+        <rect x={232} y={130} width={64} height={52} rx={6} fill="none" stroke={S.accent} strokeWidth="1.1" strokeDasharray="4 3" {...hair} />
+        <Verdict x={176} y={176} ok={false} />
+        <Verdict x={376} y={176} ok />
+        <line x1={8} y1={206} x2={392} y2={206} stroke={S.rule} strokeWidth="0.9" {...hair} />
+        <rect x={8} y={236} width={180} height={6} rx={3} fill={S.sunken} />
+        <rect x={8} y={236} width={118} height={6} rx={3} fill={S.accent} />
+        <circle cx={126} cy={239} r={9} fill={S.surface} stroke={S.ink} strokeWidth="1.2" {...hair} />
+        <Link from={[140, 222]} to={[184, 222]} tone="accent" />
+        <UiText x={8} y={268} tone="ink2">
+          drag right, value up
+        </UiText>
+        <UiButton x={232} y={218} w={40} h={22} label="+" variant="secondary" />
+        <UiButton x={232} y={244} w={40} h={22} label="−" variant="secondary" />
+        <UiText x={284} y={248} tone="ink2">
+          up means more
+        </UiText>
+        {detail && (
+          <>
+            <Marker x={8} y={158} n={1} />
+            <Marker x={232} y={130} n={2} />
+            <Marker x={8} y={226} n={3} />
+            <Marker x={226} y={218} n={4} />
+          </>
+        )}
+      </g>
+    );
+  },
+};
+
+/* ------------------------------------------------------------------ */
+/* Flexibility and efficiency: visible path plus a discoverable shortcut */
+/* ------------------------------------------------------------------ */
+export const flexibilityEfficiencyPlate: IllustrationEntry = {
+  slug: "flexibility-and-efficiency-of-use",
+  title: "Flexibility and efficiency of use plate",
+  canvas: "sheet",
+  description: (() => {
+    const menu = klmTotal(parseKlm("H M P B B P B B H")).total.toFixed(2);
+    const key = klmTotal(parseKlm("M K K")).total.toFixed(2);
+    return `Two routes to the same command in a library staff tool. Above, the visible path: a Loans menu is open and its item 'Renew selected' shows its keyboard shortcut, ⌘R, beside the label, so people who use the menu see the shortcut every time. Below, the accelerator: the keys ⌘ and R pressed together. Both arrive at the same result, '12 loans renewed'. Beside each route, its estimated time from the keystroke-level model computed in UX Academy's calculator: ${menu} s through the menu and ${key} s with the shortcut.`;
+  })(),
+  key: [
+    { n: "1", label: "Visible path", detail: "a menu everyone can find; it stays for novices and occasional users" },
+    { n: "2", label: "Shortcut shown beside the command", detail: "repeated exposure teaches the faster route without getting in the way" },
+    { n: "3", label: "Accelerator", detail: "the same command in two keystrokes for people who have learned it" },
+    { n: "4", label: "Time saved", detail: "keystroke-level model estimates for a skilled user making no errors" },
+  ],
+  Art: ({ detail }) => {
+    const menu = klmTotal(parseKlm("H M P B B P B B H")).total;
+    const key = klmTotal(parseKlm("M K K")).total;
+    const cap = (x: number, y: number, label: string) => (
+      <g>
+        <rect x={x} y={y} width={40} height={34} rx={6} fill={S.surface} stroke={S.ink2} strokeWidth="1.1" {...hair} />
+        <rect x={x + 2} y={y + 30} width={36} height={2} rx={1} fill={S.ruleStrong} />
+        <UiText x={x + 20} y={y + 22} size={T.strong} mono weight={600} anchor="middle">
+          {label}
+        </UiText>
+      </g>
+    );
+    return (
+      <g>
+        <rect x={8} y={14} width={64} height={26} rx={5} fill={S.soft} stroke={S.ruleStrong} strokeWidth="0.9" {...hair} />
+        <UiText x={18} y={32} weight={600}>
+          Loans
+        </UiText>
+        <rect x={8} y={42} width={200} height={92} rx={7} fill={S.surface} stroke={S.ruleStrong} strokeWidth="0.9" {...hair} />
+        <UiText x={20} y={64}>
+          Open loan
+        </UiText>
+        <rect x={12} y={74} width={192} height={26} rx={4} fill={S.accentWash} />
+        <UiText x={20} y={92} weight={600}>
+          Renew selected
+        </UiText>
+        <UiText x={196} y={92} mono anchor="end" tone="ink2">
+          ⌘R
+        </UiText>
+        <UiText x={20} y={122}>
+          Return
+        </UiText>
+        {cap(8, 172, "⌘")}
+        {cap(56, 172, "R")}
+        <Link from={[212, 87]} to={[262, 128]} via={[250, 90]} />
+        <Link from={[100, 189]} to={[262, 150]} via={[230, 190]} />
+        <rect x={264} y={120} width={128} height={38} rx={7} fill={S.soft} stroke={S.ink2} strokeWidth="1" {...hair} />
+        <Verdict x={282} y={139} ok />
+        <UiText x={296} y={144} weight={600}>
+          12 renewed
+        </UiText>
+        <UiText x={8} y={160} mono tone="ink2">
+          {`menu ≈ ${menu.toFixed(2)} s`}
+        </UiText>
+        <UiText x={8} y={232} mono tone="ink2">
+          {`shortcut ≈ ${key.toFixed(2)} s`}
+        </UiText>
+        {detail && (
+          <>
+            <Marker x={8} y={14} n={1} />
+            <Marker x={204} y={74} n={2} />
+            <Marker x={104} y={172} n={3} />
+            <Marker x={170} y={226} n={4} />
+          </>
+        )}
+      </g>
+    );
+  },
+};
+
+/* ------------------------------------------------------------------ */
+/* Aesthetic and minimalist design: signal kept, noise removed          */
+/* ------------------------------------------------------------------ */
+export const aestheticMinimalistPlate: IllustrationEntry = {
+  slug: "aesthetic-and-minimalist-design",
+  title: "Aesthetic and minimalist design plate",
+  canvas: "sheet",
+  description:
+    "Two versions of a library app's home screen. On the left, marked wrong, a small search box competes with a banner, a carousel, a long news list and decorative blocks; the Renew action is buried at the bottom. On the right, marked correct, the search box is prominent, the two most common tasks, Renew loans and Opening hours, are labelled buttons, and news and events are reachable through one 'More' link rather than removed. Nothing a primary task needs is missing; only what competes with it has moved.",
+  key: [
+    { n: "1", label: "Noise competes with signal", detail: "banners, carousels and long lists lower the visibility of the tasks people came for" },
+    { n: "2", label: "Primary tasks kept and labelled", detail: "everything the main tasks need stays visible" },
+    { n: "3", label: "Rarely needed, deferred", detail: "secondary content is one step away, not deleted" },
+  ],
+  Art: ({ detail }) => (
+    <g>
+      <UiFrame x={8} y={10} w={180} h={232}>
+        <rect x={10} y={20} width={110} height={22} rx={5} fill={S.surface} stroke={S.control} strokeWidth="0.8" {...hair} />
+        <rect x={10} y={50} width={160} height={38} rx={5} fill={S.sunken} />
+        <circle cx={80} cy={96} r={2.5} fill={S.ink3} />
+        <circle cx={90} cy={96} r={2.5} fill={S.ruleStrong} />
+        <circle cx={100} cy={96} r={2.5} fill={S.ruleStrong} />
+        <TextBar x={10} y={110} w={150} strong />
+        <TextBar x={10} y={122} w={140} />
+        <TextBar x={10} y={134} w={156} />
+        <TextBar x={10} y={146} w={120} />
+        <rect x={10} y={156} width={74} height={30} rx={5} fill={S.sunken} />
+        <rect x={92} y={156} width={78} height={30} rx={5} fill={S.sunken} />
+        <UiText x={10} y={208} tone="ink3">
+          Renew
+        </UiText>
+      </UiFrame>
+      <Verdict x={176} y={232} ok={false} />
+      <UiFrame x={212} y={10} w={180} h={232}>
+        <UiField x={10} y={24} w={160} label="Search the catalogue" />
+        <UiButton x={10} y={92} w={160} h={30} label="Renew loans" />
+        <UiButton x={10} y={130} w={160} h={30} label="Opening hours" variant="secondary" />
+        <UiText x={10} y={190} tone="accent">
+          More: news and events
+        </UiText>
+      </UiFrame>
+      <Verdict x={380} y={232} ok />
+      <UiText x={8} y={272} tone="ink3">
+        keep what tasks need; move what competes
+      </UiText>
+      {detail && (
+        <>
+          <Marker x={18} y={60} n={1} />
+          <Marker x={216} y={102} n={2} />
+          <Marker x={216} y={196} n={3} />
+        </>
+      )}
+    </g>
+  ),
+};
+
+/* ------------------------------------------------------------------ */
+/* Error recovery: recognise, diagnose, recover — input kept            */
+/* ------------------------------------------------------------------ */
+export const errorRecoveryPlate: IllustrationEntry = {
+  slug: "error-recovery",
+  title: "Error recovery plate",
+  canvas: "sheet",
+  description:
+    "A sign-up form after a failed submit. At the top, an error summary titled 'There are 2 problems' lists each problem as a link to its field. Below, the card-number field still holds what the person typed, has a thicker border, an error icon and the text 'Enter all 14 digits' directly above it. A third field that was correct keeps its value without any error. Beside the form, three labels mark the steps of recovery: recognise (the summary and the marked field), diagnose (the precise message) and recover (the kept input and the suggested fix).",
+  key: [
+    { n: "1", label: "Recognise", detail: "a summary that takes focus and links to each problem" },
+    { n: "2", label: "Diagnose", detail: "a precise message in plain words beside the field, with an icon, not colour alone" },
+    { n: "3", label: "Recover", detail: "the typed value is kept and the message says how to fix it" },
+    { n: "4", label: "Nothing else lost", detail: "correct fields keep their values" },
+  ],
+  Art: ({ detail }) => (
+    <g>
+      <UiFrame x={8} y={8} w={236} h={262}>
+        <rect x={10} y={20} width={216} height={64} rx={6} fill={S.errorWash} stroke={S.error} strokeWidth="1.4" {...hair} />
+        <UiText x={20} y={40} weight={600}>
+          There are 2 problems
+        </UiText>
+        <UiText x={20} y={60} tone="accent">
+          Card number
+        </UiText>
+        <UiText x={20} y={76} tone="accent">
+          Email address
+        </UiText>
+        <rect x={10} y={98} width={4} height={74} rx={2} fill={S.error} />
+        <UiText x={22} y={112} weight={600}>
+          Library card number
+        </UiText>
+        <Verdict x={30} y={130} ok={false} r={7} />
+        <UiText x={42} y={135} tone="error">
+          Enter all 14 digits
+        </UiText>
+        <rect x={22} y={144} width={204} height={26} rx={5} fill={S.surface} stroke={S.error} strokeWidth="2" {...hair} />
+        <UiText x={32} y={162} mono>
+          1234 5678 9012
+        </UiText>
+        <UiField x={22} y={196} w={204} label="Name" value="Ada Byron" />
+      </UiFrame>
+      <UiText x={262} y={52} weight={600}>
+        recognise
+      </UiText>
+      <UiText x={262} y={136} weight={600}>
+        diagnose
+      </UiText>
+      <UiText x={262} y={166} weight={600}>
+        recover
+      </UiText>
+      <UiText x={262} y={232} tone="ink2">
+        other input kept
+      </UiText>
+      <Link from={[258, 48]} to={[238, 48]} tone="mute" />
+      <Link from={[258, 132]} to={[238, 132]} tone="mute" />
+      <Link from={[258, 162]} to={[238, 160]} tone="mute" />
+      {detail && (
+        <>
+          <Marker x={18} y={28} n={1} />
+          <Marker x={392} y={132} n={2} />
+          <Marker x={392} y={162} n={3} />
+          <Marker x={392} y={228} n={4} />
+        </>
+      )}
+    </g>
+  ),
+};
+
+/* ------------------------------------------------------------------ */
+/* Help and documentation: help that escalates only as far as needed    */
+/* ------------------------------------------------------------------ */
+export const helpDocumentationPlate: IllustrationEntry = {
+  slug: "help-and-documentation",
+  title: "Help and documentation plate",
+  canvas: "sheet",
+  description:
+    "A renewal screen with help at four depths, each linking to the next. A one-line hint sits under the date field: 'Up to 4 weeks from today'. Beside a term, a toggletip button 'What is a hold?' opens a short definition. A non-modal help panel at the side lists three numbered steps for renewing a book while the page stays usable. At the bottom, a link to the full article. The deeper the level, the more it says and the less often it is needed.",
+  key: [
+    { n: "1", label: "Inline hint", detail: "always visible, one sentence, where the question arises" },
+    { n: "2", label: "Toggletip", detail: "opens on request (click, not hover only), a short definition" },
+    { n: "3", label: "Help panel", detail: "non-modal steps people can follow while doing the task" },
+    { n: "4", label: "Full article", detail: "comprehensive, searchable, titled in people's words" },
+  ],
+  Art: ({ detail }) => (
+    <g>
+      <UiFrame x={8} y={8} w={214} h={250}>
+        <UiText x={14} y={26} weight={600}>
+          Renew loans
+        </UiText>
+        <UiField x={14} y={58} w={180} label="Renew until" value="26 Nov" />
+        <UiText x={14} y={106} tone="ink2">
+          Up to 4 weeks from today
+        </UiText>
+        <rect x={14} y={118} width={130} height={24} rx={5} fill={S.surface} stroke={S.control} strokeWidth="0.9" {...hair} />
+        <UiText x={22} y={135}>
+          What is a hold?
+        </UiText>
+        <rect x={14} y={148} width={186} height={44} rx={6} fill={S.soft} stroke={S.ruleStrong} strokeWidth="0.9" {...hair} />
+        <UiText x={22} y={166} tone="ink2">
+          Another reader reserved it,
+        </UiText>
+        <UiText x={22} y={182} tone="ink2">
+          so it cannot be renewed.
+        </UiText>
+        <UiButton x={14} y={212} w={120} label="Renew" />
+      </UiFrame>
+      <rect x={232} y={8} width={160} height={192} rx={8} fill={S.surface} stroke={S.ink2} strokeWidth="1" {...hair} />
+      <UiText x={244} y={30} weight={600}>
+        Renew a book
+      </UiText>
+      {["Open Loans", "Select books", "Renew selected"].map((t, i) => (
+        <g key={t}>
+          <circle cx={252} cy={52 + i * 28} r={8} fill={S.soft} stroke={S.ink2} strokeWidth="0.9" {...hair} />
+          <UiText x={252} y={56 + i * 28} mono anchor="middle">
+            {String(i + 1)}
+          </UiText>
+          <UiText x={266} y={56 + i * 28}>
+            {t}
+          </UiText>
+        </g>
+      ))}
+      <UiText x={244} y={150} tone="accent">
+        Full guide to renewals
+      </UiText>
+      <UiButton x={244} y={164} w={84} h={24} label="Close" variant="secondary" />
+      <line x1={232} y1={222} x2={392} y2={222} stroke={S.rule} strokeWidth="0.9" {...hair} />
+      <UiText x={232} y={246} tone="ink3">
+        each level links to the next
+      </UiText>
+      {detail && (
+        <>
+          <Marker x={8} y={100} n={1} />
+          <Marker x={160} y={146} n={2} />
+          <Marker x={392} y={20} n={3} />
+          <Marker x={232} y={146} n={4} />
+        </>
+      )}
+    </g>
+  ),
+};
+
+/* ------------------------------------------------------------------ */
+/* Theme architecture: one component, roles, themes on separate axes    */
+/* ------------------------------------------------------------------ */
+export const themeArchitecturePlate: IllustrationEntry = {
+  slug: "theme-architecture",
+  title: "Theme architecture plate",
+  canvas: "sheet",
+  description:
+    "The same library card component shown three times, in light, dark and high-contrast themes, drawn in the fixed colours of the token lessons' palette. Above the cards, one row of semantic role names — surface, text, action — that every card uses. Between the roles and each card, the theme's mapping: light points the roles to grey.0, grey.900 and blue.600; dark to grey.950, grey.50 and blue.400; high contrast to grey.0, grey.950 and blue.700. The component never changes; only the mapping does. Below, two theme axes, mode and contrast, combine in a stated order.",
+  key: [
+    { n: "1", label: "Semantic roles", detail: "the names components use; identical in every theme" },
+    { n: "2", label: "One mapping per theme", detail: "each theme points the roles at different primitives" },
+    { n: "3", label: "Same component", detail: "rendered three ways without any change to its code" },
+    { n: "4", label: "Theme axes", detail: "mode and contrast vary independently and combine in a resolution order" },
+  ],
+  Art: ({ detail }) => {
+    const themes = [
+      { x: 8, name: "light", s: "grey-0", t: "grey-900", a: "blue-600", on: "grey-0" },
+      { x: 140, name: "dark", s: "grey-950", t: "grey-50", a: "blue-400", on: "grey-950" },
+      { x: 272, name: "high contrast", s: "grey-0", t: "grey-950", a: "blue-700", on: "grey-0" },
+    ] as const;
+    const hc = (k: keyof typeof TOKEN_SAMPLES) => tok(k);
+    return (
+      <g>
+        {["surface", "text", "action"].map((r, i) => (
+          <g key={r}>
+            <rect x={70 + i * 92} y={12} width={80} height={26} rx={6} fill={S.soft} stroke={S.ink2} strokeWidth="1.1" {...hair} />
+            <UiText x={110 + i * 92} y={30} mono weight={600} anchor="middle">
+              {r}
+            </UiText>
+          </g>
+        ))}
+        {themes.map((th) => (
+          <g key={th.name}>
+            <UiText x={th.x + 60} y={64} mono tone="ink3" anchor="middle">
+              {th.name}
+            </UiText>
+            <Link from={[th.x + 60, 42]} to={[th.x + 60, 52]} tone="mute" />
+            <rect x={th.x} y={74} width={120} height={112} rx={8} fill={hc(th.s)} stroke={S.ruleStrong} strokeWidth="0.9" {...hair} />
+            <text x={th.x + 12} y={100} fontSize={T.ui} fontWeight={600} fill={hc(th.t)} fontFamily="var(--font-plex-sans), sans-serif">
+              Middlemarch
+            </text>
+            <rect x={th.x + 12} y={110} width={70} height={5} rx={2.5} fill={hc(th.t)} opacity={0.55} />
+            <rect x={th.x + 12} y={146} width={84} height={26} rx={5} fill={hc(th.a)} />
+            <text x={th.x + 54} y={163} fontSize={T.ui} fontWeight={600} fill={hc(th.on)} textAnchor="middle" fontFamily="var(--font-plex-sans), sans-serif">
+              Renew
+            </text>
+          </g>
+        ))}
+        <line x1={8} y1={206} x2={392} y2={206} stroke={S.rule} strokeWidth="0.9" {...hair} />
+        <rect x={8} y={220} width={110} height={26} rx={6} fill={S.surface} stroke={S.ruleStrong} strokeWidth="0.9" {...hair} />
+        <UiText x={63} y={238} mono anchor="middle">
+          mode
+        </UiText>
+        <rect x={146} y={220} width={110} height={26} rx={6} fill={S.surface} stroke={S.ruleStrong} strokeWidth="0.9" {...hair} />
+        <UiText x={201} y={238} mono anchor="middle">
+          contrast
+        </UiText>
+        <Link from={[118, 233]} to={[144, 233]} />
+        <UiText x={268} y={238} tone="ink2">
+          later one wins
+        </UiText>
+        {detail && (
+          <>
+            <Marker x={70} y={12} n={1} />
+            <Marker x={140} y={64} n={2} />
+            <Marker x={392} y={74} n={3} />
+            <Marker x={8} y={220} n={4} />
+          </>
+        )}
+      </g>
+    );
+  },
+};
+
+/* ------------------------------------------------------------------ */
+/* Design language: principle → decisions → tokens → component          */
+/* ------------------------------------------------------------------ */
+export const designLanguagePlate: IllustrationEntry = {
+  slug: "design-language",
+  title: "Design language plate",
+  canvas: "sheet",
+  description:
+    "A principle, 'calm and precise', at the top left, traced by arrows into four foundation decisions: type (one heading style), space (one spacing rhythm), colour (ink with one accent) and motion (productive by default, expressive only for rare moments). Each decision points to a named token beside it — font.heading, space.inset, color.action, motion.productive — and all four tokens feed one card component at the bottom right that expresses them. Reading the drawing from left to right traces any value in the component back to the principle that justifies it.",
+  key: [
+    { n: "1", label: "Principle", detail: "a short statement of intent that can settle a decision" },
+    { n: "2", label: "Foundation decisions", detail: "type, space, colour and motion choices that follow from it" },
+    { n: "3", label: "Tokens", detail: "each decision named once so components can consume it" },
+    { n: "4", label: "Component", detail: "expresses the language; every value traces back to the principle" },
+  ],
+  Art: ({ detail }) => {
+    const rows = [
+      ["type", "one heading style", "font.heading"],
+      ["space", "one spacing rhythm", "space.inset"],
+      ["colour", "ink + one accent", "color.action"],
+      ["motion", "productive first", "motion.productive"],
+    ] as const;
+    const ry = (i: number) => 64 + i * 40;
+    return (
+      <g>
+        <rect x={8} y={12} width={150} height={32} rx={8} fill={S.soft} stroke={S.ink} strokeWidth="1.2" {...hair} />
+        <UiText x={83} y={33} weight={600} anchor="middle">
+          calm and precise
+        </UiText>
+        {rows.map(([f, d, t], i) => (
+          <g key={f}>
+            <Link from={[30, 44]} to={[40, ry(i) + 14]} via={[30, ry(i) + 14]} tone="mute" />
+            <rect x={42} y={ry(i)} width={150} height={28} rx={6} fill={S.surface} stroke={S.ruleStrong} strokeWidth="0.9" {...hair} />
+            <UiText x={52} y={ry(i) + 19}>
+              {d}
+            </UiText>
+            <Link from={[192, ry(i) + 14]} to={[214, ry(i) + 14]} />
+            <rect x={216} y={ry(i)} width={176} height={28} rx={6} fill={S.soft} stroke={S.ink2} strokeWidth="1.1" {...hair} />
+            <UiText x={304} y={ry(i) + 19} mono weight={600} anchor="middle">
+              {t}
+            </UiText>
+          </g>
+        ))}
+        <line x1={8} y1={232} x2={392} y2={232} stroke={S.rule} strokeWidth="0.9" {...hair} />
+        <rect x={216} y={244} width={176} height={40} rx={8} fill={S.surface} stroke={S.ink2} strokeWidth="1" {...hair} />
+        <UiText x={228} y={268} weight={600}>
+          Card
+        </UiText>
+        <rect x={318} y={252} width={64} height={24} rx={5} fill={S.accent} />
+        <UiText x={350} y={268} weight={600} anchor="middle" tone="surface">
+          Renew
+        </UiText>
+        <Link from={[304, 220]} to={[304, 242]} />
+        <UiText x={8} y={268} tone="ink3">
+          every value traces back
+        </UiText>
+        {detail && (
+          <>
+            <Marker x={8} y={12} n={1} />
+            <Marker x={42} y={ry(0)} n={2} />
+            <Marker x={392} y={ry(0)} n={3} />
+            <Marker x={216} y={244} n={4} />
           </>
         )}
       </g>

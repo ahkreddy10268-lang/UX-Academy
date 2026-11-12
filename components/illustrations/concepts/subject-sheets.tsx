@@ -1356,12 +1356,12 @@ export const designThinkingPlanned: IllustrationEntry = {
   },
 };
 
-export const atomicDesignPlanned: IllustrationEntry = {
+export const atomicDesignPlate: IllustrationEntry = {
   slug: "atomic-design",
   title: "Atomic design plate",
   canvas: "sheet",
   description:
-    "A planned topic. Brad Frost's five stages of atomic design built up from left to right. Atoms: a label, an input and a button on their own. A molecule: the three combined into a search form. An organism: a site header that contains the search form beside a logo and navigation. A template: a page wireframe that places the header above grey content areas. A page: the same template with real content in it. Each stage is assembled from the one before.",
+    "Brad Frost's five stages of atomic design built up from left to right. Atoms: a label, an input and a button on their own. A molecule: the three combined into a search form. An organism: a site header that contains the search form beside a logo and navigation. A template: a page wireframe that places the header above grey content areas. A page: the same template with real content in it. Each stage is assembled from the one before, and the page stage tests the parts with real content.",
   key: [
     { n: "1", label: "Atoms", detail: "the smallest interface parts: a label, an input, a button" },
     { n: "2", label: "Molecules", detail: "small groups that work as a unit: a search form" },
@@ -1370,10 +1370,6 @@ export const atomicDesignPlanned: IllustrationEntry = {
   ],
   Art: ({ detail }) => (
     <g>
-      <rect x={150} y={6} width={100} height={22} rx={11} fill="none" stroke={S.ink3} strokeWidth="0.9" strokeDasharray="3 2.4" {...hair} />
-      <UiText x={200} y={22} mono tone="ink3" anchor="middle">
-        planned
-      </UiText>
       {/* atoms */}
       <UiText x={8} y={66} tone="ink2" weight={600}>
         Search

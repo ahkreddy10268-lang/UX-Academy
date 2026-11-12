@@ -62,6 +62,14 @@
     "registeredContainer": "Proceedings of the 2019 CHI Conference on Human Factors in Computing Systems",
     "similarity": 1
   },
+  "anderson-2004": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-11",
+    "registeredTitle": "An Integrated Theory of the Mind.",
+    "registeredYear": 2004,
+    "registeredContainer": "Psychological Review",
+    "similarity": 1
+  },
   "apple-hig": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
@@ -72,6 +80,26 @@
     "checkedAt": "2026-11-09",
     "httpStatus": 200
   },
+  "apple-hig-layout": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "apple-hig-typography": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "apple-sf-symbols": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "ark-ui": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
   "atkinson-shiffrin-1968": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",
@@ -80,14 +108,39 @@
     "registeredContainer": "Psychology of Learning and Motivation",
     "similarity": 1
   },
+  "atlassian-color": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
   "atlassian-design": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
     "httpStatus": 200
   },
+  "atlassian-spacing": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "atlassian-typography": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "aws-backoff-jitter": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
   "ax-patterns": {
     "status": "url-reachable",
     "checkedAt": "2026-11-09",
+    "httpStatus": 200
+  },
+  "axe-core": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-12",
     "httpStatus": 200
   },
   "baddeley-1994": {
@@ -224,7 +277,7 @@
   },
   "budiu-recognition-recall": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-03",
+    "checkedAt": "2026-11-11",
     "httpStatus": 200
   },
   "burmistrov-et-al-2015": {
@@ -235,6 +288,11 @@
     "registeredContainer": "Lecture Notes in Computer Science",
     "similarity": 1
   },
+  "carbon-2x-grid": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
   "carbon-design-system": {
     "status": "url-reachable",
     "checkedAt": "2026-11-06",
@@ -243,6 +301,26 @@
   "carbon-for-ai": {
     "status": "url-reachable",
     "checkedAt": "2026-11-09",
+    "httpStatus": 200
+  },
+  "carbon-icons": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "carbon-motion": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "carbon-spacing": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "carbon-themes": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
     "httpStatus": 200
   },
   "card-english-burr-1978": {
@@ -263,7 +341,7 @@
   },
   "card-robertson-mackinlay-1991": {
     "status": "doi-verified",
-    "checkedAt": "2026-11-03",
+    "checkedAt": "2026-11-11",
     "registeredTitle": "The information visualizer, an information workspace",
     "registeredYear": 1991,
     "registeredContainer": "Proceedings of the SIGCHI conference on Human factors in computing systems Reaching through technology - CHI '91",
@@ -290,12 +368,30 @@
     "registeredContainer": "Proceedings of the SIGCHI Conference on Human Factors in Computing Systems",
     "similarity": 1
   },
+  "chakra-ui-installation": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
   "chandler-sweller-1991": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",
     "registeredTitle": "Cognitive Load Theory and the Format of Instruction",
     "registeredYear": 1991,
     "registeredContainer": "Cognition and Instruction",
+    "similarity": 1
+  },
+  "changesets": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-12",
+    "httpStatus": 200
+  },
+  "chapanis-lindenbaum-1959": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-11",
+    "registeredTitle": "A Reaction Time Study of Four Control-Display Linkages",
+    "registeredYear": 1959,
+    "registeredContainer": "Human Factors: The Journal of the Human Factors and Ergonomics Society",
     "similarity": 1
   },
   "chernev-bockenholt-goodman-2015": {
@@ -309,6 +405,11 @@
   "christensen-et-al-2016": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "chromatic-docs": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-12",
     "httpStatus": 200
   },
   "cloudscape-genai-follow-up": {
@@ -376,6 +477,11 @@
     "checkedAt": "2026-11-06",
     "httpStatus": 200
   },
+  "cva-variants": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
   "de-jong-2010": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",
@@ -422,9 +528,19 @@
     "checkedAt": "2026-11-03",
     "httpStatus": 200
   },
+  "dtcg-color-2025": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
   "dtcg-format-2025": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "dtcg-resolver-2025": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
     "httpStatus": 200
   },
   "engelbart-1962": {
@@ -461,9 +577,24 @@
     "registeredContainer": "Behavior Research Methods, Instruments, &amp; Computers",
     "similarity": 1
   },
+  "figma-component-properties": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
   "figma-learn": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "figma-library-analytics": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-12",
+    "httpStatus": 200
+  },
+  "figma-variants": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
     "httpStatus": 200
   },
   "finstad-2010": {
@@ -482,9 +613,32 @@
     "registeredContainer": "Journal of Experimental Psychology",
     "similarity": 1
   },
+  "fitts-seeger-1953": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-11",
+    "registeredTitle": "S-R compatibility: spatial characteristics of stimulus and response codes.",
+    "registeredYear": 1953,
+    "registeredContainer": "Journal of Experimental Psychology",
+    "similarity": 1
+  },
   "fluent-2": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "fluent-2-design-tokens": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "fluent-2-elevation": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "fluent-2-typography": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
     "httpStatus": 200
   },
   "fornell-1992": {
@@ -503,9 +657,14 @@
     "registeredContainer": "Journal of Personality and Social Psychology",
     "similarity": 1
   },
+  "frost-2013": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
   "frost-2016": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-06",
+    "checkedAt": "2026-11-11",
     "httpStatus": 200
   },
   "furnas-et-al-1987": {
@@ -560,14 +719,44 @@
     "registeredContainer": "Communications of the ACM",
     "similarity": 1
   },
+  "govuk-component-lifecycle": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-12",
+    "httpStatus": 200
+  },
+  "govuk-contribution-criteria": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-12",
+    "httpStatus": 200
+  },
   "govuk-design-system": {
     "status": "url-reachable",
     "checkedAt": "2026-11-06",
     "httpStatus": 200
   },
+  "govuk-develop-component": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-12",
+    "httpStatus": 200
+  },
+  "govuk-propose-component": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-12",
+    "httpStatus": 200
+  },
   "govuk-service-manual": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "govuk-spacing": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "govuk-type-scale": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
     "httpStatus": 200
   },
   "govuk-user-research": {
@@ -613,6 +802,14 @@
     "registeredTitle": "Mental models and problem solving in using a calculator",
     "registeredYear": 1983,
     "registeredContainer": "Proceedings of the SIGCHI conference on Human Factors in Computing Systems  - CHI '83",
+    "similarity": 1
+  },
+  "harel-1987": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-11",
+    "registeredTitle": "Statecharts: a visual formalism for complex systems",
+    "registeredYear": 1987,
+    "registeredContainer": "Science of Computer Programming",
     "similarity": 1
   },
   "harrison-sengers-tatar-2011": {
@@ -770,6 +967,11 @@
     "registeredContainer": "Journal of Experimental Psychology",
     "similarity": 1
   },
+  "ibm-design-language": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
   "ideo-design-kit": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
@@ -836,6 +1038,11 @@
     "registeredYear": 1996,
     "registeredContainer": "ACM Transactions on Computer-Human Interaction",
     "similarity": 1
+  },
+  "jscodeshift": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-12",
+    "httpStatus": 200
   },
   "kahneman-et-al-1993": {
     "status": "doi-verified",
@@ -1022,6 +1229,26 @@
     "registeredContainer": "Psychological Review",
     "similarity": 1
   },
+  "m3-color-roles": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "m3-design-tokens": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "m3-elevation": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "m3-type-scale": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
   "machado-oliveira-fernandes-2009": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",
@@ -1085,6 +1312,41 @@
     "checkedAt": "2026-11-03",
     "httpStatus": 403
   },
+  "mdn-clamp": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "mdn-color-scheme": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "mdn-container-queries": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "mdn-custom-properties": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "mdn-lazy-loading": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "mdn-prefers-color-scheme": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "mdn-prefers-reduced-motion": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
   "miller-1956": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",
@@ -1146,6 +1408,11 @@
   "ms-hai-guidelines": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "mui-overview": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
     "httpStatus": 200
   },
   "muller-kuhn-1993": {
@@ -1272,10 +1539,98 @@
     "checkedAt": "2026-11-03",
     "httpStatus": 200
   },
+  "nng-aesthetic-minimalist": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "nng-consistency-standards": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "nng-empty-states": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "nng-error-messages": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "nng-flexibility-efficiency": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "nng-help-documentation": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "nng-heuristic-evaluation-howto": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-12",
+    "httpStatus": 200
+  },
+  "nng-match-real-world": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-12",
+    "httpStatus": 200
+  },
+  "nng-mobile-tables": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "nng-natural-mappings": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "nng-progress-indicators": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "nng-skeleton-screens": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "nng-slips": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "nng-user-control-freedom": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "nng-user-mistakes": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "nng-visibility-system-status": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
   "nngroup-articles": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
     "httpStatus": 200
+  },
+  "norman-1981": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-11",
+    "registeredTitle": "Categorization of action slips.",
+    "registeredYear": 1981,
+    "registeredContainer": "Psychological Review",
+    "similarity": 1
   },
   "norman-1986": {
     "status": "doi-verified",
@@ -1319,6 +1674,11 @@
     "registeredTitle": "Social Work with Disabled People",
     "registeredYear": 1983,
     "similarity": 1
+  },
+  "open-ui": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
   },
   "paas-1992": {
     "status": "doi-verified",
@@ -1365,6 +1725,11 @@
     "registeredContainer": "Psychological Review",
     "similarity": 1
   },
+  "playwright-snapshots": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-12",
+    "httpStatus": 200
+  },
   "polson-et-al-1992": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",
@@ -1379,6 +1744,78 @@
     "registeredTitle": "Theory-Based Design for Easily Learned Interfaces",
     "registeredYear": 1990,
     "registeredContainer": "Human–Computer Interaction",
+    "similarity": 1
+  },
+  "primer-component-status": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "primer-react-philosophy": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "radix-composition": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "radix-primitives": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "react-aria": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "react-error-boundaries": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "react-hydrateroot": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "react-reacting-to-input": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "react-scanner": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-12",
+    "httpStatus": 200
+  },
+  "react-sharing-state": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "react-suspense": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "react-use-client": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "react-use-optimistic": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "reason-1990": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-11",
+    "registeredTitle": "Human Error",
+    "registeredYear": 1990,
     "similarity": 1
   },
   "redelmeier-kahneman-1996": {
@@ -1400,6 +1837,11 @@
   "reichheld-2003": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "rfc-9110": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
     "httpStatus": 200
   },
   "rodden-hutchinson-fu-2010": {
@@ -1552,6 +1994,11 @@
     "checkedAt": "2026-11-03",
     "httpStatus": 503
   },
+  "shopify-polaris": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
   "sigchi-about": {
     "status": "url-reachable",
     "checkedAt": "2026-11-04",
@@ -1597,6 +2044,26 @@
     "registeredContainer": "Quarterly Journal of Experimental Psychology",
     "similarity": 0.67
   },
+  "storybook-interaction-tests": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-12",
+    "httpStatus": 200
+  },
+  "style-dictionary-dtcg": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "stylelint-color-no-hex": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-12",
+    "httpStatus": 200
+  },
+  "stylelint-unit-disallowed-list": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-12",
+    "httpStatus": 200
+  },
   "sweller-1988": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",
@@ -1637,9 +2104,24 @@
     "registeredContainer": "Educational Psychology Review",
     "similarity": 1
   },
+  "tailwind-theme": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "tanstack-virtual": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
   "tesler-nomodes": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "tokens-studio-docs": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
     "httpStatus": 200
   },
   "tractinsky-1997": {
@@ -1666,6 +2148,16 @@
     "registeredContainer": "Cognitive Psychology",
     "similarity": 1
   },
+  "tufte-1983": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "typescript-narrowing": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
   "un-crpd-2006": {
     "status": "url-reachable",
     "checkedAt": "2026-11-05",
@@ -1679,6 +2171,16 @@
   "uswds": {
     "status": "url-reachable",
     "checkedAt": "2026-11-06",
+    "httpStatus": 200
+  },
+  "uswds-color": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "uswds-spacing-units": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
     "httpStatus": 200
   },
   "uxcel": {
@@ -1696,6 +2198,14 @@
     "checkedAt": "2026-11-03",
     "httpStatus": 200
   },
+  "van-der-meij-carroll-1998": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-11",
+    "registeredTitle": "Principles and Heuristics for Designing Minimalist Instruction",
+    "registeredYear": 1998,
+    "registeredContainer": "Minimalism Beyond the Nurnberg Funnel",
+    "similarity": 1
+  },
   "virzi-1992": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",
@@ -1712,9 +2222,49 @@
     "registeredContainer": "Psychologische Forschung",
     "similarity": 1
   },
+  "w3c-apg-button": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "w3c-apg-grid": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "w3c-apg-keyboard": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "w3c-apg-table": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "w3c-apg-tabs": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
   "w3c-aria-apg": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "w3c-resource-timing": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "w3c-understanding-pause-stop-hide": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "w3c-understanding-status-messages": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
     "httpStatus": 200
   },
   "w3c-understanding-wcag-22": {
@@ -1725,6 +2275,16 @@
   "w3c-wai": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "w3c-wai-aria-12": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "w3c-wai-tables-tutorial": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
     "httpStatus": 200
   },
   "w3c-wcag-21": {
@@ -1740,6 +2300,11 @@
   "w3c-wcag-3-wd": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "w3c-wcag-em-2": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-12",
     "httpStatus": 200
   },
   "w3c-wcag-overview": {
@@ -1766,6 +2331,26 @@
   "webaim": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "webdev-cls": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "webdev-inp": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "webdev-lazy-images": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "webdev-lcp": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
     "httpStatus": 200
   },
   "weiser-1991": {
@@ -1806,6 +2391,11 @@
     "registeredYear": 2004,
     "registeredContainer": "Nature Reviews Neuroscience",
     "similarity": 1
+  },
+  "wroblewski-2013-spinner": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-11",
+    "httpStatus": 200
   },
   "yonelinas-2002": {
     "status": "doi-verified",

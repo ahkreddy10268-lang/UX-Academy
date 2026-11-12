@@ -21,10 +21,15 @@ const ROLE: Record<CalloutRole, { label: string; cls: string; glyph: string }> =
   misconception: { label: "Common misreading", cls: "cat-rose", glyph: "×" },
 };
 
-export function Callout({ role, label, children, className = "" }: { role: CalloutRole; label?: string; children: ReactNode; className?: string }) {
+/**
+ * `landmark={false}` renders a note instead of a complementary landmark, for
+ * long pages that repeat a role many times (axe: landmarks must be unique).
+ */
+export function Callout({ role, label, children, className = "", landmark = true }: { role: CalloutRole; label?: string; children: ReactNode; className?: string; landmark?: boolean }) {
   const r = ROLE[role];
+  const Tag = landmark ? "aside" : "div";
   return (
-    <aside className={`${r.cls} rounded-md border border-rule border-l-[3px] border-l-c bg-soft p-5 ${className}`} aria-label={label ?? r.label}>
+    <Tag role={landmark ? undefined : "note"} className={`${r.cls} rounded-md border border-rule border-l-[3px] border-l-c bg-soft p-5 ${className}`} aria-label={label ?? r.label}>
       <p className="flex items-center gap-2 font-mono text-[11px] font-medium uppercase tracking-[0.08em] text-ink-2">
         <span aria-hidden className="grid h-5 w-5 place-items-center rounded-xs bg-c-wash font-mono text-[11px] normal-case tracking-normal text-c-ink">
           {r.glyph}
@@ -32,6 +37,6 @@ export function Callout({ role, label, children, className = "" }: { role: Callo
         {label ?? r.label}
       </p>
       <div className="mt-3 text-ink">{children}</div>
-    </aside>
+    </Tag>
   );
 }

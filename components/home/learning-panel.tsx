@@ -2,12 +2,11 @@
 
 import Link from "next/link";
 import { Icon } from "@/components/shell/icons";
+import { DEPTH_LABEL } from "@/lib/content/labels";
 import { isDue, useLearner } from "@/lib/store/store";
 
 export type PanelPath = { id: string; title: string; steps: string[] };
 type Props = { titles: Record<string, string>; paths: PanelPath[]; starters: string[] };
-
-const LEVEL_LABEL = { beginner: "Beginner", intermediate: "Intermediate", advanced: "Advanced" } as const;
 
 /**
  * Home "continue learning" panel. Everything shown is read from this browser's
@@ -86,7 +85,7 @@ export function LearningPanel({ titles, paths, starters }: Props) {
         </div>
         <div className="bg-surface p-5">
           <p className="label">Reading level</p>
-          <p className="t-sub mt-2 text-base">{LEVEL_LABEL[level]}</p>
+          <p className="t-sub mt-2 text-base">{DEPTH_LABEL[level]}</p>
           <p className="mt-1 text-xs text-ink-3">The depth concept pages open at. Change it on any concept.</p>
         </div>
         <div className="bg-surface p-5">

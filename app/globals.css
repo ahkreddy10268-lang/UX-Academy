@@ -543,12 +543,29 @@ textarea {
    computes with lib/formulas. Theme-independent on purpose, because the
    printed ratio must stay true; never used for interface text or surfaces.
    Kept equal to CONTRAST_SAMPLES in components/illustrations/concepts/
-   learning-sheets.tsx (tests/tokens.test.ts). */
+   learning-sheets.tsx (tests/tokens.test.ts); the --sample-token-* values
+   equal TOKEN_SAMPLES there. */
 :root {
   /* Illustration samples */
   --sample-white: #ffffff;
   --sample-grey-pass: #767676;
   --sample-grey-fail: #949494;
+  /* The illustrative token palette of the primitive- and semantic-tokens lessons (D-114) */
+  --sample-token-grey-0: #ffffff;
+  --sample-token-grey-50: #f6f6f4;
+  --sample-token-grey-300: #c9c8c3;
+  --sample-token-grey-500: #8a8983;
+  --sample-token-grey-600: #6b6a64;
+  --sample-token-grey-700: #4f4e49;
+  --sample-token-grey-900: #1f1e1c;
+  --sample-token-grey-950: #141413;
+  --sample-token-red-700: #b42318;
+  --sample-token-red-400: #f07a6e;
+  --sample-token-blue-600: #2457c5;
+  --sample-token-blue-400: #5f92e8;
+  --sample-token-blue-700: #1b449c;
+  --sample-token-orange-500: #e8742a;
+  --sample-token-orange-700: #c2410c;
 }
 
 /* Visualisation canvas — dark technical editorial (illustration v6, D-086).
@@ -873,6 +890,17 @@ summary { min-height: 24px; padding-block: 2px; }
 .btn[aria-busy="true"] { cursor: progress; }
 .btn[aria-busy="true"]::before { content: ""; width: 0.875rem; height: 0.875rem; border-radius: 999px; border: 2px solid currentColor; border-right-color: transparent; animation: spin 0.8s linear infinite; }
 @keyframes spin { to { transform: rotate(360deg); } }
+
+/* Async State Lab (D-126): skeleton shimmer moved with transform on a pseudo-element,
+   a spinner, and a lab-level reduced-motion switch that removes both animations. */
+.lab-skeleton { position: relative; overflow: hidden; background: var(--sunken); border-radius: var(--radius-xs); }
+.lab-skeleton::after { content: ""; position: absolute; inset: 0; transform: translateX(-100%); background: linear-gradient(90deg, transparent, var(--surface), transparent); opacity: 0.7; }
+.lab-spinner { display: inline-block; width: 1.25rem; height: 1.25rem; border-radius: 999px; border: 2px solid var(--ink-3); border-right-color: transparent; }
+@media (prefers-reduced-motion: no-preference) {
+  [data-motion="full"] .lab-skeleton::after { animation: lab-sweep 1.4s ease-in-out infinite; }
+  [data-motion="full"] .lab-spinner { animation: spin 0.8s linear infinite; }
+}
+@keyframes lab-sweep { to { transform: translateX(100%); } }
 
 .field {
   display: block; width: 100%; min-height: 2.5rem; padding: 0.5rem 0.75rem; border-radius: var(--radius-sm);
