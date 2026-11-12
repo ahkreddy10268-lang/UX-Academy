@@ -5,14 +5,14 @@
 
 | Measure | Count |
 |---|---|
-| Registered Level-1 plates | 110 |
-| Published entries with a plate | 88 / 88 |
+| Registered Level-1 plates | 111 |
+| Published entries with a plate | 89 / 89 |
 | Subject plates | 20 / 20 |
-| Plates in the current system (dark technical or instructional sheet) | 108 |
+| Plates in the current system (dark technical or instructional sheet) | 109 |
 | Plates still in the earlier pastel style | 2 |
 | Level-2 figures | 23 |
 | Level-3 explorers (on plates) | 9 |
-| Labs linked from entries | 21 |
+| Labs linked from entries | 23 |
 | Animated plates | 12 |
 
 ## The 12 illustration categories
@@ -26,20 +26,20 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 | 3 | UX Process Illustrations | 7 | 7 | 2 | 0 | 7 / 0 / 0 | mature | `double-diamond`, `user-centred-design` |
 | 4 | User Research Illustrations | 3 | 3 | 0 | 0 | 3 / 0 / 0 | developing | `card-sorting`, `jobs-to-be-done` |
 | 5 | Information Architecture Illustrations | 2 | 2 | 2 | 0 | 2 / 0 / 0 | mature | `information-architecture` |
-| 6 | Interaction Design Illustrations | 13 | 13 | 1 | 4 | 13 / 0 / 0 | developing | `signifiers`, `doherty-threshold`, `gulfs-of-execution-and-evaluation`, `interaction-design-discipline`, `progressive-disclosure`, `visibility-of-system-status`, `user-control-and-freedom`, `error-prevention`, `mapping`, `flexibility-and-efficiency-of-use`, `error-recovery` |
+| 6 | Interaction Design Illustrations | 14 | 14 | 1 | 5 | 14 / 0 / 0 | developing | `signifiers`, `doherty-threshold`, `gulfs-of-execution-and-evaluation`, `interaction-design-discipline`, `progressive-disclosure`, `visibility-of-system-status`, `user-control-and-freedom`, `error-prevention`, `mapping`, `flexibility-and-efficiency-of-use`, `error-recovery`, `feedback-principle` |
 | 7 | Wireframe & Prototyping Illustrations | 1 | 1 | 0 | 0 | 1 / 0 / 0 | developing | — |
 | 8 | Visual Design & Composition Illustrations | 8 | 8 | 2 | 6 | 8 / 0 / 0 | developing | `gestalt-principles`, `colour-contrast-ratio`, `visual-hierarchy`, `modular-type-scale`, `aesthetic-and-minimalist-design` |
 | 9 | Design Systems Illustrations | 29 | 29 | 2 | 6 | 29 / 0 / 0 | developing | `atomic-design`, `design-system`, `design-tokens`, `primitive-tokens`, `semantic-tokens`, `theme-architecture`, `design-language`, `spacing-scales`, `typography-scales`, `colour-systems`, `elevation-systems`, `icon-systems`, `component-libraries`, `component-architecture`, `variants`, `component-properties`, `component-state-management`, `empty-states`, `loading-states`, `skeleton-screens`, `progressive-loading`, `error-states`, `data-tables`, `design-governance`, `design-system-versioning`, `design-qa`, `design-system-audits`, `multi-brand-systems` |
 | 10 | Usability & Accessibility Illustrations | 4 | 4 | 1 | 0 | 4 / 0 / 0 | developing | `usability`, `accessibility-concept`, `wcag` |
 | 11 | Responsive & Adaptive Design Illustrations | 1 | 1 | 0 | 0 | 1 / 0 / 0 | developing | `responsive-systems` |
-| 12 | UX Evaluation & Optimization Illustrations | 16 | 15 | 2 | 1 | 16 / 0 / 0 | developing | `nielsen-usability-heuristics`, `keystroke-level-model`, `shneiderman-golden-rules`, `heuristic-evaluation`, `cognitive-walkthrough`, `usability-testing`, `system-usability-scale`, `nasa-tlx`, `net-promoter-score`, `task-success-rate`, `ab-testing`, `confidence-intervals`, `sample-size-estimation`, `heart-framework` |
+| 12 | UX Evaluation & Optimization Illustrations | 16 | 15 | 2 | 2 | 16 / 0 / 0 | developing | `nielsen-usability-heuristics`, `keystroke-level-model`, `shneiderman-golden-rules`, `heuristic-evaluation`, `cognitive-walkthrough`, `usability-testing`, `system-usability-scale`, `nasa-tlx`, `net-promoter-score`, `task-success-rate`, `ab-testing`, `confidence-intervals`, `sample-size-estimation`, `heart-framework` |
 
 ## The five explanation methods
 
 | Method | L1 plates (primary) | L2 figures |
 |---|---:|---:|
 | Conceptual & Metaphorical | 18 | 7 |
-| Process & Sequential | 22 | 7 |
+| Process & Sequential | 23 | 7 |
 | Relationship & Systems | 19 | 4 |
 | Comparison & Contrast | 32 | 4 |
 | Hierarchy & Classification | 19 | 1 |
@@ -75,7 +75,7 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 | `recognition-over-recall` | entry | ux-concept | comparison | current · instructional sheet | retain | Sheet (S25): a bare command prompt versus a menu whose visible options cue the answer. | 0 | — |
 | `gulfs-of-execution-and-evaluation` | entry | interaction-design | process | current · instructional sheet | retain | Sheet (S25): goal and heating app across a shaded gulf; mapped controls and stated feedback bridge it. | 0 | — |
 | `shneiderman-golden-rules` | entry | evaluation-optimization | hierarchy | current · instructional sheet | retain | Sheet (S25): a three-screen delete dialogue placing seven of the eight rules; the key lists all eight. | 0 | — |
-| `heuristic-evaluation` | entry | evaluation-optimization | process | current · instructional sheet | retain | Sheet (S25): three evaluators' illustrative findings merged into one list with a missed problem and a severity scale. | 2 | — |
+| `heuristic-evaluation` | entry | evaluation-optimization | process | current · instructional sheet | retain | Sheet (S25): three evaluators' illustrative findings merged into one list with a missed problem and a severity scale. | 2 | heuristic-report-lab |
 | `cognitive-walkthrough` | entry | evaluation-optimization | process | current · instructional sheet | retain | Sheet (S25): one step of a task with the four questions, answers and a failure story. | 0 | — |
 | `usability-testing` | entry | evaluation-optimization | process | current · instructional sheet | retain | Replaced (D-093): task card → interface under test with numbered observations → session timeline with time on task → findings by severity linked to evidence; illustrative session. | 0 | — |
 | `card-sorting` | entry | user-research | hierarchy | current · instructional sheet | retain | Sheet (S25): cards, one participant's named groups, and an illustrative agreement matrix. | 0 | — |
@@ -139,6 +139,7 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 | `design-qa` | entry | design-systems | process | current · instructional sheet | retain | Sheet (S37): five pull-request gates (lint, tests, visual, axe, pair review), a visual diff with a raw-grey label flagged by color-no-hex, and the six-part review checklist. | 0 | — |
 | `design-system-audits` | entry | design-systems | comparison | current · instructional sheet | retain | Sheet (S37): an interface inventory wall of 23 button variants, adoption from lib/formulas adoptionRate, and a severity × reach prioritisation matrix. | 0 | — |
 | `multi-brand-systems` | entry | design-systems | relationship | current · instructional sheet | retain | Sheet (S37): one semantic token contract mapped to two brands' primitives; the same Button rendered per brand with contrast from lib/formulas contrastRatio (orange 500 fails, orange 700 passes) using --sample-token-* colours. | 0 | — |
+| `feedback-principle` | entry | interaction-design | process | current · instructional sheet | retain | Sheet (S40, Cycle 1 B1): the act → system change → feedback → evaluate loop, and three qualities of feedback (immediate, informative, proportionate) as good/poor pairs. | 0 | feedback-lab |
 | `foundations` | subject | ux-concept | relationship | current · instructional sheet | retain | Sheet (S25, subject): interface inside the experience band, an approach loop and a history line. | 0 | — |
 | `laws-effects` | subject | ux-concept | conceptual | current · instructional sheet | retain | Sheet (S25, subject): six tiles for the domain's families, ending with evidence labels. | 0 | — |
 | `psychology` | subject | ux-concept | conceptual | current · instructional sheet | retain | Sheet (S25, subject): memory slots, a cue–action–outcome loop, pop-out search and a reach arc. | 0 | — |
@@ -284,6 +285,7 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 | `design-qa` | A pull request passes through five gates from left to right: lint (no raw colours or px font sizes), interaction tests, visual diff, an axe accessibility scan and a human pair review on the preview, with the first four automated and the last manual. Below, a visual diff: a baseline button and a new build whose label is a raw grey, with the changed area outlined and the hex value flagged by the lint rule. On the right, the six-part review checklist: tokens, layout at 320 px, states, content, accessibility and behaviour. A note marks that automated checks catch only part of accessibility issues, so manual evaluation remains. |
 | `design-system-audits` | An interface inventory wall of 23 buttons found in production, each a slightly different height and corner radius, the kind of variation an audit makes visible. Below left, an adoption bar from a static code scan: 312 system instances and 88 custom ones, 78% adoption, with a note to read it alongside overrides and quality. Below right, a prioritisation matrix of severity against reach: a keyboard failure high on both is fixed first, a contrast failure with low reach is still high priority because it fails WCAG, a radius inconsistency with high reach comes next, and a low-severity copy issue last. |
 | `multi-brand-systems` | In the middle, one shared contract of semantic tokens — action.background, action.text, radius.control and font.body — that the single Button component uses. On the left, the library brand maps them to blue 600, white, a 6 px radius and a sans-serif face; its button reads 'Renew' at 6.47:1. On the right, the museum brand maps them to orange, white, a square 0 px radius and a serif face. Its logo orange 500 with white text is only 3.02:1 and is crossed out; the action role is mapped to orange 700 instead, at 5.18:1, which passes. The component code is identical for both brands. |
+| `feedback-principle` | Top row, a loop of three panels joined by arrows. Act: a pointer presses an Add button. System: out of sight, the basket changes from 1 to 2 items. Feedback: a tick with the word 'Added' and a badge showing 2. A dashed arrow runs from the feedback back under the panels to the button, closing the loop: the person compares what they see with what they meant to do. Bottom row, three comparisons. Immediate: a button already reading 'Adding…'. Informative: 'Done' marked with a cross beside 'Jacket added' marked with a tick. Proportionate: a small dialog over a dimmed screen marked with a cross beside a single inline line marked with a tick. |
 | `foundations` | Nested frames read from the inside out. At the centre, an interface: a booking screen with a title, a field and a button, the part UI design shapes. Around it, a band of before, during and after touchpoints, the whole experience UX design is concerned with. A loop arrow around the band stands for design approaches that put people's needs and evaluation at the centre. Along the bottom, a short timeline marks that the field has a history in design and human-computer interaction. |
 | `laws-effects` | Six tiles, one for each family of regularities in this subject. Human performance laws: a pointer moving a distance D to a target of width W. Popular laws and rules of thumb: a card stamped 'rule of thumb'. Memory and attention: a list in which one item stands out. Gestalt grouping: dots grouped by spacing. Decision-making biases: two options, one marked as the default. A sixth tile shows evidence labels, because these items range from measured laws to popular claims. |
 | `psychology` | Four panels for the four strands of the subject, each shown through what it explains in an interface rather than as a picture of a head. Cognitive psychology, memory and learning: four memory slots, three filled. Behavioural science, motivation and emotion: a loop from a cue to an action to an outcome that feeds back. Visual cognition: a field of outlined shapes in which one filled shape stands out at once (in the hero it pulses, as attention is captured). Human factors and ergonomics: a control panel with a large stop button within reach and a reach arc drawn around it. |

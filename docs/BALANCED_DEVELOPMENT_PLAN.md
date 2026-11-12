@@ -1,6 +1,6 @@
 # Balanced academy development — plan
 
-_Status: **proposal, awaiting owner approval** (2026-11-12). Nothing in this document has been applied to content, taxonomy or quality gates. On approval it supersedes the tier order in `docs/CONTENT_AUDIT.md` § 6 (kept as history)._
+_Status: **approved by the owner 2026-11-12 with two refinements (§ 9.2) — D-129.** Supersedes the tier order in `docs/CONTENT_AUDIT.md` § 6 (kept as history). Quality gates and tests are unchanged._
 
 Baseline: `docs/CONTENT_COVERAGE.md` generated 2026-11-12 (authoritative). Dependency figures come from a read-only analysis of the published entries (inbound `[[links]]`, `relations`, `prerequisites`) and learning-path steps; they are reproducible and are not stored as content.
 
@@ -238,19 +238,42 @@ Stage rule: **Empty** 0 published · **Seeded** < 10 % · **Developing** 10–29
 
 Today: 1 Complete, 0 Established, 7 Developing, 6 Seeded, 6 Empty.
 
-### 9.2 Type-adjusted targets (how the five dimensions are judged)
+### 9.2 Maturity targets (approved with refinements, D-129)
 
-| Dimension | Target for every new entry | Notes |
+Explanation, Practice and Editorial keep their existing standard: **complete** for every entry. Evidence and Visual are judged against a **target set by what the topic is**, never by a single universal bar. The generated `maturity()` ratings are unchanged and still reported; the target view sits beside them (`lib/content/targets.ts`, reported in `CONTENT_COVERAGE.md`). No gate or test is relaxed.
+
+**Visual — use only the formats that materially improve understanding.** Plate, detailed diagram and interactive tool are *not* collectively required. Interactive tools are always optional and must be pedagogically justified (D-075, D-078, D-082, D-095).
+
+| Type family (`TYPE_FAMILY`) | What the knowledge is | Target (minimum) | Optional, only when it teaches |
+|---|---|---|---|
+| quantitative — law, formula, metric, research instrument | A relationship or a computed value | Plate, **and** either a detailed diagram or a calculator/lab that computes it | The other of the two |
+| procedural — method, methodology | A sequence of steps with decisions | Plate and a detailed process diagram | Lab or worked tool |
+| explanatory — theory, model, framework | A structure or mechanism | Plate and a detailed diagram of the structure | Explorer |
+| standard | A document with structure and levels | Plate | Hierarchy diagram |
+| normative — principle, heuristic, guideline, rule of thumb | A rule applied to interfaces | Plate | Annotated interface or comparison; demo |
+| phenomenon — concept, cognitive bias, emerging concept | An idea or effect | Plate | Diagram; experiment lab only if it measures something real |
+| practice — technique, strategy, pattern, anti-pattern, tool, case study | A way of working or a reusable solution | Plate | Annotated interface, worked example |
+| discipline — discipline, historical contribution | A field and its scope | Plate | Timeline or system diagram |
+
+**Evidence — set by evidence class and the nature of the claims; honest limits are not penalised.**
+
+| Group | Evidence classes | Target (minimum) |
 |---|---|---|
-| Explanation | complete | Already a gate. |
-| Practice | complete | ≥ 3 quiz questions across all three levels, ≥ 2 exercises, ≥ 3 flashcards. |
-| Editorial | complete | No source awaiting verification at publication. |
-| Evidence | complete when the evidence class is original empirical research, peer-reviewed research, established theoretical model or official standard; developing accepted for practitioner recommendation, professional guideline without primary literature, or emerging concept — with an `evidenceNote` that says so | Prevents padding practitioner topics with irrelevant papers. |
-| Visual | plate for all (tested); L2 for models, methods, frameworks, processes, standards and comparisons; L3 only for laws, formulas and measurable effects | "Meets its type target" is the measure, not "complete". |
+| **Established evidence** | original empirical research, peer-reviewed research, established theoretical model, official standard | ≥ 2 primary or standard sources, ≥ 1 machine-verified primary, ≥ 2 evidence points at the advanced level, a stated debate or competing model (today's "complete") |
+| **Limited or contested evidence** | contested | ≥ 1 primary source for the original claim, ≥ 1 evidence point that reports the contrary or failed replication, a stated debate, an `evidenceNote` that names the limitation |
+| **Emerging practice** | emerging hypothesis | ≥ 1 primary or authoritative source for the claim, ≥ 1 evidence point, an `evidenceNote` that says what is not yet known |
+| **Professional guidelines and original frameworks** | professional guideline, practitioner recommendation | ≥ 1 originating source (the framework's or guideline's own publication) as primary, ≥ 1 machine-verified source, ≥ 1 evidence point, an `evidenceNote` stating what kind of evidence supports it and what does not |
+
+Rules that apply to every class:
+- A topic meets its target by documenting its evidence honestly; a limitation stated in `evidenceNote`, `limitations` or `debates` is credit, not a deficit.
+- The class is chosen from the evidence, never to reach a target. Moving an entry to a "lower" class to pass, or adding papers that do not support its claims, is not allowed.
+- Specific empirical claims (numbers, effect sizes, thresholds) cite the source that measured them, whatever the entry's class — checked in editorial review, since it cannot be computed.
+
+**G-slot quality rule.** A batch in the G slot exists to make an empty or barely covered domain teachable, not to move a coverage figure. It must (1) choose the domain's foundational topics — the ones later topics depend on — not its easiest ones; (2) meet every gate and the targets above, with no reduced standard for being first; (3) define the domain's core vocabulary and boundaries, so later entries do not contradict it; (4) connect each new entry to at least one published entry outside the domain; and (5) be cut to fewer topics rather than thinner entries if sources for a topic cannot be verified. Coverage gained by a G batch is reported, but the balance review (§ 9.3) also checks that its entries meet targets.
 
 ### 9.3 Review checkpoints
 
-**After every batch** (entry-level, blocking): `npm run check`, `test:taxonomy`, `sources:verify` for new sources, `docs:generate`; build plus keyboard/devices/axe suites when UI or figures change; links from existing entries added (§ 7.4); every new entry meets § 9.2 for Explanation, Practice and Editorial.
+**After every batch** (entry-level, blocking): `npm run check`, `test:taxonomy`, `sources:verify` for new sources, `docs:generate`; build plus keyboard/devices/axe suites when UI or figures change; links from existing entries added (§ 7.4); every new entry is complete on Explanation, Practice and Editorial and meets its Visual and Evidence targets (§ 9.2).
 
 **After every cycle — balance review** (a short note in `PROGRESS.md`):
 1. Domains touched ≥ 3; no domain > 40 % of the cycle's entries; every cluster touched within the last two cycles.
@@ -295,6 +318,6 @@ Today: 1 Complete, 0 Established, 7 Developing, 6 Seeded, 6 Empty.
 
 1. Approve balanced development (§ 2) as the primary strategy, superseding `CONTENT_AUDIT.md` § 6 order.
 2. Approve the three-slot cycle (H / G / R) and the caps.
-3. Approve the type-adjusted targets (§ 9.2) as the measure of maturity (no change to gates or tests).
+3. Approve the type-adjusted targets (§ 9.2) as the measure of maturity (no change to gates or tests). — **approved with refinements**
 4. Approve cycle 1 (B1–B3) and I1 (docs reconciliation and published-host coveredBy checks).
 5. Optional: a small generator change so `CONTENT_COVERAGE.md` reports "meets type target" per dimension — no change to how entries are rated.

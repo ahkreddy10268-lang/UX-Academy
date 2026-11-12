@@ -98,6 +98,8 @@ Generated per entry in `docs/CONTENT_COVERAGE.md` as basic / developing / comple
 
 ## 6. Content expansion roadmap
 
+> **Superseded by D-129 (2026-11-12).** The order of work is now `docs/BALANCED_DEVELOPMENT_PLAN.md` (balanced development across domains, H/G/R cycles). This section is kept as history and for its source notes. Slug corrections: "feedback" is `feedback-principle`; "human-ai-interaction-guidelines" is `human-ai-interaction`; "calibrated-trust-in-ai" is `ai-trust`.
+
 Write in this order. Each entry must pass the gates above, cite only sources that pass `npm run sources:verify` (or are clearly marked bibliographic/awaiting verification), and add a plate. "Source requirements" names the primary literature each entry must rest on; sources marked † are not yet in the registry and must be added and verified first.
 
 ### Tier 1 — Foundations (every learning path starts here)

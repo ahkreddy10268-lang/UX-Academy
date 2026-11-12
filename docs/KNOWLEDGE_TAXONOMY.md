@@ -350,7 +350,7 @@ How people act on interfaces and how interfaces respond.
 - ✅ Error Recovery — *Principle* · `error-recovery`
 - ◻️ Platform Design Guidelines — *Guideline* · `platform-design-guidelines`
 - ◻️ Interaction Cost — *Concept* · `interaction-cost`
-- ◻️ Feedback — *Concept* · `feedback-principle`
+- ✅ Feedback — *Concept* · `feedback-principle`
 - ◻️ Constraints — *Concept* · `constraints`
 - ✅ Mapping — *Concept* · `mapping`
 - ✅ Error Prevention — *Principle* · `error-prevention`

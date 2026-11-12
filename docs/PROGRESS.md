@@ -1,24 +1,12 @@
 # Progress register
 
-_Last updated: 2026-11-12 (session 39 — Nielsen heuristics guide)_
+_Last updated: 2026-11-12 (session 40 — balanced development approved, D-129; Cycle 1, Batch 1 started)_
 
 ## State
 
-Figures are generated from the content; the live source is `docs/CONTENT_COVERAGE.md` (and `docs/RESEARCH_SOURCES.md`). Snapshot after session 22 (previous snapshot, session 18: 51 published, 9.1%):
+**Do not copy figures here** — they go stale. The live figures are generated from the content: `docs/CONTENT_COVERAGE.md` (coverage, maturity, targets by type and evidence class, path completeness) and `docs/RESEARCH_SOURCES.md`. At D-129 (2026-11-12): 88 of 561 topics published (15.7 %), 10 addressed within another entry, 6 empty domains. Content strategy: balanced academy development (D-129, `docs/BALANCED_DEVELOPMENT_PLAN.md`).
 
-| Area | Count |
-|---|---|
-| Taxonomy topics (domains / subcategories) | 558 (20 / 73), taxonomy v1.0 frozen |
-| Published entries (all gates pass) | 52 (9.3% of topics) |
-| Addressed within another entry / planned with no content | 10 / 496 |
-| Domains with no published entry | 6 |
-| Explained graph relationships | 440 |
-| Formulas with unit-tested calculators | 25 |
-| Interactive labs | 15 |
-| Quiz questions / exercises / flashcards | 215 / 151 / 175 |
-| Sources (DOI-verified / URL-reachable) | 293 (166 / 86) |
-
-**The earlier session sections below keep the figures that were true at the time.**
+_The session sections below keep the figures that were true at the time._
 
 ## Completed this session
 
@@ -154,5 +142,12 @@ After that: `ui-design`, `interaction-design-discipline`, `accessibility-concept
 - Audited /guides/nielsen-heuristics and /library/heuristic-evaluation at 1440/1280/1024/834/390 (headings, ids, anchors, target sizes, rendered text sizes, overflow, landmarks, links). Fixed: disclosures without an expand cue (new `Disclosure`), anchored headings hidden under the topbar, the cramped 1024 guide column (`DocLayout tocFrom`), current-section marking in on-page lists (`TocSpy`), sticky list taller than the viewport, hero plates below the text floor at 1024 (side by side from xl), citation markers at 7 px, mock numerals at 10 px; added chapter navigation and guide ↔ entry ↔ lab links.
 - Verified: check (510), build; targeted script 30/30 (current-section marking, layout per width, disclosure cue, keyboard toggle, focus outline, badge alignment, contextual links, 377 links on the three pages); guide QA 40/40 (axe with disclosures open, 1440 light / 390 dark / 390 light); e2e 44, e2e-redesign 66, atlas 36, keyboard 45, devices 155; a11y 0 violations on 9 pages; crawl clean.
 
+## Session 40 — balanced development (D-129); Cycle 1, Batch 1 started
+
+- Plan approved with refinements: visual targets by type family, evidence targets by evidence class, G-slot quality rule (plan § 9.2). Reporting view `lib/content/targets.ts` (9 tests) and a "Targets by type and evidence class" section in CONTENT_COVERAGE.md; `maturity()` and every gate unchanged.
+- CONTENT_AUDIT § 6 marked superseded (slug errors noted); this register's State table now points to the generated figures.
+- Batch 1 (Interaction feedback & state): 9 new sources added and verified first (5 DOIs via Crossref, 4 URLs; `content/sources/interaction-principles.ts`); Material 3 states read from the rendered page; the Shneiderman & Maes 1997 debate recorded from Crossref metadata only (full text blocked to automated access — cited for nothing beyond the record). All five topics entered the research ledger.
+- **Published `feedback-principle`** (concept, established theory): Explanation, Evidence, Practice, Editorial complete; meets its visual target (plate; plus feedback-lab); plate `components/illustrations/concepts/interaction-sheets.tsx` (act → system → feedback → evaluate loop; immediate / informative / proportionate pairs), plate text ≥ 10.2 px at 390, axe 0 violations. Links added from `signifiers` and `error-recovery`; four entries already pointed to it. Interaction Design path 70 % → 74 %.
+
 ## Next task (precise)
-Publish `interaction-states` (Interaction domain; the last planned step inside the Design Systems path), sources verified first. Then choose the next domain in docs/CONTENT_AUDIT.md §6 order.
+Continue Batch 1, one entry at a time, sources already verified (content/topic-ledger.ts): `constraints`, `direct-manipulation`, `interaction-states`, `discoverability` — each complete on Explanation, Practice and Editorial, meeting its Visual and Evidence targets, with a plate, links from existing entries (plan § 7.4), `docs:generate` after each. Then Batch 2 (think-aloud-protocol, tree-testing, contextual-inquiry, in-depth-interviews) and Batch 3 (UX writing foundations), then the cycle-1 balance review (plan § 9.3).

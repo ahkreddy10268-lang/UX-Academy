@@ -91,7 +91,7 @@ export const labs: Lab[] = [
     id: "feedback-lab",
     title: "System status & feedback",
     summary: "Trigger an action and switch between feedback strategies — none, spinner, progress, optimistic UI — under different latencies.",
-    concepts: ["visibility-of-system-status", "doherty-threshold", "nielsen-usability-heuristics"],
+    concepts: ["visibility-of-system-status", "feedback-principle", "doherty-threshold", "nielsen-usability-heuristics"],
     kind: "simulation",
     assumptions: [
       "Latency is simulated with timers; real networks vary more.",

@@ -657,6 +657,14 @@
     "registeredContainer": "Journal of Personality and Social Psychology",
     "similarity": 1
   },
+  "frohlich-1993": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-12",
+    "registeredTitle": "The history and future of direct manipulation",
+    "registeredYear": 1993,
+    "registeredContainer": "Behaviour &amp; Information Technology",
+    "similarity": 1
+  },
   "frost-2013": {
     "status": "url-reachable",
     "checkedAt": "2026-11-11",
@@ -780,6 +788,14 @@
     "registeredContainer": "European Journal of Epidemiology",
     "similarity": 1
   },
+  "grossman-2009-learnability": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-12",
+    "registeredTitle": "A survey of software learnability: metrics, methodologies and guidelines",
+    "registeredYear": 2009,
+    "registeredContainer": "Proceedings of the SIGCHI Conference on Human Factors in Computing Systems",
+    "similarity": 1
+  },
   "grudin-1994": {
     "status": "doi-verified",
     "checkedAt": "2026-11-04",
@@ -810,6 +826,14 @@
     "registeredTitle": "Statecharts: a visual formalism for complex systems",
     "registeredYear": 1987,
     "registeredContainer": "Science of Computer Programming",
+    "similarity": 1
+  },
+  "harrison-2007-progress-bar": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-12",
+    "registeredTitle": "Rethinking the progress bar",
+    "registeredYear": 2007,
+    "registeredContainer": "Proceedings of the 20th annual ACM symposium on User interface software and technology",
     "similarity": 1
   },
   "harrison-sengers-tatar-2011": {
@@ -1244,6 +1268,11 @@
     "checkedAt": "2026-11-11",
     "httpStatus": 200
   },
+  "m3-states": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-12",
+    "httpStatus": 200
+  },
   "m3-type-scale": {
     "status": "url-reachable",
     "checkedAt": "2026-11-11",
@@ -1549,6 +1578,11 @@
     "checkedAt": "2026-11-11",
     "httpStatus": 200
   },
+  "nng-discoverable-mobile-navigation": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-12",
+    "httpStatus": 200
+  },
   "nng-empty-states": {
     "status": "url-reachable",
     "checkedAt": "2026-11-11",
@@ -1570,6 +1604,11 @@
     "httpStatus": 200
   },
   "nng-heuristic-evaluation-howto": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-12",
+    "httpStatus": 200
+  },
+  "nng-hidden-navigation": {
     "status": "url-reachable",
     "checkedAt": "2026-11-12",
     "httpStatus": 200
@@ -1630,6 +1669,14 @@
     "registeredTitle": "Categorization of action slips.",
     "registeredYear": 1981,
     "registeredContainer": "Psychological Review",
+    "similarity": 1
+  },
+  "norman-1983-design-rules": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-12",
+    "registeredTitle": "Design rules based on analyses of human error",
+    "registeredYear": 1983,
+    "registeredContainer": "Communications of the ACM",
     "similarity": 1
   },
   "norman-1986": {
@@ -1994,6 +2041,14 @@
     "checkedAt": "2026-11-03",
     "httpStatus": 503
   },
+  "shneiderman-maes-1997": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-12",
+    "registeredTitle": "Direct manipulation vs. interface agents",
+    "registeredYear": 1997,
+    "registeredContainer": "Interactions",
+    "similarity": 1
+  },
   "shopify-polaris": {
     "status": "url-reachable",
     "checkedAt": "2026-11-11",
@@ -2255,6 +2310,11 @@
   "w3c-resource-timing": {
     "status": "url-reachable",
     "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "w3c-selectors-4": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-12",
     "httpStatus": 200
   },
   "w3c-understanding-pause-stop-hide": {
