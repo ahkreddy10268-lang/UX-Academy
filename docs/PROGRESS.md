@@ -149,5 +149,10 @@ After that: `ui-design`, `interaction-design-discipline`, `accessibility-concept
 - Sidebar: "Guides" added to the Learn group (new `guide` signpost icon). Shared fixes found by QA: `DocLayout`'s TOC wrapper is no longer an unlabelled `aside` (duplicated the sidebar landmark on every doc page); `Callout` takes `landmark={false}` to render a note where a page repeats a role; scroll containers holding tables with `sr-only` cells are `relative` so the hidden cells cannot widen the page at 390 px.
 - Verified: `npm run check` (510 tests), `test:taxonomy`, build (978 pages); guide QA script 40/40 (axe with every disclosure open at 1440 light / 390 dark / 390 light, no overflow, no console errors, mock text ≥ 11 px at 390, demos and lab flows); e2e 44/44, e2e-redesign 66/66, atlas 36/36, keyboard 45/45, devices 155/155, a11y 0 violations, crawl 0 problems.
 
+## Session 39b — guide and method page usability pass (D-128)
+
+- Audited /guides/nielsen-heuristics and /library/heuristic-evaluation at 1440/1280/1024/834/390 (headings, ids, anchors, target sizes, rendered text sizes, overflow, landmarks, links). Fixed: disclosures without an expand cue (new `Disclosure`), anchored headings hidden under the topbar, the cramped 1024 guide column (`DocLayout tocFrom`), current-section marking in on-page lists (`TocSpy`), sticky list taller than the viewport, hero plates below the text floor at 1024 (side by side from xl), citation markers at 7 px, mock numerals at 10 px; added chapter navigation and guide ↔ entry ↔ lab links.
+- Verified: check (510), build; targeted script 30/30 (current-section marking, layout per width, disclosure cue, keyboard toggle, focus outline, badge alignment, contextual links, 377 links on the three pages); guide QA 40/40 (axe with disclosures open, 1440 light / 390 dark / 390 light); e2e 44, e2e-redesign 66, atlas 36, keyboard 45, devices 155; a11y 0 violations on 9 pages; crawl clean.
+
 ## Next task (precise)
 Publish `interaction-states` (Interaction domain; the last planned step inside the Design Systems path), sources verified first. Then choose the next domain in docs/CONTENT_AUDIT.md §6 order.

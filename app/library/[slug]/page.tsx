@@ -15,6 +15,7 @@ import { LevelTabs } from "@/components/entry/level-tabs";
 import { PracticeBlock } from "@/components/entry/practice-block";
 import { NotesPanel } from "@/components/entry/notes-panel";
 import { ReferenceList } from "@/components/entry/references";
+import { TocSpy } from "@/components/ui/toc-spy";
 import { PlannedTopic } from "@/components/entry/planned-topic";
 import { Quiz } from "@/components/practice/quiz";
 import { Callout } from "@/components/ui/callout";
@@ -186,7 +187,7 @@ function Entry({ entry: e }: { entry: KnowledgeEntry }) {
               { label: e.title },
             ]}
           />
-          <div className="relative mt-5 grid items-center gap-8 overflow-hidden rounded-2xl border border-rule bg-surface p-5 shadow-card sm:p-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-12 lg:p-10">
+          <div className="relative mt-5 grid items-center gap-8 overflow-hidden rounded-2xl border border-rule bg-surface p-5 shadow-card sm:p-8 lg:p-10 xl:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] xl:gap-12">
             <span aria-hidden className="absolute inset-x-0 top-0 h-1 bg-c" />
             <div className="rise-in">
               <p className="flex flex-wrap items-center gap-x-3 gap-y-1">
@@ -783,6 +784,7 @@ function Entry({ entry: e }: { entry: KnowledgeEntry }) {
             <p className="label">On this page</p>
             <TocList toc={toc} />
             <CitedCount e={e} />
+            <TocSpy />
           </div>
         </aside>
       </Container>
@@ -792,10 +794,10 @@ function Entry({ entry: e }: { entry: KnowledgeEntry }) {
 
 function TocList({ toc }: { toc: [string, string][] }) {
   return (
-    <ol className="space-y-1 px-4 pb-3 pt-2 text-sm lg:px-0 lg:pt-3">
+    <ol data-toc className="space-y-1 px-4 pb-3 pt-2 text-sm lg:px-0 lg:pt-3">
       {toc.map(([id, label]) => (
         <li key={id}>
-          <a href={`#${id}`} className="block rounded-xs border-l-2 border-transparent py-1 pl-3 text-ink-2 hover:border-ink hover:bg-surface hover:text-ink">
+          <a href={`#${id}`} className="block rounded-xs border-l-2 border-transparent py-1 pl-3 text-ink-2 hover:border-ink hover:bg-surface hover:text-ink aria-[current=location]:border-ink aria-[current=location]:font-medium aria-[current=location]:text-ink">
             {label}
           </a>
         </li>
