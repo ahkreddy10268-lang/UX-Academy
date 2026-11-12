@@ -191,4 +191,16 @@ export const labs: Lab[] = [
       "Colour roles only: no typography, spacing or motion tokens. Exports show the shape of DTCG, CSS and Tailwind v4 output, not any one build tool's exact files.",
     ],
   },
+  {
+    id: "async-state-lab",
+    title: "Async State Lab",
+    summary: "Drive one async state machine — idle, loading, populated, empty, error — through a loans table and card list. Change the response time, switch between skeleton, spinner and progressive loading, simulate a network error, and watch the live-region announcements and measured layout shift. A broken preset shows spinner thrashing and wiped input, then the corrections.",
+    concepts: ["component-state-management", "loading-states", "skeleton-screens", "data-tables", "empty-states", "error-states", "progressive-loading"],
+    kind: "simulation",
+    assumptions: [
+      "Responses are simulated with timers; nothing is fetched. The response-time bands use Nielsen's 0.1 s and 1 s limits (after Miller 1968 and Card et al. 1991); the 1000 ms show-after delay and 400 ms minimum display are this lab's product choices, the same ones used in the loading-states entry.",
+      "Layout shift is measured with the browser's Layout Instability API where it exists (Chromium); shifts within 500 ms of your own input are excluded, as in CLS, so a shift right after a click may not be counted.",
+      "Announcements are what the lab writes to a polite role=status region; real screen readers may queue, shorten or skip them depending on settings.",
+    ],
+  },
 ];

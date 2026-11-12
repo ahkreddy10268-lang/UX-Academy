@@ -318,6 +318,8 @@ export function OverdueTable({ state, sort, onSort, selected, onSelect }: {
   evidenceNote:
     "W3C informative guidance (WAI tutorial, APG) and normative WCAG 2.2 criteria, NN/g mobile-table research and library documentation. Scenarios are illustrative.",
 
+  lab: "async-state-lab",
+
   status: "published",
   quality: { classification: true, explanation: true, research: true, beginner: true, professional: true, examples: true, limitations: true, relationships: true, sources: true, activities: true },
   lastVerifiedAt: "2026-11-11",

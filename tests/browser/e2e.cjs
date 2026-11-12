@@ -146,6 +146,20 @@ const check = (name, ok, detail = '') => results.push({ name, ok: !!ok, detail }
   }
   check('Fitts lab records trials', (await p.locator('main').textContent()).includes('Trial 5 of 36'));
 
+  // 15b. Async State Lab: error keeps input and offers retry; results are announced
+  await p.goto(BASE + '/labs/async-state-lab', { waitUntil: 'networkidle' });
+  await p.getByLabel('Response time').fill('300');
+  await p.getByLabel('Filter loans').fill('eliot');
+  await p.getByLabel('Simulate a network error').check();
+  await p.getByRole('button', { name: 'Load loans' }).click();
+  await p.getByRole('button', { name: 'Try again' }).waitFor({ timeout: 5000 });
+  check('Async lab keeps input on error', (await p.getByLabel('Filter loans').inputValue()) === 'eliot');
+  await p.getByLabel('Simulate a network error').uncheck();
+  await p.getByRole('button', { name: 'Try again' }).click();
+  await p.getByText('Your loans, 2').waitFor({ timeout: 5000 });
+  const announced = await p.locator('main').textContent();
+  check('Async lab retry resolves and announces count', announced.includes('2 loans shown for “eliot”.'));
+
   // 16. Mobile: menu
   const m = await b.newContext({ ...devices['iPhone 13'] });
   const mp = await m.newPage();

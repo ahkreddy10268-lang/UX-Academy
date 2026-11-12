@@ -891,6 +891,17 @@ summary { min-height: 24px; padding-block: 2px; }
 .btn[aria-busy="true"]::before { content: ""; width: 0.875rem; height: 0.875rem; border-radius: 999px; border: 2px solid currentColor; border-right-color: transparent; animation: spin 0.8s linear infinite; }
 @keyframes spin { to { transform: rotate(360deg); } }
 
+/* Async State Lab (D-126): skeleton shimmer moved with transform on a pseudo-element,
+   a spinner, and a lab-level reduced-motion switch that removes both animations. */
+.lab-skeleton { position: relative; overflow: hidden; background: var(--sunken); border-radius: var(--radius-xs); }
+.lab-skeleton::after { content: ""; position: absolute; inset: 0; transform: translateX(-100%); background: linear-gradient(90deg, transparent, var(--surface), transparent); opacity: 0.7; }
+.lab-spinner { display: inline-block; width: 1.25rem; height: 1.25rem; border-radius: 999px; border: 2px solid var(--ink-3); border-right-color: transparent; }
+@media (prefers-reduced-motion: no-preference) {
+  [data-motion="full"] .lab-skeleton::after { animation: lab-sweep 1.4s ease-in-out infinite; }
+  [data-motion="full"] .lab-spinner { animation: spin 0.8s linear infinite; }
+}
+@keyframes lab-sweep { to { transform: translateX(100%); } }
+
 .field {
   display: block; width: 100%; min-height: 2.5rem; padding: 0.5rem 0.75rem; border-radius: var(--radius-sm);
   border: 1px solid var(--line-control); background: var(--surface); color: var(--ink); font-size: var(--text-sm);

@@ -287,6 +287,8 @@ export default defineEntry({
   evidenceNote:
     "Practitioner origin (Wroblewski 2013) and NN/g guidance; perceived-speed benefits are practitioner reports here. CLS from web.dev documentation; motion and status requirements from WCAG 2.2.",
 
+  lab: "async-state-lab",
+
   status: "published",
   quality: { classification: true, explanation: true, research: true, beginner: true, professional: true, examples: true, limitations: true, relationships: true, sources: true, activities: true },
   lastVerifiedAt: "2026-11-11",

@@ -18,7 +18,7 @@
 | Quiz questions | 325 |
 | Exercises | 259 |
 | Flashcards | 310 |
-| Labs | 16 |
+| Labs | 17 |
 | Workshops | 11 |
 | Comparisons | 10 |
 | Learning paths | 16 |
@@ -301,7 +301,7 @@ Five separate dimensions, rated basic / developing / complete from the content (
 | Explanation | 88 | 0 | 0 |
 | Evidence | 50 | 38 | 0 |
 | Practice | 76 | 12 | 0 |
-| Visual | 4 | 34 | 50 |
+| Visual | 4 | 38 | 46 |
 | Editorial | 84 | 4 | 0 |
 
 ## Published entries
@@ -323,10 +323,10 @@ Five separate dimensions, rated basic / developing / complete from the content (
 | Component Architecture | Concept | Practitioner recommendation | complete | developing | complete | basic | complete | 11 | 3 | — | — |
 | Component Libraries | Concept | Practitioner recommendation | complete | developing | complete | basic | complete | 14 | 3 | — | — |
 | Component Properties | Concept | Practitioner recommendation | complete | developing | complete | basic | complete | 10 | 3 | — | — |
-| Component State Management | Concept | Practitioner recommendation | complete | developing | complete | basic | complete | 11 | 3 | — | — |
+| Component State Management | Concept | Practitioner recommendation | complete | developing | complete | developing | complete | 11 | 3 | — | async-state-lab |
 | Confidence Intervals | Concept | Established theoretical model | complete | complete | developing | developing | complete | 4 | 3 | confidence-interval-mean | — |
 | Consistency and Standards | Principle | Professional guideline | complete | developing | complete | basic | complete | 6 | 3 | — | — |
-| Data Tables | Pattern | Professional guideline | complete | developing | complete | basic | complete | 7 | 3 | — | — |
+| Data Tables | Pattern | Professional guideline | complete | developing | complete | developing | complete | 7 | 3 | — | async-state-lab |
 | Design Governance | Strategy | Practitioner recommendation | complete | developing | complete | basic | complete | 8 | 3 | — | — |
 | Design Language | Concept | Practitioner recommendation | complete | developing | complete | basic | complete | 7 | 3 | — | — |
 | Design QA | Strategy | Practitioner recommendation | complete | developing | complete | basic | complete | 8 | 3 | — | — |
@@ -356,7 +356,7 @@ Five separate dimensions, rated basic / developing / complete from the content (
 | Jakob's Law | Principle | Practitioner recommendation | complete | complete | developing | developing | complete | 4 | 3 | — | jakob-lab |
 | Jobs To Be Done | Framework | Practitioner recommendation | complete | complete | complete | basic | complete | 3 | 4 | — | — |
 | Keystroke-Level Model (KLM) | Model | Established theoretical model | complete | complete | complete | developing | developing | 4 | 3 | klm | — |
-| Loading States | Pattern | Professional guideline | complete | developing | complete | basic | complete | 12 | 3 | — | — |
+| Loading States | Pattern | Professional guideline | complete | developing | complete | developing | complete | 12 | 3 | — | async-state-lab |
 | Mapping | Concept | Established theoretical model | complete | developing | complete | basic | complete | 5 | 3 | — | — |
 | Mental Models | Concept | Established theoretical model | complete | complete | developing | basic | complete | 7 | 3 | — | — |
 | Miller's Law | Concept | Peer-reviewed research | complete | complete | complete | developing | complete | 4 | 4 | — | — |
@@ -376,7 +376,7 @@ Five separate dimensions, rated basic / developing / complete from the content (
 | Serial Position Effect | Concept | Original empirical research | complete | complete | complete | developing | complete | 6 | 4 | — | serial-position-lab |
 | Shneiderman's Eight Golden Rules | Heuristic | Professional guideline | complete | complete | complete | basic | developing | 7 | 4 | — | — |
 | Signifiers | Concept | Professional guideline | complete | complete | developing | developing | complete | 7 | 3 | — | — |
-| Skeleton Screens | Pattern | Practitioner recommendation | complete | developing | complete | basic | complete | 7 | 3 | — | — |
+| Skeleton Screens | Pattern | Practitioner recommendation | complete | developing | complete | developing | complete | 7 | 3 | — | async-state-lab |
 | Spacing Scales | Concept | Practitioner recommendation | complete | developing | complete | basic | complete | 6 | 3 | — | — |
 | Steering Law | Law | Original empirical research | complete | complete | developing | developing | complete | 5 | 3 | steering | steering-lab |
 | System Usability Scale (SUS) | Research instrument | Peer-reviewed research | complete | complete | complete | developing | developing | 7 | 4 | sus | — |

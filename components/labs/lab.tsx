@@ -9,6 +9,7 @@ import { JakobLab } from "./jakob-lab";
 import { ResponsiveLab } from "./responsive-lab";
 import { SteeringLab } from "./steering-lab";
 import { TokenLab } from "./token-lab";
+import { AsyncStateLab } from "./async-state-lab";
 import { ContrastLab, DisclosureLab, FeedbackLab, GestaltLab, HierarchyLab, SerialPositionLab, TypeScaleLab } from "./simple-labs";
 
 const REGISTRY: Record<string, () => React.JSX.Element> = {
@@ -28,6 +29,7 @@ const REGISTRY: Record<string, () => React.JSX.Element> = {
   "jakob-lab": JakobLab,
   "colour-lab": () => <ConceptExplorer id="colour" />,
   "token-lab": TokenLab,
+  "async-state-lab": AsyncStateLab,
 };
 
 export function LabView({ id }: { id: string }) {

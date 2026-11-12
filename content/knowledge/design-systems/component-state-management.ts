@@ -353,6 +353,8 @@ export function useOpenState({ open, defaultOpen = false, onOpenChange }: Disclo
   evidenceNote:
     "A long-established software-engineering formalism (statecharts, cited bibliographically) applied through documented practice in React and headless libraries; keyboard strategies from the informative APG; ARIA states from a W3C Recommendation. No controlled study of state-machine use and defect rates was found.",
 
+  lab: "async-state-lab",
+
   status: "published",
   quality: { classification: true, explanation: true, research: true, beginner: true, professional: true, examples: true, limitations: true, relationships: true, sources: true, activities: true },
   lastVerifiedAt: "2026-11-11",

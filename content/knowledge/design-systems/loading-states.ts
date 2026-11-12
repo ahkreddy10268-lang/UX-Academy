@@ -320,6 +320,8 @@ export function RenewControl({ state, onPress }: { state: "idle" | "pending" | "
   evidenceNote:
     "Response-time limits come from classic HCI research summarised by Nielsen; indicator choice is NN/g practitioner guidance; the 1–2 s band is this course's reading. WCAG criteria are normative.",
 
+  lab: "async-state-lab",
+
   status: "published",
   quality: { classification: true, explanation: true, research: true, beginner: true, professional: true, examples: true, limitations: true, relationships: true, sources: true, activities: true },
   lastVerifiedAt: "2026-11-11",

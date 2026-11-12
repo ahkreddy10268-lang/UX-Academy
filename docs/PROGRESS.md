@@ -1,6 +1,6 @@
 # Progress register
 
-_Last updated: 2026-11-12 (session 37 — Design Systems Batch 7, governance and operations; domain complete)_
+_Last updated: 2026-11-12 (session 38 — Async State Lab)_
 
 ## State
 
@@ -132,5 +132,12 @@ After that: `ui-design`, `interaction-design-discipline`, `accessibility-concept
 - New tested formulas in `lib/formulas/components.ts`: `bumpVersion`, `releaseBump`, `adoptionRate`. New theme-independent sample colours `--sample-token-orange-500/700` (`BRAND_SAMPLES`, tested against globals.css) for the multi-brand contrast example (3.02:1 fails, 5.18:1 passes).
 - **The Design Systems domain is complete: 29 of 29 topics published (100%)**, per the generated docs/CONTENT_COVERAGE.md and `npm run test:taxonomy`. Overall coverage: 88 of 561 topics (15.7%).
 
+## Session 38 — Async State Lab (D-126)
+
+- New simulation `async-state-lab` (`components/labs/async-state-lab.tsx`), registered in `content/labs.ts` and the lab registry, linked from `component-state-management`, `loading-states`, `skeleton-screens` and `data-tables` (`lab` field) and added to Stage 4's practice slot of the Design Systems path.
+- Model in `lib/formulas/async-state.ts` (20 unit tests): the unified async machine (idle → loading → populated | empty | error, retry, reset) with ignored events and the user's query kept in every state; `indicatorPlan` (≤ 100 ms nothing; ≤ 1000 ms busy state only; > 1000 ms the chosen indicator from 1000 ms, visible at least 400 ms; anti-pattern shows it at 0 ms); `announcement` text for a polite status region.
+- Lab features: latency slider 50–3000 ms with a timeline of what people see; skeleton, spinner and progressive modes; network-error switch with kept input and retry; loans table and card list with reserved height; live announcement log; measured layout shift (Layout Instability API, Chromium); reduced-motion switch (defaults to the OS preference); broken preset (fetch per keystroke, indicator at 0 ms, no reserved height, wiped input, error shown as "No loans", vague announcements) with a five-step correction walkthrough citing WCAG 2.2 SC 3.3.1, 3.3.7 and 4.1.3.
+- e2e suite gains two lab checks (input kept on error; retry resolves and announces the count): 44/44.
+
 ## Next task (precise)
-Owner decision on the next domain. Candidates: finish `interaction-states` (supporting topic in Stage 4, Interaction domain) if still planned; Level-3 labs for the Design Systems path (a component state switcher for `data-tables`, an audit simulator); or begin the next domain in docs/CONTENT_AUDIT.md §6 order with sources verified first.
+Publish `interaction-states` (Interaction domain; the last planned step inside the Design Systems path), sources verified first. Then choose the next domain in docs/CONTENT_AUDIT.md §6 order.
