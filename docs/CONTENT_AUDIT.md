@@ -268,3 +268,7 @@ Published the five concept topics of Design Systems › Components & patterns: `
 ### Session 36 — Design Systems Stage 4, Batch 6 published (D-124); no taxonomy change
 
 Published the six pattern topics of Design Systems › Components & patterns: `empty-states`, `loading-states`, `skeleton-screens`, `progressive-loading`, `error-states`, `data-tables`. Boundaries kept: `error-states` (the state and its engineering) links to `error-recovery` (messages and recovery steps, Interaction) and `error-messages` (UX Writing, planned) instead of repeating them; `empty-states` links to `empty-state-writing` (planned); `progressive-loading` contrasts with `progressive-disclosure`. Stage 4 is complete.
+
+### Session 37 — Design Systems Stage 5 published (D-125); domain complete; no taxonomy change
+
+Published `design-governance`, `design-system-versioning`, `design-qa`, `design-system-audits` (Design Systems › Governance & operations, type strategy) and `multi-brand-systems` (System foundations, type concept). Boundaries kept: `design-system-audits` (system inventory and adoption) links to but does not absorb `accessibility-audits` (Accessibility, planned); `design-qa` (pre-release parity) is distinct from `usability-testing` and `heuristic-evaluation`; `multi-brand-systems` builds on `theme-architecture` without repeating mode mechanics. Every topic of the Design Systems domain is now published.

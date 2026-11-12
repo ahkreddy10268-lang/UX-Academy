@@ -12,6 +12,7 @@ import { designTokensPlate as designTokens, primitiveTokensPlate as primitiveTok
 import { jtbdPlate as jobsToBeDone } from "./learning-sheets";
 import { componentArchitecturePlate, componentLibrariesPlate, componentPropertiesPlate, componentStateManagementPlate, variantsPlate } from "./component-sheets";
 import { dataTablesPlate, emptyStatesPlate, errorStatesPlate, loadingStatesPlate, progressiveLoadingPlate, skeletonScreensPlate } from "./state-pattern-sheets";
+import { designGovernancePlate, designQaPlate, designSystemAuditsPlate, designSystemVersioningPlate, multiBrandSystemsPlate } from "./governance-sheets";
 import { colourSystemsPlate, elevationSystemsPlate, iconSystemsPlate, responsiveSystemsPlate, spacingScalesPlate, typographyScalesPlate } from "./scales-sheets";
 import { heartPlate as heartFramework } from "./learning-sheets";
 import { humanCentredDesignPlanned as humanCentredDesign } from "./subject-sheets";
@@ -66,6 +67,11 @@ const plates: IllustrationEntry[] = [
   progressiveLoadingPlate,
   errorStatesPlate,
   dataTablesPlate,
+  designGovernancePlate,
+  designSystemVersioningPlate,
+  designQaPlate,
+  designSystemAuditsPlate,
+  multiBrandSystemsPlate,
 ];
 export default plates;
 

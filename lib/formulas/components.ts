@@ -43,3 +43,32 @@ export function waitFeedback(seconds: number): WaitTier {
   if (seconds <= 10) return "looped";
   return "percent-done";
 }
+
+export type Bump = "patch" | "minor" | "major";
+const BUMP_RANK: Record<Bump, number> = { patch: 0, minor: 1, major: 2 };
+
+/** Semantic Versioning 2.0.0: increment MAJOR.MINOR.PATCH and reset the lower parts. */
+export function bumpVersion(version: string, bump: Bump): string {
+  const m = /^(\d+)\.(\d+)\.(\d+)$/.exec(version.trim());
+  if (!m) throw new FormulaInputError("Enter a version as MAJOR.MINOR.PATCH, e.g. 3.4.2.");
+  const [maj, min, pat] = m.slice(1).map(Number);
+  if (bump === "major") return `${maj + 1}.0.0`;
+  if (bump === "minor") return `${maj}.${min + 1}.0`;
+  return `${maj}.${min}.${pat + 1}`;
+}
+
+/** A release takes the largest bump among its changes (as Changesets does when consuming changesets). */
+export function releaseBump(bumps: Bump[]): Bump {
+  if (bumps.length === 0) throw new FormulaInputError("Enter at least one change.");
+  return bumps.reduce((a, b) => (BUMP_RANK[b] > BUMP_RANK[a] ? b : a));
+}
+
+/** Share of UI instances that come from the design system: system / (system + custom). */
+export function adoptionRate(systemInstances: number, customInstances: number): number {
+  for (const n of [systemInstances, customInstances]) {
+    if (!Number.isInteger(n) || n < 0) throw new FormulaInputError("Counts must be whole numbers of zero or more.");
+  }
+  const total = systemInstances + customInstances;
+  if (total === 0) throw new FormulaInputError("Enter at least one instance.");
+  return systemInstances / total;
+}

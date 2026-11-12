@@ -1296,6 +1296,9 @@ export const CONTRAST_SAMPLES = { white: "#ffffff", pass: "#767676", fail: "#949
 
 /** The illustrative palette of the token lessons; mirrored by --sample-token-* in globals.css (D-114). */
 export const TOKEN_SAMPLES = {"grey-0": "#ffffff", "grey-50": "#f6f6f4", "grey-300": "#c9c8c3", "grey-500": "#8a8983", "grey-600": "#6b6a64", "grey-700": "#4f4e49", "grey-900": "#1f1e1c", "grey-950": "#141413", "red-700": "#b42318", "red-400": "#f07a6e", "blue-600": "#2457c5", "blue-400": "#5f92e8", "blue-700": "#1b449c"} as const;
+
+/** Second-brand colours for the multi-brand lesson; mirrored by --sample-token-orange-* in globals.css (D-125). */
+export const BRAND_SAMPLES = { "orange-500": "#e8742a", "orange-700": "#c2410c" } as const;
 const tok = (k: keyof typeof TOKEN_SAMPLES) => `var(--sample-token-${k})`;
 
 export const colourContrastPlate: IllustrationEntry = {

@@ -1,6 +1,6 @@
 # Progress register
 
-_Last updated: 2026-11-11 (session 36 — Design Systems Batch 6, state patterns; Stage 4 complete)_
+_Last updated: 2026-11-12 (session 37 — Design Systems Batch 7, governance and operations; domain complete)_
 
 ## State
 
@@ -125,5 +125,12 @@ After that: `ui-design`, `interaction-design-discipline`, `accessibility-concept
 - New tested formula `waitFeedback` in `lib/formulas/components.ts`; the loading entry and plate use it.
 - Stage 4 of the Design Systems path is fully published (12 of 12); Stages 1–4 are complete.
 
+## Session 37 — Design Systems Batch 7: governance and operations (D-125)
+
+- Published `design-governance`, `design-system-versioning`, `design-qa`, `design-system-audits` (strategy, Design Systems › operations) and `multi-brand-systems` (concept, Design Systems › foundations). Each has three depths, a practice block with exactly three dos and three don'ts and worked examples (RFC template and lifecycle metadata; SemVer classification matrix, changeset, token alias and jscodeshift codemod; Stylelint token rules and a Playwright visual-plus-axe gate; audit spreadsheet and adoption scan; multi-brand DTCG override map with a resolver and a CI contrast matrix), a correction exercise, quizzes at three levels, four flashcards, a sheet plate with figure key and a register record.
+- 15 sources added and checked: GOV.UK (propose, contribution criteria, develop, component lifecycle statuses), Changesets, jscodeshift, react-scanner, Playwright visual comparisons, Chromatic, Storybook interaction tests, Stylelint `color-no-hex` and `declaration-property-unit-disallowed-list`, axe-core, W3C WCAG-EM 2.0 (Group Note, July 2026), Figma library analytics. Semantic Versioning notes extended with its deprecation FAQ and 0.y.z rule. Reused: Primer component status, Frost 2016, DTCG format and resolver, Fluent 2 tokens, Carbon themes.
+- New tested formulas in `lib/formulas/components.ts`: `bumpVersion`, `releaseBump`, `adoptionRate`. New theme-independent sample colours `--sample-token-orange-500/700` (`BRAND_SAMPLES`, tested against globals.css) for the multi-brand contrast example (3.02:1 fails, 5.18:1 passes).
+- **The Design Systems domain is complete: 29 of 29 topics published (100%)**, per the generated docs/CONTENT_COVERAGE.md and `npm run test:taxonomy`. Overall coverage: 88 of 561 topics (15.7%).
+
 ## Next task (precise)
-Design Systems Batch 7 (Stage 5, governance and operations): `design-governance`, `design-system-versioning`, `design-qa`, `design-system-audits`, `multi-brand-systems` — sources verified first (Primer component status and semver are already in the registry).
+Owner decision on the next domain. Candidates: finish `interaction-states` (supporting topic in Stage 4, Interaction domain) if still planned; Level-3 labs for the Design Systems path (a component state switcher for `data-tables`, an audit simulator); or begin the next domain in docs/CONTENT_AUDIT.md §6 order with sources verified first.

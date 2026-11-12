@@ -6,7 +6,7 @@
  */
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
-import { CONTRAST_SAMPLES, TOKEN_SAMPLES } from "../components/illustrations/concepts/learning-sheets";
+import { BRAND_SAMPLES, CONTRAST_SAMPLES, TOKEN_SAMPLES } from "../components/illustrations/concepts/learning-sheets";
 import { contrastRatio } from "../lib/formulas/visual";
 
 const css = readFileSync(new URL("../app/globals.css", import.meta.url), "utf8");
@@ -132,7 +132,7 @@ describe("illustration sample colours (theme-independent, D-106)", () => {
     expect(contrastRatio(CONTRAST_SAMPLES.fail, CONTRAST_SAMPLES.white)).toBeGreaterThanOrEqual(3);
   });
   it("include the token lessons' palette exactly (D-114)", () => {
-    for (const [k, hex] of Object.entries(TOKEN_SAMPLES)) expect(samples[`sample-token-${k}`], k).toBe(hex);
+    for (const [k, hex] of Object.entries({ ...TOKEN_SAMPLES, ...BRAND_SAMPLES })) expect(samples[`sample-token-${k}`], k).toBe(hex);
   });
   it("are not redefined by the dark theme", () => {
     expect(Object.keys(themes.dark).filter((k) => k.startsWith("sample-"))).toEqual([]);

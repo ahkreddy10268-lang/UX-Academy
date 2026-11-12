@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { booleanVsEnum, variantCount, waitFeedback } from "./components";
+import { adoptionRate, booleanVsEnum, bumpVersion, releaseBump, variantCount, waitFeedback } from "./components";
 import { FormulaInputError } from "./math";
 
 describe("variantCount", () => {
@@ -32,4 +32,31 @@ describe("waitFeedback", () => {
     expect(waitFeedback(15)).toBe("percent-done");
   });
   it("rejects negative input", () => expect(() => waitFeedback(-1)).toThrow(FormulaInputError));
+});
+
+describe("bumpVersion / releaseBump", () => {
+  it("increments per SemVer and resets lower parts", () => {
+    expect(bumpVersion("3.4.2", "patch")).toBe("3.4.3");
+    expect(bumpVersion("3.4.2", "minor")).toBe("3.5.0");
+    expect(bumpVersion("3.4.2", "major")).toBe("4.0.0");
+  });
+  it("a release takes its largest change", () => {
+    expect(releaseBump(["patch", "minor", "patch"])).toBe("minor");
+    expect(releaseBump(["patch", "major"])).toBe("major");
+  });
+  it("rejects malformed input", () => {
+    expect(() => bumpVersion("v3.4", "patch")).toThrow(FormulaInputError);
+    expect(() => releaseBump([])).toThrow(FormulaInputError);
+  });
+});
+
+describe("adoptionRate", () => {
+  it("is system / (system + custom)", () => {
+    expect(adoptionRate(312, 88)).toBeCloseTo(0.78, 10);
+    expect(adoptionRate(5, 0)).toBe(1);
+  });
+  it("rejects empty and invalid counts", () => {
+    expect(() => adoptionRate(0, 0)).toThrow(FormulaInputError);
+    expect(() => adoptionRate(-1, 2)).toThrow(FormulaInputError);
+  });
 });

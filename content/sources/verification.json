@@ -138,6 +138,11 @@
     "checkedAt": "2026-11-09",
     "httpStatus": 200
   },
+  "axe-core": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-12",
+    "httpStatus": 200
+  },
   "baddeley-1994": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",
@@ -376,6 +381,11 @@
     "registeredContainer": "Cognition and Instruction",
     "similarity": 1
   },
+  "changesets": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-12",
+    "httpStatus": 200
+  },
   "chapanis-lindenbaum-1959": {
     "status": "doi-verified",
     "checkedAt": "2026-11-11",
@@ -395,6 +405,11 @@
   "christensen-et-al-2016": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "chromatic-docs": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-12",
     "httpStatus": 200
   },
   "cloudscape-genai-follow-up": {
@@ -572,6 +587,11 @@
     "checkedAt": "2026-11-03",
     "httpStatus": 200
   },
+  "figma-library-analytics": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-12",
+    "httpStatus": 200
+  },
   "figma-variants": {
     "status": "url-reachable",
     "checkedAt": "2026-11-11",
@@ -699,9 +719,29 @@
     "registeredContainer": "Communications of the ACM",
     "similarity": 1
   },
+  "govuk-component-lifecycle": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-12",
+    "httpStatus": 200
+  },
+  "govuk-contribution-criteria": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-12",
+    "httpStatus": 200
+  },
   "govuk-design-system": {
     "status": "url-reachable",
     "checkedAt": "2026-11-06",
+    "httpStatus": 200
+  },
+  "govuk-develop-component": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-12",
+    "httpStatus": 200
+  },
+  "govuk-propose-component": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-12",
     "httpStatus": 200
   },
   "govuk-service-manual": {
@@ -998,6 +1038,11 @@
     "registeredYear": 1996,
     "registeredContainer": "ACM Transactions on Computer-Human Interaction",
     "similarity": 1
+  },
+  "jscodeshift": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-12",
+    "httpStatus": 200
   },
   "kahneman-et-al-1993": {
     "status": "doi-verified",
@@ -1670,6 +1715,11 @@
     "registeredContainer": "Psychological Review",
     "similarity": 1
   },
+  "playwright-snapshots": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-12",
+    "httpStatus": 200
+  },
   "polson-et-al-1992": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",
@@ -1724,6 +1774,11 @@
   "react-reacting-to-input": {
     "status": "url-reachable",
     "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "react-scanner": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-12",
     "httpStatus": 200
   },
   "react-sharing-state": {
@@ -1979,9 +2034,24 @@
     "registeredContainer": "Quarterly Journal of Experimental Psychology",
     "similarity": 0.67
   },
+  "storybook-interaction-tests": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-12",
+    "httpStatus": 200
+  },
   "style-dictionary-dtcg": {
     "status": "url-reachable",
     "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "stylelint-color-no-hex": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-12",
+    "httpStatus": 200
+  },
+  "stylelint-unit-disallowed-list": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-12",
     "httpStatus": 200
   },
   "sweller-1988": {
@@ -2220,6 +2290,11 @@
   "w3c-wcag-3-wd": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "w3c-wcag-em-2": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-12",
     "httpStatus": 200
   },
   "w3c-wcag-overview": {
