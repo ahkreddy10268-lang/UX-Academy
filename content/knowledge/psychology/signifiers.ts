@@ -175,6 +175,7 @@ export default defineEntry({
   relations: [
     { target: "affordances", type: "contrasts-with", note: "Signifiers communicate the actions that affordances make possible." },
     { target: "feedback-principle", type: "complementary-to", note: "Signifiers say what an action will do before it; feedback says what it did after." },
+    { target: "constraints", type: "complementary-to", note: "Signifiers show where and how to act; constraints remove the options that should not be taken." },
     { target: "discoverability", type: "influences", note: "On screens, discoverability depends largely on signifiers." },
     { target: "visual-hierarchy", type: "related-to", note: "Hierarchy determines which signifiers attract attention first." },
     { target: "information-scent", type: "complementary-to", note: "Link labels act as signifiers of both interactivity and destination." },

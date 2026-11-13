@@ -1,6 +1,6 @@
 /**
- * Cycle 1, Batch 1 plates (D-129): interaction principles of feedback and
- * state. Instructional sheets (D-089); explanations live in each plate's
+ * Cycle 1, Batch 1 plates (D-129): interaction principles of feedback,
+ * constraints and state. Instructional sheets (D-089); explanations live in each plate's
  * figure key (D-101), never as microtext in the drawing.
  */
 import type { IllustrationEntry } from "../illustration-types";
@@ -104,5 +104,111 @@ export const feedbackPrinciplePlate: IllustrationEntry = {
   ),
 };
 
-const plates: IllustrationEntry[] = [feedbackPrinciplePlate];
+/* ------------------------------------------------------------------ */
+/* Constraints: Norman's four kinds, shown as interfaces               */
+/* ------------------------------------------------------------------ */
+const Panel = ({ x, y }: { x: number; y: number }) => <rect x={x} y={y} width={186} height={134} rx={8} fill={S.surface} stroke={S.ruleStrong} strokeWidth="0.9" {...hair} />;
+
+export const constraintsPlate: IllustrationEntry = {
+  slug: "constraints",
+  title: "Constraints plate",
+  canvas: "sheet",
+  description:
+    "Four interface panels, one for each kind of constraint Norman describes. Top left, physical: a volume slider whose thumb can move only along its track — a double-headed arrow along the track is allowed, an arrow pointing off the track is crossed out. Top right, cultural: a 'Discard draft?' dialog with a close × in the top right corner and Cancel before the primary Discard button, laid out the way convention leads people to expect. Bottom left, semantic: a return-date row of days 10 to 16 where departure is on the 12th, so the 10th and 11th are struck out and cannot be chosen; 'out' marks the departure day, because a return cannot come before the outward trip. Bottom right, logical: three seats for a third passenger, two already taken and crossed, one free and ticked — only one choice is left, so reasoning alone settles it.",
+  key: [
+    { n: "1", label: "Physical", detail: "the shape of the control allows only certain movements — the thumb stays on its track" },
+    { n: "2", label: "Cultural", detail: "conventions people have learned narrow what they try: × closes, the primary action comes last" },
+    { n: "3", label: "Semantic", detail: "the meaning of the task rules options out: a return date before departure makes no sense" },
+    { n: "4", label: "Logical", detail: "when other options are used up, reasoning leaves one: two seats are taken, so the third is it" },
+  ],
+  Art: ({ detail }) => (
+    <g>
+      {/* 1 physical: slider confined to its track */}
+      <Panel x={8} y={8} />
+      <UiText x={22} y={34} weight={600}>
+        Volume
+      </UiText>
+      <line x1={26} y1={78} x2={176} y2={78} stroke={S.ruleStrong} strokeWidth="4" strokeLinecap="round" />
+      <line x1={26} y1={78} x2={110} y2={78} stroke={S.accent} strokeWidth="4" strokeLinecap="round" />
+      <circle cx={110} cy={78} r={9} fill={S.surface} stroke={S.ink} strokeWidth="1.6" />
+      <line x1={70} y1={104} x2={150} y2={104} stroke={S.ink2} strokeWidth="1.1" {...hair} />
+      <polygon points={head(150, 104, 1, 0)} fill={S.ink2} />
+      <polygon points={head(70, 104, -1, 0)} fill={S.ink2} />
+      <Verdict x={110} y={122} ok />
+      <line x1={110} y1={66} x2={110} y2={44} stroke={S.ink3} strokeWidth="1.1" strokeDasharray="3 2" {...hair} />
+      <Verdict x={134} y={46} ok={false} />
+
+      {/* 2 cultural: dialog laid out by convention */}
+      <Panel x={206} y={8} />
+      <UiText x={220} y={36} weight={600}>
+        Discard draft?
+      </UiText>
+      <UiText x={370} y={37} anchor="middle" tone="ink2" size={18}>
+        ×
+      </UiText>
+      <TextBar x={220} y={54} w={140} />
+      <TextBar x={220} y={66} w={110} />
+      <UiButton x={220} y={100} w={70} label="Cancel" variant="secondary" />
+      <UiButton x={298} y={100} w={80} label="Discard" />
+
+      {/* 3 semantic: no return before departure */}
+      <Panel x={8} y={158} />
+      <UiText x={22} y={184} weight={600}>
+        Return
+      </UiText>
+      {[10, 11, 12, 13, 14, 15, 16].map((d, i) => {
+        const x = 18 + i * 24;
+        const before = d < 12;
+        return (
+          <g key={d}>
+            <rect x={x} y={208} width={21} height={24} rx={4} fill={d === 12 ? S.accentWash : before ? S.sunken : S.surface} stroke={d === 12 ? S.accent : S.ruleStrong} strokeWidth="0.9" {...hair} />
+            <UiText x={x + 10.5} y={225} anchor="middle" tone={before ? "ink3" : "ink"}>
+              {d}
+            </UiText>
+            {before && <line x1={x + 3} y1={229} x2={x + 18} y2={211} stroke={S.ink3} strokeWidth="1.1" {...hair} />}
+          </g>
+        );
+      })}
+      <UiText x={76.5} y={256} anchor="middle" mono tone="ink2">
+        out
+      </UiText>
+
+      {/* 4 logical: one seat left */}
+      <Panel x={206} y={158} />
+      <UiText x={220} y={184} weight={600}>
+        Seat, passenger 3
+      </UiText>
+      {[0, 1, 2].map((i) => {
+        const x = 230 + i * 50;
+        const free = i === 2;
+        return (
+          <g key={i}>
+            <rect x={x} y={206} width={38} height={34} rx={6} fill={free ? S.okWash : S.sunken} stroke={free ? S.ok : S.ruleStrong} strokeWidth={free ? 1.4 : 0.9} {...hair} />
+            {!free && (
+              <>
+                <line x1={x + 8} y1={214} x2={x + 30} y2={232} stroke={S.ink3} strokeWidth="1.2" {...hair} />
+                <line x1={x + 30} y1={214} x2={x + 8} y2={232} stroke={S.ink3} strokeWidth="1.2" {...hair} />
+              </>
+            )}
+            {free && <Verdict x={x + 19} y={223} ok />}
+            <UiText x={x + 19} y={260} anchor="middle" mono tone="ink2">
+              {`${i + 1}C`}
+            </UiText>
+          </g>
+        );
+      })}
+
+      {detail && (
+        <>
+          <Marker x={8} y={8} n={1} />
+          <Marker x={206} y={8} n={2} />
+          <Marker x={8} y={158} n={3} />
+          <Marker x={206} y={158} n={4} />
+        </>
+      )}
+    </g>
+  ),
+};
+
+const plates: IllustrationEntry[] = [feedbackPrinciplePlate, constraintsPlate];
 export default plates;

@@ -169,6 +169,7 @@ export default defineEntry({
     { target: "error-recovery", type: "applied-in", note: "Specific feedback about what went wrong is the first step of recovery." },
     { target: "doherty-threshold", type: "related-to", note: "Response-time targets decide how quickly feedback must arrive." },
     { target: "interaction-states", type: "applied-in", note: "Pressed, busy, success and error states are how components give feedback." },
+    { target: "constraints", type: "complementary-to", note: "Constraints narrow the options before an action; feedback reports its result after it." },
   ],
 
   lab: "feedback-lab",

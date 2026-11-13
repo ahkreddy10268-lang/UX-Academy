@@ -351,7 +351,7 @@ How people act on interfaces and how interfaces respond.
 - ◻️ Platform Design Guidelines — *Guideline* · `platform-design-guidelines`
 - ◻️ Interaction Cost — *Concept* · `interaction-cost`
 - ✅ Feedback — *Concept* · `feedback-principle`
-- ◻️ Constraints — *Concept* · `constraints`
+- ✅ Constraints — *Concept* · `constraints`
 - ✅ Mapping — *Concept* · `mapping`
 - ✅ Error Prevention — *Principle* · `error-prevention`
 

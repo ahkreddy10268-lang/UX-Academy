@@ -157,10 +157,10 @@ Fields per record (see `lib/content/schema.ts`): id, title, authors, organisatio
 | `nielsen-molich-1990` | Nielsen, J., Molich, R. (1990). *Heuristic evaluation of user interfaces*. Proceedings of the SIGCHI Conference on Human Factors in Computing Systems (CHI '90) | doi:10.1145/97243.97281 | paywalled | doi-verified (2026-11-03) |
 | `norman-1981` | Norman, D. A. (1981). *Categorization of action slips*. Psychological Review | doi:10.1037/0033-295X.88.1.1 | paywalled | doi-verified (2026-11-11) |
 | `norman-1983` | Norman, D. A. (1983). *Some observations on mental models*. Mental Models (D. Gentner & A. L. Stevens, Eds.) | — | paywalled | not machine-checked |
-| `norman-1983-design-rules` | Norman, D. A. (1983). *Design rules based on analyses of human error*. Communications of the ACM | doi:10.1145/2163.358092 | paywalled | doi-verified (2026-11-12) |
+| `norman-1983-design-rules` | Norman, D. A. (1983). *Design rules based on analyses of human error*. Communications of the ACM | doi:10.1145/2163.358092 | paywalled | doi-verified (2026-11-13) |
 | `norman-1986` | Norman, D. A. (1986). *Cognitive engineering*. User Centered System Design: New Perspectives on Human-Computer Interaction (D. A. Norman & S. W. Draper, Eds.) | doi:10.1201/b15703-3 | paywalled | doi-verified (2026-11-03) |
 | `norman-1988` | Norman, D. A. (1988). *The Psychology of Everyday Things* | — | paywalled | not machine-checked |
-| `norman-1999` | Norman, D. A. (1999). *Affordance, conventions, and design*. interactions | doi:10.1145/301153.301168 | paywalled | doi-verified (2026-11-03) |
+| `norman-1999` | Norman, D. A. (1999). *Affordance, conventions, and design*. interactions | doi:10.1145/301153.301168 | paywalled | doi-verified (2026-11-13) |
 | `norman-2008` | Norman, D. A. (2008). *Signifiers, not affordances*. interactions | doi:10.1145/1409040.1409044 | paywalled | doi-verified (2026-11-03) |
 | `norman-2013` | Norman, D. A. (2013). *The Design of Everyday Things: Revised and Expanded Edition* | ISBN 978-0-465-05065-9 | paywalled | not machine-checked |
 | `norman-draper-1986` | Norman, D. A., Draper, S. W. (1986). *User Centered System Design: New Perspectives on Human-Computer Interaction* | doi:10.1201/b15703 | paywalled | doi-verified (2026-11-03) |
@@ -223,10 +223,10 @@ Fields per record (see `lib/content/schema.ts`): id, title, authors, organisatio
 | `w3c-understanding-status-messages` | W3C Web Accessibility Initiative. *Understanding SC 4.1.3: Status Messages* | https://www.w3.org/WAI/WCAG22/Understanding/status-messages.html | open | url-reachable (2026-11-11) |
 | `w3c-understanding-wcag-22` | W3C Web Accessibility Initiative (WAI). *Understanding WCAG 2.2* | https://www.w3.org/WAI/WCAG22/Understanding/ | open | url-reachable (2026-11-03) |
 | `w3c-wai` | World Wide Web Consortium (W3C). *W3C Web Accessibility Initiative (WAI)* | https://www.w3.org/WAI/ | open | url-reachable (2026-11-03) |
-| `w3c-wai-aria-12` | World Wide Web Consortium (W3C) (2023). *Accessible Rich Internet Applications (WAI-ARIA) 1.2* | https://www.w3.org/TR/wai-aria-1.2/ | open | url-reachable (2026-11-11) |
+| `w3c-wai-aria-12` | World Wide Web Consortium (W3C) (2023). *Accessible Rich Internet Applications (WAI-ARIA) 1.2* | https://www.w3.org/TR/wai-aria-1.2/ | open | url-reachable (2026-11-13) |
 | `w3c-wai-tables-tutorial` | W3C Web Accessibility Initiative. *Tables Tutorial* | https://www.w3.org/WAI/tutorials/tables/ | open | url-reachable (2026-11-11) |
 | `w3c-wcag-21` | World Wide Web Consortium (W3C) (2018). *Web Content Accessibility Guidelines (WCAG) 2.1* | https://www.w3.org/TR/WCAG21/ | open | url-reachable (2026-11-03) |
-| `w3c-wcag-22` | World Wide Web Consortium (W3C) (2023). *Web Content Accessibility Guidelines (WCAG) 2.2* | https://www.w3.org/TR/WCAG22/ | open | url-reachable (2026-11-03) |
+| `w3c-wcag-22` | World Wide Web Consortium (W3C) (2023). *Web Content Accessibility Guidelines (WCAG) 2.2* | https://www.w3.org/TR/WCAG22/ | open | url-reachable (2026-11-13) |
 | `w3c-wcag-3-wd` | World Wide Web Consortium (W3C) (2026). *W3C Accessibility Guidelines (WCAG) 3.0 — W3C Working Draft* | https://www.w3.org/TR/wcag-3.0/ | open | url-reachable (2026-11-03) |
 | `w3c-wcag-em-2` | World Wide Web Consortium (W3C) (2026). *WCAG Evaluation Methodology (WCAG-EM) 2.0* | https://www.w3.org/TR/wcag-em-2/ | open | url-reachable (2026-11-12) |
 | `w3c-wcag-overview` | W3C Web Accessibility Initiative (WAI). *WCAG 2 Overview* | https://www.w3.org/WAI/standards-guidelines/wcag/ | open | url-reachable (2026-11-03) |
@@ -314,7 +314,7 @@ Fields per record (see `lib/content/schema.ts`): id, title, authors, organisatio
 | `m3-color-roles` | Google. *Material Design 3: Color roles* | https://m3.material.io/styles/color/roles | open | url-reachable (2026-11-11) |
 | `m3-design-tokens` | Google. *Material Design 3: Design tokens overview* | https://m3.material.io/foundations/design-tokens/overview | open | url-reachable (2026-11-11) |
 | `m3-elevation` | Google. *Material Design 3: Elevation* | https://m3.material.io/styles/elevation/overview | open | url-reachable (2026-11-11) |
-| `m3-states` | Google. *Material Design 3: States* | https://m3.material.io/foundations/interaction/states/overview | open | url-reachable (2026-11-12) |
+| `m3-states` | Google. *Material Design 3: States* | https://m3.material.io/foundations/interaction/states/overview | open | url-reachable (2026-11-13) |
 | `m3-type-scale` | Google. *Material Design 3: Type scale and tokens* | https://m3.material.io/styles/typography/type-scale-tokens | open | url-reachable (2026-11-11) |
 | `marcotte-2010` | Marcotte, E. (2010). *Responsive Web Design*. A List Apart | https://alistapart.com/article/responsive-web-design/ | open | url-reachable (2026-11-03) |
 | `material-3` | Google. *Material Design 3* | https://m3.material.io/ | open | url-reachable (2026-11-03) |
@@ -427,7 +427,7 @@ Fields per record (see `lib/content/schema.ts`): id, title, authors, organisatio
 | `nng-help-documentation` | Kendrick, A. (2020). *Help and Documentation (Usability Heuristic #10)*. Nielsen Norman Group articles | https://www.nngroup.com/articles/help-and-documentation/ | open | url-reachable (2026-11-11) |
 | `nng-match-real-world` | Kaley, A. (2018). *Match Between the System and the Real World (Usability Heuristic #2)*. Nielsen Norman Group articles | https://www.nngroup.com/articles/match-system-real-world/ | open | url-reachable (2026-11-12) |
 | `nng-natural-mappings` | Sherwin, K. (2018). *Natural Mappings and Stimulus-Response Compatibility in User Interface Design*. Nielsen Norman Group articles | https://www.nngroup.com/articles/natural-mappings/ | open | url-reachable (2026-11-11) |
-| `nng-slips` | Laubheimer, P. (2015). *Preventing User Errors: Avoiding Unconscious Slips*. Nielsen Norman Group articles | https://www.nngroup.com/articles/slips/ | open | url-reachable (2026-11-11) |
+| `nng-slips` | Laubheimer, P. (2015). *Preventing User Errors: Avoiding Unconscious Slips*. Nielsen Norman Group articles | https://www.nngroup.com/articles/slips/ | open | url-reachable (2026-11-13) |
 | `nng-user-control-freedom` | Rosala, M. (2020). *User Control and Freedom (Usability Heuristic #3)*. Nielsen Norman Group articles | https://www.nngroup.com/articles/user-control-and-freedom/ | open | url-reachable (2026-11-11) |
 | `nng-user-mistakes` | Laubheimer, P. (2015). *Preventing User Errors: Avoiding Conscious Mistakes*. Nielsen Norman Group articles | https://www.nngroup.com/articles/user-mistakes/ | open | url-reachable (2026-11-11) |
 | `nng-visibility-system-status` | Harley, A. (2018). *Visibility of System Status (Usability Heuristic #1)*. Nielsen Norman Group articles | https://www.nngroup.com/articles/visibility-system-status/ | open | url-reachable (2026-11-11) |

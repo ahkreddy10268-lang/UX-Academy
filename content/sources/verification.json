@@ -1270,7 +1270,7 @@
   },
   "m3-states": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-12",
+    "checkedAt": "2026-11-13",
     "httpStatus": 200
   },
   "m3-type-scale": {
@@ -1640,7 +1640,7 @@
   },
   "nng-slips": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-11",
+    "checkedAt": "2026-11-13",
     "httpStatus": 200
   },
   "nng-user-control-freedom": {
@@ -1673,7 +1673,7 @@
   },
   "norman-1983-design-rules": {
     "status": "doi-verified",
-    "checkedAt": "2026-11-12",
+    "checkedAt": "2026-11-13",
     "registeredTitle": "Design rules based on analyses of human error",
     "registeredYear": 1983,
     "registeredContainer": "Communications of the ACM",
@@ -1689,7 +1689,7 @@
   },
   "norman-1999": {
     "status": "doi-verified",
-    "checkedAt": "2026-11-03",
+    "checkedAt": "2026-11-13",
     "registeredTitle": "Affordance, conventions, and design",
     "registeredYear": 1999,
     "registeredContainer": "Interactions",
@@ -2339,7 +2339,7 @@
   },
   "w3c-wai-aria-12": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-11",
+    "checkedAt": "2026-11-13",
     "httpStatus": 200
   },
   "w3c-wai-tables-tutorial": {
@@ -2354,7 +2354,7 @@
   },
   "w3c-wcag-22": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-03",
+    "checkedAt": "2026-11-13",
     "httpStatus": 200
   },
   "w3c-wcag-3-wd": {

@@ -1,6 +1,6 @@
 # Progress register
 
-_Last updated: 2026-11-13 (session 41 — Colour Studio lab; Cycle 1, Batch 1 in progress)_
+_Last updated: 2026-11-13 (session 42 — `constraints` published; Cycle 1, Batch 1: 2 of 5)_
 
 ## State
 
@@ -154,5 +154,11 @@ After that: `ui-design`, `interaction-design-discipline`, `accessibility-concept
 - New tool lab `/labs/colour-studio`: Palette Studio (HSL wheel, six harmonies, editable swatches, colour-vision preview, role-based interface preview with WCAG checks of the pairs it renders, CSS/JSON export, import, save in this browser), Colour Contrast (WCAG 2.2 text / large text / non-text on the unrounded ratio, every palette pair), Image Extraction (local median cut), Gradient Studio. Maths in `lib/formulas/colour.ts` (25 tests) reusing the WCAG and colour-vision code; browser checks in `tests/browser/colour-studio.cjs` (46). No content, taxonomy or batch changes; generated docs now count 19 labs.
 - Reviewed in PR #2 against main; not merged.
 
+## Session 42 — `constraints` published (Cycle 1, Batch 1, entry 2 of 5)
+
+- **Published `constraints`** (concept, established theory): physical, cultural, semantic and logical constraints as an overlapping lens (not an exhaustive taxonomy); forcing functions (interlocks, lock-ins, lockouts) and when they are worth their friction; digital examples throughout; boundaries with affordances, signifiers, feedback, conventions and error prevention; accessibility of disabled controls and over-constraint. Explanation, Evidence, Practice, Editorial complete; meets its visual target (plate). No new sources: reused Norman 1988/2013 (bibliographic), Norman 1983 and 1999 (DOI-verified), NN/g slips, WCAG 2.2 SC 1.4.3 and 3.3.4 and WAI-ARIA 1.2 `aria-disabled` (wording read first-hand 2026-11-13), Material 3 states.
+- Plate `constraints` in `components/illustrations/concepts/interaction-sheets.tsx` (four interface panels, one per kind; plate text ≥ 10.2 px at 390). Reciprocal relations from `signifiers` and `feedback-principle`; `error-prevention` now links its "helpful constraints". Interaction Design path 74 % → 78 %.
+- Branch `claude/batch1-constraints`, kept separate from PR #2.
+
 ## Next task (precise)
-Continue Batch 1, one entry at a time, sources already verified (content/topic-ledger.ts): `constraints`, `direct-manipulation`, `interaction-states`, `discoverability` — each complete on Explanation, Practice and Editorial, meeting its Visual and Evidence targets, with a plate, links from existing entries (plan § 7.4), `docs:generate` after each. Then Batch 2 (think-aloud-protocol, tree-testing, contextual-inquiry, in-depth-interviews) and Batch 3 (UX writing foundations), then the cycle-1 balance review (plan § 9.3).
+Continue Batch 1, one entry at a time, sources already verified (content/topic-ledger.ts): `direct-manipulation`, `interaction-states`, `discoverability` — each complete on Explanation, Practice and Editorial, meeting its Visual and Evidence targets, with a plate, links from existing entries (plan § 7.4), `docs:generate` after each. Then Batch 2 (think-aloud-protocol, tree-testing, contextual-inquiry, in-depth-interviews) and Batch 3 (UX writing foundations), then the cycle-1 balance review (plan § 9.3).

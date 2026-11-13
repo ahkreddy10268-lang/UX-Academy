@@ -49,7 +49,7 @@ export default defineEntry({
     },
     intermediate: {
       explanation: [
-        "**Slips** happen most when people know the task well and pay it little attention, so experts make them as well as novices {{src:nng-slips}}. NN/g recommends four ways to prevent them: helpful **constraints** where clear rules define acceptable input, **suggestions** that preempt typos, good **defaults** for repetitive or precise input, and **forgiving formatting** that accepts different ways of typing the same thing {{src:nng-slips}}.",
+        "**Slips** happen most when people know the task well and pay it little attention, so experts make them as well as novices {{src:nng-slips}}. NN/g recommends four ways to prevent them: helpful [[constraints|constraints]] where clear rules define acceptable input, **suggestions** that preempt typos, good **defaults** for repetitive or precise input, and **forgiving formatting** that accepts different ways of typing the same thing {{src:nng-slips}}.",
         "**Mistakes** happen when people's mental model does not match how the system works, so they form the wrong goal or misread the result. Preventing them means understanding those mental models through research, following conventions (people expect your product to work like others they use), communicating what controls do, and **previewing results** before people commit {{src:nng-user-mistakes}}.",
         "For both, high-stakes or destructive actions need a final check: a confirmation that states the consequence, or an undo that makes the action reversible {{src:nng-user-mistakes}}. Confirmation works only if it is rare; shown for routine actions it becomes a habit and stops preventing anything.",
       ],
