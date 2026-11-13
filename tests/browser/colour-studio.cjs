@@ -1,4 +1,4 @@
-// Colour Studio interaction checks (run against `next start`; see README).
+// Colour Studio interaction checks (run against `next start`; see README). 46 checks.
 const { chromium } = require('playwright');
 const BASE = process.env.BASE_URL ?? 'http://localhost:3100';
 const results = [];
@@ -65,6 +65,24 @@ const check = (name, ok, detail = '') => results.push({ name, ok: !!ok, detail }
   check('interface preview uses the edited colour', outline.includes('secondary #e9c46a'), outline.slice(0, 120));
   await panel.getByLabel('Primary action').selectOption('#1c1b19');
   check('assigning a role updates the preview', (await panel.locator('[role="img"][aria-label^="Interface preview"]').getAttribute('aria-label')).includes('primary #1c1b19'));
+
+  // role checks use the pairs the preview actually renders (independent WCAG 2.2 calculation here)
+  const lin = (c) => { c /= 255; return c <= 0.04045 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4; };
+  const lum = (hex) => { const n = parseInt(hex.slice(1), 16); return 0.2126 * lin(n >> 16) + 0.7152 * lin((n >> 8) & 255) + 0.0722 * lin(n & 255); };
+  const ratio = (a, b) => { const [x, y] = [lum(a), lum(b)].sort((m, n) => n - m); return (x + 0.05) / (y + 0.05); };
+  const shown = (name) => panel.locator('li', { hasText: name }).locator('.formula').textContent();
+  const rendered = await panel.locator('[role="img"][aria-label^="Interface preview"]').evaluate((root) => {
+    const toHex = (rgb) => '#' + rgb.match(/\d+/g).slice(0, 3).map((v) => Number(v).toString(16).padStart(2, '0')).join('');
+    const bar = root.querySelector('.h-2.w-2\\/3');
+    const title = [...root.querySelectorAll('p')].find((x) => x.textContent.includes('Design of Everyday Things'));
+    let card = title; while (card && !card.classList.contains('rounded-md')) card = card.parentElement;
+    return { fill: toHex(getComputedStyle(bar).backgroundColor), track: toHex(getComputedStyle(bar.parentElement).backgroundColor), heading: toHex(getComputedStyle(title).color), surface: toHex(getComputedStyle(card).backgroundColor) };
+  });
+  const trunc = (r) => (Math.floor(r * 100) / 100).toFixed(2) + ':1';
+  const barShown = await shown('Accent progress bar');
+  check('accent bar check uses the rendered fill and track', barShown === trunc(ratio(rendered.fill, rendered.track)), `${rendered.fill} on ${rendered.track}: shown ${barShown}, expected ${trunc(ratio(rendered.fill, rendered.track))}`);
+  const headShown = await shown('Heading colour on card surface');
+  check('heading-on-surface check uses the rendered card pair', headShown === trunc(ratio(rendered.heading, rendered.surface)), `${rendered.heading} on ${rendered.surface}: shown ${headShown}, expected ${trunc(ratio(rendered.heading, rendered.surface))}`);
 
   // restore
   await panel.getByRole('button', { name: 'Restore generated colours' }).click();
