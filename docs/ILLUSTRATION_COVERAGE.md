@@ -5,12 +5,12 @@
 
 | Measure | Count |
 |---|---|
-| Registered Level-1 plates | 112 |
-| Published entries with a plate | 90 / 90 |
+| Registered Level-1 plates | 113 |
+| Published entries with a plate | 91 / 91 |
 | Subject plates | 20 / 20 |
-| Plates in the current system (dark technical or instructional sheet) | 110 |
+| Plates in the current system (dark technical or instructional sheet) | 111 |
 | Plates still in the earlier pastel style | 2 |
-| Level-2 figures | 23 |
+| Level-2 figures | 24 |
 | Level-3 explorers (on plates) | 9 |
 | Labs linked from entries | 23 |
 | Animated plates | 12 |
@@ -26,7 +26,7 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 | 3 | UX Process Illustrations | 7 | 7 | 2 | 0 | 7 / 0 / 0 | mature | `double-diamond`, `user-centred-design` |
 | 4 | User Research Illustrations | 3 | 3 | 0 | 0 | 3 / 0 / 0 | developing | `card-sorting`, `jobs-to-be-done` |
 | 5 | Information Architecture Illustrations | 2 | 2 | 2 | 0 | 2 / 0 / 0 | mature | `information-architecture` |
-| 6 | Interaction Design Illustrations | 15 | 15 | 1 | 5 | 15 / 0 / 0 | developing | `signifiers`, `doherty-threshold`, `gulfs-of-execution-and-evaluation`, `interaction-design-discipline`, `progressive-disclosure`, `visibility-of-system-status`, `user-control-and-freedom`, `error-prevention`, `mapping`, `flexibility-and-efficiency-of-use`, `error-recovery`, `feedback-principle`, `constraints` |
+| 6 | Interaction Design Illustrations | 16 | 16 | 2 | 5 | 16 / 0 / 0 | developing | `signifiers`, `doherty-threshold`, `gulfs-of-execution-and-evaluation`, `interaction-design-discipline`, `progressive-disclosure`, `visibility-of-system-status`, `user-control-and-freedom`, `error-prevention`, `mapping`, `flexibility-and-efficiency-of-use`, `error-recovery`, `feedback-principle`, `constraints`, `direct-manipulation` |
 | 7 | Wireframe & Prototyping Illustrations | 1 | 1 | 0 | 0 | 1 / 0 / 0 | developing | — |
 | 8 | Visual Design & Composition Illustrations | 8 | 8 | 2 | 6 | 8 / 0 / 0 | developing | `gestalt-principles`, `colour-contrast-ratio`, `visual-hierarchy`, `modular-type-scale`, `aesthetic-and-minimalist-design` |
 | 9 | Design Systems Illustrations | 29 | 29 | 2 | 6 | 29 / 0 / 0 | developing | `atomic-design`, `design-system`, `design-tokens`, `primitive-tokens`, `semantic-tokens`, `theme-architecture`, `design-language`, `spacing-scales`, `typography-scales`, `colour-systems`, `elevation-systems`, `icon-systems`, `component-libraries`, `component-architecture`, `variants`, `component-properties`, `component-state-management`, `empty-states`, `loading-states`, `skeleton-screens`, `progressive-loading`, `error-states`, `data-tables`, `design-governance`, `design-system-versioning`, `design-qa`, `design-system-audits`, `multi-brand-systems` |
@@ -40,8 +40,8 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 |---|---:|---:|
 | Conceptual & Metaphorical | 18 | 7 |
 | Process & Sequential | 23 | 7 |
-| Relationship & Systems | 19 | 4 |
-| Comparison & Contrast | 33 | 4 |
+| Relationship & Systems | 19 | 5 |
+| Comparison & Contrast | 34 | 4 |
 | Hierarchy & Classification | 19 | 1 |
 
 ## Level 1 audit (every registered plate)
@@ -141,6 +141,7 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 | `multi-brand-systems` | entry | design-systems | relationship | current · instructional sheet | retain | Sheet (S37): one semantic token contract mapped to two brands' primitives; the same Button rendered per brand with contrast from lib/formulas contrastRatio (orange 500 fails, orange 700 passes) using --sample-token-* colours. | 0 | — |
 | `feedback-principle` | entry | interaction-design | process | current · instructional sheet | retain | Sheet (S40, Cycle 1 B1): the act → system change → feedback → evaluate loop, and three qualities of feedback (immediate, informative, proportionate) as good/poor pairs. | 0 | feedback-lab |
 | `constraints` | entry | interaction-design | comparison | current · instructional sheet | retain | Sheet (Cycle 1 B1): Norman's four kinds of constraint as four interfaces — physical (slider thumb confined to its track), cultural (dialog × and button order), semantic (no return date before departure), logical (one seat left). | 0 | — |
+| `direct-manipulation` | entry | interaction-design | comparison | current · instructional sheet | retain | Sheet (Cycle 1 B1): one move — q3.pdf into Archive — as a typed command checked with a second command, as a drag onto a highlighted folder, as an immediate result with Undo, and as a 'Move to…' menu that needs no dragging (WCAG 2.2 SC 2.5.7). | 1 | — |
 | `foundations` | subject | ux-concept | relationship | current · instructional sheet | retain | Sheet (S25, subject): interface inside the experience band, an approach loop and a history line. | 0 | — |
 | `laws-effects` | subject | ux-concept | conceptual | current · instructional sheet | retain | Sheet (S25, subject): six tiles for the domain's families, ending with evidence labels. | 0 | — |
 | `psychology` | subject | ux-concept | conceptual | current · instructional sheet | retain | Sheet (S25, subject): memory slots, a cue–action–outcome loop, pop-out search and a reach arc. | 0 | — |
@@ -163,10 +164,11 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 
 ## Level 2 figures
 
-23 of 23 Level-2 figures are drawn in a current language (sheet or viz).
+24 of 24 Level-2 figures are drawn in a current language (sheet or viz).
 
 | Figure | Type | Method | Language | Verification |
 |---|---|---|---|---|
+| `direct-manipulation.space` | conceptual | relationship | sheet | content-checked |
 | `fitts-law.anatomy` | formula | conceptual | sheet | content-checked |
 | `fitts-law.placement` | comparison | comparison | sheet | illustrative |
 | `double-diamond.process` | process | process | viz | content-checked |
@@ -288,6 +290,7 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 | `multi-brand-systems` | In the middle, one shared contract of semantic tokens — action.background, action.text, radius.control and font.body — that the single Button component uses. On the left, the library brand maps them to blue 600, white, a 6 px radius and a sans-serif face; its button reads 'Renew' at 6.47:1. On the right, the museum brand maps them to orange, white, a square 0 px radius and a serif face. Its logo orange 500 with white text is only 3.02:1 and is crossed out; the action role is mapped to orange 700 instead, at 5.18:1, which passes. The component code is identical for both brands. |
 | `feedback-principle` | Top row, a loop of three panels joined by arrows. Act: a pointer presses an Add button. System: out of sight, the basket changes from 1 to 2 items. Feedback: a tick with the word 'Added' and a badge showing 2. A dashed arrow runs from the feedback back under the panels to the button, closing the loop: the person compares what they see with what they meant to do. Bottom row, three comparisons. Immediate: a button already reading 'Adding…'. Informative: 'Done' marked with a cross beside 'Jacket added' marked with a tick. Proportionate: a small dialog over a dimmed screen marked with a cross beside a single inline line marked with a tick. |
 | `constraints` | Four interface panels, one for each kind of constraint Norman describes. Top left, physical: a volume slider whose thumb can move only along its track — a double-headed arrow along the track is allowed, an arrow pointing off the track is crossed out. Top right, cultural: a 'Discard draft?' dialog with a close × in the top right corner and Cancel before the primary Discard button, laid out the way convention leads people to expect. Bottom left, semantic: a return-date row of days 10 to 16 where departure is on the 12th, so the 10th and 11th are struck out and cannot be chosen; 'out' marks the departure day, because a return cannot come before the outward trip. Bottom right, logical: three seats for a third passenger, two already taken and crossed, one free and ticked — only one choice is left, so reasoning alone settles it. |
+| `direct-manipulation` | Four interface panels showing one task — moving the file q3.pdf into the Archive folder — done four ways. Top left, command: a terminal where the person types 'mv q3.pdf Archive', then has to type 'ls Archive' to see that q3.pdf is there; neither the file nor the folder is ever shown. Top right, direct: the file and the folder are both visible; a pointer drags the file from its old place, shown as a dashed outline, onto the Archive folder, which is highlighted while the file is over it. Bottom left, result: the Archive folder now lists q3.pdf, and a message reads 'Moved to Archive' with an Undo action. Bottom right, without dragging: the file's row has a 'Move to…' button that opens a menu listing Drafts and Archive; Archive has a keyboard focus ring and a pointer is about to click it, so the same move can be done with a click, a tap or the keyboard. |
 | `foundations` | Nested frames read from the inside out. At the centre, an interface: a booking screen with a title, a field and a button, the part UI design shapes. Around it, a band of before, during and after touchpoints, the whole experience UX design is concerned with. A loop arrow around the band stands for design approaches that put people's needs and evaluation at the centre. Along the bottom, a short timeline marks that the field has a history in design and human-computer interaction. |
 | `laws-effects` | Six tiles, one for each family of regularities in this subject. Human performance laws: a pointer moving a distance D to a target of width W. Popular laws and rules of thumb: a card stamped 'rule of thumb'. Memory and attention: a list in which one item stands out. Gestalt grouping: dots grouped by spacing. Decision-making biases: two options, one marked as the default. A sixth tile shows evidence labels, because these items range from measured laws to popular claims. |
 | `psychology` | Four panels for the four strands of the subject, each shown through what it explains in an interface rather than as a picture of a head. Cognitive psychology, memory and learning: four memory slots, three filled. Behavioural science, motivation and emotion: a loop from a cue to an action to an outcome that feeds back. Visual cognition: a field of outlined shapes in which one filled shape stands out at once (in the hero it pulses, as attention is captured). Human factors and ergonomics: a control panel with a large stop button within reach and a reach arc drawn around it. |

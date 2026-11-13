@@ -345,7 +345,7 @@ How people act on interfaces and how interfaces respond.
 
 - ◻️ Discoverability — *Principle* · `discoverability`
 - ✅ Visibility of System Status — *Principle* · `visibility-of-system-status`
-- ◻️ Direct Manipulation — *Principle* · `direct-manipulation`
+- ✅ Direct Manipulation — *Principle* · `direct-manipulation`
 - ✅ Progressive Disclosure — *Principle* · `progressive-disclosure`
 - ✅ Error Recovery — *Principle* · `error-recovery`
 - ◻️ Platform Design Guidelines — *Guideline* · `platform-design-guidelines`

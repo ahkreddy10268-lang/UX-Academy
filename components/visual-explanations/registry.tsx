@@ -5,6 +5,7 @@
  * text alternatives present, gold-standard concepts use different strategies).
  */
 import { CltArchitecture, CltSplitAttention } from "./concepts/cognitive-load";
+import { DirectnessSpace } from "./concepts/direct-manipulation";
 import { DoubleDiamondProcess } from "./concepts/double-diamond";
 import { FittsAnatomy, FittsComparison } from "./concepts/fitts-law";
 import { GestaltAnnotated, GestaltSpacing } from "./concepts/gestalt-principles";
@@ -19,6 +20,28 @@ import { IaEcology, IaHierarchy } from "./concepts/information-architecture";
 import type { VisualExplanation } from "./types";
 
 export const visualExplanations: VisualExplanation[] = [
+  {
+    id: "direct-manipulation.space",
+    language: "sheet",
+    slug: "direct-manipulation",
+    type: "conceptual",
+    method: "relationship",
+    level: 2,
+    title: "Two aspects of directness: distance and engagement",
+    objective: "Hutchins, Hollan and Norman's account of directness as a space with two dimensions — distance from the person's goals, and engagement as conversation or as a model world — with an example in each region.",
+    takeaway: "An interface feels direct when the distance is small and you act on a world of objects; engagement at the wrong level only looks direct, and a high-level language can serve some tasks better.",
+    summary: [
+      "Two dimensions. Distance: the effort of getting from what you want to the system's actions, and from its output back to knowing whether it worked (the gulfs of execution and evaluation). Engagement: talking to an intermediary (conversation) or acting on represented objects (model world).",
+      "Large distance, conversation — low-level language. Example: one typed command per file, in syntax you must recall. The least direct region.",
+      "Large distance, model world — low-level world. Example: tagging 400 photos by dragging a tag onto each one. Engaging at first, clumsy with use, because the objects are not at the level of the task.",
+      "Small distance, conversation — high-level language. Example: one rule for a whole set, 'tag every photo from this trip'. Says exactly what you mean; better for repetition and sets.",
+      "Small distance, model world — direct manipulation. Example: dragging a crop handle while the photo updates.",
+      "Directness is always relative to the task and the person, and part of it comes from practice.",
+    ],
+    verification: "content-checked",
+    sources: ["hutchins-hollan-norman-1985"],
+    Component: DirectnessSpace,
+  },
   {
     id: "fitts-law.anatomy",
     language: "sheet",
@@ -520,6 +543,7 @@ export const quickTakeaways: Record<string, string> = {
   "accessibility-concept": "Barriers are made by environments, products and organisations, so they can be removed: accessibility opens access and participation for people with different needs, and is a right, not an extra.",
   "interaction-design-discipline": "A person acts, the system changes state and responds, the person interprets the response and acts again: interaction design designs that exchange over time.",
   "ui-design": "The interface is the surface where a person meets a system: UI design decides what they see, what they can do and what they are told back.",
+  "direct-manipulation": "Act on the thing itself and see the result at once — and keep another way to do it for repetition, precision and people who cannot drag.",
   "heuristic-evaluation": "A few experts review alone, then merge and rate what they found: fast and cheap, but predictions rather than evidence.",
   "design-system": "Shared decisions, components, patterns and guidance, owned and changed over time: a decision made once travels to every product that uses it, and feedback from products changes the system.",
 };

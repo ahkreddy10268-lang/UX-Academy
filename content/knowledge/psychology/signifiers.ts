@@ -181,6 +181,7 @@ export default defineEntry({
     { target: "information-scent", type: "complementary-to", note: "Link labels act as signifiers of both interactivity and destination." },
     { target: "non-colour-indicators", type: "applied-in", note: "Robust signifiers use cues beyond colour, as accessibility guidance requires." },
     { target: "mental-models", type: "influences", note: "Signifiers are part of the system image from which users form mental models." },
+    { target: "direct-manipulation", type: "related-to", note: "Direct manipulation needs signifiers for what can be grabbed, dragged or resized, and where it can land." },
   ],
 
   exercises: [

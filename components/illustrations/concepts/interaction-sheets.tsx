@@ -1,6 +1,6 @@
 /**
  * Cycle 1, Batch 1 plates (D-129): interaction principles of feedback,
- * constraints and state. Instructional sheets (D-089); explanations live in each plate's
+ * constraints, direct manipulation and state. Instructional sheets (D-089); explanations live in each plate's
  * figure key (D-101), never as microtext in the drawing.
  */
 import type { IllustrationEntry } from "../illustration-types";
@@ -211,5 +211,129 @@ export const constraintsPlate: IllustrationEntry = {
   ),
 };
 
-const plates: IllustrationEntry[] = [feedbackPrinciplePlate, constraintsPlate];
+/* ------------------------------------------------------------------ */
+/* Direct manipulation: the same move as command, drag, result, menu    */
+/* ------------------------------------------------------------------ */
+function FileIcon({ x, y, w = 30, h = 38, ghost = false }: { x: number; y: number; w?: number; h?: number; ghost?: boolean }) {
+  const f = Math.min(10, w / 3);
+  return (
+    <path
+      d={`M${x} ${y} H${x + w - f} L${x + w} ${y + f} V${y + h} H${x} Z M${x + w - f} ${y} V${y + f} H${x + w}`}
+      fill={ghost ? "none" : S.surface}
+      stroke={ghost ? S.ink3 : S.ink}
+      strokeWidth={ghost ? 1 : 1.3}
+      strokeDasharray={ghost ? "3 3" : undefined}
+      {...hair}
+    />
+  );
+}
+
+function Folder({ x, y, w, h, active = false }: { x: number; y: number; w: number; h: number; active?: boolean }) {
+  return (
+    <g>
+      <path d={`M${x} ${y + 8} V${y} H${x + w * 0.38} L${x + w * 0.46} ${y + 8}`} fill={active ? S.accentWash : S.sunken} stroke={active ? S.accent : S.ruleStrong} strokeWidth={active ? 1.4 : 0.9} {...hair} />
+      <rect x={x} y={y + 8} width={w} height={h - 8} rx={4} fill={active ? S.accentWash : S.sunken} stroke={active ? S.accent : S.ruleStrong} strokeWidth={active ? 1.4 : 0.9} {...hair} />
+    </g>
+  );
+}
+
+export const directManipulationPlate: IllustrationEntry = {
+  slug: "direct-manipulation",
+  title: "Direct manipulation plate",
+  canvas: "sheet",
+  description:
+    "Four interface panels showing one task — moving the file q3.pdf into the Archive folder — done four ways. Top left, command: a terminal where the person types 'mv q3.pdf Archive', then has to type 'ls Archive' to see that q3.pdf is there; neither the file nor the folder is ever shown. Top right, direct: the file and the folder are both visible; a pointer drags the file from its old place, shown as a dashed outline, onto the Archive folder, which is highlighted while the file is over it. Bottom left, result: the Archive folder now lists q3.pdf, and a message reads 'Moved to Archive' with an Undo action. Bottom right, without dragging: the file's row has a 'Move to…' button that opens a menu listing Drafts and Archive; Archive has a keyboard focus ring and a pointer is about to click it, so the same move can be done with a click, a tap or the keyboard.",
+  key: [
+    { n: "1", label: "Command", detail: "you describe the move in syntax, then have to ask again to see the result; the objects stay out of sight" },
+    { n: "2", label: "Direct", detail: "the file and the folder are visible; you drag one onto the other, and the folder highlights while you are still moving" },
+    { n: "3", label: "Immediate and reversible", detail: "the result shows at once, and Undo puts it back, so trying costs little" },
+    { n: "4", label: "Without dragging", detail: "the same move from a menu, by click, tap or keyboard — WCAG 2.2 SC 2.5.7 requires a single-pointer alternative to dragging" },
+  ],
+  Art: ({ detail }) => (
+    <g>
+      {/* 1 command: describe, then ask to see */}
+      <Panel x={8} y={8} />
+      <UiText x={22} y={34} weight={600}>
+        Command
+      </UiText>
+      <rect x={20} y={46} width={162} height={76} rx={4} fill={S.sunken} stroke={S.rule} strokeWidth="0.9" {...hair} />
+      <UiText x={28} y={68} mono>
+        $ mv q3.pdf Archive
+      </UiText>
+      <UiText x={28} y={89} mono>
+        $ ls Archive
+      </UiText>
+      <UiText x={28} y={110} mono tone="ink2">
+        q3.pdf
+      </UiText>
+
+      {/* 2 direct: drag the file onto the folder */}
+      <Panel x={206} y={8} />
+      <UiText x={220} y={34} weight={600}>
+        Direct
+      </UiText>
+      <FileIcon x={224} y={54} ghost />
+      <UiText x={239} y={114} anchor="middle" mono tone="ink2">
+        q3.pdf
+      </UiText>
+      <line x1={258} y1={74} x2={282} y2={78} stroke={S.ink3} strokeWidth="1.1" strokeDasharray="3 2" {...hair} />
+      <Folder x={304} y={56} w={74} h={52} active />
+      <FileIcon x={288} y={64} />
+      <Pointer x={308} y={86} />
+      <UiText x={341} y={126} anchor="middle" tone="accent" weight={600}>
+        Archive
+      </UiText>
+
+      {/* 3 result: visible at once, with Undo */}
+      <Panel x={8} y={158} />
+      <UiText x={22} y={184} weight={600}>
+        Result
+      </UiText>
+      <rect x={20} y={196} width={162} height={44} rx={4} fill={S.okWash} stroke={S.ok} strokeWidth="1" {...hair} />
+      <FileIcon x={30} y={204} w={20} h={26} />
+      <UiText x={60} y={223} mono>
+        q3.pdf
+      </UiText>
+      <rect x={20} y={252} width={162} height={30} rx={6} fill={S.ink} />
+      <UiText x={30} y={272} tone="surface">
+        Moved to Archive
+      </UiText>
+      <UiText x={172} y={272} anchor="end" tone="surface" weight={700}>
+        Undo
+      </UiText>
+
+      {/* 4 without dragging: a menu, by click, tap or keyboard */}
+      <Panel x={206} y={158} />
+      <UiText x={220} y={184} weight={600}>
+        Without dragging
+      </UiText>
+      <FileIcon x={220} y={196} w={16} h={20} />
+      <UiText x={244} y={212} mono>
+        q3.pdf
+      </UiText>
+      <UiButton x={302} y={194} w={76} label="Move to…" variant="secondary" />
+      <rect x={290} y={226} width={88} height={58} rx={6} fill={S.surface} stroke={S.ruleStrong} strokeWidth="0.9" {...hair} />
+      <UiText x={302} y={246} tone="ink2">
+        Drafts
+      </UiText>
+      <rect x={295} y={256} width={78} height={24} rx={4} fill={S.accentWash} stroke={S.accent} strokeWidth="1.6" {...hair} />
+      <UiText x={302} y={273} weight={600}>
+        Archive
+      </UiText>
+      <Pointer x={356} y={266} />
+
+      {detail && (
+        <>
+          {/* r = 11: kept ≥ 11 units from the viewBox edge so no marker is clipped */}
+          <Marker x={12} y={12} n={1} />
+          <Marker x={210} y={12} n={2} />
+          <Marker x={12} y={162} n={3} />
+          <Marker x={210} y={162} n={4} />
+        </>
+      )}
+    </g>
+  ),
+};
+
+const plates: IllustrationEntry[] = [feedbackPrinciplePlate, constraintsPlate, directManipulationPlate];
 export default plates;

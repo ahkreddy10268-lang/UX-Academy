@@ -5,7 +5,8 @@
  * (2026-11-12). Sources already in the registry and reused by the batch:
  * norman-1988, norman-2013, shneiderman-1983, hutchins-hollan-norman-1985,
  * harel-1987, miller-1968, nielsen-1993-response-times, myers-1985,
- * w3c-wai-aria-12, w3c-wcag-22.
+ * w3c-wai-aria-12, w3c-wcag-22. Added 2026-11-13 for direct manipulation:
+ * w3c-understanding-dragging-movements.
  */
 import { defineSources } from "../../lib/content/define";
 
@@ -162,6 +163,21 @@ export default defineSources([
     lastVerifiedAt: "2026-11-13",
     notes:
       "Living standard (no versions); read 2026-11-13. 'Enabling and disabling form controls: the disabled attribute': 'A form control that is disabled must prevent any click events that are queued on the user interaction task source from being dispatched on the element.' Focus, data model: an element is a focusable area only if, among other conditions, 'the element is not actually disabled'. Used only for these two points.",
+  },
+  {
+    id: "w3c-understanding-dragging-movements",
+    title: "Understanding SC 2.5.7: Dragging Movements (Level AA)",
+    authors: [],
+    organisation: "W3C Web Accessibility Initiative",
+    url: "https://www.w3.org/WAI/WCAG22/Understanding/dragging-movements.html",
+    type: "official-documentation",
+    tier: 1,
+    topics: ["dragging movements", "single pointer", "drag and drop", "keyboard accessibility"],
+    access: "open",
+    verification: "url-checked",
+    lastVerifiedAt: "2026-11-13",
+    notes:
+      "Read 2026-11-13. Informative. Intent: functionality that uses dragging has another single-pointer mode that does not need the dexterity to drag; some people cannot drag precisely, and trackballs, head pointers, eye-gaze systems and speech-controlled mouse emulators make dragging cumbersome. Keyboard equivalence for a drag does not by itself meet SC 2.5.7 unless it also provides controls that can be clicked or tapped; SC 2.5.7 and the keyboard criteria are evaluated independently. Examples: a draggable map with up/down/left/right buttons; a sortable list with move-up and move-down controls; a task board with a menu to move an item to another column.",
   },
   {
     id: "m3-states",

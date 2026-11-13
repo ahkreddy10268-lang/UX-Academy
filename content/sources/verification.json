@@ -659,7 +659,7 @@
   },
   "frohlich-1993": {
     "status": "doi-verified",
-    "checkedAt": "2026-11-12",
+    "checkedAt": "2026-11-13",
     "registeredTitle": "The history and future of direct manipulation",
     "registeredYear": 1993,
     "registeredContainer": "Behaviour &amp; Information Technology",
@@ -977,7 +977,7 @@
   },
   "hutchins-hollan-norman-1985": {
     "status": "doi-verified",
-    "checkedAt": "2026-11-03",
+    "checkedAt": "2026-11-13",
     "registeredTitle": "Direct Manipulation Interfaces",
     "registeredYear": 1985,
     "registeredContainer": "Human–Computer Interaction",
@@ -2006,7 +2006,7 @@
   },
   "shneiderman-1983": {
     "status": "doi-verified",
-    "checkedAt": "2026-11-03",
+    "checkedAt": "2026-11-13",
     "registeredTitle": "Direct Manipulation: A Step Beyond Programming Languages",
     "registeredYear": 1983,
     "registeredContainer": "Computer",
@@ -2043,7 +2043,7 @@
   },
   "shneiderman-maes-1997": {
     "status": "doi-verified",
-    "checkedAt": "2026-11-12",
+    "checkedAt": "2026-11-13",
     "registeredTitle": "Direct manipulation vs. interface agents",
     "registeredYear": 1997,
     "registeredContainer": "Interactions",
@@ -2315,6 +2315,11 @@
   "w3c-selectors-4": {
     "status": "url-reachable",
     "checkedAt": "2026-11-12",
+    "httpStatus": 200
+  },
+  "w3c-understanding-dragging-movements": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-13",
     "httpStatus": 200
   },
   "w3c-understanding-pause-stop-hide": {

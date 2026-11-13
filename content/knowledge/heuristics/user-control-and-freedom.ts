@@ -169,6 +169,7 @@ export default defineEntry({
     { target: "error-recovery", type: "related-to", note: "Recovery helps people fix a failure; control lets them back out of their own choices." },
     { target: "focus-management", type: "applied-in", note: "Escape, focus return and no keyboard traps are how control works for keyboard users." },
     { target: "deceptive-patterns", type: "contrasts-with", note: "Hard-to-cancel subscriptions deliberately remove the emergency exit." },
+    { target: "direct-manipulation", type: "related-to", note: "Rapid, reversible steps and undo are what make direct manipulation safe to explore." },
   ],
 
   practice: {

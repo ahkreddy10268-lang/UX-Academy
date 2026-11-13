@@ -652,6 +652,8 @@ export default defineSources([
     topics: ["gulf of execution", "gulf of evaluation", "direct manipulation", "semantic distance", "articulatory distance"],
     access: "paywalled",
     verification: "bibliographic",
+    notes:
+      "Full text read 2026-11-13 (a course-reading copy of the published article). Seeks a cognitive account of both advantages and disadvantages of direct manipulation. Directness is 'not a unitary concept' but a feeling, always relative, partly produced by the user's adaptation. Two aspects: distance (the gulfs of execution and evaluation; semantic and articulatory) and direct engagement (interface as model world rather than conversation, a feeling of first-personness). Requirements for engagement (p. 333): semantic and articulatory directness in execution and evaluation; inter-referential input and output; responsiveness without delays except where the domain has them; an unobtrusive interface. § 6 Problems: repetitive operations are best done by script; difficulty with variables and with telling an element from a set; problems with accuracy and precision; 'not a panacea'; directness may be traded for generality; do not equate directness with ease of use; good for some purposes, poor for others.",
   },
   {
     id: "norman-1986",
@@ -685,5 +687,7 @@ export default defineSources([
     topics: ["direct manipulation"],
     access: "paywalled",
     verification: "bibliographic",
+    notes:
+      "Full text read 2026-11-13 (scan hosted on the author's University of Maryland site). Coins the term (p. 57): the central ideas were visibility of the object of interest; rapid, reversible, incremental actions; and replacement of complex command syntax by direct manipulation of the object of interest. Examples: display editors, VisiCalc, spatial data management, video games, CDC Plato computer-assisted lessons. The 'integrated portrait' (p. 64) has four principles: continuous representation of the object of interest; physical actions or labelled button presses instead of complex syntax; rapid, incremental, reversible operations whose impact is immediately visible; a layered or spiral approach to learning. Claimed benefits (pp. 64-65) include fast learning for novices, speed for experts, rarely needed error messages and less anxiety. 'Problems with direct manipulation' (p. 64): graphic representations do not necessarily improve performance (cited studies); icons must be learned; representations can mislead; they can take excessive screen space. Calls for empirical tests to validate the model (p. 66).",
   },
 ]);

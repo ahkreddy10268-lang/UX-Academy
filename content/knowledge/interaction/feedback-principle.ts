@@ -170,6 +170,7 @@ export default defineEntry({
     { target: "doherty-threshold", type: "related-to", note: "Response-time targets decide how quickly feedback must arrive." },
     { target: "interaction-states", type: "applied-in", note: "Pressed, busy, success and error states are how components give feedback." },
     { target: "constraints", type: "complementary-to", note: "Constraints narrow the options before an action; feedback reports its result after it." },
+    { target: "direct-manipulation", type: "related-to", note: "Direct manipulation depends on immediate, continuous feedback about the object being changed." },
   ],
 
   lab: "feedback-lab",

@@ -233,6 +233,7 @@ function ReviewStep({ draft }: { draft: Draft }) {
     { target: "progressive-disclosure", type: "complementary-to", note: "Progressive disclosure balances showing options for recognition against clutter." },
     { target: "information-scent", type: "related-to", note: "Visible cues support recognition-based navigation decisions." },
     { target: "discoverability", type: "influences", note: "Visible options make functionality discoverable." },
+    { target: "direct-manipulation", type: "related-to", note: "Direct manipulation replaces recalled command syntax with visible objects and actions." },
   ],
 
   exercises: [
