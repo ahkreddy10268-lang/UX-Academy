@@ -209,7 +209,7 @@ After each batch, add `[[links]]` and `relations` from published entries to the 
 
 ## 9. Domain scorecard and review criteria
 
-### 9.1 Scorecard (today)
+### 9.1 Scorecard (baseline at approval, 2026-11-12)
 
 Stage rule: **Empty** 0 published · **Seeded** < 10 % · **Developing** 10–29 % · **Established** ≥ 30 % with all F published · **Complete** 100 %. Dimension columns are complete / published from the generated coverage.
 
@@ -236,7 +236,7 @@ Stage rule: **Empty** 0 published · **Seeded** < 10 % · **Developing** 10–29
 | Emerging & Specialised | 0/31 | 0 | 2 | Empty | — | — | — | — | — |
 | Design Practice & Tech Lit. | 0/22 | 0 | 3 | Empty | — | — | — | — | — |
 
-Today: 1 Complete, 0 Established, 7 Developing, 6 Seeded, 6 Empty.
+At approval: 1 Complete, 0 Established, 7 Developing, 6 Seeded, 6 Empty. This table is a dated baseline; live figures are always the generated `docs/CONTENT_COVERAGE.md` (since approval: `feedback-principle` published, Colour Studio added as the 19th lab).
 
 ### 9.2 Maturity targets (approved with refinements, D-129)
 

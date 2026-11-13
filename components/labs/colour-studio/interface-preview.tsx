@@ -34,10 +34,10 @@ export function resolveRoles(roles: RoleMap, colours: string[]): Record<Role, st
 function roleChecks(c: Record<Role, string>) {
   const t = (fg: string, bg: string) => contrastReport(fg, bg);
   return [
-    { name: "Body text on surface (16 px)", r: t(c.text, c.surface), id: "text-aa", need: "4.5:1 · normal text, 1.4.3" },
+    { name: "Body text on surface (12–16 px)", r: t(c.text, c.surface), id: "text-aa", need: "4.5:1 · normal text, 1.4.3" },
     { name: "Heading on page background (24 px, large text)", r: t(c.heading, c.background), id: "large-aa", need: "3:1 · large text, 1.4.3" },
     { name: "Heading colour on card surface (card title, badge and Return label, 12–16 px)", r: t(c.heading, c.surface), id: "text-aa", need: "4.5:1 · normal text, 1.4.3" },
-    { name: "Button label on primary (15 px)", r: t(c["on-primary"], c.primary), id: "text-aa", need: "4.5:1 · normal text, 1.4.3" },
+    { name: "Text on primary (top bar and Renew label, 12–15 px)", r: t(c["on-primary"], c.primary), id: "text-aa", need: "4.5:1 · normal text, 1.4.3" },
     { name: "Primary button against surface", r: t(c.primary, c.surface), id: "non-text-aa", need: "3:1 · component boundary, 1.4.11" },
     { name: "Secondary button outline against surface", r: t(c.secondary, c.surface), id: "non-text-aa", need: "3:1 · component boundary, 1.4.11" },
     { name: "Accent progress bar against its track (page-background colour)", r: t(c.accent, c.background), id: "non-text-aa", need: "3:1 · graphical object, 1.4.11" },

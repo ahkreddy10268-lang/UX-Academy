@@ -1,6 +1,6 @@
 # Progress register
 
-_Last updated: 2026-11-12 (session 40 — balanced development approved, D-129; Cycle 1, Batch 1 started)_
+_Last updated: 2026-11-13 (session 41 — Colour Studio lab; Cycle 1, Batch 1 in progress)_
 
 ## State
 
@@ -148,6 +148,11 @@ After that: `ui-design`, `interaction-design-discipline`, `accessibility-concept
 - CONTENT_AUDIT § 6 marked superseded (slug errors noted); this register's State table now points to the generated figures.
 - Batch 1 (Interaction feedback & state): 9 new sources added and verified first (5 DOIs via Crossref, 4 URLs; `content/sources/interaction-principles.ts`); Material 3 states read from the rendered page; the Shneiderman & Maes 1997 debate recorded from Crossref metadata only (full text blocked to automated access — cited for nothing beyond the record). All five topics entered the research ledger.
 - **Published `feedback-principle`** (concept, established theory): Explanation, Evidence, Practice, Editorial complete; meets its visual target (plate; plus feedback-lab); plate `components/illustrations/concepts/interaction-sheets.tsx` (act → system → feedback → evaluate loop; immediate / informative / proportionate pairs), plate text ≥ 10.2 px at 390, axe 0 violations. Links added from `signifiers` and `error-recovery`; four entries already pointed to it. Interaction Design path 70 % → 74 %.
+
+## Session 41 — Colour Studio lab (D-130; outside the content batches)
+
+- New tool lab `/labs/colour-studio`: Palette Studio (HSL wheel, six harmonies, editable swatches, colour-vision preview, role-based interface preview with WCAG checks of the pairs it renders, CSS/JSON export, import, save in this browser), Colour Contrast (WCAG 2.2 text / large text / non-text on the unrounded ratio, every palette pair), Image Extraction (local median cut), Gradient Studio. Maths in `lib/formulas/colour.ts` (25 tests) reusing the WCAG and colour-vision code; browser checks in `tests/browser/colour-studio.cjs` (46). No content, taxonomy or batch changes; generated docs now count 19 labs.
+- Reviewed in PR #2 against main; not merged.
 
 ## Next task (precise)
 Continue Batch 1, one entry at a time, sources already verified (content/topic-ledger.ts): `constraints`, `direct-manipulation`, `interaction-states`, `discoverability` — each complete on Explanation, Practice and Editorial, meeting its Visual and Evidence targets, with a plate, links from existing entries (plan § 7.4), `docs:generate` after each. Then Batch 2 (think-aloud-protocol, tree-testing, contextual-inquiry, in-depth-interviews) and Batch 3 (UX writing foundations), then the cycle-1 balance review (plan § 9.3).
