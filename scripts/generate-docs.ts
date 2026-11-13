@@ -8,7 +8,7 @@ import { writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { allQuestions, domains, entries, glossary, itemsForSubcategory, labs, libraryFormulas, sources, verification, comparisons, workshops, learningPaths } from "../lib/content";
 import { TOPIC_STATUSES, TOPIC_STATUS_LABEL, domainCoverage, qualitySummary } from "../lib/content/coverage";
-import { completionReport, maturityOf } from "../lib/coverage-report";
+import { completionReport, maturityOf, targetsOf } from "../lib/coverage-report";
 import { EVIDENCE_LABEL, TIER_LABEL, TYPE_LABEL } from "../lib/content/labels";
 import { levelChecks } from "../lib/content/completeness";
 
@@ -114,6 +114,17 @@ for (const d of dims) c += `| ${d[0].toUpperCase() + d.slice(1)} | ${mat.filter(
 c += `\n## Published entries\n\n| Entry | Type | Evidence class | Explanation | Evidence | Practice | Visual | Editorial | Refs | Quiz | Formula | Lab |\n|---|---|---|---|---|---|---|---|---:|---:|---|---|\n`;
 for (const { e, m } of mat)
   c += `| ${e.title} | ${TYPE_LABEL[e.primaryType]} | ${EVIDENCE_LABEL[e.evidence]} | ${dims.map((d) => m[d]).join(" | ")} | ${e.references.length} | ${e.quiz.length} | ${e.formulas.map((f) => f.calculator).join(", ") || "—"} | ${e.lab ?? "—"} |\n`;
+{
+  const tg = published.map((e) => ({ e, t: targetsOf(e) }));
+  const groups = [...new Set(published.map((e) => e.domain))];
+  c += `\n## Targets by type and evidence class\n\nApproved in D-129 (docs/BALANCED_DEVELOPMENT_PLAN.md § 9.2). The ratings above are unchanged; this view judges **Visual** by the minimum formats each type of knowledge needs (a plate for every entry; a detailed diagram for methods, theories, models and frameworks; a diagram *or* a calculator/lab for laws, formulas, metrics and instruments; interactive tools are never required) and **Evidence** by what an honest evidence base looks like for the entry's evidence class (established, contested, emerging, guideline/framework — documented limitations count). Explanation, Practice and Editorial keep the "complete" standard above.\n\n| Measure | Meets target |\n|---|---:|\n| Visual | ${tg.filter((x) => x.t.visual.met).length} / ${published.length} |\n| Evidence | ${tg.filter((x) => x.t.evidence.met).length} / ${published.length} |\n\n| Domain | Published | Visual meets | Evidence meets |\n|---|---:|---:|---:|\n`;
+  for (const d of domains.filter((x) => groups.includes(x.id))) {
+    const xs = tg.filter((x) => x.e.domain === d.id);
+    c += `| ${d.title} | ${xs.length} | ${xs.filter((x) => x.t.visual.met).length} | ${xs.filter((x) => x.t.evidence.met).length} |\n`;
+  }
+  const below = tg.filter((x) => !x.t.visual.met || !x.t.evidence.met);
+  c += `\n${below.length ? "Entries below a target, and what is missing:\n\n" + below.map((x) => `- **${x.e.title}** — ${[!x.t.visual.met && "visual: " + x.t.visual.missing.join(", "), !x.t.evidence.met && "evidence: " + x.t.evidence.missing.join(", ")].filter(Boolean).join("; ")}`).join("\n") : "Every published entry meets its targets."}\n`;
+}
 const within = domains.flatMap((d) => d.subcategories.flatMap((sub) => itemsForSubcategory(d.id, sub.id).filter((i) => !i.entry && i.coveredBy)));
 c += `\n## Addressed within another entry\n\n${within.map((i) => `- ${i.title} → \`${i.coveredBy}\``).join("\n")}\n`;
 writeFileSync(join(docs, "CONTENT_COVERAGE.md"), c);

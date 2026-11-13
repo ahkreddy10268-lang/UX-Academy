@@ -51,43 +51,44 @@ import m47 from "./heuristics/user-control-and-freedom";
 import m48 from "./ia/information-architecture";
 import m49 from "./interaction/error-prevention";
 import m50 from "./interaction/error-recovery";
-import m51 from "./interaction/mapping";
-import m52 from "./interaction/progressive-disclosure";
-import m53 from "./interaction/visibility-of-system-status";
-import m54 from "./laws-effects/aesthetic-usability-effect";
-import m55 from "./laws-effects/choice-overload";
-import m56 from "./laws-effects/doherty-threshold";
-import m57 from "./laws-effects/fitts-law";
-import m58 from "./laws-effects/gestalt-principles";
-import m59 from "./laws-effects/hick-hyman-law";
-import m60 from "./laws-effects/jakobs-law";
-import m61 from "./laws-effects/millers-law";
-import m62 from "./laws-effects/peak-end-rule";
-import m63 from "./laws-effects/serial-position-effect";
-import m64 from "./laws-effects/steering-law";
-import m65 from "./laws-effects/teslers-law";
-import m66 from "./laws-effects/von-restorff-effect";
-import m67 from "./metrics/confidence-intervals";
-import m68 from "./metrics/nasa-tlx";
-import m69 from "./metrics/net-promoter-score";
-import m70 from "./metrics/sample-size-estimation";
-import m71 from "./metrics/system-usability-scale";
-import m72 from "./metrics/task-success-rate";
-import m73 from "./psychology/affordances";
-import m74 from "./psychology/cognitive-load-theory";
-import m75 from "./psychology/gulfs-of-execution-and-evaluation";
-import m76 from "./psychology/mental-models";
-import m77 from "./psychology/recognition-over-recall";
-import m78 from "./psychology/signifiers";
-import m79 from "./psychology/working-memory-model";
-import m80 from "./research/ab-testing";
-import m81 from "./research/card-sorting";
-import m82 from "./research/cognitive-walkthrough";
-import m83 from "./research/heuristic-evaluation";
-import m84 from "./research/usability-testing";
-import m85 from "./type-colour/colour-contrast-ratio";
-import m86 from "./type-colour/modular-type-scale";
-import m87 from "./visual/visual-hierarchy";
+import m51 from "./interaction/feedback-principle";
+import m52 from "./interaction/mapping";
+import m53 from "./interaction/progressive-disclosure";
+import m54 from "./interaction/visibility-of-system-status";
+import m55 from "./laws-effects/aesthetic-usability-effect";
+import m56 from "./laws-effects/choice-overload";
+import m57 from "./laws-effects/doherty-threshold";
+import m58 from "./laws-effects/fitts-law";
+import m59 from "./laws-effects/gestalt-principles";
+import m60 from "./laws-effects/hick-hyman-law";
+import m61 from "./laws-effects/jakobs-law";
+import m62 from "./laws-effects/millers-law";
+import m63 from "./laws-effects/peak-end-rule";
+import m64 from "./laws-effects/serial-position-effect";
+import m65 from "./laws-effects/steering-law";
+import m66 from "./laws-effects/teslers-law";
+import m67 from "./laws-effects/von-restorff-effect";
+import m68 from "./metrics/confidence-intervals";
+import m69 from "./metrics/nasa-tlx";
+import m70 from "./metrics/net-promoter-score";
+import m71 from "./metrics/sample-size-estimation";
+import m72 from "./metrics/system-usability-scale";
+import m73 from "./metrics/task-success-rate";
+import m74 from "./psychology/affordances";
+import m75 from "./psychology/cognitive-load-theory";
+import m76 from "./psychology/gulfs-of-execution-and-evaluation";
+import m77 from "./psychology/mental-models";
+import m78 from "./psychology/recognition-over-recall";
+import m79 from "./psychology/signifiers";
+import m80 from "./psychology/working-memory-model";
+import m81 from "./research/ab-testing";
+import m82 from "./research/card-sorting";
+import m83 from "./research/cognitive-walkthrough";
+import m84 from "./research/heuristic-evaluation";
+import m85 from "./research/usability-testing";
+import m86 from "./type-colour/colour-contrast-ratio";
+import m87 from "./type-colour/modular-type-scale";
+import m88 from "./visual/visual-hierarchy";
 
 export const rawEntries: KnowledgeEntryInput[] = [
   m0,
@@ -177,5 +178,6 @@ export const rawEntries: KnowledgeEntryInput[] = [
   m84,
   m85,
   m86,
-  m87
+  m87,
+  m88
 ];

@@ -91,7 +91,7 @@ export const labs: Lab[] = [
     id: "feedback-lab",
     title: "System status & feedback",
     summary: "Trigger an action and switch between feedback strategies — none, spinner, progress, optimistic UI — under different latencies.",
-    concepts: ["visibility-of-system-status", "doherty-threshold", "nielsen-usability-heuristics"],
+    concepts: ["visibility-of-system-status", "feedback-principle", "doherty-threshold", "nielsen-usability-heuristics"],
     kind: "simulation",
     assumptions: [
       "Latency is simulated with timers; real networks vary more.",
@@ -213,6 +213,21 @@ export const labs: Lab[] = [
       "Severity uses Nielsen's 0–4 scale; ordering by severity and then by lower effort is this lab's convention for a first draft, not a rule — teams adjust priorities for business context.",
       "Findings stay in this browser tab and are cleared when you leave the page; export them to keep them.",
       "The example report comes from the guide's illustrative case study of a fictional shop.",
+    ],
+  },
+  {
+    id: "colour-studio",
+    title: "Colour Studio",
+    summary: "Build a palette on an HSL colour wheel from six harmonies, edit each colour, assign colours to interface roles and see them in a live screen, check any pair against WCAG 2.2, extract a palette from your own image, make linear gradients, and export CSS variables or JSON.",
+    concepts: ["colour-contrast-ratio", "colour-systems", "colour-harmony", "colour-theory", "hsl", "visual-hierarchy", "wcag"],
+    kind: "tool",
+    assumptions: [
+      "Colours are opaque sRGB with 8 bits per channel; transparency and wide-gamut colour are not modelled.",
+      "Harmonies are exact angles on the HSL hue circle (complementary 180°, triadic 120°, split-complementary 180° ± 30°, square 90°, analogous ± the chosen spread). Equal angles are not equal perceived differences, and HSL lightness is not perceived lightness, so a harmony is a starting point, not a judgement that the colours work together.",
+      "Contrast uses the WCAG 2.2 relative-luminance formula; pass or fail is decided on the unrounded ratio and the ratio is shown truncated to two decimals. Large text means at least 18 pt, or 14 pt bold. A passing pair is one requirement among many, not proof that an interface is accessible.",
+      "Images are decoded and sampled in this browser, scaled to at most 200 pixels on the longest side, and quantised with median cut; small details can be averaged away.",
+      "The colour-vision preview applies Machado et al. (2009) dichromacy matrices; it approximates and cannot show what any individual sees.",
+      "Work is kept only while the page is open unless you save it in this browser or export it.",
     ],
   },
 ];

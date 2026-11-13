@@ -168,6 +168,7 @@ export default defineEntry({
     { target: "error-messages", type: "applied-in", note: "Error messages are the written part of recovery." },
     { target: "form-design", type: "applied-in", note: "Forms are where most recovery patterns live: inline errors, summaries, preserved input." },
     { target: "visibility-of-system-status", type: "related-to", note: "Showing that something failed is a form of system status." },
+    { target: "feedback-principle", type: "derived-from", note: "Recovery starts with specific feedback about what actually happened." },
     { target: "user-control-and-freedom", type: "complementary-to", note: "Undo and exits let people recover from their own choices." },
   ],
 

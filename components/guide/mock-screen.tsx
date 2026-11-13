@@ -203,7 +203,7 @@ export function MockScreen({ mock, label, verdict }: { mock: Mock; label?: strin
         <ol className="mt-2 space-y-1 text-xs text-ink-2">
           {mock.notes.map((n) => (
             <li key={n.n} className="flex gap-2">
-              <span aria-hidden className="mt-px inline-grid h-4 w-4 shrink-0 place-items-center rounded-full bg-ink font-mono text-[10px] font-semibold text-surface">
+              <span aria-hidden className="mt-px inline-grid h-5 w-5 shrink-0 place-items-center rounded-full bg-ink font-mono text-[11px] font-semibold text-surface">
                 {n.n}
               </span>
               <span>

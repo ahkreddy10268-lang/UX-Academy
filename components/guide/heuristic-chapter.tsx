@@ -12,6 +12,7 @@ import { GuideDemo } from "@/components/guide/demos";
 import { Quiz, type QuizItem } from "@/components/practice/quiz";
 import { Callout } from "@/components/ui/callout";
 import { Checklist, DoDont } from "@/components/ui/doc-layout";
+import { Disclosure } from "@/components/ui/disclosure";
 import { Rich, type RichContext } from "@/components/ui/rich";
 import type { GuideHeuristic } from "@/lib/content/guide";
 import type { Exercise, KnowledgeEntry } from "@/lib/content/schema";
@@ -111,16 +112,13 @@ export function ExerciseBlock({ ex, ctx }: { ex: Exercise; ctx: RichContext }) {
         </div>
       )}
       {ex.exampleSolution && ex.exampleSolution.length > 0 && (
-        <details className="mt-3 rounded-sm border border-rule bg-soft px-3 py-2">
-          <summary className="tap cursor-pointer text-sm font-medium text-ink">Show an example solution</summary>
-          <div className="mt-2 space-y-2 text-sm leading-relaxed text-ink">
-            {ex.exampleSolution.map((p, i) => (
-              <p key={i}>
-                <Rich text={p} ctx={ctx} />
-              </p>
-            ))}
-          </div>
-        </details>
+        <Disclosure className="mt-3 rounded-sm border border-rule bg-soft" summaryClassName="px-3 py-2" bodyClassName="space-y-2 border-t border-rule px-3 py-3 text-sm leading-relaxed text-ink" summary={<span className="text-sm font-medium text-ink">Show an example solution</span>}>
+          {ex.exampleSolution.map((p, i) => (
+            <p key={i}>
+              <Rich text={p} ctx={ctx} />
+            </p>
+          ))}
+        </Disclosure>
       )}
     </div>
   );
@@ -136,7 +134,7 @@ export function HeuristicChapter({ h, data, names, ctx }: { h: GuideHeuristic; d
   return (
     <section aria-labelledby={id} className="scroll-mt-24 border-t border-rule pt-10">
       <p className="label">Heuristic {h.n} of 10</p>
-      <h3 id={id} className="t-section mt-1 text-[1.5rem]">
+      <h3 id={id} className="t-section mt-1 scroll-mt-24 text-[1.5rem]">
         {h.name}
       </h3>
       <p className="t-lede mt-2 max-w-read text-lg">{h.oneLiner}</p>
@@ -298,6 +296,28 @@ export function HeuristicChapter({ h, data, names, ctx }: { h: GuideHeuristic; d
           </Link>
           {data.source.dedicated ? "" : "."}
         </p>
+
+        <nav aria-label={`After heuristic ${h.n}`} className="grid gap-2 border-t border-rule pt-4 text-sm sm:grid-cols-3">
+          {h.n > 1 ? (
+            <a href={`#h${h.n - 1}`} className="flex min-h-11 items-center rounded-md px-2 text-ink-2 hover:bg-soft hover:text-ink">
+              ← {h.n - 1}. {names[h.n - 1]}
+            </a>
+          ) : (
+            <span />
+          )}
+          <a href="#overview" className="flex min-h-11 items-center rounded-md px-2 text-ink-2 hover:bg-soft hover:text-ink sm:justify-center">
+            All ten heuristics
+          </a>
+          {h.n < 10 ? (
+            <a href={`#h${h.n + 1}`} className="flex min-h-11 items-center rounded-md px-2 text-ink-2 hover:bg-soft hover:text-ink sm:justify-end sm:text-right">
+              {h.n + 1}. {names[h.n + 1]} →
+            </a>
+          ) : (
+            <a href="#compare" className="flex min-h-11 items-center rounded-md px-2 text-ink-2 hover:bg-soft hover:text-ink sm:justify-end sm:text-right">
+              Telling them apart →
+            </a>
+          )}
+        </nav>
       </div>
     </section>
   );

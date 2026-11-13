@@ -14,8 +14,9 @@ import m10 from "./formula-library";
 import m11 from "./foundations-frameworks";
 import m12 from "./hci-history";
 import m13 from "./interaction-models";
-import m14 from "./measurement";
-import m15 from "./resources";
+import m14 from "./interaction-principles";
+import m15 from "./measurement";
+import m16 from "./resources";
 
 export const rawSources: Source[] = [
   ...m0,
@@ -33,5 +34,6 @@ export const rawSources: Source[] = [
   ...m12,
   ...m13,
   ...m14,
-  ...m15
+  ...m15,
+  ...m16
 ];

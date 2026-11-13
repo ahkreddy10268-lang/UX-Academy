@@ -50,14 +50,14 @@ export function PageHeader({
   lede?: ReactNode;
   crumbs?: Crumb[];
   children?: ReactNode;
-  /** Usually a plate; shown beside the text on large screens. */
+  /** Usually a plate; beside the text from xl (1280 px), stacked below it so its labels stay legible. */
   aside?: ReactNode;
   /** Category class (e.g. "cat-teal") — pastel panel in the subject colour. */
   cat?: string;
   editorial?: boolean;
 }) {
   const body = (
-    <div className={aside ? "grid items-center gap-8 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:gap-12" : ""}>
+    <div className={aside ? "grid items-center gap-8 xl:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] xl:gap-12" : ""}>
       <div className="min-w-0">
         {eyebrow && <p className={`label ${cat ? "!text-c-ink" : ""}`}>{eyebrow}</p>}
         <h1 className={`${editorial ? "t-editorial" : "t-page"} mt-2.5 max-w-4xl text-[2rem] sm:text-[2.75rem]`}>{title}</h1>
