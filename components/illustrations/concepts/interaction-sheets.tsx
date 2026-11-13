@@ -200,10 +200,11 @@ export const constraintsPlate: IllustrationEntry = {
 
       {detail && (
         <>
-          <Marker x={8} y={8} n={1} />
-          <Marker x={206} y={8} n={2} />
-          <Marker x={8} y={158} n={3} />
-          <Marker x={206} y={158} n={4} />
+          {/* r = 11: kept ≥ 11 units from the viewBox edge so no marker is clipped */}
+          <Marker x={12} y={12} n={1} />
+          <Marker x={210} y={12} n={2} />
+          <Marker x={12} y={162} n={3} />
+          <Marker x={210} y={162} n={4} />
         </>
       )}
     </g>

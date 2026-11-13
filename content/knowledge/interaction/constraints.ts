@@ -8,7 +8,7 @@ export default defineEntry({
   summary:
     "Constraints limit the actions that are possible or sensible in an interface, so people are guided towards valid choices and away from errors — through the shape of a control, learned conventions, the meaning of the task and simple logic.",
   definition:
-    "In interaction design, **constraints** are properties of a design that **limit the set of possible or plausible actions**, so that fewer things can go wrong and the right action is easier to find. Norman describes four kinds — **physical**, **cultural**, **semantic** and **logical** — and treats constraints as one of the fundamental principles of interaction, alongside affordances, signifiers, mappings, feedback and the conceptual model {{src:norman-1988}} {{src:norman-2013}}. A strong form, the **forcing function**, makes a step impossible to skip. Constraints guide by reducing alternatives; they are a means of [[error-prevention|error prevention]], not the same thing as it.",
+    "In interaction design, **constraints** are properties of a design that **limit the set of possible or plausible actions**, so that fewer things can go wrong and the right action is easier to find. Norman describes four kinds — **physical**, **cultural**, **semantic** and **logical** {{src:norman-1988}} {{src:norman-2013}} — and the 2013 revision of his book places constraints among the fundamental principles of interaction, alongside affordances, signifiers, mappings, feedback and the conceptual model {{src:norman-2013}}. A strong form, the **forcing function**, makes a step impossible to skip. Constraints guide by reducing alternatives; they are a means of [[error-prevention|error prevention]], not the same thing as it.",
   primaryType: "concept",
   secondaryTypes: ["principle"],
   domain: "interaction",
@@ -54,7 +54,7 @@ export default defineEntry({
         "Constraints work because people face a choice among actions and must pick one. Every option removed is one fewer to consider and one fewer to get wrong. Norman's point is that the knowledge needed to act correctly does not have to be memorised: much of it can be **built into the world** — into the form of the controls, their arrangement and their behaviour {{src:norman-2013}}. Constraints are one of the main ways of doing that.",
         "Norman distinguishes four kinds, introduced with physical objects and applied throughout to technology {{src:norman-1988}} {{src:norman-2013}}. On screens, most physical constraints are simulated by software (a field that ignores letters, a thumb confined to a track), so cultural, semantic and logical constraints carry much of the load. The four are a **useful lens, not an exhaustive or exclusive taxonomy**: one design often uses several at once, and the boundaries between them are not sharp.",
         "**Forcing functions** are the strongest constraints: they make a step impossible to skip. Norman describes **interlocks** (actions must happen in the right order, such as a microwave that will not run with the door open), **lock-ins** (an operation stays active, such as warning before closing unsaved work) and **lockouts** (entry into a dangerous state is blocked) {{src:norman-2013}}. On screens, these include confirmation that requires typing a name before an irreversible delete, and a checkout that cannot be submitted until required information is present.",
-        "Constraints are one tool for **preventing slips** — the right intention carried out wrongly {{src:norman-1983-design-rules}}. NN/g lists helpful constraints alongside suggestions, good defaults and forgiving formats as the main ways to prevent slips {{src:nng-slips}}. That list matters: a constraint is the right tool only where a clear rule defines what is valid; where the rule is fuzzy, a suggestion or a forgiving format serves people better.",
+        "Constraints are one tool for **preventing slips** — the right intention carried out wrongly {{src:norman-1983-design-rules}}. NN/g recommends four ways to prevent slips: helpful constraints, suggestions, good defaults and forgiving formats {{src:nng-slips}}. That list matters: a constraint is the right tool only where a clear rule defines what is valid; where the rule is fuzzy, a suggestion or a forgiving format serves people better.",
       ],
       howItWorks: [
         "**Physical (simulated).** The control's form or behaviour admits only valid input: a `type=\"date\"` picker with `min` and `max`, a numeric stepper, a drag that only drops on valid targets. Errors are impossible rather than reported afterwards.",
@@ -84,8 +84,8 @@ export default defineEntry({
         "Over-constraint is a real failure mode. Validation patterns that encode one country's formats, length limits that truncate real names, and pickers that forbid legitimate edge cases turn a constraint into a barrier. A useful test is whether every constraint corresponds to a rule the business or the domain actually has; constraints added for the system's convenience should be challenged.",
       ],
       evidence: [
-        "Norman's account of constraints is an analytic framework built from close study of everyday objects and of human error, not the result of controlled experiments; its support is its long use in design and evaluation {{src:norman-1988}} {{src:norman-2013}}. Norman's 1983 analysis of slips derived design rules from a classification of how correct intentions go wrong, which is the basis for constraints as a way of preventing them {{src:norman-1983-design-rules}}.",
-        "Practitioner guidance converges on constraints as one of several slip-prevention techniques, beside suggestions, defaults and forgiving formats {{src:nng-slips}}. There is little published experimental work comparing the four categories with each other, and no evidence that they are the only kinds.",
+        "Norman's account of constraints is an analytic framework built from close study of everyday objects and of human error, not the result of controlled experiments; its support is its long use in design and evaluation {{src:norman-1988}} {{src:norman-2013}}. Norman's 1983 analysis classified slips — correct intentions carried out wrongly — and derived design procedures to make them less likely {{src:norman-1983-design-rules}}; constraints are one of the ways his later books propose to do that {{src:norman-2013}}.",
+        "NN/g's practitioner guidance lists constraints as one of four slip-prevention techniques, beside suggestions, defaults and forgiving formats {{src:nng-slips}}. There is little published experimental work comparing the four categories with each other, and no evidence that they are the only kinds.",
       ],
       debates: [
         "**Disable or explain?** One position constrains early: disable an action until it is valid. Another lets people try and then explains what is missing, because disabled controls can be invisible, unreadable or unexplained to some users {{src:w3c-wai-aria-12}} {{src:w3c-wcag-22}}. Which works better depends on how discoverable the reason is; there is no general rule.",
@@ -156,7 +156,7 @@ export default defineEntry({
     {
       myth: "Constraints and error prevention are the same thing.",
       reality:
-        "Constraints are one means of preventing errors; error prevention also uses defaults, suggestions, forgiving formats and confirmations {{src:nng-slips}}. And constraints do more than prevent errors: they also communicate what the valid options are ([[error-prevention]]).",
+        "Constraints are one means of preventing errors; error prevention also uses defaults, suggestions and forgiving formats {{src:nng-slips}}, and checks that ask people to confirm before they commit {{src:nielsen-ten-heuristics-article}}. And constraints do more than prevent errors: they also communicate what the valid options are ([[error-prevention]]).",
     },
     {
       myth: "A disabled button is always the safest constraint.",
@@ -172,17 +172,17 @@ export default defineEntry({
 
   relations: [
     { target: "error-prevention", type: "applied-in", note: "Error prevention uses constraints, among other techniques, to rule out slips where a clear rule exists." },
-    { target: "affordances", type: "contrasts-with", note: "Affordances are what actions are possible; constraints limit which of them can or should be taken." },
+    { target: "affordances", type: "complementary-to", note: "Affordances are what actions are possible; constraints limit which of them can or should be taken." },
     { target: "signifiers", type: "complementary-to", note: "Signifiers show where and how to act; constraints remove options that should not be acted on." },
     { target: "feedback-principle", type: "complementary-to", note: "Constraints act before an action; feedback reports its result afterwards." },
-    { target: "mapping", type: "related-to", note: "A natural mapping is often a logical constraint: the layout leaves one sensible choice." },
+    { target: "mapping", type: "complementary-to", note: "A natural mapping is often a logical constraint: the layout leaves one sensible choice." },
     { target: "jakobs-law", type: "related-to", note: "Cultural constraints depend on conventions people learned on other products." },
     { target: "user-control-and-freedom", type: "contrasts-with", note: "Constraints restrict; control and freedom let people leave and undo. Good designs balance both." },
   ],
 
   practice: {
     dos: [
-      { text: "State the rule a constraint enforces, and constrain only where that rule is clear and correct.", why: "Constraints help where a clear rule defines valid input; elsewhere suggestions and forgiving formats serve people better {{src:nng-slips}}.", kind: "industry" },
+      { text: "State the rule a constraint enforces, and constrain only where that rule is clear and correct.", why: "NN/g recommends helpful constraints where clear rules define acceptable input, alongside suggestions, defaults and forgiving formats {{src:nng-slips}}; where no clear rule exists, a constraint can only block valid input.", kind: "industry" },
       { text: "Constrain at the point of choice and explain unavailable options in text.", why: "Ruling out an invalid choice before it is made removes the error; an explanation keeps the constraint understandable.", kind: "industry" },
       { text: "Use forcing functions for irreversible, legal or financial actions, alongside reversal, checking or confirmation.", why: "WCAG 2.2 SC 3.3.4 requires such submissions to be reversible, checked or confirmed {{src:w3c-wcag-22}}; a forcing function makes the slip hard in the first place {{src:norman-2013}}.", kind: "standard" },
     ],
@@ -245,8 +245,8 @@ function returnLimits(departure: string, monthsAhead = 12) {
       deliverable: "A short decision table and the corrected field specifications.",
       criteria: ["The date rule is constrained at the point of choice and explained", "The phone rule is recognised as over-constrained", "Accessibility of the chosen mechanism is addressed"],
       exampleSolution: [
-        "Return date: a clear semantic rule — constrain it. Use a date picker whose earliest selectable day is the departure date, with a hint that says so {{src:norman-2013}}.",
-        "Phone number: the rule encodes one country's format and rejects valid numbers. Accept international formats, normalise spaces and symbols, and validate only what the system truly needs (for example, that it is a dialable number) {{src:nng-slips}}.",
+        "Return date: a clear rule that comes from the meaning of the task — a semantic constraint in Norman's sense {{src:norman-2013}}. Constrain it: use a date picker whose earliest selectable day is the departure date, with a hint that says so.",
+        "Phone number: the rule encodes one country's format and rejects valid numbers. Use a forgiving format instead, as NN/g recommends for slips {{src:nng-slips}}: accept international formats, normalise spaces and symbols, and validate only what the system truly needs (for example, that it is a dialable number).",
         "Explain both rules in visible hint text linked to the fields so screen-reader users hear them too.",
       ],
     },
@@ -317,6 +317,7 @@ function returnLimits(departure: string, monthsAhead = 12) {
     { source: "norman-1988", role: "primary", note: "First edition, where the four kinds and forcing functions are set out." },
     { source: "norman-1983-design-rules", role: "primary", note: "Slips of action and design rules derived from them." },
     { source: "norman-1999", role: "primary", note: "Conflation of affordances, conventions and constraints; what designers manipulate on screens." },
+    { source: "nielsen-ten-heuristics-article", role: "primary", note: "Error prevention as checking and asking people to confirm before they commit." },
     { source: "nng-slips", role: "explanatory", note: "Constraints among four ways to prevent slips, beside suggestions, defaults and forgiving formats." },
     { source: "w3c-wcag-22", role: "standard", note: "SC 1.4.3 inactive-component exception; SC 3.3.4 Error Prevention (Legal, Financial, Data)." },
     { source: "w3c-wai-aria-12", role: "standard", note: "aria-disabled: perceivable but not operable; focus and blocking activation left to the author." },

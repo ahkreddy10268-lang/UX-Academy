@@ -326,7 +326,7 @@ Five separate dimensions, rated basic / developing / complete from the content (
 | Component State Management | Concept | Practitioner recommendation | complete | developing | complete | developing | complete | 11 | 3 | — | async-state-lab |
 | Confidence Intervals | Concept | Established theoretical model | complete | complete | developing | developing | complete | 4 | 3 | confidence-interval-mean | — |
 | Consistency and Standards | Principle | Professional guideline | complete | developing | complete | basic | complete | 6 | 3 | — | — |
-| Constraints | Concept | Established theoretical model | complete | complete | complete | basic | complete | 9 | 3 | — | — |
+| Constraints | Concept | Established theoretical model | complete | complete | complete | basic | complete | 10 | 3 | — | — |
 | Data Tables | Pattern | Professional guideline | complete | developing | complete | developing | complete | 7 | 3 | — | async-state-lab |
 | Design Governance | Strategy | Practitioner recommendation | complete | developing | complete | basic | complete | 8 | 3 | — | — |
 | Design Language | Concept | Practitioner recommendation | complete | developing | complete | basic | complete | 7 | 3 | — | — |
