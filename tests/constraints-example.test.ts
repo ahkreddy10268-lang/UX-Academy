@@ -46,16 +46,21 @@ describe("constraints worked example: date-only month arithmetic", () => {
   });
 
   it("does not depend on the local time zone", () => {
-    // The helper never creates a local-time Date, so the result is the same whatever TZ the
-    // process uses. Changing process.env.TZ at runtime is honoured by Node for new Date objects.
+    // The helper creates no Date objects, so the result is the same whatever TZ the process
+    // uses. Node honours a runtime change to process.env.TZ for new Date objects.
     const original = process.env.TZ;
-    const results = ["UTC", "America/Los_Angeles", "Pacific/Kiritimati", "Pacific/Pago_Pago"].map((tz) => {
-      process.env.TZ = tz;
-      return [addMonths("2026-01-31", 1), addMonths("2026-12-31", 1), returnLimits("2026-03-14").max].join();
-    });
-    process.env.TZ = original;
-    expect(new Set(results).size).toBe(1);
-    expect(results[0]).toBe("2026-02-28,2027-01-31,2027-03-14");
+    try {
+      const results = ["UTC", "America/Los_Angeles", "Pacific/Kiritimati", "Pacific/Pago_Pago"].map((tz) => {
+        process.env.TZ = tz;
+        return [addMonths("2026-01-31", 1), addMonths("2026-12-31", 1), addMonths("2028-02-29", 12), returnLimits("2026-03-14").max].join();
+      });
+      expect(new Set(results).size).toBe(1);
+      expect(results[0]).toBe("2026-02-28,2027-01-31,2029-02-28,2027-03-14");
+    } finally {
+      // Assigning undefined would set the string "undefined"; delete restores an unset TZ.
+      if (original === undefined) delete process.env.TZ;
+      else process.env.TZ = original;
+    }
   });
 
   it("returns the departure date as the minimum and 12 months ahead by default", () => {
@@ -67,5 +72,23 @@ describe("constraints worked example: date-only month arithmetic", () => {
     expect(() => addMonths("2026-1-31", 1)).toThrow();
     expect(() => addMonths("31/01/2026", 1)).toThrow();
     expect(() => addMonths("2026-01-31", 1.5)).toThrow();
+  });
+
+  it("rejects strings shaped like dates that are not calendar dates", () => {
+    for (const bad of ["2026-02-31", "2026-02-30", "2026-04-31", "2026-06-31", "2026-09-31", "2026-11-31", "2026-13-01", "2026-00-15", "2026-01-00", "2026-01-32", "2026-99-99"]) {
+      expect(() => addMonths(bad, 1), bad).toThrow(/Not a calendar date/);
+      expect(() => returnLimits(bad), bad).toThrow(/Not a calendar date/);
+    }
+  });
+
+  it("accepts 29 February only in leap years", () => {
+    expect(() => addMonths("2026-02-29", 1)).toThrow(/Not a calendar date/); // common year
+    expect(() => addMonths("2100-02-29", 1)).toThrow(/Not a calendar date/); // century, not ÷ 400
+    expect(() => addMonths("2028-02-30", 1)).toThrow(/Not a calendar date/); // leap year, still 29 days
+    expect(addMonths("2028-02-29", 1)).toBe("2028-03-29");
+    expect(addMonths("2000-02-29", 0)).toBe("2000-02-29"); // ÷ 400, a leap year
+    expect(addMonths("2026-02-28", 0)).toBe("2026-02-28");
+    expect(addMonths("2026-12-31", 0)).toBe("2026-12-31");
+    expect(addMonths("2026-01-01", 0)).toBe("2026-01-01");
   });
 });

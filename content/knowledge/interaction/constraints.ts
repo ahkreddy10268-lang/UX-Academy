@@ -201,18 +201,23 @@ export default defineEntry({
 // <input id="return" type="date" min={departure} max={limit}
 //        aria-describedby="return-hint" />
 
-// Date-only arithmetic on "YYYY-MM-DD": no Date parsing of local times, so no
-// time-zone shift, and month-end clamps (31 January + 1 month → 28/29 February).
+// Date-only arithmetic on "YYYY-MM-DD": no Date objects at all, so no time-zone
+// shift; impossible dates (2026-02-31, 2026-13-01) are rejected, and month ends
+// clamp (31 January + 1 month → 28/29 February).
+const isLeap = (y: number) => y % 4 === 0 && (y % 100 !== 0 || y % 400 === 0);
+const daysInMonth = (y: number, month: number) => // month 1–12
+  month === 2 ? (isLeap(y) ? 29 : 28) : [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][month - 1];
+
 function addMonths(isoDate: string, months: number): string {
   const m = /^(\\d{4})-(\\d{2})-(\\d{2})$/.exec(isoDate);
   if (!m || !Number.isInteger(months)) throw new Error("Expected YYYY-MM-DD and whole months.");
   const [y, mo, d] = [Number(m[1]), Number(m[2]), Number(m[3])];
+  if (mo < 1 || mo > 12 || d < 1 || d > daysInMonth(y, mo)) throw new Error(\`Not a calendar date: \${isoDate}\`);
   const total = y * 12 + (mo - 1) + months;
   const ty = Math.floor(total / 12);
-  const tm = total - ty * 12; // 0–11
-  const lastDay = new Date(Date.UTC(ty, tm + 1, 0)).getUTCDate(); // last day of the target month
+  const tm = total - ty * 12 + 1; // 1–12
   const pad = (n: number, w = 2) => String(n).padStart(w, "0");
-  return \`\${pad(ty, 4)}-\${pad(tm + 1)}-\${pad(Math.min(d, lastDay))}\`;
+  return \`\${pad(ty, 4)}-\${pad(tm)}-\${pad(Math.min(d, daysInMonth(ty, tm)))}\`;
 }
 
 function returnLimits(departure: string, monthsAhead = 12) {
