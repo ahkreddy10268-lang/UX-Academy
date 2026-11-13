@@ -358,7 +358,7 @@ How people act on interfaces and how interfaces respond.
 ### Interaction patterns, state & forms (`patterns`)
 
 - ◻️ Form Design — *Technique* · `form-design` · also: Form Architecture
-- ◻️ Interaction States — *Concept* · `interaction-states`
+- ✅ Interaction States — *Concept* · `interaction-states`
 - ◻️ State Transitions — *Concept* · `state-transitions`
 
 ### Input & modalities (`modalities`)

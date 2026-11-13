@@ -178,6 +178,7 @@ export default defineEntry({
     { target: "mapping", type: "complementary-to", note: "A natural mapping is often a logical constraint: the layout leaves one sensible choice." },
     { target: "jakobs-law", type: "related-to", note: "Cultural constraints depend on conventions people learned on other products." },
     { target: "user-control-and-freedom", type: "contrasts-with", note: "Constraints restrict; control and freedom let people leave and undo. Good designs balance both." },
+    { target: "interaction-states", type: "related-to", note: "A disabled state is a constraint made visible; it still needs a reason people can perceive." },
   ],
 
   practice: {

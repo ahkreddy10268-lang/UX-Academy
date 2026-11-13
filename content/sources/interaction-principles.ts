@@ -6,7 +6,8 @@
  * norman-1988, norman-2013, shneiderman-1983, hutchins-hollan-norman-1985,
  * harel-1987, miller-1968, nielsen-1993-response-times, myers-1985,
  * w3c-wai-aria-12, w3c-wcag-22. Added 2026-11-13 for direct manipulation:
- * w3c-understanding-dragging-movements.
+ * w3c-understanding-dragging-movements; for interaction states: w3c-selectors-3,
+ * w3c-understanding-non-text-contrast.
  */
 import { defineSources } from "../../lib/content/define";
 
@@ -134,6 +135,22 @@ export default defineSources([
       "Published 24 July 2016; read 2026-11-12. Follow-up to nng-hidden-navigation using the same study: whether navigation is hidden matters, but so do visual salience, information scent, context, tappability signifiers and user expectations; compares the six tested sites.",
   },
   {
+    id: "w3c-selectors-3",
+    title: "Selectors Level 3",
+    authors: [],
+    organisation: "World Wide Web Consortium (W3C), CSS Working Group",
+    url: "https://www.w3.org/TR/selectors-3/",
+    year: 2018,
+    type: "standard",
+    tier: 1,
+    topics: ["user action pseudo-classes", ":hover", ":active", ":focus", "UI element states", ":enabled", ":disabled", ":checked"],
+    access: "open",
+    verification: "url-checked",
+    lastVerifiedAt: "2026-11-13",
+    notes:
+      "W3C Recommendation, 6 November 2018; read 2026-11-13. § 6.6.1 user action pseudo-classes :hover (applies while the user designates an element with a pointing device without necessarily activating it), :active and :focus; these 'are not mutually exclusive. An element may match several pseudo-classes at the same time.' § 6.6.4 UI element states pseudo-classes: :enabled, :disabled, :checked, :indeterminate. Stable source for the states that Selectors Level 4 (a draft) carries forward.",
+  },
+  {
     id: "w3c-selectors-4",
     title: "Selectors Level 4",
     authors: [],
@@ -147,7 +164,7 @@ export default defineSources([
     verification: "url-checked",
     lastVerifiedAt: "2026-11-12",
     notes:
-      "W3C Working Draft, 22 January 2026 (a draft, not a Recommendation); read 2026-11-12. Section 9, User Action Pseudo-classes: :hover, :active, :focus, :focus-visible, :focus-within; 'the user action pseudo-classes are not mutually exclusive' — an element can match several at once.",
+      "W3C Working Draft, 22 January 2026 (a draft, not a Recommendation; the document says it is inappropriate to cite it as other than a work in progress); read 2026-11-12, re-read 2026-11-13. Section 9, User Action Pseudo-classes: :hover, :active, :focus, :focus-visible, :focus-within; 'the user action pseudo-classes are not mutually exclusive' — an element can match several at once. § 9.4: :focus always matches the focused element, but user agents only sometimes indicate focus visibly; :focus-visible matches when they do, by the UA's own heuristics; the non-normative starting points include always indicating focus when the user has asked for it, for elements that take keyboard input, and after keyboard interaction, and not after a pointer interaction with an element that does not take keyboard input. Used in this registry only for :focus-visible, :focus-within and those heuristics; :hover, :active and :focus are cited from Selectors Level 3.",
   },
   {
     id: "whatwg-html",
@@ -162,7 +179,7 @@ export default defineSources([
     verification: "url-checked",
     lastVerifiedAt: "2026-11-13",
     notes:
-      "Living standard (no versions); read 2026-11-13. 'Enabling and disabling form controls: the disabled attribute': 'A form control that is disabled must prevent any click events that are queued on the user interaction task source from being dispatched on the element.' Focus, data model: an element is a focusable area only if, among other conditions, 'the element is not actually disabled'. Used only for these two points.",
+      "Living standard (no versions); read 2026-11-13. 'Enabling and disabling form controls: the disabled attribute': 'A form control that is disabled must prevent any click events that are queued on the user interaction task source from being dispatched on the element.' Focus, data model: an element is a focusable area only if, among other conditions, 'the element is not actually disabled'. Used for these two points. Re-read 2026-11-13, 'Pseudo-classes' (semantics-other): defines when :hover (the user designates an element with a pointing device), :active (the element is being activated), :disabled (actually disabled), :checked (checked checkboxes and radios, selected options) and :open (open details, dialogs, pickers) match. Selectors Level 4 defines :focus-visible; HTML does not define it on this page.",
   },
   {
     id: "w3c-understanding-dragging-movements",
@@ -180,6 +197,21 @@ export default defineSources([
       "Read 2026-11-13. Informative. Intent: functionality that uses dragging has another single-pointer mode that does not need the dexterity to drag; some people cannot drag precisely, and trackballs, head pointers, eye-gaze systems and speech-controlled mouse emulators make dragging cumbersome. Keyboard equivalence for a drag does not by itself meet SC 2.5.7 unless it also provides controls that can be clicked or tapped; SC 2.5.7 and the keyboard criteria are evaluated independently. Examples: a draggable map with up/down/left/right buttons; a sortable list with move-up and move-down controls; a task board with a menu to move an item to another column.",
   },
   {
+    id: "w3c-understanding-non-text-contrast",
+    title: "Understanding SC 1.4.11: Non-text Contrast (Level AA)",
+    authors: [],
+    organisation: "W3C Web Accessibility Initiative",
+    url: "https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html",
+    type: "official-documentation",
+    tier: 1,
+    topics: ["non-text contrast", "states", "focus indicators", "hover", "inactive components"],
+    access: "open",
+    verification: "url-checked",
+    lastVerifiedAt: "2026-11-13",
+    notes:
+      "Read 2026-11-13. Informative. Visual information needed to indicate a state, such as selected or focused, needs 3:1 against adjacent colours; a colour change between states of one component is not required to reach 3:1 when the states are not shown next to each other (visited links, hover). Author hover treatments are 'supplemental' because the pointer itself shows where it is, but a hover effect must not make the component, or its focus or selection indicators, lose contrast. Inactive components (e.g. a disabled HTML control) are exempt. Restates the WCAG glossary definition of 'state', whose examples are focus, hover, select, press, check, visited/unvisited and expand/collapse.",
+  },
+  {
     id: "m3-states",
     title: "Material Design 3: States",
     authors: [],
@@ -192,6 +224,6 @@ export default defineSources([
     verification: "url-checked",
     lastVerifiedAt: "2026-11-12",
     notes:
-      "Rendered pages (overview, state layers, applying states) read 2026-11-12. 'States show the interaction status of a component or UI element.' Names enabled, disabled, hover, focused, pressed, dragged; states should have two visual indicators for accessibility; states can be combined (e.g. selection and hover). A state layer is a semi-transparent overlay in the content colour; only one state layer at a time; opacities hover 8 %, focus 10 %, pressed 10 %, dragged 16 %, disabled 38 %. Disabled states need not meet Material's contrast requirements and do not take hover or other state layers; only one hover at a time in a layout.",
+      "Rendered pages (overview, state layers, applying states) read 2026-11-12. 'States show the interaction status of a component or UI element.' Names enabled, disabled, hover, focused, pressed, dragged; states should have two visual indicators for accessibility; states can be combined (e.g. selection and hover). A state layer is a semi-transparent overlay in the content colour; only one state layer at a time; opacities hover 8 %, focus 10 %, pressed 10 %, dragged 16 %, disabled 38 %. Disabled states need not meet Material's contrast requirements and do not take hover or other state layers; only one hover at a time in a layout. Re-read 2026-11-13 (rendered pages): disabled components cannot be focused, dragged or pressed and do not change state when tapped or hovered; hover can combine with focused, activated, selected or pressed states; focus is described as highlighted by keyboard or voice; a state layer is 40dp within a 48dp interactive target.",
   },
 ]);

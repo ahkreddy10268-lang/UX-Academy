@@ -145,6 +145,7 @@ export default defineEntry({
     { target: "empty-states", type: "contrasts-with", note: "A failure must never be shown as empty." },
     { target: "loading-states", type: "related-to", note: "Retries return to loading; long waits often end in timeouts." },
     { target: "error-messages", type: "complementary-to", note: "Microcopy of error messages." },
+    { target: "interaction-states", type: "related-to", note: "Invalid is the component-level state an error view builds on." },
   ],
 
   practice: {

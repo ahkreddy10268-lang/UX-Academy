@@ -845,7 +845,7 @@ export default defineSources([
     access: "open",
     verification: "url-checked",
     lastVerifiedAt: "2026-11-11",
-    notes: "Read 2026-11-11. W3C Recommendation, 6 June 2023. Defines roles and their supported states and properties, e.g. button supports aria-pressed and aria-expanded.",
+    notes: "Read 2026-11-11. W3C Recommendation, 6 June 2023. Defines roles and their supported states and properties, e.g. button supports aria-pressed and aria-expanded. Re-read 2026-11-13: states and properties are conceptually distinct — state values (e.g. aria-checked) usually change with user interaction, property values (e.g. aria-labelledby) less often. aria-pressed: the pressed state of a toggle button, changed by a full press-and-release; absent means the button is not a toggle; similar to but not the same as aria-checked. aria-checked: checkboxes, radios and other widgets; mixed only on tri-state roles. aria-selected: selection in single- and multi-select widgets. aria-expanded: whether a controlled grouping element is shown. aria-current: the current item in a set (page, step, location, date, time). aria-busy: an element is being modified and assistive technologies MAY wait until changes finish before exposing them. aria-invalid: the value does not conform to the expected format; authors SHOULD NOT set it on required fields merely because nothing has been entered yet.",
   },
   {
     id: "w3c-apg-keyboard",

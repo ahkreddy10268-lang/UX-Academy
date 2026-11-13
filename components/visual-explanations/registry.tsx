@@ -14,12 +14,36 @@ import { HciCycle, HciEcosystem, HciInteractionModel, HciParadigms, HciPerspecti
 import { UcdCycle } from "./concepts/user-centred-design";
 import { UiDesignAnnotated } from "./concepts/ui-design";
 import { InteractionLoop } from "./concepts/interaction-design";
+import { InteractionStateDimensions } from "./concepts/interaction-states";
 import { DisabilityPerspectives } from "./concepts/accessibility-concept";
 import { ContributionLifecycle, DesignSystemArchitecture } from "./concepts/design-system";
 import { IaEcology, IaHierarchy } from "./concepts/information-architecture";
 import type { VisualExplanation } from "./types";
 
 export const visualExplanations: VisualExplanation[] = [
+  {
+    id: "interaction-states.dimensions",
+    language: "viz",
+    slug: "interaction-states",
+    type: "system",
+    method: "process",
+    level: 2,
+    title: "Four sources of state in one toggle button",
+    objective: "A 'Bold' toggle button's states split by where they come from — pointer, focus, value and availability — with the events that move each one, what is exposed to assistive technology, and which combinations stay legible.",
+    takeaway: "A control is in one state of every source at once; specify each source and its events separately, then the few combinations that must never be shown.",
+    summary: [
+      "One 'Bold' toggle button, four sources of state. Each changes on its own events; at any moment the button is in one state of every source.",
+      "A. Pointer (momentary, the input device): Rest, Hover, Pressed. Rest to Hover when the pointer enters; back when it leaves. Hover to Pressed on button down. Pressed to Hover on release over it, which activates. Pressed to Rest when the pointer slides off before release, which cancels the press (one way to meet WCAG 2.5.2). Not exposed to assistive technology; keyboards never hover and touch gives no reliable hover.",
+      "B. Focus (momentary, keyboard, click or script): Unfocused; Focused with the ring shown; Focused with the ring hidden. Tab gives focus with the ring shown; a mouse click may give focus with the ring hidden, by the browser's :focus-visible heuristic (Selectors Level 4, a draft); the next key press shows the ring; Tab away or a click elsewhere removes focus from either focused state. WCAG 2.4.7 requires a mode in which the indicator is visible.",
+      "C. Value (persistent, set by the person): Off and On, toggled by a click, Enter or Space; exposed as aria-pressed false or true, with the label staying 'Bold'.",
+      "D. Availability (a condition set by the product): Enabled and Disabled, by a product rule such as 'no text selected'. While disabled, the pointer and value lanes stop responding; native disabled also removes focus, while aria-disabled can keep it.",
+      "Combines legibly: hover plus focus with the ring shown plus On — a tint inside, a ring outside, a tick and fill — none hides another.",
+      "Never show, on any control: disabled with a hover or press response; On drawn like Pressed; busy while still accepting presses; invalid before anyone has typed.",
+    ],
+    verification: "content-checked",
+    sources: ["w3c-selectors-3", "w3c-selectors-4", "whatwg-html", "w3c-wai-aria-12", "w3c-wcag-22", "m3-states"],
+    Component: InteractionStateDimensions,
+  },
   {
     id: "direct-manipulation.space",
     language: "sheet",
@@ -544,6 +568,7 @@ export const quickTakeaways: Record<string, string> = {
   "interaction-design-discipline": "A person acts, the system changes state and responds, the person interprets the response and acts again: interaction design designs that exchange over time.",
   "ui-design": "The interface is the surface where a person meets a system: UI design decides what they see, what they can do and what they are told back.",
   "direct-manipulation": "Act on the thing itself and see the result at once — and keep another way to do it for repetition, precision and people who cannot drag.",
+  "interaction-states": "Every control is in some state — resting, hovered, focused, pressed, on, disabled, busy or invalid — and each needs a look, a behaviour and a value assistive technology can read.",
   "heuristic-evaluation": "A few experts review alone, then merge and rate what they found: fast and cheap, but predictions rather than evidence.",
   "design-system": "Shared decisions, components, patterns and guidance, owned and changed over time: a decision made once travels to every product that uses it, and feedback from products changes the system.",
 };

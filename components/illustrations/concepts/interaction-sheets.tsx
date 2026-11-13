@@ -1,6 +1,6 @@
 /**
  * Cycle 1, Batch 1 plates (D-129): interaction principles of feedback,
- * constraints, direct manipulation and state. Instructional sheets (D-089); explanations live in each plate's
+ * constraints, direct manipulation and interaction states. Instructional sheets (D-089); explanations live in each plate's
  * figure key (D-101), never as microtext in the drawing.
  */
 import type { IllustrationEntry } from "../illustration-types";
@@ -335,5 +335,97 @@ export const directManipulationPlate: IllustrationEntry = {
   ),
 };
 
-const plates: IllustrationEntry[] = [feedbackPrinciplePlate, constraintsPlate, directManipulationPlate];
+/* ------------------------------------------------------------------ */
+/* Interaction states: one control in eight states, grouped by source   */
+/* ------------------------------------------------------------------ */
+function StateButton({ cx, y, label, fill, stroke, sw = 1, dash, tone = "ink", weight = 500, dy = 0 }: { cx: number; y: number; label: string; fill: string; stroke: string; sw?: number; dash?: string; tone?: "ink" | "ink3"; weight?: number; dy?: number }) {
+  return (
+    <g>
+      <rect x={cx - 40} y={y} width={80} height={28} rx={6} fill={fill} stroke={stroke} strokeWidth={sw} strokeDasharray={dash} {...hair} />
+      <UiText x={cx} y={y + 19 + dy} anchor="middle" tone={tone} weight={weight}>
+        {label}
+      </UiText>
+    </g>
+  );
+}
+
+const STATE_CELLS = [0, 1, 2, 3].flatMap((i) => [0, 1].map((r) => ({ i, r, x: 8 + i * 98, y: 8 + r * 148 })));
+
+export const interactionStatesPlate: IllustrationEntry = {
+  slug: "interaction-states",
+  title: "Interaction states plate",
+  canvas: "sheet",
+  description:
+    "Eight cells in two rows, each showing one control in one state. Top row, momentary states caused by the input device: 1, a Save button at rest with a plain border; 2, the same button hovered, with a light tint and a pointer over it; 3, the button with keyboard focus, shown by a ring drawn outside it, above a Tab key; 4, the button pressed, with a darker fill, a stronger border and its label shifted slightly down, with the pointer on it. Bottom row: 5, a Bold toggle that is on, with a tinted fill, a coloured border and a tick before the label; 6, a disabled Save button with a dashed border, a sunken fill and faded text, with a pointer over it that changes nothing; 7, a busy button reading 'Saving…' beside a spinner; 8, an email field holding 'ana@' with a red border, a cross icon inside it and the message 'Add domain' below.",
+  key: [
+    { n: "1", label: "Rest", detail: "the enabled default every other state is drawn against; it must already look usable" },
+    { n: "2", label: "Hover", detail: "a pointer is over it: a light tint that adds information but never carries it alone" },
+    { n: "3", label: "Focus visible", detail: "keyboard focus, shown by a ring outside the control so it stays visible over any fill" },
+    { n: "4", label: "Pressed", detail: "momentary, only while the pointer or key is held down" },
+    { n: "5", label: "On (selected)", detail: "a value the person set, shown by fill and a tick and exposed as aria-pressed" },
+    { n: "6", label: "Disabled", detail: "set by the system: inert, with no hover or press response; exempt from contrast, so state the reason elsewhere" },
+    { n: "7", label: "Busy", detail: "set by the system while it works: the label changes and further presses are ignored" },
+    { n: "8", label: "Invalid", detail: "the value breaks a rule: border, icon and message together, never colour alone" },
+  ],
+  Art: ({ detail }) => (
+    <g>
+      {STATE_CELLS.map(({ x, y }) => (
+        <rect key={`${x}-${y}`} x={x} y={y} width={92} height={136} rx={8} fill={S.surface} stroke={S.ruleStrong} strokeWidth="0.9" {...hair} />
+      ))}
+
+      {/* 1 rest */}
+      <StateButton cx={54} y={62} label="Save" fill={S.surface} stroke={S.ink2} />
+      {/* 2 hover */}
+      <StateButton cx={152} y={62} label="Save" fill={S.soft} stroke={S.ink2} />
+      <Pointer x={178} y={78} />
+      {/* 3 focus visible */}
+      <rect x={206} y={58} width={88} height={36} rx={9} fill="none" stroke={S.accent} strokeWidth="2" />
+      <StateButton cx={250} y={62} label="Save" fill={S.surface} stroke={S.ink2} />
+      <rect x={232} y={106} width={36} height={22} rx={4} fill={S.soft} stroke={S.ruleStrong} strokeWidth="0.9" {...hair} />
+      <UiText x={250} y={122} anchor="middle" mono>
+        Tab
+      </UiText>
+      {/* 4 pressed */}
+      <StateButton cx={348} y={62} label="Save" fill={S.sunken} stroke={S.ink} sw={1.5} dy={1} />
+      <Pointer x={375} y={78} />
+
+      {/* 5 on (selected) */}
+      <rect x={14} y={210} width={80} height={28} rx={6} fill={S.accentWash} stroke={S.accent} strokeWidth="1.4" {...hair} />
+      <path d="M28 224 l4 4 l8 -9" fill="none" stroke={S.accent} strokeWidth="1.8" {...hair} />
+      <UiText x={46} y={229} weight={600}>
+        Bold
+      </UiText>
+      {/* 6 disabled */}
+      <StateButton cx={152} y={210} label="Save" fill={S.sunken} stroke={S.rule} dash="4 3" tone="ink3" />
+      <Pointer x={178} y={226} />
+      {/* 7 busy */}
+      <rect x={210} y={210} width={80} height={28} rx={6} fill={S.surface} stroke={S.ink2} strokeWidth="1" {...hair} />
+      <circle cx={225} cy={224} r={6} fill="none" stroke={S.rule} strokeWidth="2" />
+      <path d="M225 218 A6 6 0 0 1 231 224" fill="none" stroke={S.ink2} strokeWidth="2" strokeLinecap="round" />
+      <UiText x={236} y={229}>
+        Saving…
+      </UiText>
+      {/* 8 invalid */}
+      <rect x={308} y={210} width={80} height={28} rx={5} fill={S.surface} stroke={S.error} strokeWidth="1.4" {...hair} />
+      <UiText x={316} y={229} mono>
+        ana@
+      </UiText>
+      <Verdict x={375} y={224} ok={false} r={7} />
+      <UiText x={308} y={258} tone="error">
+        Add domain
+      </UiText>
+
+      {detail && (
+        <>
+          {/* r = 11: kept ≥ 11 units from the viewBox edge so no marker is clipped */}
+          {STATE_CELLS.map(({ i, r, x, y }) => (
+            <Marker key={`${i}-${r}`} x={x + 4} y={y + 4} n={i + 1 + r * 4} />
+          ))}
+        </>
+      )}
+    </g>
+  ),
+};
+
+const plates: IllustrationEntry[] = [feedbackPrinciplePlate, constraintsPlate, directManipulationPlate, interactionStatesPlate];
 export default plates;

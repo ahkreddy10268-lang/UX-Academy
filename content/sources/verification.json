@@ -2279,7 +2279,7 @@
   },
   "w3c-apg-button": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-11",
+    "checkedAt": "2026-11-13",
     "httpStatus": 200
   },
   "w3c-apg-grid": {
@@ -2312,12 +2312,22 @@
     "checkedAt": "2026-11-11",
     "httpStatus": 200
   },
+  "w3c-selectors-3": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-13",
+    "httpStatus": 200
+  },
   "w3c-selectors-4": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-12",
+    "checkedAt": "2026-11-13",
     "httpStatus": 200
   },
   "w3c-understanding-dragging-movements": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-13",
+    "httpStatus": 200
+  },
+  "w3c-understanding-non-text-contrast": {
     "status": "url-reachable",
     "checkedAt": "2026-11-13",
     "httpStatus": 200
