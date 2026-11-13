@@ -165,7 +165,7 @@ export default defineEntry({
     { target: "nielsen-usability-heuristics", type: "derived-from", note: "Heuristic 5 of Nielsen's ten usability heuristics." },
     { target: "error-recovery", type: "complementary-to", note: "Prevention lowers how often errors happen; recovery helps with those that remain." },
     { target: "form-design", type: "applied-in", note: "Most prevention techniques live in form fields and validation." },
-    { target: "constraints", type: "applied-in", note: "Constraints make wrong input impossible where clear rules exist." },
+    { target: "constraints", type: "related-to", note: "Constraints are one of the techniques error prevention uses: they make wrong input impossible where a clear rule exists." },
     { target: "mental-models", type: "related-to", note: "Mistakes come from mental models that do not match the system." },
     { target: "user-control-and-freedom", type: "complementary-to", note: "Undo makes the errors that are not prevented cheap to reverse." },
   ],

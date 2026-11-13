@@ -66,7 +66,7 @@ export default defineEntry({
         "Write down the rule a constraint enforces before building it; if you cannot state the rule, use a suggestion or a forgiving format instead.",
         "Prefer constraining at the point of choice (only valid dates selectable) over accepting anything and rejecting it at submission.",
         "Make constraints visible and explained: say why an option is unavailable ('Sold out', 'Before your departure date') rather than greying it out silently.",
-        "Keep inactive controls perceivable and explained; use `aria-disabled` or an explanation where people need to discover the control and learn why it cannot be used yet. ARIA defines `aria-disabled` as perceivable but not operable {{src:w3c-wai-aria-12}}.",
+        "Choose the disabling mechanism knowingly, and always state the reason separately. A native `disabled` control cannot receive focus and ignores clicks {{src:whatwg-html}}, so keyboard and screen-reader users may never reach it. `aria-disabled=\"true\"` exposes the disabled state while the control can stay focusable — but the attribute alone does not stop activation (script must), and ARIA leaves focus to the author {{src:w3c-wai-aria-12}}. **Neither says why** the action is unavailable: put the reason in visible text and associate it with the control, for example with `aria-describedby`.",
         "Reserve forcing functions for irreversible or high-cost actions, and pair them with the alternatives WCAG gives for legal, financial and data changes: make them reversible, check the input, or let people review and confirm [WCAG 2.2 SC 3.3.4] {{src:w3c-wcag-22}}.",
         "Accept the full range of real input: names with apostrophes and accents, international phone numbers and addresses. Constrain format only where the system genuinely requires it, and normalise what you can.",
       ],
@@ -80,7 +80,7 @@ export default defineEntry({
       explanation: [
         "Constraints trade **freedom for reliability**, and the right balance depends on the cost of error. Where errors are rare and cheap, heavy constraints cost more in friction than they save. Where errors are costly or irreversible, the same constraints are worth their friction. This is why forcing functions suit deletion, payment and medication dosing far more than everyday settings.",
         "On screens the boundary between constraints, conventions and affordances is blurred. Norman argued in 1999 that designers were conflating real affordances, perceived affordances, conventions and constraints, and that on screens the real affordances are largely fixed by the hardware, so what designers actually manipulate are perceived affordances, conventions and feedback {{src:norman-1999}}. Read this way, most screen 'constraints' are rules the software enforces plus conventions people have learned — which is why they break when software behaves inconsistently.",
-        "Constraints interact with **accessibility** in both directions. Restricting input to valid options helps people with cognitive and motor impairments make fewer errors. But constraints implemented as disabled controls can hide information: a disabled control is often skipped by keyboard focus, and WCAG exempts text in inactive components from contrast requirements [SC 1.4.3] {{src:w3c-wcag-22}} — Material Design similarly exempts disabled states from its contrast requirements {{src:m3-states}}. The result can be a control that some people cannot read and cannot learn about. An unavailable action usually needs a readable explanation, not only a greyed-out state.",
+        "Constraints interact with **accessibility** in both directions. Restricting input to valid options helps people with cognitive and motor impairments make fewer errors. But constraints implemented as disabled controls can hide information. A natively `disabled` control is not focusable {{src:whatwg-html}}, so a keyboard or screen-reader user moving through the form may never encounter it; and WCAG exempts text in inactive components from contrast requirements [SC 1.4.3] {{src:w3c-wcag-22}} — Material Design similarly exempts disabled states from its contrast requirements {{src:m3-states}}. `aria-disabled=\"true\"` is the alternative when people need to find the control: it tells assistive technology the control is disabled and can leave it in the focus order, though script must then block activation {{src:w3c-wai-aria-12}}. Both mechanisms communicate only the *state*. The *reason* — what is missing, what to do next — has to be written as visible text and associated with the control, or the constraint stays unexplained.",
         "Over-constraint is a real failure mode. Validation patterns that encode one country's formats, length limits that truncate real names, and pickers that forbid legitimate edge cases turn a constraint into a barrier. A useful test is whether every constraint corresponds to a rule the business or the domain actually has; constraints added for the system's convenience should be challenged.",
       ],
       evidence: [
@@ -161,7 +161,7 @@ export default defineEntry({
     {
       myth: "A disabled button is always the safest constraint.",
       reality:
-        "Disabled controls can be skipped by keyboard focus and are exempt from contrast requirements [WCAG 2.2 SC 1.4.3] {{src:w3c-wcag-22}}, so some people cannot read them or learn why they are unavailable. Explain the reason, or let people try and show what is missing.",
+        "A natively disabled button cannot be focused {{src:whatwg-html}} and its text is exempt from contrast requirements [WCAG 2.2 SC 1.4.3] {{src:w3c-wcag-22}}, so some people cannot reach or read it. `aria-disabled` keeps it discoverable but still only announces that it is disabled {{src:w3c-wai-aria-12}}. Either way, state the reason in visible, associated text — or let people try and show what is missing.",
     },
     {
       myth: "Every interface constraint is physical.",
@@ -187,7 +187,7 @@ export default defineEntry({
       { text: "Use forcing functions for irreversible, legal or financial actions, alongside reversal, checking or confirmation.", why: "WCAG 2.2 SC 3.3.4 requires such submissions to be reversible, checked or confirmed {{src:w3c-wcag-22}}; a forcing function makes the slip hard in the first place {{src:norman-2013}}.", kind: "standard" },
     ],
     donts: [
-      { text: "Don't grey out an action without saying why.", why: "Inactive text is exempt from contrast requirements and may be skipped by focus, so the reason can be invisible to some users {{src:w3c-wcag-22}}.", kind: "standard" },
+      { text: "Don't grey out an action without saying why — `disabled` or `aria-disabled` alone is not an explanation.", why: "Both expose only the disabled state; inactive text is exempt from contrast requirements and native `disabled` removes the control from focus {{src:w3c-wcag-22}} {{src:whatwg-html}} {{src:w3c-wai-aria-12}}.", kind: "standard" },
       { text: "Don't encode one locale's formats as the only valid input.", why: "Over-constrained fields reject real names, addresses and phone numbers and block legitimate users.", kind: "industry" },
       { text: "Don't add forcing functions to frequent, reversible actions.", why: "The friction is paid every time while the errors prevented are cheap to undo.", kind: "context" },
     ],
@@ -201,11 +201,22 @@ export default defineEntry({
 // <input id="return" type="date" min={departure} max={limit}
 //        aria-describedby="return-hint" />
 
+// Date-only arithmetic on "YYYY-MM-DD": no Date parsing of local times, so no
+// time-zone shift, and month-end clamps (31 January + 1 month → 28/29 February).
+function addMonths(isoDate: string, months: number): string {
+  const m = /^(\\d{4})-(\\d{2})-(\\d{2})$/.exec(isoDate);
+  if (!m || !Number.isInteger(months)) throw new Error("Expected YYYY-MM-DD and whole months.");
+  const [y, mo, d] = [Number(m[1]), Number(m[2]), Number(m[3])];
+  const total = y * 12 + (mo - 1) + months;
+  const ty = Math.floor(total / 12);
+  const tm = total - ty * 12; // 0–11
+  const lastDay = new Date(Date.UTC(ty, tm + 1, 0)).getUTCDate(); // last day of the target month
+  const pad = (n: number, w = 2) => String(n).padStart(w, "0");
+  return \`\${pad(ty, 4)}-\${pad(tm + 1)}-\${pad(Math.min(d, lastDay))}\`;
+}
+
 function returnLimits(departure: string, monthsAhead = 12) {
-  const d = new Date(departure + "T12:00");
-  const max = new Date(d);
-  max.setMonth(max.getMonth() + monthsAhead);
-  return { min: departure, max: max.toISOString().slice(0, 10) };
+  return { min: departure, max: addMonths(departure, monthsAhead) };
 }`,
         caption: "The constraint (`min`, `max`) and its explanation (the hint, linked with `aria-describedby`) travel together, so people who cannot see the greyed-out days still learn the rule. Server-side validation is still needed; the constraint prevents slips, it does not enforce security.",
       },
@@ -285,7 +296,7 @@ function returnLimits(departure: string, monthsAhead = 12) {
       level: "advanced",
       prompt: "A 'Submit' button stays disabled until a form is complete, with no explanation. What is the strongest objection?",
       options: [
-        { text: "People may not be able to perceive the disabled button or learn what is missing — inactive text is exempt from contrast requirements and disabled controls are often skipped by focus", correct: true, explanation: "The constraint prevents premature submission but hides the rule; an explanation, or allowing the attempt and listing what is missing, keeps it usable [WCAG 2.2 SC 1.4.3]." },
+        { text: "People may not be able to reach the button or learn what is missing — a natively disabled button cannot be focused, inactive text is exempt from contrast requirements, and nothing states the reason", correct: true, explanation: "The constraint prevents premature submission but hides the rule. Switching to aria-disabled would keep the button discoverable, yet still only announce 'disabled'; the reason must be given in visible, associated text, or people should be allowed to try and shown what is missing [WCAG 2.2 SC 1.4.3]." },
         { text: "Disabled buttons are not allowed by WCAG", correct: false, explanation: "They are allowed; the issue is that their state and reason can be hidden." },
         { text: "Forms should never constrain submission", correct: false, explanation: "Constraining submission is reasonable; leaving it unexplained is the problem." },
         { text: "The button should be red", correct: false, explanation: "Colour alone would not explain anything and fails people who cannot see the difference." },
@@ -298,7 +309,7 @@ function returnLimits(departure: string, monthsAhead = 12) {
     { id: "constraints-fc-four", front: "Norman's four kinds of constraint", back: "Physical · cultural · semantic · logical — a lens, not an exhaustive taxonomy." },
     { id: "constraints-fc-forcing", front: "Three forcing functions", back: "Interlock (right order), lock-in (keep active, e.g. save before quitting), lockout (block a dangerous state)." },
     { id: "constraints-fc-vs-prevention", front: "Constraints vs error prevention", back: "Constraints limit options; error prevention is the goal and also uses defaults, suggestions, forgiving formats and confirmations." },
-    { id: "constraints-fc-disabled", front: "Disabled-control risk", back: "Exempt from contrast [WCAG 1.4.3], often unfocusable — explain why an action is unavailable." },
+    { id: "constraints-fc-disabled", front: "disabled vs aria-disabled", back: "Native disabled: not focusable, ignores clicks. aria-disabled: state exposed, can stay focusable, script blocks activation. Neither gives the reason — add visible, associated text." },
   ],
 
   references: [
@@ -308,7 +319,8 @@ function returnLimits(departure: string, monthsAhead = 12) {
     { source: "norman-1999", role: "primary", note: "Conflation of affordances, conventions and constraints; what designers manipulate on screens." },
     { source: "nng-slips", role: "explanatory", note: "Constraints among four ways to prevent slips, beside suggestions, defaults and forgiving formats." },
     { source: "w3c-wcag-22", role: "standard", note: "SC 1.4.3 inactive-component exception; SC 3.3.4 Error Prevention (Legal, Financial, Data)." },
-    { source: "w3c-wai-aria-12", role: "standard", note: "aria-disabled: perceivable but not operable." },
+    { source: "w3c-wai-aria-12", role: "standard", note: "aria-disabled: perceivable but not operable; focus and blocking activation left to the author." },
+    { source: "whatwg-html", role: "standard", note: "Native disabled form controls are not focusable areas and do not dispatch click events." },
     { source: "m3-states", role: "explanatory", note: "Disabled states exempt from Material's contrast requirements." },
   ],
   evidence: "established-theory",

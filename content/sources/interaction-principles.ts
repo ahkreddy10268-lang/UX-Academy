@@ -149,6 +149,21 @@ export default defineSources([
       "W3C Working Draft, 22 January 2026 (a draft, not a Recommendation); read 2026-11-12. Section 9, User Action Pseudo-classes: :hover, :active, :focus, :focus-visible, :focus-within; 'the user action pseudo-classes are not mutually exclusive' — an element can match several at once.",
   },
   {
+    id: "whatwg-html",
+    title: "HTML Living Standard",
+    authors: [],
+    organisation: "WHATWG",
+    url: "https://html.spec.whatwg.org/multipage/",
+    type: "standard",
+    tier: 1,
+    topics: ["disabled attribute", "focusable areas", "form controls"],
+    access: "open",
+    verification: "url-checked",
+    lastVerifiedAt: "2026-11-13",
+    notes:
+      "Living standard (no versions); read 2026-11-13. 'Enabling and disabling form controls: the disabled attribute': 'A form control that is disabled must prevent any click events that are queued on the user interaction task source from being dispatched on the element.' Focus, data model: an element is a focusable area only if, among other conditions, 'the element is not actually disabled'. Used only for these two points.",
+  },
+  {
     id: "m3-states",
     title: "Material Design 3: States",
     authors: [],

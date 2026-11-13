@@ -2429,6 +2429,11 @@
     "registeredContainer": "Psychologische Forschung",
     "similarity": 1
   },
+  "whatwg-html": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-13",
+    "httpStatus": 200
+  },
   "who-global-report-health-equity-disability-2022": {
     "status": "url-reachable",
     "checkedAt": "2026-11-05",
