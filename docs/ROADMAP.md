@@ -61,3 +61,4 @@
 - Eight URLs block automated verification (ISO, ACM DL, some publisher pages); records are bibliographic and labelled so.
 - `brooke-2013`, `doherty-thadani-1982`, `kieras-2001-klm`, `shneiderman-golden-rules-page` are marked awaiting verification.
 - Charts and plates were reviewed for colour-only encoding and text alternatives manually and with axe; no assistive-technology testing yet.
+- Plate markers: 152 numbered markers in 78 plates extend 1.75–3.75 units past the 400 × 300 viewBox and are clipped at the edge (audit 2026-11-16, full list in docs/VISUAL_QA.md). Not yet fixed.

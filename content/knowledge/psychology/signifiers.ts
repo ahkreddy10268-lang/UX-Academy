@@ -173,6 +173,7 @@ export default defineEntry({
   ],
 
   relations: [
+    { target: "interaction-design-discipline", type: "applied-in", note: "Signifiers are applied in interaction design to show which actions are available and where." },
     { target: "affordances", type: "contrasts-with", note: "Signifiers communicate the actions that affordances make possible." },
     { target: "feedback-principle", type: "complementary-to", note: "Signifiers say what an action will do before it; feedback says what it did after." },
     { target: "constraints", type: "complementary-to", note: "Signifiers show where and how to act; constraints remove the options that should not be taken." },

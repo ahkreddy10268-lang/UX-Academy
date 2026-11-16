@@ -163,6 +163,7 @@ export default defineEntry({
   ],
 
   relations: [
+    { target: "interaction-design-discipline", type: "applied-in", note: "Feedback is applied in interaction design to close the loop between an action and its result." },
     { target: "visibility-of-system-status", type: "applied-in", note: "Heuristic 1 asks a whole system to provide timely, appropriate feedback about its state." },
     { target: "gulfs-of-execution-and-evaluation", type: "related-to", note: "Feedback is what the person evaluates; poor feedback widens the gulf of evaluation." },
     { target: "signifiers", type: "complementary-to", note: "Signifiers tell people what an action will do before they act; feedback tells them what it did." },

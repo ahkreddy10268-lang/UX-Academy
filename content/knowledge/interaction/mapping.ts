@@ -164,6 +164,7 @@ export default defineEntry({
   ],
 
   relations: [
+    { target: "interaction-design-discipline", type: "applied-in", note: "Mapping is applied in interaction design when deciding how controls and their effects correspond." },
     { target: "signifiers", type: "complementary-to", note: "Signifiers show where to act; mapping shows which control affects what." },
     { target: "constraints", type: "complementary-to", note: "Constraints limit what can be done; mapping makes the right choice obvious among what remains." },
     { target: "gulfs-of-execution-and-evaluation", type: "related-to", note: "Good mapping narrows the gulf of execution: people can see how to achieve their goal." },

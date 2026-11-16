@@ -182,6 +182,7 @@ export default defineEntry({
   ],
 
   relations: [
+    { target: "interaction-design-discipline", type: "applied-in", note: "Direct manipulation is one interaction style that interaction design can choose, where acting on visible objects with immediate feedback fits the task." },
     { target: "gulfs-of-execution-and-evaluation", type: "related-to", note: "Hutchins, Hollan and Norman introduced the gulfs to explain why direct manipulation feels direct." },
     { target: "shneiderman-golden-rules", type: "influences", note: "Several golden rules — feedback, easy reversal, internal locus of control — restate properties of direct manipulation." },
     { target: "feedback-principle", type: "related-to", note: "Direct manipulation depends on immediate, continuous feedback about the object being changed." },

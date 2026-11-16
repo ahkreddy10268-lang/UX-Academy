@@ -23,7 +23,7 @@
 | Comparisons | 10 |
 | Learning paths | 16 |
 | Glossary terms | 114 |
-| Sources | 427 |
+| Sources | 428 |
 
 ## By domain
 
@@ -336,7 +336,7 @@ Five separate dimensions, rated basic / developing / complete from the content (
 | Design System Versioning | Strategy | Practitioner recommendation | complete | developing | complete | basic | complete | 6 | 3 | — | — |
 | Design Tokens | Concept | Practitioner recommendation | complete | developing | complete | basic | complete | 8 | 4 | — | — |
 | Direct Manipulation | Principle | Established theoretical model | complete | complete | complete | developing | complete | 6 | 4 | — | — |
-| Discoverability | Principle | Professional guideline | complete | complete | complete | basic | complete | 4 | 4 | — | — |
+| Discoverability | Principle | Professional guideline | complete | complete | complete | basic | complete | 5 | 4 | — | — |
 | Doherty Threshold | Rule of thumb | Practitioner recommendation | complete | complete | developing | developing | developing | 8 | 3 | — | feedback-lab |
 | Double Diamond | Framework | Professional guideline | complete | complete | complete | developing | complete | 3 | 4 | — | — |
 | Elevation Systems | Concept | Practitioner recommendation | complete | developing | complete | basic | complete | 4 | 3 | — | — |

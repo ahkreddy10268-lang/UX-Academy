@@ -163,6 +163,7 @@ export default defineEntry({
   ],
 
   relations: [
+    { target: "interaction-design-discipline", type: "applied-in", note: "Recovery paths such as undo and clear error messages are designed as part of the interaction, not added afterwards." },
     { target: "nielsen-usability-heuristics", type: "derived-from", note: "Heuristic 9 of Nielsen's ten usability heuristics." },
     { target: "error-prevention", type: "complementary-to", note: "Prevention lowers how often errors happen; recovery handles those that remain." },
     { target: "error-messages", type: "applied-in", note: "Error messages are the written part of recovery." },

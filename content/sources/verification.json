@@ -1703,6 +1703,11 @@
     "registeredContainer": "Interactions",
     "similarity": 0.67
   },
+  "norman-dote-2013-contents": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
+    "httpStatus": 200
+  },
   "norman-draper-1986": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",

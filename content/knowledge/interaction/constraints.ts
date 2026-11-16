@@ -171,6 +171,7 @@ export default defineEntry({
   ],
 
   relations: [
+    { target: "interaction-design-discipline", type: "applied-in", note: "Constraints are applied in interaction design to rule out wrong actions before they happen." },
     { target: "error-prevention", type: "applied-in", note: "Error prevention uses constraints, among other techniques, to rule out slips where a clear rule exists." },
     { target: "affordances", type: "complementary-to", note: "Affordances are what actions are possible; constraints limit which of them can or should be taken." },
     { target: "signifiers", type: "complementary-to", note: "Signifiers show where and how to act; constraints remove options that should not be acted on." },

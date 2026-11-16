@@ -162,6 +162,7 @@ export default defineEntry({
   ],
 
   relations: [
+    { target: "interaction-design-discipline", type: "applied-in", note: "Error prevention is designed into interaction sequences through constraints, defaults and confirmation." },
     { target: "nielsen-usability-heuristics", type: "derived-from", note: "Heuristic 5 of Nielsen's ten usability heuristics." },
     { target: "error-recovery", type: "complementary-to", note: "Prevention lowers how often errors happen; recovery helps with those that remain." },
     { target: "form-design", type: "applied-in", note: "Most prevention techniques live in form fields and validation." },

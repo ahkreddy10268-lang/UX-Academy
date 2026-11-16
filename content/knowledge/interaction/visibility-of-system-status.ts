@@ -163,6 +163,7 @@ export default defineEntry({
   ],
 
   relations: [
+    { target: "interaction-design-discipline", type: "applied-in", note: "Keeping people informed of what is happening is applied throughout interaction design, on the evaluation side of the loop." },
     { target: "nielsen-usability-heuristics", type: "derived-from", note: "Heuristic 1 of Nielsen's ten usability heuristics." },
     { target: "feedback-principle", type: "related-to", note: "Feedback is the mechanism; visibility of status is the principle that feedback must be timely and appropriate." },
     { target: "doherty-threshold", type: "related-to", note: "Response-time targets decide which kind of status feedback an operation needs." },

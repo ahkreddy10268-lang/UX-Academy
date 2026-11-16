@@ -197,6 +197,7 @@ export default defineEntry({
   ],
 
   relations: [
+    { target: "interaction-design-discipline", type: "applied-in", note: "Specifying each element's states, and how each looks, behaves and is exposed, is part of interaction design." },
     { target: "feedback-principle", type: "related-to", note: "Pressed, busy, success and error states are how components give feedback about an action." },
     { target: "visibility-of-system-status", type: "related-to", note: "Busy, success and error states make a component's status visible." },
     { target: "component-state-management", type: "related-to", note: "Boundary: this entry covers what each state means and how it is shown and exposed; component state management models states, transitions and ownership." },

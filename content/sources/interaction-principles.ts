@@ -7,7 +7,8 @@
  * harel-1987, miller-1968, nielsen-1993-response-times, myers-1985,
  * w3c-wai-aria-12, w3c-wcag-22. Added 2026-11-13 for direct manipulation:
  * w3c-understanding-dragging-movements; for interaction states: w3c-selectors-3,
- * w3c-understanding-non-text-contrast.
+ * w3c-understanding-non-text-contrast; for discoverability:
+ * norman-dote-2013-contents.
  */
 import { defineSources } from "../../lib/content/define";
 
@@ -99,6 +100,21 @@ export default defineSources([
     verification: "bibliographic",
     notes:
       "Metadata checked against Crossref 2026-11-12 (Crossref title: 'A survey of software learnability'); abstract read (OpenAlex). Finds little agreement on how learnability is defined or measured; a question-suggestion protocol exposed significantly more learnability issues than a traditional think-aloud in their study; proposes a classification of learnability issues and guidelines derived from it.",
+  },
+  {
+    id: "norman-dote-2013-contents",
+    title: "The Design of Everyday Things, Revised and Expanded Edition (author's book page: synopsis, table of contents and preface)",
+    authors: ["Norman, D. A."],
+    organisation: "Don Norman's JND.org",
+    url: "https://jnd.org/the-design-of-everyday-things-revised-and-expanded/",
+    type: "website",
+    tier: 2,
+    topics: ["discoverability", "constraints", "feedback", "table of contents"],
+    access: "open",
+    verification: "url-checked",
+    lastVerifiedAt: "2026-11-16",
+    notes:
+      "Read 2026-11-16, with the linked preface (https://jnd.org/preface-design-of-everyday-things-revised-edition/). The author's own page lists the revised edition's chapters: 1, Psychopathology of Everyday Things (its 'Fundamental Principles of Interaction' covers affordances, signifiers, mapping, feedback and conceptual models); 4, 'Knowing What to Do: Constraints, Discoverability, and Feedback'. The preface describes chapter 4 as having few substantive changes, better examples and forcing functions split into lock-in and lock-out. Neither page contains the book's discussion of discoverability itself; used only to confirm that the revised edition treats discoverability in that chapter.",
   },
   {
     id: "nng-hidden-navigation",
