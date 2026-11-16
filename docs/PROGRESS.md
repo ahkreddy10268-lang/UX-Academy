@@ -1,6 +1,6 @@
 # Progress register
 
-_Last updated: 2026-11-16 (session 48 — Cycle 1, Batch 2 formal review: PASS WITH MINOR FOLLOW-UPS; awaiting approval)_
+_Last updated: 2026-11-16 (session 49 — Cycle 1, Batch 3 complete locally: UX writing foundations; awaiting review)_
 
 ## State
 
@@ -215,5 +215,25 @@ After that: `ui-design`, `interaction-design-discipline`, `accessibility-concept
 - Open (minor): retarget usability-testing's citation of the unread 1993 book; validation-study searches not systematic; optional mental-models link; optional `role="status"` for the e2e locator.
 - Not pushed. Batch 3 not started.
 
+## Session 49 — Cycle 1, Batch 3: UX writing foundations (D-129)
+
+- **Published five entries**, one at a time, in a new folder `content/knowledge/content/`: `ux-writing` (discipline), `content-design` (discipline), `plain-language` (principle), `microcopy` (pattern), `error-messages` (pattern). All are professional-guideline evidence class, and all meet their D-129 Visual and Evidence targets. Report: docs/BATCH_3_REPORT.md.
+- **Assets.**
+  - New comparison `/compare/ux-writing-vs-content-design`.
+  - `error-messages` links to the Nielsen guide's heuristic 9 chapter (`guide` field, anchor `h9`).
+  - Five plates in `components/illustrations/concepts/content-sheets.tsx` (registered; text ≥ 10.2 px at 390; 30 markers, all inside the viewBox).
+- **Sources.** 43 records in `content/sources/ux-writing.ts` (6 DOI-verified, 32 URL-reachable, ISO 24495-1 refused by its site, 4 book records not read). Every note says what was read. `iplfederation.org` was not used: it served unrelated content.
+- **Integration (plan § 7.4).** Four one-phrase links in error-recovery, nielsen-usability-heuristics, error-prevention and aesthetic-and-minimalist-design. The research-ledger comment was updated.
+- **Coverage.** 97 → 102 of 561 (18.2 %); empty domains 6 → 5; UX Writing & Content Design 0 → 5 of 18; D-129 targets Visual 92/102, Evidence 100/102; learning paths unchanged.
+- **QA on the final tree.** Results by check:
+  - `npm run check`: 22 files, 586 tests.
+  - Taxonomy check: pass.
+  - Build: 995/995 pages.
+  - e2e 44/44, e2e-redesign 66/66, atlas 36/36, keyboard 45/45, devices 155/155, colour-studio 46/46.
+  - axe: 0 violations. Crawl: 0 problems.
+  - Per-page review: 40/40 on the new entries. Three linked existing entries fail only on their logged backlog markers (error-recovery 3, error-prevention 1, nielsen-usability-heuristics 1).
+- **Cycle 1 complete:** 14 topics (the plan defines 14, not 15); 88 → 102 published; three paths at 100 %; balance-review data in BATCH_3_REPORT § 11.
+- D-129, the learning paths, gate code and tests are unchanged. Committed locally; not pushed.
+
 ## Next task (precise)
-Await the project owner's approval of the Batch 2 review (docs/BATCH_2_REVIEW.md). Do not start Batch 3, push or merge until instructed.
+Await the project owner's independent review of Cycle 1, Batch 3 (docs/BATCH_3_REPORT.md) and the Cycle 1 balance review. Do not push, merge or start Cycle 2 until instructed.

@@ -8,7 +8,7 @@ export default defineEntry({
   summary:
     "When something goes wrong, people need to notice it, understand what happened and know exactly how to fix it — without losing their work. Error recovery designs that whole path, not just the message.",
   definition:
-    "Error recovery is the principle that interfaces should help people **recognise, diagnose and recover from errors**: error messages expressed in plain language, precisely indicating the problem and constructively suggesting a solution {{src:nielsen-ten-heuristics-article}}. It is the ninth of Nielsen's ten heuristics. It covers the whole path after an error — noticing it, understanding it, correcting it and continuing — including keeping what people already entered {{src:nng-error-messages}}. It is distinct from error prevention, which stops errors happening, and from the writing of error messages, which is one part of recovery.",
+    "Error recovery is the principle that interfaces should help people **recognise, diagnose and recover from errors**: [[error-messages|error messages]] expressed in [[plain-language|plain language]], precisely indicating the problem and constructively suggesting a solution {{src:nielsen-ten-heuristics-article}}. It is the ninth of Nielsen's ten heuristics. It covers the whole path after an error — noticing it, understanding it, correcting it and continuing — including keeping what people already entered {{src:nng-error-messages}}. It is distinct from error prevention, which stops errors happening, and from the writing of error messages, which is one part of recovery.",
   primaryType: "principle",
   secondaryTypes: ["heuristic"],
   domain: "interaction",

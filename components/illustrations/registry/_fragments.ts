@@ -9,5 +9,6 @@ import interactionSheets from "../concepts/interaction-sheets";
 import lawsPsychology from "../concepts/laws-psychology";
 import researchMetrics from "../concepts/research-metrics";
 import researchSheets from "../concepts/research-sheets";
+import contentSheets from "../concepts/content-sheets";
 
-export const fragments: IllustrationEntry[] = [...lawsPsychology, ...researchMetrics, ...frameworksVisual, ...interactionSheets, ...researchSheets, ...domains];
+export const fragments: IllustrationEntry[] = [...lawsPsychology, ...researchMetrics, ...frameworksVisual, ...interactionSheets, ...researchSheets, ...contentSheets, ...domains];

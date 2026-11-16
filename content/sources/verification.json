@@ -199,6 +199,14 @@
     "registeredContainer": "International Journal of Human–Computer Interaction",
     "similarity": 1
   },
+  "bargas-avila-2007": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-16",
+    "registeredTitle": "Usable error message presentation in the World Wide Web: Do not show errors right away",
+    "registeredYear": 2007,
+    "registeredContainer": "Interacting with Computers",
+    "similarity": 1
+  },
   "baymard-research": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
@@ -462,6 +470,11 @@
     "registeredContainer": "Psychological Bulletin",
     "similarity": 1
   },
+  "content-design-london-about": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
+    "httpStatus": 200
+  },
   "cooper-reimann-cronin-noessel-2014": {
     "status": "url-reachable",
     "checkedAt": "2026-11-05",
@@ -527,6 +540,11 @@
   "design-council-framework-for-innovation": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "digitalgov-test-for-understanding": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
     "httpStatus": 200
   },
   "dion-berscheid-walster-1972": {
@@ -669,6 +687,14 @@
     "registeredContainer": "Psychological Bulletin",
     "similarity": 1
   },
+  "flesch-1948": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-16",
+    "registeredTitle": "A new readability yardstick.",
+    "registeredYear": 1948,
+    "registeredContainer": "Journal of Applied Psychology",
+    "similarity": 1
+  },
   "fluent-2": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
@@ -775,9 +801,19 @@
     "registeredContainer": "Communications of the ACM",
     "similarity": 1
   },
+  "govuk-clear-language": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
+    "httpStatus": 200
+  },
   "govuk-component-lifecycle": {
     "status": "url-reachable",
     "checkedAt": "2026-11-12",
+    "httpStatus": 200
+  },
+  "govuk-consider-translations": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
     "httpStatus": 200
   },
   "govuk-contribution-criteria": {
@@ -795,9 +831,39 @@
     "checkedAt": "2026-11-12",
     "httpStatus": 200
   },
+  "govuk-error-message": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
+    "httpStatus": 200
+  },
+  "govuk-error-summary": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
+    "httpStatus": 200
+  },
+  "govuk-identify-user-needs": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
+    "httpStatus": 200
+  },
+  "govuk-manage-existing-content": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
+    "httpStatus": 200
+  },
+  "govuk-plan-new-content": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
+    "httpStatus": 200
+  },
   "govuk-propose-component": {
     "status": "url-reachable",
     "checkedAt": "2026-11-12",
+    "httpStatus": 200
+  },
+  "govuk-retire-content": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
     "httpStatus": 200
   },
   "govuk-service-manual": {
@@ -815,9 +881,24 @@
     "checkedAt": "2026-11-11",
     "httpStatus": 200
   },
+  "govuk-understand-accessibility": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
+    "httpStatus": 200
+  },
+  "govuk-understand-content-design": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
+    "httpStatus": 200
+  },
   "govuk-user-research": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "govuk-writing-for-user-interfaces": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
     "httpStatus": 200
   },
   "gray-salzman-1998": {
@@ -1091,6 +1172,11 @@
     "registeredContainer": "Proceedings of the ACM SIGCHI Conference on Human factors in computing systems",
     "similarity": 1
   },
+  "iso-24495-1-2023": {
+    "status": "url-unreachable",
+    "checkedAt": "2026-11-16",
+    "httpStatus": 403
+  },
   "iso-9241-11-2018": {
     "status": "url-unreachable",
     "checkedAt": "2026-11-03",
@@ -1330,6 +1416,11 @@
     "registeredContainer": "Psychological Review",
     "similarity": 1
   },
+  "lovinger-2012-content-modelling": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
+    "httpStatus": 200
+  },
   "m3-color-roles": {
     "status": "url-reachable",
     "checkedAt": "2026-11-11",
@@ -1386,6 +1477,11 @@
     "registeredYear": 2010,
     "registeredContainer": "International Journal of Human–Computer Interaction",
     "similarity": 1
+  },
+  "mailchimp-voice-and-tone": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
+    "httpStatus": 200
   },
   "mandler-1980": {
     "status": "doi-verified",
@@ -1459,6 +1555,11 @@
   "mdn-prefers-reduced-motion": {
     "status": "url-reachable",
     "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "microsoft-style-top-10": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
     "httpStatus": 200
   },
   "miller-1956": {
@@ -1592,6 +1693,11 @@
     "checkedAt": "2026-11-03",
     "httpStatus": 200
   },
+  "nielsen-1997-how-users-read": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
+    "httpStatus": 200
+  },
   "nielsen-2000-end-of-web-design": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
@@ -1671,6 +1777,16 @@
     "checkedAt": "2026-11-11",
     "httpStatus": 200
   },
+  "nng-content-audits": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
+    "httpStatus": 200
+  },
+  "nng-content-strategy": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
+    "httpStatus": 200
+  },
   "nng-contextual-inquiry": {
     "status": "url-reachable",
     "checkedAt": "2026-11-16",
@@ -1694,6 +1810,11 @@
   "nng-flexibility-efficiency": {
     "status": "url-reachable",
     "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "nng-form-placeholders": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
     "httpStatus": 200
   },
   "nng-help-documentation": {
@@ -1726,6 +1847,11 @@
     "checkedAt": "2026-11-11",
     "httpStatus": 200
   },
+  "nng-plain-language-experts": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
+    "httpStatus": 200
+  },
   "nng-progress-indicators": {
     "status": "url-reachable",
     "checkedAt": "2026-11-11",
@@ -1739,6 +1865,11 @@
   "nng-slips": {
     "status": "url-reachable",
     "checkedAt": "2026-11-13",
+    "httpStatus": 200
+  },
+  "nng-tone-of-voice": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
     "httpStatus": 200
   },
   "nng-tree-testing": {
@@ -1764,6 +1895,11 @@
   "nng-user-mistakes": {
     "status": "url-reachable",
     "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "nng-ux-writing-study-guide": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
     "httpStatus": 200
   },
   "nng-visibility-system-status": {
@@ -1858,6 +1994,11 @@
     "checkedAt": "2026-11-11",
     "httpStatus": 200
   },
+  "owasp-authentication-cheat-sheet": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
+    "httpStatus": 200
+  },
   "paas-1992": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",
@@ -1903,6 +2044,16 @@
     "registeredContainer": "Psychological Review",
     "similarity": 1
   },
+  "plain-what-is-plain-language": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
+    "httpStatus": 200
+  },
+  "plain-writing-act-2010": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
+    "httpStatus": 200
+  },
   "playwright-snapshots": {
     "status": "url-reachable",
     "checkedAt": "2026-11-12",
@@ -1923,6 +2074,11 @@
     "registeredYear": 1990,
     "registeredContainer": "Human–Computer Interaction",
     "similarity": 1
+  },
+  "porter-2009-microcopy": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
+    "httpStatus": 200
   },
   "primer-component-status": {
     "status": "url-reachable",
@@ -2012,6 +2168,22 @@
     "registeredContainer": "Pain",
     "similarity": 1
   },
+  "redish-1981": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-16",
+    "registeredTitle": "Understanding the limitations of readability formulas",
+    "registeredYear": 1981,
+    "registeredContainer": "IEEE Transactions on Professional Communication",
+    "similarity": 1
+  },
+  "redish-2000": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-16",
+    "registeredTitle": "Readability formulas have even more limitations than Klare discusses",
+    "registeredYear": 2000,
+    "registeredContainer": "ACM Journal of Computer Documentation",
+    "similarity": 1
+  },
   "reichheld-2003": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
@@ -2096,6 +2268,14 @@
     "registeredContainer": "Journal of Consumer Research",
     "similarity": 1
   },
+  "seckler-2014-web-forms": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-16",
+    "registeredTitle": "Designing usable web forms: empirical evaluation of web form improvement guidelines",
+    "registeredYear": 2014,
+    "registeredContainer": "Proceedings of the SIGCHI Conference on Human Factors in Computing Systems",
+    "similarity": 1
+  },
   "semantic-scholar": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
@@ -2133,6 +2313,14 @@
     "registeredTitle": "Recognition memory for words, sentences, and pictures",
     "registeredYear": 1967,
     "registeredContainer": "Journal of Verbal Learning and Verbal Behavior",
+    "similarity": 1
+  },
+  "shneiderman-1982": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-16",
+    "registeredTitle": "Designing computer system messages",
+    "registeredYear": 1982,
+    "registeredContainer": "Communications of the ACM",
     "similarity": 1
   },
   "shneiderman-1983": {
@@ -2471,6 +2659,21 @@
     "checkedAt": "2026-11-13",
     "httpStatus": 200
   },
+  "w3c-understanding-error-identification": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
+    "httpStatus": 200
+  },
+  "w3c-understanding-error-suggestion": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
+    "httpStatus": 200
+  },
+  "w3c-understanding-labels-instructions": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
+    "httpStatus": 200
+  },
   "w3c-understanding-non-text-contrast": {
     "status": "url-reachable",
     "checkedAt": "2026-11-16",
@@ -2479,6 +2682,11 @@
   "w3c-understanding-pause-stop-hide": {
     "status": "url-reachable",
     "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "w3c-understanding-reading-level": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
     "httpStatus": 200
   },
   "w3c-understanding-status-messages": {
@@ -2606,6 +2814,11 @@
   "who-world-report-disability-2011": {
     "status": "url-reachable",
     "checkedAt": "2026-11-05",
+    "httpStatus": 200
+  },
+  "winters-2019-what-is-content-design": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
     "httpStatus": 200
   },
   "wixon-1990-contextual-design": {

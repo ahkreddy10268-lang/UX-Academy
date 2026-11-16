@@ -558,14 +558,14 @@ Words as interface: microcopy, plain language, voice and content governance.
 
 ### Interface writing (`writing`)
 
-- ◻️ UX Writing — *Discipline* · `ux-writing`
-- ◻️ Content Design — *Discipline* · `content-design`
-- ◻️ Microcopy — *Pattern* · `microcopy`
-- ◻️ Error Messages — *Pattern* · `error-messages`
+- ✅ UX Writing — *Discipline* · `ux-writing`
+- ✅ Content Design — *Discipline* · `content-design`
+- ✅ Microcopy — *Pattern* · `microcopy`
+- ✅ Error Messages — *Pattern* · `error-messages`
 - ◻️ Form Instructions — *Pattern* · `form-instructions`
 - ◻️ Onboarding Copy — *Pattern* · `onboarding-copy`
 - ◻️ Empty-State Writing — *Pattern* · `empty-state-writing`
-- ◻️ Plain Language — *Principle* · `plain-language`
+- ✅ Plain Language — *Principle* · `plain-language`
 - ◻️ Tone of Voice — *Principle* · `tone-of-voice`
 - ◻️ Content Design Principles — *Principle* · `content-design-principles`
 

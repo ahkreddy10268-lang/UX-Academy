@@ -58,7 +58,7 @@ export default defineEntry({
         "Heuristic 1 maps to feedback timing: Nielsen's response-time guidance (about 0.1 s feels instantaneous, about 1 s keeps the flow of thought, about 10 s is the limit of attention) gives practical thresholds for when to show progress {{src:nielsen-1993}}. These figures are design guidance built on earlier work such as Miller (1968), not precise perceptual constants {{src:miller-1968}}.",
         "Heuristic 4 has two scopes: internal consistency (within your product) and external consistency (with platform conventions and other products people use) — the latter is the idea popularised as [[jakobs-law|Jakob's Law]].",
         "Heuristic 6 is the interface form of the cognitive principle of [[recognition-over-recall|recognition over recall]]: recognising an item from cues is easier than recalling it from memory.",
-        "Heuristic 9 concerns the wording and placement of error messages; heuristic 5 concerns designing so the error does not happen. Prefer 5 over 9 whenever possible.",
+        "Heuristic 9 concerns the wording and placement of [[error-messages|error messages]]; heuristic 5 concerns designing so the error does not happen. Prefer 5 over 9 whenever possible.",
       ],
       implementation: [
         "Write each finding against one primary heuristic, with the screen, the evidence and a severity rating.",

@@ -325,4 +325,34 @@ export const comparisons: Comparison[] = [
       { source: "material-3", role: "explanatory", note: "Window size classes and adaptive layout guidance." },
     ],
   },
+  {
+    id: "ux-writing-vs-content-design",
+    title: "UX Writing vs Content Design",
+    a: { label: "UX writing", slug: "ux-writing" },
+    b: { label: "Content design", slug: "content-design" },
+    summary:
+      "**UX writing** designs the words inside an interface — labels, buttons, messages, instructions — so people can act and understand results {{src:nng-ux-writing-study-guide}}. **Content design** starts earlier and goes wider: from evidence of a user need, it decides what content should exist, in what form and channel, and keeps it current {{src:govuk-understand-content-design}} {{src:winters-2019-what-is-content-design}}. They overlap, titles vary between organisations, and one person often does both.",
+    dimensions: [
+      { dimension: "Starting point", a: "A screen, flow or state that needs words.", b: "A user need, with evidence, before any format is chosen." },
+      { dimension: "Typical outputs", a: "Microcopy, terminology lists, voice and tone guidance, message sets for every state.", b: "User needs, journey and channel maps, content models, task-based pages, tools, letters, audit decisions." },
+      { dimension: "Scope", a: "Inside the product and its flows.", b: "Across channels — web, app, letters, phone scripts, posters — and over the content's whole life." },
+      { dimension: "Key question", a: "What will this person understand and do at this moment?", b: "Should this content exist, in what form and where, and who will keep it right?" },
+      { dimension: "Failure looks like", a: "'Submit', 'Something went wrong', inconsistent names for the same thing.", b: "Duplicate, contradictory or out-of-date content; a long page where a short tool was needed." },
+    ],
+    chooseA: [
+      "When a flow is designed and its labels, messages and states need words.",
+      "When terminology is inconsistent across screens.",
+    ],
+    chooseB: [
+      "When planning new content or a service, before anything is written.",
+      "When content has grown, duplicated or drifted out of date across channels.",
+    ],
+    together:
+      "Treat them as two levels of the same responsibility. Content design decides that the answer to 'Can my child get free school meals?' is a four-question checker; UX writing decides that the checker's button says 'Check eligibility' and its result says 'Your child can get free school meals' in the same words as the letter. Both start from what people need and both are tested with them ([[ux-writing]], [[content-design]]).",
+    references: [
+      { source: "nng-ux-writing-study-guide", role: "explanatory", note: "Definition of UX writing." },
+      { source: "govuk-understand-content-design", role: "primary", note: "GOV.UK's description of content design." },
+      { source: "winters-2019-what-is-content-design", role: "primary", note: "Definition and process of content design." },
+    ],
+  },
 ];

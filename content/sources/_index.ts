@@ -18,6 +18,7 @@ import m14 from "./interaction-principles";
 import m15 from "./measurement";
 import m16 from "./research-methods";
 import m17 from "./resources";
+import m18 from "./ux-writing";
 
 export const rawSources: Source[] = [
   ...m0,
@@ -37,5 +38,6 @@ export const rawSources: Source[] = [
   ...m14,
   ...m15,
   ...m16,
-  ...m17
+  ...m17,
+  ...m18
 ];
