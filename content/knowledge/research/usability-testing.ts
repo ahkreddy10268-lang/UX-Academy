@@ -53,7 +53,7 @@ export default defineEntry({
         "**Moderated** sessions (in person or remote) allow probing and adapting; **unmoderated** sessions scale to more participants quickly but lose the ability to ask why and are more vulnerable to low-quality participation. Think-aloud is standard in formative testing; in summative testing it can change task times, so measurements are often taken without it.",
       ],
       howItWorks: [
-        "**Classic think-aloud** following Ericsson and Simon asks participants to verbalise what they are attending to, with minimal prompts ('keep talking'); reports of current thought are thought not to change cognition much, while requests for explanations can {{src:ericsson-simon-1993}}.",
+        "**Classic [[think-aloud-protocol|think-aloud]]** following Ericsson and Simon asks participants to verbalise what they are attending to, with minimal prompts ('keep talking'); reports of current thought are thought not to change cognition much, while requests for explanations can {{src:ericsson-simon-1993}}.",
         "Practitioners routinely intervene more than the classic protocol allows. Boren and Ramey proposed treating the session as communication, using neutral acknowledgement tokens such as 'mm-hm' to keep participants talking without steering them {{src:boren-ramey-2000}}.",
         "**Problem discovery** follows diminishing returns: each extra participant tends to reveal fewer new problems, because common problems are seen early. The model below quantifies this for a given problem frequency {{src:nielsen-landauer-1993}}.",
       ],

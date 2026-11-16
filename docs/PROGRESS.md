@@ -1,6 +1,6 @@
 # Progress register
 
-_Last updated: 2026-11-16 (session 47 — Cycle 1, Batch 2 complete: four UX research foundations; awaiting review)_
+_Last updated: 2026-11-16 (session 48 — Cycle 1, Batch 2 formal review: PASS WITH MINOR FOLLOW-UPS; awaiting approval)_
 
 ## State
 
@@ -206,5 +206,14 @@ After that: `ui-design`, `interaction-design-discipline`, `accessibility-concept
 - QA (one final build): check 22 files / 576 tests; taxonomy pass; build 994/994; e2e 44/44, e2e-redesign 66/66, atlas 36/36, keyboard 45/45, devices 155/155, colour-studio 46/46, axe 0, crawl 0; per-entry review (6 viewports, axe, plate text, markers, links, keyboard flashcards) 56/56 on the four new entries and the three entries whose relations changed. `card-sorting`, checked as a neighbour, fails only on its two pre-existing out-of-viewBox markers (the logged 78-plate backlog, not touched).
 - Committed locally on `claude/batch1-constraints`; not pushed.
 
+## Session 48 — formal Cycle 1, Batch 2 review (D-129)
+
+- Report: docs/BATCH_2_REVIEW.md. Reviewed `bf39a79`; corrections in a separate review commit, on which every check below was run.
+- **Decision: PASS WITH MINOR FOLLOW-UPS.** 0 critical, 0 major, 7 moderate (all fixed), 10 minor fixed, 4 minor open. Moderate: Olmsted-Hawala satisfaction overstated; a Nielsen citation for practice tasks (he recommends a demo video); a "studies agree" on retrospective cost that only one study reports; contextual-inquiry definition cited texts that were not read for those points; Flanagan 1954 cited for claims its abstract does not make; saturation edging towards a UX rule; the plan § 7.4 link usability-testing → think-aloud-protocol missing (added).
+- Checked: the five required distinctions hold; Card Sorting's markers 3 and 4 (x = 392) are in the logged 78-plate backlog, numerals legible, not fixed; the e2e-redesign locator change is correct (the old locator would throw in strict mode because the think-aloud plate draws "412 results" on the library card), still asserts the exact count, not weakened.
+- QA on the corrected tree: check 22 files / 576 tests; taxonomy pass; build 994/994; e2e-redesign 66/66, keyboard 45/45, devices 155/155, axe 0, crawl 0; per-page review 56/56; integrity script clean. Inherited from `bf39a79`: e2e 44/44, atlas 36/36, colour-studio 46/46.
+- Open (minor): retarget usability-testing's citation of the unread 1993 book; validation-study searches not systematic; optional mental-models link; optional `role="status"` for the e2e locator.
+- Not pushed. Batch 3 not started.
+
 ## Next task (precise)
-Await the project owner's review of Cycle 1, Batch 2 (docs/BATCH_2_REPORT.md). Do not start Batch 3 or push until instructed.
+Await the project owner's approval of the Batch 2 review (docs/BATCH_2_REVIEW.md). Do not start Batch 3, push or merge until instructed.

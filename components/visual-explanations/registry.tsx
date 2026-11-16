@@ -136,7 +136,7 @@ export const visualExplanations: VisualExplanation[] = [
       "Not supported. How common something is — counting answers across a dozen interviews; purposive samples sized for saturation show what exists, not how often; use a survey or analytics. What people will do or buy — 'Would you use…?'; hypothetical answers invite polite agreement and predict little; use behavioural tests such as prototypes, usability tests and experiments.",
     ],
     verification: "content-checked",
-    sources: ["nng-user-interviews", "flanagan-1954", "nisbett-wilson-1977", "hennink-kaiser-2022"],
+    sources: ["nng-user-interviews", "nisbett-wilson-1977", "hennink-kaiser-2022"],
     Component: InterviewClaims,
   },
   {

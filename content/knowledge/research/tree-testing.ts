@@ -66,7 +66,7 @@ export default defineEntry({
         "Analyse task by task: success, directness, first clicks, destinations; then revise labels or structure and test again.",
       ],
       scenarios: [
-        "Success is 74 % on a tuition-fees task, but only half of the successful participants went there directly — the answer is findable, but people wander first (an example reported by NN/g) {{src:nng-tree-testing-results}}.",
+        "On a tuition-fees task, 74 % of participants succeeded but only 50 % took a direct path — the answer is findable, but many people wander first (an example reported by NN/g) {{src:nng-tree-testing-results}}.",
         "Everyone's first click on an arts-festival task is correct, yet participants split between three sibling sub-categories: the siblings overlap and need clearer, more distinct labels {{src:nng-tree-testing-results}}.",
         "A pilot shows participants avoiding a category whose label is so broad they expect to wade through content — invisible in the numbers, obvious in the sessions {{src:nng-tree-testing}}.",
       ],
@@ -98,7 +98,7 @@ export default defineEntry({
 
   origin: {
     contributors: ["Donna Spencer", "Dave O'Brien"],
-    period: "Paper technique described in 2003; online tools and the name 'tree testing' from the late 2000s",
+    period: "Paper technique described in 2003; the name 'tree testing' and online tools in use by 2009",
     problem:
       "Information architects could generate structures with card sorting but had no simple way to test whether people could find things in them before pages were built; closed card sorting models filing, not finding.",
     narrative: [
@@ -358,7 +358,7 @@ T3  (warm-up) Find when the park near you closes.
         { text: "The section should be moved to the top level.", correct: false, explanation: "Nothing in the result supports a move." },
       ],
       explanation: "Write tasks that avoid the labels' words, for example: 'You live alone. Find out whether you can pay less.'",
-      revise: "card-sorting",
+      revise: "usability-testing",
     },
     {
       id: "tree-testing-q-sample",

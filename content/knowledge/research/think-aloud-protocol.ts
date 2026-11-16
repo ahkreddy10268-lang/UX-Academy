@@ -8,7 +8,7 @@ export default defineEntry({
   summary:
     "Participants say what they are thinking while they use a product, so the researcher hears expectations and misreadings at the moment they happen rather than reconstructed afterwards.",
   definition:
-    "The think-aloud protocol is a **research method** in which a participant performs realistic tasks while continuously voicing what they are looking at, expecting, trying and puzzling over; the researcher records both the talk and the actions. It comes from cognitive psychology, where Ericsson and Simon argued that such reports are *data*: what a person says while working reflects what they are attending to, and asking for anything more changes what is reported {{src:ericsson-simon-1980}}. In usability work it is usually run **concurrently** (talking during the task), sometimes **retrospectively** (talking afterwards while watching a recording), and almost always in a **relaxed** form in which the moderator also asks questions — a departure from the classic method with measurable effects on behaviour {{src:hertzum-2009-thinking-aloud}}.",
+    "The think-aloud protocol is a **research method** in which a participant performs realistic tasks while continuously voicing what they are looking at, expecting, trying and puzzling over; the researcher records both the talk and the actions. It comes from cognitive psychology, where Ericsson and Simon argued that such reports are *data*: what a person says while working reflects what they are attending to, while instructions that demand more — such as reasons — can change the thinking or force people to infer {{src:ericsson-simon-1980}}. In usability work it is usually run **concurrently** (talking during the task), sometimes **retrospectively** (talking afterwards while watching a recording), and usually in a **relaxed** form in which the moderator also asks questions — a departure from the classic method with measurable effects on behaviour {{src:hertzum-2009-thinking-aloud}}.",
   primaryType: "method",
   secondaryTypes: ["technique"],
   domain: "research",
@@ -73,13 +73,13 @@ export default defineEntry({
     advanced: {
       explanation: [
         "**What a report can contain.** Ericsson and Simon's claim is narrow: concurrent reports of what is currently attended to are valid data; requests to explain or justify invite inference {{src:ericsson-simon-1980}}. This aligns with the older finding that people often cannot report the causes of their own judgments and instead offer plausible theories about what probably influenced them {{src:nisbett-wilson-1977}}. A participant's 'I clicked it because the button was blue' is therefore a hypothesis about themselves, not an observation. A researcher should weigh it below what was seen.",
-        "**Concurrent versus retrospective.** Van den Haak, de Jong and Schellens found that both forms revealed comparable sets of problems but by different routes — more through what was said in retrospective sessions, more through what was observed in concurrent ones — and that thinking aloud while working lowered task performance {{src:van-den-haak-2003}}. Alhadreti and Mayhew, with 20 participants in each of three conditions on a university library site, found concurrent think-aloud detected more problems than retrospective, matched a hybrid of the two, showed no reactivity, and needed roughly half the evaluator time {{src:alhadreti-mayhew-2018}}. The studies disagree about reactivity; they agree that retrospective sessions cost more time, because the session is effectively run twice.",
+        "**Concurrent versus retrospective.** Van den Haak, de Jong and Schellens found that both forms revealed comparable sets of problems but by different routes — more through what was said in retrospective sessions, more through what was observed in concurrent ones — and that thinking aloud while working lowered task performance {{src:van-den-haak-2003}}. Alhadreti and Mayhew, with 20 participants in each of three conditions on a university library site, found concurrent think-aloud detected more problems than retrospective, matched a hybrid of the two, showed no reactivity, and needed roughly half the evaluator time {{src:alhadreti-mayhew-2018}}. The studies disagree about reactivity. On cost, Alhadreti and Mayhew found that retrospective and hybrid sessions took about twice the testing and analysis time, because each session is effectively run twice {{src:alhadreti-mayhew-2018}}.",
         "**Analysis is where the cost lies.** Reviewing every utterance is slow. Fan and colleagues found that some categories and patterns of verbalisation are more telling of usability problems than others, and that the patterns held across physical and digital products and across audio and video {{src:fan-2019-verbalizations}}. This supports focused analysis, but not skipping the observation of behaviour.",
       ],
       evidence: [
         "Classic thinking aloud had little or no effect on behaviour apart from longer tasks; relaxed thinking aloud changed navigation behaviour and raised mental workload {{src:hertzum-2009-thinking-aloud}}.",
         "Concurrent and retrospective protocols found comparable problem sets in one study, with concurrent sessions lowering task performance {{src:van-den-haak-2003}}; in another (n = 60), concurrent found more problems than retrospective with no observed reactivity and about half the evaluator time {{src:alhadreti-mayhew-2018}}.",
-        "A coaching protocol raised task accuracy and satisfaction compared with traditional and speech-communication protocols and a silent control (n = 80) {{src:olmsted-hawala-2010}}.",
+        "A coaching protocol produced significantly higher task accuracy than traditional and speech-communication protocols and a silent control, and higher satisfaction than the traditional and speech-communication protocols (n = 80) {{src:olmsted-hawala-2010}}.",
         "Practitioners' instructions, demonstrations and interventions vary widely, and many knowingly accept some loss of reliability {{src:mcdonald-2012-think-aloud-survey}}.",
         "Evaluators who observe users thinking aloud detect markedly different sets of problems: across 11 studies of three evaluation methods, average agreement between any two evaluators ranged from 5 % to 65 %, so a think-aloud study analysed by one evaluator is not an authoritative list of problems {{src:hertzum-jacobsen-2001}}.",
       ],
@@ -105,7 +105,7 @@ export default defineEntry({
     narrative: [
       "Ericsson and Simon argued in 1980 that verbal reports are data whose production can be modelled, and specified the conditions under which they are trustworthy {{src:ericsson-simon-1980}}; they developed the account at book length in *Protocol Analysis* {{src:ericsson-simon-1993}}.",
       "Usability engineering adopted thinking aloud as a cheap way to find problems with small numbers of users. Nielsen's 1993 *Usability Engineering* called it perhaps the single most valuable usability engineering method, a judgment he repeated in 2012 {{src:nielsen-thinking-aloud-article}}.",
-      "By 2000 Boren and Ramey showed that practice had drifted from the theory it cited {{src:boren-ramey-2000}}, which led to experimental comparisons of protocols and moderator behaviour during the following two decades {{src:hertzum-2009-thinking-aloud}} {{src:olmsted-hawala-2010}} {{src:alhadreti-mayhew-2018}}.",
+      "By 2000 Boren and Ramey argued that practice had drifted from the theory it cited {{src:boren-ramey-2000}}, which led to experimental comparisons of protocols and moderator behaviour during the following two decades {{src:hertzum-2009-thinking-aloud}} {{src:olmsted-hawala-2010}} {{src:alhadreti-mayhew-2018}}.",
     ],
     attributionNote:
       "The theory of verbal reports is Ericsson and Simon's; no single person introduced thinking aloud into interface design, and this entry does not name one because the early adoption has not been checked against primary sources here.",
@@ -124,7 +124,7 @@ export default defineEntry({
       "Expect more silences during fast gestures; schedule brief retrospective questions after each task.",
     ],
     enterprise: [
-      "Test with experienced staff on their real data where possible; experts verbalise less because much of their work is automatic, so watch for skipped steps rather than waiting for comments.",
+      "Test with experienced staff on their real data where possible; experienced people may say little about steps that have become routine, so watch for skipped steps rather than waiting for comments.",
     ],
     services: [
       "Apply it to forms, letters and phone scripts as well as screens: ask people to read a benefits letter aloud and say what they think it requires of them.",
@@ -215,7 +215,7 @@ export default defineEntry({
   practice: {
     dos: [
       { text: "Ask people to say what they are doing and thinking, not to explain it.", why: "Reports of what is in attention are valid data; demands for explanation make people infer instead of report {{src:ericsson-simon-1980}}.", kind: "standard" },
-      { text: "Let participants practise on a neutral task before the first real one.", why: "A running monologue is unnatural; practice reduces long silences and early filtered commentary {{src:nielsen-thinking-aloud-article}}.", kind: "industry" },
+      { text: "Show what thinking aloud looks like before the first real task — a short demonstration or a neutral practice task.", why: "A running monologue is unnatural; Nielsen suggests a short video demo to explain what is expected {{src:nielsen-thinking-aloud-article}}, and practitioners also use practice tasks, though how they do so varies {{src:mcdonald-2012-think-aloud-survey}}.", kind: "industry" },
       { text: "Use the same small set of allowed prompts in every session, and write them in the script.", why: "Practitioners' interventions vary widely and affect reliability {{src:mcdonald-2012-think-aloud-survey}}; consistency makes sessions comparable.", kind: "team" },
       { text: "Have at least two people analyse the recordings, and reconcile their problem lists.", why: "Evaluators watching the same think-aloud sessions find markedly different problems; involving several is the simplest way to reduce the effect {{src:hertzum-jacobsen-2001}}.", kind: "team" },
       { text: "Note every time you helped or hinted, and flag that task's outcome.", why: "Coaching raises success and satisfaction, so those results describe the moderator as much as the design {{src:olmsted-hawala-2010}}.", kind: "standard" },
@@ -360,7 +360,7 @@ NOT ALLOWED DURING TASKS (move to after the task)
         { text: "True", correct: false, explanation: "Coaching raised task accuracy and satisfaction in an experiment — which means results reflected the moderator's help, not the design alone." },
         { text: "False", correct: true, explanation: "Higher success under coaching is an artefact of moderation, not a more accurate picture of the product." },
       ],
-      explanation: "Olmsted-Hawala and colleagues found a coaching protocol significantly raised accuracy and satisfaction compared with other protocols and a silent control.",
+      explanation: "Olmsted-Hawala and colleagues found a coaching protocol produced significantly higher accuracy than the other protocols and a silent control, and higher satisfaction than the traditional and speech-communication protocols.",
     },
     {
       id: "think-aloud-protocol-q-explanation",

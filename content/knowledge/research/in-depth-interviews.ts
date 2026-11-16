@@ -8,7 +8,7 @@ export default defineEntry({
   summary:
     "One-to-one conversations, guided by a few open questions and many follow-ups, that reveal people's experiences, motivations and mental models — strongest when they ask about specific past events, weakest when they ask people to predict or explain themselves.",
   definition:
-    "An in-depth interview is a **qualitative research method** in which a researcher talks with one participant, asks open questions about a topic, listens, and follows up to learn more; in UX it is usually called a *user interview*, while other fields say in-depth, semi-structured or qualitative interview {{src:nng-user-interviews}}. It is **attitudinal**: it collects what people report about their behaviour, thoughts and feelings, not behaviour observed directly {{src:nng-user-interviews}}. Its value depends on the questions. Accounts of specific incidents carry more information than generalisations {{src:flanagan-1954}}, and people's explanations of why they acted can be plausible theories rather than recollections {{src:nisbett-wilson-1977}}.",
+    "An in-depth interview is a **qualitative research method** in which a researcher talks with one participant, asks open questions about a topic, listens, and follows up to learn more; in UX it is usually called a *user interview*, while other fields say in-depth, semi-structured or qualitative interview {{src:nng-user-interviews}}. It is **attitudinal**: it collects what people report about their behaviour, thoughts and feelings, not behaviour observed directly {{src:nng-user-interviews}}. Its value depends on the questions. Asking about specific recent episodes brings back more detail than asking about general processes {{src:nng-user-interviews}}, and people's explanations of why they acted can be plausible theories rather than recollections {{src:nisbett-wilson-1977}}.",
   primaryType: "method",
   secondaryTypes: [],
   domain: "research",
@@ -49,7 +49,7 @@ export default defineEntry({
     intermediate: {
       explanation: [
         "**Start from goals, not questions.** An interview is a research study, not an informal chat: write concrete research goals first. Goals that are too broad, such as 'learn about users', produce interviews without usable insight {{src:nng-user-interviews}}. The guide then holds a few open questions with follow-ups nested beneath them, and is used flexibly: skip, reorder and follow what matters {{src:nng-user-interviews}}.",
-        "**Ask for episodes.** Ask about particular events rather than general processes; recalling a specific incident brings back meaningful detail {{src:nng-user-interviews}}. This is the idea behind Flanagan's critical incident technique: collect accounts of specific incidents, complete enough that you can draw inferences about the person and clear enough that the purpose and consequences are evident {{src:flanagan-1954}}. 'The last time…' and 'a time when…' are the everyday versions.",
+        "**Ask for episodes.** Ask about particular events rather than general processes; recalling a specific incident brings back meaningful detail {{src:nng-user-interviews}}. A precedent is Flanagan's critical incident technique, which collected observed incidents of behaviour — activities complete enough to permit inferences about the person, in situations where purpose and consequences were clear — rather than general impressions {{src:flanagan-1954}}. 'The last time…' and 'a time when…' apply the same idea to events the participant recalls; recalled incidents are still reports, not observations.",
         "**Treat 'why' answers with care.** When people explain the causes of their own behaviour, they often report what seems a plausible cause rather than what actually influenced them {{src:nisbett-wilson-1977}}. Ask what happened, what they did and what they were thinking at the time; treat their explanations as their point of view, which is valuable, not as established causes.",
       ],
       howItWorks: [
@@ -75,8 +75,8 @@ export default defineEntry({
     advanced: {
       explanation: [
         "**What interviews can establish.** They are well suited to experiences, meanings, vocabulary, mental models and motivations as people understand them, and to generating hypotheses. They are poor evidence for frequencies, for future behaviour and for the causes of behaviour. Self-report is limited by memory, by what participants think is relevant and by social desirability {{src:nng-user-interviews}}, and causal explanations may rest on implicit theories rather than access to the real causes {{src:nisbett-wilson-1977}}. Pair interviews with observation or behavioural data when behaviour matters.",
-        "**How many interviews.** Qualitative samples are usually purposive and sized by saturation, the point where new interviews stop yielding new themes. In Guest, Bunce and Johnson's analysis of sixty interviews, saturation occurred within the first twelve, and basic elements of metathemes appeared as early as six {{src:guest-2006-saturation}}. A systematic review of empirical tests found saturation within 9–17 interviews, particularly for relatively homogeneous populations and narrowly defined objectives; studies spanning countries, or seeking meta-themes or the full meaning of codes, needed more {{src:hennink-kaiser-2022}}. In UX this means planning roughly a dozen interviews per distinct user group with a focused goal — and more when groups differ or the question is broad.",
-        "**Analysis is a method too.** Braun and Clarke describe thematic analysis as widely used but poorly demarcated, and set out guidelines for doing it deliberately and rigorously {{src:braun-clarke-2006}}. Themes do not 'emerge' by themselves: they are constructed by researchers, so analysis should be documented and, where possible, discussed with others.",
+        "**How many interviews.** Qualitative samples are usually purposive and sized by saturation, the point where new interviews stop yielding new themes. In Guest, Bunce and Johnson's analysis of sixty interviews, saturation occurred within the first twelve, and basic elements of metathemes appeared as early as six {{src:guest-2006-saturation}}. A systematic review of empirical tests found saturation within 9–17 interviews, particularly for relatively homogeneous populations and narrowly defined objectives; studies spanning countries, or seeking meta-themes or the full meaning of codes, needed more {{src:hennink-kaiser-2022}}. These studies come from outside UX and mostly measured code saturation, so they give a starting estimate, not a rule: plan around a dozen interviews per distinct, fairly homogeneous group with a focused goal, more when groups differ or the question is broad, and stop on evidence that new interviews add nothing new for your goal.",
+        "**Analysis is a method too.** Braun and Clarke describe thematic analysis as widely used but poorly demarcated, and set out guidelines for doing it deliberately and rigorously {{src:braun-clarke-2006}}. Themes are interpretations made by researchers rather than facts that appear unaided, so document how they were developed and, where possible, discuss them with others.",
       ],
       evidence: [
         "In one data set of sixty in-depth interviews, saturation was reached within the first twelve interviews, with elements of metathemes present by six {{src:guest-2006-saturation}}.",
@@ -84,7 +84,7 @@ export default defineEntry({
         "People often cannot report the influences on their own judgments and instead give plausible causal theories; reports are accurate when the real influence is salient and plausible {{src:nisbett-wilson-1977}}.",
       ],
       debates: [
-        "**Saturation as a sample-size rule.** It is the most common justification for interview numbers, but Guest and colleagues note that it gives little guidance before data collection {{src:guest-2006-saturation}}, and the review shows the numbers depend on how homogeneous the sample is and what kind of saturation is meant {{src:hennink-kaiser-2022}}. Some researchers working in an interpretive tradition question whether saturation fits their analysis at all.",
+        "**Saturation as a sample-size rule.** It is the most common justification for interview numbers, but Guest and colleagues note that it gives little guidance before data collection {{src:guest-2006-saturation}}, and the review shows the numbers depend on how homogeneous the sample is and what kind of saturation is meant {{src:hennink-kaiser-2022}}. How much saturation should govern sample size is itself debated in qualitative methodology; this entry has not reviewed that literature, so treat saturation as one input to the decision rather than a test.",
         "**Say versus do.** Interviews are criticised as unreliable about behaviour; the defence is that they are not meant to measure behaviour but to understand experience and meaning. Both positions agree that interview claims about what people do need corroborating data {{src:nng-user-interviews}}.",
         "**Structure.** Fully structured interviews make answers comparable; unstructured ones follow the participant. Most UX interviews are semi-structured: a guide used flexibly {{src:nng-user-interviews}}.",
       ],
@@ -104,7 +104,7 @@ export default defineEntry({
       "Teams need to understand people's experiences, needs and reasoning before designing, and many of these cannot be observed directly or counted.",
     narrative: [
       "Interviewing has no single originator; it is a basic method across social science, market research and psychology, where it goes by names such as in-depth, semi-structured or qualitative interview {{src:nng-user-interviews}}.",
-      "Flanagan's critical incident technique (1954) formalised collecting accounts of specific incidents rather than general opinions, an approach reflected in today's 'tell me about the last time…' questions {{src:flanagan-1954}}.",
+      "Flanagan's critical incident technique (1954) formalised collecting specific incidents of behaviour rather than general impressions {{src:flanagan-1954}}; today's 'tell me about the last time…' questions apply a similar idea to recalled events (this connection is the entry's, not Flanagan's).",
       "Work on analysis and sample size — thematic analysis {{src:braun-clarke-2006}}, and empirical tests of saturation {{src:guest-2006-saturation}} {{src:hennink-kaiser-2022}} — gave practitioners more explicit guidance on how to analyse interviews and how many to run.",
     ],
     attributionNote:
@@ -214,10 +214,10 @@ export default defineEntry({
 
   practice: {
     dos: [
-      { text: "Ask about the last time something happened.", why: "Specific episodes bring back detail that general questions do not {{src:nng-user-interviews}} {{src:flanagan-1954}}.", kind: "industry" },
+      { text: "Ask about the last time something happened.", why: "Specific episodes bring back detail that general questions do not {{src:nng-user-interviews}}.", kind: "industry" },
       { text: "Write research goals before questions.", why: "Goals that are too broad produce interviews without actionable insight {{src:nng-user-interviews}}.", kind: "industry" },
       { text: "Acknowledge neutrally: 'I see', 'Okay', or repeat their words.", why: "Neutral cues show you are listening without signalling which answers you prefer {{src:nng-user-interviews}}.", kind: "industry" },
-      { text: "Plan roughly a dozen interviews per distinct group with a focused goal, and review for new themes as you go.", why: "Empirical tests found saturation within 9–17 interviews for homogeneous groups and narrow goals {{src:hennink-kaiser-2022}}.", kind: "standard" },
+      { text: "Start from an estimate of about a dozen interviews per distinct group with a focused goal, and review for new themes as you go.", why: "Empirical tests (outside UX) found saturation within 9–17 interviews for homogeneous groups and narrow goals {{src:hennink-kaiser-2022}} — an estimate, not a rule.", kind: "context" },
     ],
     donts: [
       { text: "Don't ask people to predict their behaviour ('Would you use…?').", why: "Hypothetical questions invite polite agreement and say little about what people will do.", kind: "context" },
@@ -388,7 +388,7 @@ AVOID
 
   references: [
     { source: "nng-user-interviews", role: "explanatory", note: "Read: definition, interviews vs usability tests, guide, probing, limits of self-report." },
-    { source: "flanagan-1954", role: "primary", note: "Abstract read: the critical incident technique — accounts of specific incidents." },
+    { source: "flanagan-1954", role: "primary", note: "Abstract read: the critical incident technique — collecting specific, observed incidents of behaviour." },
     { source: "nisbett-wilson-1977", role: "primary", note: "Abstract read: limits of reports on the causes of one's own behaviour." },
     { source: "guest-2006-saturation", role: "primary", note: "Abstract read: saturation within twelve of sixty interviews." },
     { source: "hennink-kaiser-2022", role: "primary", note: "Abstract read: systematic review; saturation within 9–17 interviews for homogeneous samples." },
