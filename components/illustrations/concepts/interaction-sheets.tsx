@@ -336,7 +336,7 @@ export const directManipulationPlate: IllustrationEntry = {
 };
 
 /* ------------------------------------------------------------------ */
-/* Interaction states: one control in eight states, grouped by source   */
+/* Interaction states: one control in eight states, in three groups    */
 /* ------------------------------------------------------------------ */
 function StateButton({ cx, y, label, fill, stroke, sw = 1, dash, tone = "ink", weight = 500, dy = 0 }: { cx: number; y: number; label: string; fill: string; stroke: string; sw?: number; dash?: string; tone?: "ink" | "ink3"; weight?: number; dy?: number }) {
   return (
@@ -356,15 +356,15 @@ export const interactionStatesPlate: IllustrationEntry = {
   title: "Interaction states plate",
   canvas: "sheet",
   description:
-    "Eight cells in two rows, each showing one control in one state. Top row, momentary states caused by the input device: 1, a Save button at rest with a plain border; 2, the same button hovered, with a light tint and a pointer over it; 3, the button with keyboard focus, shown by a ring drawn outside it, above a Tab key; 4, the button pressed, with a darker fill, a stronger border and its label shifted slightly down, with the pointer on it. Bottom row: 5, a Bold toggle that is on, with a tinted fill, a coloured border and a tick before the label; 6, a disabled Save button with a dashed border, a sunken fill and faded text, with a pointer over it that changes nothing; 7, a busy button reading 'Saving…' beside a spinner; 8, an email field holding 'ana@' with a red border, a cross icon inside it and the message 'Add domain' below.",
+    "Eight cells in two rows, each showing one control in one state. Top row, transient interaction and navigation states: 1, a Save button at rest with a plain border; 2, the same button hovered, with a light tint and a pointer over it; 3, the button with keyboard focus after the Tab key, shown by a ring drawn outside it, above a Tab key; 4, the button pressed, with a darker fill, a stronger border and its label shifted slightly down, with the pointer on it. Bottom row: 5, a persistent value — a Bold toggle that is on, with a tinted fill, a coloured border and a tick before the label; then three system-controlled conditions: 6, a disabled Save button with a dashed border, a sunken fill and faded text, with a pointer over it that changes nothing; 7, a busy button reading 'Saving…' beside a spinner; 8, an email field holding 'ana@' with a red border, a cross icon inside it and the message 'Add domain' below.",
   key: [
     { n: "1", label: "Rest", detail: "the enabled default every other state is drawn against; it must already look usable" },
     { n: "2", label: "Hover", detail: "a pointer is over it: a light tint that adds information but never carries it alone" },
-    { n: "3", label: "Focus visible", detail: "keyboard focus, shown by a ring outside the control so it stays visible over any fill" },
+    { n: "3", label: "Focus visible", detail: "focus reached with Tab, drawn as a ring outside the control so it stays visible over any fill; when the ring shows is the browser's decision" },
     { n: "4", label: "Pressed", detail: "momentary, only while the pointer or key is held down" },
-    { n: "5", label: "On (selected)", detail: "a value the person set, shown by fill and a tick and exposed as aria-pressed" },
-    { n: "6", label: "Disabled", detail: "set by the system: inert, with no hover or press response; exempt from contrast, so state the reason elsewhere" },
-    { n: "7", label: "Busy", detail: "set by the system while it works: the label changes and further presses are ignored" },
+    { n: "5", label: "On (selected)", detail: "a persistent value, usually set by the person, shown by fill and a tick and exposed as aria-pressed" },
+    { n: "6", label: "Disabled", detail: "a system-controlled condition: here natively disabled, so it cannot be focused or run and shows no hover style; the state never says why, so give the reason in visible text" },
+    { n: "7", label: "Busy", detail: "set by the system while it works: the label changes and repeat presses are ignored; an offered Cancel stays usable" },
     { n: "8", label: "Invalid", detail: "the value breaks a rule: border, icon and message together, never colour alone" },
   ],
   Art: ({ detail }) => (

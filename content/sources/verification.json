@@ -1270,7 +1270,7 @@
   },
   "m3-states": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-13",
+    "checkedAt": "2026-11-16",
     "httpStatus": 200
   },
   "m3-type-scale": {
@@ -2279,7 +2279,7 @@
   },
   "w3c-apg-button": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-13",
+    "checkedAt": "2026-11-16",
     "httpStatus": 200
   },
   "w3c-apg-grid": {
@@ -2314,12 +2314,12 @@
   },
   "w3c-selectors-3": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-13",
+    "checkedAt": "2026-11-16",
     "httpStatus": 200
   },
   "w3c-selectors-4": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-13",
+    "checkedAt": "2026-11-16",
     "httpStatus": 200
   },
   "w3c-understanding-dragging-movements": {
@@ -2329,7 +2329,7 @@
   },
   "w3c-understanding-non-text-contrast": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-13",
+    "checkedAt": "2026-11-16",
     "httpStatus": 200
   },
   "w3c-understanding-pause-stop-hide": {
@@ -2354,7 +2354,7 @@
   },
   "w3c-wai-aria-12": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-13",
+    "checkedAt": "2026-11-16",
     "httpStatus": 200
   },
   "w3c-wai-tables-tutorial": {
@@ -2369,7 +2369,7 @@
   },
   "w3c-wcag-22": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-13",
+    "checkedAt": "2026-11-16",
     "httpStatus": 200
   },
   "w3c-wcag-3-wd": {
@@ -2446,7 +2446,7 @@
   },
   "whatwg-html": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-13",
+    "checkedAt": "2026-11-16",
     "httpStatus": 200
   },
   "who-global-report-health-equity-disability-2022": {
