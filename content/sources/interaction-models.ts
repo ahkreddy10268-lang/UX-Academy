@@ -227,6 +227,7 @@ export default defineSources([
     topics: ["progress indicators", "feedback", "waiting"],
     access: "paywalled",
     verification: "bibliographic",
+    notes: "Abstract read 2026-11-16 (OpenAlex); paper not read. A formal experiment: one part showed that people prefer to have progress indicators; a second part, attempting to replicate a preference for constant over variable response time and its reversal with progress indicators, was not statistically significant.",
   },
   {
     id: "doherty-thadani-1982",

@@ -554,6 +554,7 @@ export default defineSources([
     topics: ["affordances", "perceived affordances", "conventions"],
     access: "paywalled",
     verification: "bibliographic",
+    notes: "Abstract read 2026-11-16 (OpenAlex): an introductory anecdote — the article was written in response to designers' loose use of 'affordance' in a CHI-Web discussion. The article's argument was not read; entries cite it only for that context.",
   },
   {
     id: "norman-2008",

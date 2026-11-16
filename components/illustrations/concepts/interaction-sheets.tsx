@@ -72,12 +72,12 @@ export const feedbackPrinciplePlate: IllustrationEntry = {
       <UiButton x={24} y={212} w={88} label="Adding…" />
 
       <rect x={144} y={170} width={112} height={110} rx={8} fill={S.soft} stroke={S.rule} strokeWidth="0.9" {...hair} />
-      <Verdict x={160} y={204} ok={false} />
-      <UiText x={176} y={209} tone="ink2">
+      <Verdict x={157} y={204} ok={false} />
+      <UiText x={172} y={209} tone="ink2">
         Done
       </UiText>
-      <Verdict x={160} y={244} ok />
-      <UiText x={176} y={249} weight={600}>
+      <Verdict x={157} y={244} ok />
+      <UiText x={172} y={249} weight={600}>
         Jacket added
       </UiText>
 
@@ -117,7 +117,7 @@ export const constraintsPlate: IllustrationEntry = {
     "Four interface panels, one for each kind of constraint Norman describes. Top left, physical: a volume slider whose thumb can move only along its track — a double-headed arrow along the track is allowed, an arrow pointing off the track is crossed out. Top right, cultural: a 'Discard draft?' dialog with a close × in the top right corner and Cancel before the primary Discard button, laid out the way convention leads people to expect. Bottom left, semantic: a return-date row of days 10 to 16 where departure is on the 12th, so the 10th and 11th are struck out and cannot be chosen; 'out' marks the departure day, because a return cannot come before the outward trip. Bottom right, logical: three seats for a third passenger, two already taken and crossed, one free and ticked — only one choice is left, so reasoning alone settles it.",
   key: [
     { n: "1", label: "Physical", detail: "the shape of the control allows only certain movements — the thumb stays on its track" },
-    { n: "2", label: "Cultural", detail: "conventions people have learned narrow what they try: × closes, the primary action comes last" },
+    { n: "2", label: "Cultural", detail: "conventions people have learned narrow what they try: × closes, and buttons sit in the order the platform uses — here the primary action last" },
     { n: "3", label: "Semantic", detail: "the meaning of the task rules options out: a return date before departure makes no sense" },
     { n: "4", label: "Logical", detail: "when other options are used up, reasoning leaves one: two seats are taken, so the third is it" },
   ],

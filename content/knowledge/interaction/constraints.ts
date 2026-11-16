@@ -8,7 +8,7 @@ export default defineEntry({
   summary:
     "Constraints limit the actions that are possible or sensible in an interface, so people are guided towards valid choices and away from errors — through the shape of a control, learned conventions, the meaning of the task and simple logic.",
   definition:
-    "In interaction design, **constraints** are properties of a design that **limit the set of possible or plausible actions**, so that fewer things can go wrong and the right action is easier to find. Norman describes four kinds — **physical**, **cultural**, **semantic** and **logical** {{src:norman-1988}} {{src:norman-2013}} — and the 2013 revision of his book places constraints among the fundamental principles of interaction, alongside affordances, signifiers, mappings, feedback and the conceptual model {{src:norman-2013}}. A strong form, the **forcing function**, makes a step impossible to skip. Constraints guide by reducing alternatives; they are a means of [[error-prevention|error prevention]], not the same thing as it.",
+    "In interaction design, **constraints** are properties of a design that **limit the set of possible or plausible actions**, so that fewer things can go wrong and the right action is easier to find. Norman describes four kinds — **physical**, **cultural**, **semantic** and **logical** — in the 2013 revision of *The Design of Everyday Things*, which gives constraints, with discoverability and feedback, a chapter of their own {{src:norman-dote-2013-contents}} {{src:norman-2013}}. A strong form, the **forcing function**, makes a step impossible to skip. Constraints guide by reducing alternatives; they are a means of [[error-prevention|error prevention]], not the same thing as it.",
   primaryType: "concept",
   secondaryTypes: ["principle"],
   domain: "interaction",
@@ -51,9 +51,9 @@ export default defineEntry({
     },
     intermediate: {
       explanation: [
-        "Constraints work because people face a choice among actions and must pick one. Every option removed is one fewer to consider and one fewer to get wrong. Norman's point is that the knowledge needed to act correctly does not have to be memorised: much of it can be **built into the world** — into the form of the controls, their arrangement and their behaviour {{src:norman-2013}}. Constraints are one of the main ways of doing that.",
-        "Norman distinguishes four kinds, introduced with physical objects and applied throughout to technology {{src:norman-1988}} {{src:norman-2013}}. On screens, most physical constraints are simulated by software (a field that ignores letters, a thumb confined to a track), so cultural, semantic and logical constraints carry much of the load. The four are a **useful lens, not an exhaustive or exclusive taxonomy**: one design often uses several at once, and the boundaries between them are not sharp.",
-        "**Forcing functions** are the strongest constraints: they make a step impossible to skip. Norman describes **interlocks** (actions must happen in the right order, such as a microwave that will not run with the door open), **lock-ins** (an operation stays active, such as warning before closing unsaved work) and **lockouts** (entry into a dangerous state is blocked) {{src:norman-2013}}. On screens, these include confirmation that requires typing a name before an irreversible delete, and a checkout that cannot be submitted until required information is present.",
+        "Constraints work because people face a choice among actions and must pick one. Every option removed is one fewer to consider and one fewer to get wrong. The knowledge needed to act correctly does not have to be memorised: much of it can be **built into the world** — into the form of the controls, their arrangement and their behaviour. Norman's revised edition has a chapter on knowledge in the head and in the world, with a section on how constraints simplify memory {{src:norman-dote-2013-contents}}. Constraints are one of the main ways of building knowledge into the world.",
+        "The four kinds are set out in the revised edition's chapter on constraints, alongside everyday cases such as doors and switches {{src:norman-dote-2013-contents}}. On screens, most physical constraints are simulated by software (a field that ignores letters, a thumb confined to a track), so cultural, semantic and logical constraints carry much of the load. The four are a **useful lens, not an exhaustive or exclusive taxonomy**: one design often uses several at once, and the boundaries between them are not sharp.",
+        "**Forcing functions** are the strongest constraints: they make a step impossible to skip. The revised edition names three forcing functions — **interlocks**, **lock-ins** and **lockouts** {{src:norman-dote-2013-contents}}. In this entry's words: an interlock makes actions happen in the right order (an appliance that will not start with its door open); a lock-in keeps an operation active (a warning before closing unsaved work); a lockout blocks entry into a dangerous state. On screens, these include confirmation that requires typing a name before an irreversible delete, and a checkout that cannot be submitted until required information is present.",
         "Constraints are one tool for **preventing slips** — the right intention carried out wrongly {{src:norman-1983-design-rules}}. NN/g recommends four ways to prevent slips: helpful constraints, suggestions, good defaults and forgiving formats {{src:nng-slips}}. That list matters: a constraint is the right tool only where a clear rule defines what is valid; where the rule is fuzzy, a suggestion or a forgiving format serves people better.",
       ],
       howItWorks: [
@@ -79,17 +79,17 @@ export default defineEntry({
     advanced: {
       explanation: [
         "Constraints trade **freedom for reliability**, and the right balance depends on the cost of error. Where errors are rare and cheap, heavy constraints cost more in friction than they save. Where errors are costly or irreversible, the same constraints are worth their friction. This is why forcing functions suit deletion, payment and medication dosing far more than everyday settings.",
-        "On screens the boundary between constraints, conventions and affordances is blurred. Norman argued in 1999 that designers were conflating real affordances, perceived affordances, conventions and constraints, and that on screens the real affordances are largely fixed by the hardware, so what designers actually manipulate are perceived affordances, conventions and feedback {{src:norman-1999}}. Read this way, most screen 'constraints' are rules the software enforces plus conventions people have learned — which is why they break when software behaves inconsistently.",
+        "On screens the boundary between constraints, conventions and affordances is blurred. Norman's 1999 article on affordances, conventions and design was written in response to designers using 'affordance' loosely {{src:norman-1999}}, and his revised edition treats conventions as cultural constraints {{src:norman-dote-2013-contents}}. On screens, most 'constraints' are rules the software enforces plus conventions people have learned — which is why they break when software behaves inconsistently.",
         "Constraints interact with **accessibility** in both directions. Restricting input to valid options helps people with cognitive and motor impairments make fewer errors. But constraints implemented as disabled controls can hide information. A natively `disabled` control is not focusable {{src:whatwg-html}}, so a keyboard or screen-reader user moving through the form may never encounter it; and WCAG exempts text in inactive components from contrast requirements [SC 1.4.3] {{src:w3c-wcag-22}} — Material Design similarly exempts disabled states from its contrast requirements {{src:m3-states}}. `aria-disabled=\"true\"` is the alternative when people need to find the control: it tells assistive technology the control is disabled and can leave it in the focus order, though script must then block activation {{src:w3c-wai-aria-12}}. Both mechanisms communicate only the *state*. The *reason* — what is missing, what to do next — has to be written as visible text and associated with the control, or the constraint stays unexplained.",
         "Over-constraint is a real failure mode. Validation patterns that encode one country's formats, length limits that truncate real names, and pickers that forbid legitimate edge cases turn a constraint into a barrier. A useful test is whether every constraint corresponds to a rule the business or the domain actually has; constraints added for the system's convenience should be challenged.",
       ],
       evidence: [
-        "Norman's account of constraints is an analytic framework built from close study of everyday objects and of human error, not the result of controlled experiments; its support is its long use in design and evaluation {{src:norman-1988}} {{src:norman-2013}}. Norman's 1983 analysis classified slips — correct intentions carried out wrongly — and derived design procedures to make them less likely {{src:norman-1983-design-rules}}; constraints are one of the ways his later books propose to do that {{src:norman-2013}}.",
+        "Norman's account of constraints is a design framework, not the result of controlled experiments; its support is its long use in design and evaluation {{src:norman-1988}} {{src:norman-2013}}. For this entry, the books are verified only as bibliographic records; what they contain is checked against the table of contents on Norman's own site {{src:norman-dote-2013-contents}}, not against the text. Norman's 1983 analysis classified slips — correct intentions carried out wrongly — and derived design procedures to make them less likely {{src:norman-1983-design-rules}}; his revised edition gives constraints and forcing functions a chapter of their own {{src:norman-dote-2013-contents}}.",
         "NN/g's practitioner guidance lists constraints as one of four slip-prevention techniques, beside suggestions, defaults and forgiving formats {{src:nng-slips}}. There is little published experimental work comparing the four categories with each other, and no evidence that they are the only kinds.",
       ],
       debates: [
         "**Disable or explain?** One position constrains early: disable an action until it is valid. Another lets people try and then explains what is missing, because disabled controls can be invisible, unreadable or unexplained to some users {{src:w3c-wai-aria-12}} {{src:w3c-wcag-22}}. Which works better depends on how discoverable the reason is; there is no general rule.",
-        "**Where does a constraint end and a convention begin?** Norman's own clarification that designers conflated constraints, conventions and affordances shows how blurred the categories are on screens {{src:norman-1999}}; teams should name the mechanism a design relies on rather than argue about labels.",
+        "**Where does a constraint end and a convention begin?** Norman's 1999 article was prompted by loose use of 'affordance' among designers {{src:norman-1999}}, and his revised edition discusses conventions, constraints and affordances together and calls conventions cultural constraints {{src:norman-dote-2013-contents}}. On screens the categories blur; teams should name the mechanism a design relies on rather than argue about labels.",
         "**Constrain or forgive?** Strict input formats prevent invalid data but reject unusual valid data; forgiving formats accept variety and normalise it. NN/g recommends both, for different kinds of rule {{src:nng-slips}}.",
       ],
       alternativeModels: [
@@ -105,7 +105,7 @@ export default defineEntry({
     problem: "People made errors that the design could have ruled out, and designers relied on instructions and warnings instead of building the knowledge into the product.",
     narrative: [
       "Norman's 1983 analysis of slips argued that properties of systems make some errors likely and derived design rules to reduce them {{src:norman-1983-design-rules}}.",
-      "*The Psychology of Everyday Things* (1988) set out physical, cultural, semantic and logical constraints and forcing functions, using doors, switches and appliances as well as computers {{src:norman-1988}}; the 2013 revision keeps them among the fundamental principles of interaction {{src:norman-2013}}.",
+      "*The Psychology of Everyday Things* (1988) was the first edition of Norman's book {{src:norman-1988}}; its 2013 revision has a chapter, 'Knowing What to Do: Constraints, Discoverability, and Feedback', covering the four kinds of constraint and three forcing functions {{src:norman-dote-2013-contents}} {{src:norman-2013}}.",
     ],
   },
 
@@ -166,7 +166,7 @@ export default defineEntry({
     {
       myth: "Every interface constraint is physical.",
       reality:
-        "On screens most constraints are rules enforced by software plus learned conventions; Norman noted that what designers manipulate on screens are largely perceived affordances, conventions and feedback {{src:norman-1999}}.",
+        "On screens most constraints are rules enforced by software plus learned conventions; Norman's revised edition itself treats conventions as cultural constraints {{src:norman-dote-2013-contents}}.",
     },
   ],
 
@@ -186,7 +186,7 @@ export default defineEntry({
     dos: [
       { text: "State the rule a constraint enforces, and constrain only where that rule is clear and correct.", why: "NN/g recommends helpful constraints where clear rules define acceptable input, alongside suggestions, defaults and forgiving formats {{src:nng-slips}}; where no clear rule exists, a constraint can only block valid input.", kind: "industry" },
       { text: "Constrain at the point of choice and explain unavailable options in text.", why: "Ruling out an invalid choice before it is made removes the error; an explanation keeps the constraint understandable.", kind: "industry" },
-      { text: "Use forcing functions for irreversible, legal or financial actions, alongside reversal, checking or confirmation.", why: "WCAG 2.2 SC 3.3.4 requires such submissions to be reversible, checked or confirmed {{src:w3c-wcag-22}}; a forcing function makes the slip hard in the first place {{src:norman-2013}}.", kind: "standard" },
+      { text: "Use forcing functions for irreversible, legal or financial actions, alongside reversal, checking or confirmation.", why: "WCAG 2.2 SC 3.3.4 requires such submissions to be reversible, checked or confirmed {{src:w3c-wcag-22}}; a forcing function makes the slip hard in the first place {{src:norman-dote-2013-contents}}.", kind: "standard" },
     ],
     donts: [
       { text: "Don't grey out an action without saying why — `disabled` or `aria-disabled` alone is not an explanation.", why: "Both expose only the disabled state; inactive text is exempt from contrast requirements and native `disabled` removes the control from focus {{src:w3c-wcag-22}} {{src:whatwg-html}} {{src:w3c-wai-aria-12}}.", kind: "standard" },
@@ -252,7 +252,7 @@ function returnLimits(departure: string, monthsAhead = 12) {
       deliverable: "A short decision table and the corrected field specifications.",
       criteria: ["The date rule is constrained at the point of choice and explained", "The phone rule is recognised as over-constrained", "Accessibility of the chosen mechanism is addressed"],
       exampleSolution: [
-        "Return date: a clear rule that comes from the meaning of the task — a semantic constraint in Norman's sense {{src:norman-2013}}. Constrain it: use a date picker whose earliest selectable day is the departure date, with a hint that says so.",
+        "Return date: a clear rule that comes from the meaning of the task — a semantic constraint in Norman's sense {{src:norman-dote-2013-contents}}. Constrain it: use a date picker whose earliest selectable day is the departure date, with a hint that says so.",
         "Phone number: the rule encodes one country's format and rejects valid numbers. Use a forgiving format instead, as NN/g recommends for slips {{src:nng-slips}}: accept international formats, normalise spaces and symbols, and validate only what the system truly needs (for example, that it is a dialable number).",
         "Explain both rules in visible hint text linked to the fields so screen-reader users hear them too.",
       ],
@@ -320,10 +320,11 @@ function returnLimits(departure: string, monthsAhead = 12) {
   ],
 
   references: [
-    { source: "norman-2013", role: "primary", note: "Four kinds of constraint; forcing functions (interlocks, lock-ins, lockouts); knowledge in the world." },
-    { source: "norman-1988", role: "primary", note: "First edition, where the four kinds and forcing functions are set out." },
+    { source: "norman-2013", role: "primary", note: "Originating framework. Bibliographic verification only: the text was not read for this entry; its content is checked against the table of contents (norman-dote-2013-contents)." },
+    { source: "norman-dote-2013-contents", role: "explanatory", note: "Norman's own page: chapter 4 covers the four kinds of constraint, forcing functions (interlocks, lock-ins, lock-outs) and conventions as cultural constraints; chapter 3 covers knowledge in the world." },
+    { source: "norman-1988", role: "primary", note: "First edition. Bibliographic verification only; not read for this entry." },
     { source: "norman-1983-design-rules", role: "primary", note: "Slips of action and design rules derived from them." },
-    { source: "norman-1999", role: "primary", note: "Conflation of affordances, conventions and constraints; what designers manipulate on screens." },
+    { source: "norman-1999", role: "primary", note: "Abstract only (an introductory anecdote): written in response to designers' loose use of 'affordance'. The article's argument was not read and is not attributed here." },
     { source: "nielsen-ten-heuristics-article", role: "primary", note: "Error prevention as checking and asking people to confirm before they commit." },
     { source: "nng-slips", role: "explanatory", note: "Constraints among four ways to prevent slips, beside suggestions, defaults and forgiving formats." },
     { source: "w3c-wcag-22", role: "standard", note: "SC 1.4.3 inactive-component exception; SC 3.3.4 Error Prevention (Legal, Financial, Data)." },
@@ -333,7 +334,7 @@ function returnLimits(departure: string, monthsAhead = 12) {
   ],
   evidence: "established-theory",
   evidenceNote:
-    "Constraints are part of Norman's established theoretical framework for interaction design, built from analysis of everyday objects and human error rather than controlled experiments. The link to slip prevention rests on Norman's 1983 analysis and is echoed in practitioner guidance. The four categories are descriptive and overlapping; there is little experimental comparison between them. Accessibility statements are drawn from WCAG 2.2 and WAI-ARIA 1.2.",
+    "Constraints are part of Norman's established theoretical framework for interaction design, a design framework rather than the result of controlled experiments. Norman's books are verified as bibliographic records only; what this entry attributes to the 2013 edition is limited to what the table of contents on his own site shows, and the 1999 article is cited for its abstract only. The link to slip prevention rests on Norman's 1983 analysis and is echoed in practitioner guidance. The four categories are descriptive and overlapping; there is little experimental comparison between them. Accessibility statements are drawn from WCAG 2.2 and WAI-ARIA 1.2.",
 
   status: "published",
   quality: {
@@ -348,5 +349,5 @@ function returnLimits(departure: string, monthsAhead = 12) {
     sources: true,
     activities: true,
   },
-  lastVerifiedAt: "2026-11-13",
+  lastVerifiedAt: "2026-11-16",
 });

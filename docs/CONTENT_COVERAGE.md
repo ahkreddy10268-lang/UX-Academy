@@ -326,7 +326,7 @@ Five separate dimensions, rated basic / developing / complete from the content (
 | Component State Management | Concept | Practitioner recommendation | complete | developing | complete | developing | complete | 11 | 3 | — | async-state-lab |
 | Confidence Intervals | Concept | Established theoretical model | complete | complete | developing | developing | complete | 4 | 3 | confidence-interval-mean | — |
 | Consistency and Standards | Principle | Professional guideline | complete | developing | complete | basic | complete | 6 | 3 | — | — |
-| Constraints | Concept | Established theoretical model | complete | complete | complete | basic | complete | 10 | 3 | — | — |
+| Constraints | Concept | Established theoretical model | complete | complete | complete | basic | complete | 11 | 3 | — | — |
 | Data Tables | Pattern | Professional guideline | complete | developing | complete | developing | complete | 7 | 3 | — | async-state-lab |
 | Design Governance | Strategy | Practitioner recommendation | complete | developing | complete | basic | complete | 8 | 3 | — | — |
 | Design Language | Concept | Practitioner recommendation | complete | developing | complete | basic | complete | 7 | 3 | — | — |
@@ -344,7 +344,7 @@ Five separate dimensions, rated basic / developing / complete from the content (
 | Error Prevention | Principle | Professional guideline | complete | developing | complete | basic | complete | 9 | 3 | — | — |
 | Error Recovery | Principle | Professional guideline | complete | developing | complete | basic | complete | 6 | 3 | — | — |
 | Error States | Pattern | Professional guideline | complete | developing | complete | basic | complete | 7 | 3 | — | — |
-| Feedback | Concept | Established theoretical model | complete | complete | complete | developing | complete | 8 | 3 | — | feedback-lab |
+| Feedback | Concept | Established theoretical model | complete | complete | complete | developing | complete | 9 | 3 | — | feedback-lab |
 | Fitts's Law | Law | Original empirical research | complete | complete | complete | complete | complete | 10 | 4 | fitts | fitts-lab |
 | Flexibility and Efficiency of Use | Principle | Professional guideline | complete | developing | complete | basic | complete | 7 | 3 | — | — |
 | Gestalt Principles of Perceptual Grouping | Principle | Established theoretical model | complete | complete | complete | complete | complete | 6 | 3 | — | gestalt-lab |

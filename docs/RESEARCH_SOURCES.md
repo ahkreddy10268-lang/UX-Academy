@@ -147,7 +147,7 @@ Fields per record (see `lib/content/schema.ts`): id, title, authors, organisatio
 | `molich-et-al-2004` | Molich, R. et al. (2004). *Comparative usability evaluation*. Behaviour & Information Technology | doi:10.1080/0144929032000173951 | paywalled | doi-verified (2026-11-03) |
 | `molich-nielsen-1990` | Molich, R., Nielsen, J. (1990). *Improving a human-computer dialogue*. Communications of the ACM | doi:10.1145/77481.77486 | paywalled | doi-verified (2026-11-03) |
 | `murdock-1962` | Murdock, B. B., Jr. (1962). *The serial position effect of free recall*. Journal of Experimental Psychology | doi:10.1037/h0045106 | paywalled | doi-verified (2026-11-03) |
-| `myers-1985` | Myers, B. A. (1985). *The importance of percent-done progress indicators for computer-human interfaces*. Proceedings of the SIGCHI Conference on Human Factors in Computing Systems (CHI '85) | doi:10.1145/317456.317459 | paywalled | doi-verified (2026-11-03) |
+| `myers-1985` | Myers, B. A. (1985). *The importance of percent-done progress indicators for computer-human interfaces*. Proceedings of the SIGCHI Conference on Human Factors in Computing Systems (CHI '85) | doi:10.1145/317456.317459 | paywalled | doi-verified (2026-11-16) |
 | `nasa-tlx-site` | NASA Ames Research Center — Human Systems Integration Division. *NASA Task Load Index (TLX)* | https://www.nasa.gov/human-systems-integration-division/nasa-task-load-index-tlx/ | open | url-reachable (2026-11-03) |
 | `nielsen-1992-heuristic` | Nielsen, J. (1992). *Finding usability problems through heuristic evaluation*. Proceedings of the SIGCHI Conference on Human Factors in Computing Systems (CHI '92) | doi:10.1145/142750.142834 | paywalled | doi-verified (2026-11-03) |
 | `nielsen-1993` | Nielsen, J. (1993). *Usability Engineering* | ISBN 978-0-12-518406-9 | paywalled | not machine-checked |
@@ -160,7 +160,7 @@ Fields per record (see `lib/content/schema.ts`): id, title, authors, organisatio
 | `norman-1983-design-rules` | Norman, D. A. (1983). *Design rules based on analyses of human error*. Communications of the ACM | doi:10.1145/2163.358092 | paywalled | doi-verified (2026-11-13) |
 | `norman-1986` | Norman, D. A. (1986). *Cognitive engineering*. User Centered System Design: New Perspectives on Human-Computer Interaction (D. A. Norman & S. W. Draper, Eds.) | doi:10.1201/b15703-3 | paywalled | doi-verified (2026-11-03) |
 | `norman-1988` | Norman, D. A. (1988). *The Psychology of Everyday Things* | — | paywalled | not machine-checked |
-| `norman-1999` | Norman, D. A. (1999). *Affordance, conventions, and design*. interactions | doi:10.1145/301153.301168 | paywalled | doi-verified (2026-11-13) |
+| `norman-1999` | Norman, D. A. (1999). *Affordance, conventions, and design*. interactions | doi:10.1145/301153.301168 | paywalled | doi-verified (2026-11-16) |
 | `norman-2008` | Norman, D. A. (2008). *Signifiers, not affordances*. interactions | doi:10.1145/1409040.1409044 | paywalled | doi-verified (2026-11-03) |
 | `norman-2013` | Norman, D. A. (2013). *The Design of Everyday Things: Revised and Expanded Edition* | ISBN 978-0-465-05065-9 | paywalled | not machine-checked |
 | `norman-draper-1986` | Norman, D. A., Draper, S. W. (1986). *User Centered System Design: New Perspectives on Human-Computer Interaction* | doi:10.1201/b15703 | paywalled | doi-verified (2026-11-03) |

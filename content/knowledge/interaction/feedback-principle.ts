@@ -8,7 +8,7 @@ export default defineEntry({
   summary:
     "Feedback is the information an interface returns about the result of an action — immediate, informative and in proportion to the action — so people can tell whether what they did worked and decide what to do next.",
   definition:
-    "In interaction design, **feedback** is the communication of the **result of an action** back to the person who took it {{src:norman-2013}}. Norman treats it as one of the fundamental principles of interaction, alongside affordances, signifiers, constraints, mappings and the conceptual model {{src:norman-2013}}. Feedback closes the loop between doing and knowing: without it people cannot evaluate whether an action succeeded. It is a property of each interaction; [[visibility-of-system-status]] is the related heuristic that asks a whole system to keep people informed in time.",
+    "In interaction design, **feedback** is the communication of the **result of an action** back to the person who took it. In the 2013 revision of Norman's *Design of Everyday Things* it is one of the 'Fundamental Principles of Interaction', with affordances, signifiers, mapping and conceptual models {{src:norman-dote-2013-contents}} {{src:norman-2013}}. Feedback closes the loop between doing and knowing: without it people cannot evaluate whether an action succeeded. It is a property of each interaction; [[visibility-of-system-status]] is the related heuristic that asks a whole system to keep people informed in time.",
   primaryType: "concept",
   secondaryTypes: ["principle"],
   domain: "interaction",
@@ -49,14 +49,14 @@ export default defineEntry({
     },
     intermediate: {
       explanation: [
-        "Feedback is the second half of an action. Norman's account of action separates **execution** (working out what to do and doing it) from **evaluation** (perceiving what happened, interpreting it and comparing it with the goal) {{src:norman-2013}}. Feedback is what evaluation works on. When it is missing or ambiguous the gulf of evaluation is wide, even if the action itself was easy ([[gulfs-of-execution-and-evaluation]]).",
-        "Norman describes what makes feedback work: it must be **immediate**, it must be **informative**, and it must be **planned and prioritised** — too much feedback can be as unhelpful as too little, because a stream of beeps and messages buries the one that matters {{src:norman-2013}}.",
+        "Feedback is the second half of an action. Norman's account of action separates **execution** (working out what to do and doing it) from **evaluation** (perceiving what happened, interpreting it and comparing it with the goal); the revised edition presents it as the gulfs of execution and evaluation and the seven stages of action {{src:norman-dote-2013-contents}}. Feedback is what evaluation works on. When it is missing or ambiguous the gulf of evaluation is wide, even if the action itself was easy ([[gulfs-of-execution-and-evaluation]]).",
+        "What makes feedback work can be put in three words: it must be **immediate**, **informative**, and **planned and prioritised** — too much feedback can be as unhelpful as too little, because a stream of beeps and messages buries the one that matters. These qualities follow Norman's discussion of feedback in the revised edition, whose text was not re-read for this entry {{src:norman-2013}}; they are stated here in this entry's own words.",
         "Timing has its own guidance. Miller analysed acceptable response times for different kinds of conversational transactions with computers {{src:miller-1968}}, and Nielsen later summarised widely used limits of about 0.1 s (feels instantaneous), 1 s (flow of thought uninterrupted) and 10 s (attention held) {{src:nielsen-1993-response-times}}. These are practitioner guidance drawn from earlier work, not thresholds measured for every context.",
       ],
       howItWorks: [
         "**Acknowledge, then confirm.** Many actions take longer than the person waits. Good designs answer twice: an immediate acknowledgement that the input was received (the button changes to 'Adding…') and a later confirmation of the outcome ('Jacket added'). Collapsing the two into one late message leaves a silent gap; confirming before the outcome is known is a false answer.",
-        "**Feedback shapes perceived time.** Myers found that people strongly preferred percent-done progress indicators during long operations {{src:myers-1985}}, and Harrison and colleagues showed that how a progress bar moves changes how long the same wait feels {{src:harrison-2007-progress-bar}}. Feedback does not make work faster, but it changes how the wait is experienced and whether people interrupt it.",
-        "**Feedback and feedforward work as a pair.** Signifiers and labels tell people what an action will do before they act (feedforward); feedback tells them what it did afterwards {{src:norman-2013}}. A clear 'Delete 3 files' button and a '3 files deleted · Undo' message are two halves of one design.",
+        "**Feedback shapes perceived time.** In a formal experiment Myers found that people preferred to have percent-done progress indicators {{src:myers-1985}}, and Harrison and colleagues found that how a progress bar moves changes how long the same wait feels {{src:harrison-2007-progress-bar}}. Feedback does not make work faster, but it changes how the wait is experienced and whether people interrupt it.",
+        "**Feedback and feedforward work as a pair.** Signifiers and labels tell people what an action will do before they act (feedforward); feedback tells them what it did afterwards ([[signifiers]]). A clear 'Delete 3 files' button and a '3 files deleted · Undo' message are two halves of one design.",
       ],
       implementation: [
         "Give every control an immediate visible response to input — a pressed or busy state — even when the result will take time.",
@@ -80,11 +80,11 @@ export default defineEntry({
         "Feedback must reach people through more than one channel. Visual changes can be missed by screen-reader users unless they are exposed programmatically; colour alone fails people who cannot distinguish it; sound fails in silent mode; haptics are absent on most desktops. Robust feedback is redundant across channels where it matters {{src:w3c-wcag-22}}.",
       ],
       evidence: [
-        "Norman's principles are an established theoretical framework in HCI rather than the result of one experiment; their support is the large body of design and evaluation work built on them {{src:norman-1988}} {{src:norman-2013}}.",
-        "Specific claims about feedback have their own evidence: Myers (1985) reported a strong preference for percent-done progress indicators in a small study {{src:myers-1985}}; Harrison et al. (2007) found that progress-bar behaviour changed perceived duration {{src:harrison-2007-progress-bar}}. The 0.1 s, 1 s and 10 s limits are a synthesis of Miller (1968) and later work, not a single measurement {{src:nielsen-1993-response-times}} {{src:miller-1968}}.",
+        "Norman's principles are an established theoretical framework in HCI rather than the result of one experiment; their support is the large body of design and evaluation work built on them {{src:norman-1988}} {{src:norman-2013}}. For this entry the books are verified as bibliographic records only; what is attributed to the 2013 edition is limited to its table of contents on Norman's own site {{src:norman-dote-2013-contents}}.",
+        "Specific claims about feedback have their own evidence: Myers (1985) reported a formal experiment in which people preferred to have percent-done progress indicators; a second part, on constant versus variable response time, found no significant effect (cited from the abstract; the paper was not read) {{src:myers-1985}}; Harrison et al. (2007) found that progress-bar behaviour changed perceived duration {{src:harrison-2007-progress-bar}}. The 0.1 s, 1 s and 10 s limits are a synthesis of Miller (1968) and later work, not a single measurement {{src:nielsen-1993-response-times}} {{src:miller-1968}}.",
       ],
       debates: [
-        "**How much feedback is enough?** Norman warns that excessive feedback is itself a design failure {{src:norman-2013}}, yet products accumulate toasts, badges and sounds because each one solves a local problem. There is no general rule for the right amount; it has to be decided per product, ideally with research.",
+        "**How much feedback is enough?** Excessive feedback is itself a design failure, yet products accumulate toasts, badges and sounds because each one solves a local problem. There is no general rule for the right amount; it has to be decided per product, ideally with research.",
         "**Optimistic feedback.** Showing the expected result before the system confirms it makes interfaces feel instant but means the feedback is briefly a prediction. Teams disagree on where that is acceptable; the cost of the prediction being wrong is the usual deciding factor.",
       ],
       alternativeModels: [
@@ -100,7 +100,7 @@ export default defineEntry({
     problem: "Interactive systems often did their work out of sight and gave people no reliable way to tell whether an action had worked.",
     narrative: [
       "Miller's 1968 analysis of response time in human–computer conversation treated the system's reply as part of the dialogue and asked how long people could wait for it {{src:miller-1968}}.",
-      "Norman's *The Psychology of Everyday Things* (1988) made feedback a named principle of design, beside visibility, constraints and mappings, using everyday objects as well as computers {{src:norman-1988}}; the revised edition (2013) places it among the fundamental principles of interaction and adds signifiers {{src:norman-2013}}.",
+      "Norman's *The Psychology of Everyday Things* (1988) was the first edition of his book {{src:norman-1988}}; the revised edition (2013) lists feedback among the 'Fundamental Principles of Interaction' and adds signifiers {{src:norman-dote-2013-contents}} {{src:norman-2013}}.",
       "Nielsen's response-time limits (1993) turned the timing question into guidance practitioners still use {{src:nielsen-1993-response-times}}.",
     ],
   },
@@ -113,7 +113,7 @@ export default defineEntry({
       "Pressed and busy states on every control; inline confirmation where the action happened; `role=\"status\"` for messages that do not move focus; errors next to the field that caused them.",
     ],
     mobile: [
-      "Touch has no hover, so feedback on press matters more; use the platform's pressed states and, sparingly, haptics — always with a visible equivalent.",
+      "Touch gives no reliable hover, so feedback on press matters more; use the platform's pressed states and, sparingly, haptics — always with a visible equivalent.",
     ],
     enterprise: [
       "Bulk and background operations need feedback that survives navigation: a job list or notification with progress and outcome, not only a message on the page that started them.",
@@ -153,7 +153,7 @@ export default defineEntry({
     {
       myth: "Feedback means showing a success message after every action.",
       reality:
-        "Feedback is any information about the result of an action, and often the best feedback is the result itself — the item appearing in the list. Norman warns that too much feedback is as much a failure as too little {{src:norman-2013}}.",
+        "Feedback is any information about the result of an action, and often the best feedback is the result itself — the item appearing in the list. Too much feedback is as much a failure as too little, because it buries the messages that matter.",
     },
     {
       myth: "Feedback and visibility of system status are the same thing.",
@@ -178,13 +178,13 @@ export default defineEntry({
 
   practice: {
     dos: [
-      { text: "Respond to input at once with a visible change on the control, even when the outcome will take longer.", why: "Feedback must be immediate; a silent delay invites repeated input {{src:norman-2013}} {{src:nielsen-1993-response-times}}.", kind: "industry" },
-      { text: "Say what changed, in the words of the task: 'Jacket added', '3 files deleted · Undo'.", why: "Informative feedback lets people evaluate the result and notice slips; generic 'Success' does not {{src:norman-2013}}.", kind: "industry" },
+      { text: "Respond to input at once with a visible change on the control, even when the outcome will take longer.", why: "A silent delay invites repeated input; response-time guidance treats about 0.1 s as feeling instantaneous {{src:nielsen-1993-response-times}}.", kind: "industry" },
+      { text: "Say what changed, in the words of the task: 'Jacket added', '3 files deleted · Undo'.", why: "Informative feedback lets people evaluate the result and notice slips — correct intentions carried out wrongly {{src:norman-1983-design-rules}}; generic 'Success' does not.", kind: "industry" },
       { text: "Expose messages that do not take focus as status messages, and never signal by colour alone.", why: "WCAG 2.2 SC 4.1.3 Status Messages (AA) and SC 1.4.1 Use of Color (A) {{src:w3c-wcag-22}}.", kind: "standard" },
     ],
     donts: [
       { text: "Don't confirm an outcome before it has happened ('Saved' while the save is still in flight).", why: "False feedback is worse than none: people act on it and lose work.", kind: "industry" },
-      { text: "Don't interrupt routine actions with dialogs or stacked toasts.", why: "Feedback must be prioritised; excessive feedback buries the messages that matter {{src:norman-2013}}.", kind: "context" },
+      { text: "Don't interrupt routine actions with dialogs or stacked toasts.", why: "Feedback must be prioritised; excessive feedback buries the messages that matter.", kind: "context" },
       { text: "Don't rely on sound or haptics alone.", why: "They are missed in silent mode or absent on the device; a visible equivalent is needed.", kind: "industry" },
     ],
     examples: [
@@ -193,7 +193,7 @@ export default defineEntry({
         language: "ts",
         code: `type AddState = "idle" | "adding" | "added" | "failed";
 
-// <button aria-describedby="basket-msg" aria-busy={state === "adding"}>
+// <button aria-describedby="basket-msg" onClick={() => state !== "adding" && add(item, set)}>
 //   {state === "adding" ? "Adding…" : "Add to basket"}
 // </button>
 // <p id="basket-msg" role="status">{message}</p>
@@ -207,7 +207,7 @@ async function add(item: Item, set: (s: AddState, msg: string) => void) {
     set("failed", \`\${item.name} wasn't added. Try again.\`);     // failure is feedback too
   }
 }`,
-        caption: "The button changes on press; the message names the item and the new count only after the server answers, and is announced without moving focus. `api` and `Item` are illustrative.",
+        caption: "The button changes on press and ignores further presses while adding; the message names the item and the new count only after the server answers, and is announced without moving focus through role=\"status\". `api`, `Item`, `state` and `set` are illustrative.",
       },
     ],
   },
@@ -239,7 +239,7 @@ async function add(item: Item, set: (s: AddState, msg: string) => void) {
         "Acknowledge on press: the button reads 'Adding…' and ignores further presses while the request is in flight.",
         "Confirm at the action: beside the button, 'Rain jacket (M) added · 2 items', in a `role=\"status\"` element; the basket badge updates.",
         "Fail specifically: 'Rain jacket wasn't added — check your connection and try again', with the size still selected.",
-        "Remove the generic top-of-screen toast: it is far from the action and says nothing about what changed {{src:norman-2013}}.",
+        "Remove the generic top-of-screen toast: it is far from the action and says nothing about what changed.",
       ],
     },
     {
@@ -305,10 +305,11 @@ async function add(item: Item, set: (s: AddState, msg: string) => void) {
   ],
 
   references: [
-    { source: "norman-2013", role: "primary", note: "Feedback among the fundamental principles of interaction; its qualities; feedforward; the action cycle." },
-    { source: "norman-1988", role: "primary", note: "First edition, where feedback is set out as a design principle." },
+    { source: "norman-2013", role: "primary", note: "Originating framework. Bibliographic verification only: the text was not read for this entry; attributions are limited to its table of contents (norman-dote-2013-contents)." },
+    { source: "norman-dote-2013-contents", role: "explanatory", note: "Norman's own page: feedback listed under chapter 1's Fundamental Principles of Interaction; chapter 2 covers the gulfs of execution and evaluation and the seven stages of action." },
+    { source: "norman-1988", role: "primary", note: "First edition. Bibliographic verification only; not read for this entry." },
     { source: "miller-1968", role: "primary", note: "Response time in human–computer conversational transactions." },
-    { source: "myers-1985", role: "primary", note: "Preference for percent-done progress indicators." },
+    { source: "myers-1985", role: "primary", note: "Abstract only: a formal experiment found people prefer to have progress indicators; the constant-vs-variable response-time part was not significant." },
     { source: "harrison-2007-progress-bar", role: "primary", note: "Progress-bar behaviour changes perceived duration." },
     { source: "norman-1983-design-rules", role: "primary", note: "Slips of action and design rules derived from them." },
     { source: "nielsen-1993-response-times", role: "explanatory", note: "The 0.1 s, 1 s and 10 s limits." },
@@ -316,7 +317,7 @@ async function add(item: Item, set: (s: AddState, msg: string) => void) {
   ],
   evidence: "established-theory",
   evidenceNote:
-    "Feedback is an established principle in HCI from Norman's theory of action, used and tested in design practice for decades rather than derived from one experiment. Specific claims carry their own evidence: progress-indicator preference (Myers 1985, small study), perceived duration (Harrison et al. 2007), and response-time limits that are a synthesis rather than a measurement. Accessibility requirements are WCAG 2.2 success criteria.",
+    "Feedback is an established principle in HCI from Norman's theory of action, used in design practice for decades rather than derived from one experiment. Norman's books are verified as bibliographic records only; what this entry attributes to the 2013 edition is limited to the table of contents on his own site. Specific claims carry their own evidence: a preference for progress indicators in a formal experiment (Myers 1985, abstract only), progress-bar behaviour and perceived duration (Harrison et al. 2007, abstract only), and response-time limits that are a synthesis rather than a measurement. Accessibility requirements are WCAG 2.2 success criteria.",
 
   status: "published",
   quality: {
@@ -331,5 +332,5 @@ async function add(item: Item, set: (s: AddState, msg: string) => void) {
     sources: true,
     activities: true,
   },
-  lastVerifiedAt: "2026-11-12",
+  lastVerifiedAt: "2026-11-16",
 });
