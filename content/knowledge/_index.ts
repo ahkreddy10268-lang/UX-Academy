@@ -88,11 +88,15 @@ import m84 from "./psychology/working-memory-model";
 import m85 from "./research/ab-testing";
 import m86 from "./research/card-sorting";
 import m87 from "./research/cognitive-walkthrough";
-import m88 from "./research/heuristic-evaluation";
-import m89 from "./research/usability-testing";
-import m90 from "./type-colour/colour-contrast-ratio";
-import m91 from "./type-colour/modular-type-scale";
-import m92 from "./visual/visual-hierarchy";
+import m88 from "./research/contextual-inquiry";
+import m89 from "./research/heuristic-evaluation";
+import m90 from "./research/in-depth-interviews";
+import m91 from "./research/think-aloud-protocol";
+import m92 from "./research/tree-testing";
+import m93 from "./research/usability-testing";
+import m94 from "./type-colour/colour-contrast-ratio";
+import m95 from "./type-colour/modular-type-scale";
+import m96 from "./visual/visual-hierarchy";
 
 export const rawEntries: KnowledgeEntryInput[] = [
   m0,
@@ -187,5 +191,9 @@ export const rawEntries: KnowledgeEntryInput[] = [
   m89,
   m90,
   m91,
-  m92
+  m92,
+  m93,
+  m94,
+  m95,
+  m96
 ];

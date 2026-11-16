@@ -382,6 +382,9 @@ export default defineSources([
     topics: ["think-aloud", "moderation", "usability testing"],
     access: "paywalled",
     verification: "bibliographic",
+    lastVerifiedAt: "2026-11-16",
+    notes:
+      "Abstract read (OpenAlex) 2026-11-16; full text not read. Argues that usability practice and textbook descriptions of thinking aloud diverge from Ericsson and Simon's model, which most practitioners cite; proposes speech genre as an alternative framework, both for eliciting an undirected, undisturbed report and for interventions the older model does not support.",
   },
   {
     id: "nielsen-thinking-aloud-article",

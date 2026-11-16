@@ -175,7 +175,6 @@ export default defineEntry({
     { target: "design-thinking", type: "complementary-to", note: "Design thinking repackages UCD-like activities with greater emphasis on ideation and innovation strategy." },
     { target: "double-diamond", type: "related-to", note: "The Double Diamond visualises the diverge–converge rhythm of a human-centred process." },
     { target: "usability-testing", type: "applied-in", note: "Usability testing is the canonical evaluation activity in a UCD cycle." },
-    { target: "contextual-inquiry", type: "applied-in", note: "Contextual inquiry is a core method for understanding the context of use." },
     { target: "participatory-design", type: "contrasts-with", note: "Participatory design gives users a decision-making role, whereas classic UCD often treats them as informants and testers." },
   ],
 

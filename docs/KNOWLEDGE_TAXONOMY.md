@@ -204,14 +204,14 @@ Generative and evaluative research — planning, methods, analysis and the ethic
 
 ### Qualitative methods (`qualitative`)
 
-- ◻️ In-depth Interviews — *Method* · `in-depth-interviews`
-- ◻️ Contextual Inquiry — *Method* · `contextual-inquiry`
+- ✅ In-depth Interviews — *Method* · `in-depth-interviews`
+- ✅ Contextual Inquiry — *Method* · `contextual-inquiry`
 - ◻️ Ethnographic Research — *Method* · `ethnographic-research`
 - ◻️ Field Studies — *Method* · `field-studies`
 - ◻️ Diary Studies — *Method* · `diary-studies`
 - ◻️ Focus Groups — *Method* · `focus-groups`
 - ◻️ Observation — *Method* · `observation`
-- ◻️ Think-Aloud Protocol — *Method* · `think-aloud-protocol`
+- ✅ Think-Aloud Protocol — *Method* · `think-aloud-protocol`
 - ◻️ Stakeholder Interviews — *Method* · `stakeholder-interviews`
 - ◻️ Participatory Design — *Method* · `participatory-design`
 
@@ -270,7 +270,7 @@ Generative and evaluative research — planning, methods, analysis and the ethic
 - ✅ Cognitive Walkthrough — *Method* · `cognitive-walkthrough`
 - ✅ Heuristic Evaluation — *Method* · `heuristic-evaluation`
 - ◻️ Comparative Testing — *Method* · `comparative-testing`
-- ◻️ Tree Testing — *Method* · `tree-testing`
+- ✅ Tree Testing — *Method* · `tree-testing`
 - ✅ Card Sorting — *Method* · `card-sorting`
 - ◻️ Concept Testing — *Method* · `concept-testing`
 - ◻️ Wizard of Oz Prototyping — *Method* · `wizard-of-oz`

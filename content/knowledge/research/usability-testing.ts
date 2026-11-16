@@ -260,7 +260,6 @@ export default defineEntry({
   ],
 
   relations: [
-    { target: "think-aloud-protocol", type: "applied-in", note: "Think-aloud is the standard technique for eliciting participants' reasoning in formative usability tests." },
     { target: "heuristic-evaluation", type: "complementary-to", note: "Inspection finds predicted problems cheaply; testing confirms them and reveals problems experts miss." },
     { target: "task-success-rate", type: "measured-by", note: "Task success is the primary effectiveness measure in summative usability tests." },
     { target: "system-usability-scale", type: "measured-by", note: "SUS is the most widely used post-test questionnaire for perceived usability." },

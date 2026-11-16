@@ -16,7 +16,8 @@ import m12 from "./hci-history";
 import m13 from "./interaction-models";
 import m14 from "./interaction-principles";
 import m15 from "./measurement";
-import m16 from "./resources";
+import m16 from "./research-methods";
+import m17 from "./resources";
 
 export const rawSources: Source[] = [
   ...m0,
@@ -35,5 +36,6 @@ export const rawSources: Source[] = [
   ...m13,
   ...m14,
   ...m15,
-  ...m16
+  ...m16,
+  ...m17
 ];

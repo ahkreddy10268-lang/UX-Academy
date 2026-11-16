@@ -1,6 +1,6 @@
 # Progress register
 
-_Last updated: 2026-11-13 (session 42 — `constraints` published; Cycle 1, Batch 1: 2 of 5)_
+_Last updated: 2026-11-16 (session 47 — Cycle 1, Batch 2 complete: four UX research foundations; awaiting review)_
 
 ## State
 
@@ -196,5 +196,15 @@ After that: `ui-design`, `interaction-design-discipline`, `accessibility-concept
 - QA on `fd86db0`: check 22 files / 568 tests; taxonomy pass; build 986/986; e2e 44/44, e2e-redesign 66/66, atlas 36/36, keyboard 45/45, devices 155/155, colour-studio 46/46, axe 0, crawl 0; five-entry review 40/40; page reviews 15, 22, 32 and 33, all passing.
 - Batch 2 is ready to begin once the owner approves; not started.
 
+## Session 47 — Cycle 1, Batch 2: UX research foundations (D-129)
+
+- **Published four entries**, one at a time (research → entry → plate → practice → relations → tests → rendered check): `think-aloud-protocol` (method, qualitative, peer-reviewed), `tree-testing` (method, evaluation, practitioner recommendation), `contextual-inquiry` (method, qualitative, practitioner recommendation), `in-depth-interviews` (method, qualitative, peer-reviewed). Report: docs/BATCH_2_REPORT.md.
+- **Sources.** 21 new records in `content/sources/research-methods.ts` (14 DOI-verified via Crossref, 7 URL-reachable); each note says what was read — 1 research paper, 6 practitioner articles and the originators' encyclopedia chapter read in full, the rest abstracts only. `boren-ramey-2000` note added (abstract read). No claim rests on a source that was not read; unread books are cited as records only.
+- **Visuals.** Four plates in `components/illustrations/concepts/research-sheets.tsx` (registered; plate text ≥ 10.2 px at 390, markers inside the viewBox) and four Level-2 figures (`think-aloud-protocol.protocols`, `tree-testing.readings`, `contextual-inquiry.process`, `in-depth-interviews.claims`). The tree-testing plate computes its success interval with `lib/formulas` `taskSuccess`. e2e-redesign's detailed-diagram count is now 18; its locator was narrowed to the library's results line because the think-aloud plate draws "412 results".
+- **Relation fixes (minimal, reversed directions affecting these topics):** removed `usability-testing → applied-in → think-aloud-protocol` and `user-centred-design → applied-in → contextual-inquiry` (each re-added in the correct direction on the new entry); `human-computer-interaction → contextual-inquiry` changed from `applied-in` to `related-to`, note unchanged.
+- Learning paths and D-129 unchanged. Coverage 97/561 (17.3 %); D-129 targets Visual 87/97, Evidence 95/97; the four new entries meet both.
+- QA (one final build): check 22 files / 576 tests; taxonomy pass; build 994/994; e2e 44/44, e2e-redesign 66/66, atlas 36/36, keyboard 45/45, devices 155/155, colour-studio 46/46, axe 0, crawl 0; per-entry review (6 viewports, axe, plate text, markers, links, keyboard flashcards) 56/56 on the four new entries and the three entries whose relations changed. `card-sorting`, checked as a neighbour, fails only on its two pre-existing out-of-viewBox markers (the logged 78-plate backlog, not touched).
+- Committed locally on `claude/batch1-constraints`; not pushed.
+
 ## Next task (precise)
-Await the project owner's approval of the Batch 1 review (docs/BATCH_1_REVIEW.md) before starting Cycle 1, Batch 2 (think-aloud-protocol, tree-testing, contextual-inquiry, in-depth-interviews), one entry at a time — each complete on Explanation, Practice and Editorial, meeting its Visual and Evidence targets, with a plate, links from existing entries (plan § 7.4) and `docs:generate` after each — then Batch 3 (UX writing foundations) and the cycle-1 balance review (plan § 9.3).
+Await the project owner's review of Cycle 1, Batch 2 (docs/BATCH_2_REPORT.md). Do not start Batch 3 or push until instructed.

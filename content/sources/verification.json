@@ -54,6 +54,14 @@
     "registeredContainer": "Proceedings of the SIGCHI Conference on Human Factors in Computing Systems",
     "similarity": 1
   },
+  "alhadreti-mayhew-2018": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-16",
+    "registeredTitle": "Rethinking Thinking Aloud: A Comparison of Three Think-Aloud Protocols",
+    "registeredYear": 2018,
+    "registeredContainer": "Proceedings of the 2018 CHI Conference on Human Factors in Computing Systems",
+    "similarity": 1
+  },
   "amershi-et-al-2019": {
     "status": "doi-verified",
     "checkedAt": "2026-11-04",
@@ -204,6 +212,14 @@
     "registeredContainer": "Lecture Notes in Computer Science",
     "similarity": 1
   },
+  "beyer-holtzblatt-1995": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-16",
+    "registeredTitle": "Apprenticing with the customer",
+    "registeredYear": 1995,
+    "registeredContainer": "Communications of the ACM",
+    "similarity": 1
+  },
   "bi-li-zhai-2013": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",
@@ -242,6 +258,14 @@
     "registeredTitle": "Thinking aloud: reconciling theory and practice",
     "registeredYear": 2000,
     "registeredContainer": "IEEE Transactions on Professional Communication",
+    "similarity": 1
+  },
+  "braun-clarke-2006": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-16",
+    "registeredTitle": "Using thematic analysis in psychology",
+    "registeredYear": 2006,
+    "registeredContainer": "Qualitative Research in Psychology",
     "similarity": 1
   },
   "brooke-1996": {
@@ -556,6 +580,14 @@
     "registeredContainer": "Proceedings of the December 9-11, 1968, fall joint computer conference, part I on - AFIPS '68 (Fall, part I)",
     "similarity": 1
   },
+  "ericsson-simon-1980": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-16",
+    "registeredTitle": "Verbal reports as data.",
+    "registeredYear": 1980,
+    "registeredContainer": "Psychological Review",
+    "similarity": 1
+  },
   "etsi-en-301-549-v321": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
@@ -567,6 +599,14 @@
     "registeredTitle": "Diagnosing Sample Ratio Mismatch in Online Controlled Experiments: A Taxonomy and Rules of Thumb for Practitioners",
     "registeredYear": 2019,
     "registeredContainer": "Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery &amp; Data Mining",
+    "similarity": 1
+  },
+  "fan-2019-verbalizations": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-16",
+    "registeredTitle": "Concurrent Think-Aloud Verbalizations and Usability Problems",
+    "registeredYear": 2019,
+    "registeredContainer": "ACM Transactions on Computer-Human Interaction",
     "similarity": 1
   },
   "faulkner-2003": {
@@ -619,6 +659,14 @@
     "registeredTitle": "S-R compatibility: spatial characteristics of stimulus and response codes.",
     "registeredYear": 1953,
     "registeredContainer": "Journal of Experimental Psychology",
+    "similarity": 1
+  },
+  "flanagan-1954": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-16",
+    "registeredTitle": "The critical incident technique.",
+    "registeredYear": 1954,
+    "registeredContainer": "Psychological Bulletin",
     "similarity": 1
   },
   "fluent-2": {
@@ -812,6 +860,14 @@
     "registeredContainer": "IEEE Annals of the History of Computing",
     "similarity": 1
   },
+  "guest-2006-saturation": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-16",
+    "registeredTitle": "How Many Interviews Are Enough?: An Experiment with Data Saturation and Variability",
+    "registeredYear": 2006,
+    "registeredContainer": "Field Methods",
+    "similarity": 1
+  },
   "halasz-moran-1983": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",
@@ -915,6 +971,22 @@
     "registeredContainer": "Journal of Educational Statistics",
     "similarity": 1
   },
+  "hennink-kaiser-2022": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-16",
+    "registeredTitle": "Sample sizes for saturation in qualitative research: A systematic review of empirical tests",
+    "registeredYear": 2022,
+    "registeredContainer": "Social Science &amp; Medicine",
+    "similarity": 1
+  },
+  "hertzum-2009-thinking-aloud": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-16",
+    "registeredTitle": "Scrutinising usability evaluation: does thinking aloud affect behaviour and mental workload?",
+    "registeredYear": 2009,
+    "registeredContainer": "Behaviour &amp; Information Technology",
+    "similarity": 1
+  },
   "hertzum-jacobsen-2001": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",
@@ -953,6 +1025,11 @@
     "registeredYear": 2010,
     "registeredContainer": "Computers in Human Behavior",
     "similarity": 1
+  },
+  "holtzblatt-beyer-2014-contextual-design": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
+    "httpStatus": 200
   },
   "homeoffice-ucd-manual": {
     "status": "url-reachable",
@@ -1336,6 +1413,14 @@
     "registeredContainer": "Educational Psychologist",
     "similarity": 1
   },
+  "mcdonald-2012-think-aloud-survey": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-16",
+    "registeredTitle": "Exploring Think-Alouds in Usability Testing: An International Survey",
+    "registeredYear": 2012,
+    "registeredContainer": "IEEE Transactions on Professional Communication",
+    "similarity": 1
+  },
   "mcgrenere-ho-2000": {
     "status": "url-unreachable",
     "checkedAt": "2026-11-03",
@@ -1563,6 +1648,14 @@
     "checkedAt": "2026-11-03",
     "httpStatus": 200
   },
+  "nisbett-wilson-1977": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-16",
+    "registeredTitle": "Telling more than we can know: Verbal reports on mental processes.",
+    "registeredYear": 1977,
+    "registeredContainer": "Psychological Review",
+    "similarity": 1
+  },
   "nist-hcd": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
@@ -1576,6 +1669,11 @@
   "nng-consistency-standards": {
     "status": "url-reachable",
     "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "nng-contextual-inquiry": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
     "httpStatus": 200
   },
   "nng-discoverable-mobile-navigation": {
@@ -1643,9 +1741,24 @@
     "checkedAt": "2026-11-13",
     "httpStatus": 200
   },
+  "nng-tree-testing": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
+    "httpStatus": 200
+  },
+  "nng-tree-testing-results": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
+    "httpStatus": 200
+  },
   "nng-user-control-freedom": {
     "status": "url-reachable",
     "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "nng-user-interviews": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
     "httpStatus": 200
   },
   "nng-user-mistakes": {
@@ -1720,11 +1833,24 @@
     "checkedAt": "2026-11-03",
     "httpStatus": 200
   },
+  "obrien-2009-tree-testing": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
+    "httpStatus": 200
+  },
   "oliver-1983": {
     "status": "doi-verified",
     "checkedAt": "2026-11-05",
     "registeredTitle": "Social Work with Disabled People",
     "registeredYear": 1983,
+    "similarity": 1
+  },
+  "olmsted-hawala-2010": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-16",
+    "registeredTitle": "Think-aloud protocols: a comparison of three think-aloud protocols for use in testing data-dissemination web sites for usability",
+    "registeredYear": 2010,
+    "registeredContainer": "Proceedings of the SIGCHI Conference on Human Factors in Computing Systems",
     "similarity": 1
   },
   "open-ui": {
@@ -2088,6 +2214,11 @@
     "registeredContainer": "Proceedings of the SIGCHI conference on Human Factors in Computing Systems",
     "similarity": 1
   },
+  "spencer-2003-card-based-classification": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
+    "httpStatus": 200
+  },
   "spool-schroeder-2001": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",
@@ -2257,6 +2388,14 @@
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
     "httpStatus": 200
+  },
+  "van-den-haak-2003": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-16",
+    "registeredTitle": "Retrospective vs. concurrent think-aloud protocols: Testing the usability of an online library catalogue",
+    "registeredYear": 2003,
+    "registeredContainer": "Behaviour &amp; Information Technology",
+    "similarity": 1
   },
   "van-der-meij-carroll-1998": {
     "status": "doi-verified",
@@ -2468,6 +2607,14 @@
     "status": "url-reachable",
     "checkedAt": "2026-11-05",
     "httpStatus": 200
+  },
+  "wixon-1990-contextual-design": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-16",
+    "registeredTitle": "Contextual design: an emergent view of system design",
+    "registeredYear": 1990,
+    "registeredContainer": "Proceedings of the SIGCHI conference on Human factors in computing systems Empowering people - CHI '90",
+    "similarity": 1
   },
   "wolfe-horowitz-2004": {
     "status": "doi-verified",

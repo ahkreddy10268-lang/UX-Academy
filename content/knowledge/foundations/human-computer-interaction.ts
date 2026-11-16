@@ -225,7 +225,7 @@ export default defineEntry({
     { target: "activity-theory", type: "complementary-to", note: "Activity theory frames interaction as part of goal-directed activity mediated by tools and community, an alternative to the individual-processor view." },
     { target: "situated-action", type: "contrasts-with", note: "Situated action challenges plan-based accounts of behaviour, a contrast with the cognitive-modelling tradition." },
     { target: "embodied-interaction", type: "related-to", note: "Embodied interaction grounds meaning in physical and social practice, a strand of experience-oriented HCI." },
-    { target: "contextual-inquiry", type: "applied-in", note: "Contextual inquiry is a field method for studying work in its setting, used in the work-oriented tradition." },
+    { target: "contextual-inquiry", type: "related-to", note: "Contextual inquiry is a field method for studying work in its setting, used in the work-oriented tradition." },
     { target: "participatory-design", type: "applied-in", note: "Participatory design involves the people affected in design decisions, a tradition associated with second-wave HCI." },
     { target: "ethnographic-research", type: "applied-in", note: "Ethnographic research provides the observational accounts behind situated and distributed theories of interaction." },
     { target: "accessibility-concept", type: "related-to", note: "Accessibility asks whether people with a range of abilities can use a system, a standing HCI concern." },

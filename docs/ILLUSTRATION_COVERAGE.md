@@ -5,12 +5,12 @@
 
 | Measure | Count |
 |---|---|
-| Registered Level-1 plates | 115 |
-| Published entries with a plate | 93 / 93 |
+| Registered Level-1 plates | 119 |
+| Published entries with a plate | 97 / 97 |
 | Subject plates | 20 / 20 |
-| Plates in the current system (dark technical or instructional sheet) | 113 |
+| Plates in the current system (dark technical or instructional sheet) | 117 |
 | Plates still in the earlier pastel style | 2 |
-| Level-2 figures | 25 |
+| Level-2 figures | 29 |
 | Level-3 explorers (on plates) | 9 |
 | Labs linked from entries | 23 |
 | Animated plates | 12 |
@@ -24,8 +24,8 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 | 1 | UX Concept Illustrations | 24 | 23 | 10 | 13 | 24 / 0 / 0 | developing | `fitts-law`, `hick-hyman-law`, `cognitive-load-theory`, `millers-law`, `jakobs-law`, `mental-models`, `affordances`, `peak-end-rule`, `steering-law`, `teslers-law`, `serial-position-effect`, `von-restorff-effect`, `aesthetic-usability-effect`, `choice-overload`, `working-memory-model`, `recognition-over-recall`, `user-experience`, `human-computer-interaction`, `consistency-principle`, `help-and-documentation` |
 | 2 | UI Anatomy Illustrations | 2 | 2 | 1 | 0 | 2 / 0 / 0 | mature | `ui-design` |
 | 3 | UX Process Illustrations | 7 | 7 | 2 | 0 | 7 / 0 / 0 | mature | `double-diamond`, `user-centred-design` |
-| 4 | User Research Illustrations | 3 | 3 | 0 | 0 | 3 / 0 / 0 | developing | `card-sorting`, `jobs-to-be-done` |
-| 5 | Information Architecture Illustrations | 2 | 2 | 2 | 0 | 2 / 0 / 0 | mature | `information-architecture` |
+| 4 | User Research Illustrations | 6 | 6 | 3 | 0 | 6 / 0 / 0 | developing | `card-sorting`, `jobs-to-be-done`, `think-aloud-protocol`, `contextual-inquiry`, `in-depth-interviews` |
+| 5 | Information Architecture Illustrations | 3 | 3 | 3 | 0 | 3 / 0 / 0 | mature | `information-architecture`, `tree-testing` |
 | 6 | Interaction Design Illustrations | 18 | 18 | 3 | 5 | 18 / 0 / 0 | developing | `signifiers`, `doherty-threshold`, `gulfs-of-execution-and-evaluation`, `interaction-design-discipline`, `progressive-disclosure`, `visibility-of-system-status`, `user-control-and-freedom`, `error-prevention`, `mapping`, `flexibility-and-efficiency-of-use`, `error-recovery`, `feedback-principle`, `constraints`, `direct-manipulation`, `interaction-states`, `discoverability` |
 | 7 | Wireframe & Prototyping Illustrations | 1 | 1 | 0 | 0 | 1 / 0 / 0 | developing | — |
 | 8 | Visual Design & Composition Illustrations | 8 | 8 | 2 | 6 | 8 / 0 / 0 | developing | `gestalt-principles`, `colour-contrast-ratio`, `visual-hierarchy`, `modular-type-scale`, `aesthetic-and-minimalist-design` |
@@ -39,9 +39,9 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 | Method | L1 plates (primary) | L2 figures |
 |---|---:|---:|
 | Conceptual & Metaphorical | 18 | 7 |
-| Process & Sequential | 23 | 8 |
+| Process & Sequential | 26 | 9 |
 | Relationship & Systems | 19 | 5 |
-| Comparison & Contrast | 36 | 4 |
+| Comparison & Contrast | 37 | 7 |
 | Hierarchy & Classification | 19 | 1 |
 
 ## Level 1 audit (every registered plate)
@@ -144,6 +144,10 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 | `direct-manipulation` | entry | interaction-design | comparison | current · instructional sheet | retain | Sheet (Cycle 1 B1): one move — q3.pdf into Archive — as a typed command checked with a second command, as a drag onto a highlighted folder, as an immediate result with Undo, and as a 'Move to…' menu that needs no dragging (WCAG 2.2 SC 2.5.7). | 1 | — |
 | `interaction-states` | entry | interaction-design | comparison | current · instructional sheet | retain | Sheet (Cycle 1 B1): one control in eight states in three groups — rest, hover, focus visible and pressed (transient interaction and navigation); on (persistent value); disabled, busy and invalid (system-controlled) — each with a non-colour cue. | 1 | — |
 | `discoverability` | entry | interaction-design | comparison | current · instructional sheet | retain | Sheet (Cycle 1 B1): hidden versus visible navigation on desktop (unlabelled icon at the edge of a wide header vs labelled links) and on a phone (unlabelled arrow beside the logo vs visible tabs with a labelled More), each with a tick or cross. | 0 | — |
+| `think-aloud-protocol` | entry | user-research | process | current · instructional sheet | retain | Sheet (Cycle 1 B2): an illustrative library-catalogue session — the interface with the unnoticed Format filter, a time-stamped transcript (speech, a silence, the moderator's only prompt), and a two-lane timeline of what the participant does and says on one clock. | 1 | — |
+| `tree-testing` | entry | information-architecture | process | current · instructional sheet | retain | Sheet (Cycle 1 B2): one illustrative task — a goal that avoids the labels, the text-only tree with one participant's indirect path to the chosen leaf — and the task's results: success with its adjusted-Wald interval (lib/formulas taskSuccess), directness and first clicks. | 1 | — |
+| `contextual-inquiry` | entry | user-research | process | current · instructional sheet | retain | Sheet (Cycle 1 B2): an illustrative clinic-desk session — the booking system with a sticky-note workaround, field notes separating seen, asked, interpreted (struck when corrected) and said, and the watch–ask–interpret–check rhythm with the four principles. | 1 | — |
+| `in-depth-interviews` | entry | user-research | comparison | current · instructional sheet | retain | Sheet (Cycle 1 B2): an illustrative study — an interview guide from a goal with nested follow-ups, a hypothetical question (cross) against a specific-episode question (tick) with their answers, and three quotes from different interviews bracketed into one theme. | 1 | — |
 | `foundations` | subject | ux-concept | relationship | current · instructional sheet | retain | Sheet (S25, subject): interface inside the experience band, an approach loop and a history line. | 0 | — |
 | `laws-effects` | subject | ux-concept | conceptual | current · instructional sheet | retain | Sheet (S25, subject): six tiles for the domain's families, ending with evidence labels. | 0 | — |
 | `psychology` | subject | ux-concept | conceptual | current · instructional sheet | retain | Sheet (S25, subject): memory slots, a cue–action–outcome loop, pop-out search and a reach arc. | 0 | — |
@@ -166,11 +170,15 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 
 ## Level 2 figures
 
-25 of 25 Level-2 figures are drawn in a current language (sheet or viz).
+29 of 29 Level-2 figures are drawn in a current language (sheet or viz).
 
 | Figure | Type | Method | Language | Verification |
 |---|---|---|---|---|
 | `interaction-states.dimensions` | system | process | viz | content-checked |
+| `think-aloud-protocol.protocols` | comparison | comparison | sheet | content-checked |
+| `tree-testing.readings` | decision | comparison | sheet | content-checked |
+| `contextual-inquiry.process` | process | process | viz | content-checked |
+| `in-depth-interviews.claims` | comparison | comparison | sheet | content-checked |
 | `direct-manipulation.space` | conceptual | relationship | sheet | content-checked |
 | `fitts-law.anatomy` | formula | conceptual | sheet | content-checked |
 | `fitts-law.placement` | comparison | comparison | sheet | illustrative |
@@ -296,6 +304,10 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 | `direct-manipulation` | Four interface panels showing one task — moving the file q3.pdf into the Archive folder — done four ways. Top left, command: a terminal where the person types 'mv q3.pdf Archive', then has to type 'ls Archive' to see that q3.pdf is there; neither the file nor the folder is ever shown. Top right, direct: the file and the folder are both visible; a pointer drags the file from its old place, shown as a dashed outline, onto the Archive folder, which is highlighted while the file is over it. Bottom left, result: the Archive folder now lists q3.pdf, and a message reads 'Moved to Archive' with an Undo action. Bottom right, without dragging: the file's row has a 'Move to…' button that opens a menu listing Drafts and Archive; Archive has a keyboard focus ring and a pointer is about to click it, so the same move can be done with a click, a tap or the keyboard. |
 | `interaction-states` | Eight cells in two rows, each showing one control in one state. Top row, transient interaction and navigation states: 1, a Save button at rest with a plain border; 2, the same button hovered, with a light tint and a pointer over it; 3, the button with keyboard focus after the Tab key, shown by a ring drawn outside it, above a Tab key; 4, the button pressed, with a darker fill, a stronger border and its label shifted slightly down, with the pointer on it. Bottom row: 5, a persistent value — a Bold toggle that is on, with a tinted fill, a coloured border and a tick before the label; then three system-controlled conditions: 6, a disabled Save button with a dashed border, a sunken fill and faded text, with a pointer over it that changes nothing; 7, a busy button reading 'Saving…' beside a spinner; 8, an email field holding 'ana@' with a red border, a cross icon inside it and the message 'Add domain' below. |
 | `discoverability` | Four panels contrasting navigation that is hard to discover with navigation that is easy to discover. Top row, a desktop web page. Panel 1, marked with a cross: a wide header with only a logo and, at its far right edge, a small unlabelled three-line menu icon; nothing says what sections exist. Panel 2, marked with a tick: the same header showing the sections as labelled links — News, Sport, Arts. Bottom row, the top of a phone screen. Panel 3, marked with a cross: a logo with a small unlabelled down-arrow right beside it, so the arrow reads as part of the logo. Panel 4, marked with a tick: a row of tabs with News and Sport visible and a labelled More with a down-arrow for the remaining sections. |
+| `think-aloud-protocol` | An illustrative think-aloud session on a library catalogue. Top left, the catalogue: a search field containing 'climate', the line '412 results', a filter column with 'Format' and 'Year', and a list of results with a pointer over them. Top right, a time-stamped transcript: at 0:41 the participant (P) says 'Try climate…'; at 0:48, '412? Too many.'; from 0:55 there is a 9-second silence; at 1:04 the moderator (M) says only 'Keep talking.'; at 1:07 the participant says 'No way to pick just books?' — while the Format filter, which does exactly that, is on screen. Bottom, a timeline from 0:40 to 1:10 with two lanes on one clock: 'Does' (type, scroll, hover) and 'Says' (speech marked P, a dashed silent gap, the moderator's short prompt marked M, speech again). |
+| `tree-testing` | An illustrative tree test of a council website. Top left, a task card: 'Your rubbish wasn't taken this week. Find out which day it should be picked up.' Below it, the tree as plain text with no design or search: Your council (closed), Environment (opened, then left — marked 'back'), Home & property (open), Waste & recycling (open) and the leaf Bin days, chosen as the answer and marked with a tick. Right, the results for this task from 50 participants: success 34 of 50 (68 %) with a 95 % interval from 54 % to 79 % drawn across the bar; direct success 21 of 50 (42 %); and first clicks — Home & property 58 %, Environment 30 %, Your council 12 %. |
+| `contextual-inquiry` | An illustrative contextual inquiry at a clinic reception desk. Top left, the booking system on the receptionist's monitor: a week grid from Monday to Friday with one slot selected and a pointer on it, and a yellow sticky note stuck to the screen reading 'Dr Shah — no Fri pm'. Top right, the researcher's field notes in rows: 'saw' — checks a note; 'asked' — 'What's on it?'; 'guess' — 'No rota data?', struck through; 'she' — 'Rota's wrong'; and the conclusion '→ data trust'. Bottom, the rhythm of the session — Watch, Ask, Interpret, Check, with a dashed arrow back to Watch — and four principles as labels: Context, Partnership, Interpretation, Focus. |
+| `in-depth-interviews` | An illustrative interview study about splitting costs with friends. Top left, an interview guide: a goal — how groups split costs — then 1 Warm-up; 2 'Last time you split…', with nested follow-ups 'Who paid first?' and 'What then?'; and 3 Probes, 'Tell me more'. Top right, two questions compared. Marked with a cross: 'Would you use auto-split?' answered 'Yes, probably.' Marked with a tick: 'Tell me about the last time you split a bill' answered 'I paid. Two took a week to pay me.' Bottom, three quotes from different interviews — 'I hate reminding them', 'took a week to pay', 'I just let it go' — bracketed together into one theme: 'Chasing friends for money is awkward'. |
 | `foundations` | Nested frames read from the inside out. At the centre, an interface: a booking screen with a title, a field and a button, the part UI design shapes. Around it, a band of before, during and after touchpoints, the whole experience UX design is concerned with. A loop arrow around the band stands for design approaches that put people's needs and evaluation at the centre. Along the bottom, a short timeline marks that the field has a history in design and human-computer interaction. |
 | `laws-effects` | Six tiles, one for each family of regularities in this subject. Human performance laws: a pointer moving a distance D to a target of width W. Popular laws and rules of thumb: a card stamped 'rule of thumb'. Memory and attention: a list in which one item stands out. Gestalt grouping: dots grouped by spacing. Decision-making biases: two options, one marked as the default. A sixth tile shows evidence labels, because these items range from measured laws to popular claims. |
 | `psychology` | Four panels for the four strands of the subject, each shown through what it explains in an interface rather than as a picture of a head. Cognitive psychology, memory and learning: four memory slots, three filled. Behavioural science, motivation and emotion: a loop from a cue to an action to an outcome that feeds back. Visual cognition: a field of outlined shapes in which one filled shape stands out at once (in the hero it pulses, as attention is captured). Human factors and ergonomics: a control panel with a large stop button within reach and a reach arc drawn around it. |
