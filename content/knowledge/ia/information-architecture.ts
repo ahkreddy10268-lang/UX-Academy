@@ -184,6 +184,7 @@ export default defineEntry({
     { target: "taxonomies", type: "related-to", note: "Taxonomies and controlled vocabularies are the organisation system made explicit." },
     { target: "mental-models", type: "derived-from", note: "Structures succeed when they match how users think the content is organised." },
     { target: "recognition-over-recall", type: "complementary-to", note: "Visible, well-labelled navigation lets people recognise their path rather than recall where things are." },
+    { target: "discoverability", type: "related-to", note: "Whether people notice the navigation and features at all; hidden navigation reduced use in NN/g's study." },
   ],
 
   exercises: [

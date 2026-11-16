@@ -181,6 +181,7 @@ export default defineEntry({
     { target: "colour-contrast-ratio", type: "related-to", note: "Contrast creates emphasis, but accessibility thresholds bound how faint low-emphasis text may become." },
     { target: "cognitive-load-theory", type: "influences", note: "Clear hierarchy reduces extraneous load by sparing users the work of deciding what matters." },
     { target: "fitts-law", type: "complementary-to", note: "Hierarchy helps users find a target; Fitts's law governs how quickly they can then reach it." },
+    { target: "discoverability", type: "related-to", note: "Salience decides what people notice first, the first step of discovering a function." },
   ],
 
   lab: "hierarchy-lab",

@@ -10,6 +10,5 @@
 import type { ContentStatus } from "../lib/content/schema";
 
 export const researchLedger: Record<string, { status: Extract<ContentStatus, "research-pending" | "research-completed">; since: string; note: string }> = {
-  // Cycle 1, Batch 1 — Interaction feedback & state (D-129). Sources verified 2026-11-12 (content/sources/interaction-principles.ts + registry).
-  discoverability: { status: "research-completed", since: "2026-11-12", note: "Norman 2013 (discoverability and understanding); Pernice & Budiu 2016 hidden-navigation study (n = 179) and follow-up; Grossman et al. 2009 learnability survey." },
+  // Cycle 1, Batch 1 — Interaction feedback & state (D-129): all five topics published by 2026-11-16; none pending.
 };

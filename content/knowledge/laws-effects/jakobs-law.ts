@@ -169,6 +169,7 @@ export default defineEntry({
     { target: "signifiers", type: "related-to", note: "Conventions act as learned signifiers: users read meaning into familiar placements and icons." },
     { target: "navigation-patterns", type: "applied-in", note: "Navigation is where convention-following has the most direct effect on findability." },
     { target: "deceptive-patterns", type: "contrasts-with", note: "Some deceptive patterns deliberately exploit conventions, such as swapping the expected position of confirm and cancel." },
+    { target: "discoverability", type: "related-to", note: "Conventional placement is where people look first, so it makes functions easier to discover." },
   ],
 
   exercises: [

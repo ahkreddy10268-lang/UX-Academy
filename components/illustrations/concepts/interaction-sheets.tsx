@@ -1,6 +1,6 @@
 /**
  * Cycle 1, Batch 1 plates (D-129): interaction principles of feedback,
- * constraints, direct manipulation and interaction states. Instructional sheets (D-089); explanations live in each plate's
+ * constraints, direct manipulation, interaction states and discoverability. Instructional sheets (D-089); explanations live in each plate's
  * figure key (D-101), never as microtext in the drawing.
  */
 import type { IllustrationEntry } from "../illustration-types";
@@ -427,5 +427,113 @@ export const interactionStatesPlate: IllustrationEntry = {
   ),
 };
 
-const plates: IllustrationEntry[] = [feedbackPrinciplePlate, constraintsPlate, directManipulationPlate, interactionStatesPlate];
+/* ------------------------------------------------------------------ */
+/* Discoverability: hidden vs visible navigation, desktop and phone     */
+/* ------------------------------------------------------------------ */
+function Hamburger({ x, y }: { x: number; y: number }) {
+  return (
+    <g>
+      {[0, 4, 8].map((d) => (
+        <line key={d} x1={x} y1={y + d} x2={x + 10} y2={y + d} stroke={S.ink3} strokeWidth="1.3" {...hair} />
+      ))}
+    </g>
+  );
+}
+
+/** A phone cropped at the panel's lower edge: rounded top, open bottom. */
+function PhoneTop({ x, y, w, bottom }: { x: number; y: number; w: number; bottom: number }) {
+  return <path d={`M${x} ${bottom} V${y + 12} Q${x} ${y} ${x + 12} ${y} H${x + w - 12} Q${x + w} ${y} ${x + w} ${y + 12} V${bottom}`} fill={S.surface} stroke={S.ruleStrong} strokeWidth="1.1" {...hair} />;
+}
+
+/** Placeholder page content: a picture block and text lines. */
+function PageBody({ x, y, w }: { x: number; y: number; w: number }) {
+  return (
+    <g>
+      <rect x={x} y={y} width={w} height={22} rx={3} fill={S.sunken} />
+      <TextBar x={x} y={y + 32} w={w * 0.9} strong />
+      <TextBar x={x} y={y + 42} w={w * 0.75} />
+      <TextBar x={x} y={y + 52} w={w * 0.82} />
+    </g>
+  );
+}
+
+export const discoverabilityPlate: IllustrationEntry = {
+  slug: "discoverability",
+  title: "Discoverability plate",
+  canvas: "sheet",
+  description:
+    "Four panels contrasting navigation that is hard to discover with navigation that is easy to discover. Top row, a desktop web page. Panel 1, marked with a cross: a wide header with only a logo and, at its far right edge, a small unlabelled three-line menu icon; nothing says what sections exist. Panel 2, marked with a tick: the same header showing the sections as labelled links — News, Sport, Arts. Bottom row, the top of a phone screen. Panel 3, marked with a cross: a logo with a small unlabelled down-arrow right beside it, so the arrow reads as part of the logo. Panel 4, marked with a tick: a row of tabs with News and Sport visible and a labelled More with a down-arrow for the remaining sections.",
+  key: [
+    { n: "1", label: "Hidden, desktop", detail: "all navigation behind a small unlabelled icon at the edge of a wide header — easy to overlook, and it says nothing about what is inside" },
+    { n: "2", label: "Visible, desktop", detail: "the main sections as labelled links: seen at a glance, and each label predicts where it leads" },
+    { n: "3", label: "Hidden, phone", detail: "an unlabelled arrow beside the logo looks like part of it, so even on a small screen the navigation can be missed" },
+    { n: "4", label: "Combination, phone", detail: "the most-used sections visible and the rest behind a labelled More — a trade-off for small screens" },
+  ],
+  Art: ({ detail }) => (
+    <g>
+      {/* 1 desktop, hidden */}
+      <Panel x={8} y={8} />
+      <rect x={20} y={30} width={162} height={26} rx={4} fill={S.soft} stroke={S.rule} strokeWidth="0.8" {...hair} />
+      <TextBar x={28} y={40} w={30} strong />
+      <Hamburger x={164} y={39} />
+      <PageBody x={28} y={68} w={146} />
+      <Verdict x={174} y={20} ok={false} />
+
+      {/* 2 desktop, visible */}
+      <Panel x={206} y={8} />
+      <rect x={218} y={30} width={162} height={26} rx={4} fill={S.soft} stroke={S.rule} strokeWidth="0.8" {...hair} />
+      <TextBar x={226} y={40} w={24} strong />
+      <UiText x={260} y={48}>
+        News
+      </UiText>
+      <UiText x={300} y={48}>
+        Sport
+      </UiText>
+      <UiText x={341} y={48}>
+        Arts
+      </UiText>
+      <PageBody x={226} y={68} w={146} />
+      <Verdict x={372} y={20} ok />
+
+      {/* 3 phone, hidden */}
+      <Panel x={8} y={158} />
+      <PhoneTop x={31} y={184} w={140} bottom={290} />
+      <TextBar x={45} y={200} w={34} strong />
+      <path d="M85 197 l4 4 l4 -4" fill="none" stroke={S.ink3} strokeWidth="1.2" {...hair} />
+      <PageBody x={45} y={214} w={116} />
+      <Verdict x={174} y={172} ok={false} />
+
+      {/* 4 phone, combination */}
+      <Panel x={206} y={158} />
+      <PhoneTop x={229} y={184} w={140} bottom={290} />
+      <TextBar x={243} y={196} w={34} strong />
+      <line x1={235} y1={204} x2={363} y2={204} stroke={S.rule} strokeWidth="0.8" {...hair} />
+      <UiText x={241} y={221}>
+        News
+      </UiText>
+      <UiText x={281} y={221}>
+        Sport
+      </UiText>
+      <UiText x={321} y={221} weight={600}>
+        More
+      </UiText>
+      <path d="M357 214 l3 3 l3 -3" fill="none" stroke={S.ink} strokeWidth="1.2" {...hair} />
+      <line x1={241} y1={227} x2={272} y2={227} stroke={S.accent} strokeWidth="2" {...hair} />
+      <PageBody x={243} y={234} w={116} />
+      <Verdict x={372} y={172} ok />
+
+      {detail && (
+        <>
+          {/* r = 11: kept ≥ 11 units from the viewBox edge so no marker is clipped */}
+          <Marker x={12} y={12} n={1} />
+          <Marker x={210} y={12} n={2} />
+          <Marker x={12} y={162} n={3} />
+          <Marker x={210} y={162} n={4} />
+        </>
+      )}
+    </g>
+  ),
+};
+
+const plates: IllustrationEntry[] = [feedbackPrinciplePlate, constraintsPlate, directManipulationPlate, interactionStatesPlate, discoverabilityPlate];
 export default plates;

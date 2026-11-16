@@ -790,7 +790,7 @@
   },
   "grossman-2009-learnability": {
     "status": "doi-verified",
-    "checkedAt": "2026-11-12",
+    "checkedAt": "2026-11-16",
     "registeredTitle": "A survey of software learnability: metrics, methodologies and guidelines",
     "registeredYear": 2009,
     "registeredContainer": "Proceedings of the SIGCHI Conference on Human Factors in Computing Systems",
@@ -1580,7 +1580,7 @@
   },
   "nng-discoverable-mobile-navigation": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-12",
+    "checkedAt": "2026-11-16",
     "httpStatus": 200
   },
   "nng-empty-states": {
@@ -1610,7 +1610,7 @@
   },
   "nng-hidden-navigation": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-12",
+    "checkedAt": "2026-11-16",
     "httpStatus": 200
   },
   "nng-match-real-world": {

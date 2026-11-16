@@ -169,6 +169,7 @@ export default defineEntry({
     { target: "loading-states", type: "applied-in", note: "Loading states are where status visibility is designed for content that is not ready yet." },
     { target: "interaction-states", type: "applied-in", note: "Pending, success and error states are how components make their status visible." },
     { target: "error-recovery", type: "complementary-to", note: "Visible status reveals that something failed; recovery explains what to do next." },
+    { target: "discoverability", type: "contrasts-with", note: "Status tells people what the system is doing; discoverability tells them what they can do." },
   ],
 
   lab: "feedback-lab",

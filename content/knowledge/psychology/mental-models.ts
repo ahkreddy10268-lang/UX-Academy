@@ -176,6 +176,7 @@ export default defineEntry({
     { target: "signifiers", type: "applied-in", note: "Signifiers are part of the system image through which users form their models." },
     { target: "card-sorting", type: "measured-by", note: "Card sorting reveals users' mental models of how content is organised." },
     { target: "think-aloud-protocol", type: "measured-by", note: "Think-aloud sessions expose users' expectations and reasoning during use." },
+    { target: "discoverability", type: "related-to", note: "People look for functions where their model of the product, and of similar products, tells them to." },
   ],
 
   exercises: [

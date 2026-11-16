@@ -343,7 +343,7 @@ How people act on interfaces and how interfaces respond.
 
 ### Interaction principles (`principles`)
 
-- ◻️ Discoverability — *Principle* · `discoverability`
+- ✅ Discoverability — *Principle* · `discoverability`
 - ✅ Visibility of System Status — *Principle* · `visibility-of-system-status`
 - ✅ Direct Manipulation — *Principle* · `direct-manipulation`
 - ✅ Progressive Disclosure — *Principle* · `progressive-disclosure`
