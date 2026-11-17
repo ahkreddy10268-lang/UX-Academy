@@ -297,7 +297,7 @@ export default defineEntry({
     { source: "shneiderman-1987", role: "primary", note: "First book edition presenting the rules." },
     { source: "shneiderman-2016", role: "primary", locator: "Section 3.3.4", note: "Sixth-edition wording used in this entry." },
     { source: "shneiderman-1983", role: "primary", note: "Direct manipulation — the paradigm behind feedback, reversal and control." },
-    { source: "shneiderman-golden-rules-page", role: "explanatory", note: "Author's web summary (could not be re-checked on 2026-11-03)." },
+    { source: "shneiderman-golden-rules-page", role: "explanatory", note: "Author's web summary; read in full 2026-11-17 and matches the rule wording used here." },
     { source: "miller-1956", role: "further", note: "Historical basis of the memory-load rationale." },
     { source: "cowan-2001", role: "further", note: "Modern capacity estimate for working memory." },
     { source: "shneiderman-2020", role: "further", note: "Human-centred AI: combining high automation with high human control." },
@@ -319,5 +319,5 @@ export default defineEntry({
     sources: true,
     activities: true,
   },
-  lastVerifiedAt: "2026-11-03",
+  lastVerifiedAt: "2026-11-17",
 });

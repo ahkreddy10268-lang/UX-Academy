@@ -23,7 +23,7 @@
 | Comparisons | 11 |
 | Learning paths | 16 |
 | Glossary terms | 114 |
-| Sources | 492 |
+| Sources | 493 |
 
 ## By domain
 
@@ -137,13 +137,13 @@ Every topic has exactly one status, derived from the content: an entry's own sta
 | Domain | Topics | Published | Research done | Explanation | Evidence | Practice | Visual | Editorial |
 |---|---:|---:|---:|---|---|---|---|---|
 | UX & UI Fundamentals | 21 | 6 | 6 | 6 / 6 | 6 / 6 | 5 / 6 | 1 / 6 | 6 / 6 |
-| UX Laws & Cognitive Effects | 46 | 13 | 13 | 13 / 13 | 13 / 13 | 8 / 13 | 2 / 13 | 12 / 13 |
+| UX Laws & Cognitive Effects | 46 | 13 | 13 | 13 / 13 | 13 / 13 | 8 / 13 | 2 / 13 | 13 / 13 |
 | Cognition, Behaviour & Human Factors | 59 | 7 | 7 | 7 / 7 | 7 / 7 | 4 / 7 | 1 / 7 | 7 / 7 |
-| Principles & Heuristics | 12 | 7 | 7 | 7 / 7 | 2 / 7 | 7 / 7 | 0 / 7 | 6 / 7 |
+| Principles & Heuristics | 12 | 7 | 7 | 7 / 7 | 2 / 7 | 7 / 7 | 0 / 7 | 7 / 7 |
 | UX Research | 57 | 9 | 9 | 9 / 9 | 9 / 9 | 9 / 9 | 1 / 9 | 9 / 9 |
-| Design Methods & Frameworks | 12 | 2 | 2 | 2 / 2 | 2 / 2 | 2 / 2 | 0 / 2 | 1 / 2 |
+| Design Methods & Frameworks | 12 | 2 | 2 | 2 / 2 | 2 / 2 | 2 / 2 | 0 / 2 | 2 / 2 |
 | Information Architecture | 19 | 1 | 1 | 1 / 1 | 1 / 1 | 1 / 1 | 0 / 1 | 1 / 1 |
-| Interaction Design | 23 | 10 | 10 | 10 / 10 | 6 / 10 | 10 / 10 | 0 / 10 | 10 / 10 |
+| Interaction Design | 23 | 10 | 10 | 10 / 10 | 7 / 10 | 10 / 10 | 0 / 10 | 10 / 10 |
 | UI & Visual Design | 25 | 1 | 1 | 1 / 1 | 1 / 1 | 1 / 1 | 0 / 1 | 1 / 1 |
 | Typography & Colour Science | 27 | 2 | 2 | 2 / 2 | 2 / 2 | 2 / 2 | 0 / 2 | 2 / 2 |
 | Design Systems | 29 | 29 | 29 | 29 / 29 | 1 / 29 | 29 / 29 | 0 / 29 | 29 / 29 |
@@ -165,7 +165,7 @@ Every topic has exactly one status, derived from the content: an entry's own sta
 | UX & UI Fundamentals | Design approaches | 5 | 1 | 1 / 1 | 1 / 1 | 0 / 1 | 0 / 1 | 1 / 1 |
 | UX & UI Fundamentals | History of design & HCI | 3 | 0 | — | — | — | — | — |
 | UX Laws & Cognitive Effects | Human performance laws & models | 6 | 3 | 3 / 3 | 3 / 3 | 2 / 3 | 1 / 3 | 3 / 3 |
-| UX Laws & Cognitive Effects | Popular UX laws & rules of thumb | 7 | 3 | 3 / 3 | 3 / 3 | 0 / 3 | 0 / 3 | 2 / 3 |
+| UX Laws & Cognitive Effects | Popular UX laws & rules of thumb | 7 | 3 | 3 / 3 | 3 / 3 | 0 / 3 | 0 / 3 | 3 / 3 |
 | UX Laws & Cognitive Effects | Memory & attention effects | 10 | 5 | 5 / 5 | 5 / 5 | 4 / 5 | 0 / 5 | 5 / 5 |
 | UX Laws & Cognitive Effects | Gestalt laws of grouping | 9 | 1 | 1 / 1 | 1 / 1 | 1 / 1 | 1 / 1 | 1 / 1 |
 | UX Laws & Cognitive Effects | Decision-making biases | 14 | 1 | 1 / 1 | 1 / 1 | 1 / 1 | 0 / 1 | 1 / 1 |
@@ -173,7 +173,7 @@ Every topic has exactly one status, derived from the content: an entry's own sta
 | Cognition, Behaviour & Human Factors | Behavioural science, motivation & emotion | 17 | 0 | — | — | — | — | — |
 | Cognition, Behaviour & Human Factors | Visual cognition | 10 | 0 | — | — | — | — | — |
 | Cognition, Behaviour & Human Factors | Human factors, ergonomics & HCI theory | 17 | 4 | 4 / 4 | 4 / 4 | 2 / 4 | 0 / 4 | 4 / 4 |
-| Principles & Heuristics | Heuristic sets, standards & cross-cutting principles | 12 | 7 | 7 / 7 | 2 / 7 | 7 / 7 | 0 / 7 | 6 / 7 |
+| Principles & Heuristics | Heuristic sets, standards & cross-cutting principles | 12 | 7 | 7 / 7 | 2 / 7 | 7 / 7 | 0 / 7 | 7 / 7 |
 | UX Research | Qualitative methods | 10 | 3 | 3 / 3 | 3 / 3 | 3 / 3 | 0 / 3 | 3 / 3 |
 | UX Research | Quantitative methods | 9 | 1 | 1 / 1 | 1 / 1 | 1 / 1 | 0 / 1 | 1 / 1 |
 | UX Research | Research planning & protocols | 10 | 0 | — | — | — | — | — |
@@ -182,12 +182,12 @@ Every topic has exactly one status, derived from the content: an entry's own sta
 | UX Research | Usability evaluation | 15 | 5 | 5 / 5 | 5 / 5 | 5 / 5 | 1 / 5 | 5 / 5 |
 | Design Methods & Frameworks | Design process & lifecycle frameworks | 6 | 1 | 1 / 1 | 1 / 1 | 1 / 1 | 0 / 1 | 1 / 1 |
 | Design Methods & Frameworks | Ideation, mapping & facilitation | 3 | 0 | — | — | — | — | — |
-| Design Methods & Frameworks | Analytical models of interaction | 3 | 1 | 1 / 1 | 1 / 1 | 1 / 1 | 0 / 1 | 0 / 1 |
+| Design Methods & Frameworks | Analytical models of interaction | 3 | 1 | 1 / 1 | 1 / 1 | 1 / 1 | 0 / 1 | 1 / 1 |
 | Information Architecture | IA foundations & practice | 4 | 1 | 1 / 1 | 1 / 1 | 1 / 1 | 0 / 1 | 1 / 1 |
 | Information Architecture | Structures & models | 6 | 0 | — | — | — | — | — |
 | Information Architecture | Search, information scent & findability | 4 | 0 | — | — | — | — | — |
 | Information Architecture | Navigation & findability | 5 | 0 | — | — | — | — | — |
-| Interaction Design | Interaction principles | 11 | 9 | 9 / 9 | 5 / 9 | 9 / 9 | 0 / 9 | 9 / 9 |
+| Interaction Design | Interaction principles | 11 | 9 | 9 / 9 | 6 / 9 | 9 / 9 | 0 / 9 | 9 / 9 |
 | Interaction Design | Interaction patterns, state & forms | 3 | 1 | 1 / 1 | 1 / 1 | 1 / 1 | 0 / 1 | 1 / 1 |
 | Interaction Design | Input & modalities | 6 | 0 | — | — | — | — | — |
 | Interaction Design | Motion & microinteractions | 3 | 0 | — | — | — | — | — |
@@ -299,10 +299,10 @@ Five separate dimensions, rated basic / developing / complete from the content (
 | Dimension | Complete | Developing | Basic |
 |---|---:|---:|---:|
 | Explanation | 102 | 0 | 0 |
-| Evidence | 64 | 38 | 0 |
+| Evidence | 65 | 37 | 0 |
 | Practice | 90 | 12 | 0 |
 | Visual | 5 | 44 | 53 |
-| Editorial | 98 | 4 | 0 |
+| Editorial | 101 | 1 | 0 |
 
 ## Published entries
 
@@ -339,7 +339,7 @@ Five separate dimensions, rated basic / developing / complete from the content (
 | Design Tokens | Concept | Practitioner recommendation | complete | developing | complete | basic | complete | 8 | 4 | — | — |
 | Direct Manipulation | Principle | Established theoretical model | complete | complete | complete | developing | complete | 6 | 4 | — | — |
 | Discoverability | Principle | Professional guideline | complete | complete | complete | basic | complete | 5 | 4 | — | — |
-| Doherty Threshold | Rule of thumb | Practitioner recommendation | complete | complete | developing | developing | developing | 8 | 3 | — | feedback-lab |
+| Doherty Threshold | Rule of thumb | Practitioner recommendation | complete | complete | developing | developing | complete | 8 | 3 | — | feedback-lab |
 | Double Diamond | Framework | Professional guideline | complete | complete | complete | developing | complete | 3 | 4 | — | — |
 | Elevation Systems | Concept | Practitioner recommendation | complete | developing | complete | basic | complete | 4 | 3 | — | — |
 | Empty States | Pattern | Practitioner recommendation | complete | developing | complete | basic | complete | 5 | 3 | — | — |
@@ -364,9 +364,9 @@ Five separate dimensions, rated basic / developing / complete from the content (
 | Interaction States | Concept | Official standard | complete | complete | complete | developing | complete | 8 | 5 | — | — |
 | Jakob's Law | Principle | Practitioner recommendation | complete | complete | developing | developing | complete | 4 | 3 | — | jakob-lab |
 | Jobs To Be Done | Framework | Practitioner recommendation | complete | complete | complete | basic | complete | 3 | 4 | — | — |
-| Keystroke-Level Model (KLM) | Model | Established theoretical model | complete | complete | complete | developing | developing | 4 | 3 | klm | — |
+| Keystroke-Level Model (KLM) | Model | Established theoretical model | complete | complete | complete | developing | complete | 4 | 3 | klm | — |
 | Loading States | Pattern | Professional guideline | complete | developing | complete | developing | complete | 12 | 3 | — | async-state-lab |
-| Mapping | Concept | Established theoretical model | complete | developing | complete | basic | complete | 5 | 3 | — | — |
+| Mapping | Concept | Established theoretical model | complete | complete | complete | basic | complete | 5 | 3 | — | — |
 | Mental Models | Concept | Established theoretical model | complete | complete | developing | basic | complete | 7 | 3 | — | — |
 | Microcopy | Pattern | Professional guideline | complete | complete | complete | basic | complete | 9 | 4 | — | — |
 | Miller's Law | Concept | Peer-reviewed research | complete | complete | complete | developing | complete | 4 | 4 | — | — |
@@ -376,7 +376,7 @@ Five separate dimensions, rated basic / developing / complete from the content (
 | Net Promoter Score (NPS) | Metric | Contested or limited evidence | complete | complete | developing | developing | complete | 3 | 3 | nps | — |
 | Nielsen's 10 Usability Heuristics | Heuristic | Professional guideline | complete | complete | complete | developing | complete | 8 | 4 | — | feedback-lab |
 | Peak-End Rule | Concept | Peer-reviewed research | complete | complete | complete | developing | complete | 7 | 4 | — | — |
-| Plain Language | Principle | Professional guideline | complete | complete | complete | basic | complete | 11 | 4 | — | — |
+| Plain Language | Principle | Professional guideline | complete | complete | complete | basic | complete | 12 | 4 | — | — |
 | Primitive Tokens | Concept | Practitioner recommendation | complete | developing | complete | basic | complete | 6 | 4 | — | — |
 | Progressive Disclosure | Principle | Professional guideline | complete | complete | complete | developing | complete | 4 | 4 | — | disclosure-lab |
 | Progressive Loading | Pattern | Professional guideline | complete | developing | complete | basic | complete | 10 | 3 | — | — |
@@ -385,7 +385,7 @@ Five separate dimensions, rated basic / developing / complete from the content (
 | Sample Size Estimation | Technique | Established theoretical model | complete | complete | developing | developing | complete | 5 | 3 | sample-size | — |
 | Semantic Tokens | Concept | Practitioner recommendation | complete | developing | complete | developing | complete | 9 | 4 | — | token-lab |
 | Serial Position Effect | Concept | Original empirical research | complete | complete | complete | developing | complete | 6 | 4 | — | serial-position-lab |
-| Shneiderman's Eight Golden Rules | Heuristic | Professional guideline | complete | complete | complete | basic | developing | 7 | 4 | — | — |
+| Shneiderman's Eight Golden Rules | Heuristic | Professional guideline | complete | complete | complete | basic | complete | 7 | 4 | — | — |
 | Signifiers | Concept | Professional guideline | complete | complete | developing | developing | complete | 7 | 3 | — | — |
 | Skeleton Screens | Pattern | Practitioner recommendation | complete | developing | complete | developing | complete | 7 | 3 | — | async-state-lab |
 | Spacing Scales | Concept | Practitioner recommendation | complete | developing | complete | basic | complete | 6 | 3 | — | — |
@@ -418,7 +418,7 @@ Approved in D-129 (docs/BALANCED_DEVELOPMENT_PLAN.md § 9.2). The ratings above 
 | Measure | Meets target |
 |---|---:|
 | Visual | 92 / 102 |
-| Evidence | 100 / 102 |
+| Evidence | 101 / 102 |
 
 | Domain | Published | Visual meets | Evidence meets |
 |---|---:|---:|---:|
@@ -429,7 +429,7 @@ Approved in D-129 (docs/BALANCED_DEVELOPMENT_PLAN.md § 9.2). The ratings above 
 | UX Research | 9 | 5 | 9 |
 | Design Methods & Frameworks | 2 | 1 | 2 |
 | Information Architecture | 1 | 1 | 1 |
-| Interaction Design | 10 | 10 | 9 |
+| Interaction Design | 10 | 10 | 10 |
 | UI & Visual Design | 1 | 1 | 1 |
 | Typography & Colour Science | 2 | 2 | 2 |
 | Design Systems | 29 | 28 | 29 |
@@ -448,7 +448,6 @@ Entries below a target, and what is missing:
 - **HEART Framework** — visual: a detailed diagram; evidence: two primary or standard sources
 - **Jobs To Be Done** — visual: a detailed diagram
 - **Keystroke-Level Model (KLM)** — visual: a detailed diagram
-- **Mapping** — evidence: two evidence points
 - **Usability Testing** — visual: a detailed diagram
 - **Working Memory Model** — visual: a detailed diagram
 

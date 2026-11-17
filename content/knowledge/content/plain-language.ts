@@ -92,7 +92,7 @@ export default defineEntry({
         "**One audience or many?** Writing for 'everyone' risks writing for no one; NN/g advises prioritising audiences and layering explanations for secondary readers {{src:nng-plain-language-experts}}.",
       ],
       alternativeModels: [
-        "Easy Read — a separate format with very short sentences and supporting images for people with learning disabilities; plain language is broader and does not imply it.",
+        "Easy Read (easy-to-read information) — a separate format for people with intellectual disabilities. Inclusion Europe's standards for it ask for short sentences with one idea each, images beside the text, and testing with people with intellectual disabilities; they add that the same rules can help other readers {{src:inclusion-europe-information-for-all}}. Plain language is broader and does not imply this format.",
         "[[readability-formulas|Readability formulas]] — quick text measures, useful as a prompt, not as a test of understanding.",
         "[[content-design|Content design]] — decides what content is needed and in what form; plain language governs how it is expressed.",
       ],
@@ -379,6 +379,7 @@ WHAT CHANGED (meaning kept)
     { source: "flesch-1948", role: "primary", note: "Record only: the publication of a readability formula; not read." },
     { source: "redish-1981", role: "primary", note: "Abstract read: limitations of readability formulas." },
     { source: "redish-2000", role: "primary", note: "Abstract read: further limitations compared with testing with readers." },
+    { source: "inclusion-europe-information-for-all", role: "explanatory", note: "Read: European easy-to-read standards (sentences, images, testing with readers); a statement of practice, not research." },
     { source: "nielsen-1997-how-users-read", role: "explanatory", note: "Read: related evidence on concise, scannable, objective writing." },
   ],
   evidence: "professional-guideline",

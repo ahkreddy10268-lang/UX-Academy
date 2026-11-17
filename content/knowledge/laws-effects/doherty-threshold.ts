@@ -8,7 +8,7 @@ export default defineEntry({
   summary:
     "A practitioner rule of thumb, traced to a 1982 IBM report, that productivity rises when system responses arrive faster than about 400 ms — useful as a performance aspiration, but not an established perceptual law.",
   definition:
-    "The Doherty threshold is the popular name for the claim, attributed to Doherty & Thadani's 1982 IBM report *The Economic Value of Rapid Response Time*, that when a computer responds to a user in under roughly **400 milliseconds**, users work faster and more productively than at the multi-second response times then considered acceptable. It is an industry finding about productivity, not a peer-reviewed psychophysical threshold.",
+    "The Doherty threshold is the popular name for the claim, attributed to Doherty & Thadhani's 1982 IBM report *The Economic Value of Rapid Response Time*, that when a computer responds to a user in under roughly **400 milliseconds**, users work faster and more productively than at the multi-second response times then considered acceptable. It is an industry finding about productivity, not a peer-reviewed psychophysical threshold.",
   primaryType: "rule-of-thumb",
   secondaryTypes: ["principle", "historical-contribution"],
   domain: "laws-effects",
@@ -55,7 +55,7 @@ export default defineEntry({
         "≈0.1–1 s: the user notices the delay; acknowledge the action immediately (pressed state, inline change).",
         "≈1–10 s: show that work is in progress (spinner, skeleton, inline status).",
         "Over ≈10 s: show determinate progress, allow the user to do other things, and notify on completion.",
-        "Doherty & Thadani's report framed the target differently: as a productivity argument for sub-second response, often quoted as 400 ms.",
+        "Doherty & Thadhani's report framed the target differently: as a productivity argument for sub-second response, often quoted as 400 ms.",
       ],
       implementation: [
         "Set latency budgets per interaction type (direct manipulation, navigation, search, background jobs).",
@@ -72,12 +72,12 @@ export default defineEntry({
     },
     advanced: {
       explanation: [
-        "The historical claim needs careful framing. Doherty & Thadani's 1982 report was an IBM publication making an economic case — that shorter system response times reduced user 'think time' and increased transactions per hour — rather than a peer-reviewed experiment establishing a perceptual threshold {{src:doherty-thadani-1982}}. The specific '400 ms' figure and the description of fast systems as 'addicting' circulate widely in secondary sources; the original text was not accessible for first-hand verification in this research session.",
+        "The historical claim needs careful framing. Doherty & Thadhani's 1982 report was an IBM publication making an economic case — that shorter system response times reduced user 'think time' and increased transactions per hour — rather than a peer-reviewed experiment establishing a perceptual threshold {{src:doherty-thadani-1982}}. A scanned copy of the report held by the Computer History Museum, read as OCR text on 2026-11-17, fits that framing: it argues from IBM's own measurements and projects that productivity rises more than in proportion as response time falls, with an example of about 180 versus 371 transactions an hour at 3 s versus 0.3 s. The specific '400 ms' figure and the description of fast systems as 'addicting' circulate widely in secondary sources; neither was found in the OCR text, which is imperfect, so they remain second-hand here.",
         "Earlier, Miller (1968) analysed acceptable response times by type of conversational transaction, suggesting that about 2 s was acceptable for many conversational exchanges and that faster responses were needed for actions like keypress acknowledgement {{src:miller-1968}}. Card, Robertson & Mackinlay (1991) later linked ≈0.1 s, ≈1 s and ≈10 s to perceptual, immediate-response and unit-task time constants of the human processor {{src:card-robertson-mackinlay-1991}}.",
         "Shneiderman's (1984) survey stressed that acceptable delay depends on users' expectations, task complexity and response-time variability, and discussed evidence that very fast pacing can encourage hastier work and more errors on complex tasks {{src:shneiderman-1984}}. Faster is generally preferred, but no single threshold applies to every task.",
       ],
       evidence: [
-        "The productivity claims of the 1982 report come from IBM's internal measurements of transaction processing work; they are not a controlled, independently replicated experiment {{src:doherty-thadani-1982}}.",
+        "The productivity claims of the 1982 report come from IBM's own measurements and project results as the report presents them; they are not a controlled, independently replicated experiment {{src:doherty-thadani-1982}}.",
         "Nielsen's three limits are professional guidance synthesised from Miller (1968) and Card et al. (1991), not a single experiment {{src:nielsen-1993-response-times}}.",
         "Progress indicators improve the waiting experience for long operations, according to Myers (1985) {{src:myers-1985}}.",
       ],
@@ -95,16 +95,16 @@ export default defineEntry({
   },
 
   origin: {
-    contributors: ["Walter J. Doherty", "Arvind J. Thadani"],
+    contributors: ["Walter J. Doherty", "Arvind J. Thadhani"],
     period: "1982, IBM",
     problem:
       "In the era of mainframe time-sharing, response times of two seconds or more were widely accepted; IBM wanted to quantify the economic value of investing in faster systems.",
     narrative: [
-      "Doherty and Thadani's report argued that cutting system response time increased user productivity disproportionately, because users' own response time shortened when the system responded quickly {{src:doherty-thadani-1982}}.",
+      "Doherty and Thadhani's report argued that cutting system response time increased user productivity disproportionately, because users' own response time shortened when the system responded quickly {{src:doherty-thadani-1982}}.",
       "The idea was revived in popular UX writing under the name 'Doherty threshold', most prominently in the Laws of UX collection {{src:laws-of-ux}}.",
     ],
     attributionNote:
-      "The co-author's surname appears as both 'Thadani' and 'Thadhani' in secondary sources, and popular claims that the report appeared in the IBM Systems Journal could not be confirmed. Treat the 400 ms figure as reported by secondary sources until the original is checked.",
+      "The co-author's surname appears as both 'Thadani' and 'Thadhani' in secondary sources; the scanned copy read spells it 'Thadhani'. Popular claims that the report appeared in the IBM Systems Journal could not be confirmed, and the publication year is not legible in the OCR text read. Treat the 400 ms figure as reported by secondary sources: it was not found in that text.",
   },
 
   application: {
@@ -218,7 +218,7 @@ export default defineEntry({
         { text: "An ISO standard", correct: false, explanation: "No ISO standard defines a Doherty threshold." },
         { text: "Fitts's 1954 paper", correct: false, explanation: "Fitts studied movement time, not system response time." },
       ],
-      explanation: "The Doherty threshold traces to Doherty & Thadani's 1982 IBM report.",
+      explanation: "The Doherty threshold traces to Doherty & Thadhani's 1982 IBM report.",
     },
     {
       id: "doherty-threshold-q-limits",
@@ -248,12 +248,12 @@ export default defineEntry({
   ],
 
   flashcards: [
-    { id: "doherty-threshold-fc-1", front: "Doherty threshold origin", back: "Doherty & Thadani (1982), IBM report — economic case for sub-second response; '400 ms' widely quoted second-hand." },
+    { id: "doherty-threshold-fc-1", front: "Doherty threshold origin", back: "Doherty & Thadhani (1982), IBM report — economic case for sub-second response; '400 ms' widely quoted second-hand." },
     { id: "doherty-threshold-fc-2", front: "Nielsen's three response-time limits", back: "≈0.1 s feels instant · ≈1 s keeps flow · ≈10 s keeps attention (after Miller 1968; Card et al. 1991)." },
   ],
 
   references: [
-    { source: "doherty-thadani-1982", role: "primary", note: "Origin of the popular claim; original text not verified first-hand." },
+    { source: "doherty-thadani-1982", role: "primary", note: "Origin of the popular claim; scanned copy read 2026-11-17 (OCR); year and 400 ms figure not confirmed in it." },
     { source: "miller-1968", role: "primary", note: "Early analysis of response time in conversational transactions." },
     { source: "card-robertson-mackinlay-1991", role: "primary", note: "Time constants of interaction." },
     { source: "shneiderman-1984", role: "primary", note: "Survey of response-time research and its context dependence." },
@@ -279,5 +279,5 @@ export default defineEntry({
     sources: true,
     activities: true,
   },
-  lastVerifiedAt: "2026-11-03",
+  lastVerifiedAt: "2026-11-17",
 });

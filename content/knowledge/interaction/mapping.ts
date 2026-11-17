@@ -78,7 +78,9 @@ export default defineEntry({
         "Poor mappings leave measurable traces: immediate reversals (a control used and then its opposite within seconds), repeated adjustments that overshoot, and wrong-target selections followed by undo. These signals identify where to look; observation confirms whether the cause is the mapping.",
       ],
       evidence: [
-        "S-R compatibility is a well-established finding in human factors research, beginning with Fitts and Seeger (1953) {{src:fitts-seeger-1953}}; this entry cites that paper bibliographically, without having re-read its full text. Chapanis and Lindenbaum (1959), whose abstract was read, found that one control-burner arrangement was superior to all others after practice {{src:chapanis-lindenbaum-1959}}. The application of 'natural mapping' to everyday design comes from Norman's design writing {{src:norman-2013}}, which is explanatory rather than experimental. Claims about specific digital mappings (for example scrolling direction) rest mostly on convention and practice.",
+        "S-R compatibility is a well-established finding in human factors research, beginning with Fitts and Seeger (1953) {{src:fitts-seeger-1953}}. This entry cites that paper bibliographically, without having re-read its full text.",
+        "Chapanis and Lindenbaum (1959), whose abstract was read, found that one control-burner arrangement was superior to all others after practice {{src:chapanis-lindenbaum-1959}}.",
+        "The application of 'natural mapping' to everyday design comes from Norman's design writing {{src:norman-2013}}, which is explanatory rather than experimental. Claims about specific digital mappings (for example scrolling direction) rest mostly on convention and practice.",
       ],
       debates: [
         "**Natural or learned?** Some mappings feel natural only because they are familiar. Touchpad scrolling that moves content with the fingers was presented as 'natural', yet many people used to scroll bars found it backwards. Which is natural depends on whether people think they move the content or the viewport.",

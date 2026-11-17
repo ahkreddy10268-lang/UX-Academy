@@ -286,7 +286,7 @@
   },
   "brooke-2013": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-03",
+    "checkedAt": "2026-11-17",
     "httpStatus": 200
   },
   "brooks-1987": {
@@ -561,9 +561,9 @@
     "httpStatus": 200
   },
   "doherty-thadani-1982": {
-    "status": "url-unreachable",
-    "checkedAt": "2026-11-03",
-    "httpStatus": 503
+    "status": "url-reachable",
+    "checkedAt": "2026-11-17",
+    "httpStatus": 200
   },
   "dtcg-2026-thank-you-jina": {
     "status": "url-reachable",
@@ -600,7 +600,7 @@
   },
   "ericsson-simon-1980": {
     "status": "doi-verified",
-    "checkedAt": "2026-11-16",
+    "checkedAt": "2026-11-17",
     "registeredTitle": "Verbal reports as data.",
     "registeredYear": 1980,
     "registeredContainer": "Psychological Review",
@@ -1159,6 +1159,11 @@
     "checkedAt": "2026-11-03",
     "httpStatus": 200
   },
+  "inclusion-europe-information-for-all": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-17",
+    "httpStatus": 200
+  },
   "inclusive-design-principles": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
@@ -1274,6 +1279,11 @@
   "kholmatova-2017": {
     "status": "url-reachable",
     "checkedAt": "2026-11-06",
+    "httpStatus": 200
+  },
+  "kieras-2001-klm": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-17",
     "httpStatus": 200
   },
   "kieras-bovair-1984": {
@@ -2356,9 +2366,9 @@
     "similarity": 1
   },
   "shneiderman-golden-rules-page": {
-    "status": "url-unreachable",
-    "checkedAt": "2026-11-03",
-    "httpStatus": 503
+    "status": "url-reachable",
+    "checkedAt": "2026-11-17",
+    "httpStatus": 200
   },
   "shneiderman-maes-1997": {
     "status": "doi-verified",

@@ -705,4 +705,17 @@ export default defineSources([
     lastVerifiedAt: "2026-11-16",
     notes: "Metadata checked against Crossref 2026-11-16; abstract read (OpenAlex). Two studies (77 and 90 participants): presenting errors after the whole form was completed performed best; immediate feedback performed worst, as participants often ignored messages and carried on. Proposes a 'Modal Theory of Form Completion' — completion versus revision mode. Specific message wording was not the variable studied.",
   },
+  {
+    id: "inclusion-europe-information-for-all",
+    title: "Information for all: European standards for making information easy to read and understand",
+    organisation: "Inclusion Europe",
+    url: "https://www.inclusion-europe.eu/wp-content/uploads/2017/06/EN_Information_for_all.pdf",
+    type: "technical-report",
+    tier: 2,
+    topics: ["easy read", "easy to read", "intellectual disability", "plain language", "accessible information"],
+    access: "open",
+    verification: "url-checked",
+    lastVerifiedAt: "2026-11-17",
+    notes: "Booklet of European standards produced in the project \"Pathways to adult education for people with intellectual disabilities\" with European Commission support (ISBN 2-87460-110-1); 40 pages; general, written, electronic and audio standards. Read 2026-11-17: sections About these standards, Sentences (keep sentences short, one idea per sentence), Images (put images next to text), and Creating an accessible website (ask people with intellectual disabilities to test). It says the standards can also help other readers, for example people who do not have English as a first language. Publication year not printed in the text read: the PDF's creation metadata says 2009, a secondary record gives 2010 and another 2014, so no year is recorded here. A statement of practice by a non-profit federation, not research evidence.",
+  },
 ]);

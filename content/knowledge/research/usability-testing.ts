@@ -53,7 +53,7 @@ export default defineEntry({
         "**Moderated** sessions (in person or remote) allow probing and adapting; **unmoderated** sessions scale to more participants quickly but lose the ability to ask why and are more vulnerable to low-quality participation. Think-aloud is standard in formative testing; in summative testing it can change task times, so measurements are often taken without it.",
       ],
       howItWorks: [
-        "**Classic [[think-aloud-protocol|think-aloud]]** following Ericsson and Simon asks participants to verbalise what they are attending to, with minimal prompts ('keep talking'); reports of current thought are thought not to change cognition much, while requests for explanations can {{src:ericsson-simon-1993}}.",
+        "**Classic [[think-aloud-protocol|think-aloud]]** asks participants to verbalise what they are attending to, with minimal prompts ('keep talking'). In Ericsson and Simon's model, reporting information a person is already attending to is not expected to change the course of thinking much, while requests for information they would not otherwise attend to, such as explanations, can {{src:ericsson-simon-1980}}.",
         "Practitioners routinely intervene more than the classic protocol allows. Boren and Ramey proposed treating the session as communication, using neutral acknowledgement tokens such as 'mm-hm' to keep participants talking without steering them {{src:boren-ramey-2000}}.",
         "**Problem discovery** follows diminishing returns: each extra participant tends to reveal fewer new problems, because common problems are seen early. The model below quantifies this for a given problem frequency {{src:nielsen-landauer-1993}}.",
       ],
@@ -102,7 +102,7 @@ export default defineEntry({
     problem:
       "Teams needed direct evidence of how real users experience a system, at a cost and speed compatible with product development.",
     narrative: [
-      "Laboratory usability evaluation grew out of human-factors engineering. Ericsson and Simon's analysis of verbal reports gave think-aloud a methodological basis in cognitive psychology {{src:ericsson-simon-1993}}.",
+      "Laboratory usability evaluation grew out of human-factors engineering. Ericsson and Simon's analysis of verbal reports gave think-aloud a methodological basis in cognitive psychology {{src:ericsson-simon-1980}}.",
       "In the early 1990s, Nielsen's discount usability engineering argued for small, frequent tests {{src:nielsen-1993}}, supported by problem-discovery models from Virzi and from Nielsen and Landauer {{src:virzi-1992}} {{src:nielsen-landauer-1993}}.",
       "From the mid-1990s onward, researchers including Lewis, Faulkner and Spool and Schroeder challenged the generality of small-sample rules, while CUE studies exposed the variability of professional testing {{src:lewis-1994}} {{src:faulkner-2003}} {{src:molich-et-al-2004}}.",
     ],
@@ -386,7 +386,7 @@ export default defineEntry({
     { source: "spool-schroeder-2001", role: "primary", note: "Five users insufficient for large web sites." },
     { source: "molich-et-al-2004", role: "primary", note: "Variability between professional testing teams." },
     { source: "hertzum-jacobsen-2001", role: "primary", note: "Evaluator effect in think-aloud testing." },
-    { source: "ericsson-simon-1993", role: "primary", note: "Theory of verbal reports underlying think-aloud." },
+    { source: "ericsson-simon-1980", role: "primary", note: "Theory of verbal reports underlying think-aloud (abstract read; the paper itself was not read)." },
     { source: "boren-ramey-2000", role: "primary", note: "Think-aloud in practice; communication-based protocol." },
     { source: "nielsen-1993", role: "explanatory", note: "Discount usability engineering." },
     { source: "nielsen-2000-five-users", role: "explanatory", note: "Argument for iterative small tests." },
