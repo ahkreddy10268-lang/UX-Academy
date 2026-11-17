@@ -9,11 +9,11 @@ Last updated: **2026-11-17**.
 | Item | Value | Verified |
 |---|---|---|
 | Working branch | `claude/batch1-constraints` | 2026-11-17 |
-| Pushed HEAD | `9931f1a` (owner-approved push of the I1 commit); remote HEAD equalled local HEAD after the push | 2026-11-17 (`git ls-remote`) |
-| Local HEAD | `9931f1a` + one unpushed documentation commit (coveredBy reconciliation, Improvement Batch 1 scope, state records) | 2026-11-17 |
+| Pushed HEAD | `7c34436` (owner-approved); remote HEAD equalled local HEAD after the push | 2026-11-17 (`git ls-remote`) |
+| Local HEAD | `3d5aa38` (Improvement Batch 1 implementation) plus a progress-records commit; **not pushed** | 2026-11-17 |
 | `origin/main` | `b788511`, unchanged | 2026-11-17 (`git ls-remote`) |
-| PR #2 | open, not merged; head `a1f6373` unchanged | 2026-11-17 (GitHub API + `git ls-remote`) |
-| Vercel preview for `9931f1a` | `dpl_E8tGMEEDuf7MG5ec9FMhGV2WkLUU`, READY (preview only; nothing deployed to production) | 2026-11-17 |
+| PR #2 | open, not merged; head `a1f6373` unchanged | 2026-11-17 (GitHub API earlier today, `git ls-remote` now) |
+| Vercel preview for `7c34436` | `dpl_DetaPwZHJtB6Kgxn6wEiLNaD5Ktv`, READY (preview only; nothing in production) | 2026-11-17 |
 
 ## Content strategy and cycle
 
@@ -24,13 +24,11 @@ Last updated: **2026-11-17**.
 
 ## Current approved task
 
-None in progress. Improvement Batch 1 scope is prepared; implementation is **not** started.
+Cycle 2 Improvement Batch 1 (scope `docs/CYCLE_2_IMPROVEMENT_BATCH_1_SCOPE.md`): **implemented** in `3d5aa38`; stopped for the owner's independent review. Report: `docs/CYCLE_2_IMPROVEMENT_BATCH_1_REPORT.md`.
 
 ## Next authorised action
 
-**Wait for the owner to review `docs/CYCLE_2_IMPROVEMENT_BATCH_1_SCOPE.md`** (scope, acceptance criteria, three decisions). Do not implement the batch, select Cycle 2 topics, or push the documentation commit until instructed.
-
-Owner decisions on record (2026-11-17): Cycle 2 begins with an improvement-only batch; Batch 1 scope = `mapping` and `heart-framework` evidence gaps, small accuracy fixes (B2-O-1, B3-o1), four Editorial improvements after source verification. Deferred, not dropped: ten diagrams (DEF-1), twelve Practice entries (DEF-2). Marker backlog (TD-1) separate. No new taxonomy topics.
+**Wait for the owner's review.** Pending owner decisions: IB1-2 (`heart-framework` evidence target / class), N-1 (SUS attribution to the unread Brooke 2013), whether to request the formal review commit, and approval to push `3d5aa38`. Do not push, write the formal review, or start another batch until instructed.
 
 ## Open follow-ups
 

@@ -271,5 +271,11 @@ After that: `ui-design`, `interaction-design-discipline`, `accessibility-concept
 - coveredBy reconciled: 13 candidates, 8 applied, 5 deferred (table in docs/CONTENT_AUDIT.md session 51). No taxonomy change in this session.
 - Prepared docs/CYCLE_2_IMPROVEMENT_BATCH_1_SCOPE.md: five items, acceptance criteria and verification plan. Deferred items recorded as DEF-1…3 in docs/OPEN_ISSUES.md. Nothing implemented.
 
+## Session 53 — Cycle 2, Improvement Batch 1 implemented (D-129)
+- Pushed `7c34436` on approval (remote HEAD = local; preview `dpl_DetaPwZHJtB6Kgxn6wEiLNaD5Ktv` READY; `main` `b788511` and PR #2 `a1f6373` unchanged).
+- Implementation commit `3d5aa38` (local, not pushed): `mapping` evidence points separated (closed); `usability-testing` citation retargeted to the DOI-verified 1980 paper (closed); `plain-language` Easy Read sourced from the Inclusion Europe standards (closed); Editorial: `shneiderman-golden-rules-page`, `kieras-2001-klm`, `doherty-thadani-1982` read and verified with limits (3 entries closed); `brooke-2013` unreadable (SUS stays developing); `heart-framework` has no second primary source (reported, not forced).
+- Measured: evidence target 100 → 101 of 102; Editorial complete 98 → 101.
+- New findings N-1…N-3 in docs/OPEN_ISSUES.md. Report: docs/CYCLE_2_IMPROVEMENT_BATCH_1_REPORT.md. The formal review is not yet written.
+
 ## Next task (precise)
-Await the owner's review of docs/CYCLE_2_IMPROVEMENT_BATCH_1_SCOPE.md. Do not implement the batch, select Cycle 2 topics, or push the documentation commit until instructed.
+Await the owner's independent review of Improvement Batch 1 (`3d5aa38`) and decisions on IB1-2, N-1 and the formal review. Do not push `3d5aa38`, start the formal review commit, or begin another batch until instructed.
