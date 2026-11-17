@@ -170,6 +170,7 @@ export default defineEntry({
     { target: "navigation-patterns", type: "applied-in", note: "Navigation is where convention-following has the most direct effect on findability." },
     { target: "deceptive-patterns", type: "contrasts-with", note: "Some deceptive patterns deliberately exploit conventions, such as swapping the expected position of confirm and cancel." },
     { target: "discoverability", type: "related-to", note: "Conventional placement is where people look first, so it makes functions easier to discover." },
+    { target: "constraints", type: "related-to", note: "Cultural constraints depend on conventions people have learned elsewhere." },
   ],
 
   exercises: [
@@ -247,6 +248,7 @@ export default defineEntry({
   flashcards: [
     { id: "jakobs-law-fc-1", front: "Jakob's Law (Nielsen, 2000)", back: "Users spend most of their time on other sites, so they prefer yours to work the same way." },
     { id: "jakobs-law-fc-2", front: "Psychological basis of Jakob's Law", back: "Learned mental models and transfer of learning — shown, e.g., by shared expectations of where web objects are." },
+    { id: "jakobs-law-fc-3", front: "External vs internal consistency", back: "External: working the same way as other products people use. Internal: working the same way across one product." },
   ],
 
   references: [

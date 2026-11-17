@@ -310,6 +310,7 @@ function ReviewStep({ draft }: { draft: Draft }) {
   flashcards: [
     { id: "recognition-over-recall-fc-1", front: "Recognition vs recall", back: "Recognition: identify a presented item. Recall: generate it without the item present. Recognition is usually easier." },
     { id: "recognition-over-recall-fc-2", front: "Familiarity and recollection", back: "Dual-process account of recognition: fast sense of familiarity vs. slower retrieval of specific details." },
+    { id: "recognition-over-recall-fc-3", front: "What is a retrieval cue?", back: "Anything that helps bring a memory back: a word, picture or context." },
   ],
 
   references: [

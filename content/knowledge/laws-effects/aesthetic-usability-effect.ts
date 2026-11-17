@@ -258,6 +258,19 @@ export default defineEntry({
       ],
       explanation: "Experience gives people better evidence than appearance.",
     },
+    {
+      id: "aesthetic-usability-effect-q-first-look",
+      kind: "multiple-choice",
+      level: "beginner",
+      prompt: "Two prototypes share the same layout. Before trying either, participants rate the more polished one as easier to use. Which description fits best?",
+      options: [
+        { text: "Attractive interfaces tend to be judged as more usable, although looking easy is not the same as being easy.", correct: true, explanation: "This is the aesthetic-usability effect: appearance shapes perceived usability." },
+        { text: "The polished prototype has been shown to be easier to use.", correct: false, explanation: "Perceived and actual usability can differ; a beautiful app can still confuse people." },
+        { text: "The effect appears only after weeks of use.", correct: false, explanation: "It shows up in first impressions, before people have tried the interface." },
+        { text: "Ratings of the two prototypes should be identical.", correct: false, explanation: "Appearance influences ratings even when the layout is the same." },
+      ],
+      explanation: "The effect concerns perceived usability; it is a reason to care about visual quality, not proof of usability.",
+    },
   ],
 
   flashcards: [

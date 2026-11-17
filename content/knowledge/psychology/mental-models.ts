@@ -49,7 +49,7 @@ export default defineEntry({
       explanation: [
         "Norman's framing in *The Design of Everyday Things* separates three models {{src:norman-2013}}. The **design model** (or conceptual model) is the designer's understanding of how the product works. The **user's model** is what the user believes. The designer communicates only through the **system image**. If the system image is unclear or inconsistent, users form an inaccurate model, however sound the design model is.",
         "Users' mental models are not complete or accurate replicas. Norman's early observations describe them as incomplete, limited in how far people can 'run' them mentally, unstable (details are forgotten), without firm boundaries between similar systems, superstitious and parsimonious {{src:norman-1983}}. This means designers should expect models to be borrowed from familiar products — a reason consistency with conventions (see [[jakobs-law]]) is so powerful.",
-        "Mismatches show up as predictable errors: users perform actions that make sense in their model but not in the system's. Uncovering models is a research task: think-aloud observation, interviews asking users to explain how something works, card sorting for structure, and asking users to draw or predict what will happen.",
+        "Mismatches show up as predictable errors: users perform actions that make sense in their model but not in the system's. Uncovering models is a research task: [[think-aloud-protocol|think-aloud]] observation, interviews asking users to explain how something works, card sorting for structure, and asking users to draw or predict what will happen.",
       ],
       howItWorks: [
         "Users bring prior models from similar products, the physical world and culture, and map them onto a new system.",
@@ -259,6 +259,7 @@ export default defineEntry({
   flashcards: [
     { id: "mental-models-fc-1", front: "Design model, user's model, system image", back: "Designer's intended model; what the user believes; everything perceivable about the system — the only bridge between them." },
     { id: "mental-models-fc-2", front: "Norman's six properties of mental models (1983)", back: "Incomplete, limited ability to run, unstable, no firm boundaries, unscientific (superstitious), parsimonious." },
+    { id: "mental-models-fc-3", front: "Mental model vs conceptual model", back: "Mental model: the user's internal explanation of how something works. Conceptual model: the designer's intended explanation." },
   ],
 
   references: [

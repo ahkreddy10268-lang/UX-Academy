@@ -317,6 +317,7 @@ export default defineEntry({
   flashcards: [
     { id: "steering-law-fc-1", front: "Steering law (straight tunnel)", back: "MT = a + b · A/W — linear in the length-to-width ratio." },
     { id: "steering-law-fc-2", front: "Steering vs Fitts", back: "Fitts: log₂(D/W + 1) for reaching a target. Steering: ∫ds/W(s) for staying inside a path." },
+    { id: "steering-law-fc-3", front: "What do A and W mean in the steering law?", back: "A is the length of the path to be travelled (amplitude); W is the path width, the room for wobble." },
   ],
 
   references: [

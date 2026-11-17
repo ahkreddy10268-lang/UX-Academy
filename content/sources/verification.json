@@ -278,7 +278,7 @@
   },
   "brooke-1996": {
     "status": "doi-verified",
-    "checkedAt": "2026-11-03",
+    "checkedAt": "2026-11-17",
     "registeredTitle": "SUS: A 'Quick and Dirty' Usability Scale",
     "registeredYear": 1996,
     "registeredContainer": "Usability Evaluation In Industry",
@@ -2332,7 +2332,7 @@
   },
   "shneiderman-1982": {
     "status": "doi-verified",
-    "checkedAt": "2026-11-16",
+    "checkedAt": "2026-11-17",
     "registeredTitle": "Designing computer system messages",
     "registeredYear": 1982,
     "registeredContainer": "Communications of the ACM",
@@ -2741,7 +2741,7 @@
   },
   "w3c-wcag-22": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-16",
+    "checkedAt": "2026-11-17",
     "httpStatus": 200
   },
   "w3c-wcag-3-wd": {

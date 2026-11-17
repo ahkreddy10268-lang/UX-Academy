@@ -170,6 +170,7 @@ export default defineEntry({
     { target: "focus-management", type: "applied-in", note: "Escape, focus return and no keyboard traps are how control works for keyboard users." },
     { target: "deceptive-patterns", type: "contrasts-with", note: "Hard-to-cancel subscriptions deliberately remove the emergency exit." },
     { target: "direct-manipulation", type: "related-to", note: "Rapid, reversible steps and undo are what make direct manipulation safe to explore." },
+    { target: "constraints", type: "contrasts-with", note: "Constraints restrict what people can do; control and freedom keep exits and overrides available." },
   ],
 
   practice: {

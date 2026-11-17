@@ -193,6 +193,7 @@ export default defineEntry({
     { target: "information-scent", type: "related-to", note: "Label–goal matching in the walkthrough is closely related to information scent; the web variant draws on it directly." },
     { target: "usability-testing", type: "complementary-to", note: "Testing with first-time users validates walkthrough predictions and reveals how users recover from wrong turns." },
     { target: "learnability", type: "measured-by", note: "Learnability is the quality the walkthrough inspects; it can be measured directly in first-use testing." },
+    { target: "discoverability", type: "related-to", note: "The walkthrough asks whether people will notice the correct action, which is a discoverability question." },
   ],
 
   exercises: [

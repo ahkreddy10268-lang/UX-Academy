@@ -370,7 +370,7 @@ What changed
     { source: "nielsen-1997-how-users-read", role: "primary", note: "Read: scanning and the effects of concise, scannable and objective writing (1997 study)." },
     { source: "nng-tone-of-voice", role: "explanatory", note: "Read: four tone dimensions and a small survey of perceived tone." },
     { source: "mailchimp-voice-and-tone", role: "further", note: "Read: an example voice and tone guide." },
-    { source: "shneiderman-1982", role: "primary", note: "Opening read: system messages and novice users." },
+    { source: "shneiderman-1982", role: "primary", note: "Read in full 2026-11-17 (author's copy): system messages and novice users." },
     { source: "porter-2009-microcopy", role: "explanatory", note: "Read: early post on microcopy." },
     { source: "podmajersky-2019", role: "further", note: "Bibliographic record only; not read." },
     { source: "winters-2019-what-is-content-design", role: "explanatory", note: "Read: content design as a wider practice." },

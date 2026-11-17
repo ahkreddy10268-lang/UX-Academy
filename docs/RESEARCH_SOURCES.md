@@ -38,7 +38,7 @@ Fields per record (see `lib/content/schema.ts`): id, title, authors, organisatio
 | `bodker-2006` | Bødker, S. (2006). *When second wave HCI meets third wave challenges*. Proceedings of the 4th Nordic Conference on Human-Computer Interaction (NordiCHI 2006) | doi:10.1145/1182475.1182476 | unknown | doi-verified (2026-11-04) |
 | `boren-ramey-2000` | Boren, T., Ramey, J. (2000). *Thinking aloud: reconciling theory and practice*. IEEE Transactions on Professional Communication | doi:10.1109/47.867942 | paywalled | doi-verified (2026-11-03) |
 | `braun-clarke-2006` | Braun, V., Clarke, V. (2006). *Using thematic analysis in psychology*. Qualitative Research in Psychology | doi:10.1191/1478088706qp063oa | paywalled | doi-verified (2026-11-16) |
-| `brooke-1996` | Brooke, J. (1996). *SUS: A 'quick and dirty' usability scale*. Usability Evaluation in Industry (Jordan, P. W., Thomas, B., Weerdmeester, B. A., McClelland, I. L., Eds.) | doi:10.1201/9781498710411-35 | paywalled | doi-verified (2026-11-03) |
+| `brooke-1996` | Brooke, J. (1996). *SUS: A 'quick and dirty' usability scale*. Usability Evaluation in Industry (Jordan, P. W., Thomas, B., Weerdmeester, B. A., McClelland, I. L., Eds.) | doi:10.1201/9781498710411-35 | paywalled | doi-verified (2026-11-17) |
 | `brooke-2013` | Brooke, J. (2013). *SUS: A retrospective*. Journal of Usability Studies | https://uxpajournal.org/ | open | url-reachable (2026-11-17) |
 | `brooks-1987` | Brooks, F. P., Jr. (1987). *No silver bullet: essence and accidents of software engineering*. Computer | doi:10.1109/MC.1987.1663532 | paywalled | doi-verified (2026-11-03) |
 | `burmistrov-et-al-2015` | Burmistrov, I. et al. (2015). *Flat design vs traditional design: Comparative experimental study*. Human-Computer Interaction – INTERACT 2015 (Lecture Notes in Computer Science) | doi:10.1007/978-3-319-22668-2_10 | paywalled | doi-verified (2026-11-03) |
@@ -205,7 +205,7 @@ Fields per record (see `lib/content/schema.ts`): id, title, authors, organisatio
 | `seow-2005` | Seow, S. C. (2005). *Information theoretic models of HCI: a comparison of the Hick-Hyman law and Fitts' law*. Human-Computer Interaction | doi:10.1207/s15327051hci2003_3 | paywalled | doi-verified (2026-11-03) |
 | `shallice-warrington-1970` | Shallice, T., Warrington, E. K. (1970). *Independent functioning of verbal memory stores: A neuropsychological study*. Quarterly Journal of Experimental Psychology | doi:10.1080/00335557043000203 | paywalled | doi-verified (2026-11-03) |
 | `shepard-1967` | Shepard, R. N. (1967). *Recognition memory for words, sentences, and pictures*. Journal of Verbal Learning and Verbal Behavior | doi:10.1016/S0022-5371(67)80067-7 | paywalled | doi-verified (2026-11-03) |
-| `shneiderman-1982` | Shneiderman, B. (1982). *Designing computer system messages*. Communications of the ACM | doi:10.1145/358628.358639 | open | doi-verified (2026-11-16) |
+| `shneiderman-1982` | Shneiderman, B. (1982). *Designing computer system messages*. Communications of the ACM | doi:10.1145/358628.358639 | open | doi-verified (2026-11-17) |
 | `shneiderman-1983` | Shneiderman, B. (1983). *Direct manipulation: A step beyond programming languages*. Computer | doi:10.1109/MC.1983.1654471 | paywalled | doi-verified (2026-11-13) |
 | `shneiderman-1984` | Shneiderman, B. (1984). *Response time and display rate in human performance with computers*. ACM Computing Surveys | doi:10.1145/2514.2517 | paywalled | doi-verified (2026-11-03) |
 | `shneiderman-1987` | Shneiderman, B. (1987). *Designing the User Interface: Strategies for Effective Human-Computer Interaction (1st ed.)* | — | paywalled | not machine-checked |
@@ -254,7 +254,7 @@ Fields per record (see `lib/content/schema.ts`): id, title, authors, organisatio
 | `w3c-wai-aria-12` | World Wide Web Consortium (W3C) (2023). *Accessible Rich Internet Applications (WAI-ARIA) 1.2* | https://www.w3.org/TR/wai-aria-1.2/ | open | url-reachable (2026-11-16) |
 | `w3c-wai-tables-tutorial` | W3C Web Accessibility Initiative. *Tables Tutorial* | https://www.w3.org/WAI/tutorials/tables/ | open | url-reachable (2026-11-11) |
 | `w3c-wcag-21` | World Wide Web Consortium (W3C) (2018). *Web Content Accessibility Guidelines (WCAG) 2.1* | https://www.w3.org/TR/WCAG21/ | open | url-reachable (2026-11-03) |
-| `w3c-wcag-22` | World Wide Web Consortium (W3C) (2023). *Web Content Accessibility Guidelines (WCAG) 2.2* | https://www.w3.org/TR/WCAG22/ | open | url-reachable (2026-11-16) |
+| `w3c-wcag-22` | World Wide Web Consortium (W3C) (2023). *Web Content Accessibility Guidelines (WCAG) 2.2* | https://www.w3.org/TR/WCAG22/ | open | url-reachable (2026-11-17) |
 | `w3c-wcag-3-wd` | World Wide Web Consortium (W3C) (2026). *W3C Accessibility Guidelines (WCAG) 3.0 — W3C Working Draft* | https://www.w3.org/TR/wcag-3.0/ | open | url-reachable (2026-11-03) |
 | `w3c-wcag-em-2` | World Wide Web Consortium (W3C) (2026). *WCAG Evaluation Methodology (WCAG-EM) 2.0* | https://www.w3.org/TR/wcag-em-2/ | open | url-reachable (2026-11-12) |
 | `w3c-wcag-overview` | W3C Web Accessibility Initiative (WAI). *WCAG 2 Overview* | https://www.w3.org/WAI/standards-guidelines/wcag/ | open | url-reachable (2026-11-03) |

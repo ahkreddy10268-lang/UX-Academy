@@ -51,7 +51,7 @@ const out = []; const ok = (n, c, d = "") => out.push(`${c ? "PASS" : "FAIL"} ${
     const opt = p.locator("main button").filter({ hasText: /\w/ }).filter({ has: p.locator("xpath=self::*[ancestor::*[contains(@class,'quiz') or @data-quiz or ancestor::section[.//h2[contains(.,'Check') or contains(.,'Quiz')]]]]") }).first();
     const fc = p.getByRole("button", { name: /Add \d+ flashcards/ });
     let fcOk = false;
-    if (await fc.count()) { const n = +((await fc.textContent()).match(/\d+/) || [0])[0]; await fc.focus(); await p.keyboard.press("Enter"); await p.waitForTimeout(300); const stored = await p.evaluate((sl) => Object.keys(JSON.parse(localStorage.getItem("ux-academy:v1") || "{}").cards || {}).filter((k) => k.startsWith(sl + "-")).length, slug); fcOk = stored === n; ok(`${slug}: flashcards added by keyboard`, fcOk, `${stored}/${n}`); }
+    if (await fc.count()) { const n = +((await fc.textContent()).match(/\d+/) || [0])[0]; const countCards = () => p.evaluate(() => Object.keys(JSON.parse(localStorage.getItem("ux-academy:v1") || "{}").cards || {}).length); const before = await countCards(); await fc.focus(); await p.keyboard.press("Enter"); await p.waitForTimeout(300); const stored = (await countCards()) - before; fcOk = stored === n; ok(`${slug}: flashcards added by keyboard`, fcOk, `${stored}/${n}`); }
     else ok(`${slug}: flashcard button present`, false);
     await p.close();
   }

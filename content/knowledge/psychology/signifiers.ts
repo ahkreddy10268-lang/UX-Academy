@@ -257,6 +257,7 @@ export default defineEntry({
   flashcards: [
     { id: "signifiers-fc-1", front: "Signifier (Norman, 2008)", back: "Any perceivable indicator that communicates appropriate behaviour — what to do and where." },
     { id: "signifiers-fc-2", front: "Social signifier", back: "A cue created by others' behaviour (worn path, queue, ratings) rather than deliberate design." },
+    { id: "signifiers-fc-3", front: "Signifier vs affordance", back: "An affordance is the action possibility itself, which may or may not be signalled; a signifier is the perceivable cue that communicates it." },
   ],
 
   references: [

@@ -21,7 +21,8 @@ export default defineSources([
     topics: ["System Usability Scale", "questionnaire", "usability measurement"],
     access: "paywalled",
     verification: "bibliographic",
-    notes: "Original publication of the SUS, developed at Digital Equipment Corporation (1986). Pages 189–194 in the print edition; the CRC Press digital edition registered under this DOI paginates the chapter as 207–212.",
+    lastVerifiedAt: "2026-11-17",
+    notes: "Original publication of the SUS, developed at Digital Equipment Corporation (1986). Pages 189–194 in the print edition; the CRC Press digital edition registered under this DOI paginates the chapter as 207–212. Read in full on 2026-11-17 from a seven-page copy hosted by a third party (hell.meiert.org), not the publisher's edition. Confirmed there: the origin in a usability engineering programme at Digital Equipment Co. Ltd with a 1986 copyright notice on the scale form; the need for a quick, low-cost measure (the abstract's \"quick and dirty\"); a ten-item Likert scale giving a global view of subjective usability; instructions to mark the centre point for an item a respondent cannot answer; scoring to a single 0–100 value; and that scores for individual items are not meaningful on their own.",
   },
   {
     id: "brooke-2013",

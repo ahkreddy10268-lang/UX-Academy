@@ -138,11 +138,12 @@ export default defineSources([
     type: "journal-article",
     tier: 1,
     topics: ["system messages", "error messages", "novice users"],
+    url: "https://www.cs.umd.edu/~ben/papers/Shneiderman1982Designing.pdf",
     access: "open",
-    verification: "bibliographic",
-    lastVerifiedAt: "2026-11-16",
+    verification: "url-checked",
+    lastVerifiedAt: "2026-11-17",
     notes:
-      "Metadata checked against Crossref 2026-11-16; opening read (OpenAlex abstract field); the full text was not retrieved (publisher blocked automated access). For novice users 'the system appears only in the form of the messages on their screens'; violent messages ('FATAL ERROR, RUN ABORTED'), vague phrases ('ILLEGAL CMD') and obscure codes shake, confuse and discourage them; much of the negative image of computers is attributed to difficulties when users make mistakes or are unsure what to do next.",
+      "Metadata checked against Crossref 2026-11-16; opening read (OpenAlex abstract field); the publisher blocked automated access then. Full text (two pages, five recommendations for system developers) read 2026-11-17 from the author's copy at the University of Maryland; it supports the statements the entries cite: novices see the system only as its messages, violent, vague or coded messages discourage them, and message wording should get more careful attention. For novice users 'the system appears only in the form of the messages on their screens'; violent messages ('FATAL ERROR, RUN ABORTED'), vague phrases ('ILLEGAL CMD') and obscure codes shake, confuse and discourage them; much of the negative image of computers is attributed to difficulties when users make mistakes or are unsure what to do next.",
   },
 
   // ── Content design ─────────────────────────────────────────────────────
@@ -396,7 +397,7 @@ export default defineSources([
     access: "paywalled",
     verification: "bibliographic",
     lastVerifiedAt: "2026-11-16",
-    notes: "Title and year confirmed through PLAIN's page; the ISO page returned HTTP 403 to automated access and the standard is paid. Not read: cited only for its existence and title, never for its content.",
+    notes: "Title and year confirmed through PLAIN's page; the ISO page returned HTTP 403 to automated access and the standard is paid. Not read: cited only for its existence and title, never for its content. Access attempt 2026-11-17: the ISO page returned HTTP 403 and the standard is paid; not read.",
   },
   {
     id: "plain-writing-act-2010",
@@ -510,7 +511,7 @@ export default defineSources([
     access: "paywalled",
     verification: "bibliographic",
     lastVerifiedAt: "2026-11-16",
-    notes: "Metadata checked against Crossref 2026-11-16; abstract read (OpenAlex). A formula can give a quick general measure of how difficult a text may be, used with caution; discusses eight aspects of writing formulas do not help with; argues writers should not use formulas as a guide to rewriting.",
+    notes: "Metadata checked against Crossref 2026-11-16; abstract read (OpenAlex). A formula can give a quick general measure of how difficult a text may be, used with caution; discusses eight aspects of writing formulas do not help with; argues writers should not use formulas as a guide to rewriting. Access attempt 2026-11-17: the publisher's DOI page did not return readable full text; abstract only.",
   },
   {
     id: "redish-2000",
@@ -528,7 +529,7 @@ export default defineSources([
     access: "paywalled",
     verification: "bibliographic",
     lastVerifiedAt: "2026-11-16",
-    notes: "Metadata checked against Crossref 2026-11-16; abstract read (OpenAlex). Compared with usability testing with typical readers, formulas have technical weaknesses: developed for children's school books, not adult technical documentation; ignore differences between readers and the effects of content, layout and retrieval aids; emphasise countable features over subtler contributors to comprehension.",
+    notes: "Metadata checked against Crossref 2026-11-16; abstract read (OpenAlex). Compared with usability testing with typical readers, formulas have technical weaknesses: developed for children's school books, not adult technical documentation; ignore differences between readers and the effects of content, layout and retrieval aids; emphasise countable features over subtler contributors to comprehension. Access attempt 2026-11-17: the publisher's page returned HTTP 403; abstract only.",
   },
 
   // ── Microcopy ──────────────────────────────────────────────────────────
@@ -609,7 +610,7 @@ export default defineSources([
     access: "paywalled",
     verification: "bibliographic",
     lastVerifiedAt: "2026-11-16",
-    notes: "Metadata checked against Crossref 2026-11-16; abstract read (OpenAlex); full text blocked to automated access. A controlled eye-tracking experiment (N = 65): applying 20 form guidelines together to real company forms led to faster completion, fewer submission attempts, fewer eye movements and higher satisfaction. The 20 guidelines were not read and are not listed; the effect is of the set, not of any single guideline.",
+    notes: "Metadata checked against Crossref 2026-11-16; abstract read (OpenAlex); full text blocked to automated access. A controlled eye-tracking experiment (N = 65): applying 20 form guidelines together to real company forms led to faster completion, fewer submission attempts, fewer eye movements and higher satisfaction. The 20 guidelines were not read and are not listed; the effect is of the set, not of any single guideline. Access attempt 2026-11-17: the publisher's page is paywalled and was not retrieved; abstract only.",
   },
 
   // ── Error messages ─────────────────────────────────────────────────────
@@ -703,7 +704,7 @@ export default defineSources([
     access: "paywalled",
     verification: "bibliographic",
     lastVerifiedAt: "2026-11-16",
-    notes: "Metadata checked against Crossref 2026-11-16; abstract read (OpenAlex). Two studies (77 and 90 participants): presenting errors after the whole form was completed performed best; immediate feedback performed worst, as participants often ignored messages and carried on. Proposes a 'Modal Theory of Form Completion' — completion versus revision mode. Specific message wording was not the variable studied.",
+    notes: "Metadata checked against Crossref 2026-11-16; abstract read (OpenAlex). Two studies (77 and 90 participants): presenting errors after the whole form was completed performed best; immediate feedback performed worst, as participants often ignored messages and carried on. Proposes a 'Modal Theory of Form Completion' — completion versus revision mode. Specific message wording was not the variable studied. Access attempt 2026-11-17: the publisher's page returned HTTP 403; abstract only.",
   },
   {
     id: "inclusion-europe-information-for-all",

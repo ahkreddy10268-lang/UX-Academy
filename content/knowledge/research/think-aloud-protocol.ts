@@ -103,7 +103,7 @@ export default defineEntry({
     problem:
       "Psychologists needed a defensible way to study thinking as it happens. Usability practitioners later needed to know not only where people failed with an interface but what they believed was happening when they did.",
     narrative: [
-      "Ericsson and Simon argued in 1980 that verbal reports are data whose production can be modelled, and specified the conditions under which they are trustworthy {{src:ericsson-simon-1980}}; they developed the account at book length in *Protocol Analysis* {{src:ericsson-simon-1993}}.",
+      "Ericsson and Simon argued in 1980 that verbal reports are data whose production can be modelled, and specified the conditions under which they are trustworthy {{src:ericsson-simon-1980}}; a book-length account followed in *Protocol Analysis* (bibliographic record only; not read for this entry) {{src:ericsson-simon-1993}}.",
       "Usability engineering adopted thinking aloud as a cheap way to find problems with small numbers of users. Nielsen's 1993 *Usability Engineering* called it perhaps the single most valuable usability engineering method, a judgment he repeated in 2012 {{src:nielsen-thinking-aloud-article}}.",
       "By 2000 Boren and Ramey argued that practice had drifted from the theory it cited {{src:boren-ramey-2000}}, which led to experimental comparisons of protocols and moderator behaviour during the following two decades {{src:hertzum-2009-thinking-aloud}} {{src:olmsted-hawala-2010}} {{src:alhadreti-mayhew-2018}}.",
     ],

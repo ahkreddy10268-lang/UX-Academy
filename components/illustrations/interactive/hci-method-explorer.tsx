@@ -38,7 +38,7 @@ export const HCI_METHOD_QUESTIONS: HciMethodQuestion[] = [
     evidence: "Observed difficulties and errors, with the participants' own explanations.",
     limits: "Small samples and artificial tasks; speaking aloud can change how people perform the task.",
     pair: "A survey or analytics to learn how widespread a problem is.",
-    sources: ["nielsen-1993", "ericsson-simon-1993"],
+    sources: ["nielsen-1993", "ericsson-simon-1980"],
   },
   {
     id: "fit",

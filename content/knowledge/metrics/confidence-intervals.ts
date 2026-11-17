@@ -314,6 +314,19 @@ export default defineEntry({
       ],
       explanation: "Comparing two individual intervals is a conservative and often misleading test.",
     },
+    {
+      id: "confidence-intervals-q-read-interval",
+      kind: "multiple-choice",
+      level: "beginner",
+      prompt: "A usability test with 12 participants reports a mean SUS of 72.5 with a 95% confidence interval from 65 to 80. How should this be read?",
+      options: [
+        { text: "The best estimate is 72.5, and values from about 65 to 80 are compatible with the data.", correct: true, explanation: "The interval shows how much the result could plausibly differ for everyone who will use the product." },
+        { text: "95% of participants scored between 65 and 80.", correct: false, explanation: "The interval is about the average for the wider population, not the spread of individual scores." },
+        { text: "The true average is certainly between 65 and 80.", correct: false, explanation: "'95%' describes the long-run capture rate of the procedure, not certainty for one interval." },
+        { text: "A narrower interval would mean the participants varied more.", correct: false, explanation: "Intervals narrow with more participants and with less variation between them." },
+      ],
+      explanation: "A confidence interval is a range of plausible values for the quantity you want to know about, not a description of the sample.",
+    },
   ],
 
   flashcards: [

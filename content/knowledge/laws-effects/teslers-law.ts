@@ -246,6 +246,7 @@ export default defineEntry({
   flashcards: [
     { id: "teslers-law-fc-1", front: "Tesler's Law", back: "Every application has irreducible complexity; decide whether the user, the application or the platform deals with it." },
     { id: "teslers-law-fc-2", front: "Essential vs accidental complexity", back: "Essential comes from the problem and can only be moved; accidental comes from design choices and should be removed (Brooks, 1987)." },
+    { id: "teslers-law-fc-3", front: "What is a default?", back: "A pre-chosen value that the system uses unless the user changes it." },
   ],
 
   references: [

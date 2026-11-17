@@ -171,6 +171,7 @@ export default defineEntry({
     { target: "loading-states", type: "applied-in", note: "Loading-state design chooses feedback according to expected latency bands." },
     { target: "skeleton-screens", type: "applied-in", note: "Skeleton screens manage perceived latency for content that takes around a second or more to load." },
     { target: "keystroke-level-model", type: "related-to", note: "The KLM's R(t) operator accounts for system response time only when users must wait for it." },
+    { target: "feedback-principle", type: "related-to", note: "Response-time targets decide how quickly feedback must arrive for it to read as part of the action." },
   ],
 
   lab: "feedback-lab",
@@ -245,11 +246,25 @@ export default defineEntry({
       explanation: "Perceived responsiveness degrades continuously; 400 ms is not a perception threshold.",
       revise: "doherty-threshold",
     },
+    {
+      id: "doherty-threshold-q-report-status",
+      kind: "multiple-choice",
+      level: "advanced",
+      prompt: "Which statement about the 1982 IBM report and the 400 ms figure is best supported by this entry?",
+      options: [
+        { text: "The report was an industry productivity argument from IBM's own measurements; 400 ms is a commonly repeated interpretation that was not found in the copy read.", correct: true, explanation: "The entry separates the report's economic argument from the popular figure." },
+        { text: "The report established 400 ms as a peer-reviewed perceptual threshold.", correct: false, explanation: "It was an IBM publication making an economic case, not a psychophysical study." },
+        { text: "Independent replications confirmed 400 ms as a guarantee for every product.", correct: false, explanation: "The productivity claims are not from a controlled, independently replicated experiment." },
+        { text: "Shneiderman (1984) showed that one threshold applies to every task.", correct: false, explanation: "He stressed that acceptable delay depends on expectations, task complexity and variability; no single threshold applies to every task." },
+      ],
+      explanation: "Treat 400 ms as a popular rule of thumb, not an established threshold.",
+    },
   ],
 
   flashcards: [
     { id: "doherty-threshold-fc-1", front: "Doherty threshold origin", back: "Doherty & Thadhani (1982), IBM report — economic case for sub-second response; '400 ms' widely quoted second-hand." },
     { id: "doherty-threshold-fc-2", front: "Nielsen's three response-time limits", back: "≈0.1 s feels instant · ≈1 s keeps flow · ≈10 s keeps attention (after Miller 1968; Card et al. 1991)." },
+    { id: "doherty-threshold-fc-3", front: "Is 400 ms a perceptual limit?", back: "No. It is a popular interpretation of a productivity argument, not a perceptual limit; about 0.1 s is the commonly cited limit for feeling instantaneous." },
   ],
 
   references: [
