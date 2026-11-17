@@ -261,10 +261,15 @@ After that: `ui-design`, `interaction-design-discipline`, `accessibility-concept
 ## Session 51 — push, I1 coveredBy checks, improvement-cycle proposal (D-129)
 - Owner decisions: Cycle 2 begins with an improvement-only batch (§ 9.3); I1 authorised; push of `80f8058`, `8c7408e`, `a7c4937` approved.
 - Pushed to `claude/batch1-constraints`: remote HEAD `a7c4937`, main `b788511` unchanged, PR #2 open and unmerged at `a1f6373`. Vercel preview `dpl_G9B261VEd9eSqztEpDJpfuhJqShK` READY.
-- I1: 10 candidates checked against the published hosts; 8 applied (`coveredBy`), 2 left planned (`empty-state-writing`, `state-transitions`). Addressed within 10 → 18; published unchanged (102). Reasons: docs/CONTENT_AUDIT.md session 51. The owner's "11 checks" has no matching list in the repo (plan § 7.3 names 9).
+- I1: 13 candidates (reconciled; first report said 10, plan marks 9, owner's 11 matches no list). 8 applied (`coveredBy`), 5 deferred and left planned (`empty-state-writing`, `state-transitions`, `utility`, `usefulness`, `desirability`). Addressed within 10 → 18; published unchanged (102). Table and reasons: docs/CONTENT_AUDIT.md session 51.
 - Proposal: docs/CYCLE_2_IMPROVEMENT_PROPOSAL.md (priorities, 5 items; nothing started).
 - QA: check 586, taxonomy pass, build 995/995 (rerun after the CLI notice), Atlas 36/36; other suites inherited.
 - I1 commit is local only.
 
+## Session 52 — push of the I1 commit, coveredBy reconciliation, Improvement Batch 1 scope (D-129)
+- Pushed `9931f1a` (owner-approved): remote HEAD = local HEAD; Vercel preview `dpl_E8tGMEEDuf7MG5ec9FMhGV2WkLUU` READY; `main` `b788511` and PR #2 (`a1f6373`, open) unchanged.
+- coveredBy reconciled: 13 candidates, 8 applied, 5 deferred (table in docs/CONTENT_AUDIT.md session 51). No taxonomy change in this session.
+- Prepared docs/CYCLE_2_IMPROVEMENT_BATCH_1_SCOPE.md: five items, acceptance criteria and verification plan. Deferred items recorded as DEF-1…3 in docs/OPEN_ISSUES.md. Nothing implemented.
+
 ## Next task (precise)
-Await the owner's review of docs/CYCLE_2_IMPROVEMENT_PROPOSAL.md. Do not start the improvement batch, select Cycle 2 topics, or push the I1 commit until instructed.
+Await the owner's review of docs/CYCLE_2_IMPROVEMENT_BATCH_1_SCOPE.md. Do not implement the batch, select Cycle 2 topics, or push the documentation commit until instructed.

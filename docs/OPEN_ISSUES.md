@@ -15,6 +15,14 @@ Last updated: 2026-11-17, after the push of `a7c4937` and the I1 commit.
 | C1-3 | Clusters A and E were untouched in Cycle 1; the plan requires every cluster within two cycles. | `docs/BALANCED_DEVELOPMENT_PLAN.md` § 2 | minor | No | Constraint for Cycle 2 planning | Cycle 2 plan must include a batch in A and in E. | Cycle 1 review |
 | P-1 | `80f8058`, `8c7408e`, `a7c4937` pushed 2026-11-17 on owner approval; the I1 commit is local only. | — | — | — | Awaiting owner approval (I1 commit) | Push only on explicit approval. | Batch 3 |
 
+## Deferred by owner decision (2026-11-17) — not dropped
+
+| ID | Description | Severity | Blocks publication | Status | Required action |
+|---|---|---|---|---|---|
+| DEF-1 | Ten detailed (Level-2) diagrams below the D-129 visual target: `ab-testing`, `atomic-design`, `card-sorting`, `cognitive-walkthrough`, `gulfs-of-execution-and-evaluation`, `heart-framework`, `jobs-to-be-done`, `keystroke-level-model`, `usability-testing`, `working-memory-model`. | minor | No | Deferred to a later improvement batch | Consider in subsequent improvement work. |
+| DEF-2 | Twelve entries with developing Practice: `aesthetic-usability-effect`, `confidence-intervals`, `doherty-threshold`, `jakobs-law`, `mental-models`, `net-promoter-score`, `recognition-over-recall`, `sample-size-estimation`, `signifiers`, `steering-law`, `teslers-law`, `user-centred-design`. | minor | No | Deferred to a later improvement batch | Consider in subsequent improvement work. |
+| DEF-3 | Five coveredBy candidates left planned: Empty-State Writing, State Transitions, Utility, Usefulness, Desirability. | minor | No | Intentional | Revisit only if a host is extended to explain the topic; never changed to reach a count. |
+
 ## Technical debt
 
 | ID | Description | Files | Severity | Blocks publication | Status | Required action | Related |
@@ -67,5 +75,4 @@ The UI known issues (static lesson rail on phones, chip-row scrolling, steering-
 
 ## Closed
 
-- **C1-2 — I1 coveredBy checks** (2026-11-17, I1 commit). 10 topics checked against the published host entries; 8 applied as `coveredBy` (ISO/IEC 40500, Success Criteria, Conformance Levels → `wcag`; Effectiveness, Efficiency, Satisfaction → `usability`; Margin of Error → `confidence-intervals`; Emphasis → `visual-hierarchy`); 2 left planned (Empty-State Writing, State Transitions). Reasons in `docs/CONTENT_AUDIT.md` session 51.
-- Note: no list of 11 checks exists in the repository; plan § 7.3 names 9 and `state-transitions` was a tenth.
+- **C1-2 — I1 coveredBy checks** (2026-11-17). Reconciled: 13 candidates (plan § 7.3 marks 9; my first report said 10 and missed `utility`, `usefulness`, `desirability`; the owner's "11" matches no list in the repository). 8 applied (ISO/IEC 40500, Success Criteria, Conformance Levels → `wcag`; Effectiveness, Efficiency, Satisfaction → `usability`; Margin of Error → `confidence-intervals`; Emphasis → `visual-hierarchy`); 5 deferred and left planned (Empty-State Writing, State Transitions, Utility, Usefulness, Desirability). Addressed within 10 → 18. Full table with reasons: `docs/CONTENT_AUDIT.md` session 51.
