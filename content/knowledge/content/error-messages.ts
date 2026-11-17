@@ -99,7 +99,7 @@ export default defineEntry({
 
   origin: {
     contributors: ["Ben Shneiderman", "Jakob Nielsen", "Government Digital Service", "W3C Web Accessibility Initiative"],
-    period: "System-message design discussed from the early 1980s; codified in usability heuristics (1990) and in accessibility standards",
+    period: "System-message design discussed from the early 1980s; later codified in usability heuristics and in accessibility standards",
     problem:
       "Early systems reported failures as codes and alarms written for engineers, leaving users frightened, confused and unable to recover.",
     narrative: [
@@ -323,7 +323,7 @@ receiving focus, with a link to #dob; page title starts with "Error: ".`,
       options: [
         { text: "“Email or password is incorrect” — the same message as for a wrong password.", correct: true, explanation: "Different messages would let attackers find out which emails have accounts." },
         { text: "“No account exists for this email.”", correct: false, explanation: "Helpful to users, but it enables user enumeration." },
-        { text: "“Error 401.”", correct: false, explanation: "A code helps no one and still leaks nothing useful to users." },
+        { text: "“Error 401.”", correct: false, explanation: "A code tells people nothing about what happened or what to do." },
         { text: "Nothing — just clear the form.", correct: false, explanation: "Silence leaves people unsure what happened." },
       ],
       explanation: "Security constrains what an error can reveal; WCAG allows this exception.",

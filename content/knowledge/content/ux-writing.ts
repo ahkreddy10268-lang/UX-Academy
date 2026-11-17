@@ -75,18 +75,18 @@ export default defineEntry({
     advanced: {
       explanation: [
         "**UX writing, content design and copywriting.** The boundaries are contested and job titles vary by organisation. A useful working distinction: UX writing designs the words *within* an interface and its flows; [[content-design|content design]] starts earlier, asking what content is needed, for which user need, in what format and channel — a page, a tool, a form or no content at all {{src:winters-2019-what-is-content-design}}; content strategy plans the creation, delivery and governance of content across an organisation {{src:nng-content-strategy}}; marketing copywriting persuades. One person often does several of these. What matters is that someone owns the words in the product, with research behind them.",
-        "**History.** Interface words were a usability concern long before the job title. In 1982 Shneiderman argued that for novice users 'the system appears only in the form of the messages on their screens', and that violent, vague or coded messages discourage them {{src:shneiderman-1982}}. Web-writing research in the 1990s showed that people scan and dislike promotional language {{src:nielsen-1997-how-users-read}}. Porter's 2009 post on microcopy popularised attention to the smallest interface text {{src:porter-2009-microcopy}}, and practitioner books on UX writing followed {{src:podmajersky-2019}}.",
+        "**History.** Interface words were a usability concern long before the job title. In 1982 Shneiderman argued that for novice users 'the system appears only in the form of the messages on their screens', and that violent, vague or coded messages discourage them {{src:shneiderman-1982}}. Web-writing research in the 1990s showed that people scan and dislike promotional language {{src:nielsen-1997-how-users-read}}. Porter's 2009 post on microcopy drew attention to the smallest interface text {{src:porter-2009-microcopy}}, and practitioner books on UX writing followed {{src:podmajersky-2019}}.",
         "**Evaluation.** Words are designed, so they are tested like other design decisions: usability testing with realistic tasks, comprehension or paraphrase tests ('in your own words, what will happen if you press this?') {{src:digitalgov-test-for-understanding}}, tracking how often each error message is shown {{src:govuk-error-message}}, support-contact themes, and A/B tests where traffic allows. Preference ('which do you like better?') is weak evidence; whether people do the right thing and can say what will happen is strong evidence.",
       ],
       evidence: [
         "In NN/g's 1997 web-writing study, versions of the same site that were concise, scannable and objective scored 58 %, 47 % and 27 % higher in measured usability than a promotional control, and 124 % higher combined; 79 % of test users scanned rather than read word by word {{src:nielsen-1997-how-users-read}}. The study is old and reported by its authors; sample sizes are not given on the page.",
         "In an online survey of 50 respondents, changing only the tone of otherwise identical samples produced statistically significant but small differences in perceived friendliness and formality — about half a point to one point on a five-point scale {{src:nng-tone-of-voice}}.",
-        "Applying a set of 20 form guidelines (covering wording among other things) to real company forms led to faster completion, fewer submission attempts and higher satisfaction in a controlled experiment (N = 65) {{src:seckler-2014-web-forms}}. The effect is of the whole set, not of wording alone.",
+        "Applying a set of 20 form guidelines to real company forms led to faster completion, fewer submission attempts and higher satisfaction in a controlled experiment (N = 65) {{src:seckler-2014-web-forms}}. The guidelines themselves were not read for this entry, so the effect cannot be attributed to wording; it is the effect of the whole set.",
       ],
       debates: [
         "**Personality or plainness?** Brand voice guides encourage personality; public-service guidance says 'aim to be boring' and avoid humour where people may be stressed {{src:govuk-writing-for-user-interfaces}}. The evidence on tone shows real but small effects on perception {{src:nng-tone-of-voice}}; clarity failures stop tasks. Most teams resolve it by letting personality show only where it costs nothing.",
         "**Short or complete?** 'Fewer words' is a strong default {{src:govuk-writing-for-user-interfaces}}, but cutting the one sentence that answers a person's worry ('you won't be charged until…') can cost more than it saves. Length should follow the question the reader has at that moment.",
-        "**Writer or designer?** Some teams treat words as a final polish by a writer; others insist words are drafted with the first sketch. Practitioner sources consistently argue for the second, because many interface problems are naming and sequencing problems that cannot be fixed by editing later {{src:winters-2019-what-is-content-design}}.",
+        "**Writer or designer?** Some teams treat words as a final polish by a writer; others insist words are drafted with the first sketch. Winters argues for working with design from the start rather than editing at the end {{src:winters-2019-what-is-content-design}}; many interface problems are naming and sequencing problems that are expensive to fix late.",
       ],
       alternativeModels: [
         "[[content-design|Content design]] — the wider practice of meeting a user need with the right content in the right form.",
@@ -184,7 +184,7 @@ export default defineEntry({
     { target: "microcopy", type: "applied-in", note: "Microcopy — labels, buttons, hints and messages — is the main output of UX writing." },
     { target: "content-design", type: "related-to", note: "Content design decides what content is needed and in what form; UX writing designs the words within the interface. The boundary overlaps and titles vary." },
     { target: "gulfs-of-execution-and-evaluation", type: "related-to", note: "Labels help people predict an action (execution); messages help them interpret the result (evaluation)." },
-    { target: "feedback-principle", type: "applied-in", note: "UX writing supplies the words of feedback: confirmations, status and error messages." },
+    { target: "feedback-principle", type: "related-to", note: "UX writing supplies the words of feedback: confirmations, status and error messages." },
     { target: "tone-of-voice", type: "related-to", note: "Voice stays consistent while tone adapts to the moment and the reader's state." },
     { target: "usability-testing", type: "measured-by", note: "Interface words are evaluated by whether people complete tasks and understand results." },
   ],
@@ -294,7 +294,7 @@ What changed
       exampleSolution: [
         "(a) 'First workout done. Nice start.' — casual, slightly enthusiastic; low stakes, positive moment.",
         "(b) 'Your card was declined, so your plan hasn't renewed. Update your card to keep your history and plans.' — casual but serious and matter-of-fact; money and loss are at stake.",
-        "(c) 'Your heart rate is 185 bpm. Stop exercising and rest. If you feel chest pain or dizziness, call emergency services.' — formal enough to be taken seriously, fully serious and matter-of-fact; misunderstanding could cause harm.",
+        "(c) 'Your heart rate is 185 bpm. Stop exercising and rest. If you feel chest pain or dizziness, call emergency services.' — formal enough to be taken seriously, fully serious and matter-of-fact; misunderstanding could cause harm. (Illustrative: real health thresholds and wording must come from clinicians.)",
       ],
     },
   ],

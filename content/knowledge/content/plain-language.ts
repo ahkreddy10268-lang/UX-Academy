@@ -76,7 +76,7 @@ export default defineEntry({
     },
     advanced: {
       explanation: [
-        "**Readability formulas measure text, not readers.** Formulas such as Flesch's Reading Ease, published in 1948 {{src:flesch-1948}}, estimate difficulty from countable features such as sentence and word length. Redish argued in 1981 that a formula can give a quick, general measure of difficulty but should not be used as a guide to rewriting, and listed aspects of writing formulas do not address {{src:redish-1981}}. In 2000 she added that formulas were developed for children's school books rather than adult technical documents, ignore differences between readers and the effects of content, layout and retrieval aids, and emphasise countable features over subtler contributors to comprehension — compared with testing with typical readers {{src:redish-2000}}. Shortening every sentence to lower a score can produce choppy text that is harder to follow.",
+        "**Readability formulas measure text, not readers.** Formulas such as Flesch's Reading Ease, published in 1948 {{src:flesch-1948}}, estimate difficulty from countable features such as sentence and word length. Redish argued in 1981 that a formula can give a quick, general measure of difficulty but should not be used as a guide to rewriting, and listed aspects of writing formulas do not address {{src:redish-1981}}. In 2000 she added that formulas were developed for children's school books rather than adult technical documents, ignore differences between readers and the effects of content, layout and retrieval aids, and emphasise countable features over subtler contributors to comprehension — compared with testing with typical readers {{src:redish-2000}}. Mechanically shortening sentences to lower a score is the kind of rewriting Redish advises against; it can also split ideas that belong together.",
         "**Standards and law.** Plain language is required in some settings. The US Plain Writing Act of 2010 requires federal agencies to use plain writing in documents people need to obtain benefits or services, file taxes or comply with requirements; it excludes regulations {{src:plain-writing-act-2010}}. GOV.UK makes plain English mandatory for all its content {{src:govuk-clear-language}}. WCAG 2.2 includes a Level AAA criterion: when text requires reading ability above lower secondary education level, a simpler version or supplemental content should be available {{src:w3c-understanding-reading-level}}. ISO 24495-1:2023 sets out governing principles and guidelines; it is a paid standard and was not read for this entry, so its content is not described here {{src:iso-24495-1-2023}}.",
         "**Who benefits.** GOV.UK cites adult literacy data — for example, 1 in 6 adults in England with very poor literacy skills — and notes readers whose first language is not English {{src:govuk-clear-language}}. Plain language supports [[cognitive-accessibility|cognitive accessibility]], people reading under stress or on small screens, and experts short of time {{src:nng-plain-language-experts}}. Whether a text works is ultimately an empirical question answered by testing it with its readers {{src:digitalgov-test-for-understanding}}.",
       ],
@@ -188,7 +188,7 @@ export default defineEntry({
     { target: "content-design", type: "applied-in", note: "Plain language governs how content is expressed once content design has decided what is needed." },
     { target: "ux-writing", type: "applied-in", note: "Interface words follow plain-language principles: users' words, main point first." },
     { target: "cognitive-accessibility", type: "related-to", note: "Clear wording, structure and design reduce barriers for people with cognitive and learning disabilities." },
-    { target: "readability-formulas", type: "measured-by", note: "Formulas give a quick estimate of difficulty; testing with readers is the stronger measure." },
+    { target: "readability-formulas", type: "related-to", note: "Formulas give a quick estimate of difficulty, not a measure of understanding; testing with readers is the stronger check." },
     { target: "cognitive-load-theory", type: "related-to", note: "Unnecessary complexity in wording and structure adds effort that does not help the reader's task." },
     { target: "wcag", type: "related-to", note: "WCAG 2.2 SC 3.1.5 Reading Level (AAA) asks for simpler versions of text above lower secondary level." },
   ],
@@ -299,7 +299,7 @@ WHAT CHANGED (meaning kept)
       ],
       exampleSolution: [
         "Pharmacists: keep 'CYP3A4 inhibitors' and 'contraindicated' — shared, precise terms — but put the warning where it is seen at the point of prescribing, and name common examples.",
-        "Patients: 'Do not take this medicine with [named medicines] or grapefruit juice. Ask your pharmacist before taking any other medicine.' Both are plain for their audience.",
+        "Patients: 'Do not take this medicine with [named medicines, foods or drinks]. Ask your pharmacist before taking any other medicine.' (Illustrative: the actual list must come from the product information.) Both are plain for their audience.",
       ],
     },
   ],

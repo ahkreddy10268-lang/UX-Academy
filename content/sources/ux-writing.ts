@@ -546,7 +546,7 @@ export default defineSources([
     verification: "url-checked",
     lastVerifiedAt: "2026-11-16",
     notes:
-      "Published 9 June 2009; read 2026-11-16. Describes microcopy as small copy — a sentence, phrase or single word — that is 'extremely contextual' and answers a specific question at the moment it arises; anecdote: a line telling people to enter the billing address associated with their card stopped repeated payment errors on a checkout form; examples are mostly reassurance that reduces commitment ('you can change this at any time'). An early, influential blog post, often credited with popularising the term; anecdotal, not a study.",
+      "Published 9 June 2009; read 2026-11-16. Describes microcopy as small copy — a sentence, phrase or single word — that is 'extremely contextual' and answers a specific question at the moment it arises; anecdote: a line telling people to enter the billing address associated with their card stopped repeated payment errors on a checkout form; examples are mostly reassurance that reduces commitment ('you can change this at any time'). An early practitioner blog post on the subject; anecdotal, not a study. Whether it coined or popularised the term is not established by the sources read.",
   },
   {
     id: "yifrah-2017",

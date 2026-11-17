@@ -438,11 +438,11 @@ export const errorMessagesPlate: IllustrationEntry = {
   title: "Error messages plate",
   canvas: "sheet",
   description:
-    "An illustrative date-of-birth error in four panels. 1, 'Something fails': the field 'Date of birth' contains 27 13 1990 and has a red border. 2, 'Explain': an error summary at the top of the page, 'There is a problem', with a link 'Date of birth must be a real date'. 3, 'Recover': beside the field, the message 'Error: Date of birth must be a real date', marked by a red bar and the word Error; the field keeps the person's entry, now edited to 27 3 1990, with a focus ring. 4, 'Resolved': a tick with 'Details saved' and 'Date of birth: 27 March 1990'. A connector runs from panel 1 to 2, from 2 down to 3, and from 3 to 4.",
+    "An illustrative date-of-birth error in four panels. 1, 'Something fails': the field 'Date of birth' contains 27 13 1990 and has a red border. 2, 'Explain': an error summary at the top of the page, 'There is a problem', with a link 'Date of birth must be a real date'. 3, 'Recover': beside the field, the message 'Date of birth must be a real date', marked by a red bar and a cross icon (screen readers also hear a visually hidden 'Error:' prefix); the field keeps the person's entry, now edited to 27 3 1990, with a focus ring. 4, 'Resolved': a tick with 'Details saved' and 'Date of birth: 27 March 1990'. A connector runs from panel 1 to 2, from 2 down to 3, and from 3 to 4.",
   key: [
     { n: "1", label: "Detect, don't just colour", detail: "a red border alone tells some people nothing; the error must also be identified and described in text" },
     { n: "2", label: "Summarise after submitting", detail: "a summary at the top receives focus and links to the field, so keyboard and screen-reader users learn at once what to fix" },
-    { n: "3", label: "Explain at the field", detail: "the same words beside the field, with a hidden 'Error:' prefix for screen readers: what is wrong and, by implication, how to fix it" },
+    { n: "3", label: "Explain at the field", detail: "the same words as the summary, beside the field, with an icon as well as colour; a visually hidden 'Error:' prefix tells screen-reader users what the text is" },
     { n: "4", label: "Keep their input", detail: "the value stays so the person edits one character instead of starting again" },
     { n: "5", label: "Confirm the resolution", detail: "the result is stated in the same terms, so the person knows the problem is gone" },
   ],
@@ -474,11 +474,12 @@ export const errorMessagesPlate: IllustrationEntry = {
 
       <Card x={8} y={158} w={188} h={134} title="Recover">
         <rect x={20} y={192} width={3} height={36} fill={S.error} />
-        <UiText x={30} y={206} weight={700} tone="error">
-          Error: Date of birth
+        <Verdict x={36} y={202} ok={false} r={7} />
+        <UiText x={48} y={206} weight={700} tone="error">
+          Date of birth must
         </UiText>
-        <UiText x={30} y={223} weight={700} tone="error">
-          must be a real date
+        <UiText x={48} y={223} weight={700} tone="error">
+          be a real date
         </UiText>
         <DobField x={23} y={244} value="27 3 1990" state="focus" />
       </Card>

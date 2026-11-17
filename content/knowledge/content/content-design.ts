@@ -75,7 +75,7 @@ export default defineEntry({
     },
     advanced: {
       explanation: [
-        "**Origins.** Content design took shape as a named practice in the UK government's digital work: GOV.UK's guidance treats it as the standard way of planning and writing content {{src:govuk-understand-content-design}}, and Content Design London states that its founder, Sarah Winters (formerly Richards), helped implement the practice at the Government Digital Service {{src:content-design-london-about}}. Her book *Content Design* (2017) set out the approach {{src:richards-2017}}; the definition quoted here comes from her 2019 article, which cites it {{src:winters-2019-what-is-content-design}}. The approach draws on user-centred design ([[user-centred-design|UCD]]) and on content strategy {{src:nng-content-strategy}}.",
+        "**Origins.** Content design took shape as a named practice in the UK government's digital work: GOV.UK's guidance treats it as the standard way of planning and writing content {{src:govuk-understand-content-design}}, and Content Design London states that its founder, Sarah Winters (formerly Richards), helped implement the practice at the Government Digital Service {{src:content-design-london-about}}. Her book *Content Design* (2017) set out the approach {{src:richards-2017}}; the definition quoted here comes from her 2019 article, which cites it {{src:winters-2019-what-is-content-design}}. It shares the premise of [[user-centred-design|user-centred design]] that design starts from evidence of what users need {{src:govuk-identify-user-needs}}, and works within content strategy {{src:nng-content-strategy}}.",
         "**Beyond the interface.** Because it starts from needs rather than screens, content design applies to help centres, letters, phone scripts, forms and whole service journeys. Winters gives the example of a health service planning an expensive app whose need would have been better met by a poster in doctors' surgeries {{src:winters-2019-what-is-content-design}}. The skill is choosing the smallest, clearest intervention that meets the need.",
         "**Evaluation and governance.** Content can be tested like other design: paraphrase and usability tests show whether people understand and can act {{src:digitalgov-test-for-understanding}}; analytics, search terms and contact-centre data show whether needs are being met {{src:govuk-identify-user-needs}}. Governance asks who owns each piece and when it will be reviewed; NN/g's content-strategy lifecycle cycles content through planning, creation and maintenance until it is unpublished {{src:nng-content-strategy}}. GOV.UK's test for withdrawing content — 'will leaving it as it is get in the way of a non-specialist user?' — is a compact governance rule {{src:govuk-retire-content}}.",
       ],
@@ -99,11 +99,11 @@ export default defineEntry({
 
   origin: {
     contributors: ["Sarah Winters (formerly Richards)", "Government Digital Service", "Kristina Halvorson", "Rachel Lovinger"],
-    period: "Named and established in UK government digital work in the early 2010s; spread to commercial product and service teams since",
+    period: "Established as a named practice in UK government digital work (GDS); the sources read do not date it precisely",
     problem:
       "Organisations published content from their own point of view — by department, policy or product — so people could not find or act on what they needed, and content multiplied, duplicated and went out of date.",
     narrative: [
-      "Content strategy, as defined by Halvorson in 2009, established content as something to plan and govern rather than produce on demand {{src:nng-content-strategy}} {{src:halvorson-2009}}.",
+      "Halvorson's 2009 definition framed content strategy as planning for the creation, delivery and governance of content {{src:nng-content-strategy}} {{src:halvorson-2009}}.",
       "At the UK Government Digital Service, content design became the standard way of planning and writing GOV.UK content around user needs {{src:govuk-understand-content-design}} {{src:content-design-london-about}}.",
       "Richards's *Content Design* (2017) described the practice for a wider audience {{src:richards-2017}}; Content Design London's account presents it as a process of research, user needs, journey and channel mapping, language and emotion, creation, sharing and iteration {{src:winters-2019-what-is-content-design}}.",
     ],
@@ -181,7 +181,7 @@ export default defineEntry({
   ],
 
   relations: [
-    { target: "user-centred-design", type: "derived-from", note: "Content design applies user-centred design to content: evidence of needs first, then design and iteration." },
+    { target: "user-centred-design", type: "related-to", note: "Content design shares UCD's premise: evidence of user needs first, then design and iteration." },
     { target: "content-strategy", type: "related-to", note: "Content strategy plans creation, delivery and governance across an organisation; content design meets specific needs within it." },
     { target: "information-architecture", type: "complementary-to", note: "IA organises and labels content across a product; content design decides what each piece is and how it is structured." },
     { target: "content-audit", type: "complementary-to", note: "Audits judge whether existing content still meets a need and should be kept, updated or removed." },

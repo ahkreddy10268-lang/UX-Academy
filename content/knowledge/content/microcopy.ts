@@ -4,11 +4,11 @@ export default defineEntry({
   id: "microcopy",
   slug: "microcopy",
   title: "Microcopy",
-  alternateNames: ["Interface copy", "UI text", "UI strings", "Microcontent (in interfaces)"],
+  alternateNames: ["Interface copy", "UI text", "UI strings"],
   summary:
     "The short pieces of text inside an interface — labels, buttons, hints, tooltips, confirmations, status and empty-state messages — that answer a person's question at the moment it arises.",
   definition:
-    "Microcopy is a **pattern** of interface text: short, contextual words attached to a specific control, field or state. Joshua Porter, whose 2009 post helped popularise the term, described it as small copy — a sentence, a phrase or a single word — that is 'extremely contextual' and answers a specific question people have at that point {{src:porter-2009-microcopy}}. It includes field labels, hint text, placeholders, button and link text, tooltips, confirmation and success messages, status messages, empty states and error messages. It is the main output of [[ux-writing|UX writing]], but shortness alone does not make it good: 'Submit', 'Invalid input' and 'Click here' are short and unhelpful. Good microcopy is judged by whether it helps people act correctly and understand what happened.",
+    "Microcopy is a **pattern** of interface text: short, contextual words attached to a specific control, field or state. Joshua Porter, in an early 2009 post on the subject, described it as small copy — a sentence, a phrase or a single word — that is 'extremely contextual' and answers a specific question people have at that point {{src:porter-2009-microcopy}}. It includes field labels, hint text, placeholders, button and link text, tooltips, confirmation and success messages, status messages, empty states and error messages. It is the main output of [[ux-writing|UX writing]], but shortness alone does not make it good: 'Submit', 'Invalid input' and 'Click here' are short and unhelpful. Good microcopy is judged by whether it helps people act correctly and understand what happened.",
   primaryType: "pattern",
   secondaryTypes: [],
   domain: "content",
@@ -81,7 +81,7 @@ export default defineEntry({
         "**Consistency across states.** A control's text must stay true in every state: a button that says 'Save' must not save and publish; a toggle labelled 'Notifications' must make clear whether it is on; a busy button ('Saving…') should say what it is doing ([[interaction-states|interaction states]]). Inconsistency between a label and its result is one of the most common sources of mistrust.",
       ],
       evidence: [
-        "Applying a set of 20 web-form guidelines (including labelling and instructions) improved completion time, submission attempts, eye movements and satisfaction in a controlled experiment (N = 65); the effect is of the whole set {{src:seckler-2014-web-forms}}.",
+        "Applying a set of 20 web-form guidelines (not read here, so their content is not attributed) improved completion time, submission attempts, eye movements and satisfaction in a controlled experiment (N = 65); the effect is of the whole set {{src:seckler-2014-web-forms}}.",
         "NN/g's usability research documents seven problems when placeholders replace labels, including memory strain and difficulty fixing errors {{src:nng-form-placeholders}}.",
         "Porter's checkout example — one line about the billing address removing a recurring payment error — is a practitioner anecdote, not controlled evidence {{src:porter-2009-microcopy}}.",
       ],
@@ -100,7 +100,7 @@ export default defineEntry({
 
   origin: {
     contributors: ["Joshua Porter", "Kinneret Yifrah"],
-    period: "Term popularised from 2009; the practice of writing interface labels and messages is older",
+    period: "Term in practitioner use by 2009; the practice of writing interface labels and messages is older",
     problem:
       "Small interface texts were written last, by whoever built the screen, so people met cryptic labels, vague buttons and silent states at the moments they needed guidance.",
     narrative: [
@@ -108,7 +108,7 @@ export default defineEntry({
       "Practitioner books on microcopy followed {{src:yifrah-2017}}, and public-sector design guidance set rules for interface text, such as GOV.UK's guidance on writing for user interfaces {{src:govuk-writing-for-user-interfaces}}.",
     ],
     attributionNote:
-      "Porter is often credited with popularising the term; the sources read do not establish who used it first, so no coinage is claimed.",
+      "The sources read do not establish who coined or popularised the term, so no coinage is claimed; Porter's post is cited as an early description.",
   },
 
   application: {
@@ -181,7 +181,7 @@ export default defineEntry({
     { target: "empty-states", type: "applied-in", note: "Empty states depend on microcopy that explains why nothing is shown and what to do next." },
     { target: "error-messages", type: "related-to", note: "Error messages are the microcopy of failure, with their own rules for placement, specificity and recovery." },
     { target: "signifiers", type: "related-to", note: "Labels and button text are verbal signifiers of what can be done." },
-    { target: "visibility-of-system-status", type: "applied-in", note: "Status, progress and confirmation messages are microcopy." },
+    { target: "visibility-of-system-status", type: "related-to", note: "Status, progress and confirmation messages are microcopy." },
     { target: "deceptive-patterns", type: "contrasts-with", note: "Manipulative wording (guilt-tripping opt-outs, false reassurance) turns microcopy into a deceptive pattern." },
     { target: "form-design", type: "complementary-to", note: "Labels, hints and validation messages are part of form design." },
   ],
@@ -194,7 +194,7 @@ export default defineEntry({
       { text: "Write link text that makes sense on its own.", why: "Screen-reader users often hear links listed out of context; 'click here' is not accessible link text {{src:govuk-writing-for-user-interfaces}}.", kind: "standard" },
     ],
     donts: [
-      { text: "Don't put essential information only in a tooltip or placeholder.", why: "Tooltips need hover or focus and placeholders disappear; some people never see either {{src:nng-form-placeholders}}.", kind: "standard" },
+      { text: "Don't put essential information only in a tooltip or placeholder.", why: "Placeholders disappear as people type {{src:nng-form-placeholders}}; tooltips that need hover are unavailable on touch screens, so some people never see the information.", kind: "standard" },
       { text: "Don't refer to colour, shape or position ('the green button', 'on the left').", why: "Not everyone perceives them; screen-reader users never see them {{src:govuk-writing-for-user-interfaces}}.", kind: "standard" },
       { text: "Don't use guilt or pressure in opt-out text.", why: "Wording that shames people into a choice is manipulative and erodes trust.", kind: "context" },
     ],
@@ -357,7 +357,7 @@ Accessibility notes
   ],
 
   references: [
-    { source: "porter-2009-microcopy", role: "primary", note: "Read: early post that popularised the term (anecdotal)." },
+    { source: "porter-2009-microcopy", role: "primary", note: "Read: an early post describing microcopy (anecdotal)." },
     { source: "yifrah-2017", role: "further", note: "Bibliographic record only; not read." },
     { source: "nng-form-placeholders", role: "primary", note: "Read: seven problems with placeholders replacing labels." },
     { source: "w3c-understanding-labels-instructions", role: "standard", note: "Read: WCAG 2.2 SC 3.3.2." },

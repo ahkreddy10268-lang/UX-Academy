@@ -1,6 +1,6 @@
 # Progress register
 
-_Last updated: 2026-11-16 (session 49 — Cycle 1, Batch 3 complete locally: UX writing foundations; awaiting review)_
+_Last updated: 2026-11-17 (session 50 — Batch 3 review: PASS WITH MINOR FOLLOW-UPS; Cycle 1 balance review: IMPROVEMENT REQUIRED; awaiting owner decision)_
 
 ## State
 
@@ -235,5 +235,28 @@ After that: `ui-design`, `interaction-design-discipline`, `accessibility-concept
 - **Cycle 1 complete:** 14 topics (the plan defines 14, not 15); 88 → 102 published; three paths at 100 %; balance-review data in BATCH_3_REPORT § 11.
 - D-129, the learning paths, gate code and tests are unchanged. Committed locally; not pushed.
 
+## Session 50 — Batch 3 review and Cycle 1 balance review (D-129)
+
+- Report: docs/CYCLE_1_BALANCE_REVIEW.md. Reviewed `80f8058`; corrections in the review commit on top of it.
+- **Batch 3: PASS WITH MINOR FOLLOW-UPS.** Findings: 0 critical, 0 major, 6 moderate (all fixed), 8 minor fixed, 3 minor open. The moderate findings:
+  - Seckler 2014 guideline content was attributed although only the abstract was read.
+  - Porter was said to have popularised "microcopy", which no source read supports.
+  - Four relations were misstated: two `applied-in` relations were reversed, one `measured-by` contradicted its own entry, and one `derived-from` was unsupported.
+  - The content-design origin was dated "early 2010s" against its own note, and a citation did not support its sentence.
+  - The error-messages plate showed a visible "Error:" prefix, against the key and the GOV.UK source.
+  - A tooltip claim was cited to an article about placeholders.
+- **Cycle 1 balance: coverage and caps met.**
+  - 14/14 topics published; 88 (at `3177819^`) → 102.
+  - Maximum domain share 5/14 = 35.71 %.
+  - Empty + Seeded domains 12 → 10; empty subcategories 42 → 39.
+  - Three paths at 100 % (verified step by step); no path regressed.
+  - Developing counts unchanged; no Cycle 1 entry below target.
+- **Cycle 1 decision: IMPROVEMENT REQUIRED.**
+  - The § 9.3 stop rule was triggered by Batch 1: constraints 5 rework commits, feedback-principle 2, interaction-states 2.
+  - I1's coveredBy checks were not done.
+  - Clusters A and E must be touched in Cycle 2.
+- QA on the corrected tree: check 586; taxonomy pass; build 995/995; e2e-redesign 66/66; axe 0; Batch 3 page review 40/40; integrity clean. Other suites inherited from `80f8058`. Screen readers, devices and expert review untested.
+- Not pushed. No Cycle 2 topics selected.
+
 ## Next task (precise)
-Await the project owner's independent review of Cycle 1, Batch 3 (docs/BATCH_3_REPORT.md) and the Cycle 1 balance review. Do not push, merge or start Cycle 2 until instructed.
+Await the owner's decision on docs/CYCLE_1_BALANCE_REVIEW.md: how the § 9.3 stop rule applies, and authorisation for I1 (coveredBy checks). Do not push, merge, or plan or start Cycle 2 batches until instructed.
