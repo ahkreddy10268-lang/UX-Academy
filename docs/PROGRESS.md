@@ -297,5 +297,10 @@ After that: `ui-design`, `interaction-design-discipline`, `accessibility-concept
 - IB2 pushed (`6c6fefb`). IB3 `8863945`: five Level-2 figures (usability-testing, cognitive-walkthrough, card-sorting, ab-testing, keystroke-level-model); visual target 92 → 97 of 102. Review: docs/CYCLE_2_IB3_REVIEW.md — PASS WITH DOCUMENTED LIMITATIONS.
 - Next: IB4 (five figures: atomic-design, jobs-to-be-done, gulfs-of-execution-and-evaluation, working-memory-model, heart-framework), then one consolidated Cycle 2 improvement report.
 
+## Session 58 — Cycle 2 improvement phase complete (IB2–IB4) (D-129)
+- IB3 pushed (`c31dc36`). IB4 `4f844f5`: five Level-2 figures (atomic-design, jobs-to-be-done, gulfs-of-execution-and-evaluation, working-memory-model, heart-framework); D-129 visual target 102/102. Review: docs/CYCLE_2_IB4_REVIEW.md — PASS WITH DOCUMENTED LIMITATIONS.
+- Consolidated report: docs/CYCLE_2_IMPROVEMENT_REPORT.md (visual 102/102, Practice 102/102, evidence 101/102, Editorial 101/102).
+- The stop rule's improvement-only phase is done. No new topics selected.
+
 ## Next task (precise)
-Implement IB4 per docs/CYCLE_2_IMPROVEMENT_PLAN.md § 3, review it, push, then write the consolidated Cycle 2 improvement report and stop before selecting any new topic.
+Await the owner. Cycle 2 new-topic planning is a separate request (clusters A and E must be touched; re-run dependency analysis; keep domain caps). Do not select or produce topics until instructed.

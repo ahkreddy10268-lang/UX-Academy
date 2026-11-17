@@ -24,11 +24,11 @@ Last updated: **2026-11-17**.
 
 ## Current approved task
 
-**Cycle 2 improvement plan (approved 2026-11-17): IB2 and IB3 done, IB4 pending.** IB2 (Practice, citation and source hygiene) implemented in `2216116` and reviewed (`docs/CYCLE_2_IB2_REVIEW.md`, PASS WITH DOCUMENTED LIMITATIONS). Process per the plan: one implementation commit and one targeted review per batch; push to `claude/batch1-constraints` after each batch's review commit when no critical or major finding is open (authorised by the owner); no merge, no production, no new topics.
+None in progress. **The Cycle 2 improvement phase (IB2, IB3, IB4) is complete and pushed**, accepted with documented limitations. Consolidated report: `docs/CYCLE_2_IMPROVEMENT_REPORT.md`; per-batch reviews `docs/CYCLE_2_IB2_REVIEW.md`, `…IB3_REVIEW.md`, `…IB4_REVIEW.md`. Coverage: visual target 102/102, Practice 102/102, evidence target 101/102, Editorial 101/102; published 102.
 
 ## Next authorised action
 
-**Implement IB4** (`atomic-design`, `jobs-to-be-done`, `gulfs-of-execution-and-evaluation`, `working-memory-model`, `heart-framework`) — IB3 (`8863945`, reviewed in `docs/CYCLE_2_IB3_REVIEW.md`) is done — then one consolidated Cycle 2 improvement report. Stop before selecting new topics.
+**Wait for the owner.** The plan authorised implementing and pushing IB2–IB4 to `claude/batch1-constraints` only (no merge, no production) and stopping before selecting new topics or starting another cycle. Cycle 2 new-topic planning is a separate request: it must touch clusters A and E, re-run the dependency analysis and keep the domain caps (`docs/BALANCED_DEVELOPMENT_PLAN.md` § 2).
 
 ## Open follow-ups
 
