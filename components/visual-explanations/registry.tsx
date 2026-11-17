@@ -22,7 +22,15 @@ import { InterviewClaims } from "./concepts/in-depth-interviews";
 import { DisabilityPerspectives } from "./concepts/accessibility-concept";
 import { ContributionLifecycle, DesignSystemArchitecture } from "./concepts/design-system";
 import { IaEcology, IaHierarchy } from "./concepts/information-architecture";
+import { UsabilityTestCycle } from "./concepts/usability-testing";
+import { WalkthroughQuestions } from "./concepts/cognitive-walkthrough";
+import { CardSortTypes } from "./concepts/card-sorting";
+import { AbTestChecks } from "./concepts/ab-testing";
+import { KlmWorkedMethod } from "./concepts/keystroke-level-model";
+import { KLM_OPERATORS, klmTotal, parseKlm } from "@/lib/formulas/pointing";
 import type { VisualExplanation } from "./types";
+
+const klmSeconds = (sequence: string) => klmTotal(parseKlm(sequence)).total.toFixed(2);
 
 export const visualExplanations: VisualExplanation[] = [
   {
@@ -647,6 +655,124 @@ export const visualExplanations: VisualExplanation[] = [
     verification: "content-checked",
     sources: ["govuk-design-system", "semver-2"],
     Component: ContributionLifecycle,
+  },
+  {
+    id: "usability-testing.cycle",
+    language: "viz",
+    slug: "usability-testing",
+    type: "process",
+    method: "process",
+    level: 2,
+    title: "One usability test, from research questions to the next round",
+    objective: "The seven steps of a usability test cycle, with what is measured in formative and summative tests and how moderated and unmoderated sessions differ.",
+    takeaway: "A usability test is a cycle: plan it from research questions, pilot it, run it neutrally, record problems with their evidence, synthesise by severity and frequency, then test again.",
+    summary: [
+      "Seven steps in order: planning (1 to 3), sessions (4 and 5), and turning what was seen into changes (6 and 7).",
+      "1. Research questions and tasks: write 3 to 5 research questions and derive tasks from them; each task states a goal and context in the user's language, avoids the interface's labels, and has a success criterion.",
+      "2. Participants: recruit people who match the target users on the characteristics that affect the tasks.",
+      "3. Pilot: run the protocol with one person and fix confusing tasks.",
+      "4. Sessions: stay neutral, do not explain, praise or correct, and answer questions with questions; think-aloud is standard in formative testing.",
+      "5. Record: note each problem with participant, task, observed behaviour and quote; rate severity after all sessions.",
+      "6. Synthesise: combine across participants, report problems by severity and frequency, agree fixes.",
+      "7. Iterate: test again after the changes, ideally with new participants.",
+      "Formative tests observe problems; summative tests measure task success, time on task, errors and questionnaires such as the SUS. Moderated sessions allow probing; unmoderated sessions reach more people but lose the ability to ask why.",
+      "Each extra participant tends to reveal fewer new problems, because common problems are seen early.",
+    ],
+    verification: "content-checked",
+    sources: ["sauro-lewis-2016", "nielsen-landauer-1993"],
+    Component: UsabilityTestCycle,
+  },
+  {
+    id: "cognitive-walkthrough.questions",
+    language: "sheet",
+    slug: "cognitive-walkthrough",
+    type: "conceptual",
+    method: "relationship",
+    level: 2,
+    title: "The four walkthrough questions and what each probes",
+    objective: "The four questions a cognitive walkthrough asks at each step, which half of the gulfs each probes, the design concept each points to, and what goes in and comes out.",
+    takeaway: "Questions 1 to 3 test whether a user can get from intention to action and question 4 whether they can interpret the result, so every 'no' becomes a failure story tied to a design cause.",
+    summary: [
+      "At each step of a task the group answers four questions.",
+      "1. Will the user try to achieve the right effect? Gulf of execution.",
+      "2. Will the user notice that the correct action is available? Gulf of execution; visibility and signifiers.",
+      "3. Will the user associate the correct action with the effect they are trying to achieve? Gulf of execution; labels and mental models.",
+      "4. If the correct action is performed, will the user see that progress is being made towards their goal? Gulf of evaluation; feedback.",
+      "In: a description of the users, representative tasks, the correct action sequence for each, and an interface at enough fidelity to judge each step.",
+      "At each step: agree an answer to each question and write a failure story for every 'no'. Out: a list of failure points with reasons; design ideas are kept separate until after the walkthrough.",
+      "The streamlined version keeps two questions and adds ground rules such as banning design discussion and defensiveness during the walkthrough.",
+    ],
+    verification: "content-checked",
+    sources: ["wharton-et-al-1994", "spencer-2000"],
+    Component: WalkthroughQuestions,
+  },
+  {
+    id: "card-sorting.types",
+    language: "sheet",
+    slug: "card-sorting",
+    type: "comparison",
+    method: "comparison",
+    level: 2,
+    title: "Open, closed and hybrid card sorts: which to choose",
+    objective: "The three types of card sort, when each fits, what participants do, and how each is analysed, with the points that make the cards themselves matter.",
+    takeaway: "Choose the type of sort by the question: open sorts generate categories and vocabulary, closed sorts test categories you already have, and hybrid sorts suit redesigns with some fixed categories.",
+    summary: [
+      "Choose the type of sort by your question.",
+      "Open sort (generative): use it early to discover how people conceptualise a domain and what language they use; participants make and name their own groups. Analysis: standardise group names to reveal vocabulary; a similarity matrix and cluster analysis give a dendrogram.",
+      "Closed sort (evaluative): use it to test whether an existing or proposed set of categories is understood and used consistently; participants place cards into categories you provide. Analysis: the proportion placing each card in each category shows agreement and ambiguity.",
+      "Hybrid sort: suits redesigns where some categories are fixed; participants use provided categories but may add their own. The entry does not describe a separate analysis.",
+      "Cards should represent real content at a consistent level of detail, be worded neutrally and be few enough to sort thoughtfully; similar words make people group by surface wording.",
+      "Where to cut a dendrogram is a judgment. Validate candidate structures with tree testing before implementing navigation.",
+    ],
+    verification: "content-checked",
+    sources: ["spencer-2009"],
+    Component: CardSortTypes,
+  },
+  {
+    id: "ab-testing.checks",
+    language: "viz",
+    slug: "ab-testing",
+    type: "process",
+    method: "process",
+    level: 2,
+    title: "The checks of a trustworthy A/B test, in order",
+    objective: "Five steps of an A/B test, from design before launch to reporting, with the checks that protect each step.",
+    takeaway: "Most of a test's trustworthiness is decided before it starts: one primary metric, a planned sample size and duration, an A/A and sample-ratio check, and no stopping when the p-value first dips below 0.05.",
+    summary: [
+      "A trustworthy test is designed before it starts.",
+      "1. Design before the test starts: write the hypothesis; choose one primary metric; set α (usually 0.05) and power (usually 80%) and compute the sample size per variant; pre-register guardrail metrics and the duration.",
+      "2. Validate the setup: an A/A test, where a significant result signals a pipeline problem; and a sample-ratio check, where 52/48 against a planned 50/50 with a large n means assignment or logging is broken.",
+      "3. Run the planned duration: randomise by user with a stable hash; run the full planned time, usually whole weeks; do not stop when the p-value first dips below 0.05.",
+      "4. Analyse: the two-proportion z-test for conversion metrics, with the confidence interval for the difference and the relative lift; correct for multiple comparisons.",
+      "5. Report: the effect size with its confidence interval; a p-value is not the probability that B is better.",
+      "An A/B test answers what and how much, not why; pair it with usability testing.",
+    ],
+    verification: "content-checked",
+    sources: ["kohavi-tang-xu-2020", "fabijan-et-al-2019", "greenland-et-al-2016"],
+    Component: AbTestChecks,
+  },
+  {
+    id: "keystroke-level-model.worked",
+    language: "sheet",
+    slug: "keystroke-level-model",
+    type: "formula",
+    method: "conceptual",
+    level: 2,
+    title: "A worked keystroke-level estimate: method, operators, mental operators",
+    objective: "One illustrative method translated into operators, with mental operators inserted by Rule 0, and the standard operator times the sum uses.",
+    takeaway: "The estimate is a sum of standard operator times for a written method, and the most consequential choice is where the mental operators go, so competing designs must be modelled with the same assumptions.",
+    summary: [
+      "Illustration: saving through a File menu with the mouse.",
+      "1. The method: move hand to mouse, point to the File menu, click, point to Save, click.",
+      `2. As operators: H P BB P BB. A click is two button operators. The physical operators alone sum to ${klmSeconds("H P B B P B B")} s.`,
+      `3. With mental operators by Rule 0: H M P BB M P BB, which sums to ${klmSeconds("H M P B B M P B B")} s. M goes before keystrokes and before pointing that selects a command.`,
+      "4. Remove any M that is fully anticipated from the previous step, document each such judgement, and add R only where the user must wait for the system.",
+      `Operator times: K keystroke ${KLM_OPERATORS.K.seconds.toFixed(2)} s (a common default; it depends on typing skill), P point ${KLM_OPERATORS.P.seconds.toFixed(2)} s, B mouse button press or release ${KLM_OPERATORS.B.seconds.toFixed(2)} s, H home hands ${KLM_OPERATORS.H.seconds.toFixed(2)} s, M mental preparation ${KLM_OPERATORS.M.seconds.toFixed(2)} s.`,
+      "The model predicts error-free expert execution time for a routine method, to compare designs.",
+    ],
+    verification: "content-checked",
+    sources: ["card-moran-newell-1980", "kieras-2001-klm"],
+    Component: KlmWorkedMethod,
   },
 ];
 

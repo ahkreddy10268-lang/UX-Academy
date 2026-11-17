@@ -140,8 +140,8 @@ Every topic has exactly one status, derived from the content: an entry's own sta
 | UX Laws & Cognitive Effects | 46 | 13 | 13 | 13 / 13 | 13 / 13 | 13 / 13 | 2 / 13 | 13 / 13 |
 | Cognition, Behaviour & Human Factors | 59 | 7 | 7 | 7 / 7 | 7 / 7 | 7 / 7 | 1 / 7 | 7 / 7 |
 | Principles & Heuristics | 12 | 7 | 7 | 7 / 7 | 2 / 7 | 7 / 7 | 0 / 7 | 7 / 7 |
-| UX Research | 57 | 9 | 9 | 9 / 9 | 9 / 9 | 9 / 9 | 1 / 9 | 9 / 9 |
-| Design Methods & Frameworks | 12 | 2 | 2 | 2 / 2 | 2 / 2 | 2 / 2 | 0 / 2 | 2 / 2 |
+| UX Research | 57 | 9 | 9 | 9 / 9 | 9 / 9 | 9 / 9 | 3 / 9 | 9 / 9 |
+| Design Methods & Frameworks | 12 | 2 | 2 | 2 / 2 | 2 / 2 | 2 / 2 | 1 / 2 | 2 / 2 |
 | Information Architecture | 19 | 1 | 1 | 1 / 1 | 1 / 1 | 1 / 1 | 0 / 1 | 1 / 1 |
 | Interaction Design | 23 | 10 | 10 | 10 / 10 | 7 / 10 | 10 / 10 | 0 / 10 | 10 / 10 |
 | UI & Visual Design | 25 | 1 | 1 | 1 / 1 | 1 / 1 | 1 / 1 | 0 / 1 | 1 / 1 |
@@ -175,14 +175,14 @@ Every topic has exactly one status, derived from the content: an entry's own sta
 | Cognition, Behaviour & Human Factors | Human factors, ergonomics & HCI theory | 17 | 4 | 4 / 4 | 4 / 4 | 4 / 4 | 0 / 4 | 4 / 4 |
 | Principles & Heuristics | Heuristic sets, standards & cross-cutting principles | 12 | 7 | 7 / 7 | 2 / 7 | 7 / 7 | 0 / 7 | 7 / 7 |
 | UX Research | Qualitative methods | 10 | 3 | 3 / 3 | 3 / 3 | 3 / 3 | 0 / 3 | 3 / 3 |
-| UX Research | Quantitative methods | 9 | 1 | 1 / 1 | 1 / 1 | 1 / 1 | 0 / 1 | 1 / 1 |
+| UX Research | Quantitative methods | 9 | 1 | 1 / 1 | 1 / 1 | 1 / 1 | 1 / 1 | 1 / 1 |
 | UX Research | Research planning & protocols | 10 | 0 | — | — | — | — | — |
 | UX Research | Research ethics & participant care | 3 | 0 | — | — | — | — | — |
 | UX Research | Analysis & synthesis | 10 | 0 | — | — | — | — | — |
-| UX Research | Usability evaluation | 15 | 5 | 5 / 5 | 5 / 5 | 5 / 5 | 1 / 5 | 5 / 5 |
+| UX Research | Usability evaluation | 15 | 5 | 5 / 5 | 5 / 5 | 5 / 5 | 2 / 5 | 5 / 5 |
 | Design Methods & Frameworks | Design process & lifecycle frameworks | 6 | 1 | 1 / 1 | 1 / 1 | 1 / 1 | 0 / 1 | 1 / 1 |
 | Design Methods & Frameworks | Ideation, mapping & facilitation | 3 | 0 | — | — | — | — | — |
-| Design Methods & Frameworks | Analytical models of interaction | 3 | 1 | 1 / 1 | 1 / 1 | 1 / 1 | 0 / 1 | 1 / 1 |
+| Design Methods & Frameworks | Analytical models of interaction | 3 | 1 | 1 / 1 | 1 / 1 | 1 / 1 | 1 / 1 | 1 / 1 |
 | Information Architecture | IA foundations & practice | 4 | 1 | 1 / 1 | 1 / 1 | 1 / 1 | 0 / 1 | 1 / 1 |
 | Information Architecture | Structures & models | 6 | 0 | — | — | — | — | — |
 | Information Architecture | Search, information scent & findability | 4 | 0 | — | — | — | — | — |
@@ -301,23 +301,23 @@ Five separate dimensions, rated basic / developing / complete from the content (
 | Explanation | 102 | 0 | 0 |
 | Evidence | 65 | 37 | 0 |
 | Practice | 102 | 0 | 0 |
-| Visual | 5 | 44 | 53 |
+| Visual | 8 | 43 | 51 |
 | Editorial | 101 | 1 | 0 |
 
 ## Published entries
 
 | Entry | Type | Evidence class | Explanation | Evidence | Practice | Visual | Editorial | Refs | Quiz | Formula | Lab |
 |---|---|---|---|---|---|---|---|---:|---:|---|---|
-| A/B Testing | Method | Established theoretical model | complete | complete | complete | developing | complete | 4 | 4 | two-proportion-test | — |
+| A/B Testing | Method | Established theoretical model | complete | complete | complete | complete | complete | 4 | 4 | two-proportion-test | — |
 | Accessibility | Concept | Official standard | complete | complete | complete | developing | complete | 11 | 9 | — | — |
 | Aesthetic and Minimalist Design | Principle | Professional guideline | complete | developing | complete | basic | complete | 7 | 3 | — | — |
 | Aesthetic-Usability Effect | Concept | Peer-reviewed research | complete | complete | complete | basic | complete | 8 | 4 | — | — |
 | Affordances | Concept | Established theoretical model | complete | complete | complete | basic | complete | 7 | 3 | — | — |
 | Atomic Design | Methodology | Practitioner recommendation | complete | developing | complete | basic | complete | 4 | 3 | — | — |
-| Card Sorting | Method | Practitioner recommendation | complete | complete | complete | basic | complete | 4 | 4 | — | — |
+| Card Sorting | Method | Practitioner recommendation | complete | complete | complete | developing | complete | 4 | 4 | — | — |
 | Choice Overload | Concept | Contested or limited evidence | complete | complete | complete | basic | complete | 3 | 4 | — | — |
 | Cognitive Load Theory | Theory | Established theoretical model | complete | complete | complete | complete | complete | 14 | 4 | — | cognitive-load-lab |
-| Cognitive Walkthrough | Method | Peer-reviewed research | complete | complete | complete | basic | complete | 8 | 4 | — | — |
+| Cognitive Walkthrough | Method | Peer-reviewed research | complete | complete | complete | developing | complete | 8 | 4 | — | — |
 | Colour Contrast Ratio | Formula | Official standard | complete | complete | complete | developing | complete | 6 | 4 | contrast-ratio | contrast-lab |
 | Colour Systems | Concept | Practitioner recommendation | complete | developing | complete | basic | complete | 7 | 3 | — | — |
 | Component Architecture | Concept | Practitioner recommendation | complete | developing | complete | basic | complete | 11 | 3 | — | — |
@@ -364,7 +364,7 @@ Five separate dimensions, rated basic / developing / complete from the content (
 | Interaction States | Concept | Official standard | complete | complete | complete | developing | complete | 8 | 5 | — | — |
 | Jakob's Law | Principle | Practitioner recommendation | complete | complete | complete | developing | complete | 4 | 3 | — | jakob-lab |
 | Jobs To Be Done | Framework | Practitioner recommendation | complete | complete | complete | basic | complete | 3 | 4 | — | — |
-| Keystroke-Level Model (KLM) | Model | Established theoretical model | complete | complete | complete | developing | complete | 4 | 3 | klm | — |
+| Keystroke-Level Model (KLM) | Model | Established theoretical model | complete | complete | complete | complete | complete | 4 | 3 | klm | — |
 | Loading States | Pattern | Professional guideline | complete | developing | complete | developing | complete | 12 | 3 | — | async-state-lab |
 | Mapping | Concept | Established theoretical model | complete | complete | complete | basic | complete | 5 | 3 | — | — |
 | Mental Models | Concept | Established theoretical model | complete | complete | complete | basic | complete | 7 | 3 | — | — |
@@ -398,7 +398,7 @@ Five separate dimensions, rated basic / developing / complete from the content (
 | Tree Testing | Method | Practitioner recommendation | complete | complete | complete | developing | complete | 4 | 4 | — | — |
 | Typography Scales | Concept | Practitioner recommendation | complete | developing | complete | basic | complete | 9 | 3 | — | — |
 | Usability | Concept | Official standard | complete | complete | complete | basic | complete | 6 | 4 | — | — |
-| Usability Testing | Method | Peer-reviewed research | complete | complete | complete | developing | complete | 14 | 4 | problem-discovery | — |
+| Usability Testing | Method | Peer-reviewed research | complete | complete | complete | complete | complete | 14 | 4 | problem-discovery | — |
 | User Control and Freedom | Principle | Professional guideline | complete | developing | complete | basic | complete | 7 | 3 | — | — |
 | User Experience (UX) | Discipline | Established theoretical model | complete | complete | complete | basic | complete | 5 | 4 | — | — |
 | User Interface (UI) Design | Discipline | Professional guideline | complete | complete | complete | developing | complete | 15 | 9 | — | — |
@@ -417,7 +417,7 @@ Approved in D-129 (docs/BALANCED_DEVELOPMENT_PLAN.md § 9.2). The ratings above 
 
 | Measure | Meets target |
 |---|---:|
-| Visual | 92 / 102 |
+| Visual | 97 / 102 |
 | Evidence | 101 / 102 |
 
 | Domain | Published | Visual meets | Evidence meets |
@@ -426,8 +426,8 @@ Approved in D-129 (docs/BALANCED_DEVELOPMENT_PLAN.md § 9.2). The ratings above 
 | UX Laws & Cognitive Effects | 13 | 13 | 13 |
 | Cognition, Behaviour & Human Factors | 7 | 5 | 7 |
 | Principles & Heuristics | 7 | 7 | 7 |
-| UX Research | 9 | 5 | 9 |
-| Design Methods & Frameworks | 2 | 1 | 2 |
+| UX Research | 9 | 9 | 9 |
+| Design Methods & Frameworks | 2 | 2 | 2 |
 | Information Architecture | 1 | 1 | 1 |
 | Interaction Design | 10 | 10 | 10 |
 | UI & Visual Design | 1 | 1 | 1 |
@@ -440,15 +440,10 @@ Approved in D-129 (docs/BALANCED_DEVELOPMENT_PLAN.md § 9.2). The ratings above 
 
 Entries below a target, and what is missing:
 
-- **A/B Testing** — visual: a detailed diagram
 - **Atomic Design** — visual: a detailed diagram
-- **Card Sorting** — visual: a detailed diagram
-- **Cognitive Walkthrough** — visual: a detailed diagram
 - **Gulfs of Execution and Evaluation** — visual: a detailed diagram
 - **HEART Framework** — visual: a detailed diagram; evidence: two primary or standard sources
 - **Jobs To Be Done** — visual: a detailed diagram
-- **Keystroke-Level Model (KLM)** — visual: a detailed diagram
-- **Usability Testing** — visual: a detailed diagram
 - **Working Memory Model** — visual: a detailed diagram
 
 ## Addressed within another entry

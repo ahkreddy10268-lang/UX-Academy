@@ -10,7 +10,7 @@
 | Subject plates | 20 / 20 |
 | Plates in the current system (dark technical or instructional sheet) | 122 |
 | Plates still in the earlier pastel style | 2 |
-| Level-2 figures | 29 |
+| Level-2 figures | 34 |
 | Level-3 explorers (on plates) | 9 |
 | Labs linked from entries | 23 |
 | Animated plates | 12 |
@@ -24,7 +24,7 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 | 1 | UX Concept Illustrations | 26 | 25 | 10 | 13 | 26 / 0 / 0 | developing | `fitts-law`, `hick-hyman-law`, `cognitive-load-theory`, `millers-law`, `jakobs-law`, `mental-models`, `affordances`, `peak-end-rule`, `steering-law`, `teslers-law`, `serial-position-effect`, `von-restorff-effect`, `aesthetic-usability-effect`, `choice-overload`, `working-memory-model`, `recognition-over-recall`, `user-experience`, `human-computer-interaction`, `consistency-principle`, `help-and-documentation`, `ux-writing`, `plain-language` |
 | 2 | UI Anatomy Illustrations | 3 | 3 | 1 | 0 | 3 / 0 / 0 | developing | `ui-design`, `microcopy` |
 | 3 | UX Process Illustrations | 8 | 8 | 2 | 0 | 8 / 0 / 0 | developing | `double-diamond`, `user-centred-design`, `content-design` |
-| 4 | User Research Illustrations | 6 | 6 | 3 | 0 | 6 / 0 / 0 | developing | `card-sorting`, `jobs-to-be-done`, `think-aloud-protocol`, `contextual-inquiry`, `in-depth-interviews` |
+| 4 | User Research Illustrations | 6 | 6 | 4 | 0 | 6 / 0 / 0 | developing | `card-sorting`, `jobs-to-be-done`, `think-aloud-protocol`, `contextual-inquiry`, `in-depth-interviews` |
 | 5 | Information Architecture Illustrations | 3 | 3 | 3 | 0 | 3 / 0 / 0 | mature | `information-architecture`, `tree-testing` |
 | 6 | Interaction Design Illustrations | 19 | 19 | 3 | 5 | 19 / 0 / 0 | developing | `signifiers`, `doherty-threshold`, `gulfs-of-execution-and-evaluation`, `interaction-design-discipline`, `progressive-disclosure`, `visibility-of-system-status`, `user-control-and-freedom`, `error-prevention`, `mapping`, `flexibility-and-efficiency-of-use`, `error-recovery`, `feedback-principle`, `constraints`, `direct-manipulation`, `interaction-states`, `discoverability`, `error-messages` |
 | 7 | Wireframe & Prototyping Illustrations | 1 | 1 | 0 | 0 | 1 / 0 / 0 | developing | — |
@@ -32,16 +32,16 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 | 9 | Design Systems Illustrations | 29 | 29 | 2 | 6 | 29 / 0 / 0 | developing | `atomic-design`, `design-system`, `design-tokens`, `primitive-tokens`, `semantic-tokens`, `theme-architecture`, `design-language`, `spacing-scales`, `typography-scales`, `colour-systems`, `elevation-systems`, `icon-systems`, `component-libraries`, `component-architecture`, `variants`, `component-properties`, `component-state-management`, `empty-states`, `loading-states`, `skeleton-screens`, `progressive-loading`, `error-states`, `data-tables`, `design-governance`, `design-system-versioning`, `design-qa`, `design-system-audits`, `multi-brand-systems` |
 | 10 | Usability & Accessibility Illustrations | 4 | 4 | 1 | 0 | 4 / 0 / 0 | developing | `usability`, `accessibility-concept`, `wcag` |
 | 11 | Responsive & Adaptive Design Illustrations | 1 | 1 | 0 | 0 | 1 / 0 / 0 | developing | `responsive-systems` |
-| 12 | UX Evaluation & Optimization Illustrations | 16 | 15 | 2 | 2 | 16 / 0 / 0 | developing | `nielsen-usability-heuristics`, `keystroke-level-model`, `shneiderman-golden-rules`, `heuristic-evaluation`, `cognitive-walkthrough`, `usability-testing`, `system-usability-scale`, `nasa-tlx`, `net-promoter-score`, `task-success-rate`, `ab-testing`, `confidence-intervals`, `sample-size-estimation`, `heart-framework` |
+| 12 | UX Evaluation & Optimization Illustrations | 16 | 15 | 6 | 2 | 16 / 0 / 0 | developing | `nielsen-usability-heuristics`, `keystroke-level-model`, `shneiderman-golden-rules`, `heuristic-evaluation`, `cognitive-walkthrough`, `usability-testing`, `system-usability-scale`, `nasa-tlx`, `net-promoter-score`, `task-success-rate`, `ab-testing`, `confidence-intervals`, `sample-size-estimation`, `heart-framework` |
 
 ## The five explanation methods
 
 | Method | L1 plates (primary) | L2 figures |
 |---|---:|---:|
-| Conceptual & Metaphorical | 19 | 7 |
-| Process & Sequential | 29 | 9 |
-| Relationship & Systems | 19 | 5 |
-| Comparison & Contrast | 38 | 7 |
+| Conceptual & Metaphorical | 19 | 8 |
+| Process & Sequential | 29 | 11 |
+| Relationship & Systems | 19 | 6 |
+| Comparison & Contrast | 38 | 8 |
 | Hierarchy & Classification | 19 | 1 |
 
 ## Level 1 audit (every registered plate)
@@ -64,7 +64,7 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 | `ia` | subject | information-architecture | hierarchy | current · instructional sheet | retain | Sheet (S25): an indented site structure, the navigation bar and breadcrumb, and search reaching the same page. | 0 | — |
 | `atomic-design` | entry | design-systems | hierarchy | current · instructional sheet | retain | Sheet (S25; entry plate since S33, planned label removed): atoms → molecule → organism → template → page, each built from the last. | 0 | — |
 | `steering-law` | entry | ux-concept | conceptual | current · instructional sheet | retain | Sheet (S25): two tunnels with A/W from lib/formulas steeringId and a cascading menu as a tunnel. | 0 | steering-lab |
-| `keystroke-level-model` | entry | evaluation-optimization | process | current · instructional sheet | retain | Sheet (S25): renaming a file as M P BB H M 10K, times from lib/formulas parseKlm/klmTotal. | 0 | — |
+| `keystroke-level-model` | entry | evaluation-optimization | process | current · instructional sheet | retain | Sheet (S25): renaming a file as M P BB H M 10K, times from lib/formulas parseKlm/klmTotal. | 1 | — |
 | `doherty-threshold` | entry | interaction-design | conceptual | current · instructional sheet | retain | Sheet (S25): fast and slow exchanges on a log time axis with the ~0.4 s mark labelled a rule of thumb. | 0 | feedback-lab |
 | `teslers-law` | entry | ux-concept | comparison | current · instructional sheet | retain | Sheet (S25): one phone field two ways above equal-length complexity bars split person/app/platform (illustrative). | 0 | — |
 | `serial-position-effect` | entry | ux-concept | conceptual | earlier (pastel) | retain | U-shaped recall chart communicates the effect clearly. | 0 | serial-position-lab |
@@ -76,14 +76,14 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 | `gulfs-of-execution-and-evaluation` | entry | interaction-design | process | current · instructional sheet | retain | Sheet (S25): goal and heating app across a shaded gulf; mapped controls and stated feedback bridge it. | 0 | — |
 | `shneiderman-golden-rules` | entry | evaluation-optimization | hierarchy | current · instructional sheet | retain | Sheet (S25): a three-screen delete dialogue placing seven of the eight rules; the key lists all eight. | 0 | — |
 | `heuristic-evaluation` | entry | evaluation-optimization | process | current · instructional sheet | retain | Sheet (S25): three evaluators' illustrative findings merged into one list with a missed problem and a severity scale. | 2 | heuristic-report-lab |
-| `cognitive-walkthrough` | entry | evaluation-optimization | process | current · instructional sheet | retain | Sheet (S25): one step of a task with the four questions, answers and a failure story. | 0 | — |
-| `usability-testing` | entry | evaluation-optimization | process | current · instructional sheet | retain | Replaced (D-093): task card → interface under test with numbered observations → session timeline with time on task → findings by severity linked to evidence; illustrative session. | 0 | — |
-| `card-sorting` | entry | user-research | hierarchy | current · instructional sheet | retain | Sheet (S25): cards, one participant's named groups, and an illustrative agreement matrix. | 0 | — |
+| `cognitive-walkthrough` | entry | evaluation-optimization | process | current · instructional sheet | retain | Sheet (S25): one step of a task with the four questions, answers and a failure story. | 1 | — |
+| `usability-testing` | entry | evaluation-optimization | process | current · instructional sheet | retain | Replaced (D-093): task card → interface under test with numbered observations → session timeline with time on task → findings by severity linked to evidence; illustrative session. | 1 | — |
+| `card-sorting` | entry | user-research | hierarchy | current · instructional sheet | retain | Sheet (S25): cards, one participant's named groups, and an illustrative agreement matrix. | 1 | — |
 | `system-usability-scale` | entry | evaluation-optimization | conceptual | current · instructional sheet | retain | Sheet (S25): a completed ten-item questionnaire converted to a score by lib/formulas susScore. | 0 | — |
 | `nasa-tlx` | entry | evaluation-optimization | conceptual | current · instructional sheet | retain | Sheet (S25): six 0–100 subscales with illustrative ratings and Raw TLX from lib/formulas nasaTlxRaw. | 0 | — |
 | `net-promoter-score` | entry | evaluation-optimization | conceptual | current · instructional sheet | retain | Sheet (S25): the 0–10 scale in three groups, an illustrative sample and NPS with margin from lib/formulas nps. | 0 | — |
 | `task-success-rate` | entry | evaluation-optimization | conceptual | current · instructional sheet | retain | Sheet (S25): ten illustrative attempts and 7/10 with its adjusted-Wald interval from lib/formulas taskSuccess. | 0 | — |
-| `ab-testing` | entry | evaluation-optimization | comparison | current · instructional sheet | retain | Sheet (S25): random assignment to A and B, one metric, and the difference with a 95% CI from twoProportionTest. | 0 | — |
+| `ab-testing` | entry | evaluation-optimization | comparison | current · instructional sheet | retain | Sheet (S25): random assignment to A and B, one metric, and the difference with a 95% CI from twoProportionTest. | 1 | — |
 | `confidence-intervals` | entry | evaluation-optimization | conceptual | earlier (pastel) | retain | Repeated intervals around a true value: clear and accurate. | 0 | — |
 | `sample-size-estimation` | entry | evaluation-optimization | comparison | current · instructional sheet | retain | Sheet (S25): discovery, estimation and comparison answers from lib/formulas, with dots in proportion. | 0 | — |
 | `usability` | entry | usability-accessibility | relationship | current · instructional sheet | retain | Replaced (D-093): one ticket machine in two contexts of use, each measured for effectiveness, efficiency and satisfaction; step counts follow the drawn routes. | 0 | — |
@@ -175,7 +175,7 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 
 ## Level 2 figures
 
-29 of 29 Level-2 figures are drawn in a current language (sheet or viz).
+34 of 34 Level-2 figures are drawn in a current language (sheet or viz).
 
 | Figure | Type | Method | Language | Verification |
 |---|---|---|---|---|
@@ -208,6 +208,11 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 | `accessibility-concept.perspectives` | comparison | comparison | viz | content-checked |
 | `design-system.architecture` | system | relationship | viz | illustrative |
 | `design-system.contribution` | process | process | viz | content-checked |
+| `usability-testing.cycle` | process | process | viz | content-checked |
+| `cognitive-walkthrough.questions` | conceptual | relationship | sheet | content-checked |
+| `card-sorting.types` | comparison | comparison | sheet | content-checked |
+| `ab-testing.checks` | process | process | viz | content-checked |
+| `keystroke-level-model.worked` | formula | conceptual | sheet | content-checked |
 
 ## Plate descriptions (text alternatives)
 
