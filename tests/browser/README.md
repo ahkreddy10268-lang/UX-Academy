@@ -15,6 +15,9 @@ node tests/browser/atlas.cjs                                 # Knowledge Atlas: 
 node tests/browser/keyboard.cjs                               # keyboard-only paths + accessibility-tree structure (not a screen-reader test)
 node tests/browser/devices.cjs                                # device EMULATION: overflow, tap, WCAG 2.5.8 target size on 19 pages × 6 devices
 AXE_PATH=/path/to/axe.min.js node tests/browser/a11y.cjs / /library   # axe-core WCAG 2.2 AA, light + dark
+AXE_PATH=/path/to/axe.min.js node tests/browser/entry-review.cjs <slug…>   # per-entry review: render, 390/1440 overflow, plate markers inside the viewBox, figure key, axe
 ```
 
 `BASE_URL` overrides `http://localhost:3100`. e2e starts with an empty browser profile.
+
+For a batch review, pair `entry-review.cjs` with the non-browser integrity report `npx tsx scripts/entry-integrity.ts <slug…>` (citations vs references, taxonomy, relations in and out, quiz, figure sources, visual register, verification status). Record results in `docs/QA_VERIFICATION_LEDGER.md`.

@@ -8,11 +8,13 @@ classified, evidenced, connected and practised.
 
 ## Start of every session
 
-1. Read this file, then `docs/PROGRESS.md` (state + the precise next task).
-2. Read the docs relevant to the task (`docs/CONTENT_AUDIT.md` for what to write next, `docs/ARCHITECTURE.md`, `docs/CONTENT_MODEL.md`, `docs/DESIGN_SYSTEM.md`, `docs/VISUAL_KNOWLEDGE_SYSTEM.md`, `docs/DIAGRAM_DESIGN_GUIDELINES.md`, `docs/EDITORIAL_STYLE_GUIDE.md`, `docs/DECISION_LOG.md`).
-3. `git status && git log --oneline -15`
-4. `npm run check` (index → typecheck → tests → lint). Fix red before adding anything.
-5. Continue from the actual state of the code — never from memory of earlier conversations.
+Use the **`ux-academy-workflow` skill** (`.claude/skills/ux-academy-workflow/SKILL.md`) — it holds the procedure; this file holds the rules.
+
+1. Read `docs/PROJECT_STATE.md` (branch, SHA, cycle/batch, approvals, the one next authorised action) and `docs/OPEN_ISSUES.md`.
+2. Verify against the repo: `git status --short && git log --oneline -8`. The repo wins over any summary; record discrepancies.
+3. Check `docs/QA_VERIFICATION_LEDGER.md` before re-running tests; reuse a result only when the change-impact rules in the skill allow it. Run `npm run check` if HEAD has no recorded PASS or the tree is dirty. Fix red before adding anything.
+4. Read only the canonical docs the task touches (`docs/DECISION_LOG.md` — D-129 above all — `docs/BALANCED_DEVELOPMENT_PLAN.md`, `docs/CONTENT_MODEL.md`, `docs/EDITORIAL_STYLE_GUIDE.md`, `docs/ILLUSTRATION_SYSTEM.md`, `docs/DIAGRAM_DESIGN_GUIDELINES.md`, `docs/DESIGN_SYSTEM.md`, `docs/ARCHITECTURE.md`). Respect approved decisions; do not change D-129 or learning paths without the owner.
+5. After every meaningful task, update `PROJECT_STATE.md`, the ledger and `OPEN_ISSUES.md`, and end with the skill's six-part handoff.
 
 ## Commands
 
@@ -83,7 +85,7 @@ classified, evidenced, connected and practised.
 
 ## Working conventions
 
-- Work in verifiable increments; run `npm run check` (and `npm run build` for UI changes) before committing.
+- Work in verifiable increments; run `npm run check` before every commit and `npm run build` for content or UI changes. Choose further QA by change impact (skill § 4) and record every result, with its SHA, in `docs/QA_VERIFICATION_LEDGER.md`.
 - After content changes run `npm run docs:generate`. Update `docs/PROGRESS.md` at each milestone, with the precise next task. Record decisions in `docs/DECISION_LOG.md`.
 - Don't remove or weaken tests to get green. Don't fake data to make dashboards look populated.
 - Never push, deploy or publish without explicit authorisation from the owner.

@@ -1,0 +1,70 @@
+# Open issues
+
+The single register of unresolved items. Details stay in the linked review or report; this file says what is open, whether it blocks, and what closes it. Update it when an item opens or closes (move closed items to § Closed with the commit that closed them).
+
+Severity: critical · major · moderate · minor (see the `ux-academy-workflow` skill § 5). **Blocks publication** = blocks pushing or publishing the affected work.
+
+Last updated: 2026-11-17, at commit `8c7408e` (+ uncommitted memory/skill files of this task).
+
+## Cycle and process
+
+| ID | Description | Files | Severity | Blocks publication | Status | Required action | Related |
+|---|---|---|---|---|---|---|---|
+| C1-1 | The § 9.3 stop rule was triggered in Batch 1 (`constraints` 5 rework commits; `feedback-principle`, `interaction-states` 2 each). The rule makes the next cycle an improvement cycle "until resolved". | `docs/BALANCED_DEVELOPMENT_PLAN.md` § 9.3; `docs/CYCLE_1_BALANCE_REVIEW.md` § 9 | moderate | No (blocks Cycle 2 new-topic planning) | Awaiting owner decision | Owner decides: Cycle 2 starts with an improvement batch, or resolving the Batch 1 rework satisfies "until resolved". Record in DECISION_LOG. | Cycle 1 review; D-129 |
+| C1-2 | I1 (docs and coverage hygiene, approved with Cycle 1) is incomplete: the `coveredBy` checks were not done. | `content/taxonomy.ts`; plan § 7.3 | moderate | No (blocks Cycle 2 planning) | Open; awaiting authorisation | Run the I1 coveredBy checks once authorised. | Cycle 1 review; I1 |
+| C1-3 | Clusters A and E were untouched in Cycle 1; the plan requires every cluster within two cycles. | `docs/BALANCED_DEVELOPMENT_PLAN.md` § 2 | minor | No | Constraint for Cycle 2 planning | Cycle 2 plan must include a batch in A and in E. | Cycle 1 review |
+| P-1 | Local commits `80f8058` (Batch 3) and `8c7408e` (Batch 3 review + Cycle 1 review) are not pushed. | — | — | — | Awaiting owner approval | Push only on explicit approval, then verify remote SHA, preview, main and PR #2. | Batch 3 |
+
+## Technical debt
+
+| ID | Description | Files | Severity | Blocks publication | Status | Required action | Related |
+|---|---|---|---|---|---|---|---|
+| TD-1 | 152 numbered plate markers in 78 plates extend past the 400 × 300 viewBox and are clipped (audit 2026-11-16). Shows up as entry-review failures on pre-existing entries (e.g. error-recovery 3, error-prevention 1, nielsen-usability-heuristics 1). | `docs/VISUAL_QA.md` (full list); `components/illustrations/**` | moderate | No (pre-existing; new plates are clean) | Open; excluded from batch scope by owner | A dedicated marker-fix task when the owner authorises it. | VISUAL_QA; Batch 1 review |
+| TD-2 | 11 published entries are below their D-129 targets; all pre-date Cycle 1. | `docs/CONTENT_COVERAGE.md` § Targets | minor | No | Open | Address in improvement batches. | D-129; Cycle 1 review |
+| TD-3 | `brooke-2013`, `doherty-thadani-1982`, `kieras-2001-klm`, `shneiderman-golden-rules-page` awaiting verification; eight URLs block automated checks. | `content/sources/**` | minor | No | Open | Verify when access allows. | ROADMAP Known issues |
+
+## Batch 3 (UX writing) — minors
+
+| ID | Description | Files | Severity | Blocks publication | Status | Required action | Related |
+|---|---|---|---|---|---|---|---|
+| B3-o1 | `plain-language` describes Easy Read in general terms without a source. | `content/knowledge/content/plain-language.ts` | minor | No | Open | Cite a primary Easy Read source or trim. | CYCLE_1_BALANCE_REVIEW § 1 |
+| B3-o2 | Redish 1981/2000, Seckler 2014, Bargas-Avila 2007 read as abstracts; Shneiderman 1982 opening only; ISO 24495-1 not read. Claims are limited accordingly. | `content/sources/ux-writing.ts` | minor | No | Open | Read full texts where accessible. | CYCLE_1_BALANCE_REVIEW § 1 |
+| B3-o3 | Linked planned targets remain planned: `tone-of-voice`, `content-strategy`, `form-design`, `readability-formulas`, `cognitive-accessibility`, `deceptive-patterns`, `content-audit`. | `content/taxonomy.ts` | minor | No | Open (expected) | Covered by future batches. | CYCLE_1_BALANCE_REVIEW § 1 |
+
+## Batch 2 (UX research) — minors
+
+| ID | Description | Files | Severity | Blocks publication | Status | Required action | Related |
+|---|---|---|---|---|---|---|---|
+| B2-O-1 | `usability-testing` cites the unread Ericsson & Simon 1993 for the classic think-aloud sentence; `ericsson-simon-1980` (abstract read) supports it. | `content/knowledge/**/usability-testing.ts` | minor | No | Open | Retarget the citation in an improvement pass. | BATCH_2_REVIEW |
+| B2-O-2 | Validation-study searches for tree testing and contextual inquiry were not systematic. | — | minor | No | Open | Systematic search if the owner wants it. | BATCH_2_REVIEW § 4 |
+| B2-O-3 | `mental-models` mentions think-aloud without a link. | `mental-models` entry | minor | No | Open (optional) | Add the link. | BATCH_2_REVIEW |
+| B2-O-4 | Optional e2e hardening (`role="status"`). | `tests/browser/` | minor | No | Open (optional) | Harden the selector. | BATCH_2_REVIEW |
+
+## Batch 1 (interaction principles) — minors
+
+| ID | Description | Severity | Blocks publication | Status | Required action |
+|---|---|---|---|---|---|
+| B1-FP-6 | `feedback-principle` → `doherty-threshold` has no link back. | minor | No | Open (optional) | Reciprocal relation. |
+| B1-C-4 | `constraints` → `jakobs-law`, `user-control-and-freedom` have no link back. | minor | No | Open (optional) | Reciprocal relations. |
+| B1-DM-1 | Hutchins, Hollan & Norman (1985) read from a course-reading copy; 13 claims + the L2 figure rely on it. | minor | No | Owner decision | Confirm against a publisher/library copy if wanted. |
+| B1-IS-1 | `interaction-states` evidence class `official-standard` is a judgement call. | minor | No | Owner decision | Owner confirms the class. |
+| B1-IS-2 | `interaction-states` → `colour-contrast-ratio` has no link back. | minor | No | Open (optional) | Reciprocal relation. |
+| B1-D-1 | `discoverability` is in no learning path. | minor | No | Owner decision (paths are reserved to the plan) | Owner decides. |
+| B1-D-2 | `discoverability` → `cognitive-walkthrough` has no link back. | minor | No | Open (optional) | Reciprocal relation. |
+| B1-W | `w3c-wcag-22` record still notes "status should be re-checked". | minor | No | Open | Update the record. |
+
+Details: `docs/BATCH_1_REVIEW.md` §§ 3, 7, 9.
+
+## Testing gaps
+
+| ID | Description | Severity | Blocks publication | Status | Required action |
+|---|---|---|---|---|---|
+| T-1 | No screen-reader, physical-device or independent expert testing (the container has none). Keyboard, accessibility-tree, emulation and axe suites pass. | minor (stated limitation) | No | Open | Manual testing by the owner or a tester. |
+
+## Product known issues
+
+The UI known issues (static lesson rail on phones, chip-row scrolling, steering-lab keyboard, HTTP 200 on unknown dynamic slugs, etc.) are kept in `docs/ROADMAP.md` § Known issues and not duplicated here.
+
+## Closed
+
+_(none recorded since this register was created)_
