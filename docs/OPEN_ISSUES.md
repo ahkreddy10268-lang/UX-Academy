@@ -4,7 +4,7 @@ The single register of unresolved items. Details stay in the linked review or re
 
 Severity: critical · major · moderate · minor (see the `ux-academy-workflow` skill § 5). **Blocks publication** = blocks pushing or publishing the affected work.
 
-Last updated: 2026-11-17, after Improvement Batch 1 implementation (`3d5aa38`, local, awaiting owner review).
+Last updated: 2026-11-17, after Improvement Batch 1 was accepted with corrections (`3d5aa38`, `35cf36b`).
 
 ## Cycle and process
 
@@ -19,11 +19,12 @@ Last updated: 2026-11-17, after Improvement Batch 1 implementation (`3d5aa38`, l
 
 | ID | Description | Severity | Blocks publication | Status | Required action |
 |---|---|---|---|---|---|
-| IB1-2 | `heart-framework` still has one primary source; the originating publication (Rodden, Hutchinson & Fu 2010) is the only one. D-129 evidence target not met. | minor | No | Open; escalated | Owner decision: whether the target fits a single-paper framework, and whether the `peer-reviewed` class is right. No source was relabelled. |
+| IB1-2 | `heart-framework` has one primary source (Rodden, Hutchinson & Fu 2010); D-129 evidence target not met. Two independent sources read and added as `explanatory` (Open Targets case study; Microsoft HEART documentation); no independent peer-reviewed evaluation could be read (one application study was blocked, HTTP 403). Owner decision 2026-11-17: keep the target, no class change, document the gap. | minor | No | Documented gap | Revisit only if a second primary or standard source can be read and verified. |
 | IB1-5 | `system-usability-scale` Editorial stays developing: `brooke-2013` could not be read. | minor | No | Open | See TD-3 and N-1. |
-| N-1 | `system-usability-scale` attributes to Brooke (2013) that SUS is a quick, high-level, non-diagnostic measure; the article was not read, so the attribution is unsupported. | moderate | No | Open; owner decision | Soften or remove the attribution until the article can be read. |
+| N-1 | ~~`system-usability-scale` attributed a claim to the unread Brooke (2013).~~ **Resolved in `35cf36b`** (attribution removed). | moderate | No | Closed | — |
 | N-2 | The unread 1993 book `ericsson-simon-1993` is still cited by `think-aloud-protocol`, `interaction-design-discipline`, `human-computer-interaction`. | minor | No | Open | Review in a later improvement batch. |
-| N-3 | `doherty-threshold`: the "400 ms" figure is in the lead as the popular claim but was not found in the scan read; year (1982) and form number not confirmed in the copy read. | minor | No | Open | Optional editorial reword; confirm year when a readable first-party copy is available. |
+| N-3 | ~~`doherty-threshold` lead presented 400 ms as the claim.~~ **Resolved in `35cf36b`**. Year (1982) and form number still not confirmed in the copy read. | minor | No | Closed (year/form open) | Confirm when a readable first-party copy is available. |
+| N-4 | `brooke-1996` is a `bibliographic` record; SUS cites it for several statements and whether they were checked against the chapter is not recorded. | minor | No | Open observation | Check against the chapter if accessible. |
 | EX-1 | Excluded from Improvement Batch 1 by owner decision (2026-11-17), preserved here: B2-O-3 (optional `mental-models` → think-aloud link), B2-O-4 (e2e `role="status"` hardening), B3-o2 (full-text reads of abstract-only sources), the ten diagrams (DEF-1), twelve Practice entries (DEF-2), the 78-plate marker backlog (TD-1). | — | No | Preserved | Consider in subsequent improvement work. |
 
 ## Deferred by owner decision (2026-11-17) — not dropped
@@ -46,7 +47,7 @@ Last updated: 2026-11-17, after Improvement Batch 1 implementation (`3d5aa38`, l
 
 | ID | Description | Files | Severity | Blocks publication | Status | Required action | Related |
 |---|---|---|---|---|---|---|---|
-| B3-o1 | ~~`plain-language` Easy Read unsourced.~~ **Closed in `3d5aa38`** (Inclusion Europe standards read and cited), pending owner review. | `content/knowledge/content/plain-language.ts` | minor | No | Closed, pending review | — | Improvement Batch 1 report IB1-4 |
+| B3-o1 | ~~`plain-language` Easy Read unsourced.~~ **Closed in `3d5aa38`** (Inclusion Europe standards read and cited), pending owner review. | `content/knowledge/content/plain-language.ts` | minor | No | Closed | — | Improvement Batch 1 report IB1-4 |
 | B3-o2 | Redish 1981/2000, Seckler 2014, Bargas-Avila 2007 read as abstracts; Shneiderman 1982 opening only; ISO 24495-1 not read. Claims are limited accordingly. | `content/sources/ux-writing.ts` | minor | No | Open | Read full texts where accessible. | CYCLE_1_BALANCE_REVIEW § 1 |
 | B3-o3 | Linked planned targets remain planned: `tone-of-voice`, `content-strategy`, `form-design`, `readability-formulas`, `cognitive-accessibility`, `deceptive-patterns`, `content-audit`. | `content/taxonomy.ts` | minor | No | Open (expected) | Covered by future batches. | CYCLE_1_BALANCE_REVIEW § 1 |
 
@@ -54,7 +55,7 @@ Last updated: 2026-11-17, after Improvement Batch 1 implementation (`3d5aa38`, l
 
 | ID | Description | Files | Severity | Blocks publication | Status | Required action | Related |
 |---|---|---|---|---|---|---|---|
-| B2-O-1 | ~~`usability-testing` cited the unread Ericsson & Simon 1993.~~ **Closed in `3d5aa38`** (retargeted to the DOI-verified 1980 paper, abstract read), pending owner review. | `content/knowledge/research/usability-testing.ts` | minor | No | Closed, pending review | — | Improvement Batch 1 report IB1-3 |
+| B2-O-1 | ~~`usability-testing` cited the unread Ericsson & Simon 1993.~~ **Closed in `3d5aa38`** (retargeted to the DOI-verified 1980 paper, abstract read), pending owner review. | `content/knowledge/research/usability-testing.ts` | minor | No | Closed | — | Improvement Batch 1 report IB1-3 |
 | B2-O-2 | Validation-study searches for tree testing and contextual inquiry were not systematic. | — | minor | No | Open | Systematic search if the owner wants it. | BATCH_2_REVIEW § 4 |
 | B2-O-3 | `mental-models` mentions think-aloud without a link. | `mental-models` entry | minor | No | Open (optional) | Add the link. | BATCH_2_REVIEW |
 | B2-O-4 | Optional e2e hardening (`role="status"`). | `tests/browser/` | minor | No | Open (optional) | Harden the selector. | BATCH_2_REVIEW |
@@ -86,5 +87,5 @@ The UI known issues (static lesson rail on phones, chip-row scrolling, steering-
 
 ## Closed
 
-- **IB1-1, IB1-3, IB1-4, IB1-5 (3 of 4), B2-O-1, B3-o1** — implemented in `3d5aa38` (local), pending the owner's independent review.
+- **IB1-1, IB1-3, IB1-4, IB1-5 (3 of 4), B2-O-1, B3-o1, N-1, N-3** — Improvement Batch 1 accepted by the owner 2026-11-17 with corrections (`3d5aa38`, `35cf36b`).
 - **C1-2 — I1 coveredBy checks** (2026-11-17). Reconciled: 13 candidates (plan § 7.3 marks 9; my first report said 10 and missed `utility`, `usefulness`, `desirability`; the owner's "11" matches no list in the repository). 8 applied (ISO/IEC 40500, Success Criteria, Conformance Levels → `wcag`; Effectiveness, Efficiency, Satisfaction → `usability`; Margin of Error → `confidence-intervals`; Emphasis → `visual-hierarchy`); 5 deferred and left planned (Empty-State Writing, State Transitions, Utility, Usefulness, Desirability). Addressed within 10 → 18. Full table with reasons: `docs/CONTENT_AUDIT.md` session 51.

@@ -277,5 +277,11 @@ After that: `ui-design`, `interaction-design-discipline`, `accessibility-concept
 - Measured: evidence target 100 → 101 of 102; Editorial complete 98 → 101.
 - New findings N-1…N-3 in docs/OPEN_ISSUES.md. Report: docs/CYCLE_2_IMPROVEMENT_BATCH_1_REPORT.md. The formal review is not yet written.
 
+## Session 54 — Improvement Batch 1 accepted with corrections (D-129)
+- Owner review (2026-11-17): batch accepted; five limited corrections made in `35cf36b`: HEART (two independent sources read and added as explanatory; target still unmet, gap documented, class unchanged); SUS (unsupported Brooke 2013 attribution removed); Doherty lead (400 ms presented as a commonly repeated interpretation); Ericsson–Simon follow-up kept as N-2; report and records updated.
+- Measured: evidence target 101 of 102; Editorial complete 101. Published 102; sources 495.
+- Commits (all on `claude/batch1-constraints`): `3d5aa38` implementation, `5d9e804` progress records, `35cf36b` corrections, plus the records commit that follows this entry. Pushed on the owner's authorisation; see PROJECT_STATE for the verified remote state.
+- Not started: any further improvement batch or Cycle 2 topic.
+
 ## Next task (precise)
-Await the owner's independent review of Improvement Batch 1 (`3d5aa38`) and decisions on IB1-2, N-1 and the formal review. Do not push `3d5aa38`, start the formal review commit, or begin another batch until instructed.
+Await the owner's instructions. Do not start another improvement batch or select or produce Cycle 2 topics until instructed. Open items: docs/OPEN_ISSUES.md (IB1-2, N-2, N-4, TD-1, DEF-1…3, EX-1).

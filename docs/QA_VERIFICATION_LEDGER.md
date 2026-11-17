@@ -33,6 +33,22 @@ npm run sources:verify -- <id…>
 
 Newest first. "Tree" is the commit the run was made on. Dates are when the run happened.
 
+### Improvement Batch 1 corrections — `35cf36b` (2026-11-17, parent `5d9e804`)
+
+Changes: `heart-framework`, `system-usability-scale`, `doherty-threshold`, two new source records and one source note, generated coverage docs. No component, route, taxonomy or dependency change.
+
+| Check | Command | Result | Run / inherited | Limitations |
+|---|---|---|---|---|
+| Check | `npm run check` | PASS — 22 files, 586 tests | Run | — |
+| Taxonomy | `npm run test:taxonomy` | PASS | Run | — |
+| Docs | `npm run docs:generate` | PASS; evidence target 101/102 and Editorial 101 unchanged | Run | — |
+| Build | `npm run build` | PASS — 995/995 on the rerun (first attempt exited 1 after the same Next.js upgrade notice; not acted on) | Run | Upgrade advice not evaluated |
+| Sources | `npm run sources:verify -- uxls-open-targets-heart ms-azure-monitor-heart` | url-reachable; both pages read in full | Run | Not peer-reviewed; the text read is the evidence |
+| Integrity | `npx tsx scripts/entry-integrity.ts heart-framework system-usability-scale doherty-threshold` | No new problems (pre-existing further-reading references only) | Run | — |
+| Entry review | `AXE_PATH=node_modules/axe-core/axe.min.js node tests/browser/entry-review.cjs heart-framework system-usability-scale doherty-threshold` | 12/24: `doherty-threshold` 8/8; `heart-framework` and `system-usability-scale` axe 0, overflow 0, errors 0, failing only on plate markers/clipped plate text (known backlog TD-1) | Run | Emulated widths |
+| Other suites (e2e, e2e-redesign, atlas, keyboard, devices, colour-studio, crawl, a11y) | — | INHERITED from `9931f1a` / `8c7408e` / `80f8058` | Inherited | No component, route or taxonomy change |
+| Screen reader, physical device, expert review | — | NOT RUN | — | Not available |
+
 ### Improvement Batch 1 implementation — `3d5aa38` (2026-11-17, parent `7c34436`)
 
 Changes: six entries (`mapping`, `usability-testing`, `plain-language`, `doherty-threshold`, `keystroke-level-model`, `shneiderman-golden-rules`), three source files and `verification.json`, generated coverage docs, the batch report. No component, route, taxonomy or dependency change.
