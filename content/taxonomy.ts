@@ -378,7 +378,7 @@ export const domains: Domain[] = [
         id: "composition",
         title: "Composition & visual design principles",
         items: [
-          ...g("principle", "Visual Hierarchy", "Alignment", "Balance", "Contrast|visual-contrast", "Repetition", "Proportion", "Scale", "Emphasis", "White Space", "Rhythm", "Unity", "Variety", "Visual Design Principles"),
+          ...g("principle", "Visual Hierarchy", "Alignment", "Balance", "Contrast|visual-contrast", "Repetition", "Proportion", "Scale", "White Space", "Rhythm", "Unity", "Variety", "Visual Design Principles"), ...within("visual-hierarchy", g("principle", "Emphasis")),
         ],
       },
       {
@@ -493,9 +493,9 @@ export const domains: Domain[] = [
         id: "standards",
         title: "Standards & conformance",
         items: [
-          ...g("standard", "WCAG", "EN 301 549", "ISO/IEC 40500", "WAI-ARIA|aria", "Section 508", "European Accessibility Act"),
+          ...g("standard", "WCAG", "EN 301 549"), ...within("wcag", g("standard", "ISO/IEC 40500")), ...g("standard", "WAI-ARIA|aria", "Section 508", "European Accessibility Act"),
           ...g("principle", "POUR Principles|pour"),
-          ...g("concept", "Success Criteria", "Conformance Levels"),
+          ...within("wcag", g("concept", "Success Criteria", "Conformance Levels")),
         ],
       },
       {
@@ -647,7 +647,7 @@ export const domains: Domain[] = [
         id: "usability-metrics",
         title: "UX & usability metrics",
         items: [
-          ...g("metric", "Task Success Rate", "Time on Task", "Error Rate", "Learnability", "Effectiveness", "Efficiency", "Satisfaction"),
+          ...g("metric", "Task Success Rate", "Time on Task", "Error Rate", "Learnability"), ...within("usability", g("metric", "Effectiveness", "Efficiency", "Satisfaction")),
           ...g("framework", "HEART Framework"),
         ],
       },
@@ -680,7 +680,7 @@ export const domains: Domain[] = [
         description: "Planning studies that can detect real effects and estimating how large they are.",
         items: [
           ...g("concept", "Effect Size", "Statistical Power"),
-          ...g("technique", "Sample Size Estimation", "Margin of Error"),
+          ...g("technique", "Sample Size Estimation"), ...within("confidence-intervals", g("technique", "Margin of Error")),
         ],
       },
       {

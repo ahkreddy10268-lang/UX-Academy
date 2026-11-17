@@ -395,12 +395,12 @@ Composition, hierarchy, layout and the visual principles of interface design.
 - ◻️ Repetition — *Principle* · `repetition`
 - ◻️ Proportion — *Principle* · `proportion`
 - ◻️ Scale — *Principle* · `scale`
-- ◻️ Emphasis — *Principle* · `emphasis`
 - ◻️ White Space — *Principle* · `white-space`
 - ◻️ Rhythm — *Principle* · `rhythm`
 - ◻️ Unity — *Principle* · `unity`
 - ◻️ Variety — *Principle* · `variety`
 - ◻️ Visual Design Principles — *Principle* · `visual-design-principles`
+- ◻️ Emphasis — *Principle* · `emphasis`
 
 ### Layout & proportion (`layout`)
 

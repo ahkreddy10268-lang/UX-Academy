@@ -4,16 +4,16 @@ The single register of unresolved items. Details stay in the linked review or re
 
 Severity: critical · major · moderate · minor (see the `ux-academy-workflow` skill § 5). **Blocks publication** = blocks pushing or publishing the affected work.
 
-Last updated: 2026-11-17, at commit `8c7408e` (+ uncommitted memory/skill files of this task).
+Last updated: 2026-11-17, after the push of `a7c4937` and the I1 commit.
 
 ## Cycle and process
 
 | ID | Description | Files | Severity | Blocks publication | Status | Required action | Related |
 |---|---|---|---|---|---|---|---|
-| C1-1 | The § 9.3 stop rule was triggered in Batch 1 (`constraints` 5 rework commits; `feedback-principle`, `interaction-states` 2 each). The rule makes the next cycle an improvement cycle "until resolved". | `docs/BALANCED_DEVELOPMENT_PLAN.md` § 9.3; `docs/CYCLE_1_BALANCE_REVIEW.md` § 9 | moderate | No (blocks Cycle 2 new-topic planning) | Awaiting owner decision | Owner decides: Cycle 2 starts with an improvement batch, or resolving the Batch 1 rework satisfies "until resolved". Record in DECISION_LOG. | Cycle 1 review; D-129 |
-| C1-2 | I1 (docs and coverage hygiene, approved with Cycle 1) is incomplete: the `coveredBy` checks were not done. | `content/taxonomy.ts`; plan § 7.3 | moderate | No (blocks Cycle 2 planning) | Open; awaiting authorisation | Run the I1 coveredBy checks once authorised. | Cycle 1 review; I1 |
+| C1-1 | **Decided 2026-11-17:** Cycle 2 begins with an improvement-only batch; no new topics. Scope proposal awaiting review: `docs/CYCLE_2_IMPROVEMENT_PROPOSAL.md`. Original: The § 9.3 stop rule was triggered in Batch 1 (`constraints` 5 rework commits; `feedback-principle`, `interaction-states` 2 each). The rule makes the next cycle an improvement cycle "until resolved". | `docs/BALANCED_DEVELOPMENT_PLAN.md` § 9.3; `docs/CYCLE_1_BALANCE_REVIEW.md` § 9 | moderate | No (blocks Cycle 2 new-topic planning) | Decided; scope awaiting owner approval | Owner reviews and approves the improvement-batch scope. Record the decision in DECISION_LOG when the batch is approved. | Cycle 1 review; D-129 |
+| C1-2 | I1 coveredBy checks. **Done 2026-11-17** (see § Closed). | — | — | — | Closed | — | Cycle 1 review; I1 |
 | C1-3 | Clusters A and E were untouched in Cycle 1; the plan requires every cluster within two cycles. | `docs/BALANCED_DEVELOPMENT_PLAN.md` § 2 | minor | No | Constraint for Cycle 2 planning | Cycle 2 plan must include a batch in A and in E. | Cycle 1 review |
-| P-1 | Local commits `80f8058` (Batch 3) and `8c7408e` (Batch 3 review + Cycle 1 review) are not pushed. | — | — | — | Awaiting owner approval | Push only on explicit approval, then verify remote SHA, preview, main and PR #2. | Batch 3 |
+| P-1 | `80f8058`, `8c7408e`, `a7c4937` pushed 2026-11-17 on owner approval; the I1 commit is local only. | — | — | — | Awaiting owner approval (I1 commit) | Push only on explicit approval. | Batch 3 |
 
 ## Technical debt
 
@@ -67,4 +67,5 @@ The UI known issues (static lesson rail on phones, chip-row scrolling, steering-
 
 ## Closed
 
-_(none recorded since this register was created)_
+- **C1-2 — I1 coveredBy checks** (2026-11-17, I1 commit). 10 topics checked against the published host entries; 8 applied as `coveredBy` (ISO/IEC 40500, Success Criteria, Conformance Levels → `wcag`; Effectiveness, Efficiency, Satisfaction → `usability`; Margin of Error → `confidence-intervals`; Emphasis → `visual-hierarchy`); 2 left planned (Empty-State Writing, State Transitions). Reasons in `docs/CONTENT_AUDIT.md` session 51.
+- Note: no list of 11 checks exists in the repository; plan § 7.3 names 9 and `state-transitions` was a tenth.

@@ -258,5 +258,13 @@ After that: `ui-design`, `interaction-design-discipline`, `accessibility-concept
 - QA on the corrected tree: check 586; taxonomy pass; build 995/995; e2e-redesign 66/66; axe 0; Batch 3 page review 40/40; integrity clean. Other suites inherited from `80f8058`. Screen readers, devices and expert review untested.
 - Not pushed. No Cycle 2 topics selected.
 
+## Session 51 — push, I1 coveredBy checks, improvement-cycle proposal (D-129)
+- Owner decisions: Cycle 2 begins with an improvement-only batch (§ 9.3); I1 authorised; push of `80f8058`, `8c7408e`, `a7c4937` approved.
+- Pushed to `claude/batch1-constraints`: remote HEAD `a7c4937`, main `b788511` unchanged, PR #2 open and unmerged at `a1f6373`. Vercel preview `dpl_G9B261VEd9eSqztEpDJpfuhJqShK` READY.
+- I1: 10 candidates checked against the published hosts; 8 applied (`coveredBy`), 2 left planned (`empty-state-writing`, `state-transitions`). Addressed within 10 → 18; published unchanged (102). Reasons: docs/CONTENT_AUDIT.md session 51. The owner's "11 checks" has no matching list in the repo (plan § 7.3 names 9).
+- Proposal: docs/CYCLE_2_IMPROVEMENT_PROPOSAL.md (priorities, 5 items; nothing started).
+- QA: check 586, taxonomy pass, build 995/995 (rerun after the CLI notice), Atlas 36/36; other suites inherited.
+- I1 commit is local only.
+
 ## Next task (precise)
-Await the owner's decision on docs/CYCLE_1_BALANCE_REVIEW.md: how the § 9.3 stop rule applies, and authorisation for I1 (coveredBy checks). Do not push, merge, or plan or start Cycle 2 batches until instructed.
+Await the owner's review of docs/CYCLE_2_IMPROVEMENT_PROPOSAL.md. Do not start the improvement batch, select Cycle 2 topics, or push the I1 commit until instructed.

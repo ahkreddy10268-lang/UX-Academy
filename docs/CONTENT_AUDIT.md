@@ -274,3 +274,22 @@ Published the six pattern topics of Design Systems › Components & patterns: `e
 ### Session 37 — Design Systems Stage 5 published (D-125); domain complete; no taxonomy change
 
 Published `design-governance`, `design-system-versioning`, `design-qa`, `design-system-audits` (Design Systems › Governance & operations, type strategy) and `multi-brand-systems` (System foundations, type concept). Boundaries kept: `design-system-audits` (system inventory and adoption) links to but does not absorb `accessibility-audits` (Accessibility, planned); `design-qa` (pre-release parity) is distinct from `usability-testing` and `heuristic-evaluation`; `multi-brand-systems` builds on `theme-architecture` without repeating mode mechanics. Every topic of the Design Systems domain is now published.
+
+### Session 51 — I1 coveredBy checks (owner-authorised 2026-11-17; plan § 7.3)
+
+Each candidate was checked against the published host entry's own text. `coveredBy` was applied only where the host defines the topic, shows the mechanism and states its limits. No slug, domain or type changed; no entry was added.
+
+| Topic | Host | Decision | Evidence in the host |
+|---|---|---|---|
+| ISO/IEC 40500 | `wcag` | Applied | States that WCAG 2.2 was approved as ISO/IEC 40500:2025, matches the October 2023 version, and that the 2012 edition was WCAG 2.0. |
+| Success Criteria | `wcag` | Applied | Definition, glossary term, layered structure (principles → guidelines → criteria), the nine 2.2 additions and the removal of 4.1.1. |
+| Conformance Levels | `wcag` | Applied | Levels A/AA/AAA, why AA is the usual target, the five conformance-claim requirements, the AAA myth. |
+| Effectiveness | `usability` | Applied | ISO 9241-11 definition, standard measures, trade-offs against the other components. |
+| Efficiency | `usability` | Applied | Same section; also the Nielsen variant ("efficiency" as performance once learned). |
+| Satisfaction | `usability` | Applied | Same section; the 2018 revision extends it to physical, cognitive and emotional response; weak correlation with the other measures. |
+| Margin of Error | `confidence-intervals` | Applied | Glossary term, formula (margin = critical value × SE), worked example, relation note. Limit: the entry does not derive the survey-proportion formula; `sample-size-estimation` stays a separate planned topic. |
+| Emphasis | `visual-hierarchy` | Applied | Definition, relativity of emphasis, few levels, over-emphasis and banner blindness, the "more emphasis" myth. |
+| Empty-State Writing | `empty-states` | **Not applied** | The host covers what each empty state should say (four kinds, four messages, layout and copy) but declares the topic a separate `complementary-to` relation, and gives no wording technique. Stays planned in the UX Writing domain. |
+| State Transitions | `interaction-states` | **Not applied** | The host names transitions only as a relation to a separate topic and defers them to `component-state-management`. Stays planned. |
+
+Discrepancy recorded: the owner's instruction refers to 11 outstanding checks, but no list of 11 exists in the repository. Plan § 7.3 names 9 topics; adding `state-transitions` (the Batch 1 boundary note in plan § 9) gives the 10 checked here, of which 8 were applied and 2 left planned. "Addressed within" rose from 10 to 18; no published count changed (102).

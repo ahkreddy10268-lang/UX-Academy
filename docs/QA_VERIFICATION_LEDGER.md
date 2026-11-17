@@ -33,6 +33,20 @@ npm run sources:verify -- <id…>
 
 Newest first. "Tree" is the commit the run was made on. Dates are when the run happened.
 
+### I1 commit — coveredBy checks (2026-11-17, parent `a7c4937`)
+
+Changes: `content/taxonomy.ts` (8 topics gain `coveredBy`), `docs/CONTENT_AUDIT.md`, generated coverage docs, `docs/CYCLE_2_IMPROVEMENT_PROPOSAL.md`, state docs. No entry, component, route or dependency change. A taxonomy change affects generated pages and the Atlas, so build and the Atlas suite were run; unrelated suites were not.
+
+| Check | Command | Result | Run / inherited | Limitations |
+|---|---|---|---|---|
+| Check | `npm run check` | PASS — 22 files, 586 tests | Run | — |
+| Taxonomy | `npm run test:taxonomy` | PASS — 561 topics, 102 published, 18 addressed within | Run | — |
+| Docs | `npm run docs:generate` | PASS (coverage docs regenerated) | Run | — |
+| Build | `npm run build` | PASS — 995/995. The first attempt exited 1 after the Next.js CLI printed the same upgrade notice as on `8c7408e`; the identical rerun exited 0. The notice was not acted on. | Run | Upgrade advice not evaluated |
+| Atlas | `node tests/browser/atlas.cjs` (production server) | PASS — 36/36 | Run | — |
+| e2e, e2e-redesign, keyboard, devices, colour-studio, crawl, a11y, entry review | — | INHERITED from `8c7408e` (a11y/entry review) and `80f8058` (others) | Inherited | No component, route or entry content changed; taxonomy-only change |
+| Vercel preview `dpl_G9B261VEd9eSqztEpDJpfuhJqShK` for pushed `a7c4937` | Vercel API `get_deployment` | READY (2026-11-17) | Run | Deployment state only; the preview pages were not browsed |
+
 ### Commit `8c7408e` — Batch 3 review + Cycle 1 balance review (2026-11-17)
 
 The tests ran on the review-corrected tree before the commit; it differed from `8c7408e` only by the two review documents (`docs/CYCLE_1_BALANCE_REVIEW.md`, `docs/PROGRESS.md`), so the results apply to `8c7408e`.
