@@ -10,7 +10,7 @@
 | Subject plates | 20 / 20 |
 | Plates in the current system (dark technical or instructional sheet) | 122 |
 | Plates still in the earlier pastel style | 2 |
-| Level-2 figures | 34 |
+| Level-2 figures | 39 |
 | Level-3 explorers (on plates) | 9 |
 | Labs linked from entries | 23 |
 | Animated plates | 12 |
@@ -21,28 +21,28 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 
 | # | Category | L1 plates | Current style | L2 figures | L3 | Retain / refine / replace | Maturity | Entries |
 |---|---|---:|---:|---:|---:|---|---|---|
-| 1 | UX Concept Illustrations | 26 | 25 | 10 | 13 | 26 / 0 / 0 | developing | `fitts-law`, `hick-hyman-law`, `cognitive-load-theory`, `millers-law`, `jakobs-law`, `mental-models`, `affordances`, `peak-end-rule`, `steering-law`, `teslers-law`, `serial-position-effect`, `von-restorff-effect`, `aesthetic-usability-effect`, `choice-overload`, `working-memory-model`, `recognition-over-recall`, `user-experience`, `human-computer-interaction`, `consistency-principle`, `help-and-documentation`, `ux-writing`, `plain-language` |
+| 1 | UX Concept Illustrations | 26 | 25 | 11 | 13 | 26 / 0 / 0 | developing | `fitts-law`, `hick-hyman-law`, `cognitive-load-theory`, `millers-law`, `jakobs-law`, `mental-models`, `affordances`, `peak-end-rule`, `steering-law`, `teslers-law`, `serial-position-effect`, `von-restorff-effect`, `aesthetic-usability-effect`, `choice-overload`, `working-memory-model`, `recognition-over-recall`, `user-experience`, `human-computer-interaction`, `consistency-principle`, `help-and-documentation`, `ux-writing`, `plain-language` |
 | 2 | UI Anatomy Illustrations | 3 | 3 | 1 | 0 | 3 / 0 / 0 | developing | `ui-design`, `microcopy` |
 | 3 | UX Process Illustrations | 8 | 8 | 2 | 0 | 8 / 0 / 0 | developing | `double-diamond`, `user-centred-design`, `content-design` |
-| 4 | User Research Illustrations | 6 | 6 | 4 | 0 | 6 / 0 / 0 | developing | `card-sorting`, `jobs-to-be-done`, `think-aloud-protocol`, `contextual-inquiry`, `in-depth-interviews` |
+| 4 | User Research Illustrations | 6 | 6 | 5 | 0 | 6 / 0 / 0 | mature | `card-sorting`, `jobs-to-be-done`, `think-aloud-protocol`, `contextual-inquiry`, `in-depth-interviews` |
 | 5 | Information Architecture Illustrations | 3 | 3 | 3 | 0 | 3 / 0 / 0 | mature | `information-architecture`, `tree-testing` |
-| 6 | Interaction Design Illustrations | 19 | 19 | 3 | 5 | 19 / 0 / 0 | developing | `signifiers`, `doherty-threshold`, `gulfs-of-execution-and-evaluation`, `interaction-design-discipline`, `progressive-disclosure`, `visibility-of-system-status`, `user-control-and-freedom`, `error-prevention`, `mapping`, `flexibility-and-efficiency-of-use`, `error-recovery`, `feedback-principle`, `constraints`, `direct-manipulation`, `interaction-states`, `discoverability`, `error-messages` |
+| 6 | Interaction Design Illustrations | 19 | 19 | 4 | 5 | 19 / 0 / 0 | developing | `signifiers`, `doherty-threshold`, `gulfs-of-execution-and-evaluation`, `interaction-design-discipline`, `progressive-disclosure`, `visibility-of-system-status`, `user-control-and-freedom`, `error-prevention`, `mapping`, `flexibility-and-efficiency-of-use`, `error-recovery`, `feedback-principle`, `constraints`, `direct-manipulation`, `interaction-states`, `discoverability`, `error-messages` |
 | 7 | Wireframe & Prototyping Illustrations | 1 | 1 | 0 | 0 | 1 / 0 / 0 | developing | — |
 | 8 | Visual Design & Composition Illustrations | 8 | 8 | 2 | 6 | 8 / 0 / 0 | developing | `gestalt-principles`, `colour-contrast-ratio`, `visual-hierarchy`, `modular-type-scale`, `aesthetic-and-minimalist-design` |
-| 9 | Design Systems Illustrations | 29 | 29 | 2 | 6 | 29 / 0 / 0 | developing | `atomic-design`, `design-system`, `design-tokens`, `primitive-tokens`, `semantic-tokens`, `theme-architecture`, `design-language`, `spacing-scales`, `typography-scales`, `colour-systems`, `elevation-systems`, `icon-systems`, `component-libraries`, `component-architecture`, `variants`, `component-properties`, `component-state-management`, `empty-states`, `loading-states`, `skeleton-screens`, `progressive-loading`, `error-states`, `data-tables`, `design-governance`, `design-system-versioning`, `design-qa`, `design-system-audits`, `multi-brand-systems` |
+| 9 | Design Systems Illustrations | 29 | 29 | 3 | 6 | 29 / 0 / 0 | developing | `atomic-design`, `design-system`, `design-tokens`, `primitive-tokens`, `semantic-tokens`, `theme-architecture`, `design-language`, `spacing-scales`, `typography-scales`, `colour-systems`, `elevation-systems`, `icon-systems`, `component-libraries`, `component-architecture`, `variants`, `component-properties`, `component-state-management`, `empty-states`, `loading-states`, `skeleton-screens`, `progressive-loading`, `error-states`, `data-tables`, `design-governance`, `design-system-versioning`, `design-qa`, `design-system-audits`, `multi-brand-systems` |
 | 10 | Usability & Accessibility Illustrations | 4 | 4 | 1 | 0 | 4 / 0 / 0 | developing | `usability`, `accessibility-concept`, `wcag` |
 | 11 | Responsive & Adaptive Design Illustrations | 1 | 1 | 0 | 0 | 1 / 0 / 0 | developing | `responsive-systems` |
-| 12 | UX Evaluation & Optimization Illustrations | 16 | 15 | 6 | 2 | 16 / 0 / 0 | developing | `nielsen-usability-heuristics`, `keystroke-level-model`, `shneiderman-golden-rules`, `heuristic-evaluation`, `cognitive-walkthrough`, `usability-testing`, `system-usability-scale`, `nasa-tlx`, `net-promoter-score`, `task-success-rate`, `ab-testing`, `confidence-intervals`, `sample-size-estimation`, `heart-framework` |
+| 12 | UX Evaluation & Optimization Illustrations | 16 | 15 | 7 | 2 | 16 / 0 / 0 | developing | `nielsen-usability-heuristics`, `keystroke-level-model`, `shneiderman-golden-rules`, `heuristic-evaluation`, `cognitive-walkthrough`, `usability-testing`, `system-usability-scale`, `nasa-tlx`, `net-promoter-score`, `task-success-rate`, `ab-testing`, `confidence-intervals`, `sample-size-estimation`, `heart-framework` |
 
 ## The five explanation methods
 
 | Method | L1 plates (primary) | L2 figures |
 |---|---:|---:|
 | Conceptual & Metaphorical | 19 | 8 |
-| Process & Sequential | 29 | 11 |
-| Relationship & Systems | 19 | 6 |
+| Process & Sequential | 29 | 13 |
+| Relationship & Systems | 19 | 8 |
 | Comparison & Contrast | 38 | 8 |
-| Hierarchy & Classification | 19 | 1 |
+| Hierarchy & Classification | 19 | 2 |
 
 ## Level 1 audit (every registered plate)
 
@@ -62,7 +62,7 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 | `design-thinking` | planned topic | ux-process | process | current · instructional sheet | retain | Sheet (S25, planned topic, labelled): five stages with artefacts and iteration returns. | 0 | — |
 | `nielsen-usability-heuristics` | entry | evaluation-optimization | hierarchy | current · instructional sheet | retain | Sheet (S25): ten numbered tabs beside a screen where five heuristics are visible; the key lists all ten. | 0 | feedback-lab |
 | `ia` | subject | information-architecture | hierarchy | current · instructional sheet | retain | Sheet (S25): an indented site structure, the navigation bar and breadcrumb, and search reaching the same page. | 0 | — |
-| `atomic-design` | entry | design-systems | hierarchy | current · instructional sheet | retain | Sheet (S25; entry plate since S33, planned label removed): atoms → molecule → organism → template → page, each built from the last. | 0 | — |
+| `atomic-design` | entry | design-systems | hierarchy | current · instructional sheet | retain | Sheet (S25; entry plate since S33, planned label removed): atoms → molecule → organism → template → page, each built from the last. | 1 | — |
 | `steering-law` | entry | ux-concept | conceptual | current · instructional sheet | retain | Sheet (S25): two tunnels with A/W from lib/formulas steeringId and a cascading menu as a tunnel. | 0 | steering-lab |
 | `keystroke-level-model` | entry | evaluation-optimization | process | current · instructional sheet | retain | Sheet (S25): renaming a file as M P BB H M 10K, times from lib/formulas parseKlm/klmTotal. | 1 | — |
 | `doherty-threshold` | entry | interaction-design | conceptual | current · instructional sheet | retain | Sheet (S25): fast and slow exchanges on a log time axis with the ~0.4 s mark labelled a rule of thumb. | 0 | feedback-lab |
@@ -71,9 +71,9 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 | `von-restorff-effect` | entry | ux-concept | comparison | current · instructional sheet | retain | Sheet (S25): uniform list, list with an isolate, illustrative later recall, and an all-emphasised list. | 0 | — |
 | `aesthetic-usability-effect` | entry | ux-concept | comparison | current · instructional sheet | retain | Sheet (S25): the same form plain and polished, same task outcome, illustrative perceived-ease bars. | 0 | — |
 | `choice-overload` | entry | ux-concept | comparison | current · instructional sheet | retain | Sheet (S25): 6 versus 24 options, an illustrative spread of effects around zero, and the moderating conditions. | 0 | — |
-| `working-memory-model` | entry | ux-concept | relationship | current · instructional sheet | retain | Sheet (S25): central executive, phonological loop, episodic buffer (2000), sketchpad and long-term memory. | 0 | serial-position-lab |
+| `working-memory-model` | entry | ux-concept | relationship | current · instructional sheet | retain | Sheet (S25): central executive, phonological loop, episodic buffer (2000), sketchpad and long-term memory. | 1 | serial-position-lab |
 | `recognition-over-recall` | entry | ux-concept | comparison | current · instructional sheet | retain | Sheet (S25): a bare command prompt versus a menu whose visible options cue the answer. | 0 | — |
-| `gulfs-of-execution-and-evaluation` | entry | interaction-design | process | current · instructional sheet | retain | Sheet (S25): goal and heating app across a shaded gulf; mapped controls and stated feedback bridge it. | 0 | — |
+| `gulfs-of-execution-and-evaluation` | entry | interaction-design | process | current · instructional sheet | retain | Sheet (S25): goal and heating app across a shaded gulf; mapped controls and stated feedback bridge it. | 1 | — |
 | `shneiderman-golden-rules` | entry | evaluation-optimization | hierarchy | current · instructional sheet | retain | Sheet (S25): a three-screen delete dialogue placing seven of the eight rules; the key lists all eight. | 0 | — |
 | `heuristic-evaluation` | entry | evaluation-optimization | process | current · instructional sheet | retain | Sheet (S25): three evaluators' illustrative findings merged into one list with a missed problem and a severity scale. | 2 | heuristic-report-lab |
 | `cognitive-walkthrough` | entry | evaluation-optimization | process | current · instructional sheet | retain | Sheet (S25): one step of a task with the four questions, answers and a failure story. | 1 | — |
@@ -95,8 +95,8 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 | `interaction-design-discipline` | entry | interaction-design | process | current · dark technical | retain | Pilot: one control through idle, pressed, processing, done and failed-with-recovery states. | 1 | — |
 | `accessibility-concept` | entry | usability-accessibility | relationship | current · dark technical | retain | Pilot: exploded access architecture; routes into the accessibility tree; one blocked route. | 1 | — |
 | `information-architecture` | entry | information-architecture | hierarchy | current · dark technical | retain | Pilot: organisation tree with labels, navigation, search and one traced route to a destination. | 2 | — |
-| `jobs-to-be-done` | entry | user-research | relationship | current · instructional sheet | retain | Sheet (S25): circumstance → job (functional, emotional, social) → competing solutions, illustrative. | 0 | — |
-| `heart-framework` | entry | evaluation-optimization | hierarchy | current · instructional sheet | retain | Sheet (S25): HEART rows by Goals–Signals–Metrics columns, one illustrative row filled, one category skipped. | 0 | — |
+| `jobs-to-be-done` | entry | user-research | relationship | current · instructional sheet | retain | Sheet (S25): circumstance → job (functional, emotional, social) → competing solutions, illustrative. | 1 | — |
+| `heart-framework` | entry | evaluation-optimization | hierarchy | current · instructional sheet | retain | Sheet (S25): HEART rows by Goals–Signals–Metrics columns, one illustrative row filled, one category skipped. | 1 | — |
 | `progressive-disclosure` | entry | interaction-design | comparison | current · instructional sheet | retain | Sheet (S25): one export dialog collapsed and expanded, essential options unchanged. | 0 | disclosure-lab |
 | `wcag` | entry | usability-accessibility | hierarchy | current · instructional sheet | retain | Replaced (D-093): principles → guidelines (13, collapsed by range) → five real success criteria with levels; A ⊂ AA ⊂ AAA nest with AA as the usual target; non-normative Techniques. | 0 | — |
 | `colour-contrast-ratio` | entry | visual-design | comparison | current · instructional sheet | retain | Sheet (S25): two fixed sample greys on white with ratios from lib/formulas contrastRatio (--sample-*, D-106). | 0 | colour, contrast-lab |
@@ -175,7 +175,7 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 
 ## Level 2 figures
 
-34 of 34 Level-2 figures are drawn in a current language (sheet or viz).
+39 of 39 Level-2 figures are drawn in a current language (sheet or viz).
 
 | Figure | Type | Method | Language | Verification |
 |---|---|---|---|---|
@@ -213,6 +213,11 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 | `card-sorting.types` | comparison | comparison | sheet | content-checked |
 | `ab-testing.checks` | process | process | viz | content-checked |
 | `keystroke-level-model.worked` | formula | conceptual | sheet | content-checked |
+| `atomic-design.levels` | hierarchy | hierarchy | sheet | content-checked |
+| `jobs-to-be-done.flow` | process | process | viz | content-checked |
+| `gulfs-of-execution-and-evaluation.stages` | process | process | viz | content-checked |
+| `working-memory-model.parts` | conceptual | relationship | sheet | content-checked |
+| `heart-framework.categories` | conceptual | relationship | sheet | content-checked |
 
 ## Plate descriptions (text alternatives)
 

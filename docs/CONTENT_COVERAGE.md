@@ -138,7 +138,7 @@ Every topic has exactly one status, derived from the content: an entry's own sta
 |---|---:|---:|---:|---|---|---|---|---|
 | UX & UI Fundamentals | 21 | 6 | 6 | 6 / 6 | 6 / 6 | 6 / 6 | 1 / 6 | 6 / 6 |
 | UX Laws & Cognitive Effects | 46 | 13 | 13 | 13 / 13 | 13 / 13 | 13 / 13 | 2 / 13 | 13 / 13 |
-| Cognition, Behaviour & Human Factors | 59 | 7 | 7 | 7 / 7 | 7 / 7 | 7 / 7 | 1 / 7 | 7 / 7 |
+| Cognition, Behaviour & Human Factors | 59 | 7 | 7 | 7 / 7 | 7 / 7 | 7 / 7 | 2 / 7 | 7 / 7 |
 | Principles & Heuristics | 12 | 7 | 7 | 7 / 7 | 2 / 7 | 7 / 7 | 0 / 7 | 7 / 7 |
 | UX Research | 57 | 9 | 9 | 9 / 9 | 9 / 9 | 9 / 9 | 3 / 9 | 9 / 9 |
 | Design Methods & Frameworks | 12 | 2 | 2 | 2 / 2 | 2 / 2 | 2 / 2 | 1 / 2 | 2 / 2 |
@@ -169,7 +169,7 @@ Every topic has exactly one status, derived from the content: an entry's own sta
 | UX Laws & Cognitive Effects | Memory & attention effects | 10 | 5 | 5 / 5 | 5 / 5 | 5 / 5 | 0 / 5 | 5 / 5 |
 | UX Laws & Cognitive Effects | Gestalt laws of grouping | 9 | 1 | 1 / 1 | 1 / 1 | 1 / 1 | 1 / 1 | 1 / 1 |
 | UX Laws & Cognitive Effects | Decision-making biases | 14 | 1 | 1 / 1 | 1 / 1 | 1 / 1 | 0 / 1 | 1 / 1 |
-| Cognition, Behaviour & Human Factors | Cognitive psychology, memory & learning | 15 | 3 | 3 / 3 | 3 / 3 | 3 / 3 | 1 / 3 | 3 / 3 |
+| Cognition, Behaviour & Human Factors | Cognitive psychology, memory & learning | 15 | 3 | 3 / 3 | 3 / 3 | 3 / 3 | 2 / 3 | 3 / 3 |
 | Cognition, Behaviour & Human Factors | Behavioural science, motivation & emotion | 17 | 0 | — | — | — | — | — |
 | Cognition, Behaviour & Human Factors | Visual cognition | 10 | 0 | — | — | — | — | — |
 | Cognition, Behaviour & Human Factors | Human factors, ergonomics & HCI theory | 17 | 4 | 4 / 4 | 4 / 4 | 4 / 4 | 0 / 4 | 4 / 4 |
@@ -301,7 +301,7 @@ Five separate dimensions, rated basic / developing / complete from the content (
 | Explanation | 102 | 0 | 0 |
 | Evidence | 65 | 37 | 0 |
 | Practice | 102 | 0 | 0 |
-| Visual | 8 | 43 | 51 |
+| Visual | 9 | 46 | 47 |
 | Editorial | 101 | 1 | 0 |
 
 ## Published entries
@@ -313,7 +313,7 @@ Five separate dimensions, rated basic / developing / complete from the content (
 | Aesthetic and Minimalist Design | Principle | Professional guideline | complete | developing | complete | basic | complete | 7 | 3 | — | — |
 | Aesthetic-Usability Effect | Concept | Peer-reviewed research | complete | complete | complete | basic | complete | 8 | 4 | — | — |
 | Affordances | Concept | Established theoretical model | complete | complete | complete | basic | complete | 7 | 3 | — | — |
-| Atomic Design | Methodology | Practitioner recommendation | complete | developing | complete | basic | complete | 4 | 3 | — | — |
+| Atomic Design | Methodology | Practitioner recommendation | complete | developing | complete | developing | complete | 4 | 3 | — | — |
 | Card Sorting | Method | Practitioner recommendation | complete | complete | complete | developing | complete | 4 | 4 | — | — |
 | Choice Overload | Concept | Contested or limited evidence | complete | complete | complete | basic | complete | 3 | 4 | — | — |
 | Cognitive Load Theory | Theory | Established theoretical model | complete | complete | complete | complete | complete | 14 | 4 | — | cognitive-load-lab |
@@ -351,8 +351,8 @@ Five separate dimensions, rated basic / developing / complete from the content (
 | Fitts's Law | Law | Original empirical research | complete | complete | complete | complete | complete | 10 | 4 | fitts | fitts-lab |
 | Flexibility and Efficiency of Use | Principle | Professional guideline | complete | developing | complete | basic | complete | 7 | 3 | — | — |
 | Gestalt Principles of Perceptual Grouping | Principle | Established theoretical model | complete | complete | complete | complete | complete | 6 | 3 | — | gestalt-lab |
-| Gulfs of Execution and Evaluation | Model | Established theoretical model | complete | complete | complete | basic | complete | 6 | 3 | — | — |
-| HEART Framework | Framework | Peer-reviewed research | complete | developing | complete | basic | complete | 5 | 3 | — | — |
+| Gulfs of Execution and Evaluation | Model | Established theoretical model | complete | complete | complete | developing | complete | 6 | 3 | — | — |
+| HEART Framework | Framework | Peer-reviewed research | complete | developing | complete | developing | complete | 5 | 3 | — | — |
 | Help and Documentation | Principle | Professional guideline | complete | developing | complete | basic | complete | 6 | 3 | — | — |
 | Heuristic Evaluation | Method | Peer-reviewed research | complete | complete | complete | complete | complete | 11 | 4 | — | heuristic-report-lab |
 | Hick-Hyman Law | Law | Original empirical research | complete | complete | complete | developing | complete | 6 | 4 | hick-hyman | hick-lab |
@@ -363,7 +363,7 @@ Five separate dimensions, rated basic / developing / complete from the content (
 | Interaction Design | Discipline | Professional guideline | complete | complete | complete | developing | complete | 28 | 9 | — | — |
 | Interaction States | Concept | Official standard | complete | complete | complete | developing | complete | 8 | 5 | — | — |
 | Jakob's Law | Principle | Practitioner recommendation | complete | complete | complete | developing | complete | 4 | 3 | — | jakob-lab |
-| Jobs To Be Done | Framework | Practitioner recommendation | complete | complete | complete | basic | complete | 3 | 4 | — | — |
+| Jobs To Be Done | Framework | Practitioner recommendation | complete | complete | complete | developing | complete | 3 | 4 | — | — |
 | Keystroke-Level Model (KLM) | Model | Established theoretical model | complete | complete | complete | complete | complete | 4 | 3 | klm | — |
 | Loading States | Pattern | Professional guideline | complete | developing | complete | developing | complete | 12 | 3 | — | async-state-lab |
 | Mapping | Concept | Established theoretical model | complete | complete | complete | basic | complete | 5 | 3 | — | — |
@@ -409,7 +409,7 @@ Five separate dimensions, rated basic / developing / complete from the content (
 | Visual Hierarchy | Principle | Established theoretical model | complete | complete | complete | developing | complete | 6 | 3 | — | hierarchy-lab |
 | Von Restorff Effect | Concept | Original empirical research | complete | complete | complete | basic | complete | 4 | 3 | — | — |
 | Web Content Accessibility Guidelines (WCAG) | Standard | Official standard | complete | complete | complete | basic | complete | 8 | 4 | — | — |
-| Working Memory Model | Model | Established theoretical model | complete | complete | complete | developing | complete | 8 | 3 | — | serial-position-lab |
+| Working Memory Model | Model | Established theoretical model | complete | complete | complete | complete | complete | 8 | 3 | — | serial-position-lab |
 
 ## Targets by type and evidence class
 
@@ -417,14 +417,14 @@ Approved in D-129 (docs/BALANCED_DEVELOPMENT_PLAN.md § 9.2). The ratings above 
 
 | Measure | Meets target |
 |---|---:|
-| Visual | 97 / 102 |
+| Visual | 102 / 102 |
 | Evidence | 101 / 102 |
 
 | Domain | Published | Visual meets | Evidence meets |
 |---|---:|---:|---:|
 | UX & UI Fundamentals | 6 | 6 | 6 |
 | UX Laws & Cognitive Effects | 13 | 13 | 13 |
-| Cognition, Behaviour & Human Factors | 7 | 5 | 7 |
+| Cognition, Behaviour & Human Factors | 7 | 7 | 7 |
 | Principles & Heuristics | 7 | 7 | 7 |
 | UX Research | 9 | 9 | 9 |
 | Design Methods & Frameworks | 2 | 2 | 2 |
@@ -432,19 +432,15 @@ Approved in D-129 (docs/BALANCED_DEVELOPMENT_PLAN.md § 9.2). The ratings above 
 | Interaction Design | 10 | 10 | 10 |
 | UI & Visual Design | 1 | 1 | 1 |
 | Typography & Colour Science | 2 | 2 | 2 |
-| Design Systems | 29 | 28 | 29 |
+| Design Systems | 29 | 29 | 29 |
 | Accessibility & Inclusive Design | 2 | 2 | 2 |
 | UX Writing & Content Design | 5 | 5 | 5 |
-| Product Design & Strategy | 1 | 0 | 1 |
-| Metrics, Formulas & Statistics | 7 | 6 | 6 |
+| Product Design & Strategy | 1 | 1 | 1 |
+| Metrics, Formulas & Statistics | 7 | 7 | 6 |
 
 Entries below a target, and what is missing:
 
-- **Atomic Design** — visual: a detailed diagram
-- **Gulfs of Execution and Evaluation** — visual: a detailed diagram
-- **HEART Framework** — visual: a detailed diagram; evidence: two primary or standard sources
-- **Jobs To Be Done** — visual: a detailed diagram
-- **Working Memory Model** — visual: a detailed diagram
+- **HEART Framework** — evidence: two primary or standard sources
 
 ## Addressed within another entry
 
