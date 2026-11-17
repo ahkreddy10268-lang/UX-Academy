@@ -23,7 +23,7 @@
 | Comparisons | 11 |
 | Learning paths | 16 |
 | Glossary terms | 114 |
-| Sources | 493 |
+| Sources | 495 |
 
 ## By domain
 
@@ -352,7 +352,7 @@ Five separate dimensions, rated basic / developing / complete from the content (
 | Flexibility and Efficiency of Use | Principle | Professional guideline | complete | developing | complete | basic | complete | 7 | 3 | — | — |
 | Gestalt Principles of Perceptual Grouping | Principle | Established theoretical model | complete | complete | complete | complete | complete | 6 | 3 | — | gestalt-lab |
 | Gulfs of Execution and Evaluation | Model | Established theoretical model | complete | complete | complete | basic | complete | 6 | 3 | — | — |
-| HEART Framework | Framework | Peer-reviewed research | complete | developing | complete | basic | complete | 3 | 3 | — | — |
+| HEART Framework | Framework | Peer-reviewed research | complete | developing | complete | basic | complete | 5 | 3 | — | — |
 | Help and Documentation | Principle | Professional guideline | complete | developing | complete | basic | complete | 6 | 3 | — | — |
 | Heuristic Evaluation | Method | Peer-reviewed research | complete | complete | complete | complete | complete | 11 | 4 | — | heuristic-report-lab |
 | Hick-Hyman Law | Law | Original empirical research | complete | complete | complete | developing | complete | 6 | 4 | hick-hyman | hick-lab |

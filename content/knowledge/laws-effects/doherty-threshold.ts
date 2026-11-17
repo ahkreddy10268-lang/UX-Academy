@@ -6,9 +6,9 @@ export default defineEntry({
   title: "Doherty Threshold",
   alternateNames: ["Doherty's threshold", "400 ms rule", "Rapid response time threshold"],
   summary:
-    "A practitioner rule of thumb, traced to a 1982 IBM report, that productivity rises when system responses arrive faster than about 400 ms — useful as a performance aspiration, but not an established perceptual law.",
+    "A practitioner rule of thumb, often traced to a 1982 IBM report and commonly repeated as 'respond within about 400 ms', that faster system responses raise productivity. The 400 ms figure is a popular interpretation, not an established threshold or a perceptual law.",
   definition:
-    "The Doherty threshold is the popular name for the claim, attributed to Doherty & Thadhani's 1982 IBM report *The Economic Value of Rapid Response Time*, that when a computer responds to a user in under roughly **400 milliseconds**, users work faster and more productively than at the multi-second response times then considered acceptable. It is an industry finding about productivity, not a peer-reviewed psychophysical threshold.",
+    "The Doherty threshold is a popular name for a rule of thumb usually stated as: when a computer responds in under roughly **400 milliseconds**, users work faster and more productively than at the multi-second responses once considered acceptable. The idea is traced to Doherty & Thadhani's 1982 IBM report *The Economic Value of Rapid Response Time*, which argued from IBM's own measurements that productivity rises more than in proportion as response time falls, with sub-second examples such as 0.3 s against 3 s. The 400 ms figure is the commonly repeated interpretation: it was not found in the scanned copy of the report read for this entry. The report is an industry productivity argument, not a peer-reviewed psychophysical finding, and 400 ms is not a guarantee for any particular product or task.",
   primaryType: "rule-of-thumb",
   secondaryTypes: ["principle", "historical-contribution"],
   domain: "laws-effects",

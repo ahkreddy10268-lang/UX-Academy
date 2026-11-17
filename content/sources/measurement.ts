@@ -38,7 +38,7 @@ export default defineSources([
     topics: ["System Usability Scale", "history", "scoring"],
     access: "open",
     verification: "awaiting-verification",
-    notes: "Open-access journal without DOIs. The article's own page on uxpajournal.org returned HTTP 404 in this research session (2026-11-03), so the URL here is the journal home page. Bibliographic details are from citing sources. Brooke's statement on licence terms could not be confirmed, so SUS item wording is not reproduced in UX Academy.",
+    notes: "Open-access journal without DOIs. The article's own page on uxpajournal.org returned HTTP 404 in this research session (2026-11-03), so the URL here is the journal home page. Bibliographic details are from citing sources. On 2026-11-17 the article could still not be read: the original page and the UXPA copy return 404, the journal's new site archives only recent volumes, and an archive mirror was unreachable from the research environment. None of the article's claims is used in UX Academy. Brooke's statement on licence terms could not be confirmed, so SUS item wording is not reproduced in UX Academy.",
   },
   {
     id: "bangor-kortum-miller-2008",

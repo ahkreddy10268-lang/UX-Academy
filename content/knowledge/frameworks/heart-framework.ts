@@ -77,6 +77,8 @@ export default defineEntry({
       evidence: [
         "The source is a short peer-reviewed CHI paper describing an approach used at Google, with case examples. It presents practice, not an experimental validation of the framework {{src:rodden-hutchinson-fu-2010}}.",
         "Widespread industry adoption shows usefulness as a planning tool; it does not establish that HEART-led measurement improves product outcomes compared with other approaches.",
+        "Independent use is reported mostly in practitioner material. The Open Targets team prioritised Adoption, Engagement and Retention for web-analytics metrics, judged Task completion less relevant to an open-ended research tool, and relied on qualitative feedback for Happiness; their case study lists the goals, signals and metrics and says the results accord with user feedback, but it describes use and does not test whether HEART improved decisions {{src:uxls-open-targets-heart}}.",
+        "Microsoft's documentation for a HEART workbook in Azure Monitor reads the dimensions as related rather than independent: adoption, engagement and retention form a user-activity funnel, task success drives users down it, and happiness is an outcome of the others rather than a stand-alone measurement {{src:ms-azure-monitor-heart}}. That is one vendor's reading of how the dimensions relate, not evidence about HEART's validity.",
       ],
       debates: [
         "**Engagement as a goal.** Treating engagement as inherently good can reward compulsive or manipulative designs. Many teams now pair engagement with wellbeing or task-success constraints.",
@@ -269,11 +271,13 @@ export default defineEntry({
   references: [
     { source: "rodden-hutchinson-fu-2010", role: "primary", note: "Original presentation of HEART and Goals–Signals–Metrics." },
     { source: "google-research", role: "further", note: "Hosts the public version of the paper." },
+    { source: "uxls-open-targets-heart", role: "explanatory", note: "Read: an independent practitioner application (Open Targets); self-reported, not peer-reviewed." },
+    { source: "ms-azure-monitor-heart", role: "explanatory", note: "Read: vendor documentation implementing HEART in Azure Monitor and reading how the dimensions relate; not research evidence." },
     { source: "sauro-lewis-2016", role: "further", note: "Measuring task success, time and satisfaction rigorously." },
   ],
   evidence: "peer-reviewed",
   evidenceNote:
-    "Published as a peer-reviewed CHI paper describing an industrial practice with examples. That supports HEART as a credible, field-tested planning framework, not as a validated measurement model or a proven driver of better outcomes.",
+    "Published as a peer-reviewed CHI paper describing an industrial practice with examples. That supports HEART as a credible, field-tested planning framework, not as a validated measurement model or a proven driver of better outcomes. The independent applications found are practitioner and vendor material (a case study and product documentation), not peer-reviewed evaluations, so the evidence for HEART still rests on one originating publication; a second primary or standard source was not found.",
 
   status: "published",
   quality: {
