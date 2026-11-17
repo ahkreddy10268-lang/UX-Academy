@@ -9,11 +9,11 @@ Last updated: **2026-11-17**.
 | Item | Value | Verified |
 |---|---|---|
 | Working branch | `claude/batch1-constraints` | 2026-11-17 |
-| Pushed HEAD | `7c34436` (owner-approved); remote HEAD equalled local HEAD after the push | 2026-11-17 (`git ls-remote`) |
-| Local HEAD | `3d5aa38` (Improvement Batch 1 implementation) plus a progress-records commit; **not pushed** | 2026-11-17 |
+| Pushed HEAD | `d01dcc2` (owner-authorised push of Improvement Batch 1: `3d5aa38`, `5d9e804`, `35cf36b`, `d01dcc2`); remote HEAD equalled local HEAD after the push | 2026-11-17 (`git ls-remote`) |
+| Local HEAD | `d01dcc2` plus this state-record commit (local only, not pushed) | 2026-11-17 |
 | `origin/main` | `b788511`, unchanged | 2026-11-17 (`git ls-remote`) |
-| PR #2 | open, not merged; head `a1f6373` unchanged | 2026-11-17 (GitHub API earlier today, `git ls-remote` now) |
-| Vercel preview for `7c34436` | `dpl_DetaPwZHJtB6Kgxn6wEiLNaD5Ktv`, READY (preview only; nothing in production) | 2026-11-17 |
+| PR #2 | open, not merged; head `a1f6373` unchanged | 2026-11-17 (GitHub API + `git ls-remote`) |
+| Vercel preview for `d01dcc2` | `dpl_E2nXhv9rgnPWiMkwtTkVfkBu9LCt`, READY (preview only; nothing in production) | 2026-11-17 |
 
 ## Content strategy and cycle
 
@@ -24,12 +24,14 @@ Last updated: **2026-11-17**.
 
 ## Current approved task
 
-Cycle 2 Improvement Batch 1 (scope `docs/CYCLE_2_IMPROVEMENT_BATCH_1_SCOPE.md`): **implemented** in `3d5aa38`; stopped for the owner's independent review. Report: `docs/CYCLE_2_IMPROVEMENT_BATCH_1_REPORT.md`.
+None in progress. Cycle 2 Improvement Batch 1 is **accepted by the owner (2026-11-17) with corrections**, which were made and pushed. Report: `docs/CYCLE_2_IMPROVEMENT_BATCH_1_REPORT.md`.
 
 ## Next authorised action
 
-**Wait for the owner's review.** Pending owner decisions: IB1-2 (`heart-framework` evidence target / class), N-1 (SUS attribution to the unread Brooke 2013), whether to request the formal review commit, and approval to push `3d5aa38`. Do not push, write the formal review, or start another batch until instructed.
+**Wait for the owner's instructions.** Do not start another improvement batch or select or produce Cycle 2 topics. The formal review commit for the batch has not been requested.
+
+Decisions on record: Cycle 2 began with an improvement-only batch (D-129 § 9.3). Remaining candidate improvement work is deferred, not dropped (DEF-1 ten diagrams, DEF-2 twelve Practice entries, TD-1 plate markers, EX-1 other exclusions).
 
 ## Open follow-ups
 
-See `docs/OPEN_ISSUES.md`.
+See `docs/OPEN_ISSUES.md` (notably IB1-2 `heart-framework` evidence gap, N-2 Ericsson–Simon citations, N-4 `brooke-1996`, `brooke-2013` awaiting verification).

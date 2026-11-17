@@ -280,7 +280,7 @@ After that: `ui-design`, `interaction-design-discipline`, `accessibility-concept
 ## Session 54 — Improvement Batch 1 accepted with corrections (D-129)
 - Owner review (2026-11-17): batch accepted; five limited corrections made in `35cf36b`: HEART (two independent sources read and added as explanatory; target still unmet, gap documented, class unchanged); SUS (unsupported Brooke 2013 attribution removed); Doherty lead (400 ms presented as a commonly repeated interpretation); Ericsson–Simon follow-up kept as N-2; report and records updated.
 - Measured: evidence target 101 of 102; Editorial complete 101. Published 102; sources 495.
-- Commits (all on `claude/batch1-constraints`): `3d5aa38` implementation, `5d9e804` progress records, `35cf36b` corrections, plus the records commit that follows this entry. Pushed on the owner's authorisation; see PROJECT_STATE for the verified remote state.
+- Commits (all on `claude/batch1-constraints`): `3d5aa38` implementation, `5d9e804` progress records, `35cf36b` corrections, plus the records commit that follows this entry. Pushed on the owner's authorisation: remote `d01dcc2`, preview `dpl_E2nXhv9rgnPWiMkwtTkVfkBu9LCt` READY, `main` `b788511` and PR #2 `a1f6373` unchanged.
 - Not started: any further improvement batch or Cycle 2 topic.
 
 ## Next task (precise)
