@@ -288,5 +288,10 @@ After that: `ui-design`, `interaction-design-discipline`, `accessibility-concept
 - Improvement Batch 1 formally closed: accepted with documented limitations (HEART target unmet, Brooke 2013 unverified, Doherty details unconfirmed, plate markers untouched, no screen-reader/device/expert testing). All remain in docs/OPEN_ISSUES.md.
 - Prepared docs/CYCLE_2_IMPROVEMENT_PLAN.md (IB2–IB4, working protocol to avoid review loops) for a single approval. Nothing started.
 
+## Session 56 — Cycle 2, IB2 implemented and reviewed (D-129)
+- Plan `docs/CYCLE_2_IMPROVEMENT_PLAN.md` approved; `9d41b83` pushed (remote HEAD = local; `main` and PR #2 unchanged).
+- IB2 `2216116`: Practice 102/102 complete; Ericsson–Simon 1993 citations retargeted; Brooke 1996 and Shneiderman 1982 read; access attempts recorded for five abstract-only sources; five reciprocal relations; WCAG record note. Review: docs/CYCLE_2_IB2_REVIEW.md — PASS WITH DOCUMENTED LIMITATIONS.
+- Next: IB3 (five detailed diagrams, methods).
+
 ## Next task (precise)
-Await the owner's approval of docs/CYCLE_2_IMPROVEMENT_PLAN.md. Do not start it, produce new topics or push before then.
+Implement IB3 per docs/CYCLE_2_IMPROVEMENT_PLAN.md § 3: detailed diagrams for `usability-testing`, `cognitive-walkthrough`, `card-sorting`, `ab-testing`, `keystroke-level-model`; one implementation commit, one review, then IB4.

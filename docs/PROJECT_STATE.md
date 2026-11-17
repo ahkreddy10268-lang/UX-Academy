@@ -24,13 +24,11 @@ Last updated: **2026-11-17**.
 
 ## Current approved task
 
-None in progress. **Cycle 2 Improvement Batch 1 is CLOSED (2026-11-17): accepted with documented limitations**, not a perfect quality pass (see the closure note in `docs/CYCLE_2_IMPROVEMENT_BATCH_1_REPORT.md`). No further review rounds or micro-fixes; reopen only for a critical factual, functional or security defect.
+**Cycle 2 improvement plan (approved 2026-11-17): IB2 done, IB3 and IB4 pending.** IB2 (Practice, citation and source hygiene) implemented in `2216116` and reviewed (`docs/CYCLE_2_IB2_REVIEW.md`, PASS WITH DOCUMENTED LIMITATIONS). Process per the plan: one implementation commit and one targeted review per batch; push to `claude/batch1-constraints` after each batch's review commit when no critical or major finding is open (authorised by the owner); no merge, no production, no new topics.
 
 ## Next authorised action
 
-**Wait for the owner's decision on `docs/CYCLE_2_IMPROVEMENT_PLAN.md`** (one consolidated plan: IB2 evidence/source/Practice hygiene, IB3 and IB4 detailed diagrams). Do not start it, start new topic production, or push the plan commit until approved. D-129 § 9.3: Cycle 2 stays improvement-only until that plan is done.
-
-Local commits not on the remote: the closure and plan commit (this one).
+**Implement IB3** (five detailed diagrams: `usability-testing`, `cognitive-walkthrough`, `card-sorting`, `ab-testing`, `keystroke-level-model`), then IB4 (`atomic-design`, `jobs-to-be-done`, `gulfs-of-execution-and-evaluation`, `working-memory-model`, `heart-framework`), then one consolidated Cycle 2 improvement report. Stop before selecting new topics.
 
 ## Open follow-ups
 

@@ -22,9 +22,9 @@ Last updated: 2026-11-17, at the formal closure of Improvement Batch 1 (accepted
 | IB1-2 | `heart-framework` has one primary source (Rodden, Hutchinson & Fu 2010); D-129 evidence target not met. Two independent sources read and added as `explanatory` (Open Targets case study; Microsoft HEART documentation); no independent peer-reviewed evaluation could be read (one application study was blocked, HTTP 403). Owner decision 2026-11-17: keep the target, no class change, document the gap. | minor | No | Documented gap | Revisit only if a second primary or standard source can be read and verified. |
 | IB1-5 | `system-usability-scale` Editorial stays developing: `brooke-2013` could not be read. | minor | No | Open | See TD-3 and N-1. |
 | N-1 | ~~`system-usability-scale` attributed a claim to the unread Brooke (2013).~~ **Resolved in `35cf36b`** (attribution removed). | moderate | No | Closed | — |
-| N-2 | The unread 1993 book `ericsson-simon-1993` is still cited by `think-aloud-protocol`, `interaction-design-discipline`, `human-computer-interaction`. | minor | No | Open | Review in a later improvement batch. |
+| N-2 | ~~`ericsson-simon-1993` cited by three entries.~~ **Closed in IB2 (`2216116`)**: two entries and the HCI explorer now cite the 1980 abstract; `think-aloud-protocol` keeps a labelled bibliographic mention. | minor | No | Closed | — |
 | N-3 | ~~`doherty-threshold` lead presented 400 ms as the claim.~~ **Resolved in `35cf36b`**. Year (1982) and form number still not confirmed in the copy read. | minor | No | Closed (year/form open) | Confirm when a readable first-party copy is available. |
-| N-4 | `brooke-1996` is a `bibliographic` record; SUS cites it for several statements and whether they were checked against the chapter is not recorded. | minor | No | Open observation | Check against the chapter if accessible. |
+| N-4 | ~~`brooke-1996` read status unknown.~~ **Closed in IB2**: read from a third-party copy and the SUS statements confirmed; record stays `bibliographic` (not the publisher's edition). | minor | No | Closed | — |
 | EX-1 | Excluded from Improvement Batch 1 by owner decision (2026-11-17), preserved here: B2-O-3 (optional `mental-models` → think-aloud link), B2-O-4 (e2e `role="status"` hardening), B3-o2 (full-text reads of abstract-only sources), the ten diagrams (DEF-1), twelve Practice entries (DEF-2), the 78-plate marker backlog (TD-1). | — | No | Preserved | Consider in subsequent improvement work. |
 
 ## Deferred by owner decision (2026-11-17) — not dropped
@@ -32,7 +32,7 @@ Last updated: 2026-11-17, at the formal closure of Improvement Batch 1 (accepted
 | ID | Description | Severity | Blocks publication | Status | Required action |
 |---|---|---|---|---|---|
 | DEF-1 | Ten detailed (Level-2) diagrams below the D-129 visual target: `ab-testing`, `atomic-design`, `card-sorting`, `cognitive-walkthrough`, `gulfs-of-execution-and-evaluation`, `heart-framework`, `jobs-to-be-done`, `keystroke-level-model`, `usability-testing`, `working-memory-model`. | minor | No | Deferred to a later improvement batch | Consider in subsequent improvement work. |
-| DEF-2 | Twelve entries with developing Practice: `aesthetic-usability-effect`, `confidence-intervals`, `doherty-threshold`, `jakobs-law`, `mental-models`, `net-promoter-score`, `recognition-over-recall`, `sample-size-estimation`, `signifiers`, `steering-law`, `teslers-law`, `user-centred-design`. | minor | No | Deferred to a later improvement batch | Consider in subsequent improvement work. |
+| DEF-2 | ~~Twelve entries with developing Practice.~~ **Closed in IB2**: Practice complete 102/102. | minor | No | Closed | — |
 | DEF-3 | Five coveredBy candidates left planned: Empty-State Writing, State Transitions, Utility, Usefulness, Desirability. | minor | No | Intentional | Revisit only if a host is extended to explain the topic; never changed to reach a count. |
 
 ## Technical debt
@@ -42,13 +42,14 @@ Last updated: 2026-11-17, at the formal closure of Improvement Batch 1 (accepted
 | TD-1 | 152 numbered plate markers in 78 plates extend past the 400 × 300 viewBox and are clipped (audit 2026-11-16). Shows up as entry-review failures on pre-existing entries (e.g. error-recovery 3, error-prevention 1, nielsen-usability-heuristics 1). | `docs/VISUAL_QA.md` (full list); `components/illustrations/**` | moderate | No (pre-existing; new plates are clean) | Open; excluded from batch scope by owner | A dedicated marker-fix task when the owner authorises it. | VISUAL_QA; Batch 1 review |
 | TD-2 | 11 published entries are below their D-129 targets; all pre-date Cycle 1. | `docs/CONTENT_COVERAGE.md` § Targets | minor | No | Open | Address in improvement batches. | D-129; Cycle 1 review |
 | TD-3 | `brooke-2013` still awaiting verification (the article could not be read; see IB1-5). The other three records were verified in Improvement Batch 1 (`3d5aa38`). Eight URLs still block automated checks. | `content/sources/**` | minor | No | Partly closed (3 of 4) | Read Brooke (2013) from a copy that can be fetched, or decide N-1. | Improvement Batch 1 report |
+| TD-4 | `confidence-intervals`: hero-plate text measures 7.9 px at 390 px width (below the 10 px figure standard). Found in the IB2 entry review; not caused by IB2. | `components/illustrations/**` | minor | No | Open | Fix in a plate pass if scheduled. | IB2 review |
 
 ## Batch 3 (UX writing) — minors
 
 | ID | Description | Files | Severity | Blocks publication | Status | Required action | Related |
 |---|---|---|---|---|---|---|---|
 | B3-o1 | ~~`plain-language` Easy Read unsourced.~~ **Closed in `3d5aa38`** (Inclusion Europe standards read and cited), pending owner review. | `content/knowledge/content/plain-language.ts` | minor | No | Closed | — | Improvement Batch 1 report IB1-4 |
-| B3-o2 | Redish 1981/2000, Seckler 2014, Bargas-Avila 2007 read as abstracts; Shneiderman 1982 opening only; ISO 24495-1 not read. Claims are limited accordingly. | `content/sources/ux-writing.ts` | minor | No | Open | Read full texts where accessible. | CYCLE_1_BALANCE_REVIEW § 1 |
+| B3-o2 | Partly closed in IB2: `shneiderman-1982` read in full (author's copy). `redish-1981`, `redish-2000`, `seckler-2014-web-forms`, `bargas-avila-2007`, `iso-24495-1-2023`: one access attempt each (403 / paywall / unreadable); abstract-only limits stay. | `content/sources/ux-writing.ts` | minor | No | Open (limit documented) | Only if a readable copy becomes available. | IB2 review |
 | B3-o3 | Linked planned targets remain planned: `tone-of-voice`, `content-strategy`, `form-design`, `readability-formulas`, `cognitive-accessibility`, `deceptive-patterns`, `content-audit`. | `content/taxonomy.ts` | minor | No | Open (expected) | Covered by future batches. | CYCLE_1_BALANCE_REVIEW § 1 |
 
 ## Batch 2 (UX research) — minors
@@ -57,21 +58,21 @@ Last updated: 2026-11-17, at the formal closure of Improvement Batch 1 (accepted
 |---|---|---|---|---|---|---|---|
 | B2-O-1 | ~~`usability-testing` cited the unread Ericsson & Simon 1993.~~ **Closed in `3d5aa38`** (retargeted to the DOI-verified 1980 paper, abstract read), pending owner review. | `content/knowledge/research/usability-testing.ts` | minor | No | Closed | — | Improvement Batch 1 report IB1-3 |
 | B2-O-2 | Validation-study searches for tree testing and contextual inquiry were not systematic. | — | minor | No | Open | Systematic search if the owner wants it. | BATCH_2_REVIEW § 4 |
-| B2-O-3 | `mental-models` mentions think-aloud without a link. | `mental-models` entry | minor | No | Open (optional) | Add the link. | BATCH_2_REVIEW |
+| B2-O-3 | ~~`mental-models` think-aloud link.~~ **Closed in IB2** (prose link added). | minor | No | Closed | — |
 | B2-O-4 | Optional e2e hardening (`role="status"`). | `tests/browser/` | minor | No | Open (optional) | Harden the selector. | BATCH_2_REVIEW |
 
 ## Batch 1 (interaction principles) — minors
 
 | ID | Description | Severity | Blocks publication | Status | Required action |
 |---|---|---|---|---|---|
-| B1-FP-6 | `feedback-principle` → `doherty-threshold` has no link back. | minor | No | Open (optional) | Reciprocal relation. |
-| B1-C-4 | `constraints` → `jakobs-law`, `user-control-and-freedom` have no link back. | minor | No | Open (optional) | Reciprocal relations. |
+| B1-FP-6 | ~~No link back from `doherty-threshold`.~~ **Closed in IB2.** | minor | No | Closed | — |
+| B1-C-4 | ~~No links back to `constraints`.~~ **Closed in IB2.** | minor | No | Closed | — |
 | B1-DM-1 | Hutchins, Hollan & Norman (1985) read from a course-reading copy; 13 claims + the L2 figure rely on it. | minor | No | Owner decision | Confirm against a publisher/library copy if wanted. |
 | B1-IS-1 | `interaction-states` evidence class `official-standard` is a judgement call. | minor | No | Owner decision | Owner confirms the class. |
-| B1-IS-2 | `interaction-states` → `colour-contrast-ratio` has no link back. | minor | No | Open (optional) | Reciprocal relation. |
+| B1-IS-2 | ~~No link back from `colour-contrast-ratio`.~~ **Closed in IB2.** | minor | No | Closed | — |
 | B1-D-1 | `discoverability` is in no learning path. | minor | No | Owner decision (paths are reserved to the plan) | Owner decides. |
-| B1-D-2 | `discoverability` → `cognitive-walkthrough` has no link back. | minor | No | Open (optional) | Reciprocal relation. |
-| B1-W | `w3c-wcag-22` record still notes "status should be re-checked". | minor | No | Open | Update the record. |
+| B1-D-2 | ~~No link back from `cognitive-walkthrough`.~~ **Closed in IB2.** | minor | No | Closed | — |
+| B1-W | ~~`w3c-wcag-22` note.~~ **Closed in IB2**: status re-checked 2026-11-17. | minor | No | Closed | — |
 
 Details: `docs/BATCH_1_REVIEW.md` §§ 3, 7, 9.
 
