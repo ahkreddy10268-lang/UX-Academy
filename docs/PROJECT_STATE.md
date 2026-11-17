@@ -24,13 +24,13 @@ Last updated: **2026-11-17**.
 
 ## Current approved task
 
-None in progress. Cycle 2 Improvement Batch 1 is **accepted by the owner (2026-11-17) with corrections**, which were made and pushed. Report: `docs/CYCLE_2_IMPROVEMENT_BATCH_1_REPORT.md`.
+None in progress. **Cycle 2 Improvement Batch 1 is CLOSED (2026-11-17): accepted with documented limitations**, not a perfect quality pass (see the closure note in `docs/CYCLE_2_IMPROVEMENT_BATCH_1_REPORT.md`). No further review rounds or micro-fixes; reopen only for a critical factual, functional or security defect.
 
 ## Next authorised action
 
-**Wait for the owner's instructions.** Do not start another improvement batch or select or produce Cycle 2 topics. The formal review commit for the batch has not been requested.
+**Wait for the owner's decision on `docs/CYCLE_2_IMPROVEMENT_PLAN.md`** (one consolidated plan: IB2 evidence/source/Practice hygiene, IB3 and IB4 detailed diagrams). Do not start it, start new topic production, or push the plan commit until approved. D-129 § 9.3: Cycle 2 stays improvement-only until that plan is done.
 
-Decisions on record: Cycle 2 began with an improvement-only batch (D-129 § 9.3). Remaining candidate improvement work is deferred, not dropped (DEF-1 ten diagrams, DEF-2 twelve Practice entries, TD-1 plate markers, EX-1 other exclusions).
+Local commits not on the remote: the closure and plan commit (this one).
 
 ## Open follow-ups
 

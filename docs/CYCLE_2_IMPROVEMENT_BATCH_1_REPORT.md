@@ -1,5 +1,7 @@
 # Cycle 2 — Improvement Batch 1: implementation report
 
+**Closure (2026-11-17): CLOSED — accepted with documented limitations; not a perfect quality pass.** Owner decision: no further review rounds or micro-fixes; reopen only for a critical factual, functional or security defect. Documented limitations, none forced: HEART evidence target unmet (101/102, one primary source); `brooke-2013` unverified (SUS Editorial developing); Doherty year and form number unconfirmed; plate-marker backlog (TD-1) untouched; no screen-reader, physical-device or independent expert testing. All are in `docs/OPEN_ISSUES.md`.
+
 Scope: `docs/CYCLE_2_IMPROVEMENT_BATCH_1_SCOPE.md` (approved 2026-11-17). Baseline `7c34436`. Implementation `3d5aa38`; owner-review corrections `35cf36b` (see § Owner decisions after review, which supersede the earlier text where they differ). Authority: D-129 § 9.3. No new topics, no taxonomy, D-129 or learning-path changes. This report is not the formal review; that follows in its own commit after the owner's review.
 
 Policy applied: accuracy before closing findings. A gap that could not be closed from sources actually read is reported, not forced; no source was relabelled, no evidence class changed, no citation inferred.

@@ -283,5 +283,10 @@ After that: `ui-design`, `interaction-design-discipline`, `accessibility-concept
 - Commits (all on `claude/batch1-constraints`): `3d5aa38` implementation, `5d9e804` progress records, `35cf36b` corrections, plus the records commit that follows this entry. Pushed on the owner's authorisation: remote `d01dcc2`, preview `dpl_E2nXhv9rgnPWiMkwtTkVfkBu9LCt` READY, `main` `b788511` and PR #2 `a1f6373` unchanged.
 - Not started: any further improvement batch or Cycle 2 topic.
 
+## Session 55 — Improvement Batch 1 closed; consolidated improvement plan prepared (D-129)
+- Pushed `47f4fbe` (owner-approved): remote HEAD = local; `main` `b788511` and PR #2 `a1f6373` unchanged.
+- Improvement Batch 1 formally closed: accepted with documented limitations (HEART target unmet, Brooke 2013 unverified, Doherty details unconfirmed, plate markers untouched, no screen-reader/device/expert testing). All remain in docs/OPEN_ISSUES.md.
+- Prepared docs/CYCLE_2_IMPROVEMENT_PLAN.md (IB2–IB4, working protocol to avoid review loops) for a single approval. Nothing started.
+
 ## Next task (precise)
-Await the owner's instructions. Do not start another improvement batch or select or produce Cycle 2 topics until instructed. Open items: docs/OPEN_ISSUES.md (IB1-2, N-2, N-4, TD-1, DEF-1…3, EX-1).
+Await the owner's approval of docs/CYCLE_2_IMPROVEMENT_PLAN.md. Do not start it, produce new topics or push before then.

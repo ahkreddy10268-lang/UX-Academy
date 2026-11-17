@@ -4,7 +4,7 @@ The single register of unresolved items. Details stay in the linked review or re
 
 Severity: critical · major · moderate · minor (see the `ux-academy-workflow` skill § 5). **Blocks publication** = blocks pushing or publishing the affected work.
 
-Last updated: 2026-11-17, after Improvement Batch 1 was accepted with corrections (`3d5aa38`, `35cf36b`).
+Last updated: 2026-11-17, at the formal closure of Improvement Batch 1 (accepted with documented limitations). Follow-ups are scheduled in `docs/CYCLE_2_IMPROVEMENT_PLAN.md`, pending approval.
 
 ## Cycle and process
 
