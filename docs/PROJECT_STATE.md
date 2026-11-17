@@ -24,11 +24,11 @@ Last updated: **2026-11-17**.
 
 ## Current approved task
 
-**Cycle 2 improvement plan (approved 2026-11-17): IB2 done, IB3 and IB4 pending.** IB2 (Practice, citation and source hygiene) implemented in `2216116` and reviewed (`docs/CYCLE_2_IB2_REVIEW.md`, PASS WITH DOCUMENTED LIMITATIONS). Process per the plan: one implementation commit and one targeted review per batch; push to `claude/batch1-constraints` after each batch's review commit when no critical or major finding is open (authorised by the owner); no merge, no production, no new topics.
+**Cycle 2 improvement plan (approved 2026-11-17): IB2 and IB3 done, IB4 pending.** IB2 (Practice, citation and source hygiene) implemented in `2216116` and reviewed (`docs/CYCLE_2_IB2_REVIEW.md`, PASS WITH DOCUMENTED LIMITATIONS). Process per the plan: one implementation commit and one targeted review per batch; push to `claude/batch1-constraints` after each batch's review commit when no critical or major finding is open (authorised by the owner); no merge, no production, no new topics.
 
 ## Next authorised action
 
-**Implement IB3** (five detailed diagrams: `usability-testing`, `cognitive-walkthrough`, `card-sorting`, `ab-testing`, `keystroke-level-model`), then IB4 (`atomic-design`, `jobs-to-be-done`, `gulfs-of-execution-and-evaluation`, `working-memory-model`, `heart-framework`), then one consolidated Cycle 2 improvement report. Stop before selecting new topics.
+**Implement IB4** (`atomic-design`, `jobs-to-be-done`, `gulfs-of-execution-and-evaluation`, `working-memory-model`, `heart-framework`) — IB3 (`8863945`, reviewed in `docs/CYCLE_2_IB3_REVIEW.md`) is done — then one consolidated Cycle 2 improvement report. Stop before selecting new topics.
 
 ## Open follow-ups
 

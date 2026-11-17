@@ -31,7 +31,7 @@ Last updated: 2026-11-17, at the formal closure of Improvement Batch 1 (accepted
 
 | ID | Description | Severity | Blocks publication | Status | Required action |
 |---|---|---|---|---|---|
-| DEF-1 | Ten detailed (Level-2) diagrams below the D-129 visual target: `ab-testing`, `atomic-design`, `card-sorting`, `cognitive-walkthrough`, `gulfs-of-execution-and-evaluation`, `heart-framework`, `jobs-to-be-done`, `keystroke-level-model`, `usability-testing`, `working-memory-model`. | minor | No | Deferred to a later improvement batch | Consider in subsequent improvement work. |
+| DEF-1 | Detailed (Level-2) diagrams below the D-129 visual target. **IB3 (`8863945`) closed five:** `usability-testing`, `cognitive-walkthrough`, `card-sorting`, `ab-testing`, `keystroke-level-model`. **Remaining five (IB4):** `atomic-design`, `jobs-to-be-done`, `gulfs-of-execution-and-evaluation`, `working-memory-model`, `heart-framework`. | minor | No | Partly closed (5 of 10) | Implement in IB4. |
 | DEF-2 | ~~Twelve entries with developing Practice.~~ **Closed in IB2**: Practice complete 102/102. | minor | No | Closed | — |
 | DEF-3 | Five coveredBy candidates left planned: Empty-State Writing, State Transitions, Utility, Usefulness, Desirability. | minor | No | Intentional | Revisit only if a host is extended to explain the topic; never changed to reach a count. |
 

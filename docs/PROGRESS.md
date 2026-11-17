@@ -293,5 +293,9 @@ After that: `ui-design`, `interaction-design-discipline`, `accessibility-concept
 - IB2 `2216116`: Practice 102/102 complete; Ericsson–Simon 1993 citations retargeted; Brooke 1996 and Shneiderman 1982 read; access attempts recorded for five abstract-only sources; five reciprocal relations; WCAG record note. Review: docs/CYCLE_2_IB2_REVIEW.md — PASS WITH DOCUMENTED LIMITATIONS.
 - Next: IB3 (five detailed diagrams, methods).
 
+## Session 57 — Cycle 2, IB3 implemented and reviewed (D-129)
+- IB2 pushed (`6c6fefb`). IB3 `8863945`: five Level-2 figures (usability-testing, cognitive-walkthrough, card-sorting, ab-testing, keystroke-level-model); visual target 92 → 97 of 102. Review: docs/CYCLE_2_IB3_REVIEW.md — PASS WITH DOCUMENTED LIMITATIONS.
+- Next: IB4 (five figures: atomic-design, jobs-to-be-done, gulfs-of-execution-and-evaluation, working-memory-model, heart-framework), then one consolidated Cycle 2 improvement report.
+
 ## Next task (precise)
-Implement IB3 per docs/CYCLE_2_IMPROVEMENT_PLAN.md § 3: detailed diagrams for `usability-testing`, `cognitive-walkthrough`, `card-sorting`, `ab-testing`, `keystroke-level-model`; one implementation commit, one review, then IB4.
+Implement IB4 per docs/CYCLE_2_IMPROVEMENT_PLAN.md § 3, review it, push, then write the consolidated Cycle 2 improvement report and stop before selecting any new topic.
