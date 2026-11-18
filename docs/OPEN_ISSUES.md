@@ -4,7 +4,7 @@ The single register of unresolved items. Details stay in the linked review or re
 
 Severity: critical · major · moderate · minor (see the `ux-academy-workflow` skill § 5). **Blocks publication** = blocks pushing or publishing the affected work.
 
-Last updated: 2026-11-17, at the formal closure of Improvement Batch 1 (accepted with documented limitations). Follow-ups are scheduled in `docs/CYCLE_2_IMPROVEMENT_PLAN.md`, pending approval.
+Last updated: 2026-11-18, after the error-fix pass (`732077a`).
 
 ## Cycle and process
 
@@ -39,10 +39,18 @@ Last updated: 2026-11-17, at the formal closure of Improvement Batch 1 (accepted
 
 | ID | Description | Files | Severity | Blocks publication | Status | Required action | Related |
 |---|---|---|---|---|---|---|---|
-| TD-1 | 152 numbered plate markers in 78 plates extend past the 400 × 300 viewBox and are clipped (audit 2026-11-16). Shows up as entry-review failures on pre-existing entries (e.g. error-recovery 3, error-prevention 1, nielsen-usability-heuristics 1). | `docs/VISUAL_QA.md` (full list); `components/illustrations/**` | moderate | No (pre-existing; new plates are clean) | Open; excluded from batch scope by owner | A dedicated marker-fix task when the owner authorises it. | VISUAL_QA; Batch 1 review |
+| TD-1 | ~~152 numbered plate markers in 78 plates clipped at the viewBox edge.~~ **Closed in `732077a`** (2026-11-18): the marker primitives keep the whole marker inside the 400 × 300 viewBox; a sweep of all 583 plate pages finds 0 markers outside and 0 clipped text. Regression test `tests/plate-markers.test.ts`. | `components/illustrations/system/*` | moderate | No | Closed | — | VISUAL_QA |
 | TD-2 | 11 published entries are below their D-129 targets; all pre-date Cycle 1. | `docs/CONTENT_COVERAGE.md` § Targets | minor | No | Open | Address in improvement batches. | D-129; Cycle 1 review |
 | TD-3 | `brooke-2013` still awaiting verification (the article could not be read; see IB1-5). The other three records were verified in Improvement Batch 1 (`3d5aa38`). Eight URLs still block automated checks. | `content/sources/**` | minor | No | Partly closed (3 of 4) | Read Brooke (2013) from a copy that can be fetched, or decide N-1. | Improvement Batch 1 report |
-| TD-4 | `confidence-intervals`: hero-plate text measures 7.9 px at 390 px width (below the 10 px figure standard). Found in the IB2 entry review; not caused by IB2. | `components/illustrations/**` | minor | No | Open | Fix in a plate pass if scheduled. | IB2 review |
+| TD-4 | ~~`confidence-intervals` plate text 7.9 px at 390 px.~~ **Closed in `732077a`**: labels raised to `T.min`; the same sweep found and fixed `serial-position-effect` (8.6 px). No plate page now has visible text under 10 px at 390 px. | `components/illustrations/concepts/*` | minor | No | Closed | — | IB2 review |
+| TD-5 | Interactive explorers (`components/illustrations/interactive/explorers.tsx`) use the `Label` default of 11 units, below the plate minimum of 13. The figure text standard is written for plates and Level-2 figures, so this is an observation, not a confirmed defect; changing it would move explorer layouts tuned around 11. | `components/illustrations/interactive/explorers.tsx`, `components/illustrations/primitives.tsx` | minor | No | Open (observation) | Decide whether the plate text standard applies to explorers; if so, resize with layout checks. | 2026-11-18 sweep |
+
+## Fixed 2026-11-18 (`732077a`)
+
+- **SEC-1** Next.js 16.4.4 advisory GHSA-mfr8-8qww-v76h (moderate) — upgraded to 16.4.6 with `eslint-config-next` to match; dev-only minimatch advisory fixed by `npm audit fix`. `npm audit`: 0 vulnerabilities. The CLI security notice that made every build exit 1 once no longer appears.
+- **IB3-F1** Level-2 text versions double-numbered items — the list keeps ordered semantics without visible automatic numbers.
+- **DSA-1** `design-system-audits` plate label "reach →" was clipped at the bottom edge — moved inside.
+- **QA-1** `e2e-redesign` expected 18 concepts with a detailed diagram; IB3 and IB4 made it 28, and the earlier ledger marked the suite as inherited when it should have been rerun. Expectation updated to the verified 28.
 
 ## Batch 3 (UX writing) — minors
 

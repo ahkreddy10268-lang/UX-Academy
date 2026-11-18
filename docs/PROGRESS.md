@@ -302,5 +302,9 @@ After that: `ui-design`, `interaction-design-discipline`, `accessibility-concept
 - Consolidated report: docs/CYCLE_2_IMPROVEMENT_REPORT.md (visual 102/102, Practice 102/102, evidence 101/102, Editorial 101/102).
 - The stop rule's improvement-only phase is done. No new topics selected.
 
+## Session 59 — error-fix pass (owner request 2026-11-18)
+- Ran the project workflow skill; no GitHub Actions workflows exist, so there was no failing CI. Errors found by audit and a site-wide plate sweep, fixed in `732077a`: Next.js security advisory (16.4.6), 152 clipped plate markers (fixed at the marker primitives), two plates with text under 10 px, one clipped label, duplicated numbering in Level-2 text versions, and a stale e2e expectation.
+- All suites rerun (dependency change): check 588, build 995/995 first time, e2e 44, e2e-redesign 66, atlas 36, keyboard 45, devices 155, colour-studio 46, crawl 0, axe 0; npm audit 0.
+
 ## Next task (precise)
-Await the owner. Cycle 2 new-topic planning is a separate request (clusters A and E must be touched; re-run dependency analysis; keep domain caps). Do not select or produce topics until instructed.
+Await the owner. Open: TD-5 (explorer label size, observation) and the documented content limitations in docs/OPEN_ISSUES.md. Do not select or produce new topics until instructed.

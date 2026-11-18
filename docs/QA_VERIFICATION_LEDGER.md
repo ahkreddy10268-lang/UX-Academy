@@ -33,6 +33,29 @@ npm run sources:verify -- <id…>
 
 Newest first. "Tree" is the commit the run was made on. Dates are when the run happened.
 
+### Error-fix pass — `732077a` (2026-11-18, parent `955048a`)
+
+Changes: `package.json`/`package-lock.json` (next and eslint-config-next 16.4.6; `npm audit fix`), marker primitives and `insidePlate`, three plate files, Level-2 figure text version, a new unit test, one browser-test expectation. **Shared dependencies changed, so nothing was inherited: every suite was rerun.**
+
+| Check | Command | Result | Run / inherited | Limitations |
+|---|---|---|---|---|
+| Audit | `npm audit` | 0 vulnerabilities (was 1 moderate in next, 7 moderate dev-only) | Run | — |
+| Check | `npm run check` | PASS — 23 files, 588 tests | Run | — |
+| Taxonomy | `npm run test:taxonomy` | PASS | Run | — |
+| Build | `npm run build` | PASS — 995/995 **on the first attempt**; the Next.js security notice no longer appears | Run | — |
+| Plate sweep | scratchpad Playwright sweep of all 583 `/library/*` and `/topics/*` pages at 390 px | 538 markers, 0 outside the viewBox, 0 clipped text, no visible text under 10 px | Run | Script not committed; method as in entry-review.cjs |
+| e2e | `node tests/browser/e2e.cjs` | 44/44 | Run | — |
+| e2e-redesign | `node tests/browser/e2e-redesign.cjs` | 66/66 after updating the stale expectation 18 → 28 (verified against the registry) | Run | The 65/66 before the update was the stale count, not a site fault |
+| Atlas | `node tests/browser/atlas.cjs` | 36/36 | Run | — |
+| Keyboard | `node tests/browser/keyboard.cjs` | 45/45 | Run | Not a screen-reader test |
+| Devices | `node tests/browser/devices.cjs` | 155/155 | Run | Emulation |
+| Colour Studio | `node tests/browser/colour-studio.cjs` | 46/46 | Run | — |
+| Crawl | `node tests/browser/crawl.cjs` on 9 pages incl. the changed plates | 0 problems | Run | — |
+| a11y | `AXE_PATH=node_modules/axe-core/axe.min.js node tests/browser/a11y.cjs` on 8 pages incl. the changed plates | 0 violations | Run | axe only |
+| Screen reader, physical device, expert review | — | NOT RUN | — | Not available |
+
+**Correction to earlier records:** IB3 and IB4 marked `e2e-redesign` as INHERITED; that was wrong, because its library-filter count depends on the figure registry those batches changed. The suite would have failed 65/66 on `8863945` and `4f844f5`.
+
 ### Cycle 2 IB4 — `4f844f5` (2026-11-17, parent `c31dc36`)
 
 Changes: five new Level-2 figure components, their registry entries, generated coverage docs. No shared layout, route, taxonomy or dependency change.
