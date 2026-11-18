@@ -306,5 +306,9 @@ After that: `ui-design`, `interaction-design-discipline`, `accessibility-concept
 - Ran the project workflow skill; no GitHub Actions workflows exist, so there was no failing CI. Errors found by audit and a site-wide plate sweep, fixed in `732077a`: Next.js security advisory (16.4.6), 152 clipped plate markers (fixed at the marker primitives), two plates with text under 10 px, one clipped label, duplicated numbering in Level-2 text versions, and a stale e2e expectation.
 - All suites rerun (dependency change): check 588, build 995/995 first time, e2e 44, e2e-redesign 66, atlas 36, keyboard 45, devices 155, colour-studio 46, crawl 0, axe 0; npm audit 0.
 
+## Session 60 — explorer labels fixed; Claude Design brief
+- TD-5 fixed: explorer and dimension labels at `T.min`; Fitts labels stay inside the canvas at every slider value. Suites rerun (see ledger); site-wide plate sweep clean.
+- Added docs/UX_ACADEMY_FOR_CLAUDE_DESIGN.md: one-file brief of the product, IA, tokens (light, dark, subject palettes), type, components, templates, illustration system, accessibility and content model, for designing live in Claude Design. Keep it in step with app/globals.css.
+
 ## Next task (precise)
-Await the owner. Open: TD-5 (explorer label size, observation) and the documented content limitations in docs/OPEN_ISSUES.md. Do not select or produce new topics until instructed.
+Await the owner. No open design or code errors in docs/OPEN_ISSUES.md; content limitations remain as documented. Do not select or produce new topics until instructed.

@@ -5,7 +5,7 @@
 - **Fix:** `Marker` (`system/sheet.tsx`) and `VizMarker` (`system/viz.tsx`) pass their centre through `insidePlate()` (`illustration-types.ts`), which keeps it at least 12 units from every edge (radius 11 plus half the 1.5-unit stroke). A marker moves by at most 4 units; leaders stay attached. Test: `tests/plate-markers.test.ts`.
 - **Sweep:** every `/library/*` and `/topics/*` page (583) on the production build of the fix, at 390 px, hero plate measured as in `tests/browser/entry-review.cjs`: **538 markers, 0 outside the viewBox, 0 clipped text**, and no visible text under 10 px.
 - **Also fixed in the sweep:** `design-system-audits` label "reach →" (descender past the bottom edge); `confidence-intervals` and `serial-position-effect` labels below `T.min` (7.9 and 8.6 px at 390 px), raised to 13 units.
-- **Observation, not fixed:** interactive explorers use 11-unit labels (TD-5).
+- **Explorers (TD-5), fixed the same day:** the Fitts, Hick–Hyman and peak-end explorers' labels raised to `T.min` (9.8 → 11.6 px at 390 px); Fitts start and W′ labels reposition to stay inside the canvas. Checked at every slider extreme: no clipped text.
 
 ## 2026-11-16 — plate marker clipping audit (fixed 2026-11-18, see above)
 

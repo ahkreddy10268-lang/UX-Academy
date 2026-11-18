@@ -33,6 +33,23 @@ npm run sources:verify -- <id…>
 
 Newest first. "Tree" is the commit the run was made on. Dates are when the run happened.
 
+### Explorer labels (TD-5) and the Claude Design brief (2026-11-18, parent `b4a656b`)
+
+Changes: `components/illustrations/interactive/explorers.tsx`, `components/illustrations/primitives.tsx` (shared `Dim` label size), `docs/UX_ACADEMY_FOR_CLAUDE_DESIGN.md`, records.
+
+| Check | Command | Result | Run / inherited | Limitations |
+|---|---|---|---|---|
+| Check | `npm run check` | PASS — 23 files, 588 tests | Run | — |
+| Build | `npm run build` | PASS — 995/995 first attempt | Run | — |
+| Explorer text | scratchpad Playwright, three explorers × 390/1440 px | minimum 11.6 px at 390 (was 9.8); no clipped text | Run | — |
+| Explorer extremes | scratchpad Playwright setting every combination of slider minimum and maximum (up to four sliders) | no clipped text on any explorer at either width | Run | Fitts start label first moved onto the approach line; fixed and re-checked with a screenshot |
+| e2e / e2e-redesign / keyboard / devices | `node tests/browser/<suite>.cjs` | 44/44, 66/66, 45/45, 155/155 | Run | Emulation |
+| a11y | `AXE_PATH=node_modules/axe-core/axe.min.js node tests/browser/a11y.cjs` on the three explorer pages and the Fitts lab | 0 violations | Run | axe only |
+| Crawl | three explorer pages | 0 problems | Run | — |
+| Plate sweep | all 583 `/library/*` and `/topics/*` pages at 390 px | 538 markers, 0 outside, 0 clipped text, no text under 10 px | Run | — |
+| Atlas, colour-studio | — | INHERITED from `732077a` | Inherited | Neither uses the explorers or `Dim` |
+| Screen reader, physical device, expert review | — | NOT RUN | — | Not available |
+
 ### Error-fix pass — `732077a` (2026-11-18, parent `955048a`)
 
 Changes: `package.json`/`package-lock.json` (next and eslint-config-next 16.4.6; `npm audit fix`), marker primitives and `insidePlate`, three plate files, Level-2 figure text version, a new unit test, one browser-test expectation. **Shared dependencies changed, so nothing was inherited: every suite was rerun.**
