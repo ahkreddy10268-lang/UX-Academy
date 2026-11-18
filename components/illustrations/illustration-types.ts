@@ -44,3 +44,13 @@ export type IllustrationEntry = {
 
 export const W = 400;
 export const H = 300;
+
+/** Numbered markers are circles of radius 11 with a 1.5-unit stroke; keeping
+ * their centre this far from every edge keeps the whole marker inside the
+ * W × H viewBox, so no numeral is clipped (docs/VISUAL_QA.md, 2026-11-16). */
+export const MARKER_EDGE = 12;
+
+/** Clamp a marker centre into the plate so the marker is never clipped. */
+export function insidePlate(x: number, y: number, pad: number = MARKER_EDGE): [number, number] {
+  return [Math.min(Math.max(x, pad), W - pad), Math.min(Math.max(y, pad), H - pad)];
+}

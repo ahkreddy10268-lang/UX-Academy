@@ -396,7 +396,7 @@ export const designSystemAuditsPlate: IllustrationEntry = {
             </g>
           );
         })}
-        <UiText x={306} y={298} mono tone="ink3" anchor="middle">
+        <UiText x={306} y={296} mono tone="ink3" anchor="middle">
           reach →
         </UiText>
         <UiText x={214} y={160} mono tone="ink3" anchor="end">

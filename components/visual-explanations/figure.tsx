@@ -43,7 +43,8 @@ export function VisualFigure({ v, headingLevel = 3 }: { v: VisualExplanation; he
         </p>
         <details className="group text-sm">
           <summary className="cursor-pointer font-medium text-accent-ink hover:underline">Read this diagram as text</summary>
-          <ol className="mt-2 list-decimal space-y-1 pl-5 text-ink-2 marker:text-ink-3">
+          {/* Ordered for reading order, without visible automatic numbers: many items carry the figure's own step numbers. */}
+          <ol className="mt-2 list-none space-y-1.5 text-ink-2">
             {v.summary.map((s, i) => (
               <li key={i}>{s}</li>
             ))}

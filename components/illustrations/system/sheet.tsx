@@ -13,6 +13,7 @@
  * is drawn as text bars. tests/illustrations.test.ts enforces the minimum.
  */
 import type { ReactNode } from "react";
+import { insidePlate } from "../illustration-types";
 
 export const S = {
   surface: "var(--surface)",
@@ -169,7 +170,8 @@ export function Measure({ x1, y1, x2, y2, value, tone = "ink", offset = 0, show 
 }
 
 /** Numbered marker, optionally with a leader to the thing it names (dot at the target). */
-export function Marker({ x, y, n, to, tone = "ink" }: { x: number; y: number; n: number | string; to?: [number, number]; tone?: "ink" | "accent" }) {
+export function Marker({ x: x0, y: y0, n, to, tone = "ink" }: { x: number; y: number; n: number | string; to?: [number, number]; tone?: "ink" | "accent" }) {
+  const [x, y] = insidePlate(x0, y0);
   const fill = tone === "accent" ? S.accent : S.ink;
   return (
     <g>
