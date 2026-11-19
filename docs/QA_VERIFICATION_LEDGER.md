@@ -366,3 +366,14 @@ Two entries, two plates, 4 new sources (Nielsen 1993 table and Buxton read; van 
 | e2e-redesign | `node tests/browser/e2e-redesign.cjs` | PASS 66/66 | Run |
 | Addressed-within page | `curl /library/history-of-hci` | "Explained within Human-Computer Interaction (HCI)" | Run |
 | Review | One focused review; one correction pass | 0 critical, 0 major; 1 moderate fixed (a contradictory multi-touch date sentence) | Run |
+
+### Domain 1 final check (2026-11-19, HEAD `55dc927` + records)
+
+| Check | Command | Result | Run / inherited |
+|---|---|---|---|
+| Check | `npm run check` | PASS — 608 tests | Run |
+| Taxonomy | `npm run test:taxonomy` | PASS — Domain 1: 21 topics, 16 published, 5 addressed within; site 113 published, 23 addressed within; 971 links | Run |
+| Docs | `npm run docs:generate` | Regenerated; CONTENT_COVERAGE lists the 5 addressed-within topics. KNOWLEDGE_TAXONOMY marks them ◻️ (generator limit, D1-3) | Run |
+| Build | `npm run build` | PASS | Run |
+| Browser | entry-review, e2e-redesign | Inherited from Batch 5 (same content; this commit changes docs only) | Inherited |
+| Not run | keyboard, devices, crawl, axe-all, atlas | No shell or component change in Domain 1 beyond new plates and one Level-2 figure, each covered by entry-review (axe) per batch | Not run |

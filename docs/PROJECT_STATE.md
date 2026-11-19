@@ -2,14 +2,14 @@
 
 The current state in one page. Read it first every session, then verify it against `git` (the repo wins; record any discrepancy here). Update it at the end of every meaningful task. History lives in `docs/PROGRESS.md`; decisions in `docs/DECISION_LOG.md`; open items in `docs/OPEN_ISSUES.md`; test results in `docs/QA_VERIFICATION_LEDGER.md`.
 
-Last updated: **2026-11-19** (Cycle 3, B6 topic 1: information-foraging-theory).
+Last updated: **2026-11-19** (Domain 1 — UX & UI Fundamentals complete, D-132; local, not pushed).
 
 ## Repository
 
 | Item | Value | Verified |
 |---|---|---|
 | Working branch | `claude/batch1-constraints` | 2026-11-19 |
-| Local HEAD | The B6 topic-1 commit (`information-foraging-theory`), local only, on top of `2225d1c` | 2026-11-19 |
+| Local HEAD | The Domain 1 final-records commit, on top of `55dc927`; local only. Unpushed: `3b776d6` (B6 topic 1), `aa1311c`, `218bb3d`, `5a2678c`, `9eb3675`, `55dc927` and the records commit | 2026-11-19 |
 | Remote branch HEAD | `2225d1c` (pre-production records), pushed on owner approval | 2026-11-19 (`git ls-remote`) |
 | `origin/main` | `b788511`, unchanged | 2026-11-19 (`git ls-remote`) |
 | PR #2 | open, not merged; head `a1f6373` unchanged | 2026-11-19 (`git ls-remote refs/pull/2/head`) |
@@ -40,7 +40,9 @@ Cycle 3 paused after B6 topic 1. Plan: 11 entries + 4 topics addressed within a 
 | 2 | `design-thinking` (published); `feasibility`, `viability` (addressed within `design-thinking`); `human-centred-design` (addressed within `user-centred-design`) | Done — `218bb3d` |
 | 3 | `design-processes`, `ux-lifecycle`, `ux-maturity` (all published) | Done — `5a2678c` |
 | 4 | `product-design`, `experience-design` (both published) | Done — `9eb3675` |
-| 5 | `history-of-interface-design`, `evolution-of-digital-experiences` (published); `history-of-hci` (addressed within `human-computer-interaction`) | Done — commit recorded in the QA ledger |
+| 5 | `history-of-interface-design`, `evolution-of-digital-experiences` (published); `history-of-hci` (addressed within `human-computer-interaction`) | Done — `55dc927` |
+
+**Result: Domain 1 complete and validated.** 21/21 topics accounted for: 16 published (6 before + 10 new), 5 addressed within a host (utility, feasibility, viability, human-centred design, history of HCI), 0 planned. Published 103 → 113, addressed within 18 → 23. Open minors: D1-2 to D1-5 in OPEN_ISSUES. **Next authorised action: none.** Awaiting the owner's review and push decision; Domain 2 not started; Cycle 3 (B6 topic 2, `information-scent`) remains paused.
 
 ## Cycle 3 production — B6, topic 1 (2026-11-19)
 

@@ -314,5 +314,10 @@ After that: `ui-design`, `interaction-design-discipline`, `accessibility-concept
 - D-131 recorded (`7019450`); Cycle 3 pre-production checks recorded (`2225d1c`); owner authorised B6, first topic only.
 - Published `information-foraging-theory` (103 published): entry, 6 sources (2 read in full, 4 abstracts), plate, Level-2 figure, practice (5 quiz, 3 exercises, 4 flashcards), relations to IA, tree testing, discoverability, plain language and information scent; back-link from `information-architecture`. Long-DOI wrap fix in `components/entry/references.tsx`. All suites rerun (ledger).
 
+## Session 62 — Domain 1, UX & UI Fundamentals, completed (owner request 2026-11-19, D-132)
+- Five batches, one commit each: `aa1311c` (usefulness, desirability; utility within usefulness), `218bb3d` (design thinking; feasibility and viability within it; human-centred design within user-centred design), `5a2678c` (design processes, UX lifecycle, UX maturity), `9eb3675` (product design, experience design), `55dc927` (history of interface design, evolution of digital experiences; history of HCI within HCI).
+- Domain 1: 16 published, 5 addressed within, 0 planned (21/21). Site: 113 published, 23 addressed within. Ten plates, one Level-2 figure (`design-thinking.lenses`), 28 new sources in `content/sources/fundamentals.ts`.
+- Each batch: sources verified, targeted checks, one focused review, one correction pass; no critical or major findings left open. Minors D1-2 to D1-5 in OPEN_ISSUES.
+
 ## Next task (precise)
-Await the owner's review of `information-foraging-theory`. After approval: B6 topic 2, `information-scent` (Cycle 3, H slot), one topic at a time under D-131.
+Await the owner's review of Domain 1 (D-132) and a push decision. Domain 2 is not started. After that: either resume Cycle 3 (B6 topic 2, `information-scent`) or close the minors D1-2 and D1-3, as the owner decides.
