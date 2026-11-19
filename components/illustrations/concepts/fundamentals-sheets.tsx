@@ -234,6 +234,210 @@ export const designThinkingPlate: IllustrationEntry = {
   ),
 };
 
+
+/* ------------------------------------------------------------------ */
+/* Design processes: three models, one shared shape                     */
+/* ------------------------------------------------------------------ */
+const PROC_ROWS: [string, string[], string[], string[]][] = [
+  ["Understand", ["Discover"], ["Gather"], ["Context", "of use"]],
+  ["Frame", ["Define"], ["Frame,", "synthesise"], ["Require-", "ments"]],
+  ["Create", ["Develop"], ["Generate,", "make"], ["Design", "solutions"]],
+  ["Test", ["Deliver"], ["Test"], ["Evaluate"]],
+];
+const procX = [112, 208, 304];
+
+function ProcCell({ x, y, lines }: { x: number; y: number; lines: string[] }) {
+  return (
+    <g>
+      <rect x={x} y={y} width={88} height={52} rx={6} fill={S.surface} stroke={S.ruleStrong} strokeWidth="0.9" {...hair} />
+      {lines.map((l, i) => (
+        <UiText key={l} x={x + 44} y={y + (lines.length === 1 ? 31 : 23 + i * 17)} anchor="middle">
+          {l}
+        </UiText>
+      ))}
+    </g>
+  );
+}
+
+export const designProcessesPlate: IllustrationEntry = {
+  slug: "design-processes",
+  title: "Design process plate",
+  canvas: "sheet",
+  description:
+    "A table comparing three process models row by row. Columns: Double Diamond, Design thinking (IDEO's phases) and ISO human-centred design. Rows are the shared activities. Understand: Discover / Gather / Context of use. Frame: Define / Frame, synthesise / Requirements. Create: Develop / Generate, make / Design solutions. Test: Deliver / Test / Evaluate. On the left, a dashed arrow runs from the Test row back up to the Understand row, labelled iterate.",
+  key: [
+    { n: "1", label: "Different names", detail: "three widely used models, from the Design Council, IDEO and ISO 9241-210, each with its own vocabulary" },
+    { n: "2", label: "One shared shape", detail: "each row is an activity all three include: understand the situation, frame the problem, create options, make and test" },
+    { n: "3", label: "Not a one-way trip", detail: "all three are iterative: what testing reveals can send the team back to understanding" },
+  ],
+  Art: ({ detail }) => (
+    <g>
+      <UiText x={156} y={24} anchor="middle" weight={700}>
+        Double
+      </UiText>
+      <UiText x={156} y={40} anchor="middle" weight={700}>
+        Diamond
+      </UiText>
+      <UiText x={252} y={24} anchor="middle" weight={700}>
+        Design
+      </UiText>
+      <UiText x={252} y={40} anchor="middle" weight={700}>
+        thinking
+      </UiText>
+      <UiText x={348} y={24} anchor="middle" weight={700}>
+        ISO human-
+      </UiText>
+      <UiText x={348} y={40} anchor="middle" weight={700}>
+        centred
+      </UiText>
+      {PROC_ROWS.map(([label, a, b, c], r) => (
+        <g key={label}>
+          <UiText x={32} y={82 + r * 62} weight={600} tone="ink2">
+            {label}
+          </UiText>
+          <ProcCell x={procX[0]} y={52 + r * 62} lines={a} />
+          <ProcCell x={procX[1]} y={52 + r * 62} lines={b} />
+          <ProcCell x={procX[2]} y={52 + r * 62} lines={c} />
+        </g>
+      ))}
+      <path d="M22 264 C 8 264, 8 78, 22 78" fill="none" stroke={S.accent} strokeWidth="1.4" strokeDasharray="4 3" {...hair} />
+      <path d="M17 73 l5 5 l-5 5" fill="none" stroke={S.accent} strokeWidth="1.4" {...hair} />
+      <UiText x={32} y={176} tone="accent">
+        iterate
+      </UiText>
+      {detail && (
+        <>
+          <Marker x={14} y={14} n={1} />
+          <Marker x={98} y={120} n={2} />
+          <Marker x={60} y={290} n={3} />
+        </>
+      )}
+    </g>
+  ),
+};
+
+/* ------------------------------------------------------------------ */
+/* UX lifecycle: five phases, research throughout                       */
+/* ------------------------------------------------------------------ */
+const LIFE: [string, string, string][] = [
+  ["Discovery", "What problem, for whom?", "build nothing"],
+  ["Alpha", "Which solution works?", "throw away"],
+  ["Beta", "Works for real users?", "private, public"],
+  ["Live", "Still working?", "measure"],
+  ["Retire", "Need met after?", "hand over"],
+];
+const ly = (i: number) => 10 + i * 46;
+
+export const uxLifecyclePlate: IllustrationEntry = {
+  slug: "ux-lifecycle",
+  title: "UX lifecycle plate",
+  canvas: "sheet",
+  description:
+    "Five phases as rows from top to bottom, each with its UX question: Discovery — what problem, for whom? Alpha — which solution works? Beta — works for real users? Live — still working? Retire — need met after? Small 'go or stop' decision diamonds sit between the rows. Down the right edge, one tall band reads 'User research in every phase'.",
+  key: [
+    { n: "1", label: "Before building", detail: "discovery learns about users, the problem and constraints, and builds nothing" },
+    { n: "2", label: "Cheap options", detail: "alpha prototypes several solutions to test the riskiest assumptions, then throws the code away" },
+    { n: "3", label: "Decisions between phases", detail: "each phase ends in go, change or stop; stopping after discovery is a valid result" },
+    { n: "4", label: "After release", detail: "live keeps researching, measuring and improving; retirement plans how the need will be met afterwards" },
+    { n: "5", label: "Research throughout", detail: "user research runs through every phase, not only the first (GOV.UK service manual)" },
+  ],
+  Art: ({ detail }) => (
+    <g>
+      {LIFE.map(([name, q], i) => (
+        <g key={name}>
+          <rect x={30} y={ly(i)} width={290} height={36} rx={7} fill={S.surface} stroke={S.ruleStrong} strokeWidth="0.9" {...hair} />
+          <UiText x={42} y={ly(i) + 23} weight={700}>
+            {name}
+          </UiText>
+          <UiText x={124} y={ly(i) + 23}>
+            {q}
+          </UiText>
+          {i < LIFE.length - 1 && (
+            <path d={`M18 ${ly(i) + 34} l6 6 l-6 6 l-6 -6 z`} fill={S.accentWash} stroke={S.accent} strokeWidth="1" {...hair} />
+          )}
+        </g>
+      ))}
+      <path d="M18 18 V228" stroke={S.ink2} strokeWidth="1" {...hair} />
+      <rect x={328} y={10} width={62} height={220} rx={7} fill={S.accentWash} stroke={S.accent} strokeWidth="1.1" {...hair} />
+      {["User", "research", "in every", "phase"].map((w, i) => (
+        <UiText key={w} x={359} y={98 + i * 18} anchor="middle" weight={600}>
+          {w}
+        </UiText>
+      ))}
+      <UiText x={30} y={262} tone="ink2">
+        Each phase ends in a decision: go, change or stop.
+      </UiText>
+      {detail && (
+        <>
+          <Marker x={30} y={10} n={1} />
+          <Marker x={30} y={56} n={2} />
+          <Marker x={14} y={284} n={3} />
+          <Marker x={30} y={148} n={4} />
+          <Marker x={359} y={250} n={5} />
+        </>
+      )}
+    </g>
+  ),
+};
+
+/* ------------------------------------------------------------------ */
+/* UX maturity: six stages, four factors                                */
+/* ------------------------------------------------------------------ */
+const STAGES = ["Absent", "Limited", "Emergent", "Structured", "Integrated", "User-driven"];
+
+export const uxMaturityPlate: IllustrationEntry = {
+  slug: "ux-maturity",
+  title: "UX maturity plate",
+  canvas: "sheet",
+  description:
+    "Left, a staircase of six numbered steps rising to the right; a dashed arrow from step 6 back down to step 4 is labelled 'can slip back'. Right, the stage names in order: 1 Absent, 2 Limited, 3 Emergent, 4 Structured, 5 Integrated, 6 User-driven. Below, four chips side by side under the heading 'Four factors reinforce each other': Strategy, Culture, Process, Outcomes.",
+  key: [
+    { n: "1", label: "Six stages", detail: "NN/g's model, from UX being ignored to user research driving strategy; most organisations that function acceptably sit at structured" },
+    { n: "2", label: "One step at a time", detail: "the realistic goal is the next stage; moving up one level can take years" },
+    { n: "3", label: "It can fall", detail: "growth, acquisitions or leadership changes can shift attention away from users and lower maturity" },
+    { n: "4", label: "Four factors", detail: "strategy, culture, process and outcomes reinforce each other; methods alone do not make an organisation mature" },
+  ],
+  Art: ({ detail }) => (
+    <g>
+      {STAGES.map((st, i) => (
+        <g key={st}>
+          <rect x={16 + i * 34} y={176 - (i + 1) * 22} width={34} height={(i + 1) * 22} fill={i === 3 ? S.accentWash : S.soft} stroke={S.ruleStrong} strokeWidth="0.9" {...hair} />
+          <UiText x={33 + i * 34} y={194 - (i + 1) * 22} anchor="middle" weight={700}>
+            {String(i + 1)}
+          </UiText>
+          <UiText x={240} y={40 + i * 24} weight={i === 3 ? 700 : 400}>
+            {`${i + 1}  ${st}`}
+          </UiText>
+        </g>
+      ))}
+      <path d="M203 32 C 214 20, 188 20, 152 60" fill="none" stroke={S.ink2} strokeWidth="1.2" strokeDasharray="4 3" {...hair} />
+      <path d="M150 52 l2 8 l8 -3" fill="none" stroke={S.ink2} strokeWidth="1.2" {...hair} />
+      <UiText x={104} y={34} tone="ink2">
+        can slip back
+      </UiText>
+      <UiText x={16} y={212} weight={600}>
+        Four factors reinforce each other
+      </UiText>
+      {["Strategy", "Culture", "Process", "Outcomes"].map((f, i) => (
+        <g key={f}>
+          <rect x={16 + i * 94} y={226} width={86} height={34} rx={6} fill={S.surface} stroke={S.ruleStrong} strokeWidth="0.9" {...hair} />
+          <UiText x={59 + i * 94} y={248} anchor="middle">
+            {f}
+          </UiText>
+        </g>
+      ))}
+      {detail && (
+        <>
+          <Marker x={380} y={36} n={1} />
+          <Marker x={380} y={160} n={2} />
+          <Marker x={88} y={30} n={3} />
+          <Marker x={380} y={212} n={4} />
+        </>
+      )}
+    </g>
+  ),
+};
+
 /** designThinkingPlate is registered through core-plates.tsx, where the earlier planned-topic plate was. */
-const plates: IllustrationEntry[] = [usefulnessPlate, desirabilityPlate];
+const plates: IllustrationEntry[] = [usefulnessPlate, desirabilityPlate, designProcessesPlate, uxLifecyclePlate, uxMaturityPlate];
 export default plates;

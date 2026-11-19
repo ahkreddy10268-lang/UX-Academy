@@ -444,6 +444,14 @@
     "registeredContainer": "Human Factors: The Journal of the Human Factors and Ergonomics Society",
     "similarity": 1
   },
+  "chapman-plewes-2014": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-19",
+    "registeredTitle": "A UX Maturity Model: Effective Introduction of UX into Organizations",
+    "registeredYear": 2014,
+    "registeredContainer": "Lecture Notes in Computer Science",
+    "similarity": 1
+  },
   "chernev-bockenholt-goodman-2015": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",
@@ -622,6 +630,11 @@
   "dtcg-resolver-2025": {
     "status": "url-reachable",
     "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "dubberly-how-do-you-design": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-19",
     "httpStatus": 200
   },
   "engelbart-1962": {
@@ -847,6 +860,11 @@
     "registeredYear": 1985,
     "registeredContainer": "Communications of the ACM",
     "similarity": 1
+  },
+  "govuk-agile-phases": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-19",
+    "httpStatus": 200
   },
   "govuk-clear-language": {
     "status": "url-reachable",
@@ -2008,6 +2026,11 @@
     "checkedAt": "2026-11-11",
     "httpStatus": 200
   },
+  "nng-ux-maturity-model": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-19",
+    "httpStatus": 200
+  },
   "nng-ux-writing-study-guide": {
     "status": "url-reachable",
     "checkedAt": "2026-11-16",
@@ -2352,6 +2375,14 @@
     "registeredTitle": "Analysis of rehearsal processes in free recall.",
     "registeredYear": 1971,
     "registeredContainer": "Journal of Experimental Psychology",
+    "similarity": 1
+  },
+  "salah-2014": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-19",
+    "registeredTitle": "A systematic literature review for agile development processes and user centred design integration",
+    "registeredYear": 2014,
+    "registeredContainer": "Proceedings of the 18th International Conference on Evaluation and Assessment in Software Engineering",
     "similarity": 1
   },
   "sauro-lewis-2005": {
@@ -2972,6 +3003,14 @@
     "status": "url-reachable",
     "checkedAt": "2026-11-11",
     "httpStatus": 200
+  },
+  "wynn-clarkson-2018": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-19",
+    "registeredTitle": "Process models in design and development",
+    "registeredYear": 2017,
+    "registeredContainer": "Research in Engineering Design",
+    "similarity": 1
   },
   "yonelinas-2002": {
     "status": "doi-verified",

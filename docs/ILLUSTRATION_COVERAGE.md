@@ -5,10 +5,10 @@
 
 | Measure | Count |
 |---|---|
-| Registered Level-1 plates | 127 |
-| Published entries with a plate | 106 / 106 |
+| Registered Level-1 plates | 130 |
+| Published entries with a plate | 109 / 109 |
 | Subject plates | 20 / 20 |
-| Plates in the current system (dark technical or instructional sheet) | 125 |
+| Plates in the current system (dark technical or instructional sheet) | 128 |
 | Plates still in the earlier pastel style | 2 |
 | Level-2 figures | 41 |
 | Level-3 explorers (on plates) | 9 |
@@ -21,9 +21,9 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 
 | # | Category | L1 plates | Current style | L2 figures | L3 | Retain / refine / replace | Maturity | Entries |
 |---|---|---:|---:|---:|---:|---|---|---|
-| 1 | UX Concept Illustrations | 28 | 27 | 11 | 13 | 28 / 0 / 0 | developing | `fitts-law`, `hick-hyman-law`, `cognitive-load-theory`, `millers-law`, `jakobs-law`, `mental-models`, `affordances`, `peak-end-rule`, `steering-law`, `teslers-law`, `serial-position-effect`, `von-restorff-effect`, `aesthetic-usability-effect`, `choice-overload`, `working-memory-model`, `recognition-over-recall`, `user-experience`, `human-computer-interaction`, `consistency-principle`, `help-and-documentation`, `ux-writing`, `plain-language`, `usefulness`, `desirability` |
+| 1 | UX Concept Illustrations | 29 | 28 | 11 | 13 | 29 / 0 / 0 | developing | `fitts-law`, `hick-hyman-law`, `cognitive-load-theory`, `millers-law`, `jakobs-law`, `mental-models`, `affordances`, `peak-end-rule`, `steering-law`, `teslers-law`, `serial-position-effect`, `von-restorff-effect`, `aesthetic-usability-effect`, `choice-overload`, `working-memory-model`, `recognition-over-recall`, `user-experience`, `human-computer-interaction`, `consistency-principle`, `help-and-documentation`, `ux-writing`, `plain-language`, `usefulness`, `desirability`, `ux-maturity` |
 | 2 | UI Anatomy Illustrations | 3 | 3 | 1 | 0 | 3 / 0 / 0 | developing | `ui-design`, `microcopy` |
-| 3 | UX Process Illustrations | 8 | 8 | 3 | 0 | 8 / 0 / 0 | developing | `double-diamond`, `design-thinking`, `user-centred-design`, `content-design` |
+| 3 | UX Process Illustrations | 10 | 10 | 3 | 0 | 10 / 0 / 0 | developing | `double-diamond`, `design-thinking`, `user-centred-design`, `content-design`, `design-processes`, `ux-lifecycle` |
 | 4 | User Research Illustrations | 6 | 6 | 5 | 0 | 6 / 0 / 0 | mature | `card-sorting`, `jobs-to-be-done`, `think-aloud-protocol`, `contextual-inquiry`, `in-depth-interviews` |
 | 5 | Information Architecture Illustrations | 4 | 4 | 4 | 0 | 4 / 0 / 0 | mature | `information-architecture`, `tree-testing`, `information-foraging-theory` |
 | 6 | Interaction Design Illustrations | 19 | 19 | 4 | 5 | 19 / 0 / 0 | developing | `signifiers`, `doherty-threshold`, `gulfs-of-execution-and-evaluation`, `interaction-design-discipline`, `progressive-disclosure`, `visibility-of-system-status`, `user-control-and-freedom`, `error-prevention`, `mapping`, `flexibility-and-efficiency-of-use`, `error-recovery`, `feedback-principle`, `constraints`, `direct-manipulation`, `interaction-states`, `discoverability`, `error-messages` |
@@ -39,10 +39,10 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 | Method | L1 plates (primary) | L2 figures |
 |---|---:|---:|
 | Conceptual & Metaphorical | 20 | 8 |
-| Process & Sequential | 30 | 13 |
+| Process & Sequential | 31 | 13 |
 | Relationship & Systems | 19 | 10 |
-| Comparison & Contrast | 39 | 8 |
-| Hierarchy & Classification | 19 | 2 |
+| Comparison & Contrast | 40 | 8 |
+| Hierarchy & Classification | 20 | 2 |
 
 ## Level 1 audit (every registered plate)
 
@@ -156,6 +156,9 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 | `information-foraging-theory` | entry | information-architecture | conceptual | current · instructional sheet | retain | Sheet (Cycle 3 B6): the theory's three decisions for one illustrative need — three links with scent estimates, a good/thin by low/high-effort grid for what to consume, and a schematic gain curve with an earlier and a later point to leave a site. | 1 | — |
 | `usefulness` | entry | ux-concept | comparison | current · instructional sheet | retain | Sheet (D-132): a utility-by-usability grid — right or wrong functions against hard or easy to use — with only the right-and-easy cell ticked as useful. | 0 | — |
 | `desirability` | entry | ux-concept | process | current · instructional sheet | retain | Sheet (D-132): an illustrative product-reaction-word study — a balanced word list with one participant's five picks, and the share of 20 people choosing each top word, including an unwanted one. | 0 | — |
+| `design-processes` | entry | ux-process | comparison | current · instructional sheet | retain | Sheet (D-132): three process models — Double Diamond, design thinking, ISO human-centred design — aligned row by row on the shared activities understand, frame, create and test, with an iterate arrow back up. | 0 | — |
+| `ux-lifecycle` | entry | ux-process | process | current · instructional sheet | retain | Sheet (D-132): discovery, alpha, beta, live and retire as five rows with their UX question, a short note and go-or-stop decisions between them, beside one band reading 'user research in every phase'. | 0 | — |
+| `ux-maturity` | entry | ux-concept | hierarchy | current · instructional sheet | retain | Sheet (D-132): six maturity stages as a staircase with names, a 'can slip back' arrow from stage 6 to 4, and the four reinforcing factors as chips. | 0 | — |
 | `foundations` | subject | ux-concept | relationship | current · instructional sheet | retain | Sheet (S25, subject): interface inside the experience band, an approach loop and a history line. | 0 | — |
 | `laws-effects` | subject | ux-concept | conceptual | current · instructional sheet | retain | Sheet (S25, subject): six tiles for the domain's families, ending with evidence labels. | 0 | — |
 | `psychology` | subject | ux-concept | conceptual | current · instructional sheet | retain | Sheet (S25, subject): memory slots, a cue–action–outcome loop, pop-out search and a reach arc. | 0 | — |
@@ -336,6 +339,9 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 | `information-foraging-theory` | Three decisions of information foraging, drawn for one illustrative need, 'Sunday hours'. Top left, 'Which link?': three links with three-dot scent estimates for that need — 'Opening hours' three filled dots, 'Our services' two, 'Your visit' one. Top right, 'What to consume?': a two-by-two grid of content (good or thin) against effort to reach it (low or high). Only good content that is low effort is marked 'Eat' with a tick; the other three cells are marked 'Skip' with a cross. Bottom, 'When to leave this site?': a schematic curve of gain rising and flattening over time on one site, with two dashed vertical lines on it. The earlier one, labelled 'Easy to switch', is marked 'leave here'; the later one, labelled 'Hard to switch', is also marked 'leave here'. |
 | `usefulness` | A two-by-two grid. Rows are utility: 'Right functions' on top, 'Wrong functions' below. Columns are usability: 'Hard to use' on the left, 'Easy to use' on the right. Top right, the only cell with a tick: 'Useful' — does the job, easily. Top left, with a cross: 'Buried' — everything needed is there, but people cannot reach it. Bottom right, with a cross: 'Easy, wrong job' — smooth to use, but not what people need. Bottom left, with a cross: 'Neither'. |
 | `desirability` | An illustrative product-reaction-word study. Left, 'Pick five words': ten word cards in two columns — Calm, Busy, Clean, Cheap, Fresh, Dated, Clear, Boring, Friendly, Confusing — of which one participant's five choices (Calm, Clean, Fresh, Clear, Friendly) are bold and ticked. Right, 'Chosen by (of 20)': bars for the most-chosen words — Calm 70 %, Clear 55 %, Fresh 40 %, Friendly 35 %, Cheap 30 % — with Cheap, a word the team had listed as a risk, among them. |
+| `design-processes` | A table comparing three process models row by row. Columns: Double Diamond, Design thinking (IDEO's phases) and ISO human-centred design. Rows are the shared activities. Understand: Discover / Gather / Context of use. Frame: Define / Frame, synthesise / Requirements. Create: Develop / Generate, make / Design solutions. Test: Deliver / Test / Evaluate. On the left, a dashed arrow runs from the Test row back up to the Understand row, labelled iterate. |
+| `ux-lifecycle` | Five phases as rows from top to bottom, each with its UX question: Discovery — what problem, for whom? Alpha — which solution works? Beta — works for real users? Live — still working? Retire — need met after? Small 'go or stop' decision diamonds sit between the rows. Down the right edge, one tall band reads 'User research in every phase'. |
+| `ux-maturity` | Left, a staircase of six numbered steps rising to the right; a dashed arrow from step 6 back down to step 4 is labelled 'can slip back'. Right, the stage names in order: 1 Absent, 2 Limited, 3 Emergent, 4 Structured, 5 Integrated, 6 User-driven. Below, four chips side by side under the heading 'Four factors reinforce each other': Strategy, Culture, Process, Outcomes. |
 | `foundations` | Nested frames read from the inside out. At the centre, an interface: a booking screen with a title, a field and a button, the part UI design shapes. Around it, a band of before, during and after touchpoints, the whole experience UX design is concerned with. A loop arrow around the band stands for design approaches that put people's needs and evaluation at the centre. Along the bottom, a short timeline marks that the field has a history in design and human-computer interaction. |
 | `laws-effects` | Six tiles, one for each family of regularities in this subject. Human performance laws: a pointer moving a distance D to a target of width W. Popular laws and rules of thumb: a card stamped 'rule of thumb'. Memory and attention: a list in which one item stands out. Gestalt grouping: dots grouped by spacing. Decision-making biases: two options, one marked as the default. A sixth tile shows evidence labels, because these items range from measured laws to popular claims. |
 | `psychology` | Four panels for the four strands of the subject, each shown through what it explains in an interface rather than as a picture of a head. Cognitive psychology, memory and learning: four memory slots, three filled. Behavioural science, motivation and emotion: a loop from a cue to an action to an outcome that feeds back. Visual cognition: a field of outlined shapes in which one filled shape stands out at once (in the hero it pulses, as attention is captured). Human factors and ergonomics: a control panel with a large stop button within reach and a reach arc drawn around it. |

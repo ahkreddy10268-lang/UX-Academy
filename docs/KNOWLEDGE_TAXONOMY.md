@@ -22,7 +22,7 @@ What user experience is, how it differs from interface design, and the vocabular
 - ✅ Desirability — *Concept* · `desirability`
 - ◻️ Feasibility — *Concept* · `feasibility`
 - ◻️ Viability — *Concept* · `viability`
-- ◻️ UX Maturity — *Concept* · `ux-maturity`
+- ✅ UX Maturity — *Concept* · `ux-maturity`
 - ✅ Human-Computer Interaction (HCI) — *Discipline* · `human-computer-interaction`
 
 ### Design approaches (`approaches`)
@@ -30,8 +30,8 @@ What user experience is, how it differs from interface design, and the vocabular
 - ✅ User-Centred Design — *Framework* · `user-centred-design`
 - ◻️ Human-Centred Design — *Framework* · `human-centred-design`
 - ✅ Design Thinking — *Framework* · `design-thinking`
-- ◻️ UX Lifecycle — *Concept* · `ux-lifecycle`
-- ◻️ Design Process — *Concept* · `design-processes`
+- ✅ UX Lifecycle — *Concept* · `ux-lifecycle`
+- ✅ Design Process — *Concept* · `design-processes`
 
 ### History of design & HCI (`history-ethics`)
 

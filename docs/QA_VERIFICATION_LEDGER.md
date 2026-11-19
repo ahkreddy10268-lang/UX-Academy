@@ -315,3 +315,20 @@ Entry, Level-2 figure (`design-thinking.lenses`), plate (replaces the S25 planne
 | Addressed-within pages | `curl` of /library/{human-centred-design, feasibility, viability, utility} | Each shows "Explained within" its host | Run |
 | Other browser suites | — | INHERITED from `3b776d6` (no shared component changed) | Inherited |
 | Review | One focused review; one correction pass | 0 critical, 0 major; 2 minor wording fixes applied (interpretation labelled; unsourced participant count removed) | Run |
+
+### Domain 1, Batch 3 — `design-processes`, `ux-lifecycle`, `ux-maturity` (2026-11-19, parent `218bb3d`)
+
+Three entries, three plates, 6 sources (Dubberly introduction, GOV.UK phase pages and NN/g maturity model read in full; Wynn & Clarkson and Salah et al. abstracts; Chapman & Plewes bibliographic). Access limits: Wynn & Clarkson is open access but the publisher returned a cookie page on two attempts; Sy (2007) could not be reached at either journal address (404, then a redirect to the journal home page) and was not used. No new Level-2 figure (concept family: plate target).
+
+| Check | Command | Result | Run / inherited |
+|---|---|---|---|
+| Check | `npm run check` | PASS — 600 tests (one editorial-gate failure fixed: a fourth analogy opening 'Think of') | Run |
+| Taxonomy | `npm run test:taxonomy` | PASS — UX & UI Fundamentals 12 published, 4 addressed within | Run |
+| Sources | `sources:verify` for 6 new ids | 3 doi-verified, 3 url-reachable | Run |
+| Integrity | `entry-integrity.ts design-processes ux-lifecycle ux-maturity` | PASS | Run |
+| Plates | `render-plates.tsx` for the three | Light/dark inspected; lifecycle redrawn as rows, cell and marker overlaps fixed | Run |
+| Build | `npm run build` | PASS | Run |
+| Entry review | `entry-review.cjs design-processes ux-lifecycle ux-maturity user-centred-design` | PASS 32/32 | Run |
+| e2e-redesign | `node tests/browser/e2e-redesign.cjs` | PASS 66/66 | Run |
+| Other browser suites | — | INHERITED from `3b776d6` | Inherited |
+| Review | One focused review; one correction pass | 0 critical, 0 major; one unsourced historical sentence in ux-lifecycle reworded before commit | Run |
