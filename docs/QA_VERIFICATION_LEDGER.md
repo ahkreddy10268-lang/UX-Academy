@@ -349,3 +349,20 @@ Two discipline entries, two plates, 7 sources (IxDF product-design page, WDO and
 | e2e-redesign | `node tests/browser/e2e-redesign.cjs` | PASS 66/66 | Run |
 | Other browser suites | — | INHERITED from `3b776d6` | Inherited |
 | Review | One focused review; one correction pass | 0 critical, 0 major; 2 minor fixes (a claim about the unread 2010 book; a historical 'became' not supported by Cagan) | Run |
+
+### Domain 1, Batch 5 — `history-of-interface-design`, `evolution-of-digital-experiences`; `history-of-hci` within `human-computer-interaction` (2026-11-19, parent `9eb3675`)
+
+Two entries, two plates, 4 new sources (Nielsen 1993 table and Buxton read; van Dam and the Star retrospective abstracts) plus Myers 1998 now read in full from the author's technical-report copy; Grudin 2005 and Bødker 2006 abstracts read for the first time. `history-of-hci` set `coveredBy` human-computer-interaction (CONTENT_AUDIT session 62); the HCI entry's two forward references to a planned history entry rewritten, its relation retargeted to `history-of-interface-design`.
+
+| Check | Command | Result | Run / inherited |
+|---|---|---|---|
+| Check | `npm run check` | PASS — 608 tests | Run |
+| Taxonomy | `npm run test:taxonomy` | PASS — UX & UI Fundamentals 16 published, 5 addressed within (21/21 accounted for) | Run |
+| Sources | `sources:verify` for 4 new ids | 2 doi-verified, 2 url-reachable; Star author list confirmed against Crossref | Run |
+| Integrity | `entry-integrity.ts history-of-interface-design evolution-of-digital-experiences human-computer-interaction` | New entries clean; HCI reports `iso-9241-11-2018` referenced but uncited, which predates this batch (the committed version has no citation either) — logged D1-2 | Run |
+| Plates | `render-plates.tsx` for the two | Light/dark inspected; band label, footnote and marker overlaps fixed | Run |
+| Build | `npm run build` | PASS | Run |
+| Entry review | `entry-review.cjs history-of-interface-design evolution-of-digital-experiences human-computer-interaction` | PASS 24/24 | Run |
+| e2e-redesign | `node tests/browser/e2e-redesign.cjs` | PASS 66/66 | Run |
+| Addressed-within page | `curl /library/history-of-hci` | "Explained within Human-Computer Interaction (HCI)" | Run |
+| Review | One focused review; one correction pass | 0 critical, 0 major; 1 moderate fixed (a contradictory multi-touch date sentence) | Run |

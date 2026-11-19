@@ -148,7 +148,7 @@ export default defineSources([
     topics: ["history of interface technology", "Sketchpad", "NLS", "windows", "direct manipulation", "hypertext"],
     access: "open",
     verification: "bibliographic",
-    notes: "Chronology of interface technology (also available as CMU technical reports CMU-CS-96-163 / CMU-HCII-96-103). Used for dated technology milestones; it covers technology, not the full social history of HCI.",
+    notes: "Chronology of interface technology (also available as CMU technical reports CMU-CS-96-163 / CMU-HCII-96-103). Used for dated technology milestones; it covers technology, not the full social history of HCI. Read in full 2026-11-19 from the author's technical-report copy (https://www.cs.cmu.edu/~amulet/papers/uihistory.tr.html, December 1996): Sketchpad (Sutherland, 1963 MIT thesis) first demonstrated direct manipulation; the mouse at SRI in 1965 in NLS and demonstrated in 1968; tiled windows in NLS 1968; overlapping windows proposed by Alan Kay in 1969 and first in Smalltalk in 1974; David Canfield Smith coined 'icons' in 1975; Kay's Dynabook article 1977; WYSIWYG from Bravo at PARC 1974; first commercial systems with extensive direct manipulation, mouse and windows: Xerox Star (1981), Apple Lisa (1982), Macintosh (1984); Shneiderman coined 'direct manipulation' in 1982; X Window System 1984; argues that most major interface styles came from university and lab research, often government-funded.",
   },
   {
     id: "hcii-cmu-history",

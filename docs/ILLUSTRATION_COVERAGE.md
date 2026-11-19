@@ -5,10 +5,10 @@
 
 | Measure | Count |
 |---|---|
-| Registered Level-1 plates | 132 |
-| Published entries with a plate | 111 / 111 |
+| Registered Level-1 plates | 134 |
+| Published entries with a plate | 113 / 113 |
 | Subject plates | 20 / 20 |
-| Plates in the current system (dark technical or instructional sheet) | 130 |
+| Plates in the current system (dark technical or instructional sheet) | 132 |
 | Plates still in the earlier pastel style | 2 |
 | Level-2 figures | 41 |
 | Level-3 explorers (on plates) | 9 |
@@ -21,7 +21,7 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 
 | # | Category | L1 plates | Current style | L2 figures | L3 | Retain / refine / replace | Maturity | Entries |
 |---|---|---:|---:|---:|---:|---|---|---|
-| 1 | UX Concept Illustrations | 31 | 30 | 11 | 13 | 31 / 0 / 0 | developing | `fitts-law`, `hick-hyman-law`, `cognitive-load-theory`, `millers-law`, `jakobs-law`, `mental-models`, `affordances`, `peak-end-rule`, `steering-law`, `teslers-law`, `serial-position-effect`, `von-restorff-effect`, `aesthetic-usability-effect`, `choice-overload`, `working-memory-model`, `recognition-over-recall`, `user-experience`, `human-computer-interaction`, `consistency-principle`, `help-and-documentation`, `ux-writing`, `plain-language`, `usefulness`, `desirability`, `ux-maturity`, `experience-design`, `product-design` |
+| 1 | UX Concept Illustrations | 33 | 32 | 11 | 13 | 33 / 0 / 0 | developing | `fitts-law`, `hick-hyman-law`, `cognitive-load-theory`, `millers-law`, `jakobs-law`, `mental-models`, `affordances`, `peak-end-rule`, `steering-law`, `teslers-law`, `serial-position-effect`, `von-restorff-effect`, `aesthetic-usability-effect`, `choice-overload`, `working-memory-model`, `recognition-over-recall`, `user-experience`, `human-computer-interaction`, `consistency-principle`, `help-and-documentation`, `ux-writing`, `plain-language`, `usefulness`, `desirability`, `ux-maturity`, `experience-design`, `product-design`, `history-of-interface-design`, `evolution-of-digital-experiences` |
 | 2 | UI Anatomy Illustrations | 3 | 3 | 1 | 0 | 3 / 0 / 0 | developing | `ui-design`, `microcopy` |
 | 3 | UX Process Illustrations | 10 | 10 | 3 | 0 | 10 / 0 / 0 | developing | `double-diamond`, `design-thinking`, `user-centred-design`, `content-design`, `design-processes`, `ux-lifecycle` |
 | 4 | User Research Illustrations | 6 | 6 | 5 | 0 | 6 / 0 / 0 | mature | `card-sorting`, `jobs-to-be-done`, `think-aloud-protocol`, `contextual-inquiry`, `in-depth-interviews` |
@@ -39,9 +39,9 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 | Method | L1 plates (primary) | L2 figures |
 |---|---:|---:|
 | Conceptual & Metaphorical | 20 | 8 |
-| Process & Sequential | 31 | 13 |
+| Process & Sequential | 32 | 13 |
 | Relationship & Systems | 19 | 10 |
-| Comparison & Contrast | 41 | 8 |
+| Comparison & Contrast | 42 | 8 |
 | Hierarchy & Classification | 21 | 2 |
 
 ## Level 1 audit (every registered plate)
@@ -161,6 +161,8 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 | `ux-maturity` | entry | ux-concept | hierarchy | current · instructional sheet | retain | Sheet (D-132): six maturity stages as a staircase with names, a 'can slip back' arrow from stage 6 to 4, and the four reinforcing factors as chips. | 0 | — |
 | `experience-design` | entry | ux-concept | hierarchy | current · instructional sheet | retain | Sheet (D-132): Why, What and How as three stacked bands with an illustrative example each, a bracket marking experience design across all three from the Why, and a note that interaction design works mainly on the How. | 0 | — |
 | `product-design` | entry | ux-concept | comparison | current · instructional sheet | retain | Sheet (D-132): the industrial-design meaning (a kettle with appearance, function, manufacture) beside a digital product team — product manager, designer and engineer around the product with their risks. | 0 | — |
+| `history-of-interface-design` | entry | ux-concept | process | current · instructional sheet | retain | Sheet (D-132): Nielsen's approximate generations of interaction style as bands over a time axis, with dated milestones from Myers and Buxton — Sketchpad 1963 to multi-touch reaching the public in 2007 — research systems and products distinguished by open and filled dots. | 0 | — |
+| `evolution-of-digital-experiences` | entry | ux-concept | comparison | current · instructional sheet | retain | Sheet (D-132): four approximate periods by who uses computers, what for and where, from experts in computer centres to everybody in everyday life, with a 'widening' arrow. | 0 | — |
 | `foundations` | subject | ux-concept | relationship | current · instructional sheet | retain | Sheet (S25, subject): interface inside the experience band, an approach loop and a history line. | 0 | — |
 | `laws-effects` | subject | ux-concept | conceptual | current · instructional sheet | retain | Sheet (S25, subject): six tiles for the domain's families, ending with evidence labels. | 0 | — |
 | `psychology` | subject | ux-concept | conceptual | current · instructional sheet | retain | Sheet (S25, subject): memory slots, a cue–action–outcome loop, pop-out search and a reach arc. | 0 | — |
@@ -346,6 +348,8 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 | `ux-maturity` | Left, a staircase of six numbered steps rising to the right; a dashed arrow from step 6 back down to step 4 is labelled 'can slip back'. Right, the stage names in order: 1 Absent, 2 Limited, 3 Emergent, 4 Structured, 5 Integrated, 6 User-driven. Below, four chips side by side under the heading 'Four factors reinforce each other': Strategy, Culture, Process, Outcomes. |
 | `experience-design` | Three stacked bands with arrows pointing down from each to the next. Why — needs, emotions, meaning — example: feel close to a partner far away. What — functionality — example: share one photo a day. How — operation — example: one tap from the lock screen. On the right, a long bracket labelled 'Experience design' spans all three bands and is marked 'starts here' at the Why; a short bracket spans only the How, and a note below reads 'Interaction design works mainly on the How.' |
 | `product-design` | Two panels. Left, 'Industrial design': the outline of a kettle with three labels — appearance, function, manufacture. Right, 'Digital product team': three role cards around a central 'Product' box. Product manager: value, viability. Designer, the product designer (highlighted): usability, experience. Engineer, the lead engineer: feasibility. Lines join each role to the product. |
+| `history-of-interface-design` | Top, four bands for Nielsen's approximate generations of interface style along a time axis from 1955: Command (1955-1965), Menus and forms (1965-1980), WIMP (1980-1995), Beyond WIMP (from 1995). Below, a time line with dated milestones from Myers and Buxton: 1963 Sketchpad, 1965 mouse, 1968 NLS demonstration, 1974 Smalltalk windows, 1981 Xerox Star, 1984 Macintosh, and 2007 multi-touch reaching the public. |
+| `evolution-of-digital-experiences` | A table of four approximate periods by three questions — who uses computers, what for, and where. 1945-65: experts and technocrats; calculation and data processing; the computer centre. 1965-80: workers such as bank tellers; office work; terminals at work. 1980-95: professionals and hobbyists; a productivity tool; a desk at work or home. From 1996: everybody (a 1993 forecast); entertainment and connection; home and everyday life. An arrow down the left reads 'widening'. |
 | `foundations` | Nested frames read from the inside out. At the centre, an interface: a booking screen with a title, a field and a button, the part UI design shapes. Around it, a band of before, during and after touchpoints, the whole experience UX design is concerned with. A loop arrow around the band stands for design approaches that put people's needs and evaluation at the centre. Along the bottom, a short timeline marks that the field has a history in design and human-computer interaction. |
 | `laws-effects` | Six tiles, one for each family of regularities in this subject. Human performance laws: a pointer moving a distance D to a target of width W. Popular laws and rules of thumb: a card stamped 'rule of thumb'. Memory and attention: a list in which one item stands out. Gestalt grouping: dots grouped by spacing. Decision-making biases: two options, one marked as the default. A sixth tile shows evidence labels, because these items range from measured laws to popular claims. |
 | `psychology` | Four panels for the four strands of the subject, each shown through what it explains in an interface rather than as a picture of a head. Cognitive psychology, memory and learning: four memory slots, three filled. Behavioural science, motivation and emotion: a loop from a cue to an action to an outcome that feeds back. Visual cognition: a field of outlined shapes in which one filled shape stands out at once (in the hero it pulses, as attention is captured). Human factors and ergonomics: a control panel with a large stop button within reach and a reach arc drawn around it. |

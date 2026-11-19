@@ -333,6 +333,11 @@
     "registeredContainer": "Lecture Notes in Computer Science",
     "similarity": 1
   },
+  "buxton-multitouch": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-19",
+    "httpStatus": 200
+  },
   "cagan-four-big-risks": {
     "status": "url-reachable",
     "checkedAt": "2026-11-19",
@@ -1350,6 +1355,14 @@
     "registeredContainer": "ACM Transactions on Computer-Human Interaction",
     "similarity": 1
   },
+  "johnson-1989-star": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-19",
+    "registeredTitle": "The Xerox Star: a retrospective",
+    "registeredYear": 1989,
+    "registeredContainer": "Computer",
+    "similarity": 1
+  },
   "jscodeshift": {
     "status": "url-reachable",
     "checkedAt": "2026-11-12",
@@ -1829,6 +1842,11 @@
     "registeredYear": 1992,
     "registeredContainer": "Proceedings of the SIGCHI conference on Human factors in computing systems  - CHI '92",
     "similarity": 1
+  },
+  "nielsen-1993-noncommand": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-19",
+    "httpStatus": 200
   },
   "nielsen-1993-response-times": {
     "status": "url-reachable",
@@ -2769,6 +2787,14 @@
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
     "httpStatus": 200
+  },
+  "van-dam-1997": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-19",
+    "registeredTitle": "Post-WIMP user interfaces",
+    "registeredYear": 1997,
+    "registeredContainer": "Communications of the ACM",
+    "similarity": 1
   },
   "van-den-haak-2003": {
     "status": "doi-verified",

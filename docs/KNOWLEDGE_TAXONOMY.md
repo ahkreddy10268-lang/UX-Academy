@@ -35,9 +35,9 @@ What user experience is, how it differs from interface design, and the vocabular
 
 ### History of design & HCI (`history-ethics`)
 
-- ◻️ History of Interface Design — *Historical contribution* · `history-of-interface-design`
+- ✅ History of Interface Design — *Historical contribution* · `history-of-interface-design`
 - ◻️ History of HCI — *Historical contribution* · `history-of-hci`
-- ◻️ Evolution of Digital Experiences — *Historical contribution* · `evolution-of-digital-experiences`
+- ✅ Evolution of Digital Experiences — *Historical contribution* · `evolution-of-digital-experiences`
 
 ## 2. UX Laws & Cognitive Effects (`laws-effects`)
 

@@ -124,7 +124,7 @@ export default defineEntry({
       "**Histories and framings.** From the mid-1990s onward, Grudin, Bødker and Harrison and colleagues wrote historical and theoretical accounts of the field's communities, waves and paradigms {{src:grudin-2005}} {{src:bodker-2006}} {{src:harrison-sengers-tatar-2011}}.",
     ],
     attributionNote:
-      "HCI has no single founder and no agreed start date. The people and works listed here are landmarks cited in the sources, not a complete list of contributors; accounts that give one origin story tend to reflect one community's history. Women's and non-US contributions are well documented in the literature (Suchman, Bødker and the Scandinavian participatory tradition are examples here) and a fuller history would give more of them space; the planned `history-of-hci` entry is the place for that.",
+      "HCI has no single founder and no agreed start date. The people and works listed here are landmarks cited in the sources, not a complete list of contributors; accounts that give one origin story tend to reflect one community's history. Women's and non-US contributions are well documented in the literature (Suchman, Bødker and the Scandinavian participatory tradition are examples here) and a fuller history would give more of them space. This entry is where the academy addresses the history of HCI; the interaction styles it produced are traced in the history-of-interface-design entry.",
   },
 
   application: {
@@ -230,7 +230,7 @@ export default defineEntry({
     { target: "ethnographic-research", type: "applied-in", note: "Ethnographic research provides the observational accounts behind situated and distributed theories of interaction." },
     { target: "accessibility-concept", type: "related-to", note: "Accessibility asks whether people with a range of abilities can use a system, a standing HCI concern." },
     { target: "human-ai-interaction", type: "influences", note: "Human-AI interaction extends HCI to adaptive, probabilistic systems and tests older models against them." },
-    { target: "history-of-hci", type: "related-to", note: "The planned history entry will give the full chronology; this entry only orients and cites landmarks." },
+    { target: "history-of-interface-design", type: "related-to", note: "The history of interaction styles, from Sketchpad to multi-touch, is traced in its own entry; this entry covers the research field's history." },
     { target: "ui-design", type: "contrasts-with", note: "UI design shapes the interface; HCI studies and evaluates the whole interaction between people and technology." },
   ],
 

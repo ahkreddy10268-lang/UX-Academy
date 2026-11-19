@@ -573,6 +573,143 @@ export const productDesignPlate: IllustrationEntry = {
   ),
 };
 
+
+/* ------------------------------------------------------------------ */
+/* History of interface design: generations and dated milestones        */
+/* ------------------------------------------------------------------ */
+/** Year → x on the history axis (1955 … 2010 ↦ 20 … 372). */
+const hx = (yr: number) => 20 + (yr - 1955) * 6.4;
+const GENS: [number, number, string][] = [
+  [1955, 1965, "Command"],
+  [1965, 1980, "Menus, forms"],
+  [1980, 1995, "WIMP"],
+  [1995, 2010, "Beyond WIMP"],
+];
+const MILESTONES: [number, string, number, "start" | "end"][] = [
+  [1963, "1963 Sketchpad", 150, "start"],
+  [1965, "1965 mouse", 202, "start"],
+  [1968, "1968 NLS demo", 128, "start"],
+  [1974, "1974 Smalltalk", 224, "start"],
+  [1981, "1981 Star", 150, "start"],
+  [1984, "1984 Macintosh", 202, "start"],
+  [2007, "2007 multi-touch", 150, "end"],
+];
+
+export const historyOfInterfaceDesignPlate: IllustrationEntry = {
+  slug: "history-of-interface-design",
+  title: "History of interface design plate",
+  canvas: "sheet",
+  description:
+    "Top, four bands for Nielsen's approximate generations of interface style along a time axis from 1955: Command (1955-1965), Menus and forms (1965-1980), WIMP (1980-1995), Beyond WIMP (from 1995). Below, a time line with dated milestones from Myers and Buxton: 1963 Sketchpad, 1965 mouse, 1968 NLS demonstration, 1974 Smalltalk windows, 1981 Xerox Star, 1984 Macintosh, and 2007 multi-touch reaching the public.",
+  key: [
+    { n: "1", label: "Generations", detail: "approximate eras of interaction style (Nielsen); long stable periods, then rapid change (van Dam)" },
+    { n: "2", label: "Research first", detail: "Sketchpad, the mouse, NLS and Smalltalk were research systems, years before products (Myers)" },
+    { n: "3", label: "Then products", detail: "the Xerox Star (1981), Apple Lisa (1982) and Macintosh (1984) brought the graphical interface to market" },
+    { n: "4", label: "Touch, decades later", detail: "multi-touch was demonstrated in research in the 1980s and reached most people in 2007 (Buxton)" },
+  ],
+  Art: ({ detail }) => (
+    <g>
+      <UiText x={20} y={26} weight={600}>
+        Generations (approximate)
+      </UiText>
+      {GENS.map(([a, b, label], i) => (
+        <g key={label}>
+          <rect x={hx(a)} y={38} width={hx(b) - hx(a) - 3} height={34} rx={6} fill={i === 2 ? S.accentWash : S.soft} stroke={i === 2 ? S.accent : S.ruleStrong} strokeWidth="0.9" {...hair} />
+          <UiText x={(hx(a) + hx(b)) / 2 - 1.5} y={60} anchor="middle" weight={i === 2 ? 700 : 400}>
+            {label}
+          </UiText>
+        </g>
+      ))}
+      <path d={`M${hx(1955)} 174 H${hx(2010)}`} stroke={S.ink2} strokeWidth="1.3" {...hair} />
+      <path d={`M${hx(2010) - 6} 169 l6 5 l-6 5`} fill="none" stroke={S.ink2} strokeWidth="1.3" {...hair} />
+      {MILESTONES.map(([yr, label, y, anchor]) => (
+        <g key={label}>
+          <path d={`M${hx(yr)} 174 V${y < 174 ? y + 6 : y - 16}`} stroke={S.rule} strokeWidth="1" {...hair} />
+          <circle cx={hx(yr)} cy={174} r={3.6} fill={yr >= 1981 ? S.ink : S.surface} stroke={S.ink} strokeWidth="1.2" {...hair} />
+          <UiText x={anchor === "end" ? hx(yr) + 6 : hx(yr)} y={y} anchor={anchor}>
+            {label}
+          </UiText>
+        </g>
+      ))}
+      <UiText x={20} y={270} tone="ink2">
+        Open: research systems. Filled: products, public launch.
+      </UiText>
+      {detail && (
+        <>
+          <Marker x={380} y={26} n={1} />
+          <Marker x={40} y={110} n={2} />
+          <Marker x={186} y={102} n={3} />
+          <Marker x={384} y={196} n={4} />
+        </>
+      )}
+    </g>
+  ),
+};
+
+/* ------------------------------------------------------------------ */
+/* Evolution of digital experiences: who, what for, where               */
+/* ------------------------------------------------------------------ */
+const EVO: [string, string[], string[], string[]][] = [
+  ["1945–65", ["Experts,", "technocrats"], ["Calculation,", "data processing"], ["Computer", "centre"]],
+  ["1965–80", ["Workers such", "as bank tellers"], ["Office", "work"], ["Terminals", "at work"]],
+  ["1980–95", ["Professionals,", "hobbyists"], ["Productivity", "tool"], ["Desk, work", "or home"]],
+  ["1996–", ["Everybody", "(forecast)"], ["Entertainment,", "connection"], ["Home,", "everyday life"]],
+];
+const evoX = [84, 190, 296];
+
+export const evolutionOfDigitalExperiencesPlate: IllustrationEntry = {
+  slug: "evolution-of-digital-experiences",
+  title: "Evolution of digital experiences plate",
+  canvas: "sheet",
+  description:
+    "A table of four approximate periods by three questions — who uses computers, what for, and where. 1945-65: experts and technocrats; calculation and data processing; the computer centre. 1965-80: workers such as bank tellers; office work; terminals at work. 1980-95: professionals and hobbyists; a productivity tool; a desk at work or home. From 1996: everybody (a 1993 forecast); entertainment and connection; home and everyday life. An arrow down the left reads 'widening'.",
+  key: [
+    { n: "1", label: "Who", detail: "users widened from specialists to people without computer knowledge, to everybody (Nielsen's generations; the last a 1993 forecast)" },
+    { n: "2", label: "What for", detail: "from calculation to office work, to a personal tool, to entertainment and connection" },
+    { n: "3", label: "Where", detail: "from the computer centre to the workplace, then into homes, everyday life and culture (Bødker's third wave)" },
+    { n: "4", label: "Added, not replaced", detail: "work systems and mandatory use still exist; each period added contexts rather than ending the previous ones" },
+  ],
+  Art: ({ detail }) => (
+    <g>
+      {["Who", "What for", "Where"].map((h, i) => (
+        <UiText key={h} x={evoX[i] + 28} y={24} weight={700}>
+          {h}
+        </UiText>
+      ))}
+      {EVO.map(([period, who, what, where], r) => (
+        <g key={period}>
+          <UiText x={24} y={70 + r * 62} weight={600} tone="ink2">
+            {period}
+          </UiText>
+          {[who, what, where].map((lines, c) => (
+            <g key={c}>
+              <rect x={evoX[c]} y={40 + r * 62} width={100} height={54} rx={6} fill={r === 3 ? S.accentWash : S.surface} stroke={r === 3 ? S.accent : S.ruleStrong} strokeWidth="0.9" {...hair} />
+              {lines.map((l, k) => (
+                <UiText key={l} x={evoX[c] + 50} y={62 + r * 62 + k * 17} anchor="middle">
+                  {l}
+                </UiText>
+              ))}
+            </g>
+          ))}
+        </g>
+      ))}
+      <path d="M12 44 V280" stroke={S.ink2} strokeWidth="1.2" {...hair} />
+      <path d="M7 274 l5 6 l5 -6" fill="none" stroke={S.ink2} strokeWidth="1.2" {...hair} />
+      <UiText x={24} y={292} tone="ink2">
+        widening
+      </UiText>
+      {detail && (
+        <>
+          <Marker x={evoX[0] + 12} y={20} n={1} />
+          <Marker x={evoX[1] + 12} y={20} n={2} />
+          <Marker x={evoX[2] + 12} y={20} n={3} />
+          <Marker x={384} y={290} n={4} />
+        </>
+      )}
+    </g>
+  ),
+};
+
 /** designThinkingPlate is registered through core-plates.tsx, where the earlier planned-topic plate was. */
-const plates: IllustrationEntry[] = [usefulnessPlate, desirabilityPlate, designProcessesPlate, uxLifecyclePlate, uxMaturityPlate, experienceDesignPlate, productDesignPlate];
+const plates: IllustrationEntry[] = [usefulnessPlate, desirabilityPlate, designProcessesPlate, uxLifecyclePlate, uxMaturityPlate, experienceDesignPlate, productDesignPlate, historyOfInterfaceDesignPlate, evolutionOfDigitalExperiencesPlate];
 export default plates;

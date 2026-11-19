@@ -948,6 +948,8 @@ export const quickTakeaways: Record<string, string> = {
   "ux-maturity": "An organisation's ability to do user-centred design depends on strategy, culture, process and outcomes together; it grows a stage at a time and can slip back.",
   "experience-design": "Start from why people do something, the needs and meaning involved, then decide what the product does and how it is operated: the product is the means, the experience the aim.",
   "product-design": "Product design shapes a product as a whole for people and for the organisation that sustains it; in software teams the designer owns usability and the experience, beside product and engineering.",
+  "history-of-interface-design": "Interaction styles changed in bursts, from commands to menus and forms, to windows and a mouse, to touch, and each new style grew out of years of research before it reached products.",
+  "evolution-of-digital-experiences": "Computers moved from specialists in computer centres to everybody in everyday life, and from mandated work to chosen use, which is why appeal, meaning and fit with life now matter alongside efficiency.",
   usefulness: "A product is useful only when it offers the functions people need and they can use them well: utility and usability, judged for particular people and tasks.",
   desirability: "Whether people want a product is a separate question from whether it works: study it with reaction methods, and never mistake appeal for usefulness.",
   "information-foraging-theory": "People weigh the gain they expect from a source against the cost of reaching it, judged from the cues in front of them: that estimate decides which link they follow, what they consume and when they leave.",

@@ -71,7 +71,9 @@ export const domains: Domain[] = [
         id: "history-ethics",
         title: "History of design & HCI",
         items: [
-          ...g("historical-contribution", "History of Interface Design", "History of HCI", "Evolution of Digital Experiences"),
+          ...g("historical-contribution", "History of Interface Design"),
+          ...within("human-computer-interaction", g("historical-contribution", "History of HCI")),
+          ...g("historical-contribution", "Evolution of Digital Experiences"),
         ],
       },
     ],
