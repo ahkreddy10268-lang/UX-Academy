@@ -257,3 +257,26 @@ Documentation records only (skill § 4: `docs/**` requires nothing). The checks 
 | Duplication | Taxonomy aliases/coveredBy, relations, links and keyword search across the 102 published entries | Boundaries needed (see PROJECT_STATE); no thin or redundant topic found | Run | Keyword search, not a read of each entry |
 | Source existence and verification | Crossref DOI lookup with title/year comparison; HTTP GET for URLs; 56 candidates | 48 DOIs verified after correcting 8 wrong recalled DOIs; 7 URLs reachable; 1 book (no machine check) | Run | Existence and bibliographic match only; content of sources not read; full-text access not tested; candidates not registered |
 | Build, browser suites, `npm run check` | — | INHERITED from `7019450` / `8d7fa9d` | Inherited | No file they depend on changed |
+
+### Cycle 3, B6 topic 1 — `information-foraging-theory` (2026-11-19, parent `2225d1c`)
+
+Changes: new entry, `content/sources/findability.ts` (6 sources), notes on `pirolli-card-1999`, plate `findability-sheets.tsx`, Level-2 figure and registry, visual register, one back-link in `information-architecture`, `components/entry/references.tsx` (DOI wrap), `tests/browser/e2e-redesign.cjs` (detailed-diagram count 28 → 29), generated docs. A shared component changed, so every suite was rerun (skill § 4).
+
+| Check | Command | Result | Run / inherited | Limitations |
+|---|---|---|---|---|
+| Check | `npm run check` | PASS — 23 files, 590 tests; typecheck, lint clean | Run (final tree) | — |
+| Taxonomy | `npm run test:taxonomy` | PASS — 103 published | Run | — |
+| Sources | `npm run sources:verify -- pirolli-2007 fu-pirolli-2007 chi-pirolli-chen-pitkow-2001 bates-1989 nielsen-2003-information-foraging budiu-2020-information-scent` | 4 doi-verified, 2 url-reachable | Run | Verification checks records, not content; access recorded in each note |
+| Integrity | `npx tsx scripts/entry-integrity.ts information-foraging-theory` | PASS — no problems | Run | — |
+| Plate render | `scripts/render-plates.tsx information-foraging-theory` | Light and dark inspected; marker 4 moved off a link row; 'Content' row header added | Run | Visual inspection |
+| Build | `npm run build` | PASS | Run (final tree) | — |
+| Entry review | `entry-review.cjs information-foraging-theory` (+ information-architecture, tree-testing, plain-language, discoverability) | PASS 8/8 (and 40/40 with linked entries); first run FAILED at 390 px (17 px overflow from a long DOI), fixed in references.tsx | Run | Emulation, not a device |
+| e2e | `node tests/browser/e2e.cjs` | PASS 44/44 | Run | — |
+| e2e-redesign | `node tests/browser/e2e-redesign.cjs` | PASS 66/66 after updating the expected detailed-diagram count 28 → 29 (one new Level-2 figure) | Run | — |
+| Atlas | `node tests/browser/atlas.cjs` | PASS 36/36 | Run | — |
+| Keyboard | `node tests/browser/keyboard.cjs` | PASS 45/45 | Run | Not a screen-reader test |
+| Devices | `node tests/browser/devices.cjs` | PASS 155/155 | Run | Emulation only |
+| Colour Studio | `node tests/browser/colour-studio.cjs` | PASS 46/46 | Run | — |
+| Crawl | `node tests/browser/crawl.cjs` | PASS — 0 problems | Run | — |
+| Axe | `node tests/browser/a11y.cjs` (axe-core 4.14.0) | PASS — 0 violations | Run | Automated rules only |
+| Review | One targeted review against gates, D-129 targets and the D-131 checklist; one correction pass | 0 critical, 0 major; 2 precision edits applied; minors C3-4, C3-5 logged | Run | Same-session review, not independent; no screen reader, physical device or expert review |

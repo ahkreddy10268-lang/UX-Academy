@@ -310,5 +310,9 @@ After that: `ui-design`, `interaction-design-discipline`, `accessibility-concept
 - TD-5 fixed: explorer and dimension labels at `T.min`; Fitts labels stay inside the canvas at every slider value. Suites rerun (see ledger); site-wide plate sweep clean.
 - Added docs/UX_ACADEMY_FOR_CLAUDE_DESIGN.md: one-file brief of the product, IA, tokens (light, dark, subject palettes), type, components, templates, illustration system, accessibility and content model, for designing live in Claude Design. Keep it in step with app/globals.css.
 
+## Session 61 — Cycle 3 production, B6 topic 1: information foraging theory
+- D-131 recorded (`7019450`); Cycle 3 pre-production checks recorded (`2225d1c`); owner authorised B6, first topic only.
+- Published `information-foraging-theory` (103 published): entry, 6 sources (2 read in full, 4 abstracts), plate, Level-2 figure, practice (5 quiz, 3 exercises, 4 flashcards), relations to IA, tree testing, discoverability, plain language and information scent; back-link from `information-architecture`. Long-DOI wrap fix in `components/entry/references.tsx`. All suites rerun (ledger).
+
 ## Next task (precise)
-Await the owner. No open design or code errors in docs/OPEN_ISSUES.md; content limitations remain as documented. Do not select or produce new topics until instructed.
+Await the owner's review of `information-foraging-theory`. After approval: B6 topic 2, `information-scent` (Cycle 3, H slot), one topic at a time under D-131.

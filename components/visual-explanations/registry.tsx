@@ -21,6 +21,7 @@ import { ContextualInquiryProcess } from "./concepts/contextual-inquiry";
 import { InterviewClaims } from "./concepts/in-depth-interviews";
 import { DisabilityPerspectives } from "./concepts/accessibility-concept";
 import { ContributionLifecycle, DesignSystemArchitecture } from "./concepts/design-system";
+import { ForagingDecisions } from "./concepts/information-foraging-theory";
 import { IaEcology, IaHierarchy } from "./concepts/information-architecture";
 import { UsabilityTestCycle } from "./concepts/usability-testing";
 import { WalkthroughQuestions } from "./concepts/cognitive-walkthrough";
@@ -845,6 +846,27 @@ export const visualExplanations: VisualExplanation[] = [
     Component: GulfsOfAction,
   },
   {
+    id: "information-foraging-theory.decisions",
+    language: "sheet",
+    slug: "information-foraging-theory",
+    type: "conceptual",
+    method: "relationship",
+    level: 2,
+    title: "The three decisions of information foraging",
+    objective: "Scent, diet and patch leaving as three decisions a visitor makes, each with the question being answered, what it is on the web, what shapes the estimate, and the practitioner guidance attached to it.",
+    takeaway: "Every choice a visitor makes is an estimate of gain against cost, made from the cues in front of them, so a design changes behaviour by changing the cues and the cost, and the guidance drawn from the theory is a hypothesis to test.",
+    summary: [
+      "One rule runs through all three decisions: the visitor estimates the gain to expect and the cost of finding and consuming it, from experience or from design cues.",
+      "1. Scent, which path next. The question is which link or result looks most likely to lead to what the visitor needs. On the web a link, snippet or result is the cue and the page is the patch. The estimate is shaped by the link label, any text or image beside it, the surrounding page, and what the person already knows about the brand or subject. Practitioner guidance: say what is at the destination, avoid invented labels, and be specific where context may be off screen.",
+      "2. Diet, what to consume. The question is whether an item is worth the effort for the need. Content has to look worth consuming and be easy to reach; good content that is hard to find, or easy content with nothing in it, is passed over. The estimate is shaped by expected gain and likely cost, from experience or cues. Practitioner guidance: show sample content and prominent navigation or search.",
+      "3. Patch leaving, when to go elsewhere. The question is whether to keep working in this source or look in another. Each site is a patch, and Nielsen reads the theory as saying that the easier the next patch is to reach, the sooner a visitor leaves this one. The estimate is shaped by what is left to gain here and the cost of reaching an alternative. Nielsen predicts ever shorter visits; his article gives no data for this, so treat it as a hypothesis.",
+      "The guidance is Nielsen's and Budiu's reading of the theory, not a result from the research papers. The figure shows no equations or data because the founding article and the book were not read for this entry.",
+    ],
+    verification: "content-checked",
+    sources: ["nielsen-2003-information-foraging", "budiu-2020-information-scent", "fu-pirolli-2007"],
+    Component: ForagingDecisions,
+  },
+  {
     id: "working-memory-model.parts",
     language: "sheet",
     slug: "working-memory-model",
@@ -897,6 +919,7 @@ export const quickTakeaways: Record<string, string> = {
   "fitts-law": "Far, small targets take longer to hit than near, large ones: what matters is the ratio of distance to width.",
   "double-diamond": "Open up, then narrow down, twice: first to choose the right problem, then to find a solution that works.",
   "cognitive-load-theory": "Working memory is small: remove the effort your design adds so it can go to the material itself.",
+  "information-foraging-theory": "People weigh the gain they expect from a source against the cost of reaching it, judged from the cues in front of them: that estimate decides which link they follow, what they consume and when they leave.",
   "information-architecture": "People find things when the grouping, the names, the routes and the search all match how they think.",
   "user-centred-design": "Learn about users, design, test with them, and repeat until the evidence says the design works.",
   "human-computer-interaction": "People, technology and context meet in every interaction; HCI studies, designs and evaluates that meeting, with methods chosen to fit the question.",

@@ -207,6 +207,14 @@
     "registeredContainer": "Interacting with Computers",
     "similarity": 1
   },
+  "bates-1989": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-19",
+    "registeredTitle": "The design of browsing and berrypicking techniques for the online search interface",
+    "registeredYear": 1989,
+    "registeredContainer": "Online Review",
+    "similarity": 1
+  },
   "baymard-research": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
@@ -305,6 +313,11 @@
   "brown-2011": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "budiu-2020-information-scent": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-19",
     "httpStatus": 200
   },
   "budiu-recognition-recall": {
@@ -432,6 +445,14 @@
     "registeredTitle": "Choice overload: A conceptual review and meta‐analysis",
     "registeredYear": 2014,
     "registeredContainer": "Journal of Consumer Psychology",
+    "similarity": 1
+  },
+  "chi-pirolli-chen-pitkow-2001": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-19",
+    "registeredTitle": "Using information scent to model user information needs and actions and the Web",
+    "registeredYear": 2001,
+    "registeredContainer": "Proceedings of the SIGCHI Conference on Human Factors in Computing Systems",
     "similarity": 1
   },
   "christensen-et-al-2016": {
@@ -748,6 +769,14 @@
     "status": "url-reachable",
     "checkedAt": "2026-11-11",
     "httpStatus": 200
+  },
+  "fu-pirolli-2007": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-19",
+    "registeredTitle": "SNIF-ACT: A Cognitive Model of User Navigation on the World Wide Web",
+    "registeredYear": 2007,
+    "registeredContainer": "Human–Computer Interaction",
+    "similarity": 1
   },
   "furnas-et-al-1987": {
     "status": "doi-verified",
@@ -1723,6 +1752,11 @@
     "checkedAt": "2026-11-03",
     "httpStatus": 200
   },
+  "nielsen-2003-information-foraging": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-19",
+    "httpStatus": 200
+  },
   "nielsen-2004-card-sorting": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
@@ -2050,6 +2084,13 @@
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
     "httpStatus": 200
+  },
+  "pirolli-2007": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-19",
+    "registeredTitle": "Information Foraging Theory",
+    "registeredYear": 2007,
+    "similarity": 1
   },
   "pirolli-card-1999": {
     "status": "doi-verified",

@@ -64,7 +64,7 @@ export function SourceCitation({ source, record }: { source: Source; record?: Ve
       </p>
       <p className="mt-1 flex flex-wrap gap-x-3 gap-y-1 text-xs text-ink-3">
         <span>{TIER_LABEL[source.tier]}</span>
-        {source.doi && <span className="formula">doi:{source.doi}</span>}
+        {source.doi && <span className="formula min-w-0 [overflow-wrap:anywhere]">doi:{source.doi}</span>}
         {source.isbn && <span className="formula">ISBN {source.isbn}</span>}
         <span>Access: {source.access}</span>
         <VerificationNote source={source} record={record} />

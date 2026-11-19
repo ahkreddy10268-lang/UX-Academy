@@ -2,18 +2,18 @@
 
 The current state in one page. Read it first every session, then verify it against `git` (the repo wins; record any discrepancy here). Update it at the end of every meaningful task. History lives in `docs/PROGRESS.md`; decisions in `docs/DECISION_LOG.md`; open items in `docs/OPEN_ISSUES.md`; test results in `docs/QA_VERIFICATION_LEDGER.md`.
 
-Last updated: **2026-11-19** (Cycle 3 pre-production checks).
+Last updated: **2026-11-19** (Cycle 3, B6 topic 1: information-foraging-theory).
 
 ## Repository
 
 | Item | Value | Verified |
 |---|---|---|
 | Working branch | `claude/batch1-constraints` | 2026-11-19 |
-| Local HEAD | `7019450` (D-131 Excellence standard), plus the Cycle 3 pre-production records commit when made (local until pushed) | 2026-11-19 |
-| Remote branch HEAD | `7019450`, equal to local HEAD at the time of the check; pushed on owner approval | 2026-11-19 (`git ls-remote`) |
+| Local HEAD | The B6 topic-1 commit (`information-foraging-theory`), local only, on top of `2225d1c` | 2026-11-19 |
+| Remote branch HEAD | `2225d1c` (pre-production records), pushed on owner approval | 2026-11-19 (`git ls-remote`) |
 | `origin/main` | `b788511`, unchanged | 2026-11-19 (`git ls-remote`) |
 | PR #2 | open, not merged; head `a1f6373` unchanged | 2026-11-19 (`git ls-remote refs/pull/2/head`) |
-| Vercel preview | Last checked for `d01dcc2` (`dpl_E2nXhv9rgnPWiMkwtTkVfkBu9LCt`, READY, 2026-11-17). **Not checked for `7019450`.** Nothing in production. | 2026-11-17 |
+| Vercel preview | Last checked for `d01dcc2` (`dpl_E2nXhv9rgnPWiMkwtTkVfkBu9LCt`, READY, 2026-11-17). **Not checked for `7019450` or `2225d1c`.** Nothing in production. | 2026-11-17 |
 
 ## Content strategy and cycle
 
@@ -29,6 +29,15 @@ Last updated: **2026-11-19** (Cycle 3 pre-production checks).
 **Cycle terminology (owner decision 2026-11-19):** **Cycle 2** = the completed improvement phase IB1–IB4. **Cycle 3** = the next new-topic production cycle. Earlier records that say "Cycle 2 new-topic planning" (the IB plan and report) mean Cycle 3; they are historical and left as written.
 
 **Owner decisions 2026-11-19 (after D-131):** (1) B4 Accessibility in code is the **G-slot batch of Cycle 4**, subject to the dependency check, an explicit planned priority; no fourth batch in Cycle 3, no silent replacement. (2) **Improvement-only cycles do not count toward the two-cycle cluster rotation**; the rule applies to new-topic cycles. (3) Cycle 3 stays H → R → G: H = B6 Findability, R = B5 Decision biases, G = B8 Service design foundations.
+
+## Cycle 3 production — B6, topic 1 (2026-11-19)
+
+**`information-foraging-theory` published** (owner authorised B6, first topic only). Entry, 6 new source records (`content/sources/findability.ts`) plus notes on `pirolli-card-1999`, plate (`findability-sheets.tsx`), Level-2 figure (`information-foraging-theory.decisions`), visual-register record, quick takeaway, one back-link from `information-architecture`. Published 102 → 103; D-129 visual and evidence targets met; Practice and Editorial complete.
+
+- **Source access:** two NN/g articles read in full (Nielsen 2003; Budiu 2020); abstracts only for Pirolli 2007, Fu & Pirolli 2007, Chi et al. 2001, Bates 1989; **Pirolli & Card 1999 bibliographic only** (no abstract readable). The entry limits its claims accordingly and says so. A mirror search for paywalled papers was stopped by the auto-mode classifier and not pursued (project rule: no paywall bypass).
+- **Out-of-entry change:** `components/entry/references.tsx` — long DOIs now wrap (`[overflow-wrap:anywhere]`); the book's DOI caused a 17 px overflow at 390 px. Full browser suites rerun (see ledger).
+- **Review:** one targeted review, one correction pass (two precision edits); no critical or major findings. Minor items logged: C3-4, C3-5.
+- Stopped after this topic, as instructed. **Information Scent not started.**
 
 ## Cycle 3 pre-production checks (2026-11-19) — result: PASS, order confirmed
 
@@ -53,7 +62,7 @@ None in progress. **Cycle 2 (improvement phase IB1–IB4) is complete and pushed
 
 ## Next authorised action
 
-**Wait for the owner.** The Cycle 3 pre-production checks are done; the next step is explicit owner approval to start Cycle 3 production (B6 first: register sources, then one entry at a time under D-131). No topic is to be researched or written before that approval. The records commit for these checks is local until the owner approves a push.
+**Wait for the owner's review of `information-foraging-theory`.** Next, only after approval: B6 topic 2, `information-scent`. The topic-1 commit is local until the owner approves a push.
 
 ## Open follow-ups
 

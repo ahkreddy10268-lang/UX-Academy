@@ -613,6 +613,9 @@ export default defineSources([
     topics: ["information foraging", "information scent", "navigation"],
     access: "paywalled",
     verification: "bibliographic",
+    lastVerifiedAt: "2026-11-19",
+    notes:
+      "Metadata checked against Crossref 2026-11-19. Neither the full text nor the abstract could be read (the publisher page rendered no abstract to automated reads and OpenAlex holds none), so entries that cite it attribute to it only that Pirolli and Card published a Psychological Review article of this title in 1999; the theory's concepts, equations and data are described from other sources, not from this paper.",
   },
   {
     id: "furnas-et-al-1987",
