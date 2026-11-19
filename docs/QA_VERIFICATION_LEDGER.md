@@ -244,3 +244,16 @@ Changes: `docs/CONTENT_MODEL.md`, `.claude/skills/ux-academy-workflow/SKILL.md`,
 | Content checklist | `grep` of the new section for the agreed elements (mandatory/conditional/optional, assessment coverage, traceability, outcomes, misconceptions, connections, case integrity, one review / one correction pass) | PASS — all present | Run | Textual check, not an editorial review |
 | Scope guard | `git diff --quiet` on BALANCED_DEVELOPMENT_PLAN.md, `content/`, `lib/`, `app/`, `components/` | PASS — untouched | Run | — |
 | Build, browser suites | — | INHERITED from `8d7fa9d` | Inherited | No file they depend on changed |
+
+### Cycle 3 pre-production checks (2026-11-19, HEAD `7019450`)
+
+Documentation records only (skill § 4: `docs/**` requires nothing). The checks below used scratch scripts outside the repository; nothing under `content/`, `lib/` or `verification.json` was written.
+
+| Check | Method | Result | Run / inherited | Limitations |
+|---|---|---|---|---|
+| Dependency ranking | D-129 formula (links + 2×relations + 3×prerequisite uses + 3×paths + 2×linking domains) computed from the loaded content for all 459 planned topics | B6 63, B8 28, B5 16; B4 58; `information-scent` rank 1, `navigation-patterns` rank 2 | Run | Approximation of the D-129 baseline method (it did not record its script); absolute values differ from the 2026-11-12 baseline (information-scent 25 → 35) because 14 entries were added |
+| Balance | Counts from the taxonomy and coverage report | Domains 3, max share 38.5 %, clusters C/A/E, empty domains 5 → 4, empty subcategories 39 → 35 | Run | Projections, not content |
+| Path and prerequisite gap for B4 | Loaded paths, entries' `prerequisites`, relations and links | No entry lists a B4 topic as prerequisite; no Cycle 3 topic depends on B4; Accessibility path 20 % unchanged | Run | — |
+| Duplication | Taxonomy aliases/coveredBy, relations, links and keyword search across the 102 published entries | Boundaries needed (see PROJECT_STATE); no thin or redundant topic found | Run | Keyword search, not a read of each entry |
+| Source existence and verification | Crossref DOI lookup with title/year comparison; HTTP GET for URLs; 56 candidates | 48 DOIs verified after correcting 8 wrong recalled DOIs; 7 URLs reachable; 1 book (no machine check) | Run | Existence and bibliographic match only; content of sources not read; full-text access not tested; candidates not registered |
+| Build, browser suites, `npm run check` | — | INHERITED from `7019450` / `8d7fa9d` | Inherited | No file they depend on changed |
