@@ -6,6 +6,7 @@
  */
 import { CltArchitecture, CltSplitAttention } from "./concepts/cognitive-load";
 import { DirectnessSpace } from "./concepts/direct-manipulation";
+import { DesignThinkingLenses } from "./concepts/design-thinking";
 import { DoubleDiamondProcess } from "./concepts/double-diamond";
 import { FittsAnatomy, FittsComparison } from "./concepts/fitts-law";
 import { GestaltAnnotated, GestaltSpacing } from "./concepts/gestalt-principles";
@@ -846,6 +847,28 @@ export const visualExplanations: VisualExplanation[] = [
     Component: GulfsOfAction,
   },
   {
+    id: "design-thinking.lenses",
+    language: "sheet",
+    slug: "design-thinking",
+    type: "conceptual",
+    method: "relationship",
+    level: 2,
+    title: "Desirability, feasibility, viability and the risk they leave out",
+    objective: "The three design-thinking lenses, each with its question, who answers it and what checking it involves, set beside usability, the product risk the lenses do not ask about.",
+    takeaway: "An idea has to be wanted, buildable and sustainable, each judged with its own evidence by the people who can answer it, and it still has to be usable, which none of the three lenses checks.",
+    summary: [
+      "Three questions, three kinds of evidence: IDEO judges ideas by what is desirable for people, feasible with technology and viable for the organisation, and weighs the three by its values.",
+      "1. Desirability: are we solving a problem that matters to people? Learned from people through research and testing; Cagan's closest counterpart is value risk, whether customers will buy it or users choose to use it. Check evidence of the problem and of people choosing the solution.",
+      "2. Feasibility: can we build it with today's technology and capabilities? Answered by the people who will build it; Cagan makes the lead engineer responsible. Check whether engineers can build what is needed with the time, skills and technology available.",
+      "3. Viability: can the solution succeed and endure within real-world constraints? Answered against the business; Cagan makes the product manager responsible. Check fit with the sales channel, partner contracts and legal compliance, the cost of acquiring customers, monetisation and the brand promise.",
+      "4. Usability, not a lens: can people figure out how to use it? Cagan's fourth risk, owned by the product designer; it needs task-based testing because none of the three lenses asks it.",
+      "The questions are IDEO's; the owners and the viability risks are Cagan's practitioner framework. Neither is a tested model.",
+    ],
+    verification: "content-checked",
+    sources: ["ideo-design-thinking-intro", "cagan-four-big-risks"],
+    Component: DesignThinkingLenses,
+  },
+  {
     id: "information-foraging-theory.decisions",
     language: "sheet",
     slug: "information-foraging-theory",
@@ -919,6 +942,7 @@ export const quickTakeaways: Record<string, string> = {
   "fitts-law": "Far, small targets take longer to hit than near, large ones: what matters is the ratio of distance to width.",
   "double-diamond": "Open up, then narrow down, twice: first to choose the right problem, then to find a solution that works.",
   "cognitive-load-theory": "Working memory is small: remove the effort your design adds so it can go to the material itself.",
+  "design-thinking": "Learn from people, go wide, then narrow, make it rough and test it, and judge every idea on whether people want it, whether it can be built and whether the organisation can sustain it.",
   usefulness: "A product is useful only when it offers the functions people need and they can use them well: utility and usability, judged for particular people and tasks.",
   desirability: "Whether people want a product is a separate question from whether it works: study it with reaction methods, and never mistake appeal for usefulness.",
   "information-foraging-theory": "People weigh the gain they expect from a source against the cost of reaching it, judged from the cues in front of them: that estimate decides which link they follow, what they consume and when they leave.",

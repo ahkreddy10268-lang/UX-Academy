@@ -333,6 +333,11 @@
     "registeredContainer": "Lecture Notes in Computer Science",
     "similarity": 1
   },
+  "cagan-four-big-risks": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-19",
+    "httpStatus": 200
+  },
   "carbon-2x-grid": {
     "status": "url-reachable",
     "checkedAt": "2026-11-11",
@@ -592,6 +597,11 @@
   "doherty-thadani-1982": {
     "status": "url-reachable",
     "checkedAt": "2026-11-17",
+    "httpStatus": 200
+  },
+  "dschool-bootleg": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-19",
     "httpStatus": 200
   },
   "dtcg-2026-thank-you-jina": {
@@ -1209,6 +1219,16 @@
     "checkedAt": "2026-11-03",
     "httpStatus": 200
   },
+  "ideo-design-thinking-intro": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-19",
+    "httpStatus": 200
+  },
+  "ideo-design-thinking-process": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-19",
+    "httpStatus": 200
+  },
   "inclusion-europe-information-for-all": {
     "status": "url-reachable",
     "checkedAt": "2026-11-17",
@@ -1344,6 +1364,14 @@
     "registeredContainer": "Cognitive Science",
     "similarity": 1
   },
+  "kimbell-2011": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-19",
+    "registeredTitle": "Rethinking Design Thinking: Part I",
+    "registeredYear": 2011,
+    "registeredContainer": "Design and Culture",
+    "similarity": 1
+  },
   "kohavi-et-al-2009": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",
@@ -1466,6 +1494,14 @@
     "registeredTitle": "Man-Computer Symbiosis",
     "registeredYear": 1960,
     "registeredContainer": "IRE Transactions on Human Factors in Electronics",
+    "similarity": 1
+  },
+  "liedtka-2015": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-19",
+    "registeredTitle": "Perspective: Linking Design Thinking with Innovation Outcomes through Cognitive Bias Reduction",
+    "registeredYear": 2014,
+    "registeredContainer": "Journal of Product Innovation Management",
     "similarity": 1
   },
   "loewenstein-prelec-1993": {

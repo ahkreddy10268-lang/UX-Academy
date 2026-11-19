@@ -158,5 +158,82 @@ export const desirabilityPlate: IllustrationEntry = {
   ),
 };
 
+
+/* ------------------------------------------------------------------ */
+/* Design thinking: seven phases, three lenses                          */
+/* ------------------------------------------------------------------ */
+const PHASES = ["Frame", "Gather", "Synthesise", "Generate", "Make", "Test", "Share"];
+/** Phase index → x along the phase line (32 … 368). */
+const px = (i: number) => 32 + i * 56;
+/** Alternating heights: widening phases sit high, narrowing phases low. */
+const py = (i: number) => (i % 2 === 0 ? 92 : 112);
+
+export const designThinkingPlate: IllustrationEntry = {
+  slug: "design-thinking",
+  title: "Design thinking plate",
+  canvas: "sheet",
+  description:
+    "Top, 'Seven phases, not a straight line': seven numbered points joined by a zigzag line — Frame, Gather, Synthesise, Generate, Make, Test, Share — with labels alternately above and below, and a dashed arrow from below Test curving back to below Generate, marked 'learn and loop'. Bottom, 'Three lenses': three overlapping circles labelled Desirable, Feasible and Viable, with the overlap marked as the target, and beside them the three questions: matters to people? can we build it? can it succeed and last? A note in the key says usability is a separate question the lenses leave out.",
+  key: [
+    { n: "1", label: "Create, then make choices", detail: "the line rises and falls: going wide for ideas and insight, then narrowing to decide (IDEO's description)" },
+    { n: "2", label: "Phases are for teaching", detail: "IDEO's seven phases, or the d.school's five modes, are a structure for learning; in practice teams loop back when testing teaches them something" },
+    { n: "3", label: "Three lenses", detail: "desirable for people, feasible with technology and capabilities, viable within the organisation's constraints; ideas are weighed on all three" },
+    { n: "4", label: "Not a lens: usability", detail: "whether people can use the solution is a separate risk, so usability testing is still needed" },
+  ],
+  Art: ({ detail }) => (
+    <g>
+      <Card x={8} y={8} w={384} h={164} title="Seven phases, not a straight line">
+        <path d={PHASES.map((_, i) => `${i ? "L" : "M"}${px(i)} ${py(i)}`).join(" ")} fill="none" stroke={S.ink2} strokeWidth="1.3" {...hair} />
+        <path d={`M${px(5)} 142 C ${px(5)} 158, ${px(3)} 158, ${px(3)} 142`} fill="none" stroke={S.accent} strokeWidth="1.4" strokeDasharray="4 3" {...hair} />
+        <path d={`M${px(3) - 4} 147 l4 -6 l4 6`} fill="none" stroke={S.accent} strokeWidth="1.4" {...hair} />
+        <UiText x={px(4)} y={167} anchor="middle" tone="accent">
+          learn and loop
+        </UiText>
+        {PHASES.map((p, i) => (
+          <g key={p}>
+            <circle cx={px(i)} cy={py(i)} r={7} fill={S.surface} stroke={S.ink} strokeWidth="1.3" {...hair} />
+            <UiText x={px(i)} y={i % 2 === 0 ? py(i) - 14 : py(i) + 24} anchor="middle" weight={600}>
+              {p}
+            </UiText>
+          </g>
+        ))}
+      </Card>
+      <Card x={8} y={180} w={384} h={112} title="Three lenses">
+        <circle cx={66} cy={236} r={26} fill={S.soft} stroke={S.ink2} strokeWidth="1" opacity={0.9} {...hair} />
+        <circle cx={100} cy={236} r={26} fill={S.soft} stroke={S.ink2} strokeWidth="1" opacity={0.9} {...hair} />
+        <circle cx={83} cy={262} r={26} fill={S.soft} stroke={S.ink2} strokeWidth="1" opacity={0.9} {...hair} />
+        <circle cx={83} cy={245} r={6} fill={S.accent} />
+        <UiText x={150} y={226} weight={700}>
+          Desirable
+        </UiText>
+        <UiText x={234} y={226} tone="ink2">
+          matters to people?
+        </UiText>
+        <UiText x={150} y={252} weight={700}>
+          Feasible
+        </UiText>
+        <UiText x={234} y={252} tone="ink2">
+          can we build it?
+        </UiText>
+        <UiText x={150} y={278} weight={700}>
+          Viable
+        </UiText>
+        <UiText x={234} y={278} tone="ink2">
+          can it last?
+        </UiText>
+      </Card>
+      {detail && (
+        <>
+          <Marker x={380} y={20} n={1} />
+          <Marker x={380} y={150} n={2} />
+          <Marker x={380} y={192} n={3} />
+          <Marker x={380} y={280} n={4} />
+        </>
+      )}
+    </g>
+  ),
+};
+
+/** designThinkingPlate is registered through core-plates.tsx, where the earlier planned-topic plate was. */
 const plates: IllustrationEntry[] = [usefulnessPlate, desirabilityPlate];
 export default plates;

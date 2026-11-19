@@ -36,9 +36,9 @@ Cycle 3 paused after B6 topic 1. Plan: 11 entries + 4 topics addressed within a 
 
 | Batch | Topics | Status |
 |---|---|---|
-| 1 | `usefulness` (published), `utility` (addressed within `usefulness`), `desirability` (published) | Done — commit recorded in the QA ledger |
-| 2 | `design-thinking`; `feasibility`, `viability` (planned: within `design-thinking`); `human-centred-design` (planned: within `user-centred-design`) | Next |
-| 3 | `design-processes`, `ux-lifecycle`, `ux-maturity` | Pending |
+| 1 | `usefulness` (published), `utility` (addressed within `usefulness`), `desirability` (published) | Done — `aa1311c` |
+| 2 | `design-thinking` (published); `feasibility`, `viability` (addressed within `design-thinking`); `human-centred-design` (addressed within `user-centred-design`) | Done — commit recorded in the QA ledger |
+| 3 | `design-processes`, `ux-lifecycle`, `ux-maturity` | Next |
 | 4 | `product-design`, `experience-design` | Pending |
 | 5 | `history-of-hci`, `history-of-interface-design`, `evolution-of-digital-experiences` | Pending |
 

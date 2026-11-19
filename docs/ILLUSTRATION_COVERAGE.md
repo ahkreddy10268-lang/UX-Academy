@@ -6,11 +6,11 @@
 | Measure | Count |
 |---|---|
 | Registered Level-1 plates | 127 |
-| Published entries with a plate | 105 / 105 |
+| Published entries with a plate | 106 / 106 |
 | Subject plates | 20 / 20 |
 | Plates in the current system (dark technical or instructional sheet) | 125 |
 | Plates still in the earlier pastel style | 2 |
-| Level-2 figures | 40 |
+| Level-2 figures | 41 |
 | Level-3 explorers (on plates) | 9 |
 | Labs linked from entries | 23 |
 | Animated plates | 12 |
@@ -23,7 +23,7 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 |---|---|---:|---:|---:|---:|---|---|---|
 | 1 | UX Concept Illustrations | 28 | 27 | 11 | 13 | 28 / 0 / 0 | developing | `fitts-law`, `hick-hyman-law`, `cognitive-load-theory`, `millers-law`, `jakobs-law`, `mental-models`, `affordances`, `peak-end-rule`, `steering-law`, `teslers-law`, `serial-position-effect`, `von-restorff-effect`, `aesthetic-usability-effect`, `choice-overload`, `working-memory-model`, `recognition-over-recall`, `user-experience`, `human-computer-interaction`, `consistency-principle`, `help-and-documentation`, `ux-writing`, `plain-language`, `usefulness`, `desirability` |
 | 2 | UI Anatomy Illustrations | 3 | 3 | 1 | 0 | 3 / 0 / 0 | developing | `ui-design`, `microcopy` |
-| 3 | UX Process Illustrations | 8 | 8 | 2 | 0 | 8 / 0 / 0 | developing | `double-diamond`, `user-centred-design`, `content-design` |
+| 3 | UX Process Illustrations | 8 | 8 | 3 | 0 | 8 / 0 / 0 | developing | `double-diamond`, `design-thinking`, `user-centred-design`, `content-design` |
 | 4 | User Research Illustrations | 6 | 6 | 5 | 0 | 6 / 0 / 0 | mature | `card-sorting`, `jobs-to-be-done`, `think-aloud-protocol`, `contextual-inquiry`, `in-depth-interviews` |
 | 5 | Information Architecture Illustrations | 4 | 4 | 4 | 0 | 4 / 0 / 0 | mature | `information-architecture`, `tree-testing`, `information-foraging-theory` |
 | 6 | Interaction Design Illustrations | 19 | 19 | 4 | 5 | 19 / 0 / 0 | developing | `signifiers`, `doherty-threshold`, `gulfs-of-execution-and-evaluation`, `interaction-design-discipline`, `progressive-disclosure`, `visibility-of-system-status`, `user-control-and-freedom`, `error-prevention`, `mapping`, `flexibility-and-efficiency-of-use`, `error-recovery`, `feedback-principle`, `constraints`, `direct-manipulation`, `interaction-states`, `discoverability`, `error-messages` |
@@ -40,7 +40,7 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 |---|---:|---:|
 | Conceptual & Metaphorical | 20 | 8 |
 | Process & Sequential | 30 | 13 |
-| Relationship & Systems | 19 | 9 |
+| Relationship & Systems | 19 | 10 |
 | Comparison & Contrast | 39 | 8 |
 | Hierarchy & Classification | 19 | 2 |
 
@@ -59,7 +59,7 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 | `signifiers` | entry | interaction-design | comparison | current · instructional sheet | retain | Replaced (D-093): the same export control with the same hit area, without cues and with four numbered redundant signifiers. | 0 | signifiers |
 | `peak-end-rule` | entry | ux-concept | conceptual | current · instructional sheet | retain | Sheet (S25): two experiences, peak and end circled, remembered values from lib/formulas peakEnd; duration neglect. | 0 | peak-end |
 | `double-diamond` | entry | ux-process | process | current · instructional sheet | retain | Pilot: two diamonds with divergence/convergence, four phases, outputs at each boundary and an iteration return. | 1 | — |
-| `design-thinking` | planned topic | ux-process | process | current · instructional sheet | retain | Sheet (S25, planned topic, labelled): five stages with artefacts and iteration returns. | 0 | — |
+| `design-thinking` | entry | ux-process | process | current · instructional sheet | retain | Sheet (D-132): seven phases joined by a rising-and-falling line with a learn-and-loop arrow from Test back to Generate, and three overlapping lenses — desirable, feasible, viable — with their questions. | 1 | — |
 | `nielsen-usability-heuristics` | entry | evaluation-optimization | hierarchy | current · instructional sheet | retain | Sheet (S25): ten numbered tabs beside a screen where five heuristics are visible; the key lists all ten. | 0 | feedback-lab |
 | `ia` | subject | information-architecture | hierarchy | current · instructional sheet | retain | Sheet (S25): an indented site structure, the navigation bar and breadcrumb, and search reaching the same page. | 0 | — |
 | `atomic-design` | entry | design-systems | hierarchy | current · instructional sheet | retain | Sheet (S25; entry plate since S33, planned label removed): atoms → molecule → organism → template → page, each built from the last. | 1 | — |
@@ -178,7 +178,7 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 
 ## Level 2 figures
 
-40 of 40 Level-2 figures are drawn in a current language (sheet or viz).
+41 of 41 Level-2 figures are drawn in a current language (sheet or viz).
 
 | Figure | Type | Method | Language | Verification |
 |---|---|---|---|---|
@@ -219,6 +219,7 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 | `atomic-design.levels` | hierarchy | hierarchy | sheet | content-checked |
 | `jobs-to-be-done.flow` | process | process | viz | content-checked |
 | `gulfs-of-execution-and-evaluation.stages` | process | process | viz | content-checked |
+| `design-thinking.lenses` | conceptual | relationship | sheet | content-checked |
 | `information-foraging-theory.decisions` | conceptual | relationship | sheet | content-checked |
 | `working-memory-model.parts` | conceptual | relationship | sheet | content-checked |
 | `heart-framework.categories` | conceptual | relationship | sheet | content-checked |
@@ -238,7 +239,7 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 | `signifiers` | Two copies of the same reports screen. In both, the same area beside the March report can be clicked to export it, outlined with a faint dashed hit area: the affordance is identical. On the left, the control is the word Export in the same plain grey style as the body text, so nothing says it can be clicked; it is marked with a cross. On the right, it carries four redundant signifiers, numbered: 1, shape, a filled rounded button with a border; 2, a download icon, a learned convention; 3, a label naming the result, Export CSV; 4, a pointer cursor and hover colour as the pointer approaches. It is marked with a tick. Only the signifiers differ. |
 | `peak-end-rule` | Two illustrative experiences rated moment by moment on a 0 to 10 scale, drawn as lines over time. Experience A is short: it rises to a peak of 8 and ends low at 3. Experience B is identical at first but continues with two better moments and ends at 7. The remembered evaluation is approximated by the average of the peak and the end: 5.5 for A and 7.5 for B, so B is remembered more favourably even though it lasted longer. Duration has little independent influence (duration neglect). The rule describes remembered experience, which can differ from experience moment by moment. |
 | `double-diamond` | Two diamonds side by side, labelled Discover, Define, Develop and Deliver. In the first, the Discover half fans out from the challenge into many scattered research notes, and the Define half draws them together into a few clusters and a single problem definition at the middle point. In the second, the Develop half fans out into several alternative prototype sketches, and the Deliver half narrows them to one tested solution at the right point. Each diamond widens (divergent thinking) and then narrows (convergent thinking). Dashed arrows beneath return from Deliver to Develop and from the second diamond back to the first, because teams loop back when evidence changes the problem; the model is a framing, not a fixed sequence. |
-| `design-thinking` | A planned topic. Five stages of a commonly taught design-thinking model as cards along a curve: empathise, define, ideate, prototype and test. Forward arrows join them in order, and dashed arrows return from test to earlier stages, because the model is used iteratively rather than as a one-way sequence. Each card carries a small artefact: notes, a problem statement, many sketches, a paper prototype, and a test with a person's result. |
+| `design-thinking` | Top, 'Seven phases, not a straight line': seven numbered points joined by a zigzag line — Frame, Gather, Synthesise, Generate, Make, Test, Share — with labels alternately above and below, and a dashed arrow from below Test curving back to below Generate, marked 'learn and loop'. Bottom, 'Three lenses': three overlapping circles labelled Desirable, Feasible and Viable, with the overlap marked as the target, and beside them the three questions: matters to people? can we build it? can it succeed and last? A note in the key says usability is a separate question the lenses leave out. |
 | `nielsen-usability-heuristics` | A column of ten numbered tabs, one for each of Nielsen's usability heuristics, beside an event-editing screen on which five of them can be seen at work. Tabs 1, 3, 5, 9 and 10 are highlighted. On the screen: a status line 'Saved · 10:42' (1, visibility of system status); an Undo button (3, user control and freedom); a row of dates in which the past date is struck through and cannot be chosen (5, error prevention); an end-time field in an error state with a message saying what to fix (9, help users recover from errors); and a help icon beside that field (10, help and documentation). The heuristics are broad rules of thumb for inspection, not a validated checklist. |
 | `ia` | Three views of the same website's structure. On the left, a site map: a home page branching into three sections, one of which branches again. At the top right, the navigation people see: a menu bar with the same three section names and a breadcrumb trail showing the path to the current page. Below it, a search box with a query and two results drawn from the same structure. The structure, its labels, the navigation and search are four views of one design. |
 | `atomic-design` | Brad Frost's five stages of atomic design built up from left to right. Atoms: a label, an input and a button on their own. A molecule: the three combined into a search form. An organism: a site header that contains the search form beside a logo and navigation. A template: a page wireframe that places the header above grey content areas. A page: the same template with real content in it. Each stage is assembled from the one before, and the page stage tests the parts with real content. |

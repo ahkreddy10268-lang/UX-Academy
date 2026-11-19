@@ -74,7 +74,7 @@ export default defineEntry({
       explanation: [
         "Desirability sits within the broader shift that Hassenzahl and Tractinsky describe: from a narrow view of products as tools to a view of user experience that includes what makes technology desirable {{src:hassenzahl-tractinsky-2006}}. Their paper is explicitly a research agenda and a proposal, not a finding.",
         "Research and practice measure different things. Hassenzahl's studies measured beauty, goodness, perceived usability and hedonic attributes with questionnaire scales {{src:hassenzahl-2004}}. Product reaction words are a practitioner method for eliciting and comparing reactions, not a validated scale {{src:moran-2016-desirability-toolkit}}. Neither measures whether people will buy or keep using a product.",
-        "In design thinking, desirability is also used as one of three lenses, alongside feasibility and viability, for judging ideas: see [[design-thinking]]. That use is broader: it asks whether people would want a proposed solution at all, before anything is designed in detail.",
+        "In design thinking, desirability is also used as one of three lenses, alongside feasibility and viability, for judging ideas {{src:ideo-design-thinking-intro}}: see [[design-thinking]]. That use is broader: it asks whether people would want a proposed solution at all, before anything is designed in detail.",
       ],
       evidence: [
         "In two studies of four MP3-player skins, goodness depended on perceived usability and hedonic attributes, while beauty depended largely on identification {{src:hassenzahl-2004}}. Abstract only.",
@@ -276,6 +276,7 @@ export default defineEntry({
     { source: "hassenzahl-2004", role: "primary", note: "Beauty, goodness, pragmatic and hedonic attributes; abstract read." },
     { source: "hassenzahl-tractinsky-2006", role: "primary", note: "User experience research agenda; abstract read." },
     { source: "moran-2016-desirability-toolkit", role: "explanatory", note: "Product reaction cards: method and analysis; read in full." },
+    { source: "ideo-design-thinking-intro", role: "further", note: "Desirability as one of the three design-thinking lenses; read in full." },
   ],
   evidence: "peer-reviewed",
   evidenceNote:

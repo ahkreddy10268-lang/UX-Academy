@@ -29,7 +29,7 @@ What user experience is, how it differs from interface design, and the vocabular
 
 - ✅ User-Centred Design — *Framework* · `user-centred-design`
 - ◻️ Human-Centred Design — *Framework* · `human-centred-design`
-- ◻️ Design Thinking — *Framework* · `design-thinking`
+- ✅ Design Thinking — *Framework* · `design-thinking`
 - ◻️ UX Lifecycle — *Concept* · `ux-lifecycle`
 - ◻️ Design Process — *Concept* · `design-processes`
 

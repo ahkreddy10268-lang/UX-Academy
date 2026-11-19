@@ -63,8 +63,8 @@ export default defineSources([
     topics: ["design thinking", "innovation"],
     access: "paywalled",
     verification: "url-checked",
-    lastVerifiedAt: "2026-11-03",
-    notes: "Influential popularisation of design thinking by IDEO's CEO. No DOI registered with Crossref.",
+    lastVerifiedAt: "2026-11-19",
+    notes: "Influential popularisation of design thinking by IDEO's CEO. No DOI registered with Crossref. Checked 2026-11-19: only the page summary and opening paragraph are open (paywalled), so no claim beyond its existence and topic is taken from it; Brown's definition is quoted from IDEO's own site.",
   },
   {
     id: "gothelf-seiden-2013",

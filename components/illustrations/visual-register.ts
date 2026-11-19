@@ -125,6 +125,7 @@ export const visualRegister: Record<string, VisualRecord> = {
   /* ---- UX & UI Fundamentals domain completion (D-132) ---- */
   usefulness: r("ux-concept", "comparison", "retain", "Sheet (D-132): a utility-by-usability grid — right or wrong functions against hard or easy to use — with only the right-and-easy cell ticked as useful.", { techniques: ["good-bad", "numbered-annotation"] }),
   desirability: r("ux-concept", "process", "retain", "Sheet (D-132): an illustrative product-reaction-word study — a balanced word list with one participant's five picks, and the share of 20 people choosing each top word, including an unwanted one.", { secondary: ["user-research"], secondaryMethods: ["comparison"], techniques: ["interface-anatomy", "chart", "numbered-annotation"] }),
+  "design-thinking": r("ux-process", "process", "retain", "Sheet (D-132): seven phases joined by a rising-and-falling line with a learn-and-loop arrow from Test back to Generate, and three overlapping lenses — desirable, feasible, viable — with their questions.", { secondaryMethods: ["relationship"], techniques: ["timeline", "numbered-annotation"] }),
   /* ---- Cycle 3, Batch B6 (D-129, D-131): findability ---- */
   "information-foraging-theory": r("information-architecture", "conceptual", "retain", "Sheet (Cycle 3 B6): the theory's three decisions for one illustrative need — three links with scent estimates, a good/thin by low/high-effort grid for what to consume, and a schematic gain curve with an earlier and a later point to leave a site.", { secondaryMethods: ["comparison"], techniques: ["interface-anatomy", "chart", "good-bad", "numbered-annotation"] }),
   "visibility-of-system-status": r("interaction-design", "process", "retain", "Sheet (S29): feedback matched to duration on a 0.1 / 1 / 10 s timeline, from pressed state to determinate progress with Cancel, and an announced status message.", { techniques: ["timeline", "interface-anatomy", "numbered-annotation"] }),
@@ -138,7 +139,6 @@ export const visualRegister: Record<string, VisualRecord> = {
   "help-and-documentation": r("ux-concept", "hierarchy", "retain", "Sheet (S31): help at four depths on one screen — inline hint, toggletip, non-modal panel, full article — each linking to the next.", { secondary: ["interaction-design"], techniques: ["interface-anatomy", "numbered-annotation"] }),
 
   /* ---- planned-topic plates ---- */
-  "design-thinking": r("ux-process", "process", "retain", "Sheet (S25, planned topic, labelled): five stages with artefacts and iteration returns.", { techniques: ["timeline", "numbered-annotation"] }),
   "atomic-design": r("design-systems", "hierarchy", "retain", "Sheet (S25; entry plate since S33, planned label removed): atoms → molecule → organism → template → page, each built from the last.", { techniques: ["interface-anatomy", "numbered-annotation"] }),
   "human-centred-design": r("ux-process", "process", "retain", "Sheet (S25, planned topic, labelled): users, people affected and context as rings with an iterating path.", { techniques: ["numbered-annotation"] }),
 

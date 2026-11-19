@@ -1297,64 +1297,6 @@ export const iaSubject: IllustrationEntry = {
 /* ---------------------------------------------------------------- */
 /* Planned topics (no published entry yet; the plate shows the idea)  */
 /* ---------------------------------------------------------------- */
-export const designThinkingPlanned: IllustrationEntry = {
-  slug: "design-thinking",
-  title: "Design thinking plate",
-  canvas: "sheet",
-  description:
-    "A planned topic. Five stages of a commonly taught design-thinking model as cards along a curve: empathise, define, ideate, prototype and test. Forward arrows join them in order, and dashed arrows return from test to earlier stages, because the model is used iteratively rather than as a one-way sequence. Each card carries a small artefact: notes, a problem statement, many sketches, a paper prototype, and a test with a person's result.",
-  key: [
-    { n: "1", label: "Empathise and define", detail: "understand people, then frame the problem" },
-    { n: "2", label: "Ideate", detail: "many ideas before choosing" },
-    { n: "3", label: "Prototype and test", detail: "make ideas tangible and try them" },
-    { n: "4", label: "Iterate", detail: "test results send the team back to earlier stages" },
-  ],
-  Art: ({ detail }) => {
-    const st = ["Empathise", "Define", "Ideate", "Prototype", "Test"];
-    const pos: [number, number][] = [
-      [4, 150],
-      [84, 92],
-      [162, 60],
-      [240, 92],
-      [320, 150],
-    ];
-    return (
-      <g>
-        {st.map((t, i) => {
-          const [x, y] = pos[i];
-          return (
-            <g key={t}>
-              <rect x={x} y={y} width={76} height={84} rx={8} fill={i === 2 ? S.accentWash : S.surface} stroke={i === 2 ? S.accent : S.ink2} strokeWidth="1" {...hair} />
-              <UiText x={x + 38} y={y + 22} weight={600} anchor="middle">
-                {t}
-              </UiText>
-              {i === 0 && [0, 1].map((k) => <TextBar key={k} x={x + 10} y={y + 40 + k * 12} w={46} />)}
-              {i === 1 && <rect x={x + 10} y={y + 38} width={52} height={26} rx={3} fill={S.ink} />}
-              {i === 2 && [0, 1, 2, 3, 4, 5].map((k) => <rect key={k} x={x + 10 + (k % 3) * 18} y={y + 36 + Math.floor(k / 3) * 20} width={14} height={14} rx={2} fill={S.surface} stroke={S.accent} strokeWidth="0.8" {...hair} />)}
-              {i === 3 && <rect x={x + 18} y={y + 34} width={36} height={40} rx={4} fill="none" stroke={S.ink2} strokeWidth="1" strokeDasharray="3 2" {...hair} />}
-              {i === 4 && <Verdict x={x + 36} y={y + 56} ok r={10} />}
-              {i < 4 && <Link from={[x + 72, y + (i < 2 ? 30 : 50)]} to={[pos[i + 1][0] - 2, pos[i + 1][1] + (i < 2 ? 50 : 30)]} />}
-            </g>
-          );
-        })}
-        <Link from={[340, 236]} via={[200, 300]} to={[60, 236]} tone="accent" dashed />
-        <Link from={[330, 236]} via={[220, 262]} to={[200, 146]} tone="accent" dashed />
-        <rect x={150} y={6} width={100} height={22} rx={11} fill="none" stroke={S.ink3} strokeWidth="0.9" strokeDasharray="3 2.4" {...hair} />
-        <UiText x={200} y={22} mono tone="ink3" anchor="middle">
-          planned
-        </UiText>
-        {detail && (
-          <>
-            <Marker x={80} y={150} n={1} />
-            <Marker x={236} y={60} n={2} />
-            <Marker x={392} y={150} n={3} />
-            <Marker x={200} y={284} n={4} />
-          </>
-        )}
-      </g>
-    );
-  },
-};
 
 export const atomicDesignPlate: IllustrationEntry = {
   slug: "atomic-design",
