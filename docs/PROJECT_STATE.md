@@ -2,7 +2,7 @@
 
 The current state in one page. Read it first every session, then verify it against `git` (the repo wins; record any discrepancy here). Update it at the end of every meaningful task. History lives in `docs/PROGRESS.md`; decisions in `docs/DECISION_LOG.md`; open items in `docs/OPEN_ISSUES.md`; test results in `docs/QA_VERIFICATION_LEDGER.md`.
 
-Last updated: **2026-11-17**.
+Last updated: **2026-11-19**.
 
 ## Repository
 
@@ -22,7 +22,15 @@ Last updated: **2026-11-17**.
 - **Owner decisions 2026-11-17:** (1) Cycle 2 begins with an improvement-only batch under the § 9.3 stop rule; no Cycle 2 topics selected; (2) I1 coveredBy checks authorised and done; (3) push of the three commits approved and done.
 - **I1 result:** 13 candidates verified; 8 now `coveredBy`, 5 deferred and left planned (addressed within 10 → 18; published still 102). Details in `docs/CONTENT_AUDIT.md` session 51.
 
-## Latest task (2026-11-18)
+## Latest task (2026-11-19)
+
+**D-131 Excellence standard recorded** (owner approval 2026-11-19; proposed as "D-130", renumbered because D-130 was already taken). Rule: `docs/CONTENT_MODEL.md` § Excellence standard; checklists: workflow skill § 2a. Subordinate to D-129, which is unchanged. Documentation only.
+
+**Cycle terminology (owner decision 2026-11-19):** **Cycle 2** = the completed improvement phase IB1–IB4. **Cycle 3** = the next new-topic production cycle. Earlier records that say "Cycle 2 new-topic planning" (the IB plan and report) mean Cycle 3; they are historical and left as written.
+
+**Cycle 3, provisional:** H = B6 Findability, R = B5 Decision biases, G = B8 Service design foundations (order H → R → G). Confirmed only after the pre-cycle checks: formal dependency re-run (including that delaying B4 Accessibility in code leaves no critical path or prerequisite gap) and `sources:verify` for all three batches. If Service Design sources fail, replace B8 with another justified cluster E batch, not B4. Open: C3-1, C3-2.
+
+## Earlier task (2026-11-18)
 
 **Explorer labels (TD-5) fixed and Claude Design brief added** (`docs/UX_ACADEMY_FOR_CLAUDE_DESIGN.md`), after the error-fix pass below.
 
@@ -30,11 +38,11 @@ Last updated: **2026-11-17**.
 
 ## Current approved task
 
-None in progress. **The Cycle 2 improvement phase (IB2, IB3, IB4) is complete and pushed**, accepted with documented limitations. Consolidated report: `docs/CYCLE_2_IMPROVEMENT_REPORT.md`; per-batch reviews `docs/CYCLE_2_IB2_REVIEW.md`, `…IB3_REVIEW.md`, `…IB4_REVIEW.md`. Coverage: visual target 102/102, Practice 102/102, evidence target 101/102, Editorial 101/102; published 102.
+None in progress. **Cycle 2 (improvement phase IB1–IB4) is complete and pushed**, accepted with documented limitations. Consolidated report: `docs/CYCLE_2_IMPROVEMENT_REPORT.md`; per-batch reviews `docs/CYCLE_2_IB2_REVIEW.md`, `…IB3_REVIEW.md`, `…IB4_REVIEW.md`. Coverage: visual target 102/102, Practice 102/102, evidence target 101/102, Editorial 101/102; published 102.
 
 ## Next authorised action
 
-**Wait for the owner.** The plan authorised implementing and pushing IB2–IB4 to `claude/batch1-constraints` only (no merge, no production) and stopping before selecting new topics or starting another cycle. Cycle 2 new-topic planning is a separate request: it must touch clusters A and E, re-run the dependency analysis and keep the domain caps (`docs/BALANCED_DEVELOPMENT_PLAN.md` § 2).
+**Wait for the owner.** Next step, not yet authorised: the Cycle 3 pre-cycle checks (dependency re-run with the B4 gap check, and source verification for B6, B5, B8), then confirmation of the order. No topic research or writing until the owner authorises Cycle 3 production. The D-131 commit is local; push only on explicit approval.
 
 ## Open follow-ups
 

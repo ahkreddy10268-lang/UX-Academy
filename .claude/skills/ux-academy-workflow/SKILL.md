@@ -52,6 +52,33 @@ Flag every discrepancy in the handoff. Never invent work, approvals, test result
 
 Integrity per batch: `npx tsx scripts/entry-integrity.ts <slug…>` (citations vs references, taxonomy, relations in/out, quiz, figure sources, register, verification status). Exit 0 = clean.
 
+## 2a. Excellence standard checklists (D-131, subordinate to D-129)
+
+The rule is `docs/CONTENT_MODEL.md` § Excellence standard; these are the working lists. They add no gate: tests and D-129 targets stay the authority for layers 1–2. Use them while writing each entry and once in the batch review (layer 3).
+
+**Before the batch:** sources for every topic pass `sources:verify` before the first draft. A foundational topic without verifiable sources → replace it under D-129 § 9.3 and record why; do not re-research in loops.
+
+**Per entry (writing):**
+- [ ] Mandatory sections for every type, plus the family's mandatory row (CONTENT_MODEL table).
+- [ ] Each conditional section present **only if** its trigger is true: misconceptions · conceptual distinction · original vs popular reading · replication status · ethics · accessibility · the family's own conditionals.
+- [ ] Optional sections only where they teach. Nothing padded.
+- [ ] 2–4 `learningObjectives` with observable verbs; each mapped to a practice item, comparison or path checkpoint.
+- [ ] Every substantive factual, empirical, statistical or theoretical claim has `{{src:id}}`, and the id is in `references`.
+- [ ] Wording separates research finding · professional guidance · academy interpretation · illustrative example.
+- [ ] Any case or scenario labelled: documented fact · reported outcome (attributed) · independent evaluation · academy interpretation · "Illustrative scenario" (no real organisation, no invented outcomes).
+- [ ] Practice covers recall and understanding in the entry; application in the entry for applied types; judgement in the entry or a named comparison, related entry or path checkpoint. Wrong options are real misconceptions, each explained specifically.
+- [ ] Connections: real `prerequisites` where they exist; ≥ 1 typed relation to a published entry; a cross-domain relation where a meaningful one exists; back-links from existing entries (D-129 § 7.4).
+- [ ] Any figure or tool beyond the plate states what prose cannot show (`objective`, `takeaway`); demonstrations are labelled as such.
+
+**Batch review protocol:**
+1. **One targeted review** of the batch's entries against gates, D-129 targets and the checklist above; QA by change impact (§ 4), reusing ledger results where allowed. Record where each cognitive level is covered.
+2. **One correction pass** for critical, major and moderate findings (§ 5 scale).
+3. Minor findings → `docs/OPEN_ISSUES.md` for the next improvement pass; not fixed in the batch.
+4. Do not reopen a completed topic for cosmetic preference — only for a factual or source error, a broken gate, an accessibility defect or new verified evidence.
+5. A second correction pass needed = D-129 § 9.3 rework signal; report it.
+
+**Not part of D-131 (separate owner approval each):** new tests, revision-system integration, learning-path programme fields.
+
 ## 3. Development workflow
 
 1. **Inspect state first** (§ 0). Preserve uncommitted work — never reset, checkout over, or delete files you did not create without asking.

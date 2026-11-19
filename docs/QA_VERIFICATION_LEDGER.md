@@ -233,3 +233,14 @@ Changes: `.claude/skills/ux-academy-workflow/SKILL.md`, `CLAUDE.md`, `docs/PROJE
 | Check | `npm run check` | PASS — 22 files, 586 tests | Run | — |
 | Integrity script | `npx tsx scripts/entry-integrity.ts ux-writing content-design plain-language microcopy error-messages` | PASS — no problems, exit 0 | Run | — |
 | Build, browser suites, entry review | — | INHERITED from `8c7408e` | Inherited | No file they depend on changed |
+
+### D-131 Excellence standard — documentation commit (2026-11-19, parent `8d7fa9d`)
+
+Changes: `docs/CONTENT_MODEL.md`, `.claude/skills/ux-academy-workflow/SKILL.md`, `docs/DECISION_LOG.md`, `docs/PROJECT_STATE.md`, `docs/OPEN_ISSUES.md`, this ledger. Documentation only (skill § 4: `docs/**` requires nothing).
+
+| Check | Command | Result | Run / inherited | Limitations |
+|---|---|---|---|---|
+| Check | `npm run check` | PASS — 23 files, 588 tests; typecheck and lint clean | Run (working tree before commit) | — |
+| Content checklist | `grep` of the new section for the agreed elements (mandatory/conditional/optional, assessment coverage, traceability, outcomes, misconceptions, connections, case integrity, one review / one correction pass) | PASS — all present | Run | Textual check, not an editorial review |
+| Scope guard | `git diff --quiet` on BALANCED_DEVELOPMENT_PLAN.md, `content/`, `lib/`, `app/`, `components/` | PASS — untouched | Run | — |
+| Build, browser suites | — | INHERITED from `8d7fa9d` | Inherited | No file they depend on changed |
