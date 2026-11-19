@@ -438,6 +438,141 @@ export const uxMaturityPlate: IllustrationEntry = {
   ),
 };
 
+
+/* ------------------------------------------------------------------ */
+/* Experience design: Why → What → How                                  */
+/* ------------------------------------------------------------------ */
+const LEVELS: [string, string, string][] = [
+  ["Why", "needs, emotions, meaning", "feel close to a partner far away"],
+  ["What", "functionality", "share one photo a day"],
+  ["How", "operation", "one tap from the lock screen"],
+];
+
+export const experienceDesignPlate: IllustrationEntry = {
+  slug: "experience-design",
+  title: "Experience design plate",
+  canvas: "sheet",
+  description:
+    "Three stacked bands with arrows pointing down from each to the next. Why — needs, emotions, meaning — example: feel close to a partner far away. What — functionality — example: share one photo a day. How — operation — example: one tap from the lock screen. On the right, a long bracket labelled 'Experience design' spans all three bands and is marked 'starts here' at the Why; a short bracket spans only the How, and a note below reads 'Interaction design works mainly on the How.'",
+  key: [
+    { n: "1", label: "Start with the Why", detail: "the needs, emotions and meaning of the activity; Hassenzahl argues that need fulfilment is what makes an experience pleasurable" },
+    { n: "2", label: "Then the What", detail: "the functions that can create that experience, chosen after the Why rather than from the technology" },
+    { n: "3", label: "Then the How", detail: "how people operate the product, the typical realm of interaction design" },
+    { n: "4", label: "Different scopes", detail: "experience design spans all three levels; interaction design works mainly on the How (example is illustrative)" },
+  ],
+  Art: ({ detail }) => (
+    <g>
+      {LEVELS.map(([name, what, ex], i) => (
+        <g key={name}>
+          <rect x={12} y={14 + i * 92} width={286} height={72} rx={8} fill={i === 0 ? S.accentWash : S.surface} stroke={i === 0 ? S.accent : S.ruleStrong} strokeWidth={i === 0 ? 1.3 : 0.9} {...hair} />
+          <UiText x={26} y={42 + i * 92} size={16} weight={700}>
+            {name}
+          </UiText>
+          <UiText x={86} y={42 + i * 92} tone="ink2">
+            {what}
+          </UiText>
+          <UiText x={26} y={68 + i * 92}>
+            {ex}
+          </UiText>
+          {i < 2 && <path d={`M155 ${88 + i * 92} v14 m-5 -6 l5 6 l5 -6`} fill="none" stroke={S.ink2} strokeWidth="1.3" {...hair} />}
+        </g>
+      ))}
+      <path d="M304 16 h8 V266 h-8" fill="none" stroke={S.accent} strokeWidth="1.5" {...hair} />
+      <UiText x={318} y={100} weight={700} tone="accent">
+        Experience
+      </UiText>
+      <UiText x={318} y={118} weight={700} tone="accent">
+        design
+      </UiText>
+      <UiText x={318} y={40} tone="accent">
+        starts
+      </UiText>
+      <UiText x={318} y={56} tone="accent">
+        here
+      </UiText>
+      <path d="M326 200 h8 V266 h-8" fill="none" stroke={S.ink2} strokeWidth="1.3" {...hair} />
+      <UiText x={12} y={292} tone="ink2">
+        Interaction design works mainly on the How.
+      </UiText>
+      {detail && (
+        <>
+          <Marker x={286} y={26} n={1} />
+          <Marker x={286} y={118} n={2} />
+          <Marker x={286} y={210} n={3} />
+          <Marker x={386} y={166} n={4} />
+        </>
+      )}
+    </g>
+  ),
+};
+
+/* ------------------------------------------------------------------ */
+/* Product design: two meanings, one product team                       */
+/* ------------------------------------------------------------------ */
+function Role({ x, y, w, title, lines, accent = false }: { x: number; y: number; w: number; title: string; lines: string[]; accent?: boolean }) {
+  return (
+    <g>
+      <rect x={x} y={y} width={w} height={70} rx={7} fill={accent ? S.accentWash : S.surface} stroke={accent ? S.accent : S.ruleStrong} strokeWidth={accent ? 1.3 : 0.9} {...hair} />
+      <UiText x={x + 10} y={y + 22} weight={700}>
+        {title}
+      </UiText>
+      {lines.map((l, i) => (
+        <UiText key={l} x={x + 10} y={y + 42 + i * 17} tone="ink2">
+          {l}
+        </UiText>
+      ))}
+    </g>
+  );
+}
+
+export const productDesignPlate: IllustrationEntry = {
+  slug: "product-design",
+  title: "Product design plate",
+  canvas: "sheet",
+  description:
+    "Two panels. Left, 'Industrial design': the outline of a kettle with three labels — appearance, function, manufacture. Right, 'Digital product team': three role cards around a central 'Product' box. Product manager: value, viability. Designer, the product designer (highlighted): usability, experience. Engineer, the lead engineer: feasibility. Lines join each role to the product.",
+  key: [
+    { n: "1", label: "The older meaning", detail: "industrial design of physical products, typically focused on appearance, functionality and manufacturability (IDSA)" },
+    { n: "2", label: "The digital role", detail: "in software teams the product designer is responsible for usability and accountable for the product's experience (Cagan)" },
+    { n: "3", label: "Shared ownership", detail: "value and viability sit with the product manager, feasibility with the lead engineer; the three work side by side" },
+  ],
+  Art: ({ detail }) => (
+    <g>
+      <Card x={8} y={8} w={140} h={284} title="Industrial design">
+        <path d="M40 150 q0 -48 38 -48 q38 0 38 48 v54 h-76 z" fill={S.soft} stroke={S.ink2} strokeWidth="1.3" {...hair} />
+        <path d="M116 120 q22 4 18 36 q-2 14 -18 18" fill="none" stroke={S.ink2} strokeWidth="1.3" {...hair} />
+        <path d="M42 138 l-20 -16 l4 -6 l20 14" fill={S.soft} stroke={S.ink2} strokeWidth="1.3" {...hair} />
+        <UiText x={20} y={236}>
+          appearance
+        </UiText>
+        <UiText x={20} y={256}>
+          function
+        </UiText>
+        <UiText x={20} y={276}>
+          manufacture
+        </UiText>
+      </Card>
+      <Card x={156} y={8} w={236} h={284} title="Digital product team">
+        <rect x={234} y={130} width={80} height={40} rx={7} fill={S.ink} />
+        <UiText x={274} y={155} anchor="middle" weight={700} tone="surface">
+          Product
+        </UiText>
+        <path d="M274 130 V110 M254 170 V180 H219 V190 M294 170 V180 H332 V190" fill="none" stroke={S.ink2} strokeWidth="1.1" {...hair} />
+        <Role x={199} y={40} w={150} title="Product manager" lines={["value,", "viability"]} />
+        <Role x={164} y={190} w={110} title="Designer" lines={["usability,", "experience"]} accent />
+        <Role x={278} y={190} w={108} title="Engineer" lines={["feasibility"]} />
+      </Card>
+      {detail && (
+        <>
+          <Marker x={134} y={64} n={1} />
+          <Marker x={164} y={276} n={2} />
+          <Marker x={380} y={20} n={3} />
+        </>
+      )}
+    </g>
+  ),
+};
+
 /** designThinkingPlate is registered through core-plates.tsx, where the earlier planned-topic plate was. */
-const plates: IllustrationEntry[] = [usefulnessPlate, desirabilityPlate, designProcessesPlate, uxLifecyclePlate, uxMaturityPlate];
+const plates: IllustrationEntry[] = [usefulnessPlate, desirabilityPlate, designProcessesPlate, uxLifecyclePlate, uxMaturityPlate, experienceDesignPlate, productDesignPlate];
 export default plates;

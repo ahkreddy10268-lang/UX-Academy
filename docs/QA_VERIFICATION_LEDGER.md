@@ -332,3 +332,20 @@ Three entries, three plates, 6 sources (Dubberly introduction, GOV.UK phase page
 | e2e-redesign | `node tests/browser/e2e-redesign.cjs` | PASS 66/66 | Run |
 | Other browser suites | — | INHERITED from `3b776d6` | Inherited |
 | Review | One focused review; one correction pass | 0 critical, 0 major; one unsourced historical sentence in ux-lifecycle reworded before commit | Run |
+
+### Domain 1, Batch 4 — `product-design`, `experience-design` (2026-11-19, parent `5a2678c`)
+
+Two discipline entries, two plates, 7 sources (IxDF product-design page, WDO and IDSA definitions and Hassenzahl's encyclopedia chapter read; Forlizzi & Battarbee and Sheldon et al. abstracts; Hassenzahl 2010 bibliographic). Cagan reused.
+
+| Check | Command | Result | Run / inherited |
+|---|---|---|---|
+| Check | `npm run check` | PASS — 604 tests | Run |
+| Taxonomy | `npm run test:taxonomy` | PASS — UX & UI Fundamentals 14 published, 4 addressed within | Run |
+| Sources | `sources:verify` for 7 new ids | 3 doi-verified, 4 url-reachable | Run |
+| Integrity | `entry-integrity.ts product-design experience-design` | PASS | Run |
+| Plates | `render-plates.tsx experience-design product-design` | Light/dark inspected; bracket label, kettle spout and marker positions fixed | Run |
+| Build | `npm run build` | PASS | Run |
+| Entry review | `entry-review.cjs product-design experience-design user-experience interaction-design-discipline` | PASS 32/32 | Run |
+| e2e-redesign | `node tests/browser/e2e-redesign.cjs` | PASS 66/66 | Run |
+| Other browser suites | — | INHERITED from `3b776d6` | Inherited |
+| Review | One focused review; one correction pass | 0 critical, 0 major; 2 minor fixes (a claim about the unread 2010 book; a historical 'became' not supported by Cagan) | Run |

@@ -13,9 +13,9 @@ What user experience is, how it differs from interface design, and the vocabular
 
 - ✅ User Experience (UX) — *Discipline* · `user-experience`
 - ✅ User Interface (UI) Design — *Discipline* · `ui-design`
-- ◻️ Product Design — *Discipline* · `product-design`
+- ✅ Product Design — *Discipline* · `product-design`
 - ✅ Interaction Design — *Discipline* · `interaction-design-discipline`
-- ◻️ Experience Design — *Discipline* · `experience-design`
+- ✅ Experience Design — *Discipline* · `experience-design`
 - ✅ Usability — *Concept* · `usability`
 - ◻️ Utility — *Concept* · `utility`
 - ✅ Usefulness — *Concept* · `usefulness`

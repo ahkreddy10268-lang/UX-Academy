@@ -767,6 +767,14 @@
     "checkedAt": "2026-11-11",
     "httpStatus": 200
   },
+  "forlizzi-battarbee-2004": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-19",
+    "registeredTitle": "Understanding experience in interactive systems",
+    "registeredYear": 2004,
+    "registeredContainer": "Proceedings of the 5th conference on Designing interactive systems: processes, practices, methods, and techniques",
+    "similarity": 1
+  },
   "fornell-1992": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",
@@ -1083,6 +1091,14 @@
     "registeredContainer": "Human-Computer Interaction",
     "similarity": 1
   },
+  "hassenzahl-2010": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-19",
+    "registeredTitle": "Experience Design: Technology for All the Right Reasons",
+    "registeredYear": 2010,
+    "registeredContainer": "Synthesis Lectures on Human-Centered Informatics",
+    "similarity": 1
+  },
   "hassenzahl-monk-2010": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",
@@ -1098,6 +1114,11 @@
     "registeredYear": 2006,
     "registeredContainer": "Behaviour &amp; Information Technology",
     "similarity": 1
+  },
+  "hassenzahl-ux-experience-design": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-19",
+    "httpStatus": 200
   },
   "hax-toolkit-guidelines": {
     "status": "url-reachable",
@@ -1247,6 +1268,11 @@
     "checkedAt": "2026-11-19",
     "httpStatus": 200
   },
+  "idsa-what-is-industrial-design": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-19",
+    "httpStatus": 200
+  },
   "inclusion-europe-information-for-all": {
     "status": "url-reachable",
     "checkedAt": "2026-11-17",
@@ -1301,6 +1327,11 @@
   "ixdf-literature": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "ixdf-product-design": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-19",
     "httpStatus": 200
   },
   "iyengar-lepper-2000": {
@@ -2456,6 +2487,14 @@
     "registeredContainer": "Quarterly Journal of Experimental Psychology",
     "similarity": 1
   },
+  "sheldon-2001": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-19",
+    "registeredTitle": "What is satisfying about satisfying events? Testing 10 candidate psychological needs.",
+    "registeredYear": 2001,
+    "registeredContainer": "Journal of Personality and Social Psychology",
+    "similarity": 1
+  },
   "shepard-1967": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",
@@ -2916,6 +2955,11 @@
     "registeredYear": 2012,
     "registeredContainer": "Psychological Bulletin",
     "similarity": 1
+  },
+  "wdo-industrial-design-definition": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-19",
+    "httpStatus": 200
   },
   "webaim": {
     "status": "url-reachable",
