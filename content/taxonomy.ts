@@ -49,7 +49,9 @@ export const domains: Domain[] = [
         title: "Core concepts",
         items: [
           ...g("discipline", "User Experience (UX)|user-experience", "User Interface (UI) Design|ui-design", "Product Design", "Interaction Design|interaction-design-discipline", "Experience Design"),
-          ...g("concept", "Usability", "Utility", "Usefulness", "Desirability", "Feasibility", "Viability", "UX Maturity"),
+          ...g("concept", "Usability"),
+          ...within("usefulness", g("concept", "Utility")),
+          ...g("concept", "Usefulness", "Desirability", "Feasibility", "Viability", "UX Maturity"),
           ...g("discipline", "Human-Computer Interaction (HCI)|human-computer-interaction"),
         ],
       },

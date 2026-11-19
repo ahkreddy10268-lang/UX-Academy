@@ -30,6 +30,18 @@ Last updated: **2026-11-19** (Cycle 3, B6 topic 1: information-foraging-theory).
 
 **Owner decisions 2026-11-19 (after D-131):** (1) B4 Accessibility in code is the **G-slot batch of Cycle 4**, subject to the dependency check, an explicit planned priority; no fourth batch in Cycle 3, no silent replacement. (2) **Improvement-only cycles do not count toward the two-cycle cluster rotation**; the rule applies to new-topic cycles. (3) Cycle 3 stays H → R → G: H = B6 Findability, R = B5 Decision biases, G = B8 Service design foundations.
 
+## Domain 1 completion — UX & UI Fundamentals (owner request 2026-11-19, D-132) — progress ledger
+
+Cycle 3 paused after B6 topic 1. Plan: 11 entries + 4 topics addressed within a host (decided only after the host explains them). Coverage decisions and reasons: CONTENT_AUDIT session 62.
+
+| Batch | Topics | Status |
+|---|---|---|
+| 1 | `usefulness` (published), `utility` (addressed within `usefulness`), `desirability` (published) | Done — commit recorded in the QA ledger |
+| 2 | `design-thinking`; `feasibility`, `viability` (planned: within `design-thinking`); `human-centred-design` (planned: within `user-centred-design`) | Next |
+| 3 | `design-processes`, `ux-lifecycle`, `ux-maturity` | Pending |
+| 4 | `product-design`, `experience-design` | Pending |
+| 5 | `history-of-hci`, `history-of-interface-design`, `evolution-of-digital-experiences` | Pending |
+
 ## Cycle 3 production — B6, topic 1 (2026-11-19)
 
 **`information-foraging-theory` published** (owner authorised B6, first topic only). Entry, 6 new source records (`content/sources/findability.ts`) plus notes on `pirolli-card-1999`, plate (`findability-sheets.tsx`), Level-2 figure (`information-foraging-theory.decisions`), visual-register record, quick takeaway, one back-link from `information-architecture`. Published 102 → 103; D-129 visual and evidence targets met; Practice and Editorial complete.

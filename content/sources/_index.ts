@@ -13,13 +13,14 @@ import m9 from "./findability";
 import m10 from "./fitts";
 import m11 from "./formula-library";
 import m12 from "./foundations-frameworks";
-import m13 from "./hci-history";
-import m14 from "./interaction-models";
-import m15 from "./interaction-principles";
-import m16 from "./measurement";
-import m17 from "./research-methods";
-import m18 from "./resources";
-import m19 from "./ux-writing";
+import m13 from "./fundamentals";
+import m14 from "./hci-history";
+import m15 from "./interaction-models";
+import m16 from "./interaction-principles";
+import m17 from "./measurement";
+import m18 from "./research-methods";
+import m19 from "./resources";
+import m20 from "./ux-writing";
 
 export const rawSources: Source[] = [
   ...m0,
@@ -41,5 +42,6 @@ export const rawSources: Source[] = [
   ...m16,
   ...m17,
   ...m18,
-  ...m19
+  ...m19,
+  ...m20
 ];

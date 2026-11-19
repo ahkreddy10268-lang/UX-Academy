@@ -919,6 +919,8 @@ export const quickTakeaways: Record<string, string> = {
   "fitts-law": "Far, small targets take longer to hit than near, large ones: what matters is the ratio of distance to width.",
   "double-diamond": "Open up, then narrow down, twice: first to choose the right problem, then to find a solution that works.",
   "cognitive-load-theory": "Working memory is small: remove the effort your design adds so it can go to the material itself.",
+  usefulness: "A product is useful only when it offers the functions people need and they can use them well: utility and usability, judged for particular people and tasks.",
+  desirability: "Whether people want a product is a separate question from whether it works: study it with reaction methods, and never mistake appeal for usefulness.",
   "information-foraging-theory": "People weigh the gain they expect from a source against the cost of reaching it, judged from the cues in front of them: that estimate decides which link they follow, what they consume and when they leave.",
   "information-architecture": "People find things when the grouping, the names, the routes and the search all match how they think.",
   "user-centred-design": "Learn about users, design, test with them, and repeat until the evidence says the design works.",

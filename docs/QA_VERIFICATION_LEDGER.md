@@ -280,3 +280,20 @@ Changes: new entry, `content/sources/findability.ts` (6 sources), notes on `piro
 | Crawl | `node tests/browser/crawl.cjs` | PASS — 0 problems | Run | — |
 | Axe | `node tests/browser/a11y.cjs` (axe-core 4.14.0) | PASS — 0 violations | Run | Automated rules only |
 | Review | One targeted review against gates, D-129 targets and the D-131 checklist; one correction pass | 0 critical, 0 major; 2 precision edits applied; minors C3-4, C3-5 logged | Run | Same-session review, not independent; no screen reader, physical device or expert review |
+
+### Domain 1, Batch 1 — `usefulness`, `desirability`; `utility` within `usefulness` (2026-11-19, parent `3b776d6`)
+
+Content, sources (`content/sources/fundamentals.ts`; `nielsen-usability-101` URL moved to Nielsen's original at /jn/ because NN/g replaced the article at the old address with a 2026 rewrite), plates (`fundamentals-sheets.tsx`), register, takeaways, taxonomy `coveredBy` for utility. No shared component changed, so site-wide suites other than e2e-redesign are INHERITED from `3b776d6`.
+
+| Check | Command | Result | Run / inherited |
+|---|---|---|---|
+| Check | `npm run check` | PASS — 594 tests | Run |
+| Taxonomy | `npm run test:taxonomy` | PASS — UX & UI Fundamentals 8 published, 1 addressed within | Run |
+| Sources | `sources:verify` for 5 new ids + nielsen-usability-101 | 3 doi-verified, 3 url-reachable | Run |
+| Integrity | `entry-integrity.ts usefulness desirability` | PASS | Run |
+| Plates | `render-plates.tsx usefulness desirability` | Light/dark inspected; markers and chip overflow fixed before commit | Run |
+| Build | `npm run build` | PASS | Run |
+| Entry review | `entry-review.cjs usefulness desirability usability` | PASS 24/24 | Run |
+| e2e-redesign | `node tests/browser/e2e-redesign.cjs` | PASS 66/66 | Run |
+| Other browser suites | — | INHERITED from `3b776d6` | Inherited |
+| Review | One focused review; one correction pass | 0 critical, 0 major; minor D1-1 (desirability's pointer to design thinking's lens awaits that entry's sources) | Run |

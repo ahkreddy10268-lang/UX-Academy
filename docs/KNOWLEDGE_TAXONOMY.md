@@ -18,8 +18,8 @@ What user experience is, how it differs from interface design, and the vocabular
 - ◻️ Experience Design — *Discipline* · `experience-design`
 - ✅ Usability — *Concept* · `usability`
 - ◻️ Utility — *Concept* · `utility`
-- ◻️ Usefulness — *Concept* · `usefulness`
-- ◻️ Desirability — *Concept* · `desirability`
+- ✅ Usefulness — *Concept* · `usefulness`
+- ✅ Desirability — *Concept* · `desirability`
 - ◻️ Feasibility — *Concept* · `feasibility`
 - ◻️ Viability — *Concept* · `viability`
 - ◻️ UX Maturity — *Concept* · `ux-maturity`

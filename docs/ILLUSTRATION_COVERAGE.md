@@ -5,10 +5,10 @@
 
 | Measure | Count |
 |---|---|
-| Registered Level-1 plates | 125 |
-| Published entries with a plate | 103 / 103 |
+| Registered Level-1 plates | 127 |
+| Published entries with a plate | 105 / 105 |
 | Subject plates | 20 / 20 |
-| Plates in the current system (dark technical or instructional sheet) | 123 |
+| Plates in the current system (dark technical or instructional sheet) | 125 |
 | Plates still in the earlier pastel style | 2 |
 | Level-2 figures | 40 |
 | Level-3 explorers (on plates) | 9 |
@@ -21,7 +21,7 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 
 | # | Category | L1 plates | Current style | L2 figures | L3 | Retain / refine / replace | Maturity | Entries |
 |---|---|---:|---:|---:|---:|---|---|---|
-| 1 | UX Concept Illustrations | 26 | 25 | 11 | 13 | 26 / 0 / 0 | developing | `fitts-law`, `hick-hyman-law`, `cognitive-load-theory`, `millers-law`, `jakobs-law`, `mental-models`, `affordances`, `peak-end-rule`, `steering-law`, `teslers-law`, `serial-position-effect`, `von-restorff-effect`, `aesthetic-usability-effect`, `choice-overload`, `working-memory-model`, `recognition-over-recall`, `user-experience`, `human-computer-interaction`, `consistency-principle`, `help-and-documentation`, `ux-writing`, `plain-language` |
+| 1 | UX Concept Illustrations | 28 | 27 | 11 | 13 | 28 / 0 / 0 | developing | `fitts-law`, `hick-hyman-law`, `cognitive-load-theory`, `millers-law`, `jakobs-law`, `mental-models`, `affordances`, `peak-end-rule`, `steering-law`, `teslers-law`, `serial-position-effect`, `von-restorff-effect`, `aesthetic-usability-effect`, `choice-overload`, `working-memory-model`, `recognition-over-recall`, `user-experience`, `human-computer-interaction`, `consistency-principle`, `help-and-documentation`, `ux-writing`, `plain-language`, `usefulness`, `desirability` |
 | 2 | UI Anatomy Illustrations | 3 | 3 | 1 | 0 | 3 / 0 / 0 | developing | `ui-design`, `microcopy` |
 | 3 | UX Process Illustrations | 8 | 8 | 2 | 0 | 8 / 0 / 0 | developing | `double-diamond`, `user-centred-design`, `content-design` |
 | 4 | User Research Illustrations | 6 | 6 | 5 | 0 | 6 / 0 / 0 | mature | `card-sorting`, `jobs-to-be-done`, `think-aloud-protocol`, `contextual-inquiry`, `in-depth-interviews` |
@@ -39,9 +39,9 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 | Method | L1 plates (primary) | L2 figures |
 |---|---:|---:|
 | Conceptual & Metaphorical | 20 | 8 |
-| Process & Sequential | 29 | 13 |
+| Process & Sequential | 30 | 13 |
 | Relationship & Systems | 19 | 9 |
-| Comparison & Contrast | 38 | 8 |
+| Comparison & Contrast | 39 | 8 |
 | Hierarchy & Classification | 19 | 2 |
 
 ## Level 1 audit (every registered plate)
@@ -154,6 +154,8 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 | `microcopy` | entry | ui-anatomy | conceptual | current · instructional sheet | retain | Sheet (Cycle 1 B3): an illustrative checkout field — label, hint (why we ask), outcome-named button, confirmation — mapped to the question each answers, with a placeholder-only field (cross) against a visible label (tick). | 0 | — |
 | `error-messages` | entry | interaction-design | process | current · instructional sheet | retain | Sheet (Cycle 1 B3): an illustrative date-of-birth error — fails (colour is not enough), explained in an error summary, recovered at the field with an 'Error:' message and the entry kept, resolved with a matching confirmation. | 0 | — |
 | `information-foraging-theory` | entry | information-architecture | conceptual | current · instructional sheet | retain | Sheet (Cycle 3 B6): the theory's three decisions for one illustrative need — three links with scent estimates, a good/thin by low/high-effort grid for what to consume, and a schematic gain curve with an earlier and a later point to leave a site. | 1 | — |
+| `usefulness` | entry | ux-concept | comparison | current · instructional sheet | retain | Sheet (D-132): a utility-by-usability grid — right or wrong functions against hard or easy to use — with only the right-and-easy cell ticked as useful. | 0 | — |
+| `desirability` | entry | ux-concept | process | current · instructional sheet | retain | Sheet (D-132): an illustrative product-reaction-word study — a balanced word list with one participant's five picks, and the share of 20 people choosing each top word, including an unwanted one. | 0 | — |
 | `foundations` | subject | ux-concept | relationship | current · instructional sheet | retain | Sheet (S25, subject): interface inside the experience band, an approach loop and a history line. | 0 | — |
 | `laws-effects` | subject | ux-concept | conceptual | current · instructional sheet | retain | Sheet (S25, subject): six tiles for the domain's families, ending with evidence labels. | 0 | — |
 | `psychology` | subject | ux-concept | conceptual | current · instructional sheet | retain | Sheet (S25, subject): memory slots, a cue–action–outcome loop, pop-out search and a reach arc. | 0 | — |
@@ -331,6 +333,8 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 | `microcopy` | An illustrative delivery checkout. Left, the screen: the label 'Phone number'; the hint 'We'll text you if the driver can't find you.'; a field containing 07700 900 982; a button 'Pay £24.00'; and below, after paying, a confirmation with a tick: 'Order placed', 'Arrives Tuesday'. Right, the question each piece answers: 1 What is this? 2 Why do you ask? 3 What happens? 4 Did it work? Below that, two fields compared: a field whose only label is grey placeholder text inside it, marked with a cross, and a field with a visible label above it, marked with a tick. |
 | `error-messages` | An illustrative date-of-birth error in four panels. 1, 'Something fails': the field 'Date of birth' contains 27 13 1990 and has a red border. 2, 'Explain': an error summary at the top of the page, 'There is a problem', with a link 'Date of birth must be a real date'. 3, 'Recover': beside the field, the message 'Date of birth must be a real date', marked by a red bar and a cross icon (screen readers also hear a visually hidden 'Error:' prefix); the field keeps the person's entry, now edited to 27 3 1990, with a focus ring. 4, 'Resolved': a tick with 'Details saved' and 'Date of birth: 27 March 1990'. A connector runs from panel 1 to 2, from 2 down to 3, and from 3 to 4. |
 | `information-foraging-theory` | Three decisions of information foraging, drawn for one illustrative need, 'Sunday hours'. Top left, 'Which link?': three links with three-dot scent estimates for that need — 'Opening hours' three filled dots, 'Our services' two, 'Your visit' one. Top right, 'What to consume?': a two-by-two grid of content (good or thin) against effort to reach it (low or high). Only good content that is low effort is marked 'Eat' with a tick; the other three cells are marked 'Skip' with a cross. Bottom, 'When to leave this site?': a schematic curve of gain rising and flattening over time on one site, with two dashed vertical lines on it. The earlier one, labelled 'Easy to switch', is marked 'leave here'; the later one, labelled 'Hard to switch', is also marked 'leave here'. |
+| `usefulness` | A two-by-two grid. Rows are utility: 'Right functions' on top, 'Wrong functions' below. Columns are usability: 'Hard to use' on the left, 'Easy to use' on the right. Top right, the only cell with a tick: 'Useful' — does the job, easily. Top left, with a cross: 'Buried' — everything needed is there, but people cannot reach it. Bottom right, with a cross: 'Easy, wrong job' — smooth to use, but not what people need. Bottom left, with a cross: 'Neither'. |
+| `desirability` | An illustrative product-reaction-word study. Left, 'Pick five words': ten word cards in two columns — Calm, Busy, Clean, Cheap, Fresh, Dated, Clear, Boring, Friendly, Confusing — of which one participant's five choices (Calm, Clean, Fresh, Clear, Friendly) are bold and ticked. Right, 'Chosen by (of 20)': bars for the most-chosen words — Calm 70 %, Clear 55 %, Fresh 40 %, Friendly 35 %, Cheap 30 % — with Cheap, a word the team had listed as a risk, among them. |
 | `foundations` | Nested frames read from the inside out. At the centre, an interface: a booking screen with a title, a field and a button, the part UI design shapes. Around it, a band of before, during and after touchpoints, the whole experience UX design is concerned with. A loop arrow around the band stands for design approaches that put people's needs and evaluation at the centre. Along the bottom, a short timeline marks that the field has a history in design and human-computer interaction. |
 | `laws-effects` | Six tiles, one for each family of regularities in this subject. Human performance laws: a pointer moving a distance D to a target of width W. Popular laws and rules of thumb: a card stamped 'rule of thumb'. Memory and attention: a list in which one item stands out. Gestalt grouping: dots grouped by spacing. Decision-making biases: two options, one marked as the default. A sixth tile shows evidence labels, because these items range from measured laws to popular claims. |
 | `psychology` | Four panels for the four strands of the subject, each shown through what it explains in an interface rather than as a picture of a head. Cognitive psychology, memory and learning: four memory slots, three filled. Behavioural science, motivation and emotion: a loop from a cue to an action to an outcome that feeds back. Visual cognition: a field of outlined shapes in which one filled shape stands out at once (in the hero it pulses, as attention is captured). Human factors and ergonomics: a control panel with a large stop button within reach and a reach arc drawn around it. |

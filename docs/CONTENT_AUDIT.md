@@ -303,3 +303,11 @@ Published `design-governance`, `design-system-versioning`, `design-qa`, `design-
 - **11** (the owner's figure) matches no list in the repository. No source reproduces it, and no subset of the plan's candidate column adds up to it. It is recorded as unexplained rather than forced to fit.
 
 Rows 9–13 are judgments, not defects, and each can be overturned by the owner. If a host is later extended to explain a deferred topic fully, that is an improvement-batch item; a thin separate entry is not.
+
+## Session 62 — UX & UI Fundamentals completion: coverage decisions (owner request 2026-11-19, D-132)
+
+Taxonomy structure unchanged (no topic added, removed, renamed or moved). Each decision below sets only `coveredBy` on an existing topic, after the host entry was written or checked to explain it.
+
+| Topic | Decision | Host | Reason |
+|---|---|---|---|
+| Utility | Addressed within | `usefulness` | Session 51 deferred it because `usability` gave only a glossary line. The new `usefulness` entry explains utility in full: definition (does the design provide the functions people need), how it is judged against user needs rather than feature counts, how to assess it (needs mapped to functions, the same research methods as usability), its history as a separate research community (Grudin 1992) and its limits (function and form are hard to separate). A separate utility entry would repeat that explanation. Usability's existing relation to `utility` still resolves. |

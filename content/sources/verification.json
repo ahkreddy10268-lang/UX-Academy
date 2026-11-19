@@ -540,6 +540,14 @@
     "checkedAt": "2026-11-11",
     "httpStatus": 200
   },
+  "davis-1989": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-19",
+    "registeredTitle": "Perceived Usefulness, Perceived Ease of Use, and User Acceptance of Information Technology",
+    "registeredYear": 1989,
+    "registeredContainer": "MIS Quarterly",
+    "similarity": 1
+  },
   "de-jong-2010": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",
@@ -875,6 +883,11 @@
     "checkedAt": "2026-11-16",
     "httpStatus": 200
   },
+  "govuk-learning-user-needs": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-19",
+    "httpStatus": 200
+  },
   "govuk-manage-existing-content": {
     "status": "url-reachable",
     "checkedAt": "2026-11-16",
@@ -952,6 +965,14 @@
     "registeredTitle": "A survey of software learnability: metrics, methodologies and guidelines",
     "registeredYear": 2009,
     "registeredContainer": "Proceedings of the SIGCHI Conference on Human Factors in Computing Systems",
+    "similarity": 1
+  },
+  "grudin-1992": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-19",
+    "registeredTitle": "Utility and usability: research issues and development contexts",
+    "registeredYear": 1992,
+    "registeredContainer": "Interacting with Computers",
     "similarity": 1
   },
   "grudin-1994": {
@@ -1649,6 +1670,11 @@
     "registeredContainer": "Communications of the ACM",
     "similarity": 1
   },
+  "moran-2016-desirability-toolkit": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-19",
+    "httpStatus": 200
+  },
   "moran-2017-flat-ui": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
@@ -1800,7 +1826,7 @@
   },
   "nielsen-usability-101": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-03",
+    "checkedAt": "2026-11-19",
     "httpStatus": 200
   },
   "nisbett-wilson-1977": {
@@ -2653,6 +2679,14 @@
     "registeredYear": 1998,
     "registeredContainer": "Minimalism Beyond the Nurnberg Funnel",
     "similarity": 1
+  },
+  "venkatesh-2003": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-19",
+    "registeredTitle": "User Acceptance of Information Technology: Toward A Unified View1",
+    "registeredYear": 2003,
+    "registeredContainer": "MIS Quarterly",
+    "similarity": 0.86
   },
   "virzi-1992": {
     "status": "doi-verified",
