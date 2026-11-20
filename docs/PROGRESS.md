@@ -322,5 +322,8 @@ After that: `ui-design`, `interaction-design-discipline`, `accessibility-concept
 ## Session 63 — Cycle 3, B6 topic 2: information scent
 - Published `information-scent` (114 published): concept entry centred on scent as a pre-click estimate relative to a need; components (label, accompanying text and image, context, prior knowledge, social traces); expert/newcomer difference; mobile context; click bait; evaluation by task success and expectation match rather than click-through. Plate, register record, quick takeaway. All sources reused; Furnas et al. 1987 abstract read.
 
+## Session 64 — B5 topic 1: default effect
+- Published `default-effect` (115 published): defaults as decisions on inaction; opt-in, opt-out and active choice; effort, endorsement and reference dependence; distinction from status quo bias; the retirement, organ-donation and meta-analytic evidence with their limits; digital harms and remedies; an academy classification (beneficial, operational, commercial, manipulative) and seven review questions; evaluation beyond the keep rate. Plate in new `decision-sheets.tsx`; six sources.
+
 ## Next task (precise)
-Await the owner's review of `information-scent`. Next, only after approval: B6 topic 3, `findability`.
+Await the owner's review of `default-effect`. Next, only after approval: `loss-aversion` (B5). `findability` (B6 topic 3) also awaits approval.

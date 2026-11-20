@@ -954,6 +954,7 @@ export const quickTakeaways: Record<string, string> = {
   desirability: "Whether people want a product is a separate question from whether it works: study it with reaction methods, and never mistake appeal for usefulness.",
   "information-foraging-theory": "People weigh the gain they expect from a source against the cost of reaching it, judged from the cues in front of them: that estimate decides which link they follow, what they consume and when they leave.",
   "information-scent": "Scent is the visitor's estimate, made before the click, of whether a page will meet their need; judge a label by whether people reach the right page and find what they expected, not by how many click it.",
+  "default-effect": "Whatever happens when people do nothing is a design decision: defaults often hold, through effort, implied endorsement and the default becoming the reference point, so set them for the person's interest, make them visible and make leaving them easy.",
   "information-architecture": "People find things when the grouping, the names, the routes and the search all match how they think.",
   "user-centred-design": "Learn about users, design, test with them, and repeat until the evidence says the design works.",
   "human-computer-interaction": "People, technology and context meet in every interaction; HCI studies, designs and evaluates that meeting, with methods chosen to fit the question.",

@@ -423,3 +423,19 @@ Entry, plate (`informationScentPlate`), register record, quick takeaway; `furnas
 | Entry review | `entry-review.cjs information-scent information-foraging-theory` | PASS 16/16 (axe 0, overflow 0, plate text ≥ 10.2 px at 390, markers inside viewBox) | Run |
 | Review | One targeted review; one correction pass | 0 critical, 0 major; corrected: an unsourced vocabulary term removed, the vocabulary-problem claim re-based on the Furnas abstract, two unlabelled interpretations labelled | Run |
 | After correction | `entry-integrity.ts`, editorial and content tests | Clean; 33 tests pass (text-only edits after the build) | Run |
+
+### B5 topic 1 — `default-effect` (2026-11-20, parent `1409093`)
+
+Entry, plate (`decision-sheets.tsx`, new fragment file), register record, quick takeaway; six sources added to `cognitive-effects.ts`. No other entry changed.
+
+| Check | Command | Result | Run / inherited |
+|---|---|---|---|
+| Sources | `sources:verify` for the 6 new ids | 4 doi-verified, 1 url-reachable (CMA), 1 url-unreachable (OECD, HTTP 403, as in research) | Run |
+| Access | Research | Jachimowicz et al. 2019 read in full (publisher OA PDF); Madrian & Shea read as NBER WP 7682; CMA review Defaults section read; Johnson & Goldstein 2003 and Dinner et al. 2011 abstract only (SSRN 403 twice each); OECD BASIC not accessible (403 twice) | Run |
+| Integrity | `entry-integrity.ts default-effect` | Only `referencedNotCited: oecd-2019-basic` — deliberate: listed as further reading because it could not be read; precedent for uncited further reading recorded 2026-11-20 | Run |
+| Check | `npm run check` | PASS — 612 tests (final text) | Run |
+| Taxonomy | `npm run test:taxonomy` | PASS — Laws & Effects 14 published; site 115 | Run |
+| Plates | `render-plates.tsx default-effect` | Light and dark inspected; outcome column nudged off the card edge | Run |
+| Build | `npm run build` | PASS (final text) | Run |
+| Entry review | `entry-review.cjs default-effect choice-overload` | PASS 16/16 (final text; axe 0, overflow 0, plate text ≥ 10.2 px at 390) | Run |
+| Review | One targeted review; one correction pass | 0 critical, 0 major; four wordings brought back within their sources (unavoidable defaults, query theory attribution, benign/smart defaults, active-choice condition) | Run |

@@ -78,42 +78,43 @@ import m74 from "./interaction/progressive-disclosure";
 import m75 from "./interaction/visibility-of-system-status";
 import m76 from "./laws-effects/aesthetic-usability-effect";
 import m77 from "./laws-effects/choice-overload";
-import m78 from "./laws-effects/doherty-threshold";
-import m79 from "./laws-effects/fitts-law";
-import m80 from "./laws-effects/gestalt-principles";
-import m81 from "./laws-effects/hick-hyman-law";
-import m82 from "./laws-effects/jakobs-law";
-import m83 from "./laws-effects/millers-law";
-import m84 from "./laws-effects/peak-end-rule";
-import m85 from "./laws-effects/serial-position-effect";
-import m86 from "./laws-effects/steering-law";
-import m87 from "./laws-effects/teslers-law";
-import m88 from "./laws-effects/von-restorff-effect";
-import m89 from "./metrics/confidence-intervals";
-import m90 from "./metrics/nasa-tlx";
-import m91 from "./metrics/net-promoter-score";
-import m92 from "./metrics/sample-size-estimation";
-import m93 from "./metrics/system-usability-scale";
-import m94 from "./metrics/task-success-rate";
-import m95 from "./psychology/affordances";
-import m96 from "./psychology/cognitive-load-theory";
-import m97 from "./psychology/gulfs-of-execution-and-evaluation";
-import m98 from "./psychology/mental-models";
-import m99 from "./psychology/recognition-over-recall";
-import m100 from "./psychology/signifiers";
-import m101 from "./psychology/working-memory-model";
-import m102 from "./research/ab-testing";
-import m103 from "./research/card-sorting";
-import m104 from "./research/cognitive-walkthrough";
-import m105 from "./research/contextual-inquiry";
-import m106 from "./research/heuristic-evaluation";
-import m107 from "./research/in-depth-interviews";
-import m108 from "./research/think-aloud-protocol";
-import m109 from "./research/tree-testing";
-import m110 from "./research/usability-testing";
-import m111 from "./type-colour/colour-contrast-ratio";
-import m112 from "./type-colour/modular-type-scale";
-import m113 from "./visual/visual-hierarchy";
+import m78 from "./laws-effects/default-effect";
+import m79 from "./laws-effects/doherty-threshold";
+import m80 from "./laws-effects/fitts-law";
+import m81 from "./laws-effects/gestalt-principles";
+import m82 from "./laws-effects/hick-hyman-law";
+import m83 from "./laws-effects/jakobs-law";
+import m84 from "./laws-effects/millers-law";
+import m85 from "./laws-effects/peak-end-rule";
+import m86 from "./laws-effects/serial-position-effect";
+import m87 from "./laws-effects/steering-law";
+import m88 from "./laws-effects/teslers-law";
+import m89 from "./laws-effects/von-restorff-effect";
+import m90 from "./metrics/confidence-intervals";
+import m91 from "./metrics/nasa-tlx";
+import m92 from "./metrics/net-promoter-score";
+import m93 from "./metrics/sample-size-estimation";
+import m94 from "./metrics/system-usability-scale";
+import m95 from "./metrics/task-success-rate";
+import m96 from "./psychology/affordances";
+import m97 from "./psychology/cognitive-load-theory";
+import m98 from "./psychology/gulfs-of-execution-and-evaluation";
+import m99 from "./psychology/mental-models";
+import m100 from "./psychology/recognition-over-recall";
+import m101 from "./psychology/signifiers";
+import m102 from "./psychology/working-memory-model";
+import m103 from "./research/ab-testing";
+import m104 from "./research/card-sorting";
+import m105 from "./research/cognitive-walkthrough";
+import m106 from "./research/contextual-inquiry";
+import m107 from "./research/heuristic-evaluation";
+import m108 from "./research/in-depth-interviews";
+import m109 from "./research/think-aloud-protocol";
+import m110 from "./research/tree-testing";
+import m111 from "./research/usability-testing";
+import m112 from "./type-colour/colour-contrast-ratio";
+import m113 from "./type-colour/modular-type-scale";
+import m114 from "./visual/visual-hierarchy";
 
 export const rawEntries: KnowledgeEntryInput[] = [
   m0,
@@ -229,5 +230,6 @@ export const rawEntries: KnowledgeEntryInput[] = [
   m110,
   m111,
   m112,
-  m113
+  m113,
+  m114
 ];

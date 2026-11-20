@@ -493,6 +493,11 @@
     "checkedAt": "2026-11-09",
     "httpStatus": 200
   },
+  "cma-2022-oca-evidence-review": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-20",
+    "httpStatus": 200
+  },
   "cockburn-gutwin-greenberg-2007": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",
@@ -598,6 +603,14 @@
     "status": "url-reachable",
     "checkedAt": "2026-11-16",
     "httpStatus": 200
+  },
+  "dinner-et-al-2011": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-20",
+    "registeredTitle": "Partitioning default effects: Why people choose not to choose.",
+    "registeredYear": 2011,
+    "registeredContainer": "Journal of Experimental Psychology: Applied",
+    "similarity": 1
   },
   "dion-berscheid-walster-1972": {
     "status": "doi-verified",
@@ -1372,6 +1385,14 @@
     "registeredContainer": "Journal of Personality and Social Psychology",
     "similarity": 1
   },
+  "jachimowicz-et-al-2019": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-20",
+    "registeredTitle": "When and why defaults influence decisions: a meta-analysis of default effects",
+    "registeredYear": 2019,
+    "registeredContainer": "Behavioural Public Policy",
+    "similarity": 1
+  },
   "john-kieras-1996": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",
@@ -1386,6 +1407,14 @@
     "registeredTitle": "The Xerox Star: a retrospective",
     "registeredYear": 1989,
     "registeredContainer": "Computer",
+    "similarity": 1
+  },
+  "johnson-goldstein-2003": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-20",
+    "registeredTitle": "Do Defaults Save Lives?",
+    "registeredYear": 2003,
+    "registeredContainer": "Science",
     "similarity": 1
   },
   "jscodeshift": {
@@ -1651,6 +1680,14 @@
     "registeredTitle": "Extending Fitts' law to two-dimensional tasks",
     "registeredYear": 1992,
     "registeredContainer": "Proceedings of the SIGCHI conference on Human factors in computing systems  - CHI '92",
+    "similarity": 1
+  },
+  "madrian-shea-2001": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-20",
+    "registeredTitle": "The Power of Suggestion: Inertia in 401(k) Participation and Savings Behavior",
+    "registeredYear": 2001,
+    "registeredContainer": "The Quarterly Journal of Economics",
     "similarity": 1
   },
   "mahatody-sagar-kolski-2010": {
@@ -2181,6 +2218,11 @@
     "status": "url-reachable",
     "checkedAt": "2026-11-16",
     "httpStatus": 200
+  },
+  "oecd-2019-basic": {
+    "status": "url-unreachable",
+    "checkedAt": "2026-11-20",
+    "httpStatus": 403
   },
   "oliver-1983": {
     "status": "doi-verified",

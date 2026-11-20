@@ -90,7 +90,7 @@ Empirical laws of human performance and the cognitive effects popularised as 'la
 ### Decision-making biases (`decision-biases`)
 
 - ✅ Choice Overload — *Concept* · `choice-overload`
-- ◻️ Default Effect — *Cognitive bias* · `default-effect`
+- ✅ Default Effect — *Cognitive bias* · `default-effect`
 - ◻️ Social Proof — *Cognitive bias* · `social-proof`
 - ◻️ Loss Aversion — *Cognitive bias* · `loss-aversion`
 - ◻️ Anchoring Effect — *Cognitive bias* · `anchoring-effect`
