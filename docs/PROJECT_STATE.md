@@ -42,7 +42,11 @@ Cycle 3 paused after B6 topic 1. Plan: 11 entries + 4 topics addressed within a 
 | 4 | `product-design`, `experience-design` (both published) | Done — `9eb3675` |
 | 5 | `history-of-interface-design`, `evolution-of-digital-experiences` (published); `history-of-hci` (addressed within `human-computer-interaction`) | Done — `55dc927` |
 
-**Result: Domain 1 complete and validated.** 21/21 topics accounted for: 16 published (6 before + 10 new), 5 addressed within a host (utility, feasibility, viability, human-centred design, history of HCI), 0 planned. Published 103 → 113, addressed within 18 → 23. Open minors: D1-2 to D1-5 in OPEN_ISSUES. **Design skills installed (2026-11-20):** eight third-party Claude Code skills in `.claude/skills/` (see `docs/DESIGN_SKILLS_WORKFLOW.md`); not yet applied to the interface. **Resource enrichment (2026-11-20):** further reading added to 6 entries (QA ledger). **Next authorised action: none.** Awaiting the owner's review; Domain 2 not started; Cycle 3 (B6 topic 2, `information-scent`) remains paused.
+**Result: Domain 1 complete and validated.** 21/21 topics accounted for: 16 published (6 before + 10 new), 5 addressed within a host (utility, feasibility, viability, human-centred design, history of HCI), 0 planned. Published 103 → 113, addressed within 18 → 23. Open minors: D1-2 to D1-5 in OPEN_ISSUES. **Design skills installed (2026-11-20):** eight third-party Claude Code skills in `.claude/skills/` (see `docs/DESIGN_SKILLS_WORKFLOW.md`); not yet applied to the interface. **Resource enrichment (2026-11-20):** further reading added to 6 entries (QA ledger). Domain 2 not started.
+
+## Cycle 3 production — B6, topic 2 (2026-11-20)
+
+**`information-scent` published** (owner authorised this topic only, 2026-11-20). Entry (concept, `ia/findability`, established-theory), plate in `findability-sheets.tsx` with register record and quick takeaway; no Level-2 figure (concept: plate is the D-129 minimum). Sources: all reused; `furnas-et-al-1987` abstract read and noted. Published 113 → 114. One targeted review, one correction pass; no critical or major findings. **Next authorised action: none.** Wait for the owner's approval before B6 topic 3, `findability`. Commit local, not pushed.
 
 ## Cycle 3 production — B6, topic 1 (2026-11-19)
 

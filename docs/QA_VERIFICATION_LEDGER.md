@@ -407,3 +407,19 @@ Eight third-party Claude Code skills installed project-local in `.claude/skills/
 | Check | `npm run check` | First run: 4 lint errors from vendored skill code (`oil-ui/assets/vendor/alpine.min.js`); after adding `.claude/**` to ESLint ignores: PASS, 608 tests | Run |
 | Build | `npm run build` | PASS | Run |
 | Not run | Any skill invocation on the interface | Not authorised (installation only) | Not run |
+
+### Cycle 3, B6 topic 2 — `information-scent` (2026-11-20, parent `9ea5ec7`)
+
+Entry, plate (`informationScentPlate`), register record, quick takeaway; `furnas-et-al-1987` notes added (abstract read). No other entry changed; no Level-2 figure.
+
+| Check | Command | Result | Run / inherited |
+|---|---|---|---|
+| Sources | `sources:verify` for the 8 cited ids | 4 doi-verified, 4 url-reachable | Run |
+| Integrity | `entry-integrity.ts information-scent` | Clean (10 relations out, 9 in; 3 exercises, 6 quiz, 5 flashcards) | Run |
+| Check | `npm run check` | PASS — 610 tests | Run |
+| Taxonomy | `npm run test:taxonomy` | PASS — IA 3 published; site 114 | Run |
+| Plates | `render-plates.tsx information-scent` | Light and dark inspected; marker and chip overlaps fixed, re-rendered clean | Run |
+| Build | `npm run build` | PASS | Run |
+| Entry review | `entry-review.cjs information-scent information-foraging-theory` | PASS 16/16 (axe 0, overflow 0, plate text ≥ 10.2 px at 390, markers inside viewBox) | Run |
+| Review | One targeted review; one correction pass | 0 critical, 0 major; corrected: an unsourced vocabulary term removed, the vocabulary-problem claim re-based on the Furnas abstract, two unlabelled interpretations labelled | Run |
+| After correction | `entry-integrity.ts`, editorial and content tests | Clean; 33 tests pass (text-only edits after the build) | Run |

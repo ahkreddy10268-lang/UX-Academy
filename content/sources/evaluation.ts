@@ -632,6 +632,9 @@ export default defineSources([
     topics: ["vocabulary problem", "labelling", "search"],
     access: "paywalled",
     verification: "bibliographic",
+    lastVerifiedAt: "2026-11-20",
+    notes:
+      "Abstract read 2026-11-20 (OpenAlex); the paper was not read. Studied spontaneous word choice for objects in five application-related domains: variability was large, and in every case two people favoured the same term with probability below 0.20. Simulations showed that access through one designer's favourite single word would fail 80–90 % of the time in many common situations; unlimited aliasing is derived as an optimal strategy. The study concerns words people enter to reach objects or actions, not link labels they read.",
   },
   /* ---- Heuristic topic articles and error research (session 29) ---- */
   {

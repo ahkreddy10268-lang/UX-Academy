@@ -317,7 +317,7 @@
   },
   "budiu-2020-information-scent": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-19",
+    "checkedAt": "2026-11-20",
     "httpStatus": 200
   },
   "budiu-recognition-recall": {
@@ -467,7 +467,7 @@
   },
   "chi-pirolli-chen-pitkow-2001": {
     "status": "doi-verified",
-    "checkedAt": "2026-11-19",
+    "checkedAt": "2026-11-20",
     "registeredTitle": "Using information scent to model user information needs and actions and the Web",
     "registeredYear": 2001,
     "registeredContainer": "Proceedings of the SIGCHI Conference on Human Factors in Computing Systems",
@@ -826,7 +826,7 @@
   },
   "fu-pirolli-2007": {
     "status": "doi-verified",
-    "checkedAt": "2026-11-19",
+    "checkedAt": "2026-11-20",
     "registeredTitle": "SNIF-ACT: A Cognitive Model of User Navigation on the World Wide Web",
     "registeredYear": 2007,
     "registeredContainer": "Human–Computer Interaction",
@@ -834,7 +834,7 @@
   },
   "furnas-et-al-1987": {
     "status": "doi-verified",
-    "checkedAt": "2026-11-03",
+    "checkedAt": "2026-11-20",
     "registeredTitle": "The vocabulary problem in human-system communication",
     "registeredYear": 1987,
     "registeredContainer": "Communications of the ACM",
@@ -1908,7 +1908,7 @@
   },
   "nielsen-2003-information-foraging": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-19",
+    "checkedAt": "2026-11-20",
     "httpStatus": 200
   },
   "nielsen-2004-card-sorting": {
@@ -2077,12 +2077,12 @@
   },
   "nng-tree-testing": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-16",
+    "checkedAt": "2026-11-20",
     "httpStatus": 200
   },
   "nng-tree-testing-results": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-16",
+    "checkedAt": "2026-11-20",
     "httpStatus": 200
   },
   "nng-user-control-freedom": {
@@ -2253,7 +2253,7 @@
   },
   "pirolli-card-1999": {
     "status": "doi-verified",
-    "checkedAt": "2026-11-03",
+    "checkedAt": "2026-11-20",
     "registeredTitle": "Information foraging.",
     "registeredYear": 1999,
     "registeredContainer": "Psychological Review",

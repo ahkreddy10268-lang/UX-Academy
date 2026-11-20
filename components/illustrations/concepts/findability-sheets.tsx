@@ -5,7 +5,7 @@
  * illustrative; the curve is a schematic, not measured data.
  */
 import type { IllustrationEntry } from "../illustration-types";
-import { Marker, S, UiText, Verdict } from "../system/sheet";
+import { Marker, S, UiChip, UiText, Verdict } from "../system/sheet";
 import { Card } from "./learning-sheets";
 
 const hair = { vectorEffect: "non-scaling-stroke" as const, strokeLinecap: "round" as const, strokeLinejoin: "round" as const };
@@ -129,5 +129,107 @@ export const informationForagingPlate: IllustrationEntry = {
   ),
 };
 
-const plates: IllustrationEntry[] = [informationForagingPlate];
+/** Three-dot rating used for both the estimate and the true value. */
+function Dots({ x, y, n }: { x: number; y: number; n: 0 | 1 | 2 | 3 }) {
+  return (
+    <g>
+      {[0, 1, 2].map((i) => (
+        <circle key={i} cx={x + i * 12} cy={y} r={4.2} fill={i < n ? S.ink : S.surface} stroke={S.ink2} strokeWidth="1" {...hair} />
+      ))}
+    </g>
+  );
+}
+
+/** A link as a visitor meets it: a label, a snippet and a scent estimate. */
+function ResultCard({ y, label, snippet, dots }: { y: number; label: string; snippet: string; dots: 1 | 2 | 3 }) {
+  return (
+    <g>
+      <rect x={18} y={y} width={226} height={50} rx={5} fill={S.soft} stroke={S.ruleStrong} strokeWidth="0.9" {...hair} />
+      <UiText x={28} y={y + 21} weight={700} tone="accent">
+        {label}
+      </UiText>
+      <UiText x={28} y={y + 39} tone="ink2">
+        {snippet}
+      </UiText>
+      <Dots x={214} y={y + 25} n={dots} />
+    </g>
+  );
+}
+
+export const informationScentPlate: IllustrationEntry = {
+  slug: "information-scent",
+  title: "Information scent plate",
+  canvas: "sheet",
+  description:
+    "Information scent for one illustrative need, 'return a faulty kettle'. Left, 'Before the click': two links as a visitor sees them, each with a bold label, a snippet and a three-dot estimate. 'Returns and refunds', snippet 'Free return label', is rated three dots. 'Kettle broken? Read this', snippet 'Our new range is here', is rated two dots. Arrows lead right to 'After the click', which shows what each page actually holds: the first leads to a returns form, marked with a tick and 'Task done'; the second leads to a sales page, marked with a cross and 'Goes back'. Bottom, 'Scent comes from': five chips, 'Label', 'Snippet', 'Image', 'Context' and 'What you know'.",
+  key: [
+    { n: "1", label: "The need", detail: "scent is judged against what this visitor wants now; with another need, the same links would be rated differently" },
+    { n: "2", label: "The cues", detail: "the label and the snippet are what the visitor can judge before clicking; a vague or promotional label gives little to go on" },
+    { n: "3", label: "The estimate", detail: "the dots are one visitor's estimate of how well each page will meet the need, made before the click; the ratings are illustrative" },
+    { n: "4", label: "The true value", detail: "only known after the click; a label that promises more than the page holds can win the click and still send the visitor back, at a cost to trust (Budiu)" },
+    { n: "5", label: "Where scent comes from", detail: "what the visitor sees (label, accompanying text and image, page context) and what they already know about the brand or subject (Budiu)" },
+  ],
+  Art: ({ detail }) => (
+    <g>
+      <Card x={8} y={8} w={384} h={40} tone="soft">
+        <UiText x={20} y={33} weight={600}>
+          Need: return a faulty kettle
+        </UiText>
+      </Card>
+
+      {/* before the click: cues and estimates */}
+      <Card x={8} y={56} w={244} h={156} title="Before the click">
+        <ResultCard y={90} label="Returns and refunds" snippet="Free return label" dots={3} />
+        <ResultCard y={148} label="Kettle broken? Read this" snippet="Our new range is here" dots={2} />
+      </Card>
+
+      {/* arrows to the destinations */}
+      {[115, 173].map((cy) => (
+        <g key={cy}>
+          <line x1={246} y1={cy} x2={266} y2={cy} stroke={S.ink2} strokeWidth="1.1" {...hair} />
+          <path d={`M262 ${cy - 4} L268 ${cy} L262 ${cy + 4}`} fill="none" stroke={S.ink2} strokeWidth="1.1" {...hair} />
+        </g>
+      ))}
+
+      {/* after the click: what the page holds */}
+      <Card x={270} y={56} w={122} h={156} title="After the click">
+        <Verdict x={290} y={110} ok />
+        <UiText x={304} y={108} weight={700}>
+          Returns form
+        </UiText>
+        <UiText x={304} y={126} tone="ink2">
+          Task done
+        </UiText>
+        <Verdict x={290} y={168} ok={false} />
+        <UiText x={304} y={166} weight={700}>
+          Sales page
+        </UiText>
+        <UiText x={304} y={184} tone="ink2">
+          Goes back
+        </UiText>
+      </Card>
+
+      {/* sources of scent */}
+      <Card x={8} y={220} w={384} h={72} title="Scent comes from">
+        <UiChip x={20} y={254} w={50} label="Label" />
+        <UiChip x={76} y={254} w={64} label="Snippet" />
+        <UiChip x={146} y={254} w={54} label="Image" />
+        <UiChip x={206} y={254} w={66} label="Context" />
+        <UiChip x={278} y={254} w={104} label="What you know" />
+      </Card>
+
+      {detail && (
+        <>
+          <Marker x={380} y={20} n={1} />
+          <Marker x={150} y={72} n={2} />
+          <Marker x={238} y={68} n={3} />
+          <Marker x={380} y={200} n={4} />
+          <Marker x={380} y={232} n={5} />
+        </>
+      )}
+    </g>
+  ),
+};
+
+const plates: IllustrationEntry[] = [informationForagingPlate, informationScentPlate];
 export default plates;

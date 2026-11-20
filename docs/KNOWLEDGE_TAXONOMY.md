@@ -326,7 +326,7 @@ How information is organised, labelled, navigated and found.
 
 - ◻️ Findability — *Concept* · `findability`
 - ✅ Information Foraging Theory — *Theory* · `information-foraging-theory`
-- ◻️ Information Scent — *Concept* · `information-scent`
+- ✅ Information Scent — *Concept* · `information-scent`
 - ◻️ Search Architecture — *Concept* · `search-architecture`
 
 ### Navigation & findability (`navigation`)

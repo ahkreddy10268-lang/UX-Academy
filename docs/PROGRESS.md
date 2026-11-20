@@ -319,5 +319,8 @@ After that: `ui-design`, `interaction-design-discipline`, `accessibility-concept
 - Domain 1: 16 published, 5 addressed within, 0 planned (21/21). Site: 113 published, 23 addressed within. Ten plates, one Level-2 figure (`design-thinking.lenses`), 28 new sources in `content/sources/fundamentals.ts`.
 - Each batch: sources verified, targeted checks, one focused review, one correction pass; no critical or major findings left open. Minors D1-2 to D1-5 in OPEN_ISSUES.
 
+## Session 63 — Cycle 3, B6 topic 2: information scent
+- Published `information-scent` (114 published): concept entry centred on scent as a pre-click estimate relative to a need; components (label, accompanying text and image, context, prior knowledge, social traces); expert/newcomer difference; mobile context; click bait; evaluation by task success and expectation match rather than click-through. Plate, register record, quick takeaway. All sources reused; Furnas et al. 1987 abstract read.
+
 ## Next task (precise)
-Await the owner's review of Domain 1 (D-132) and a push decision. Domain 2 is not started. After that: either resume Cycle 3 (B6 topic 2, `information-scent`) or close the minors D1-2 and D1-3, as the owner decides.
+Await the owner's review of `information-scent`. Next, only after approval: B6 topic 3, `findability`.
