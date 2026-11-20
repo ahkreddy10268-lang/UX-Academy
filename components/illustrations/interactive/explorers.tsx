@@ -6,6 +6,7 @@
  * assumptions and what the demonstration cannot establish.
  */
 import Link from "next/link";
+import { T } from "../system/sheet";
 import { useId, useState, type ReactNode } from "react";
 import { chunk, peakEnd } from "@/lib/formulas/experience";
 import { fittsId, hickInformation, hickInformationEqual, widthAlongApproach } from "@/lib/formulas/pointing";
@@ -96,6 +97,14 @@ function FittsExplorer() {
   const fx = cx + half * Math.cos(t);
   const fy = cy - half * Math.sin(t);
   const r2 = (v: number) => Math.round(v * 100) / 100;
+  // Keep moving labels inside the 400 × 340 drawing at every slider value (13-unit text ≈ 7.6 units per character).
+  const wLabel = `W′ = ${wAlong.toFixed(0)}`;
+  const wRightX = cx + (W * K) / 2 + 8;
+  const wFitsRight = wRightX + wLabel.length * 7.6 <= 396;
+  // Below the start point if there is room; otherwise beside it on the right, clear of the approach line (which always leaves up and to the right).
+  const startBelow = sy + 22 <= 334;
+  const startX = startBelow ? Math.min(Math.max(sx, 22), 378) : sx + 14;
+  const startY = startBelow ? sy + 22 : sy + 5;
   const scaleMax = 6;
   const pct = (v: number) => `${Math.min(100, (v / scaleMax) * 100)}%`;
   return (
@@ -108,18 +117,18 @@ function FittsExplorer() {
           <line x1={r2(sx)} y1={r2(sy)} x2={r2(ex)} y2={r2(ey)} stroke={C.line} strokeWidth={STROKE.main} strokeDasharray="1 6" strokeLinecap="round" />
           <line x1={r2(ex)} y1={r2(ey)} x2={r2(fx)} y2={r2(fy)} stroke={C.ink} strokeWidth={4} strokeLinecap="round" />
           <circle cx={r2(sx)} cy={r2(sy)} r={7} fill={C.paper} stroke={C.line} strokeWidth={STROKE.main} />
-          <Label x={r2(sx)} y={r2(sy + 22)} tone="line">
+          <Label size={T.min} x={r2(startX)} y={r2(startY)} tone="line" anchor={startBelow ? "middle" : "start"}>
             start
           </Label>
           <Cursor x={r2(cx - 2)} y={r2(cy - 2)} />
-          <Label x={r2(sx + (cx - sx) * 0.42 - (16 + 22 * Math.sin(t)) * Math.sin(t))} y={r2(sy + (cy - sy) * 0.42 - 12 * Math.cos(t))} tone="ink">
+          <Label size={T.min} x={r2(sx + (cx - sx) * 0.42 - (16 + 22 * Math.sin(t)) * Math.sin(t))} y={r2(sy + (cy - sy) * 0.42 - 12 * Math.cos(t))} tone="ink">
             {`D = ${D}`}
           </Label>
           <Dim x1={r2(cx - (W * K) / 2)} y1={r2(cy - (FITTS_H * K) / 2 - 14)} x2={r2(cx + (W * K) / 2)} y2={r2(cy - (FITTS_H * K) / 2 - 14)} label={`W = ${W}`} />
-          <Label x={r2(cx + (W * K) / 2 + 8)} y={r2(cy + 4)} tone="ink" anchor="start">
-            {`W′ = ${wAlong.toFixed(0)}`}
+          <Label size={T.min} x={r2(wFitsRight ? wRightX : 396)} y={r2(wFitsRight ? cy + 4 : cy + (FITTS_H * K) / 2 + 18)} tone="ink" anchor={wFitsRight ? "start" : "end"}>
+            {wLabel}
           </Label>
-          <Label x={12} y={330} tone="line" anchor="start">
+          <Label size={T.min} x={12} y={330} tone="line" anchor="start">
             {`drawn at 65% scale · approach ${angle}°`}
           </Label>
         </svg>
@@ -205,7 +214,7 @@ function HickExplorer() {
             const cy = 120 - (Math.ceil(n / cols) * cell) / 2 + r * cell + cell / 2;
             return <rect key={i} x={cx - size / 2} y={cy - size / 2} width={size} height={size} rx={3} fill={i === 0 && skew ? C.base : C.soft} stroke={C.line} strokeWidth={STROKE.fine} />;
           })}
-          <Label x={200} y={228} tone="line">area ∝ probability</Label>
+          <Label size={T.min} x={200} y={228} tone="line">area ∝ probability</Label>
         </svg>
       }
       controls={
@@ -250,8 +259,8 @@ function PeakEndExplorer() {
           {m.map((v, i) => (
             <circle key={i} cx={xs(i)} cy={ys(v)} r={i === r.peakIndex || i === m.length - 1 ? 8 : 5} fill={i === r.peakIndex || i === m.length - 1 ? C.base : C.surface} stroke={C.line} strokeWidth={STROKE.fine} />
           ))}
-          <Label x={360} y={ys(r.peakEndAverage) - 6} anchor="end">peak-end {r.peakEndAverage.toFixed(1)}</Label>
-          <Label x={360} y={ys(r.mean) + 14} anchor="end" tone="mute">mean {r.mean.toFixed(1)}</Label>
+          <Label size={T.min} x={360} y={ys(r.peakEndAverage) - 6} anchor="end">peak-end {r.peakEndAverage.toFixed(1)}</Label>
+          <Label size={T.min} x={360} y={ys(r.mean) + 14} anchor="end" tone="mute">mean {r.mean.toFixed(1)}</Label>
         </svg>
       }
       controls={

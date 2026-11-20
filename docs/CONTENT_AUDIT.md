@@ -98,6 +98,8 @@ Generated per entry in `docs/CONTENT_COVERAGE.md` as basic / developing / comple
 
 ## 6. Content expansion roadmap
 
+> **Superseded by D-129 (2026-11-12).** The order of work is now `docs/BALANCED_DEVELOPMENT_PLAN.md` (balanced development across domains, H/G/R cycles). This section is kept as history and for its source notes. Slug corrections: "feedback" is `feedback-principle`; "human-ai-interaction-guidelines" is `human-ai-interaction`; "calibrated-trust-in-ai" is `ai-trust`.
+
 Write in this order. Each entry must pass the gates above, cite only sources that pass `npm run sources:verify` (or are clearly marked bibliographic/awaiting verification), and add a plate. "Source requirements" names the primary literature each entry must rest on; sources marked † are not yet in the registry and must be added and verified first.
 
 ### Tier 1 — Foundations (every learning path starts here)
@@ -272,3 +274,44 @@ Published the six pattern topics of Design Systems › Components & patterns: `e
 ### Session 37 — Design Systems Stage 5 published (D-125); domain complete; no taxonomy change
 
 Published `design-governance`, `design-system-versioning`, `design-qa`, `design-system-audits` (Design Systems › Governance & operations, type strategy) and `multi-brand-systems` (System foundations, type concept). Boundaries kept: `design-system-audits` (system inventory and adoption) links to but does not absorb `accessibility-audits` (Accessibility, planned); `design-qa` (pre-release parity) is distinct from `usability-testing` and `heuristic-evaluation`; `multi-brand-systems` builds on `theme-architecture` without repeating mode mechanics. Every topic of the Design Systems domain is now published.
+
+### Session 51 — I1 coveredBy checks (owner-authorised 2026-11-17; plan § 7.3); reconciled 2026-11-17
+
+**Candidate list (verified by script against the plan's candidate column and the published entries): 13.** A candidate counts when it is a taxonomy topic without its own entry and the plan names a host that is published at `9931f1a`. Each was checked against the host entry's own text. `coveredBy` was applied only where the host defines the topic, shows the mechanism and states its limits. No slug, domain or type changed; no entry was added.
+
+| # | Topic | Host | Decision | Evidence in the host / reason |
+|---|---|---|---|---|
+| 1 | ISO/IEC 40500 | `wcag` | **Applied** | States that WCAG 2.2 was approved as ISO/IEC 40500:2025, matches the October 2023 version, and that the 2012 edition was WCAG 2.0. |
+| 2 | Success Criteria | `wcag` | **Applied** | Definition, glossary term, layered structure (principles → guidelines → criteria), the nine 2.2 additions and the removal of 4.1.1. |
+| 3 | Conformance Levels | `wcag` | **Applied** | Levels A/AA/AAA, why AA is the usual target, the five conformance-claim requirements, the AAA myth. |
+| 4 | Effectiveness | `usability` | **Applied** | ISO 9241-11 definition, standard measures, trade-offs against the other components. |
+| 5 | Efficiency | `usability` | **Applied** | Same section; also Nielsen's variant ("performance once learned"). |
+| 6 | Satisfaction | `usability` | **Applied** | Same section; the 2018 revision extends it to physical, cognitive and emotional response; weak correlation with the other measures. |
+| 7 | Margin of Error | `confidence-intervals` | **Applied** | Glossary term, formula (margin = critical value × SE), worked example, relation note. Limit: the survey-proportion formula is not derived; `sample-size-estimation` stays a separate planned topic. |
+| 8 | Emphasis | `visual-hierarchy` | **Applied** | Definition, relativity of emphasis, few levels, over-emphasis and banner blindness, the "more emphasis" myth. |
+| 9 | Empty-State Writing | `empty-states` | **Deferred (stays planned)** | The host covers what each state should say (four kinds, four messages) but declares the topic a separate `complementary-to` relation and gives no wording technique. |
+| 10 | State Transitions | `interaction-states` | **Deferred (stays planned)** | The host names transitions only as a relation to a separate topic and defers them to `component-state-management`. |
+| 11 | Utility | `usability` | **Deferred (stays planned)** | The host defines it in one glossary line and a distinction paragraph, and declares it a separate `complementary-to` relation. No mechanism, measures or limits. |
+| 12 | Usefulness | `usability` | **Deferred (stays planned)** | One sentence ("utility + usability") and a flashcard. `user-experience` uses "useful" only inside its pragmatic-quality definition. Not an explanation. |
+| 13 | Desirability | `usability` / `user-experience` | **Deferred (stays planned)** | Neither host explains it; `usability` lists it among unrelated qualities and `user-experience` mentions "desirable" once in a history sentence. |
+
+**Totals.** 13 candidates; 8 applied; 5 deferred. **Addressed within another entry: 10 → 18** (the 10 earlier were the Gestalt sub-laws and primacy/recency; the generated `docs/CONTENT_COVERAGE.md` is the source). Published entries unchanged at 102; planned topics 449 → 441.
+
+**Reconciliation of the earlier counts.**
+- **9** = the topics the plan's § 7.3 and its candidate table mark ✓ (rows 1–9 above). This is where "9" came from; eight of them are applied and one (Empty-State Writing) is deferred.
+- **10** = my first report, which added `state-transitions` (named in plan § 9 as a Batch 1 boundary decision) and missed rows 11–13. That count was incomplete; it is superseded by 13.
+- **11** (the owner's figure) matches no list in the repository. No source reproduces it, and no subset of the plan's candidate column adds up to it. It is recorded as unexplained rather than forced to fit.
+
+Rows 9–13 are judgments, not defects, and each can be overturned by the owner. If a host is later extended to explain a deferred topic fully, that is an improvement-batch item; a thin separate entry is not.
+
+## Session 62 — UX & UI Fundamentals completion: coverage decisions (owner request 2026-11-19, D-132)
+
+Taxonomy structure unchanged (no topic added, removed, renamed or moved). Each decision below sets only `coveredBy` on an existing topic, after the host entry was written or checked to explain it.
+
+| Topic | Decision | Host | Reason |
+|---|---|---|---|
+| Utility | Addressed within | `usefulness` | Session 51 deferred it because `usability` gave only a glossary line. The new `usefulness` entry explains utility in full: definition (does the design provide the functions people need), how it is judged against user needs rather than feature counts, how to assess it (needs mapped to functions, the same research methods as usability), its history as a separate research community (Grudin 1992) and its limits (function and form are hard to separate). A separate utility entry would repeat that explanation. Usability's existing relation to `utility` still resolves. |
+| Feasibility | Addressed within | `design-thinking` | Listed as a coveredBy candidate in D-129 § 4. The design-thinking entry defines it as one of three lenses (IDEO's question: can we build it with today's technology and capabilities?), gives Cagan's framing (can engineers build what is needed with the time, skills and technology available), names who answers it, separates it from usability, and tests it in quiz and flashcards. In UX practice the term has no meaning beyond this lens and the product-risk framing; a separate entry would repeat it. |
+| Viability | Addressed within | `design-thinking` | Same D-129 candidate. The entry defines it (can the solution succeed and endure within real-world constraints?), lists Cagan's business-viability risks (channel, contracts and compliance, acquisition cost, monetisation, brand), corrects the 'viability = profit' misconception, and gives a scenario and a quiz item. |
+| Human-Centred Design | Addressed within | `user-centred-design` | The UCD entry already lists "Human-centred design (HCD, ISO term)" as an alternate name, explains the ISO 9241-210 human-centred design process, principles and activities, and the reason ISO prefers 'human-centred' (stakeholders beyond direct users), with a misconception and flashcard on the distinction. IDEO's different use of the term (human-centred design as a value orientation, design thinking as its application) is explained in `design-thinking`. A separate entry would duplicate UCD's process explanation. D-129's dependency chain (human-centred-design → co-design, participatory design, inclusive design) now runs through the UCD entry. |
+| History of HCI | Addressed within | `human-computer-interaction` | The HCI entry already gives the field's history in five sourced eras (vision, emergence around 1980, situated and distributed accounts, beyond the desktop, histories and framings) with a Level-2 timeline figure, competing framings and an attribution note on the limits of origin stories. A separate entry, with the sources that could be read, would repeat that account. The entry's two forward references to a planned history entry were rewritten, and its relation now points to `history-of-interface-design`, which covers interaction styles rather than the field. A fuller history (more non-US and women's contributions) remains a recorded gap for a future improvement pass. |

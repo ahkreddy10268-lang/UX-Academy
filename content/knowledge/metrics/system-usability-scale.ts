@@ -74,7 +74,7 @@ export default defineEntry({
       explanation: [
         "Psychometrically, SUS is short but reliable: Bangor et al. (2008) reported internal consistency (Cronbach's α) of about 0.9 {{src:bangor-kortum-miller-2008}}. Its validity rests on correlations with other usability questionnaires and with task performance, and on its sensitivity to differences between products.",
         "**Dimensionality** is debated. Lewis & Sauro (2009) reported two factors: a large 'usability' factor (eight items) and a 'learnability' factor (items 4 and 10) {{src:lewis-sauro-2009}}. Later analyses did not consistently reproduce that split, and Lewis's 2018 review concludes that SUS is best interpreted as a single overall score. Subscale scores should be used cautiously {{src:lewis-2018-sus}}.",
-        "Because the scale is normative, its meaning depends on the reference distribution. Norms differ by product type and by whether respondents are new or experienced users. Brooke (2013) cautions that SUS is a quick, high-level measure, not a diagnostic: it tells you *whether* perceived usability is a problem, not *why* {{src:brooke-2013}}.",
+        "Because the scale is normative, its meaning depends on the reference distribution. Norms differ by product type and by whether respondents are new or experienced users. Because SUS yields one composite score, and Brooke notes that scores for individual items are not meaningful on their own {{src:brooke-1996}}, it says little about *which* parts of a design cause a low rating; finding causes needs observation, task data or other methods alongside it.",
       ],
       evidence: [
         "Brooke's original chapter presents SUS as a 'quick and dirty' tool designed for fast, low-cost comparisons in industrial settings {{src:brooke-1996}}.",
@@ -102,7 +102,7 @@ export default defineEntry({
     narrative: [
       "Brooke created SUS in 1986 at Digital Equipment Corporation as part of a usability engineering programme for office systems, and published it in 1996 in *Usability Evaluation in Industry* {{src:brooke-1996}}.",
       "Over the following decades SUS became the most widely used standardised usability questionnaire. Its strength is the large body of comparative data, not a uniquely superior design {{src:lewis-2018-sus}}.",
-      "Brooke's 2013 retrospective reflects on its spread, misuses and scoring {{src:brooke-2013}}.",
+      "Brooke later wrote a retrospective on the scale (*Journal of Usability Studies*, 2013) {{src:brooke-2013}}. Its text could not be accessed for this entry, so none of its claims are used here.",
     ],
     attributionNote:
       "SUS was developed in 1986, but its first formal publication is the 1996 chapter. The 'average of 68' comes from later aggregation work (Sauro, Lewis and others), not from Brooke's original publication.",
@@ -354,8 +354,8 @@ export default defineEntry({
   ],
 
   references: [
-    { source: "brooke-1996", role: "primary", note: "Original instrument and scoring." },
-    { source: "brooke-2013", role: "primary", note: "Author's retrospective on use and misuse." },
+    { source: "brooke-1996", role: "primary", note: "Original instrument and scoring. Read 2026-11-17 from a third-party copy of the chapter, not the publisher's edition." },
+    { source: "brooke-2013", role: "primary", note: "Author's 2013 retrospective. Bibliographic record only: the article could not be read (2026-11-17), so no claim in this entry rests on its content." },
     { source: "bangor-kortum-miller-2008", role: "primary", note: "Large-sample evaluation of reliability and score distributions." },
     { source: "lewis-sauro-2009", role: "primary", note: "Two-factor structure proposal." },
     { source: "lewis-2018-sus", role: "primary", note: "Review of norms, factor structure and future directions." },

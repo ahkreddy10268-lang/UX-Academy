@@ -167,6 +167,7 @@ export default defineEntry({
     { target: "power-law-of-practice", type: "related-to", note: "People speed up with practice, which is when accelerators start to pay off." },
     { target: "progressive-disclosure", type: "complementary-to", note: "Advanced features revealed when needed keep the default path simple for novices." },
     { target: "interaction-cost", type: "related-to", note: "Accelerators reduce the interaction cost of frequent tasks." },
+    { target: "discoverability", type: "related-to", note: "Accelerators are adopted only if they can be discovered from the visible path." },
   ],
 
   practice: {

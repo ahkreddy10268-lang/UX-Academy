@@ -49,7 +49,7 @@ export default defineEntry({
     },
     intermediate: {
       explanation: [
-        "**Slips** happen most when people know the task well and pay it little attention, so experts make them as well as novices {{src:nng-slips}}. NN/g recommends four ways to prevent them: helpful **constraints** where clear rules define acceptable input, **suggestions** that preempt typos, good **defaults** for repetitive or precise input, and **forgiving formatting** that accepts different ways of typing the same thing {{src:nng-slips}}.",
+        "**Slips** happen most when people know the task well and pay it little attention, so experts make them as well as novices {{src:nng-slips}}. NN/g recommends four ways to prevent them: helpful [[constraints|constraints]] where clear rules define acceptable input, **suggestions** that preempt typos, good **defaults** for repetitive or precise input, and **forgiving formatting** that accepts different ways of typing the same thing {{src:nng-slips}}.",
         "**Mistakes** happen when people's mental model does not match how the system works, so they form the wrong goal or misread the result. Preventing them means understanding those mental models through research, following conventions (people expect your product to work like others they use), communicating what controls do, and **previewing results** before people commit {{src:nng-user-mistakes}}.",
         "For both, high-stakes or destructive actions need a final check: a confirmation that states the consequence, or an undo that makes the action reversible {{src:nng-user-mistakes}}. Confirmation works only if it is rare; shown for routine actions it becomes a habit and stops preventing anything.",
       ],
@@ -74,7 +74,7 @@ export default defineEntry({
     advanced: {
       explanation: [
         "In a design system, error prevention is built into **input components and their states**. Each field type encodes its constraints (`type`, `min`, `max`, `step`, `pattern`), purpose (`autocomplete`), keyboard (`inputmode`) and formatting rules once, so every form inherits them. Validation states — untouched, valid, invalid, pending — have defined visuals, copy and announcements: `aria-invalid` on the field and `aria-describedby` pointing to the message, so the problem is exposed to assistive technology as well as shown.",
-        "Prevention, recovery and control form one system. Prevention lowers how often errors happen; error messages help people fix the ones that remain; undo lets people reverse them. The right balance depends on cost: for cheap, frequent actions, undo beats prevention that adds friction; for irreversible actions with high cost, prevention and a review step are worth the friction.",
+        "Prevention, recovery and control form one system. Prevention lowers how often errors happen; [[error-messages|error messages]] help people fix the ones that remain; undo lets people reverse them. The right balance depends on cost: for cheap, frequent actions, undo beats prevention that adds friction; for irreversible actions with high cost, prevention and a review step are worth the friction.",
         "Errors leave traces that can be measured. Useful signals are the validation-error rate per field, how often a field is corrected after an error, abandonment at the field where errors occur, and undo or 'cancel' use immediately after an action. These show where errors cluster; the cause, slip or mistake, usually needs observation to tell apart.",
         "Prevention can be overdone. Over-constrained inputs reject valid data (names with apostrophes, international phone numbers), and over-eager confirmations train people to click through. Each constraint should be justified by a real rule.",
       ],
@@ -162,10 +162,11 @@ export default defineEntry({
   ],
 
   relations: [
+    { target: "interaction-design-discipline", type: "applied-in", note: "Error prevention is designed into interaction sequences through constraints, defaults and confirmation." },
     { target: "nielsen-usability-heuristics", type: "derived-from", note: "Heuristic 5 of Nielsen's ten usability heuristics." },
     { target: "error-recovery", type: "complementary-to", note: "Prevention lowers how often errors happen; recovery helps with those that remain." },
     { target: "form-design", type: "applied-in", note: "Most prevention techniques live in form fields and validation." },
-    { target: "constraints", type: "applied-in", note: "Constraints make wrong input impossible where clear rules exist." },
+    { target: "constraints", type: "related-to", note: "Constraints are one of the techniques error prevention uses: they make wrong input impossible where a clear rule exists." },
     { target: "mental-models", type: "related-to", note: "Mistakes come from mental models that do not match the system." },
     { target: "user-control-and-freedom", type: "complementary-to", note: "Undo makes the errors that are not prevented cheap to reverse." },
   ],

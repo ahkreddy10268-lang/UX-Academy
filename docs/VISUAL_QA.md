@@ -1,5 +1,108 @@
 # Visual QA log
 
+## 2026-11-18 — plate marker clipping fixed; site-wide plate sweep
+
+- **Fix:** `Marker` (`system/sheet.tsx`) and `VizMarker` (`system/viz.tsx`) pass their centre through `insidePlate()` (`illustration-types.ts`), which keeps it at least 12 units from every edge (radius 11 plus half the 1.5-unit stroke). A marker moves by at most 4 units; leaders stay attached. Test: `tests/plate-markers.test.ts`.
+- **Sweep:** every `/library/*` and `/topics/*` page (583) on the production build of the fix, at 390 px, hero plate measured as in `tests/browser/entry-review.cjs`: **538 markers, 0 outside the viewBox, 0 clipped text**, and no visible text under 10 px.
+- **Also fixed in the sweep:** `design-system-audits` label "reach →" (descender past the bottom edge); `confidence-intervals` and `serial-position-effect` labels below `T.min` (7.9 and 8.6 px at 390 px), raised to 13 units.
+- **Explorers (TD-5), fixed the same day:** the Fitts, Hick–Hyman and peak-end explorers' labels raised to `T.min` (9.8 → 11.6 px at 390 px); Fitts start and W′ labels reposition to stay inside the canvas. Checked at every slider extreme: no clipped text.
+
+## 2026-11-16 — plate marker clipping audit (fixed 2026-11-18, see above)
+
+### Method
+Every page that can show a hero plate (`/library/*`, `/topics/*`; 571 pages) was opened on the production build of `bd5e6ff`, and each numbered marker in the hero figure (a circle of radius 8–14 with a one- or two-character numeral) was measured against its SVG `viewBox`, including half its stroke. Sheet plates are drawn in a 400 × 300 viewBox and SVG clips content outside it, so any marker extending past an edge is cut. Script: a Playwright crawl run from the session scratchpad; not added to the repository.
+
+### Measured
+- 484 markers measured; **152 extend past the viewBox in 78 plates** (59 entry plates, 19 subject plates).
+- Overhang is 3.75 units for markers centred 8 units from an edge (x = 8 or 392, y = 8) and 1.75 units for markers 10 units from the top (y = 10) or 10 units from the right (x = 390); the plate is drawn at about 0.79× on a 390 px phone, 1.23× at 1440 px and 1.63× at 768 px (from measured text sizes), so a 3.75-unit overhang is about 3, 4.6 and 6.1 CSS px respectively.
+- An earlier estimate of 43 counted only source lines with a literal `x={8}` or `y={8}`; it missed markers at the right edge and positions computed in code.
+- Not affected: the five Cycle 1, Batch 1 plates (feedback-principle, constraints, direct-manipulation, interaction-states, discoverability) centre their markers 12 units from the nearest edge, so the radius-11 circle and its stroke stay inside; none appears in the list below.
+
+### Affected plates
+| Page | Plate | Clipped markers | Numerals |
+|---|---|---:|---|
+| `/library/ab-testing` | A/B testing | 1 | 3 |
+| `/library/aesthetic-usability-effect` | Aesthetic-usability effect | 2 | 2, 3 |
+| `/library/atomic-design` | Atomic design | 2 | 3, 4 |
+| `/library/card-sorting` | Card sorting | 2 | 3, 4 |
+| `/library/cognitive-load-theory` | Cognitive load theory | 2 | 1, 5 |
+| `/library/cognitive-walkthrough` | Cognitive walkthrough | 1 | 4 |
+| `/library/colour-contrast-ratio` | Colour contrast ratio | 1 | 1 |
+| `/library/colour-systems` | Colour systems | 3 | 1, 2, 4 |
+| `/library/component-architecture` | Component architecture | 2 | 1, 4 |
+| `/library/component-libraries` | Component libraries | 2 | 3, 4 |
+| `/library/component-properties` | Component properties | 3 | 1, 3, 4 |
+| `/library/component-state-management` | Component state management | 2 | 1, 3 |
+| `/library/consistency-principle` | Consistency and standards | 3 | 1, 2, 3 |
+| `/library/data-tables` | Data tables | 1 | 4 |
+| `/library/design-governance` | Design governance | 4 | 1, 2, 3, 4 |
+| `/library/design-language` | Design language | 2 | 1, 3 |
+| `/library/design-qa` | Design QA | 3 | 1, 2, 4 |
+| `/library/design-system-audits` | Design system audits | 2 | 1, 3 |
+| `/library/design-system-versioning` | Design system versioning | 3 | 2, 3, 4 |
+| `/library/design-tokens` | Design tokens | 3 | 1, 3, 4 |
+| `/library/elevation-systems` | Elevation systems | 1 | 1 |
+| `/library/empty-states` | Empty states | 3 | 1, 3, 4 |
+| `/library/error-prevention` | Error prevention | 1 | 1 |
+| `/library/error-recovery` | Error recovery | 3 | 2, 3, 4 |
+| `/library/error-states` | Error states | 1 | 1 |
+| `/library/flexibility-and-efficiency-of-use` | Flexibility and efficiency of use | 1 | 1 |
+| `/library/gulfs-of-execution-and-evaluation` | Gulfs of execution and evaluation | 2 | 3, 4 |
+| `/library/heart-framework` | HEART framework | 2 | 1, 5 |
+| `/library/help-and-documentation` | Help and documentation | 2 | 1, 3 |
+| `/library/heuristic-evaluation` | Heuristic evaluation | 4 | 1, 3, 4, 5 |
+| `/library/hick-hyman-law` | Hick-Hyman law | 1 | 4 |
+| `/library/icon-systems` | Icon systems | 1 | 4 |
+| `/library/jakobs-law` | Jakob's law | 2 | 1, 3 |
+| `/library/jobs-to-be-done` | Jobs to be done | 2 | 1, 4 |
+| `/library/loading-states` | Loading states | 4 | 1, 2, 3, 4 |
+| `/library/mapping` | Mapping | 2 | 1, 3 |
+| `/library/millers-law` | Miller's law | 2 | 2, 3 |
+| `/library/modular-type-scale` | Modular type scale | 1 | 2 |
+| `/library/multi-brand-systems` | Multi-brand systems | 3 | 1, 2, 4 |
+| `/library/nasa-tlx` | NASA-TLX | 2 | 3, 4 |
+| `/library/net-promoter-score` | Net Promoter Score | 1 | 1 |
+| `/library/nielsen-usability-heuristics` | Nielsen's usability heuristics | 1 | 1 |
+| `/library/primitive-tokens` | Primitive tokens | 1 | 1 |
+| `/library/progressive-disclosure` | Progressive disclosure | 2 | 1, 3 |
+| `/library/recognition-over-recall` | Recognition over recall | 2 | 1, 3 |
+| `/library/sample-size-estimation` | Sample size estimation | 4 | 1, 2, 3, 4 |
+| `/library/semantic-tokens` | Semantic tokens | 2 | 2, 3 |
+| `/library/shneiderman-golden-rules` | Shneiderman's golden rules | 2 | 3, 4 |
+| `/library/skeleton-screens` | Skeleton screens | 3 | 1, 2, 4 |
+| `/library/spacing-scales` | Spacing scales | 1 | 1 |
+| `/library/steering-law` | Steering law | 1 | 3 |
+| `/library/system-usability-scale` | System Usability Scale | 4 | 1, 2, 3, 4 |
+| `/library/task-success-rate` | Task success rate | 1 | 4 |
+| `/library/theme-architecture` | Theme architecture | 2 | 3, 4 |
+| `/library/typography-scales` | Typography scales | 1 | 3 |
+| `/library/variants` | Variants | 2 | 2, 3 |
+| `/library/visibility-of-system-status` | Visibility of system status | 1 | 4 |
+| `/library/von-restorff-effect` | Von Restorff effect | 1 | 4 |
+| `/library/working-memory-model` | Working memory model | 3 | 2, 4, 5 |
+| `/topics/accessibility` | Accessibility and inclusive design | 2 | 3, 4 |
+| `/topics/content` | UX writing and content design | 1 | 4 |
+| `/topics/dataviz` | Data visualisation | 2 | 3, 4 |
+| `/topics/design-systems` | Design systems | 1 | 4 |
+| `/topics/emerging` | Emerging and specialised disciplines | 1 | 3 |
+| `/topics/ethics` | Ethical and responsible design | 1 | 3 |
+| `/topics/foundations` | UX and UI fundamentals | 1 | 4 |
+| `/topics/frameworks` | Design methods and frameworks | 1 | 2 |
+| `/topics/heuristics` | Principles and heuristics | 1 | 2 |
+| `/topics/ia` | Information architecture | 2 | 3, 4 |
+| `/topics/interaction` | Interaction design | 3 | 2, 3, 4 |
+| `/topics/laws-effects` | UX laws and cognitive effects | 2 | 3, 6 |
+| `/topics/metrics` | Metrics, formulas and statistics | 2 | 3, 4 |
+| `/topics/practice` | Design practice and technical literacy | 2 | 3, 4 |
+| `/topics/product` | Product design and strategy | 1 | 5 |
+| `/topics/psychology` | Cognition, behaviour and human factors | 3 | 1, 2, 4 |
+| `/topics/research` | UX research | 2 | 4, 5 |
+| `/topics/service` | Service design and systems thinking | 4 | 1, 2, 3, 4 |
+| `/topics/type-colour` | Typography and colour science | 1 | 3 |
+
+### Status
+Recorded as a separate illustration-quality issue. None of these plates has been changed or re-checked visually in this pass. The fix is mechanical (move each marker so its circle and stroke stay inside the viewBox, as the constraints plate did in session 43) but should be done one plate at a time with a visual check at 390 and 1440 px, per the Visual Learning System's migration rule.
+
 ## 2026-11-09 — session 25: Level-1 migration and Level-2 completion
 
 ### Method

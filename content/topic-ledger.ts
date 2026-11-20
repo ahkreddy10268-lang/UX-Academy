@@ -9,4 +9,6 @@
  */
 import type { ContentStatus } from "../lib/content/schema";
 
-export const researchLedger: Record<string, { status: Extract<ContentStatus, "research-pending" | "research-completed">; since: string; note: string }> = {};
+export const researchLedger: Record<string, { status: Extract<ContentStatus, "research-pending" | "research-completed">; since: string; note: string }> = {
+  // Cycle 1 (D-129), Batches 1–3: all 14 topics published by 2026-11-16; none pending.
+};

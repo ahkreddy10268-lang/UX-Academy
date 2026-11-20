@@ -9,13 +9,18 @@ import m5 from "./core";
 import m6 from "./design-systems";
 import m7 from "./disability";
 import m8 from "./evaluation";
-import m9 from "./fitts";
-import m10 from "./formula-library";
-import m11 from "./foundations-frameworks";
-import m12 from "./hci-history";
-import m13 from "./interaction-models";
-import m14 from "./measurement";
-import m15 from "./resources";
+import m9 from "./findability";
+import m10 from "./fitts";
+import m11 from "./formula-library";
+import m12 from "./foundations-frameworks";
+import m13 from "./fundamentals";
+import m14 from "./hci-history";
+import m15 from "./interaction-models";
+import m16 from "./interaction-principles";
+import m17 from "./measurement";
+import m18 from "./research-methods";
+import m19 from "./resources";
+import m20 from "./ux-writing";
 
 export const rawSources: Source[] = [
   ...m0,
@@ -33,5 +38,10 @@ export const rawSources: Source[] = [
   ...m12,
   ...m13,
   ...m14,
-  ...m15
+  ...m15,
+  ...m16,
+  ...m17,
+  ...m18,
+  ...m19,
+  ...m20
 ];

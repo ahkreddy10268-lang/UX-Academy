@@ -14,6 +14,7 @@
  */
 import type { ReactNode } from "react";
 import { iso, plane, type Pt } from "./kit";
+import { insidePlate } from "../illustration-types";
 
 export const Z = {
   bg: "var(--viz-bg)",
@@ -305,7 +306,8 @@ export function Callout({ x, y, w, h, tone = "neutral", children }: { x: number;
  * Marker. Explanations live in the plate's HTML figure key, so the figure
  * carries a numeral at a readable size instead of microtext. Hero only.
  */
-export function VizMarker({ x, y, n, tone = "text", to }: { x: number; y: number; n: number | string; tone?: "text" | "accent" | "positive" | "warning"; to?: Pt }) {
+export function VizMarker({ x: x0, y: y0, n, tone = "text", to }: { x: number; y: number; n: number | string; tone?: "text" | "accent" | "positive" | "warning"; to?: Pt }) {
+  const [x, y] = insidePlate(x0, y0);
   const fill = tone === "accent" ? Z.accent : tone === "positive" ? Z.positive : tone === "warning" ? Z.warning : Z.text;
   return (
     <g>

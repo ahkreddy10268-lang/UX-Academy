@@ -1,0 +1,114 @@
+# Open issues
+
+The single register of unresolved items. Details stay in the linked review or report; this file says what is open, whether it blocks, and what closes it. Update it when an item opens or closes (move closed items to § Closed with the commit that closed them).
+
+Severity: critical · major · moderate · minor (see the `ux-academy-workflow` skill § 5). **Blocks publication** = blocks pushing or publishing the affected work.
+
+Last updated: 2026-11-20, after the deployment reconciliation (DEP-1 branch setting resolved; PR #3 awaiting merge).
+
+## Cycle and process
+
+| ID | Description | Files | Severity | Blocks publication | Status | Required action | Related |
+|---|---|---|---|---|---|---|---|
+| C1-1 | **Decided 2026-11-17:** Cycle 2 begins with an improvement-only batch; no new topics. Scope proposal awaiting review: `docs/CYCLE_2_IMPROVEMENT_PROPOSAL.md`. Original: The § 9.3 stop rule was triggered in Batch 1 (`constraints` 5 rework commits; `feedback-principle`, `interaction-states` 2 each). The rule makes the next cycle an improvement cycle "until resolved". | `docs/BALANCED_DEVELOPMENT_PLAN.md` § 9.3; `docs/CYCLE_1_BALANCE_REVIEW.md` § 9 | moderate | No (blocks Cycle 2 new-topic planning) | Decided; scope awaiting owner approval | Owner reviews and approves the improvement-batch scope. Record the decision in DECISION_LOG when the batch is approved. | Cycle 1 review; D-129 |
+| C1-2 | I1 coveredBy checks. **Done 2026-11-17** (see § Closed). | — | — | — | Closed | — | Cycle 1 review; I1 |
+| C1-3 | Clusters A and E were untouched in Cycle 1; the plan requires every cluster within two cycles. | `docs/BALANCED_DEVELOPMENT_PLAN.md` § 2 | minor | No | **Closed 2026-11-19**: met by Cycle 3 (B5 = A, B8 = E) | — (Cycle 2 is the improvement phase; the first new-topic cycle after it is Cycle 3.) | Cycle 1 review; D-131 |
+| C3-1 | **B4 Accessibility in code → Cycle 4, G slot (owner decision 2026-11-19).** Dependency check done 2026-11-19: no critical gap. No published entry lists a B4 topic as a prerequisite; no Cycle 3 topic depends on one (the `navigation-patterns` accessibility section rests on the published `wcag` entry plus W3C sources already in the registry, and links the planned B4 slugs without explaining them); the `wcag` entry already explains the four principles behind the Accessibility path's Stage 1 step `pour`. Cost of delay, not a gap: the path stays at 20 % (3/15, Stage 2 unavailable) for one more cycle; B4 raises it to ~53 %. B4's combined demand (58; `focus-management` rank 8) is the highest of any unscheduled batch, so it must not slip past Cycle 4. Downstream: B19 (Cycle 7 per D-129 order) and B10 (soft) both still follow B4. | `docs/DECISION_LOG.md` D-131; `docs/PROJECT_STATE.md` | minor | No | Scheduled (Cycle 4 G slot) | Confirm at Cycle 4 planning; re-run the check if Cycle 3 content changes B4's links. | D-129 § 5, § 8; D-131 |
+| C3-2 | **Cluster rotation rule (owner decision 2026-11-19):** improvement-only cycles do not count toward the two-cycle window; only new-topic cycles do. Consequence for planning: Cycle 3 touches A, C, E, so **Cycle 4 must touch clusters B and D**; B4 is cluster C, so Cycle 4's other two batches must be one B-cluster and one D-cluster batch. Then Cycle 5 must touch A and E (window 4–5). Not decided here; belongs to Cycle 4 planning. Not yet recorded as a numbered decision (D-129 unchanged). | `docs/BALANCED_DEVELOPMENT_PLAN.md` § 2.3 | minor | No | Rule decided; Cycle 4 composition open | Owner may want the rule formalised in the decision log. | D-129; D-131 |
+| C3-3 | **Cycle 3 production risks found in the source check.** (a) Full-text access to paywalled originals (Econometrica, Science, QJE, Psychological Review, Journal of Service Research) is untested; per the B3-o2 precedent, entries state "abstract only" where true and lean on readable meta-analyses, replications and open standards for claims. (b) The originating sources for `findability` (Morville) and `social-proof` (Cialdini) are books with no machine check; claims about them stay attributed and bibliographic. (c) `framing-effect`, `anchoring-effect` and `social-proof` are in no learning path; adding them is a path change that needs separate owner approval. (d) Eight remembered DOIs were wrong at first check, so every DOI is machine-verified before it is registered. | `content/sources/` | minor | No | Open (production-time) | Handle inside each batch; no separate research loop. | D-131; Cycle 3 pre-production |
+| C3-4 | **`information-foraging-theory` rests on abstracts.** Pirolli & Card (1999) could not be read at all (bibliographic only); Pirolli (2007), Chi et al. (2001), Bates (1989) and Fu & Pirolli (2007) abstracts only (the last is open access, but the publisher page returned 403 to automated reads). The entry states no equations, parameters or model-fit results and says so. | `content/knowledge/ia/information-foraging-theory.ts`, `content/sources/findability.ts` | minor | No | Open (limit documented) | Deepen only if a legitimately readable copy becomes available (e.g. the owner supplies the open-access SNIF-ACT PDF or the 1999 article); no search for mirrors. | D-131; B6 |
+| C3-6 | **`information-scent` rests on abstracts for its research claims** (Chi et al. 2001, Fu & Pirolli 2007, Furnas et al. 1987; Pirolli & Card 1999 not read). Practical guidance comes from two NN/g articles read in full and is labelled as professional guidance. No replication literature examined. | `content/knowledge/ia/information-scent.ts` | minor | No | Open (limit documented) | Deepen if a legitimately readable copy becomes available. | B6 topic 2 |
+| B5-1 | **`default-effect` source limits.** Johnson & Goldstein 2003 and Dinner et al. 2011 abstract only (SSRN refused automated access); Madrian & Shea read in the NBER working-paper version; OECD BASIC toolkit not accessible and listed as further reading without claims. Digital-harm claims rest on the CMA review's summaries of other studies. | `content/knowledge/laws-effects/default-effect.ts`, `content/sources/cognitive-effects.ts` | minor | No | Open (limit documented) | Read the full texts if legitimately available; re-try OECD in a later session. | B5 topic 1 |
+| C3-5 | **Pre-existing attribution in `information-architecture`.** That entry attributes the scent-following description to `pirolli-card-1999`, a source no session has been able to read. Found while linking; not changed (one topic only). Also: the pre-production candidate labelled "Nielsen 2003" pointed to a URL that now redirects to Budiu (2020); the Nielsen article is at `/articles/information-foraging-leave-site/` and both are now registered correctly. | `content/knowledge/ia/information-architecture.ts` | minor | No | Open | Re-check the attribution in the next improvement pass (cite the readable NN/g sources, or keep and mark it bibliographic). | B6 review |
+| D1-2 | **Pre-existing:** `human-computer-interaction` lists `iso-9241-11-2018` in its references but never cites it (true at `9eb3675` too). Found by `entry-integrity.ts` in Batch 5. | `content/knowledge/foundations/human-computer-interaction.ts` | minor | No | Open | Cite it where the entry discusses usability, or move it to `further`. | D-132 Batch 5 |
+| D1-4 | **Domain 1 source limits.** Abstract-only: Davis 1989, Grudin 1992, Venkatesh 2003, Kimbell 2011, Liedtka 2015, Wynn & Clarkson 2018 (publisher cookie page on both attempts), Salah 2014, Forlizzi & Battarbee 2004, Sheldon 2001, van Dam 1997, Johnson 1989. Bibliographic only: Chapman & Plewes 2014, Hassenzahl 2010. Brown 2008 is paywalled and cited only for its existence. Entries limit their claims to what was read and say so. | `content/sources/fundamentals.ts` | minor | No | Open (limit documented) | Deepen if a legitimately readable copy becomes available; no mirror search. | D-131; D-132 |
+| D1-5 | **`ux-maturity` rests on one readable model** (NN/g, a practitioner model, not independently validated). The second model (Chapman & Plewes) is bibliographic only. The entry says so. A shorter history of HCI also stays in `human-computer-interaction`; a fuller history could become its own entry later only by reversing the coveredBy decision (CONTENT_AUDIT session 62). | `content/knowledge/foundations/ux-maturity.ts`; `human-computer-interaction.ts` | minor | No | Open | Add a readable second maturity model or an evaluation study when found. | D-132 |
+| D1-6 | **Resource-enrichment limits.** The NN/g UX maturity quiz could not be verified (TLS failure on two attempts) and was not added. GitHub API access in this session is limited to the project repository; repositories were checked through the search API and raw README files. Only `alphagov/govuk-frontend` was added. | `content/sources/fundamentals.ts` | minor | No | Open | Add the quiz if it can be verified later. | D-132 enrichment |
+| DEP-1 | **Vercel production is not built from `main`.** Every production deployment of project `ux-academy` comes from branch `claude/pensive-cannon-t1o6sy` (current production: `a1f6373`, PR #2's head); no deployment has ever been built from `main`. Merging PR #3 into `main` will therefore not update production unless the project's production branch is set to `main` (Vercel project settings → Git → Production Branch). Changing it is a production setting and needs the owner. **Update 2026-11-20:** the owner set the production branch to `main` in the Vercel dashboard and confirmed it with a screenshot (the Vercel connector does not expose the setting; the project's last-updated time changed to 10:48 UTC, and no production deployment was triggered). Production still serves `a1f6373` until `main` changes. | Vercel project settings | major | Yes (production) | Branch setting resolved; production deployment pending | Owner approves and merges PR #3 (head `6b030cf`); then verify that Vercel builds production from `main`, that production serves the merge commit, and that Domain 1 shows 16 published, 5 addressed within, 0 planned. Close DEP-1 only after that. | Deployment reconciliation 2026-11-20 |
+| P-1 | `80f8058`, `8c7408e`, `a7c4937` pushed 2026-11-17 on owner approval; the I1 commit is local only. | — | — | — | Awaiting owner approval (I1 commit) | Push only on explicit approval. | Batch 3 |
+
+## Improvement Batch 1 — open items and exclusions
+
+| ID | Description | Severity | Blocks publication | Status | Required action |
+|---|---|---|---|---|---|
+| IB1-2 | `heart-framework` has one primary source (Rodden, Hutchinson & Fu 2010); D-129 evidence target not met. Two independent sources read and added as `explanatory` (Open Targets case study; Microsoft HEART documentation); no independent peer-reviewed evaluation could be read (one application study was blocked, HTTP 403). Owner decision 2026-11-17: keep the target, no class change, document the gap. | minor | No | Documented gap | Revisit only if a second primary or standard source can be read and verified. |
+| IB1-5 | `system-usability-scale` Editorial stays developing: `brooke-2013` could not be read. | minor | No | Open | See TD-3 and N-1. |
+| N-1 | ~~`system-usability-scale` attributed a claim to the unread Brooke (2013).~~ **Resolved in `35cf36b`** (attribution removed). | moderate | No | Closed | — |
+| N-2 | ~~`ericsson-simon-1993` cited by three entries.~~ **Closed in IB2 (`2216116`)**: two entries and the HCI explorer now cite the 1980 abstract; `think-aloud-protocol` keeps a labelled bibliographic mention. | minor | No | Closed | — |
+| N-3 | ~~`doherty-threshold` lead presented 400 ms as the claim.~~ **Resolved in `35cf36b`**. Year (1982) and form number still not confirmed in the copy read. | minor | No | Closed (year/form open) | Confirm when a readable first-party copy is available. |
+| N-4 | ~~`brooke-1996` read status unknown.~~ **Closed in IB2**: read from a third-party copy and the SUS statements confirmed; record stays `bibliographic` (not the publisher's edition). | minor | No | Closed | — |
+| EX-1 | Excluded from Improvement Batch 1 by owner decision (2026-11-17), preserved here: B2-O-3 (optional `mental-models` → think-aloud link), B2-O-4 (e2e `role="status"` hardening), B3-o2 (full-text reads of abstract-only sources), the ten diagrams (DEF-1), twelve Practice entries (DEF-2), the 78-plate marker backlog (TD-1). | — | No | Preserved | Consider in subsequent improvement work. |
+
+## Deferred by owner decision (2026-11-17) — not dropped
+
+| ID | Description | Severity | Blocks publication | Status | Required action |
+|---|---|---|---|---|---|
+| DEF-1 | ~~Ten detailed (Level-2) diagrams below the D-129 visual target.~~ **Closed in IB3 (`8863945`) and IB4 (`4f844f5`)**: D-129 visual target 102/102. | minor | No | Closed | — |
+| DEF-2 | ~~Twelve entries with developing Practice.~~ **Closed in IB2**: Practice complete 102/102. | minor | No | Closed | — |
+| DEF-3 | Five coveredBy candidates left planned: Empty-State Writing, State Transitions, Utility, Usefulness, Desirability. | minor | No | Intentional | Revisit only if a host is extended to explain the topic; never changed to reach a count. |
+
+## Technical debt
+
+| ID | Description | Files | Severity | Blocks publication | Status | Required action | Related |
+|---|---|---|---|---|---|---|---|
+| TD-1 | ~~152 numbered plate markers in 78 plates clipped at the viewBox edge.~~ **Closed in `732077a`** (2026-11-18): the marker primitives keep the whole marker inside the 400 × 300 viewBox; a sweep of all 583 plate pages finds 0 markers outside and 0 clipped text. Regression test `tests/plate-markers.test.ts`. | `components/illustrations/system/*` | moderate | No | Closed | — | VISUAL_QA |
+| TD-2 | 11 published entries are below their D-129 targets; all pre-date Cycle 1. | `docs/CONTENT_COVERAGE.md` § Targets | minor | No | Open | Address in improvement batches. | D-129; Cycle 1 review |
+| TD-3 | `brooke-2013` still awaiting verification (the article could not be read; see IB1-5). The other three records were verified in Improvement Batch 1 (`3d5aa38`). Eight URLs still block automated checks. | `content/sources/**` | minor | No | Partly closed (3 of 4) | Read Brooke (2013) from a copy that can be fetched, or decide N-1. | Improvement Batch 1 report |
+| TD-4 | ~~`confidence-intervals` plate text 7.9 px at 390 px.~~ **Closed in `732077a`**: labels raised to `T.min`; the same sweep found and fixed `serial-position-effect` (8.6 px). No plate page now has visible text under 10 px at 390 px. | `components/illustrations/concepts/*` | minor | No | Closed | — | IB2 review |
+| TD-5 | ~~Interactive explorers used 11-unit labels (9.8 px on a 390 px phone).~~ **Closed 2026-11-18**: the seven explorer labels and the dimension label use `T.min` (11.6 px at 390 px); the Fitts explorer's start and W′ labels reposition so no text leaves the canvas at any slider value (checked at every slider extreme on all three explorers). | `components/illustrations/interactive/explorers.tsx`, `components/illustrations/primitives.tsx` | minor | No | Closed | — | 2026-11-18 sweep |
+
+## Fixed 2026-11-18 (`732077a`)
+
+- **SEC-1** Next.js 16.4.4 advisory GHSA-mfr8-8qww-v76h (moderate) — upgraded to 16.4.6 with `eslint-config-next` to match; dev-only minimatch advisory fixed by `npm audit fix`. `npm audit`: 0 vulnerabilities. The CLI security notice that made every build exit 1 once no longer appears.
+- **IB3-F1** Level-2 text versions double-numbered items — the list keeps ordered semantics without visible automatic numbers.
+- **DSA-1** `design-system-audits` plate label "reach →" was clipped at the bottom edge — moved inside.
+- **QA-1** `e2e-redesign` expected 18 concepts with a detailed diagram; IB3 and IB4 made it 28, and the earlier ledger marked the suite as inherited when it should have been rerun. Expectation updated to the verified 28.
+
+## Batch 3 (UX writing) — minors
+
+| ID | Description | Files | Severity | Blocks publication | Status | Required action | Related |
+|---|---|---|---|---|---|---|---|
+| B3-o1 | ~~`plain-language` Easy Read unsourced.~~ **Closed in `3d5aa38`** (Inclusion Europe standards read and cited), pending owner review. | `content/knowledge/content/plain-language.ts` | minor | No | Closed | — | Improvement Batch 1 report IB1-4 |
+| B3-o2 | Partly closed in IB2: `shneiderman-1982` read in full (author's copy). `redish-1981`, `redish-2000`, `seckler-2014-web-forms`, `bargas-avila-2007`, `iso-24495-1-2023`: one access attempt each (403 / paywall / unreadable); abstract-only limits stay. | `content/sources/ux-writing.ts` | minor | No | Open (limit documented) | Only if a readable copy becomes available. | IB2 review |
+| B3-o3 | Linked planned targets remain planned: `tone-of-voice`, `content-strategy`, `form-design`, `readability-formulas`, `cognitive-accessibility`, `deceptive-patterns`, `content-audit`. | `content/taxonomy.ts` | minor | No | Open (expected) | Covered by future batches. | CYCLE_1_BALANCE_REVIEW § 1 |
+
+## Batch 2 (UX research) — minors
+
+| ID | Description | Files | Severity | Blocks publication | Status | Required action | Related |
+|---|---|---|---|---|---|---|---|
+| B2-O-1 | ~~`usability-testing` cited the unread Ericsson & Simon 1993.~~ **Closed in `3d5aa38`** (retargeted to the DOI-verified 1980 paper, abstract read), pending owner review. | `content/knowledge/research/usability-testing.ts` | minor | No | Closed | — | Improvement Batch 1 report IB1-3 |
+| B2-O-2 | Validation-study searches for tree testing and contextual inquiry were not systematic. | — | minor | No | Open | Systematic search if the owner wants it. | BATCH_2_REVIEW § 4 |
+| B2-O-3 | ~~`mental-models` think-aloud link.~~ **Closed in IB2** (prose link added). | minor | No | Closed | — |
+| B2-O-4 | Optional e2e hardening (`role="status"`). | `tests/browser/` | minor | No | Open (optional) | Harden the selector. | BATCH_2_REVIEW |
+
+## Batch 1 (interaction principles) — minors
+
+| ID | Description | Severity | Blocks publication | Status | Required action |
+|---|---|---|---|---|---|
+| B1-FP-6 | ~~No link back from `doherty-threshold`.~~ **Closed in IB2.** | minor | No | Closed | — |
+| B1-C-4 | ~~No links back to `constraints`.~~ **Closed in IB2.** | minor | No | Closed | — |
+| B1-DM-1 | Hutchins, Hollan & Norman (1985) read from a course-reading copy; 13 claims + the L2 figure rely on it. | minor | No | Owner decision | Confirm against a publisher/library copy if wanted. |
+| B1-IS-1 | `interaction-states` evidence class `official-standard` is a judgement call. | minor | No | Owner decision | Owner confirms the class. |
+| B1-IS-2 | ~~No link back from `colour-contrast-ratio`.~~ **Closed in IB2.** | minor | No | Closed | — |
+| B1-D-1 | `discoverability` is in no learning path. | minor | No | Owner decision (paths are reserved to the plan) | Owner decides. |
+| B1-D-2 | ~~No link back from `cognitive-walkthrough`.~~ **Closed in IB2.** | minor | No | Closed | — |
+| B1-W | ~~`w3c-wcag-22` note.~~ **Closed in IB2**: status re-checked 2026-11-17. | minor | No | Closed | — |
+
+Details: `docs/BATCH_1_REVIEW.md` §§ 3, 7, 9.
+
+## Testing gaps
+
+| ID | Description | Severity | Blocks publication | Status | Required action |
+|---|---|---|---|---|---|
+| T-1 | No screen-reader, physical-device or independent expert testing (the container has none). Keyboard, accessibility-tree, emulation and axe suites pass. | minor (stated limitation) | No | Open | Manual testing by the owner or a tester. |
+
+## Product known issues
+
+The UI known issues (static lesson rail on phones, chip-row scrolling, steering-lab keyboard, HTTP 200 on unknown dynamic slugs, etc.) are kept in `docs/ROADMAP.md` § Known issues and not duplicated here.
+
+## Closed
+
+- **D1-3 — generated taxonomy doc mislabelled addressed-within topics** (2026-11-20). `scripts/generate-docs.ts` now marks `coveredBy` topics ↪️ with their host; regenerated `KNOWLEDGE_TAXONOMY.md` shows 23 such topics (Domain 1: utility, feasibility, viability, human-centred design, history of HCI). Commit recorded in the QA ledger.
+
+- **IB1-1, IB1-3, IB1-4, IB1-5 (3 of 4), B2-O-1, B3-o1, N-1, N-3** — Improvement Batch 1 accepted by the owner 2026-11-17 with corrections (`3d5aa38`, `35cf36b`).
+- **C1-2 — I1 coveredBy checks** (2026-11-17). Reconciled: 13 candidates (plan § 7.3 marks 9; my first report said 10 and missed `utility`, `usefulness`, `desirability`; the owner's "11" matches no list in the repository). 8 applied (ISO/IEC 40500, Success Criteria, Conformance Levels → `wcag`; Effectiveness, Efficiency, Satisfaction → `usability`; Margin of Error → `confidence-intervals`; Emphasis → `visual-hierarchy`); 5 deferred and left planned (Empty-State Writing, State Transitions, Utility, Usefulness, Desirability). Addressed within 10 → 18. Full table with reasons: `docs/CONTENT_AUDIT.md` session 51.

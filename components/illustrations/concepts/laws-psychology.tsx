@@ -1,5 +1,6 @@
 /** Plates: laws-psychology. Authored to docs/ILLUSTRATION_SYSTEM.md rules. */
 import type { CSSProperties } from "react";
+import { T } from "../system/sheet";
 import type { IllustrationEntry } from "../illustration-types";
 import { C, Label, STROKE } from "../primitives";
 import { recognitionOverRecallPlate as recognitionOverRecall } from "./learning-sheets";
@@ -39,10 +40,10 @@ const serialPositionEffect: IllustrationEntry = {
           return <rect key={i} x={x0 + i * (bw + gap)} y={base - r * h} width={bw} height={r * h} fill={end ? C.base : C.soft} stroke={C.line} strokeWidth={STROKE.fine} />;
         })}
         <path d={d} fill="none" stroke={C.ink} strokeWidth={STROKE.main} strokeDasharray="5 4" className={animate ? "anim-draw" : undefined} style={animate ? ({ "--len": 360 } as CSSProperties) : undefined} />
-        <Label x={x0 + 1.5 * (bw + gap)} y={74} show={detail} tone="line">primacy</Label>
-        <Label x={x0 + 10.2 * (bw + gap)} y={60} show={detail} tone="line">recency</Label>
-        <Label x={210} y={254} show={detail} tone="mute">list position →</Label>
-        <Label x={x0 - 6} y={42} anchor="start" show={detail} tone="mute">recall ↑</Label>
+        <Label x={x0 + 1.5 * (bw + gap)} y={74} show={detail} size={T.min} tone="line">primacy</Label>
+        <Label x={x0 + 10.2 * (bw + gap)} y={60} show={detail} size={T.min} tone="line">recency</Label>
+        <Label x={210} y={254} show={detail} size={T.min} tone="mute">list position →</Label>
+        <Label x={x0 - 6} y={42} anchor="start" show={detail} size={T.min} tone="mute">recall ↑</Label>
       </g>
     );
   },

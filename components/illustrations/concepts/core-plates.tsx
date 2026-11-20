@@ -13,7 +13,7 @@ import { gestaltPlate as gestalt } from "./learning-sheets";
 import { millersLawPlate as millers } from "./learning-sheets";
 import { peakEndPlate as peakEnd } from "./learning-sheets";
 import { iaSubject as informationArchitecture } from "./subject-sheets";
-import { designThinkingPlanned as designThinking } from "./subject-sheets";
+import { designThinkingPlate as designThinking } from "./fundamentals-sheets";
 import { atomicDesignPlate as atomicDesign } from "./subject-sheets";
 
 export const corePlates = [hickHyman, gestalt, cltPlate, millers, jakobs, mentalModelsPlate, affordancesPlate, signifiersPlate, peakEnd, doubleDiamondPlate, designThinking, nielsenHeuristics, informationArchitecture, atomicDesign];

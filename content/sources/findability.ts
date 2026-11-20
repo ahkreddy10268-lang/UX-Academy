@@ -1,0 +1,117 @@
+/**
+ * Sources for the information foraging theory entry (Cycle 3, Batch B6,
+ * D-129/D-131). Each note says what was actually read: a full text, an abstract
+ * (via OpenAlex) or only the bibliographic record. Claims in the entry are
+ * limited to what the note records. Pirolli & Card (1999), whose record is in
+ * evaluation.ts, could not be read: the entry says so.
+ */
+import { defineSources } from "../../lib/content/define";
+
+export default defineSources([
+  {
+    id: "pirolli-2007",
+    title: "Information Foraging Theory: Adaptive Interaction with Information",
+    authors: ["Pirolli, P."],
+    publisher: "Oxford University Press",
+    container: "Oxford University Press (monograph)",
+    year: 2007,
+    doi: "10.1093/acprof:oso/9780195173321.001.0001",
+    type: "book",
+    tier: 1,
+    topics: ["information foraging", "human-information interaction", "rational analysis", "behavioural ecology"],
+    access: "paywalled",
+    verification: "bibliographic",
+    lastVerifiedAt: "2026-11-19",
+    notes:
+      "DOI resolves in Crossref (monograph, Oxford University Press, 3 May 2007; the registered title omits the subtitle). Abstract read (OpenAlex); the book itself was not read. The abstract says the theory aims to explain and predict how people will best shape themselves to their information environments and how information environments can best be shaped to people; that it draws on rational analysis of cognition, computational cognitive modelling, behavioural ecology and microeconomics; and that the book presents empirical tests of its predictions and applications to user-interface design. Chapter-level claims (equations, parameter values, study details) are not taken from this record.",
+  },
+  {
+    id: "fu-pirolli-2007",
+    title: "SNIF-ACT: A cognitive model of user navigation on the World Wide Web",
+    authors: ["Fu, W.-T.", "Pirolli, P."],
+    container: "Human–Computer Interaction",
+    year: 2007,
+    volume: "22",
+    issue: "4",
+    pages: "355-412",
+    doi: "10.1080/07370020701638806",
+    type: "journal-article",
+    tier: 1,
+    topics: ["information foraging", "information scent", "cognitive model", "web navigation"],
+    access: "open",
+    verification: "bibliographic",
+    lastVerifiedAt: "2026-11-19",
+    notes:
+      "The article is open access, but the publisher page returned HTTP 403 to automated reads on 2026-11-19, so only the abstract was read (OpenAlex; the stored abstract is cut off mid-sentence). The abstract says SNIF-ACT (Scent-based Navigation and Information Foraging in the ACT cognitive architecture) is a computational cognitive model of web navigation motivated by information foraging theory; that the theory quantifies the perceived relevance of a link to a user's goal by a spreading-activation mechanism; and that the model assumes users evaluate links on a page sequentially and decide to click or go back with a Bayesian satisficing model that combines earlier and current assessments of link-text relevance. The tasks, participants, data and fit statistics were not read.",
+  },
+  {
+    id: "chi-pirolli-chen-pitkow-2001",
+    title: "Using information scent to model user information needs and actions on the Web",
+    authors: ["Chi, E. H.", "Pirolli, P.", "Chen, K.", "Pitkow, J."],
+    container: "Proceedings of the SIGCHI Conference on Human Factors in Computing Systems (CHI 2001)",
+    year: 2001,
+    pages: "490-497",
+    doi: "10.1145/365024.365325",
+    type: "conference-paper",
+    tier: 1,
+    topics: ["information scent", "web navigation", "information needs", "foraging"],
+    access: "paywalled",
+    verification: "bibliographic",
+    lastVerifiedAt: "2026-11-19",
+    notes:
+      "Metadata checked against Crossref 2026-11-19. Abstract read (OpenAlex); the paper was not read. The abstract says people forage for information on the web by navigating along links, guided by their information needs; it describes two algorithms based on information scent, defined as the subjective sense of value and cost of accessing a page based on perceptual cues, one that infers the information need from a surfing pattern and one that predicts surfing from a need; and it reports an empirical evaluation showing their effectiveness. The data, measures and results of that evaluation were not read.",
+  },
+  {
+    id: "bates-1989",
+    title: "The design of browsing and berrypicking techniques for the online search interface",
+    authors: ["Bates, M. J."],
+    container: "Online Review",
+    year: 1989,
+    volume: "13",
+    issue: "5",
+    pages: "407-424",
+    doi: "10.1108/eb024320",
+    type: "journal-article",
+    tier: 1,
+    topics: ["berrypicking", "information seeking", "browsing", "search interface"],
+    access: "paywalled",
+    verification: "bibliographic",
+    lastVerifiedAt: "2026-11-19",
+    notes:
+      "Metadata checked against Crossref 2026-11-19. Abstract read (OpenAlex); the article was not read. The abstract says Bates proposes a model of searching in online systems, called berrypicking, argued to be much closer to real searcher behaviour than the traditional information-retrieval model and so a better guide to interface design; draws on research into manual information seeking for capabilities users might want; and gives particular attention to the types of browsing a search interface can support. Cited only as another account of how people seek information, not as a test of foraging theory.",
+  },
+  {
+    id: "nielsen-2003-information-foraging",
+    title: "Information foraging: why Google makes people leave your site faster",
+    authors: ["Nielsen, J."],
+    organisation: "Nielsen Norman Group",
+    container: "Nielsen Norman Group articles",
+    year: 2003,
+    url: "https://www.nngroup.com/articles/information-foraging-leave-site/",
+    type: "professional-article",
+    tier: 3,
+    topics: ["information foraging", "information scent", "patch leaving", "diet selection", "web navigation"],
+    access: "open",
+    verification: "url-checked",
+    lastVerifiedAt: "2026-11-19",
+    notes:
+      "Published 29 June 2003; read in full 2026-11-19. A practitioner's interpretation of the theory by the author, who attributes it to Card, Pirolli and colleagues at PARC: scent as the estimate of a path's success from cues; diet selection (a fox choosing between big and small rabbits) and patch leaving (whether to move on depends on how far the next patch is), with each website treated as a patch; the cost-benefit framing in two questions (expected gain, likely cost to find and consume it, both estimated from experience or design cues); design advice and Nielsen's prediction that visits to any one site will become shorter. The article cites no data for these predictions; the fox example is an illustration. Professional guidance and interpretation, not primary evidence.",
+  },
+  {
+    id: "budiu-2020-information-scent",
+    title: "Information scent: how users decide where to go next",
+    authors: ["Budiu, R."],
+    organisation: "Nielsen Norman Group",
+    container: "Nielsen Norman Group articles",
+    year: 2020,
+    url: "https://www.nngroup.com/articles/information-scent/",
+    type: "professional-article",
+    tier: 3,
+    topics: ["information scent", "information foraging", "link labels", "social foraging"],
+    access: "open",
+    verification: "url-checked",
+    lastVerifiedAt: "2026-11-19",
+    notes:
+      "Published 2 February 2020; read in full 2026-11-19 (the older address /articles/information-foraging/ now redirects to this article). A practitioner's explanation: information scent is a central concept of information foraging theory; it is the user's imperfect estimate of the value a source will deliver, derived from its representation (link label, accompanying text or image, surrounding context) and from what the user already knows; it is relative to an information need; true value is unknown until the source is consumed; social foraging extends the theory to groups who leave traces that add to others' scent. Design advice and examples are NN/g's own observations. Professional guidance, not primary evidence.",
+  },
+]);

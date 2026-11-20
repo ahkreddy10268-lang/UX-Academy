@@ -54,6 +54,14 @@
     "registeredContainer": "Proceedings of the SIGCHI Conference on Human Factors in Computing Systems",
     "similarity": 1
   },
+  "alhadreti-mayhew-2018": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-16",
+    "registeredTitle": "Rethinking Thinking Aloud: A Comparison of Three Think-Aloud Protocols",
+    "registeredYear": 2018,
+    "registeredContainer": "Proceedings of the 2018 CHI Conference on Human Factors in Computing Systems",
+    "similarity": 1
+  },
   "amershi-et-al-2019": {
     "status": "doi-verified",
     "checkedAt": "2026-11-04",
@@ -191,6 +199,22 @@
     "registeredContainer": "International Journal of Human–Computer Interaction",
     "similarity": 1
   },
+  "bargas-avila-2007": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-16",
+    "registeredTitle": "Usable error message presentation in the World Wide Web: Do not show errors right away",
+    "registeredYear": 2007,
+    "registeredContainer": "Interacting with Computers",
+    "similarity": 1
+  },
+  "bates-1989": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-19",
+    "registeredTitle": "The design of browsing and berrypicking techniques for the online search interface",
+    "registeredYear": 1989,
+    "registeredContainer": "Online Review",
+    "similarity": 1
+  },
   "baymard-research": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
@@ -202,6 +226,14 @@
     "registeredTitle": "ISO 9241-11 Revised: What Have We Learnt About Usability Since 1998?",
     "registeredYear": 2015,
     "registeredContainer": "Lecture Notes in Computer Science",
+    "similarity": 1
+  },
+  "beyer-holtzblatt-1995": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-16",
+    "registeredTitle": "Apprenticing with the customer",
+    "registeredYear": 1995,
+    "registeredContainer": "Communications of the ACM",
     "similarity": 1
   },
   "bi-li-zhai-2013": {
@@ -244,9 +276,17 @@
     "registeredContainer": "IEEE Transactions on Professional Communication",
     "similarity": 1
   },
+  "braun-clarke-2006": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-16",
+    "registeredTitle": "Using thematic analysis in psychology",
+    "registeredYear": 2006,
+    "registeredContainer": "Qualitative Research in Psychology",
+    "similarity": 1
+  },
   "brooke-1996": {
     "status": "doi-verified",
-    "checkedAt": "2026-11-03",
+    "checkedAt": "2026-11-17",
     "registeredTitle": "SUS: A 'Quick and Dirty' Usability Scale",
     "registeredYear": 1996,
     "registeredContainer": "Usability Evaluation In Industry",
@@ -254,7 +294,7 @@
   },
   "brooke-2013": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-03",
+    "checkedAt": "2026-11-17",
     "httpStatus": 200
   },
   "brooks-1987": {
@@ -275,6 +315,11 @@
     "checkedAt": "2026-11-03",
     "httpStatus": 200
   },
+  "budiu-2020-information-scent": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-20",
+    "httpStatus": 200
+  },
   "budiu-recognition-recall": {
     "status": "url-reachable",
     "checkedAt": "2026-11-11",
@@ -287,6 +332,16 @@
     "registeredYear": 2015,
     "registeredContainer": "Lecture Notes in Computer Science",
     "similarity": 1
+  },
+  "buxton-multitouch": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-19",
+    "httpStatus": 200
+  },
+  "cagan-four-big-risks": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-19",
+    "httpStatus": 200
   },
   "carbon-2x-grid": {
     "status": "url-reachable",
@@ -394,12 +449,28 @@
     "registeredContainer": "Human Factors: The Journal of the Human Factors and Ergonomics Society",
     "similarity": 1
   },
+  "chapman-plewes-2014": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-19",
+    "registeredTitle": "A UX Maturity Model: Effective Introduction of UX into Organizations",
+    "registeredYear": 2014,
+    "registeredContainer": "Lecture Notes in Computer Science",
+    "similarity": 1
+  },
   "chernev-bockenholt-goodman-2015": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",
     "registeredTitle": "Choice overload: A conceptual review and meta‐analysis",
     "registeredYear": 2014,
     "registeredContainer": "Journal of Consumer Psychology",
+    "similarity": 1
+  },
+  "chi-pirolli-chen-pitkow-2001": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-20",
+    "registeredTitle": "Using information scent to model user information needs and actions and the Web",
+    "registeredYear": 2001,
+    "registeredContainer": "Proceedings of the SIGCHI Conference on Human Factors in Computing Systems",
     "similarity": 1
   },
   "christensen-et-al-2016": {
@@ -422,6 +493,11 @@
     "checkedAt": "2026-11-09",
     "httpStatus": 200
   },
+  "cma-2022-oca-evidence-review": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-20",
+    "httpStatus": 200
+  },
   "cockburn-gutwin-greenberg-2007": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",
@@ -437,6 +513,11 @@
     "registeredYear": 1992,
     "registeredContainer": "Psychological Bulletin",
     "similarity": 1
+  },
+  "content-design-london-about": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
+    "httpStatus": 200
   },
   "cooper-reimann-cronin-noessel-2014": {
     "status": "url-reachable",
@@ -482,6 +563,14 @@
     "checkedAt": "2026-11-11",
     "httpStatus": 200
   },
+  "davis-1989": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-19",
+    "registeredTitle": "Perceived Usefulness, Perceived Ease of Use, and User Acceptance of Information Technology",
+    "registeredYear": 1989,
+    "registeredContainer": "MIS Quarterly",
+    "similarity": 1
+  },
   "de-jong-2010": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",
@@ -505,6 +594,24 @@
     "checkedAt": "2026-11-03",
     "httpStatus": 200
   },
+  "designkit-methods": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-20",
+    "httpStatus": 200
+  },
+  "digitalgov-test-for-understanding": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
+    "httpStatus": 200
+  },
+  "dinner-et-al-2011": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-20",
+    "registeredTitle": "Partitioning default effects: Why people choose not to choose.",
+    "registeredYear": 2011,
+    "registeredContainer": "Journal of Experimental Psychology: Applied",
+    "similarity": 1
+  },
   "dion-berscheid-walster-1972": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",
@@ -519,9 +626,14 @@
     "httpStatus": 200
   },
   "doherty-thadani-1982": {
-    "status": "url-unreachable",
-    "checkedAt": "2026-11-03",
-    "httpStatus": 503
+    "status": "url-reachable",
+    "checkedAt": "2026-11-17",
+    "httpStatus": 200
+  },
+  "dschool-bootleg": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-19",
+    "httpStatus": 200
   },
   "dtcg-2026-thank-you-jina": {
     "status": "url-reachable",
@@ -543,9 +655,19 @@
     "checkedAt": "2026-11-11",
     "httpStatus": 200
   },
+  "dubberly-how-do-you-design": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-19",
+    "httpStatus": 200
+  },
   "engelbart-1962": {
     "status": "url-reachable",
     "checkedAt": "2026-11-04",
+    "httpStatus": 200
+  },
+  "engelbart-1968-demo-digest": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-20",
     "httpStatus": 200
   },
   "engelbart-english-1968": {
@@ -554,6 +676,14 @@
     "registeredTitle": "A research center for augmenting human intellect",
     "registeredYear": 1968,
     "registeredContainer": "Proceedings of the December 9-11, 1968, fall joint computer conference, part I on - AFIPS '68 (Fall, part I)",
+    "similarity": 1
+  },
+  "ericsson-simon-1980": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-17",
+    "registeredTitle": "Verbal reports as data.",
+    "registeredYear": 1980,
+    "registeredContainer": "Psychological Review",
     "similarity": 1
   },
   "etsi-en-301-549-v321": {
@@ -567,6 +697,14 @@
     "registeredTitle": "Diagnosing Sample Ratio Mismatch in Online Controlled Experiments: A Taxonomy and Rules of Thumb for Practitioners",
     "registeredYear": 2019,
     "registeredContainer": "Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery &amp; Data Mining",
+    "similarity": 1
+  },
+  "fan-2019-verbalizations": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-16",
+    "registeredTitle": "Concurrent Think-Aloud Verbalizations and Usability Problems",
+    "registeredYear": 2019,
+    "registeredContainer": "ACM Transactions on Computer-Human Interaction",
     "similarity": 1
   },
   "faulkner-2003": {
@@ -621,6 +759,22 @@
     "registeredContainer": "Journal of Experimental Psychology",
     "similarity": 1
   },
+  "flanagan-1954": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-16",
+    "registeredTitle": "The critical incident technique.",
+    "registeredYear": 1954,
+    "registeredContainer": "Psychological Bulletin",
+    "similarity": 1
+  },
+  "flesch-1948": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-16",
+    "registeredTitle": "A new readability yardstick.",
+    "registeredYear": 1948,
+    "registeredContainer": "Journal of Applied Psychology",
+    "similarity": 1
+  },
   "fluent-2": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
@@ -641,6 +795,14 @@
     "checkedAt": "2026-11-11",
     "httpStatus": 200
   },
+  "forlizzi-battarbee-2004": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-19",
+    "registeredTitle": "Understanding experience in interactive systems",
+    "registeredYear": 2004,
+    "registeredContainer": "Proceedings of the 5th conference on Designing interactive systems: processes, practices, methods, and techniques",
+    "similarity": 1
+  },
   "fornell-1992": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",
@@ -657,6 +819,14 @@
     "registeredContainer": "Journal of Personality and Social Psychology",
     "similarity": 1
   },
+  "frohlich-1993": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-13",
+    "registeredTitle": "The history and future of direct manipulation",
+    "registeredYear": 1993,
+    "registeredContainer": "Behaviour &amp; Information Technology",
+    "similarity": 1
+  },
   "frost-2013": {
     "status": "url-reachable",
     "checkedAt": "2026-11-11",
@@ -667,9 +837,17 @@
     "checkedAt": "2026-11-11",
     "httpStatus": 200
   },
+  "fu-pirolli-2007": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-20",
+    "registeredTitle": "SNIF-ACT: A Cognitive Model of User Navigation on the World Wide Web",
+    "registeredYear": 2007,
+    "registeredContainer": "Human–Computer Interaction",
+    "similarity": 1
+  },
   "furnas-et-al-1987": {
     "status": "doi-verified",
-    "checkedAt": "2026-11-03",
+    "checkedAt": "2026-11-20",
     "registeredTitle": "The vocabulary problem in human-system communication",
     "registeredYear": 1987,
     "registeredContainer": "Communications of the ACM",
@@ -719,9 +897,24 @@
     "registeredContainer": "Communications of the ACM",
     "similarity": 1
   },
+  "govuk-agile-phases": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-19",
+    "httpStatus": 200
+  },
+  "govuk-clear-language": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
+    "httpStatus": 200
+  },
   "govuk-component-lifecycle": {
     "status": "url-reachable",
     "checkedAt": "2026-11-12",
+    "httpStatus": 200
+  },
+  "govuk-consider-translations": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
     "httpStatus": 200
   },
   "govuk-contribution-criteria": {
@@ -731,7 +924,7 @@
   },
   "govuk-design-system": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-06",
+    "checkedAt": "2026-11-20",
     "httpStatus": 200
   },
   "govuk-develop-component": {
@@ -739,14 +932,64 @@
     "checkedAt": "2026-11-12",
     "httpStatus": 200
   },
+  "govuk-error-message": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
+    "httpStatus": 200
+  },
+  "govuk-error-summary": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
+    "httpStatus": 200
+  },
+  "govuk-frontend-repo": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-20",
+    "httpStatus": 200
+  },
+  "govuk-identify-user-needs": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
+    "httpStatus": 200
+  },
+  "govuk-learning-user-needs": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-19",
+    "httpStatus": 200
+  },
+  "govuk-manage-existing-content": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
+    "httpStatus": 200
+  },
+  "govuk-moderated-usability-testing": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-20",
+    "httpStatus": 200
+  },
+  "govuk-plan-new-content": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
+    "httpStatus": 200
+  },
   "govuk-propose-component": {
     "status": "url-reachable",
     "checkedAt": "2026-11-12",
     "httpStatus": 200
   },
+  "govuk-retire-content": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
+    "httpStatus": 200
+  },
   "govuk-service-manual": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "govuk-service-standard": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-20",
     "httpStatus": 200
   },
   "govuk-spacing": {
@@ -759,9 +1002,24 @@
     "checkedAt": "2026-11-11",
     "httpStatus": 200
   },
+  "govuk-understand-accessibility": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
+    "httpStatus": 200
+  },
+  "govuk-understand-content-design": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
+    "httpStatus": 200
+  },
   "govuk-user-research": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "govuk-writing-for-user-interfaces": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
     "httpStatus": 200
   },
   "gray-salzman-1998": {
@@ -780,6 +1038,22 @@
     "registeredContainer": "European Journal of Epidemiology",
     "similarity": 1
   },
+  "grossman-2009-learnability": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-16",
+    "registeredTitle": "A survey of software learnability: metrics, methodologies and guidelines",
+    "registeredYear": 2009,
+    "registeredContainer": "Proceedings of the SIGCHI Conference on Human Factors in Computing Systems",
+    "similarity": 1
+  },
+  "grudin-1992": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-19",
+    "registeredTitle": "Utility and usability: research issues and development contexts",
+    "registeredYear": 1992,
+    "registeredContainer": "Interacting with Computers",
+    "similarity": 1
+  },
   "grudin-1994": {
     "status": "doi-verified",
     "checkedAt": "2026-11-04",
@@ -796,6 +1070,14 @@
     "registeredContainer": "IEEE Annals of the History of Computing",
     "similarity": 1
   },
+  "guest-2006-saturation": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-16",
+    "registeredTitle": "How Many Interviews Are Enough?: An Experiment with Data Saturation and Variability",
+    "registeredYear": 2006,
+    "registeredContainer": "Field Methods",
+    "similarity": 1
+  },
   "halasz-moran-1983": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",
@@ -810,6 +1092,14 @@
     "registeredTitle": "Statecharts: a visual formalism for complex systems",
     "registeredYear": 1987,
     "registeredContainer": "Science of Computer Programming",
+    "similarity": 1
+  },
+  "harrison-2007-progress-bar": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-12",
+    "registeredTitle": "Rethinking the progress bar",
+    "registeredYear": 2007,
+    "registeredContainer": "Proceedings of the 20th annual ACM symposium on User interface software and technology",
     "similarity": 1
   },
   "harrison-sengers-tatar-2011": {
@@ -844,6 +1134,14 @@
     "registeredContainer": "Human-Computer Interaction",
     "similarity": 1
   },
+  "hassenzahl-2010": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-19",
+    "registeredTitle": "Experience Design: Technology for All the Right Reasons",
+    "registeredYear": 2010,
+    "registeredContainer": "Synthesis Lectures on Human-Centered Informatics",
+    "similarity": 1
+  },
   "hassenzahl-monk-2010": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",
@@ -859,6 +1157,11 @@
     "registeredYear": 2006,
     "registeredContainer": "Behaviour &amp; Information Technology",
     "similarity": 1
+  },
+  "hassenzahl-ux-experience-design": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-19",
+    "httpStatus": 200
   },
   "hax-toolkit-guidelines": {
     "status": "url-reachable",
@@ -889,6 +1192,22 @@
     "registeredTitle": "Distribution Theory for Glass's Estimator of Effect size and Related Estimators",
     "registeredYear": 1981,
     "registeredContainer": "Journal of Educational Statistics",
+    "similarity": 1
+  },
+  "hennink-kaiser-2022": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-16",
+    "registeredTitle": "Sample sizes for saturation in qualitative research: A systematic review of empirical tests",
+    "registeredYear": 2022,
+    "registeredContainer": "Social Science &amp; Medicine",
+    "similarity": 1
+  },
+  "hertzum-2009-thinking-aloud": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-16",
+    "registeredTitle": "Scrutinising usability evaluation: does thinking aloud affect behaviour and mental workload?",
+    "registeredYear": 2009,
+    "registeredContainer": "Behaviour &amp; Information Technology",
     "similarity": 1
   },
   "hertzum-jacobsen-2001": {
@@ -930,6 +1249,11 @@
     "registeredContainer": "Computers in Human Behavior",
     "similarity": 1
   },
+  "holtzblatt-beyer-2014-contextual-design": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
+    "httpStatus": 200
+  },
   "homeoffice-ucd-manual": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
@@ -953,7 +1277,7 @@
   },
   "hutchins-hollan-norman-1985": {
     "status": "doi-verified",
-    "checkedAt": "2026-11-03",
+    "checkedAt": "2026-11-13",
     "registeredTitle": "Direct Manipulation Interfaces",
     "registeredYear": 1985,
     "registeredContainer": "Human–Computer Interaction",
@@ -977,6 +1301,26 @@
     "checkedAt": "2026-11-03",
     "httpStatus": 200
   },
+  "ideo-design-thinking-intro": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-19",
+    "httpStatus": 200
+  },
+  "ideo-design-thinking-process": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-19",
+    "httpStatus": 200
+  },
+  "idsa-what-is-industrial-design": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-19",
+    "httpStatus": 200
+  },
+  "inclusion-europe-information-for-all": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-17",
+    "httpStatus": 200
+  },
   "inclusive-design-principles": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
@@ -989,6 +1333,11 @@
     "registeredYear": 1997,
     "registeredContainer": "Proceedings of the ACM SIGCHI Conference on Human factors in computing systems",
     "similarity": 1
+  },
+  "iso-24495-1-2023": {
+    "status": "url-unreachable",
+    "checkedAt": "2026-11-16",
+    "httpStatus": 403
   },
   "iso-9241-11-2018": {
     "status": "url-unreachable",
@@ -1023,6 +1372,11 @@
     "checkedAt": "2026-11-03",
     "httpStatus": 200
   },
+  "ixdf-product-design": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-19",
+    "httpStatus": 200
+  },
   "iyengar-lepper-2000": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",
@@ -1031,12 +1385,36 @@
     "registeredContainer": "Journal of Personality and Social Psychology",
     "similarity": 1
   },
+  "jachimowicz-et-al-2019": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-20",
+    "registeredTitle": "When and why defaults influence decisions: a meta-analysis of default effects",
+    "registeredYear": 2019,
+    "registeredContainer": "Behavioural Public Policy",
+    "similarity": 1
+  },
   "john-kieras-1996": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",
     "registeredTitle": "The GOMS family of user interface analysis techniques: comparison and contrast",
     "registeredYear": 1996,
     "registeredContainer": "ACM Transactions on Computer-Human Interaction",
+    "similarity": 1
+  },
+  "johnson-1989-star": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-19",
+    "registeredTitle": "The Xerox Star: a retrospective",
+    "registeredYear": 1989,
+    "registeredContainer": "Computer",
+    "similarity": 1
+  },
+  "johnson-goldstein-2003": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-20",
+    "registeredTitle": "Do Defaults Save Lives?",
+    "registeredYear": 2003,
+    "registeredContainer": "Science",
     "similarity": 1
   },
   "jscodeshift": {
@@ -1089,12 +1467,25 @@
     "checkedAt": "2026-11-06",
     "httpStatus": 200
   },
+  "kieras-2001-klm": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-17",
+    "httpStatus": 200
+  },
   "kieras-bovair-1984": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",
     "registeredTitle": "The Role of a Mental Model in Learning to Operate a Device*",
     "registeredYear": 1984,
     "registeredContainer": "Cognitive Science",
+    "similarity": 1
+  },
+  "kimbell-2011": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-19",
+    "registeredTitle": "Rethinking Design Thinking: Part I",
+    "registeredYear": 2011,
+    "registeredContainer": "Design and Culture",
     "similarity": 1
   },
   "kohavi-et-al-2009": {
@@ -1221,6 +1612,14 @@
     "registeredContainer": "IRE Transactions on Human Factors in Electronics",
     "similarity": 1
   },
+  "liedtka-2015": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-19",
+    "registeredTitle": "Perspective: Linking Design Thinking with Innovation Outcomes through Cognitive Bias Reduction",
+    "registeredYear": 2014,
+    "registeredContainer": "Journal of Product Innovation Management",
+    "similarity": 1
+  },
   "loewenstein-prelec-1993": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",
@@ -1228,6 +1627,11 @@
     "registeredYear": 1993,
     "registeredContainer": "Psychological Review",
     "similarity": 1
+  },
+  "lovinger-2012-content-modelling": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
+    "httpStatus": 200
   },
   "m3-color-roles": {
     "status": "url-reachable",
@@ -1242,6 +1646,11 @@
   "m3-elevation": {
     "status": "url-reachable",
     "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "m3-states": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
     "httpStatus": 200
   },
   "m3-type-scale": {
@@ -1273,6 +1682,14 @@
     "registeredContainer": "Proceedings of the SIGCHI conference on Human factors in computing systems  - CHI '92",
     "similarity": 1
   },
+  "madrian-shea-2001": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-20",
+    "registeredTitle": "The Power of Suggestion: Inertia in 401(k) Participation and Savings Behavior",
+    "registeredYear": 2001,
+    "registeredContainer": "The Quarterly Journal of Economics",
+    "similarity": 1
+  },
   "mahatody-sagar-kolski-2010": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",
@@ -1280,6 +1697,11 @@
     "registeredYear": 2010,
     "registeredContainer": "International Journal of Human–Computer Interaction",
     "similarity": 1
+  },
+  "mailchimp-voice-and-tone": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
+    "httpStatus": 200
   },
   "mandler-1980": {
     "status": "doi-verified",
@@ -1296,7 +1718,7 @@
   },
   "material-3": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-03",
+    "checkedAt": "2026-11-20",
     "httpStatus": 200
   },
   "mayer-moreno-2003": {
@@ -1305,6 +1727,14 @@
     "registeredTitle": "Nine Ways to Reduce Cognitive Load in Multimedia Learning",
     "registeredYear": 2003,
     "registeredContainer": "Educational Psychologist",
+    "similarity": 1
+  },
+  "mcdonald-2012-think-aloud-survey": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-16",
+    "registeredTitle": "Exploring Think-Alouds in Usability Testing: An International Survey",
+    "registeredYear": 2012,
+    "registeredContainer": "IEEE Transactions on Professional Communication",
     "similarity": 1
   },
   "mcgrenere-ho-2000": {
@@ -1345,6 +1775,11 @@
   "mdn-prefers-reduced-motion": {
     "status": "url-reachable",
     "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "microsoft-style-top-10": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
     "httpStatus": 200
   },
   "miller-1956": {
@@ -1395,6 +1830,11 @@
     "registeredContainer": "Communications of the ACM",
     "similarity": 1
   },
+  "moran-2016-desirability-toolkit": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-19",
+    "httpStatus": 200
+  },
   "moran-2017-flat-ui": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
@@ -1403,6 +1843,11 @@
   "moran-gordon-2023": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "ms-azure-monitor-heart": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-17",
     "httpStatus": 200
   },
   "ms-hai-guidelines": {
@@ -1433,7 +1878,7 @@
   },
   "myers-1985": {
     "status": "doi-verified",
-    "checkedAt": "2026-11-03",
+    "checkedAt": "2026-11-16",
     "registeredTitle": "The importance of percent-done progress indicators for computer-human interfaces",
     "registeredYear": 1985,
     "registeredContainer": "Proceedings of the SIGCHI conference on Human factors in computing systems  - CHI '85",
@@ -1460,6 +1905,11 @@
     "registeredContainer": "Proceedings of the SIGCHI conference on Human factors in computing systems  - CHI '92",
     "similarity": 1
   },
+  "nielsen-1993-noncommand": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-19",
+    "httpStatus": 200
+  },
   "nielsen-1993-response-times": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
@@ -1478,6 +1928,11 @@
     "checkedAt": "2026-11-03",
     "httpStatus": 200
   },
+  "nielsen-1997-how-users-read": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
+    "httpStatus": 200
+  },
   "nielsen-2000-end-of-web-design": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
@@ -1486,6 +1941,11 @@
   "nielsen-2000-five-users": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "nielsen-2003-information-foraging": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-20",
     "httpStatus": 200
   },
   "nielsen-2004-card-sorting": {
@@ -1531,8 +1991,16 @@
   },
   "nielsen-usability-101": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-03",
+    "checkedAt": "2026-11-19",
     "httpStatus": 200
+  },
+  "nisbett-wilson-1977": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-16",
+    "registeredTitle": "Telling more than we can know: Verbal reports on mental processes.",
+    "registeredYear": 1977,
+    "registeredContainer": "Psychological Review",
+    "similarity": 1
   },
   "nist-hcd": {
     "status": "url-reachable",
@@ -1547,6 +2015,26 @@
   "nng-consistency-standards": {
     "status": "url-reachable",
     "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "nng-content-audits": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
+    "httpStatus": 200
+  },
+  "nng-content-strategy": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
+    "httpStatus": 200
+  },
+  "nng-contextual-inquiry": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
+    "httpStatus": 200
+  },
+  "nng-discoverable-mobile-navigation": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
     "httpStatus": 200
   },
   "nng-empty-states": {
@@ -1564,6 +2052,11 @@
     "checkedAt": "2026-11-11",
     "httpStatus": 200
   },
+  "nng-form-placeholders": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
+    "httpStatus": 200
+  },
   "nng-help-documentation": {
     "status": "url-reachable",
     "checkedAt": "2026-11-11",
@@ -1572,6 +2065,11 @@
   "nng-heuristic-evaluation-howto": {
     "status": "url-reachable",
     "checkedAt": "2026-11-12",
+    "httpStatus": 200
+  },
+  "nng-hidden-navigation": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
     "httpStatus": 200
   },
   "nng-match-real-world": {
@@ -1589,6 +2087,11 @@
     "checkedAt": "2026-11-11",
     "httpStatus": 200
   },
+  "nng-plain-language-experts": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
+    "httpStatus": 200
+  },
   "nng-progress-indicators": {
     "status": "url-reachable",
     "checkedAt": "2026-11-11",
@@ -1601,7 +2104,22 @@
   },
   "nng-slips": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-11",
+    "checkedAt": "2026-11-13",
+    "httpStatus": 200
+  },
+  "nng-tone-of-voice": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
+    "httpStatus": 200
+  },
+  "nng-tree-testing": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-20",
+    "httpStatus": 200
+  },
+  "nng-tree-testing-results": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-20",
     "httpStatus": 200
   },
   "nng-user-control-freedom": {
@@ -1609,9 +2127,24 @@
     "checkedAt": "2026-11-11",
     "httpStatus": 200
   },
+  "nng-user-interviews": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
+    "httpStatus": 200
+  },
   "nng-user-mistakes": {
     "status": "url-reachable",
     "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "nng-ux-maturity-model": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-19",
+    "httpStatus": 200
+  },
+  "nng-ux-writing-study-guide": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
     "httpStatus": 200
   },
   "nng-visibility-system-status": {
@@ -1632,6 +2165,14 @@
     "registeredContainer": "Psychological Review",
     "similarity": 1
   },
+  "norman-1983-design-rules": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-13",
+    "registeredTitle": "Design rules based on analyses of human error",
+    "registeredYear": 1983,
+    "registeredContainer": "Communications of the ACM",
+    "similarity": 1
+  },
   "norman-1986": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",
@@ -1642,7 +2183,7 @@
   },
   "norman-1999": {
     "status": "doi-verified",
-    "checkedAt": "2026-11-03",
+    "checkedAt": "2026-11-16",
     "registeredTitle": "Affordance, conventions, and design",
     "registeredYear": 1999,
     "registeredContainer": "Interactions",
@@ -1656,6 +2197,11 @@
     "registeredContainer": "Interactions",
     "similarity": 0.67
   },
+  "norman-dote-2013-contents": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
+    "httpStatus": 200
+  },
   "norman-draper-1986": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",
@@ -1668,6 +2214,16 @@
     "checkedAt": "2026-11-03",
     "httpStatus": 200
   },
+  "obrien-2009-tree-testing": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
+    "httpStatus": 200
+  },
+  "oecd-2019-basic": {
+    "status": "url-unreachable",
+    "checkedAt": "2026-11-20",
+    "httpStatus": 403
+  },
   "oliver-1983": {
     "status": "doi-verified",
     "checkedAt": "2026-11-05",
@@ -1675,9 +2231,22 @@
     "registeredYear": 1983,
     "similarity": 1
   },
+  "olmsted-hawala-2010": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-16",
+    "registeredTitle": "Think-aloud protocols: a comparison of three think-aloud protocols for use in testing data-dissemination web sites for usability",
+    "registeredYear": 2010,
+    "registeredContainer": "Proceedings of the SIGCHI Conference on Human Factors in Computing Systems",
+    "similarity": 1
+  },
   "open-ui": {
     "status": "url-reachable",
     "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "owasp-authentication-cheat-sheet": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
     "httpStatus": 200
   },
   "paas-1992": {
@@ -1717,13 +2286,30 @@
     "checkedAt": "2026-11-03",
     "httpStatus": 200
   },
+  "pirolli-2007": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-19",
+    "registeredTitle": "Information Foraging Theory",
+    "registeredYear": 2007,
+    "similarity": 1
+  },
   "pirolli-card-1999": {
     "status": "doi-verified",
-    "checkedAt": "2026-11-03",
+    "checkedAt": "2026-11-20",
     "registeredTitle": "Information foraging.",
     "registeredYear": 1999,
     "registeredContainer": "Psychological Review",
     "similarity": 1
+  },
+  "plain-what-is-plain-language": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
+    "httpStatus": 200
+  },
+  "plain-writing-act-2010": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
+    "httpStatus": 200
   },
   "playwright-snapshots": {
     "status": "url-reachable",
@@ -1745,6 +2331,11 @@
     "registeredYear": 1990,
     "registeredContainer": "Human–Computer Interaction",
     "similarity": 1
+  },
+  "porter-2009-microcopy": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
+    "httpStatus": 200
   },
   "primer-component-status": {
     "status": "url-reachable",
@@ -1834,6 +2425,22 @@
     "registeredContainer": "Pain",
     "similarity": 1
   },
+  "redish-1981": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-16",
+    "registeredTitle": "Understanding the limitations of readability formulas",
+    "registeredYear": 1981,
+    "registeredContainer": "IEEE Transactions on Professional Communication",
+    "similarity": 1
+  },
+  "redish-2000": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-16",
+    "registeredTitle": "Readability formulas have even more limitations than Klare discusses",
+    "registeredYear": 2000,
+    "registeredContainer": "ACM Journal of Computer Documentation",
+    "similarity": 1
+  },
   "reichheld-2003": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
@@ -1886,6 +2493,14 @@
     "registeredContainer": "Journal of Experimental Psychology",
     "similarity": 1
   },
+  "salah-2014": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-19",
+    "registeredTitle": "A systematic literature review for agile development processes and user centred design integration",
+    "registeredYear": 2014,
+    "registeredContainer": "Proceedings of the 18th International Conference on Evaluation and Assessment in Software Engineering",
+    "similarity": 1
+  },
   "sauro-lewis-2005": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",
@@ -1916,6 +2531,14 @@
     "registeredTitle": "Can There Ever Be Too Many Options? A Meta-Analytic Review of Choice Overload",
     "registeredYear": 2010,
     "registeredContainer": "Journal of Consumer Research",
+    "similarity": 1
+  },
+  "seckler-2014-web-forms": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-16",
+    "registeredTitle": "Designing usable web forms: empirical evaluation of web form improvement guidelines",
+    "registeredYear": 2014,
+    "registeredContainer": "Proceedings of the SIGCHI Conference on Human Factors in Computing Systems",
     "similarity": 1
   },
   "semantic-scholar": {
@@ -1949,6 +2572,14 @@
     "registeredContainer": "Quarterly Journal of Experimental Psychology",
     "similarity": 1
   },
+  "sheldon-2001": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-19",
+    "registeredTitle": "What is satisfying about satisfying events? Testing 10 candidate psychological needs.",
+    "registeredYear": 2001,
+    "registeredContainer": "Journal of Personality and Social Psychology",
+    "similarity": 1
+  },
   "shepard-1967": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",
@@ -1957,9 +2588,17 @@
     "registeredContainer": "Journal of Verbal Learning and Verbal Behavior",
     "similarity": 1
   },
+  "shneiderman-1982": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-17",
+    "registeredTitle": "Designing computer system messages",
+    "registeredYear": 1982,
+    "registeredContainer": "Communications of the ACM",
+    "similarity": 1
+  },
   "shneiderman-1983": {
     "status": "doi-verified",
-    "checkedAt": "2026-11-03",
+    "checkedAt": "2026-11-13",
     "registeredTitle": "Direct Manipulation: A Step Beyond Programming Languages",
     "registeredYear": 1983,
     "registeredContainer": "Computer",
@@ -1990,9 +2629,17 @@
     "similarity": 1
   },
   "shneiderman-golden-rules-page": {
-    "status": "url-unreachable",
-    "checkedAt": "2026-11-03",
-    "httpStatus": 503
+    "status": "url-reachable",
+    "checkedAt": "2026-11-17",
+    "httpStatus": 200
+  },
+  "shneiderman-maes-1997": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-13",
+    "registeredTitle": "Direct manipulation vs. interface agents",
+    "registeredYear": 1997,
+    "registeredContainer": "Interactions",
+    "similarity": 1
   },
   "shopify-polaris": {
     "status": "url-reachable",
@@ -2027,6 +2674,11 @@
     "registeredYear": 2000,
     "registeredContainer": "Proceedings of the SIGCHI conference on Human Factors in Computing Systems",
     "similarity": 1
+  },
+  "spencer-2003-card-based-classification": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
+    "httpStatus": 200
   },
   "spool-schroeder-2001": {
     "status": "doi-verified",
@@ -2188,6 +2840,11 @@
     "checkedAt": "2026-11-03",
     "httpStatus": 200
   },
+  "uxls-open-targets-heart": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-17",
+    "httpStatus": 200
+  },
   "uxmethods-org": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
@@ -2198,6 +2855,22 @@
     "checkedAt": "2026-11-03",
     "httpStatus": 200
   },
+  "van-dam-1997": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-19",
+    "registeredTitle": "Post-WIMP user interfaces",
+    "registeredYear": 1997,
+    "registeredContainer": "Communications of the ACM",
+    "similarity": 1
+  },
+  "van-den-haak-2003": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-16",
+    "registeredTitle": "Retrospective vs. concurrent think-aloud protocols: Testing the usability of an online library catalogue",
+    "registeredYear": 2003,
+    "registeredContainer": "Behaviour &amp; Information Technology",
+    "similarity": 1
+  },
   "van-der-meij-carroll-1998": {
     "status": "doi-verified",
     "checkedAt": "2026-11-11",
@@ -2205,6 +2878,14 @@
     "registeredYear": 1998,
     "registeredContainer": "Minimalism Beyond the Nurnberg Funnel",
     "similarity": 1
+  },
+  "venkatesh-2003": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-19",
+    "registeredTitle": "User Acceptance of Information Technology: Toward A Unified View1",
+    "registeredYear": 2003,
+    "registeredContainer": "MIS Quarterly",
+    "similarity": 0.86
   },
   "virzi-1992": {
     "status": "doi-verified",
@@ -2224,7 +2905,7 @@
   },
   "w3c-apg-button": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-11",
+    "checkedAt": "2026-11-16",
     "httpStatus": 200
   },
   "w3c-apg-grid": {
@@ -2249,7 +2930,7 @@
   },
   "w3c-aria-apg": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-03",
+    "checkedAt": "2026-11-20",
     "httpStatus": 200
   },
   "w3c-resource-timing": {
@@ -2257,9 +2938,49 @@
     "checkedAt": "2026-11-11",
     "httpStatus": 200
   },
+  "w3c-selectors-3": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
+    "httpStatus": 200
+  },
+  "w3c-selectors-4": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
+    "httpStatus": 200
+  },
+  "w3c-understanding-dragging-movements": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-13",
+    "httpStatus": 200
+  },
+  "w3c-understanding-error-identification": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
+    "httpStatus": 200
+  },
+  "w3c-understanding-error-suggestion": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
+    "httpStatus": 200
+  },
+  "w3c-understanding-labels-instructions": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
+    "httpStatus": 200
+  },
+  "w3c-understanding-non-text-contrast": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
+    "httpStatus": 200
+  },
   "w3c-understanding-pause-stop-hide": {
     "status": "url-reachable",
     "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "w3c-understanding-reading-level": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
     "httpStatus": 200
   },
   "w3c-understanding-status-messages": {
@@ -2279,7 +3000,7 @@
   },
   "w3c-wai-aria-12": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-11",
+    "checkedAt": "2026-11-16",
     "httpStatus": 200
   },
   "w3c-wai-tables-tutorial": {
@@ -2294,7 +3015,7 @@
   },
   "w3c-wcag-22": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-03",
+    "checkedAt": "2026-11-17",
     "httpStatus": 200
   },
   "w3c-wcag-3-wd": {
@@ -2327,6 +3048,11 @@
     "registeredYear": 2012,
     "registeredContainer": "Psychological Bulletin",
     "similarity": 1
+  },
+  "wdo-industrial-design-definition": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-19",
+    "httpStatus": 200
   },
   "webaim": {
     "status": "url-reachable",
@@ -2369,6 +3095,11 @@
     "registeredContainer": "Psychologische Forschung",
     "similarity": 1
   },
+  "whatwg-html": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
+    "httpStatus": 200
+  },
   "who-global-report-health-equity-disability-2022": {
     "status": "url-reachable",
     "checkedAt": "2026-11-05",
@@ -2384,6 +3115,19 @@
     "checkedAt": "2026-11-05",
     "httpStatus": 200
   },
+  "winters-2019-what-is-content-design": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-16",
+    "httpStatus": 200
+  },
+  "wixon-1990-contextual-design": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-16",
+    "registeredTitle": "Contextual design: an emergent view of system design",
+    "registeredYear": 1990,
+    "registeredContainer": "Proceedings of the SIGCHI conference on Human factors in computing systems Empowering people - CHI '90",
+    "similarity": 1
+  },
   "wolfe-horowitz-2004": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",
@@ -2396,6 +3140,14 @@
     "status": "url-reachable",
     "checkedAt": "2026-11-11",
     "httpStatus": 200
+  },
+  "wynn-clarkson-2018": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-19",
+    "registeredTitle": "Process models in design and development",
+    "registeredYear": 2017,
+    "registeredContainer": "Research in Engineering Design",
+    "similarity": 1
   },
   "yonelinas-2002": {
     "status": "doi-verified",

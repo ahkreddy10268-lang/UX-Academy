@@ -9,6 +9,8 @@ const eslintConfig = defineConfig([
   globalIgnores([
     // Brand kit: design source delivered as-is (components/brand holds the app copy).
     "brand/**",
+    // Third-party Claude Code skills, installed as-is (skills-lock.json).
+    ".claude/**",
     // Default ignores of eslint-config-next:
     ".next/**",
     "out/**",

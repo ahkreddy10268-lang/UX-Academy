@@ -163,12 +163,14 @@ export default defineEntry({
   ],
 
   relations: [
+    { target: "interaction-design-discipline", type: "applied-in", note: "Keeping people informed of what is happening is applied throughout interaction design, on the evaluation side of the loop." },
     { target: "nielsen-usability-heuristics", type: "derived-from", note: "Heuristic 1 of Nielsen's ten usability heuristics." },
     { target: "feedback-principle", type: "related-to", note: "Feedback is the mechanism; visibility of status is the principle that feedback must be timely and appropriate." },
     { target: "doherty-threshold", type: "related-to", note: "Response-time targets decide which kind of status feedback an operation needs." },
     { target: "loading-states", type: "applied-in", note: "Loading states are where status visibility is designed for content that is not ready yet." },
     { target: "interaction-states", type: "applied-in", note: "Pending, success and error states are how components make their status visible." },
     { target: "error-recovery", type: "complementary-to", note: "Visible status reveals that something failed; recovery explains what to do next." },
+    { target: "discoverability", type: "contrasts-with", note: "Status tells people what the system is doing; discoverability tells them what they can do." },
   ],
 
   lab: "feedback-lab",

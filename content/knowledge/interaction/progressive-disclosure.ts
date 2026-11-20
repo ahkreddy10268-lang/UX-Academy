@@ -175,6 +175,7 @@ export default defineEntry({
   ],
 
   relations: [
+    { target: "interaction-design-discipline", type: "applied-in", note: "Interaction design applies progressive disclosure when deciding what is revealed when." },
     { target: "cognitive-load-theory", type: "derived-from", note: "Progressive disclosure applies the idea of reducing extraneous load by presenting less at once." },
     { target: "hick-hyman-law", type: "related-to", note: "Fewer initial options can reduce decision time, as the Hick-Hyman law describes for choice reaction." },
     { target: "discoverability", type: "contrasts-with", note: "Deferring features trades off against how easily users discover them." },

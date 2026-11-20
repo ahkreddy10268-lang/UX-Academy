@@ -23,6 +23,9 @@ export const STROKE = { main: 2.25, fine: 1.25, hair: 0.9 } as const;
 type G = SVGProps<SVGGElement>;
 
 /** Monospaced annotation label (only rendered when `show`). */
+/** Dimension labels use the plate text minimum (T.min in system/sheet.tsx), so they stay legible on a phone. */
+const DIM_LABEL = 13;
+
 export function Label({
   x,
   y,
@@ -89,11 +92,11 @@ export function Dim({
       {label && (
         <g stroke="none">
           {horizontal ? (
-            <Label x={(x1 + x2) / 2} y={(y1 + y2) / 2 + offset}>
+            <Label x={(x1 + x2) / 2} y={(y1 + y2) / 2 + offset} size={DIM_LABEL}>
               {label}
             </Label>
           ) : (
-            <Label x={(x1 + x2) / 2 + (offset < 0 ? -10 : 10)} y={(y1 + y2) / 2 + 4} anchor={offset < 0 ? "end" : "start"}>
+            <Label x={(x1 + x2) / 2 + (offset < 0 ? -10 : 10)} y={(y1 + y2) / 2 + 4} anchor={offset < 0 ? "end" : "start"} size={DIM_LABEL}>
               {label}
             </Label>
           )}

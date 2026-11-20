@@ -175,7 +175,6 @@ export default defineEntry({
     { target: "design-thinking", type: "complementary-to", note: "Design thinking repackages UCD-like activities with greater emphasis on ideation and innovation strategy." },
     { target: "double-diamond", type: "related-to", note: "The Double Diamond visualises the diverge–converge rhythm of a human-centred process." },
     { target: "usability-testing", type: "applied-in", note: "Usability testing is the canonical evaluation activity in a UCD cycle." },
-    { target: "contextual-inquiry", type: "applied-in", note: "Contextual inquiry is a core method for understanding the context of use." },
     { target: "participatory-design", type: "contrasts-with", note: "Participatory design gives users a decision-making role, whereas classic UCD often treats them as informants and testers." },
   ],
 
@@ -284,6 +283,19 @@ export default defineEntry({
         { text: "Run a survey to count how many users want filters.", correct: false, explanation: "Counting a stated preference does not resolve the conflict with behaviour." },
       ],
       explanation: "Triangulate what people say with what they do, then design and test against the underlying goal.",
+    },
+    {
+      id: "user-centred-design-q-innovation",
+      kind: "multiple-choice",
+      level: "advanced",
+      prompt: "Critics say user research produces only incremental improvements. Which response does this entry report from UCD proponents?",
+      options: [
+        { text: "A deep understanding of users' needs is what makes radical solutions viable.", correct: true, explanation: "The entry presents this as the proponents' reply to the innovation critique." },
+        { text: "Radical ideas should be developed without user research.", correct: false, explanation: "That is the critics' position, not the proponents' reply." },
+        { text: "Stated preferences should override observed behaviour.", correct: false, explanation: "Stated preferences can conflict with observed behaviour, so UCD privileges observation." },
+        { text: "Token consultation counts as full user involvement.", correct: false, explanation: "Involvement ranges from token consultation to genuine partnership, and the difference matters." },
+      ],
+      explanation: "The innovation debate is one of UCD's well-known tensions; the reply rests on understanding needs, not on asking users to design.",
     },
   ],
 

@@ -133,7 +133,7 @@ export default defineSources([
     licence: "W3C Document License",
     access: "open",
     verification: "bibliographic",
-    notes: "W3C Recommendation first published 5 October 2023; an updated Recommendation was published 12 December 2024. Status should be re-checked against the W3C page.",
+    notes: "W3C Recommendation first published 5 October 2023; an updated Recommendation was published 12 December 2024. Status re-checked against the W3C page on 2026-11-17: the page at www.w3.org/TR/WCAG22/ is labelled \"W3C Recommendation 12 December 2024\".",
   },
   {
     id: "w3c-wcag-21",

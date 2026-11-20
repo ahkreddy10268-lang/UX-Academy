@@ -8,6 +8,7 @@ import { MockScreen } from "@/components/guide/mock-screen";
 import { ConceptIllustration } from "@/components/illustrations/concept-illustration";
 import { Quiz, type QuizItem } from "@/components/practice/quiz";
 import { Callout } from "@/components/ui/callout";
+import { Disclosure } from "@/components/ui/disclosure";
 import { DefinitionTable, DocLayout, DocSection, type TocItem } from "@/components/ui/doc-layout";
 import { Container, PageHeader } from "@/components/ui/layout";
 import { Rich, RichParagraphs } from "@/components/ui/rich";
@@ -112,22 +113,21 @@ export default async function GuidePage({ params }: PageProps<"/guides/[id]">) {
           </ul>
         </div>
 
-        <details className="mb-8 rounded-md border border-rule bg-surface lg:hidden">
-          <summary className="tap flex cursor-pointer items-center px-4 py-2.5 text-sm font-medium text-ink">Contents</summary>
-          <nav aria-label="Guide contents" className="border-t border-rule px-4 py-3">
-            <ol className="grid gap-1 text-sm sm:grid-cols-2">
+        <Disclosure id="contents" className="mb-8 rounded-md border border-rule bg-surface xl:hidden" summary={<span className="text-sm font-medium text-ink">Contents · {toc.length} sections</span>} bodyClassName="border-t border-rule px-4 py-3">
+          <nav aria-label="Guide contents">
+            <ol className="grid gap-x-6 gap-y-0.5 text-sm sm:grid-cols-2" data-toc>
               {toc.map(([tid, label]) => (
                 <li key={tid}>
-                  <a href={`#${tid}`} className="flex min-h-6 items-center text-ink-2 hover:text-ink">
+                  <a href={`#${tid}`} className="flex min-h-8 items-center text-ink-2 hover:text-ink aria-[current=location]:font-semibold aria-[current=location]:text-ink">
                     {label}
                   </a>
                 </li>
               ))}
             </ol>
           </nav>
-        </details>
+        </Disclosure>
 
-        <DocLayout toc={toc}>
+        <DocLayout toc={toc} tocFrom="xl">
           {/* Chapter 1 */}
           <DocSection id="story" kicker="Chapter 1 · The problem" title={g.story.title}>
             <p className="t-lede max-w-read text-lg">{g.story.question}</p>
@@ -142,10 +142,9 @@ export default async function GuidePage({ params }: PageProps<"/guides/[id]">) {
                 ))}
               </ol>
             </div>
-            <details className="rounded-md border border-rule bg-soft px-4 py-3">
-              <summary className="tap cursor-pointer text-sm font-medium text-ink">What went wrong, and which principles explain it</summary>
-              <RichParagraphs items={g.story.debrief} ctx={ctx} className="mt-3" />
-            </details>
+            <Disclosure className="rounded-md border border-rule bg-soft" summary={<span className="text-sm font-medium text-ink">What went wrong, and which principles explain it</span>}>
+              <RichParagraphs items={g.story.debrief} ctx={ctx} />
+            </Disclosure>
             <Callout landmark={false} role="note" label="The point">
               <p className="text-sm leading-relaxed">
                 <Rich text={g.story.takeaway} ctx={ctx} />
@@ -214,11 +213,16 @@ export default async function GuidePage({ params }: PageProps<"/guides/[id]">) {
             <p className="max-w-read text-sm text-ink-2">Several heuristics describe neighbouring ideas. Each pair below names the difference, then tests it on one scenario.</p>
             <div className="space-y-4">
               {g.comparisons.map((c) => (
-                <details key={c.id} id={`compare-${c.id}`} className="scroll-mt-24 rounded-md border border-rule bg-surface">
-                  <summary className="tap cursor-pointer px-4 py-3 font-semibold text-ink">
-                    {c.a}. {names[c.a]} <span className="font-normal text-ink-3">vs</span> {c.b}. {names[c.b]}
-                  </summary>
-                  <div className="space-y-4 border-t border-rule px-4 py-4">
+                <Disclosure
+                  key={c.id}
+                  id={`compare-${c.id}`}
+                  summary={
+                    <span className="font-semibold text-ink">
+                      {c.a}. {names[c.a]} <span className="font-normal text-ink-3">vs</span> {c.b}. {names[c.b]}
+                    </span>
+                  }
+                  bodyClassName="space-y-4 border-t border-rule px-4 py-4"
+                >
                     <DefinitionTable
                       head={["Heuristic", "What it asks"]}
                       rows={[
@@ -246,8 +250,7 @@ export default async function GuidePage({ params }: PageProps<"/guides/[id]">) {
                       </ul>
                     </Callout>
                     <p className="text-sm font-medium text-ink">{c.takeaway}</p>
-                  </div>
-                </details>
+                </Disclosure>
               ))}
             </div>
             <RichParagraphs items={g.overlap} ctx={ctx} />
@@ -284,6 +287,13 @@ export default async function GuidePage({ params }: PageProps<"/guides/[id]">) {
                 <Rich text={g.process.takeaway} ctx={ctx} />
               </p>
             </Callout>
+            <p className="text-sm text-ink-2">
+              The method in depth — origin, evidence on evaluator numbers, limits and sources:{" "}
+              <Link href="/library/heuristic-evaluation" className="link font-medium">
+                Heuristic Evaluation
+              </Link>
+              .
+            </p>
           </DocSection>
 
           {/* Severity */}
@@ -370,19 +380,26 @@ export default async function GuidePage({ params }: PageProps<"/guides/[id]">) {
             </div>
             <div className="space-y-3">
               {g.caseStudy.findings.map((f) => (
-                <details key={f.id} id={`finding-${f.id.toLowerCase()}`} className="scroll-mt-24 rounded-md border border-rule bg-surface">
-                  <summary className="tap flex cursor-pointer flex-wrap items-center gap-x-3 gap-y-1 px-4 py-3">
-                    <span className="formula text-sm text-ink-3">{f.id}</span>
-                    <span className="min-w-0 flex-1 font-semibold text-ink">{f.screen}</span>
-                    <span className="rounded-xs border border-rule-strong px-1.5 py-0.5 font-mono text-[11px] text-ink">
-                      Severity {f.severity} · {SEVERITY_LABEL[f.severity]}
+                <Disclosure
+                  key={f.id}
+                  id={`finding-${f.id.toLowerCase()}`}
+                  summary={
+                    <span className="grid gap-x-3 gap-y-1 sm:grid-cols-[minmax(0,1fr)_auto]">
+                      <span className="min-w-0">
+                        <span className="formula mr-2 text-sm text-ink-3">{f.id}</span>
+                        <span className="font-semibold text-ink">{f.screen}</span>
+                      </span>
+                      <span className="justify-self-start rounded-xs border border-rule-strong px-1.5 py-0.5 font-mono text-[11px] text-ink sm:justify-self-end">
+                        Severity {f.severity} · {SEVERITY_LABEL[f.severity]}
+                      </span>
+                      <span className="text-sm text-ink-2 sm:col-span-2">
+                        Heuristic {f.heuristic}. {names[f.heuristic]}
+                        {f.also.length > 0 && ` · also ${f.also.join(", ")}`}
+                      </span>
                     </span>
-                    <span className="w-full text-sm text-ink-2">
-                      Heuristic {f.heuristic}. {names[f.heuristic]}
-                      {f.also.length > 0 && ` · also ${f.also.join(", ")}`}
-                    </span>
-                  </summary>
-                  <div className="space-y-4 border-t border-rule px-4 py-4">
+                  }
+                  bodyClassName="space-y-4 border-t border-rule px-4 py-4"
+                >
                     <dl className="grid gap-3 text-sm md:grid-cols-2">
                       {([
                         ["Task", f.task],
@@ -404,11 +421,16 @@ export default async function GuidePage({ params }: PageProps<"/guides/[id]">) {
                       <MockScreen mock={f.before} verdict="before" />
                       <MockScreen mock={f.after} verdict="after" />
                     </div>
-                  </div>
-                </details>
+                </Disclosure>
               ))}
             </div>
             <RichParagraphs items={g.caseStudy.summary} ctx={ctx} />
+            <div className="flex flex-wrap items-center gap-3 rounded-md border border-rule bg-soft p-4">
+              <p className="min-w-0 flex-1 text-sm text-ink">These {g.caseStudy.findings.length} findings are the lab&rsquo;s worked example: load them, reorder by severity and effort, and export the report.</p>
+              <Link href="/labs/heuristic-report-lab" className="btn btn-secondary btn-sm">
+                Open in the report lab
+              </Link>
+            </div>
           </DocSection>
 
           {/* Report */}
@@ -427,10 +449,9 @@ export default async function GuidePage({ params }: PageProps<"/guides/[id]">) {
           <DocSection id="advanced" kicker="Part 11 · Beyond the basics" title="Advanced topics">
             <div className="space-y-3">
               {g.advanced.map((a) => (
-                <details key={a.title} className="rounded-md border border-rule bg-surface">
-                  <summary className="tap cursor-pointer px-4 py-3 font-semibold text-ink">{a.title}</summary>
-                  <RichParagraphs items={a.body} ctx={ctx} className="border-t border-rule px-4 py-3 text-sm" />
-                </details>
+                <Disclosure key={a.title} summary={<span className="font-semibold text-ink">{a.title}</span>} bodyClassName="border-t border-rule px-4 py-3">
+                  <RichParagraphs items={a.body} ctx={ctx} className="text-sm" />
+                </Disclosure>
               ))}
             </div>
           </DocSection>
@@ -454,15 +475,18 @@ export default async function GuidePage({ params }: PageProps<"/guides/[id]">) {
             <p className="max-w-read text-sm text-ink-2">The applied exercise from each chapter, collected in one place. Work through them in order, or pick the heuristics you find hardest.</p>
             <div className="space-y-3">
               {exercises.map(({ n, ex }) => (
-                <details key={ex.id} className="rounded-md border border-rule bg-surface">
-                  <summary className="tap cursor-pointer px-4 py-3 text-sm">
-                    <span className="label mr-2">H{n}</span>
-                    <span className="font-semibold text-ink">{ex.title}</span>
-                  </summary>
-                  <div className="border-t border-rule p-3">
-                    <ExerciseBlock ex={ex} ctx={ctx} />
-                  </div>
-                </details>
+                <Disclosure
+                  key={ex.id}
+                  summary={
+                    <span className="text-sm">
+                      <span className="label mr-2">Heuristic {n}</span>
+                      <span className="font-semibold text-ink">{ex.title}</span>
+                    </span>
+                  }
+                  bodyClassName="border-t border-rule p-3"
+                >
+                  <ExerciseBlock ex={ex} ctx={ctx} />
+                </Disclosure>
               ))}
             </div>
           </DocSection>

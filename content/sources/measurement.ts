@@ -21,7 +21,8 @@ export default defineSources([
     topics: ["System Usability Scale", "questionnaire", "usability measurement"],
     access: "paywalled",
     verification: "bibliographic",
-    notes: "Original publication of the SUS, developed at Digital Equipment Corporation (1986). Pages 189–194 in the print edition; the CRC Press digital edition registered under this DOI paginates the chapter as 207–212.",
+    lastVerifiedAt: "2026-11-17",
+    notes: "Original publication of the SUS, developed at Digital Equipment Corporation (1986). Pages 189–194 in the print edition; the CRC Press digital edition registered under this DOI paginates the chapter as 207–212. Read in full on 2026-11-17 from a seven-page copy hosted by a third party (hell.meiert.org), not the publisher's edition. Confirmed there: the origin in a usability engineering programme at Digital Equipment Co. Ltd with a 1986 copyright notice on the scale form; the need for a quick, low-cost measure (the abstract's \"quick and dirty\"); a ten-item Likert scale giving a global view of subjective usability; instructions to mark the centre point for an item a respondent cannot answer; scoring to a single 0–100 value; and that scores for individual items are not meaningful on their own.",
   },
   {
     id: "brooke-2013",
@@ -38,7 +39,7 @@ export default defineSources([
     topics: ["System Usability Scale", "history", "scoring"],
     access: "open",
     verification: "awaiting-verification",
-    notes: "Open-access journal without DOIs. The article's own page on uxpajournal.org returned HTTP 404 in this research session (2026-11-03), so the URL here is the journal home page. Bibliographic details are from citing sources. Brooke's statement on licence terms could not be confirmed, so SUS item wording is not reproduced in UX Academy.",
+    notes: "Open-access journal without DOIs. The article's own page on uxpajournal.org returned HTTP 404 in this research session (2026-11-03), so the URL here is the journal home page. Bibliographic details are from citing sources. On 2026-11-17 the article could still not be read: the original page and the UXPA copy return 404, the journal's new site archives only recent volumes, and an archive mirror was unreachable from the research environment. None of the article's claims is used in UX Academy. Brooke's statement on licence terms could not be confirmed, so SUS item wording is not reproduced in UX Academy.",
   },
   {
     id: "bangor-kortum-miller-2008",

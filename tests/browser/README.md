@@ -10,10 +10,14 @@ npm run build && npx next start -p 3100
 node tests/browser/crawl.cjs / /library /library/fitts-law   # status codes, console errors, failed requests
 node tests/browser/e2e.cjs                                    # 42 interaction checks (search, tabs, persistence, quiz, calculators, export/import, theme, mobile)
 node tests/browser/e2e-redesign.cjs                           # 45 v2/v3 checks (library paging/sort/subcategory/URL state, sidebar collapse + tooltips, explorers, new labs, motion, 390px overflow)
+node tests/browser/colour-studio.cjs                          # 46 Colour Studio checks (tabs, wheel keyboard/pointer, harmonies, swatch edit + validation, role preview and its rendered pairs, copy, CSS/JSON export, WCAG edge cases, local image extraction, gradient CSS, save/restore, 390/768 px)
 node tests/browser/atlas.cjs                                 # Knowledge Atlas: nav item and active state, totals, disclosure, search/alias/filters, URL + back/forward, mobile drawer, 390px
 node tests/browser/keyboard.cjs                               # keyboard-only paths + accessibility-tree structure (not a screen-reader test)
 node tests/browser/devices.cjs                                # device EMULATION: overflow, tap, WCAG 2.5.8 target size on 19 pages × 6 devices
 AXE_PATH=/path/to/axe.min.js node tests/browser/a11y.cjs / /library   # axe-core WCAG 2.2 AA, light + dark
+AXE_PATH=/path/to/axe.min.js node tests/browser/entry-review.cjs <slug…>   # per-entry review: render, 390/1440 overflow, plate markers inside the viewBox, figure key, axe
 ```
 
 `BASE_URL` overrides `http://localhost:3100`. e2e starts with an empty browser profile.
+
+For a batch review, pair `entry-review.cjs` with the non-browser integrity report `npx tsx scripts/entry-integrity.ts <slug…>` (citations vs references, taxonomy, relations in and out, quiz, figure sources, visual register, verification status). Record results in `docs/QA_VERIFICATION_LEDGER.md`.

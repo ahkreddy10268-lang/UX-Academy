@@ -1,5 +1,6 @@
 /** Plates: research-metrics. Authored to docs/ILLUSTRATION_SYSTEM.md rules. */
 import type { IllustrationEntry } from "../illustration-types";
+import { T } from "../system/sheet";
 import { usabilityTestingPlate } from "./foundation-sheets";
 import { C, Label, STROKE } from "../primitives";
 import { heuristicEvaluationPlate as heuristicEvaluation } from "./learning-sheets";
@@ -48,13 +49,13 @@ const confidenceIntervals: IllustrationEntry = {
           </g>
         );
       })}
-      <Label x={200} y={32} show={detail} tone="line">
+      <Label x={200} y={32} show={detail} size={T.min} tone="line">
         true mean
       </Label>
-      <Label x={312} y={160} anchor="start" show={detail} size={10}>
+      <Label x={312} y={160} anchor="start" show={detail} size={T.min}>
         misses
       </Label>
-      <Label x={200} y={280} show={detail} size={10} tone="mute">
+      <Label x={200} y={280} show={detail} size={T.min} tone="mute">
         11 of 12 intervals capture it
       </Label>
     </g>

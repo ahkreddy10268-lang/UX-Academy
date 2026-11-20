@@ -10,6 +10,7 @@ import { illustrations } from "@/components/illustrations/registry";
 import { researchLedger } from "../content/topic-ledger";
 import { domains, itemsForSubcategory, sources, verification, type TaxonomyItem } from "./content";
 import { maturity, type Maturity } from "./content/completeness";
+import { evidenceTarget, visualTarget, type TargetResult } from "./content/targets";
 import { topicStatus } from "./content/coverage";
 import type { KnowledgeEntry } from "./content/schema";
 
@@ -21,6 +22,20 @@ export function maturityOf(e: KnowledgeEntry): Maturity {
   const awaitingVerification = e.references.filter((r) => sources.find((s) => s.id === r.source)?.verification === "awaiting-verification").length;
   const plate = illustrations.get(e.slug);
   return maturity(e, { hasPlate: Boolean(plate), hasDiagram: hasVisuals(e.slug), hasInteractive: Boolean(plate?.explorer), verifiedPrimary, awaitingVerification });
+}
+
+/** Visual and evidence targets by type and evidence class (D-129); reporting only. */
+export function targetsOf(e: KnowledgeEntry): { visual: TargetResult; evidence: TargetResult } {
+  const ok = (id: string) => ["doi-verified", "url-reachable"].includes(verification[id]?.status ?? "");
+  const plate = illustrations.get(e.slug);
+  const ctx = {
+    hasPlate: Boolean(plate),
+    hasDiagram: hasVisuals(e.slug),
+    hasInteractive: Boolean(plate?.explorer),
+    verifiedPrimary: e.references.filter((r) => (r.role === "primary" || r.role === "standard") && ok(r.source)).length,
+    verifiedAny: e.references.filter((r) => ok(r.source)).length,
+  };
+  return { visual: visualTarget(e, ctx), evidence: evidenceTarget(e, ctx) };
 }
 
 export type Completion = {

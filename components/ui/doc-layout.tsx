@@ -6,25 +6,39 @@
  */
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { TocSpy } from "./toc-spy";
 
 export type TocItem = [id: string, label: string];
 
-export function DocLayout({ toc, children, aside }: { toc: TocItem[]; children: ReactNode; aside?: ReactNode }) {
+const TOC_FROM = {
+  lg: { grid: "lg:grid-cols-[minmax(0,1fr)_14rem]", show: "lg:block" },
+  xl: { grid: "xl:grid-cols-[minmax(0,1fr)_14rem]", show: "xl:block" },
+} as const;
+
+/**
+ * `tocFrom` sets the width at which the sticky list appears. Long pages whose
+ * reading column would be squeezed at 1024 px (the guides) use "xl" and offer
+ * their own contents disclosure below it. Links in the list are marked
+ * `aria-current="location"` for the section in view (TocSpy).
+ */
+export function DocLayout({ toc, children, aside, tocFrom = "lg" }: { toc: TocItem[]; children: ReactNode; aside?: ReactNode; tocFrom?: keyof typeof TOC_FROM }) {
+  const bp = TOC_FROM[tocFrom];
   return (
-    <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_14rem]">
+    <div className={`grid gap-10 ${bp.grid}`}>
       <div className="min-w-0 space-y-14">{children}</div>
       {/* A plain wrapper: the nav inside is the landmark, so the shell's sidebar stays the only complementary region. */}
-      <div className="hidden lg:block">
-        <nav aria-label="On this page" className="sticky top-24 space-y-1 border-l border-rule pl-4 text-sm">
+      <div className={`hidden ${bp.show}`}>
+        <nav aria-label="On this page" data-toc className="sticky top-24 max-h-[calc(100dvh-7rem)] space-y-0.5 overflow-y-auto overscroll-contain border-l border-rule pl-4 text-sm">
           <p className="label mb-2">On this page</p>
           {toc.map(([id, label]) => (
-            <a key={id} href={`#${id}`} className="flex min-h-6 items-center py-0.5 text-ink-2 hover:text-ink">
+            <a key={id} href={`#${id}`} className="-ml-2 flex min-h-6 items-center rounded-xs py-0.5 pl-2 text-ink-2 hover:text-ink aria-[current=location]:bg-soft aria-[current=location]:font-semibold aria-[current=location]:text-ink">
               {label}
             </a>
           ))}
           {aside && <div className="pt-4">{aside}</div>}
         </nav>
       </div>
+      <TocSpy />
     </div>
   );
 }
@@ -34,7 +48,7 @@ export function DocSection({ id, kicker, title, children }: { id: string; kicker
   return (
     <section aria-labelledby={id} className="scroll-mt-24">
       {kicker && <p className="label mb-2">{kicker}</p>}
-      <h2 id={id} className="t-section text-[1.5rem]">
+      <h2 id={id} className="t-section scroll-mt-24 text-[1.5rem]">
         {title}
       </h2>
       <div className="mt-4 space-y-4 text-ink">{children}</div>

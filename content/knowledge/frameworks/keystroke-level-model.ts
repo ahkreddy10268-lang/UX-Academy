@@ -345,5 +345,5 @@ export default defineEntry({
     sources: true,
     activities: true,
   },
-  lastVerifiedAt: "2026-11-03",
+  lastVerifiedAt: "2026-11-17",
 });

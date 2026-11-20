@@ -319,6 +319,7 @@ export default defineEntry({
   flashcards: [
     { id: "net-promoter-score-fc-def", front: "NPS formula", back: "% promoters (9–10) − % detractors (0–6); range −100 to +100." },
     { id: "net-promoter-score-fc-critique", front: "Main academic critique of NPS", back: "No evidence it predicts growth better than other satisfaction metrics (Keiningham et al., 2007)." },
+    { id: "net-promoter-score-fc-passives", front: "Who counts as a passive in NPS?", back: "Anyone answering 7 or 8: included in the total, excluded from the subtraction." },
   ],
 
   references: [

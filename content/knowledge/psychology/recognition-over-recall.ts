@@ -233,6 +233,7 @@ function ReviewStep({ draft }: { draft: Draft }) {
     { target: "progressive-disclosure", type: "complementary-to", note: "Progressive disclosure balances showing options for recognition against clutter." },
     { target: "information-scent", type: "related-to", note: "Visible cues support recognition-based navigation decisions." },
     { target: "discoverability", type: "influences", note: "Visible options make functionality discoverable." },
+    { target: "direct-manipulation", type: "related-to", note: "Direct manipulation replaces recalled command syntax with visible objects and actions." },
   ],
 
   exercises: [
@@ -309,6 +310,7 @@ function ReviewStep({ draft }: { draft: Draft }) {
   flashcards: [
     { id: "recognition-over-recall-fc-1", front: "Recognition vs recall", back: "Recognition: identify a presented item. Recall: generate it without the item present. Recognition is usually easier." },
     { id: "recognition-over-recall-fc-2", front: "Familiarity and recollection", back: "Dual-process account of recognition: fast sense of familiarity vs. slower retrieval of specific details." },
+    { id: "recognition-over-recall-fc-3", front: "What is a retrieval cue?", back: "Anything that helps bring a memory back: a word, picture or context." },
   ],
 
   references: [

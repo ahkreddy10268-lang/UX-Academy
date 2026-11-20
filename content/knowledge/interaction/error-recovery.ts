@@ -8,7 +8,7 @@ export default defineEntry({
   summary:
     "When something goes wrong, people need to notice it, understand what happened and know exactly how to fix it — without losing their work. Error recovery designs that whole path, not just the message.",
   definition:
-    "Error recovery is the principle that interfaces should help people **recognise, diagnose and recover from errors**: error messages expressed in plain language, precisely indicating the problem and constructively suggesting a solution {{src:nielsen-ten-heuristics-article}}. It is the ninth of Nielsen's ten heuristics. It covers the whole path after an error — noticing it, understanding it, correcting it and continuing — including keeping what people already entered {{src:nng-error-messages}}. It is distinct from error prevention, which stops errors happening, and from the writing of error messages, which is one part of recovery.",
+    "Error recovery is the principle that interfaces should help people **recognise, diagnose and recover from errors**: [[error-messages|error messages]] expressed in [[plain-language|plain language]], precisely indicating the problem and constructively suggesting a solution {{src:nielsen-ten-heuristics-article}}. It is the ninth of Nielsen's ten heuristics. It covers the whole path after an error — noticing it, understanding it, correcting it and continuing — including keeping what people already entered {{src:nng-error-messages}}. It is distinct from error prevention, which stops errors happening, and from the writing of error messages, which is one part of recovery.",
   primaryType: "principle",
   secondaryTypes: ["heuristic"],
   domain: "interaction",
@@ -163,11 +163,13 @@ export default defineEntry({
   ],
 
   relations: [
+    { target: "interaction-design-discipline", type: "applied-in", note: "Recovery paths such as undo and clear error messages are designed as part of the interaction, not added afterwards." },
     { target: "nielsen-usability-heuristics", type: "derived-from", note: "Heuristic 9 of Nielsen's ten usability heuristics." },
     { target: "error-prevention", type: "complementary-to", note: "Prevention lowers how often errors happen; recovery handles those that remain." },
     { target: "error-messages", type: "applied-in", note: "Error messages are the written part of recovery." },
     { target: "form-design", type: "applied-in", note: "Forms are where most recovery patterns live: inline errors, summaries, preserved input." },
     { target: "visibility-of-system-status", type: "related-to", note: "Showing that something failed is a form of system status." },
+    { target: "feedback-principle", type: "derived-from", note: "Recovery starts with specific feedback about what actually happened." },
     { target: "user-control-and-freedom", type: "complementary-to", note: "Undo and exits let people recover from their own choices." },
   ],
 

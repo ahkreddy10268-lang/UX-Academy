@@ -59,5 +59,6 @@
 
 - Unknown slugs under dynamic routes (`/library/x`, `/labs/x`, `/learn/x`, …) render the not-found page but with HTTP 200 (Cache Components + streaming; `dynamicParams` is not allowed). Paths matching no route return 404. Verified 2026-11-03; harmless for a personal static app.
 - Eight URLs block automated verification (ISO, ACM DL, some publisher pages); records are bibliographic and labelled so.
-- `brooke-2013`, `doherty-thadani-1982`, `kieras-2001-klm`, `shneiderman-golden-rules-page` are marked awaiting verification.
+- `brooke-2013` is marked awaiting verification (the article could not be read, 2026-11-17). `doherty-thadani-1982`, `kieras-2001-klm` and `shneiderman-golden-rules-page` were read and verified on 2026-11-17 with limits noted in their records.
 - Charts and plates were reviewed for colour-only encoding and text alternatives manually and with axe; no assistive-technology testing yet.
+- Plate markers: the 152 clipped markers in 78 plates (audit 2026-11-16) were fixed on 2026-11-18 by keeping markers inside the viewBox in the marker primitives; a site-wide sweep finds none outside.

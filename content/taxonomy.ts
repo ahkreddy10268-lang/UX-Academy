@@ -49,7 +49,11 @@ export const domains: Domain[] = [
         title: "Core concepts",
         items: [
           ...g("discipline", "User Experience (UX)|user-experience", "User Interface (UI) Design|ui-design", "Product Design", "Interaction Design|interaction-design-discipline", "Experience Design"),
-          ...g("concept", "Usability", "Utility", "Usefulness", "Desirability", "Feasibility", "Viability", "UX Maturity"),
+          ...g("concept", "Usability"),
+          ...within("usefulness", g("concept", "Utility")),
+          ...g("concept", "Usefulness", "Desirability"),
+          ...within("design-thinking", g("concept", "Feasibility", "Viability")),
+          ...g("concept", "UX Maturity"),
           ...g("discipline", "Human-Computer Interaction (HCI)|human-computer-interaction"),
         ],
       },
@@ -57,7 +61,9 @@ export const domains: Domain[] = [
         id: "approaches",
         title: "Design approaches",
         items: [
-          ...g("framework", "User-Centred Design", "Human-Centred Design", "Design Thinking"),
+          ...g("framework", "User-Centred Design"),
+          ...within("user-centred-design", g("framework", "Human-Centred Design")),
+          ...g("framework", "Design Thinking"),
           ...g("concept", "UX Lifecycle", "Design Process|design-processes"),
         ],
       },
@@ -65,7 +71,9 @@ export const domains: Domain[] = [
         id: "history-ethics",
         title: "History of design & HCI",
         items: [
-          ...g("historical-contribution", "History of Interface Design", "History of HCI", "Evolution of Digital Experiences"),
+          ...g("historical-contribution", "History of Interface Design"),
+          ...within("human-computer-interaction", g("historical-contribution", "History of HCI")),
+          ...g("historical-contribution", "Evolution of Digital Experiences"),
         ],
       },
     ],
@@ -378,7 +386,7 @@ export const domains: Domain[] = [
         id: "composition",
         title: "Composition & visual design principles",
         items: [
-          ...g("principle", "Visual Hierarchy", "Alignment", "Balance", "Contrast|visual-contrast", "Repetition", "Proportion", "Scale", "Emphasis", "White Space", "Rhythm", "Unity", "Variety", "Visual Design Principles"),
+          ...g("principle", "Visual Hierarchy", "Alignment", "Balance", "Contrast|visual-contrast", "Repetition", "Proportion", "Scale", "White Space", "Rhythm", "Unity", "Variety", "Visual Design Principles"), ...within("visual-hierarchy", g("principle", "Emphasis")),
         ],
       },
       {
@@ -493,9 +501,9 @@ export const domains: Domain[] = [
         id: "standards",
         title: "Standards & conformance",
         items: [
-          ...g("standard", "WCAG", "EN 301 549", "ISO/IEC 40500", "WAI-ARIA|aria", "Section 508", "European Accessibility Act"),
+          ...g("standard", "WCAG", "EN 301 549"), ...within("wcag", g("standard", "ISO/IEC 40500")), ...g("standard", "WAI-ARIA|aria", "Section 508", "European Accessibility Act"),
           ...g("principle", "POUR Principles|pour"),
-          ...g("concept", "Success Criteria", "Conformance Levels"),
+          ...within("wcag", g("concept", "Success Criteria", "Conformance Levels")),
         ],
       },
       {
@@ -647,7 +655,7 @@ export const domains: Domain[] = [
         id: "usability-metrics",
         title: "UX & usability metrics",
         items: [
-          ...g("metric", "Task Success Rate", "Time on Task", "Error Rate", "Learnability", "Effectiveness", "Efficiency", "Satisfaction"),
+          ...g("metric", "Task Success Rate", "Time on Task", "Error Rate", "Learnability"), ...within("usability", g("metric", "Effectiveness", "Efficiency", "Satisfaction")),
           ...g("framework", "HEART Framework"),
         ],
       },
@@ -680,7 +688,7 @@ export const domains: Domain[] = [
         description: "Planning studies that can detect real effects and estimating how large they are.",
         items: [
           ...g("concept", "Effect Size", "Statistical Power"),
-          ...g("technique", "Sample Size Estimation", "Margin of Error"),
+          ...g("technique", "Sample Size Estimation"), ...within("confidence-intervals", g("technique", "Margin of Error")),
         ],
       },
       {

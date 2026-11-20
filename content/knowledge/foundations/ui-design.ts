@@ -402,6 +402,9 @@ export default defineEntry({
     { source: "myers-1998", role: "explanatory", note: "Chronology of interface technology." },
     { source: "carroll-hci-brief-intro", role: "explanatory", note: "Emergence of HCI, and of UX and interaction design from it." },
     { source: "apple-hig", role: "further", note: "Example of platform guidelines documenting conventions." },
+    { source: "govuk-design-system", role: "further", locator: "Components and Patterns", note: "Study how each component page pairs a working example with guidance on when to use it. Learn to justify an interface choice with evidence rather than taste; compare one component with the same control in the Apple guidelines above." },
+    { source: "material-3", role: "further", locator: "Components", note: "A second platform system for comparison. Pick one control, such as a button or text field, and list where Material, Apple and GOV.UK agree and where they differ; the differences show which rules are platform conventions and which are general." },
+    { source: "govuk-frontend-repo", role: "further", note: "Maintained open-source code for the GOV.UK components. Read the code for one component you have studied in the Design System to see how a documented design decision becomes HTML, CSS and JavaScript. Installing it needs front-end skills such as npm; the design lessons do not." },
   ],
   evidence: "professional-guideline",
   evidenceNote:

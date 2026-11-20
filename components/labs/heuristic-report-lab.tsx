@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useId, useMemo, useRef, useState, type FormEvent } from "react";
 import { caseStudy } from "@/content/guides/nielsen-heuristics/case-study";
 import { heuristics } from "@/content/guides/nielsen-heuristics/heuristics";
@@ -94,6 +95,27 @@ export function HeuristicReportLab() {
   );
 
   return (
+    <div className="space-y-6">
+      <nav aria-label="Background for this lab" className="rounded-md border border-rule bg-soft p-4 text-sm text-ink-2">
+        <span className="font-medium text-ink">Before you start: </span>
+        the guide explains{" "}
+        <Link href="/guides/nielsen-heuristics#process" className="link">
+          how to run an evaluation
+        </Link>
+        ,{" "}
+        <Link href="/guides/nielsen-heuristics#severity" className="link">
+          how to rate severity
+        </Link>{" "}
+        and walks through{" "}
+        <Link href="/guides/nielsen-heuristics#case-study" className="link">
+          the case study
+        </Link>{" "}
+        used as this lab&rsquo;s example. The method itself, with its evidence and limits:{" "}
+        <Link href="/library/heuristic-evaluation" className="link">
+          Heuristic Evaluation
+        </Link>
+        .
+      </nav>
     <div className="grid grid-cols-1 gap-8 2xl:grid-cols-[24rem_minmax(0,1fr)]">
       <form onSubmit={add} noValidate className="min-w-0 space-y-4" aria-labelledby={`${id}-form-h`}>
         <h2 id={`${id}-form-h`} className="t-sub">
@@ -241,6 +263,7 @@ export function HeuristicReportLab() {
           </section>
         )}
       </div>
+    </div>
     </div>
   );
 }

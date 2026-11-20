@@ -173,12 +173,16 @@ export default defineEntry({
   ],
 
   relations: [
+    { target: "interaction-design-discipline", type: "applied-in", note: "Signifiers are applied in interaction design to show which actions are available and where." },
     { target: "affordances", type: "contrasts-with", note: "Signifiers communicate the actions that affordances make possible." },
+    { target: "feedback-principle", type: "complementary-to", note: "Signifiers say what an action will do before it; feedback says what it did after." },
+    { target: "constraints", type: "complementary-to", note: "Signifiers show where and how to act; constraints remove the options that should not be taken." },
     { target: "discoverability", type: "influences", note: "On screens, discoverability depends largely on signifiers." },
     { target: "visual-hierarchy", type: "related-to", note: "Hierarchy determines which signifiers attract attention first." },
     { target: "information-scent", type: "complementary-to", note: "Link labels act as signifiers of both interactivity and destination." },
     { target: "non-colour-indicators", type: "applied-in", note: "Robust signifiers use cues beyond colour, as accessibility guidance requires." },
     { target: "mental-models", type: "influences", note: "Signifiers are part of the system image from which users form mental models." },
+    { target: "direct-manipulation", type: "related-to", note: "Direct manipulation needs signifiers for what can be grabbed, dragged or resized, and where it can land." },
   ],
 
   exercises: [
@@ -253,6 +257,7 @@ export default defineEntry({
   flashcards: [
     { id: "signifiers-fc-1", front: "Signifier (Norman, 2008)", back: "Any perceivable indicator that communicates appropriate behaviour — what to do and where." },
     { id: "signifiers-fc-2", front: "Social signifier", back: "A cue created by others' behaviour (worn path, queue, ratings) rather than deliberate design." },
+    { id: "signifiers-fc-3", front: "Signifier vs affordance", back: "An affordance is the action possibility itself, which may or may not be signalled; a signifier is the perceivable cue that communicates it." },
   ],
 
   references: [

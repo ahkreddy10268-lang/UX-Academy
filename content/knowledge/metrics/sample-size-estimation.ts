@@ -319,6 +319,19 @@ export default defineEntry({
       ],
       explanation: "p = 0.5 is the safe default when the expected proportion is unknown.",
     },
+    {
+      id: "sample-size-estimation-q-underpowered",
+      kind: "multiple-choice",
+      level: "advanced",
+      prompt: "Why can an underpowered study that does reach significance still mislead?",
+      options: [
+        { text: "Only the luckiest samples cross the threshold, so its estimated effects are exaggerated.", correct: true, explanation: "Underpowered studies do more than miss effects; conditional on significance their estimates are inflated." },
+        { text: "Its estimates are unbiased whenever the result is significant.", correct: false, explanation: "Selection by significance exaggerates the estimated effect." },
+        { text: "Observed power calculated afterwards repairs the problem.", correct: false, explanation: "Post-hoc observed power adds no information beyond the p-value and should be avoided." },
+        { text: "Power depends only on the sample size.", correct: false, explanation: "Power is tied to α, effect size and n together; fixing any three determines the fourth." },
+      ],
+      explanation: "Plan for adequate power in advance and report intervals.",
+    },
   ],
 
   flashcards: [

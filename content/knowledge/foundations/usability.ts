@@ -306,6 +306,7 @@ export default defineEntry({
     { source: "hassenzahl-tractinsky-2006", role: "explanatory", note: "Positions UX relative to usability." },
     { source: "hornbaek-law-2007", role: "primary", note: "Meta-analysis showing usability components correlate weakly." },
     { source: "sauro-lewis-2016", role: "further", note: "Practical measurement of usability components." },
+    { source: "govuk-moderated-usability-testing", role: "further", note: "A step-by-step government procedure for observing people as they attempt tasks: when to test, how to plan sessions, whom to recruit and how to make sessions accessible. Use it to plan a first small test of one task; the method itself is explained in the usability-testing entry." },
   ],
   evidence: "official-standard",
   evidenceNote:

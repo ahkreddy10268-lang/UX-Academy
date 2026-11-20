@@ -180,6 +180,7 @@ export default defineEntry({
     { target: "visual-hierarchy", type: "related-to", note: "Contrast is one of the strongest levers of visual hierarchy; accessibility thresholds bound how low secondary contrast may go." },
     { target: "perceptual-colour-spaces", type: "contrasts-with", note: "Perceptual spaces such as CIE Lab model lightness differences more uniformly than the WCAG luminance ratio." },
     { target: "colour-systems", type: "applied-in", note: "Semantic colour roles (text, surface, border) are defined with contrast constraints between them." },
+    { target: "interaction-states", type: "applied-in", note: "Interaction states must keep text and state indicators at the contrast WCAG requires." },
   ],
 
   formulas: [

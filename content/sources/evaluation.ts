@@ -382,6 +382,9 @@ export default defineSources([
     topics: ["think-aloud", "moderation", "usability testing"],
     access: "paywalled",
     verification: "bibliographic",
+    lastVerifiedAt: "2026-11-16",
+    notes:
+      "Abstract read (OpenAlex) 2026-11-16; full text not read. Argues that usability practice and textbook descriptions of thinking aloud diverge from Ericsson and Simon's model, which most practitioners cite; proposes speech genre as an alternative framework, both for eliciting an undirected, undisturbed report and for interventions the older model does not support.",
   },
   {
     id: "nielsen-thinking-aloud-article",
@@ -465,8 +468,8 @@ export default defineSources([
     tier: 2,
     topics: ["eight golden rules"],
     access: "open",
-    verification: "awaiting-verification",
-    notes: "Author's page reproducing the rules from Section 3.3.4 of the 6th edition. The page returned HTTP 503 on 2026-11-03, so its wording could not be re-checked in this session.",
+    verification: "url-checked",
+    notes: "Author's page reproducing the rules from Section 3.3.4 of the 6th edition (Shneiderman, Plaisant, Cohen, Jacobs & Elmqvist, 2016). Returned HTTP 503 on 2026-11-03; fetched and read in full on 2026-11-17 (HTTP 200): the eight rule names and their summaries match the entry's wording. The page is an author's summary, not the book.",
   },
   {
     id: "miller-1968",
@@ -610,6 +613,9 @@ export default defineSources([
     topics: ["information foraging", "information scent", "navigation"],
     access: "paywalled",
     verification: "bibliographic",
+    lastVerifiedAt: "2026-11-19",
+    notes:
+      "Metadata checked against Crossref 2026-11-19. Neither the full text nor the abstract could be read (the publisher page rendered no abstract to automated reads and OpenAlex holds none), so entries that cite it attribute to it only that Pirolli and Card published a Psychological Review article of this title in 1999; the theory's concepts, equations and data are described from other sources, not from this paper.",
   },
   {
     id: "furnas-et-al-1987",
@@ -626,6 +632,9 @@ export default defineSources([
     topics: ["vocabulary problem", "labelling", "search"],
     access: "paywalled",
     verification: "bibliographic",
+    lastVerifiedAt: "2026-11-20",
+    notes:
+      "Abstract read 2026-11-20 (OpenAlex); the paper was not read. Studied spontaneous word choice for objects in five application-related domains: variability was large, and in every case two people favoured the same term with probability below 0.20. Simulations showed that access through one designer's favourite single word would fail 80–90 % of the time in many common situations; unlimited aliasing is derived as an optimal strategy. The study concerns words people enter to reach objects or actions, not link labels they read.",
   },
   /* ---- Heuristic topic articles and error research (session 29) ---- */
   {

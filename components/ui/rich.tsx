@@ -48,7 +48,7 @@ function renderNode(n: RichNode, key: number, ctx: RichContext): ReactNode {
       if (!n2) return null;
       return (
         <sup key={key} className="ml-px">
-          <a href={`#ref-${n.source}`} className="link font-sans text-[0.7em] no-underline" aria-label={`Reference ${n2}`}>
+          <a href={`#ref-${n.source}`} className="link font-sans no-underline" aria-label={`Reference ${n2}`}>
             [{n2}]
           </a>
         </sup>
