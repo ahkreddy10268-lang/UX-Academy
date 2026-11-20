@@ -89,3 +89,4 @@ Use the **`ux-academy-workflow` skill** (`.claude/skills/ux-academy-workflow/SKI
 - After content changes run `npm run docs:generate`. Update `docs/PROGRESS.md` at each milestone, with the precise next task. Record decisions in `docs/DECISION_LOG.md`.
 - Don't remove or weaken tests to get green. Don't fake data to make dashboards look populated.
 - Never push, deploy or publish without explicit authorisation from the owner.
+- Third-party design skills live in `.claude/skills/` (provenance in `skills-lock.json`). Use them only as `docs/DESIGN_SKILLS_WORKFLOW.md` describes: the project's design system and accessibility rules win over any skill, and no image generation or paid credits without owner approval.

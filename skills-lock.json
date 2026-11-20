@@ -1,0 +1,69 @@
+{
+  "version": 2,
+  "skills": {
+    "better-accessibility": {
+      "source": "jakubkrehel/skills",
+      "commit": "672ae44ace6aaed65b86cbb1e2fd6fbea0e79578",
+      "sourceType": "github",
+      "skillPath": "skills/better-accessibility/SKILL.md",
+      "computedHash": "1da0d428695e5bc317101ee09624fea07d56a72db6ca9eee9fe166b57de6c52d",
+      "installMode": "copy"
+    },
+    "better-layout": {
+      "source": "jakubkrehel/skills",
+      "commit": "672ae44ace6aaed65b86cbb1e2fd6fbea0e79578",
+      "sourceType": "github",
+      "skillPath": "skills/better-layout/SKILL.md",
+      "computedHash": "1c413249d35f92934698279de5de3759ed1a5ec9b8c02f96a972fb0ecb83a95f",
+      "installMode": "copy"
+    },
+    "better-ui": {
+      "source": "jakubkrehel/skills",
+      "commit": "672ae44ace6aaed65b86cbb1e2fd6fbea0e79578",
+      "sourceType": "github",
+      "skillPath": "skills/better-ui/SKILL.md",
+      "computedHash": "e9e9bedb426428a6f9d86927b77f14b6acc3d348a7ec9552c071bc2bfb39ca65",
+      "installMode": "copy"
+    },
+    "interface-review": {
+      "source": "jakubkrehel/skills",
+      "commit": "672ae44ace6aaed65b86cbb1e2fd6fbea0e79578",
+      "sourceType": "github",
+      "skillPath": "skills/interface-review/SKILL.md",
+      "computedHash": "77008a18d758ea6f18f72f650b3dde6f71522bedfa349d25d548ed5f0b9c3e5a",
+      "installMode": "copy"
+    },
+    "oil-ui": {
+      "source": "oil-oil/oil-ui",
+      "commit": "81f2657f41410f04ae47ba77f902fcc0567eaab2",
+      "sourceType": "github",
+      "skillPath": "SKILL.md",
+      "computedHash": "f909a6388946f1783bd9ccd3e3830400e17157b11b588b2dd345985996b683bf",
+      "installMode": "copy"
+    },
+    "ui-ux-pro-max": {
+      "source": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "commit": "2de1134dc4d1cfe112934611ae5803ae17a1bd7e",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/ui-ux-pro-max/SKILL.md",
+      "computedHash": "605686282fb6812d8e3f4b1a06c9fb8ba7be4d7395090f41f221a9ba5a3dbe6b",
+      "installMode": "copy"
+    },
+    "unslop": {
+      "source": "heydamir/unslop",
+      "commit": "620163eedb3529d9cd23a3994ed8d287d06f760d",
+      "sourceType": "github",
+      "skillPath": "skills/unslop/SKILL.md",
+      "computedHash": "34b16270083f9892424a0b41dec4d5f25a73709c9cffa7702e57c723000e6df5",
+      "installMode": "copy"
+    },
+    "web-design-guidelines": {
+      "source": "vercel-labs/agent-skills",
+      "commit": "1a2c79d4e6c4a2283dc2c614b6538cbe1ed5ca62",
+      "sourceType": "github",
+      "skillPath": "skills/web-design-guidelines/SKILL.md",
+      "computedHash": "4f68ae07187fb0d1fb78c88b503d089da4cf5a9d9625d1f2e425b1590bf96d92",
+      "installMode": "copy"
+    }
+  }
+}

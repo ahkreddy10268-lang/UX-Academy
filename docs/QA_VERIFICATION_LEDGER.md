@@ -394,3 +394,16 @@ Further-reading resources added to 6 published Domain 1 entries (8 references): 
 | Entry review | `entry-review.cjs` for the 6 entries | PASS 48/48 (axe 0, overflow 0) | Run |
 | Review | One targeted review; one correction pass | 0 critical, 0 major; 3 unverified details in notes removed or reworded (a chord-keyset claim, a research-findings claim, a repository file-layout claim). The last edit is to note text only, after the build and entry review | Run |
 | Not verified | NN/g UX maturity quiz (`forms.nngroup.com/s3/Maturity-Quiz`) | TLS verification failed on both attempts (curl, Python); not added | Run |
+
+### Design skills installation (2026-11-20, parent `84c7691`)
+
+Eight third-party Claude Code skills installed project-local in `.claude/skills/` with `npx skills add … -a claude-code --copy` (provenance in `skills-lock.json`); workflow in `docs/DESIGN_SKILLS_WORKFLOW.md`; `.claude/**` added to ESLint ignores. No app, content, taxonomy or path change.
+
+| Check | Command | Result | Run / inherited |
+|---|---|---|---|
+| Package completeness | `diff -rq` of each installed folder against a fresh clone of its source | 8/8 identical (unslop 16 files, ui-ux-pro-max 80, oil-ui 55, better-ui 5, better-layout 5, better-accessibility 9, interface-review 4, web-design-guidelines 1) | Run |
+| Loader | Claude Code skill listing in this session | unslop, ui-ux-pro-max, oil-ui, better-ui, better-layout, better-accessibility, web-design-guidelines listed; interface-review is manual-only (`disable-model-invocation`) and so not listed | Observed |
+| Script smoke test | `python3 .claude/skills/ui-ux-pro-max/scripts/search.py --help` | Runs (Python 3.13, stdlib only) | Run |
+| Check | `npm run check` | First run: 4 lint errors from vendored skill code (`oil-ui/assets/vendor/alpine.min.js`); after adding `.claude/**` to ESLint ignores: PASS, 608 tests | Run |
+| Build | `npm run build` | PASS | Run |
+| Not run | Any skill invocation on the interface | Not authorised (installation only) | Not run |
