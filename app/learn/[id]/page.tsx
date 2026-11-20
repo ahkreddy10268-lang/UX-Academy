@@ -10,7 +10,7 @@ import { Bullets, Container, PageHeader } from "@/components/ui/layout";
 import { entryBySlug, labById, learningPaths, taxonomyBySlug, workshops } from "@/lib/content";
 import { catClass } from "@/lib/content/categories";
 import { DIFFICULTY_LABEL, LEVEL_PURPOSE, TYPE_LABEL } from "@/lib/content/labels";
-import { levelQuestionCounts, pathStats, readingMinutes, stageStats } from "@/lib/content/learning";
+import { levelQuestionCounts, pathStats, readingMinutes, stageStats, stepStatus } from "@/lib/content/learning";
 
 export function generateStaticParams() {
   return learningPaths.map((p) => ({ id: p.id }));
@@ -93,13 +93,16 @@ export default async function PathPage({ params }: PageProps<"/learn/[id]">) {
                 testHref: stageStats(s).questions > 0 ? `/learn/${p.id}/level/${si + 1}` : undefined,
                 lessonSlugs: s.steps.filter((x) => entryBySlug.has(x)),
                 practiceItems: stageStats(s).questions + stageStats(s).exercises,
-                planned: s.steps.filter((x) => !entryBySlug.has(x)).length,
+                addressed: stageStats(s).addressed,
+                planned: stageStats(s).planned,
               }))}
             />
           </div>
           <h2 className="t-section mt-12 text-2xl">Lessons by level</h2>
           <p className="mt-1 text-sm text-ink-3">
-            {stats.lessons} lessons{stats.planned ? ` · ${stats.planned} more ${stats.planned === 1 ? "topic" : "topics"} shown for context, in development` : ""}
+            {stats.lessons} lessons
+            {stats.addressed ? ` · ${stats.addressed} ${stats.addressed === 1 ? "concept" : "concepts"} explained within other lessons` : ""}
+            {stats.planned ? ` · ${stats.planned} more ${stats.planned === 1 ? "topic" : "topics"} shown for context, in development` : ""}
           </p>
           <ol className="mt-6 space-y-4">
             {p.stages.map((s, si) => {
@@ -126,6 +129,22 @@ export default async function PathPage({ params }: PageProps<"/learn/[id]">) {
                         {s.steps.map((slug) => {
                           const e = entryBySlug.get(slug);
                           const t = taxonomyBySlug.get(slug);
+                          const status = stepStatus(slug);
+                          if (status.kind === "addressed") {
+                            const host = status.host;
+                            const href = written.includes(host.slug) ? `/learn/${p.id}/lesson/${host.slug}` : `/library/${host.slug}`;
+                            return (
+                              <li key={slug} className="flex items-center gap-4 border-t border-rule px-5 py-3 text-sm text-ink-2">
+                                <span className="w-12 shrink-0" />
+                                <Link href={href} className="tap flex-1 hover:text-ink">
+                                  <span>
+                                    <span className="block">{t?.title}</span>
+                                    <span className="block text-xs text-ink-3">Explained within {host.title} →</span>
+                                  </span>
+                                </Link>
+                              </li>
+                            );
+                          }
                           if (!e)
                             return (
                               <li key={slug} className="flex items-center gap-4 border-t border-dashed border-rule px-5 py-3 text-sm text-ink-3">

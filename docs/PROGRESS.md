@@ -337,5 +337,9 @@ After that: `ui-design`, `interaction-design-discipline`, `accessibility-concept
 - Inspected all 16 entries, the five addressed-within concepts, the glossary and the three fundamentals paths. Gates and D-129 targets were already met; fixes made only where a defect was found: D1-2 (ISO 9241-11 cited in HCI); 'Illustrative scenario' labels in HCI, Usability, UX and UCD; human-centred design taught and quizzed in UCD; seven relations (UX → experience design and product design; HCI → interaction design and evolution of digital experiences; usability → usefulness; design thinking → design processes; UCD → UX maturity); 13 glossary terms.
 - Path findings for the owner (no path changed): D1-7, the HCI path shows History of HCI and Human-Centred Design as 'in development'; D1-8, the UX path uses only 4 Domain 1 entries, the UI path omits interaction design, the HCI path omits the two history entries.
 
+## Session 68 — D1-7: addressed-within concepts on learning paths
+- Path pages, cards and the curriculum map now classify each step from the taxonomy's `coveredBy`: lessons, concepts explained within other lessons ('Explained within {host} →', linking to the host's lesson in the same path), and steps in development. Three steps in two paths were affected. Lesson numbering, progress, completion and path data unchanged.
+- QA: check, build, e2e, e2e-redesign (glossary count updated for the 13 new terms), keyboard, devices, direct checks at 390 and 1440. Pre-existing axe landmark finding on the desktop sidebar logged as A11Y-1.
+
 ## Next task (precise)
-Owner: review the Domain 1 audit commit and decide D1-7 (learning-path display of addressed-within steps) and D1-8 (path recommendations). Content candidates awaiting approval: `loss-aversion`, `findability`.
+Owner: review the D1-7 commit; decide D1-8 (path recommendations) and A11Y-1. Content candidates awaiting approval: `loss-aversion`, `findability`.

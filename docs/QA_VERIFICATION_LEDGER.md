@@ -473,3 +473,19 @@ Scope: the 16 Domain 1 entries, the five addressed-within concepts, the glossary
 | Live paths | Production `/learn/hci-fundamentals` | Shows 'History of HCI' and 'Human-Centred Design' as 'in development' (D1-7) | Run |
 | Sources | One fresh attempt each: NN/g maturity quiz; OpenAlex abstract for Chapman & Plewes | Quiz host still fails (000); no abstract | Run |
 | Not run | Plate renders, devices, keyboard, atlas | No plate, component or route changed | Not run |
+
+### D1-7 — learning-path display of addressed-within concepts (2026-11-20, parent `58de5b5`)
+
+Display-only change: `lib/content/learning.ts` (`stepStatus` from taxonomy `coveredBy`; `addressed` counts in `pathStats`/`stageStats`, excluded from `planned`), `app/learn/[id]/page.tsx` (addressed rows 'Explained within {host} →', summary 'concepts explained within other lessons', curriculum-map counts), `components/learn/curriculum-map.tsx`, `components/learn/path-card.tsx`, `components/learn/path-explorer.tsx`. No path data, numbering, progress or completion change. `tests/browser/e2e-redesign.cjs`: glossary total updated 114 → 127 (the 13 terms added in `58de5b5`; that commit had not run this suite).
+
+| Check | Command | Result | Run / inherited |
+|---|---|---|---|
+| Check | `npm run check` | PASS — 612 tests, typecheck, lint | Run |
+| Step classification | scratch script over all 16 paths | lessons + addressed + planned = steps for every path; addressed: HCI 2, Accessibility 1; lesson counts unchanged (HCI 16, Accessibility 3) | Run |
+| Build | `npm run build` | PASS (final) | Run |
+| e2e | `tests/browser/e2e.cjs` | PASS 44/44 (final build) | Run |
+| e2e-redesign | `tests/browser/e2e-redesign.cjs` | First run aborted at the glossary count (114 hard-coded; 127 after `58de5b5`); count updated; PASS 66/66 (final build) | Run |
+| Keyboard | `tests/browser/keyboard.cjs` | PASS 45/45 (final build) | Run |
+| Devices | `tests/browser/devices.cjs` | PASS 155/155 (final build) | Run |
+| Direct | Playwright: `/learn`, `/learn/hci-fundamentals`, `/learn/accessibility` at 390 and 1440 | 22/24: summaries, 'Explained within' rows, in-path lesson links, curriculum-map and card counts, HTTP 200, no overflow, no page errors. The 2 failures are axe `landmark-unique` on `.app-sidebar` at 1440, identical on production `9a51aa6` (pre-existing; A11Y-1) | Run |
+| Visual | Screenshot of the HCI path row at 1440 | Title above 'Explained within…', aligned with lesson text; two layout corrections made during QA (row run-on, then centring from the unlayered `.tap` rule) | Run |

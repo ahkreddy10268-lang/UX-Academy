@@ -41,6 +41,11 @@ export function PathCard({ path, stats, writtenSteps }: { path: LearningPath; st
           {stats.lessons > 0 && stats.minutes > 0 && <span>Est. reading time ≈{stats.minutes} min</span>}
         </p>
         <div className="mt-auto flex flex-col gap-2 pt-4">
+          {stats.addressed > 0 && (
+            <p className="text-xs text-ink-3">
+              {stats.addressed} {stats.addressed === 1 ? "concept" : "concepts"} explained within other lessons
+            </p>
+          )}
           {stats.planned > 0 && <p className="text-xs text-ink-3">{stats.planned} more {stats.planned === 1 ? "lesson" : "lessons"} in development</p>}
           <div className="border-t border-rule pt-3">
             <PathProgress steps={writtenSteps} compact />

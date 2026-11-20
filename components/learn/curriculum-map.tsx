@@ -14,6 +14,8 @@ export type MapLevel = {
   testHref?: string;
   lessonSlugs: string[];
   practiceItems: number;
+  /** Concepts explained within another published entry: shown, never counted as lessons. */
+  addressed: number;
   planned: number;
 };
 
@@ -47,6 +49,11 @@ export function CurriculumMap({ levels }: { levels: MapLevel[] }) {
             <p className="tabular mt-1.5 text-xs text-ink-3">
               {n === 0 ? "No published lessons yet" : done + started === 0 ? "Not started" : `${done} of ${n} completed${started ? ` · ${started} in progress` : ""}`}
             </p>
+            {lv.addressed > 0 && (
+              <p className="mt-1 text-xs text-ink-3">
+                {lv.addressed} {lv.addressed === 1 ? "concept" : "concepts"} explained within other lessons
+              </p>
+            )}
             {lv.planned > 0 && <p className="mt-1 text-xs text-ink-3">{lv.planned} more in development</p>}
             {lv.testHref && (
               <Link href={lv.testHref} className="tap mt-auto inline-flex items-center pt-3 text-sm font-medium text-accent-ink hover:underline">
