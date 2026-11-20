@@ -329,5 +329,9 @@ After that: `ui-design`, `interaction-design-discipline`, `accessibility-concept
 - Found why production shows 6 of 21 for Domain 1: Vercel's production deployments come from the old `claude/pensive-cannon-t1o6sy` branch, never from `main`, and `main` lacks PR #3 (DEP-1).
 - Domain page, coverage bar and coverage table now separate published, addressed within and planned; the taxonomy-doc generator marks addressed-within topics with their host (D1-3 closed).
 
+## Session 66 — production release verified
+- PR #3 merged into `main` (`9a51aa6`); the owner set Vercel's Production Branch to `main`. Production deployment `dpl_77Bpw7KyrCPPEEeHf5mMLcVYLwT7` built from `main` at `9a51aa6`, READY, serving ux-academy-eight.vercel.app.
+- Live checks (Playwright, 390 and 1440 px): four routes 200, no overflow, axe 0, no page errors. Domain 1 on production: 16 published, 5 addressed within, 0 planned, 21/21 accounted for; subcategories 10/3, 4/1, 2/1; five host links resolve to the right entries. DEP-1 closed.
+
 ## Next task (precise)
-Owner: approve the push of the status fix, set Vercel's production branch to `main` (DEP-1), and approve merging PR #3. Then verify production serves the merge commit. Content: `loss-aversion` and `findability` await approval.
+Await the owner's next instruction. Content candidates awaiting approval: `loss-aversion` (B5) and `findability` (B6 topic 3).

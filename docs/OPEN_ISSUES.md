@@ -4,7 +4,7 @@ The single register of unresolved items. Details stay in the linked review or re
 
 Severity: critical · major · moderate · minor (see the `ux-academy-workflow` skill § 5). **Blocks publication** = blocks pushing or publishing the affected work.
 
-Last updated: 2026-11-20, after the deployment reconciliation (DEP-1 branch setting resolved; PR #3 awaiting merge).
+Last updated: 2026-11-20, after production verification (DEP-1 closed).
 
 ## Cycle and process
 
@@ -24,7 +24,6 @@ Last updated: 2026-11-20, after the deployment reconciliation (DEP-1 branch sett
 | D1-4 | **Domain 1 source limits.** Abstract-only: Davis 1989, Grudin 1992, Venkatesh 2003, Kimbell 2011, Liedtka 2015, Wynn & Clarkson 2018 (publisher cookie page on both attempts), Salah 2014, Forlizzi & Battarbee 2004, Sheldon 2001, van Dam 1997, Johnson 1989. Bibliographic only: Chapman & Plewes 2014, Hassenzahl 2010. Brown 2008 is paywalled and cited only for its existence. Entries limit their claims to what was read and say so. | `content/sources/fundamentals.ts` | minor | No | Open (limit documented) | Deepen if a legitimately readable copy becomes available; no mirror search. | D-131; D-132 |
 | D1-5 | **`ux-maturity` rests on one readable model** (NN/g, a practitioner model, not independently validated). The second model (Chapman & Plewes) is bibliographic only. The entry says so. A shorter history of HCI also stays in `human-computer-interaction`; a fuller history could become its own entry later only by reversing the coveredBy decision (CONTENT_AUDIT session 62). | `content/knowledge/foundations/ux-maturity.ts`; `human-computer-interaction.ts` | minor | No | Open | Add a readable second maturity model or an evaluation study when found. | D-132 |
 | D1-6 | **Resource-enrichment limits.** The NN/g UX maturity quiz could not be verified (TLS failure on two attempts) and was not added. GitHub API access in this session is limited to the project repository; repositories were checked through the search API and raw README files. Only `alphagov/govuk-frontend` was added. | `content/sources/fundamentals.ts` | minor | No | Open | Add the quiz if it can be verified later. | D-132 enrichment |
-| DEP-1 | **Vercel production is not built from `main`.** Every production deployment of project `ux-academy` comes from branch `claude/pensive-cannon-t1o6sy` (current production: `a1f6373`, PR #2's head); no deployment has ever been built from `main`. Merging PR #3 into `main` will therefore not update production unless the project's production branch is set to `main` (Vercel project settings → Git → Production Branch). Changing it is a production setting and needs the owner. **Update 2026-11-20:** the owner set the production branch to `main` in the Vercel dashboard and confirmed it with a screenshot (the Vercel connector does not expose the setting; the project's last-updated time changed to 10:48 UTC, and no production deployment was triggered). Production still serves `a1f6373` until `main` changes. | Vercel project settings | major | Yes (production) | Branch setting resolved; production deployment pending | Owner approves and merges PR #3 (head `6b030cf`); then verify that Vercel builds production from `main`, that production serves the merge commit, and that Domain 1 shows 16 published, 5 addressed within, 0 planned. Close DEP-1 only after that. | Deployment reconciliation 2026-11-20 |
 | P-1 | `80f8058`, `8c7408e`, `a7c4937` pushed 2026-11-17 on owner approval; the I1 commit is local only. | — | — | — | Awaiting owner approval (I1 commit) | Push only on explicit approval. | Batch 3 |
 
 ## Improvement Batch 1 — open items and exclusions
@@ -107,6 +106,8 @@ Details: `docs/BATCH_1_REVIEW.md` §§ 3, 7, 9.
 The UI known issues (static lesson rail on phones, chip-row scrolling, steering-lab keyboard, HTTP 200 on unknown dynamic slugs, etc.) are kept in `docs/ROADMAP.md` § Known issues and not duplicated here.
 
 ## Closed
+
+- **DEP-1 — Vercel production was not built from `main`** (closed 2026-11-20). Production had always been built from `claude/pensive-cannon-t1o6sy` (`a1f6373`). The owner set the Vercel Production Branch to `main` (dashboard, confirmed by screenshot) and merged PR #3 (`9a51aa6e3ba2520ffc0f3e73f2e84479dbc5f38e`). Production deployment `dpl_77Bpw7KyrCPPEEeHf5mMLcVYLwT7` was built from `main` at that commit, reached READY and holds `ux-academy-eight.vercel.app`; the live site was verified (routes, Domain 1 counts, five host links).
 
 - **D1-3 — generated taxonomy doc mislabelled addressed-within topics** (2026-11-20). `scripts/generate-docs.ts` now marks `coveredBy` topics ↪️ with their host; regenerated `KNOWLEDGE_TAXONOMY.md` shows 23 such topics (Domain 1: utility, feasibility, viability, human-centred design, history of HCI). Commit recorded in the QA ledger.
 

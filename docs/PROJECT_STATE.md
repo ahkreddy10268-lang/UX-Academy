@@ -2,21 +2,21 @@
 
 The current state in one page. Read it first every session, then verify it against `git` (the repo wins; record any discrepancy here). Update it at the end of every meaningful task. History lives in `docs/PROGRESS.md`; decisions in `docs/DECISION_LOG.md`; open items in `docs/OPEN_ISSUES.md`; test results in `docs/QA_VERIFICATION_LEDGER.md`.
 
-Last updated: **2026-11-20** (deployment reconciliation: `6b030cf` pushed; Vercel production branch set to `main`; PR #3 awaiting merge).
+Last updated: **2026-11-20** (PR #3 merged; production built from `main` at `9a51aa6` and verified).
 
 ## Repository
 
 | Item | Value | Verified |
 |---|---|---|
 | Working branch | `claude/batch1-constraints` | 2026-11-19 |
-| Local HEAD | Same as remote, plus this records commit (local until approved) | 2026-11-20 |
-| Remote branch HEAD | `6b030cf` (status-display and generator fix), pushed 2026-11-20 on owner approval; all earlier commits, including `e44f8ce` (default-effect), are pushed | 2026-11-20 (`git ls-remote`) |
-| `origin/main` | `b788511`, unchanged | 2026-11-20 (`git ls-remote`) |
-| PR #3 | `claude/batch1-constraints` → `main`: open, not merged, mergeable (clean); head `6b030cf`, 56 commits | 2026-11-20 (GitHub API) |
+| Local HEAD | `bdfa5ee` plus this records commit (local until approved) | 2026-11-20 |
+| Remote branch HEAD | `bdfa5ee` (records), merged into `main` by PR #3 | 2026-11-20 (`git ls-remote`) |
+| `origin/main` | `9a51aa6e3ba2520ffc0f3e73f2e84479dbc5f38e` — merge of PR #3 | 2026-11-20 (`git ls-remote`) |
+| PR #3 | `claude/batch1-constraints` → `main`: **merged** as `9a51aa6` (branch head at merge `bdfa5ee`) | 2026-11-20 |
 | PR #2 | open, not merged; head `a1f6373` unchanged | 2026-11-19 (`git ls-remote refs/pull/2/head`) |
 | Vercel preview | `6b030cf` → `dpl_5khooyWoQQZHJaHJYeePWMHRiY4Z`, READY; Domain 1 shows 16 published, 5 addressed within, 0 planned, 21 of 21 accounted for; five addressed-within links resolve | 2026-11-20 |
-| Vercel production branch | `main`, set by the owner in the dashboard and confirmed by screenshot (the connector cannot read this setting) | 2026-11-20 |
-| Vercel production | `dpl_7s6R4AxHziGx3GvQY2VyQhGzKPCv`, branch `claude/pensive-cannon-t1o6sy`, commit `a1f6373`; unchanged by the branch setting; updates when PR #3 is merged (DEP-1) | 2026-11-20 |
+| Vercel production branch | `main` (set by the owner in the dashboard, confirmed by screenshot; borne out by the production build from `main`) | 2026-11-20 |
+| Vercel production | `dpl_77Bpw7KyrCPPEEeHf5mMLcVYLwT7`, branch `main`, commit `9a51aa6e3ba2520ffc0f3e73f2e84479dbc5f38e`, READY, assigned to `ux-academy-eight.vercel.app`; live site verified. Previous production `dpl_7s6R4…` (`a1f6373`) remains a rollback candidate | 2026-11-20 |
 
 ## Content strategy and cycle
 
@@ -46,6 +46,10 @@ Cycle 3 paused after B6 topic 1. Plan: 11 entries + 4 topics addressed within a 
 | 5 | `history-of-interface-design`, `evolution-of-digital-experiences` (published); `history-of-hci` (addressed within `human-computer-interaction`) | Done — `55dc927` |
 
 **Result: Domain 1 complete and validated.** 21/21 topics accounted for: 16 published (6 before + 10 new), 5 addressed within a host (utility, feasibility, viability, human-centred design, history of HCI), 0 planned. Published 103 → 113, addressed within 18 → 23. Open minors: D1-2 to D1-5 in OPEN_ISSUES. **Design skills installed (2026-11-20):** eight third-party Claude Code skills in `.claude/skills/` (see `docs/DESIGN_SKILLS_WORKFLOW.md`); not yet applied to the interface. **Resource enrichment (2026-11-20):** further reading added to 6 entries (QA ledger). Domain 2 not started.
+
+## Production release verified (2026-11-20)
+
+**PR #3 merged** into `main` as `9a51aa6e3ba2520ffc0f3e73f2e84479dbc5f38e`. **Production branch: `main`.** Vercel production deployment `dpl_77Bpw7KyrCPPEEeHf5mMLcVYLwT7` was built from `main` at that commit, reached READY and is assigned to https://ux-academy-eight.vercel.app. **Production verified live:** `/`, `/topics`, `/topics/foundations` and `/coverage` return 200 at 390 and 1440 px with no overflow, no axe violations and no page errors. **Domain 1 on production: 16 published, 5 addressed within, 0 planned, 21/21 accounted for** (76 % with their own entry); subcategories 10/3/0, 4/1/0, 2/1/0; the five addressed-within topics link to Usefulness, Design Thinking (×2), User-Centred Design and Human-Computer Interaction (HCI), all 200. DEP-1 closed. **Next authorised action: none.** Content (`loss-aversion`, `findability`) awaits owner approval.
 
 ## Deployment and status reconciliation (2026-11-20)
 
