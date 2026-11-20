@@ -377,3 +377,20 @@ Two entries, two plates, 4 new sources (Nielsen 1993 table and Buxton read; van 
 | Build | `npm run build` | PASS | Run |
 | Browser | entry-review, e2e-redesign | Inherited from Batch 5 (same content; this commit changes docs only) | Inherited |
 | Not run | keyboard, devices, crawl, axe-all, atlas | No shell or component change in Domain 1 beyond new plates and one Level-2 figure, each covered by entry-review (axe) per batch | Not run |
+
+### Domain 1 resource enrichment (2026-11-20, parent `3c10386`)
+
+Further-reading resources added to 6 published Domain 1 entries (8 references): 5 new source records in `content/sources/fundamentals.ts` (Design Kit methods, GOV.UK Service Standard, GOV.UK moderated usability testing, the `alphagov/govuk-frontend` repository, the Engelbart Institute's 1968 demo digest) and 3 existing records reused (`govuk-design-system`, `material-3`, `w3c-aria-apg`). No explanation, figure, exercise, quiz, flashcard, status, taxonomy or path changed.
+
+| Check | Command | Result | Run / inherited |
+|---|---|---|---|
+| Sources | `sources:verify` for the 5 new and 3 reused ids | 8 url-reachable | Run |
+| Repository | GitHub search API `repo:alphagov/govuk-frontend` | Not archived; last push 2026-11-19; MIT; README read | Run |
+| Integrity | `entry-integrity.ts` for the 6 entries | Only `referencedNotCited` for the 8 new further-reading references (baseline at `3c10386`: clean). Accepted: further reading is uncited by design, with precedent (22 of 61 further references across published entries at `3c10386`) | Run |
+| Check | `npm run check` | PASS — 608 tests | Run |
+| Taxonomy | `npm run test:taxonomy` | PASS — Domain 1 unchanged: 16 published, 5 addressed within | Run |
+| Docs | `npm run docs:generate` | Regenerated (sources 529 → 534; reference counts for the 6 entries) | Run |
+| Build | `npm run build` | PASS | Run |
+| Entry review | `entry-review.cjs` for the 6 entries | PASS 48/48 (axe 0, overflow 0) | Run |
+| Review | One targeted review; one correction pass | 0 critical, 0 major; 3 unverified details in notes removed or reworded (a chord-keyset claim, a research-findings claim, a repository file-layout claim). The last edit is to note text only, after the build and entry review | Run |
+| Not verified | NN/g UX maturity quiz (`forms.nngroup.com/s3/Maturity-Quiz`) | TLS verification failed on both attempts (curl, Python); not added | Run |

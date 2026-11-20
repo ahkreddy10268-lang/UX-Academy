@@ -9,8 +9,8 @@ Last updated: **2026-11-19** (Domain 1 — UX & UI Fundamentals complete, D-132;
 | Item | Value | Verified |
 |---|---|---|
 | Working branch | `claude/batch1-constraints` | 2026-11-19 |
-| Local HEAD | The Domain 1 final-records commit, on top of `55dc927`; local only. Unpushed: `3b776d6` (B6 topic 1), `aa1311c`, `218bb3d`, `5a2678c`, `9eb3675`, `55dc927` and the records commit | 2026-11-19 |
-| Remote branch HEAD | `2225d1c` (pre-production records), pushed on owner approval | 2026-11-19 (`git ls-remote`) |
+| Local HEAD | Same as remote | 2026-11-20 |
+| Remote branch HEAD | The Domain 1 resource-enrichment commit, on top of `3c10386` (Domain 1 commits pushed 2026-11-19 on owner approval) | 2026-11-20 |
 | `origin/main` | `b788511`, unchanged | 2026-11-19 (`git ls-remote`) |
 | PR #2 | open, not merged; head `a1f6373` unchanged | 2026-11-19 (`git ls-remote refs/pull/2/head`) |
 | Vercel preview | Last checked for `d01dcc2` (`dpl_E2nXhv9rgnPWiMkwtTkVfkBu9LCt`, READY, 2026-11-17). **Not checked for `7019450` or `2225d1c`.** Nothing in production. | 2026-11-17 |
@@ -42,7 +42,7 @@ Cycle 3 paused after B6 topic 1. Plan: 11 entries + 4 topics addressed within a 
 | 4 | `product-design`, `experience-design` (both published) | Done — `9eb3675` |
 | 5 | `history-of-interface-design`, `evolution-of-digital-experiences` (published); `history-of-hci` (addressed within `human-computer-interaction`) | Done — `55dc927` |
 
-**Result: Domain 1 complete and validated.** 21/21 topics accounted for: 16 published (6 before + 10 new), 5 addressed within a host (utility, feasibility, viability, human-centred design, history of HCI), 0 planned. Published 103 → 113, addressed within 18 → 23. Open minors: D1-2 to D1-5 in OPEN_ISSUES. **Next authorised action: none.** Awaiting the owner's review and push decision; Domain 2 not started; Cycle 3 (B6 topic 2, `information-scent`) remains paused.
+**Result: Domain 1 complete and validated.** 21/21 topics accounted for: 16 published (6 before + 10 new), 5 addressed within a host (utility, feasibility, viability, human-centred design, history of HCI), 0 planned. Published 103 → 113, addressed within 18 → 23. Open minors: D1-2 to D1-5 in OPEN_ISSUES. **Resource enrichment (2026-11-20):** further reading added to 6 entries (QA ledger). **Next authorised action: none.** Awaiting the owner's review; Domain 2 not started; Cycle 3 (B6 topic 2, `information-scent`) remains paused.
 
 ## Cycle 3 production — B6, topic 1 (2026-11-19)
 

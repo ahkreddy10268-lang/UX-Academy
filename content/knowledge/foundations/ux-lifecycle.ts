@@ -276,6 +276,7 @@ export default defineEntry({
     { source: "govuk-agile-phases", role: "primary", note: "Five phases, their purposes and what moves a service on; read in full." },
     { source: "govuk-learning-user-needs", role: "explanatory", note: "Research in every phase; read in full." },
     { source: "salah-2014", role: "primary", note: "Systematic review of agile and UCD integration; abstract read." },
+    { source: "govuk-service-standard", role: "further", note: "The 14 points a UK government service is expected to meet throughout its life. Read them against the phases above: several, such as iterating frequently and publishing performance data, only make sense if research and design continue after launch." },
   ],
   evidence: "professional-guideline",
   evidenceNote:

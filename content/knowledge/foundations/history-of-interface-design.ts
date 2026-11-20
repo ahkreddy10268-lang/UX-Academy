@@ -276,6 +276,7 @@ export default defineEntry({
     { source: "johnson-1989-star", role: "primary", note: "The Xerox Star; abstract read." },
     { source: "shneiderman-1983", role: "primary", note: "Direct manipulation principles; read in full in an earlier session." },
     { source: "buxton-multitouch", role: "explanatory", note: "History of touch and multi-touch; preamble read." },
+    { source: "engelbart-1968-demo-digest", role: "further", note: "Footage of the 1968 demonstration in short captioned clips. Watch the editing and view-control clips and list which of its ideas a current interface still uses, such as pointing with a mouse, outline views of a structured document and switching between text and graphical views, and which have dropped out of use." },
   ],
   evidence: "peer-reviewed",
   evidenceNote:

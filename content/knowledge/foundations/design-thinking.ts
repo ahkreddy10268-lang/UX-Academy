@@ -297,6 +297,7 @@ export default defineEntry({
     { source: "kimbell-2011", role: "primary", note: "Origins, three accounts and critique; abstract read." },
     { source: "liedtka-2015", role: "primary", note: "State of evidence and proposed mechanism; abstract read." },
     { source: "brown-2008", role: "further", note: "Tim Brown's Harvard Business Review article; paywalled, not read." },
+    { source: "designkit-methods", role: "further", note: "A catalogue of method pages, from framing a design challenge to interviewing and building a team. Use one method end to end on a small problem, then note which of its steps changed what you would build: the skill is choosing and running methods, not naming phases." },
   ],
   evidence: "professional-guideline",
   evidenceNote:

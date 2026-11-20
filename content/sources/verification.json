@@ -589,6 +589,11 @@
     "checkedAt": "2026-11-03",
     "httpStatus": 200
   },
+  "designkit-methods": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-20",
+    "httpStatus": 200
+  },
   "digitalgov-test-for-understanding": {
     "status": "url-reachable",
     "checkedAt": "2026-11-16",
@@ -645,6 +650,11 @@
   "engelbart-1962": {
     "status": "url-reachable",
     "checkedAt": "2026-11-04",
+    "httpStatus": 200
+  },
+  "engelbart-1968-demo-digest": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-20",
     "httpStatus": 200
   },
   "engelbart-english-1968": {
@@ -901,7 +911,7 @@
   },
   "govuk-design-system": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-06",
+    "checkedAt": "2026-11-20",
     "httpStatus": 200
   },
   "govuk-develop-component": {
@@ -919,6 +929,11 @@
     "checkedAt": "2026-11-16",
     "httpStatus": 200
   },
+  "govuk-frontend-repo": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-20",
+    "httpStatus": 200
+  },
   "govuk-identify-user-needs": {
     "status": "url-reachable",
     "checkedAt": "2026-11-16",
@@ -932,6 +947,11 @@
   "govuk-manage-existing-content": {
     "status": "url-reachable",
     "checkedAt": "2026-11-16",
+    "httpStatus": 200
+  },
+  "govuk-moderated-usability-testing": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-20",
     "httpStatus": 200
   },
   "govuk-plan-new-content": {
@@ -952,6 +972,11 @@
   "govuk-service-manual": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "govuk-service-standard": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-20",
     "httpStatus": 200
   },
   "govuk-spacing": {
@@ -1656,7 +1681,7 @@
   },
   "material-3": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-03",
+    "checkedAt": "2026-11-20",
     "httpStatus": 200
   },
   "mayer-moreno-2003": {
@@ -2863,7 +2888,7 @@
   },
   "w3c-aria-apg": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-03",
+    "checkedAt": "2026-11-20",
     "httpStatus": 200
   },
   "w3c-resource-timing": {

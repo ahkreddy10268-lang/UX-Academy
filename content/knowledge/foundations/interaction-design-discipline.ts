@@ -471,6 +471,7 @@ export default defineEntry({
     { source: "weiser-1991", role: "explanatory", note: "Ubiquitous computing vision." },
     { source: "dourish-2001", role: "further", note: "Embodied interaction as a foundation for interaction design." },
     { source: "ishii-ullmer-1997", role: "further", note: "Tangible interaction." },
+    { source: "w3c-aria-apg", role: "further", locator: "Patterns", note: "Each pattern specifies the keyboard interaction and states of a common widget, such as a tab set, dialog or menu, with working examples. Study one pattern and write its interaction specification yourself before reading theirs: it is the behaviour half of interaction design, which screenshots do not show." },
   ],
   evidence: "professional-guideline",
   evidenceNote:
