@@ -333,5 +333,9 @@ After that: `ui-design`, `interaction-design-discipline`, `accessibility-concept
 - PR #3 merged into `main` (`9a51aa6`); the owner set Vercel's Production Branch to `main`. Production deployment `dpl_77Bpw7KyrCPPEEeHf5mMLcVYLwT7` built from `main` at `9a51aa6`, READY, serving ux-academy-eight.vercel.app.
 - Live checks (Playwright, 390 and 1440 px): four routes 200, no overflow, axe 0, no page errors. Domain 1 on production: 16 published, 5 addressed within, 0 planned, 21/21 accounted for; subcategories 10/3, 4/1, 2/1; five host links resolve to the right entries. DEP-1 closed.
 
+## Session 67 — Domain 1 audit and targeted improvements
+- Inspected all 16 entries, the five addressed-within concepts, the glossary and the three fundamentals paths. Gates and D-129 targets were already met; fixes made only where a defect was found: D1-2 (ISO 9241-11 cited in HCI); 'Illustrative scenario' labels in HCI, Usability, UX and UCD; human-centred design taught and quizzed in UCD; seven relations (UX → experience design and product design; HCI → interaction design and evolution of digital experiences; usability → usefulness; design thinking → design processes; UCD → UX maturity); 13 glossary terms.
+- Path findings for the owner (no path changed): D1-7, the HCI path shows History of HCI and Human-Centred Design as 'in development'; D1-8, the UX path uses only 4 Domain 1 entries, the UI path omits interaction design, the HCI path omits the two history entries.
+
 ## Next task (precise)
-Await the owner's next instruction. Content candidates awaiting approval: `loss-aversion` (B5) and `findability` (B6 topic 3).
+Owner: review the Domain 1 audit commit and decide D1-7 (learning-path display of addressed-within steps) and D1-8 (path recommendations). Content candidates awaiting approval: `loss-aversion`, `findability`.

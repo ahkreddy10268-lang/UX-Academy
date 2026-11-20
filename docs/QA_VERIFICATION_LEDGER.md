@@ -455,3 +455,21 @@ Root cause of the production discrepancy: Vercel production builds from `claude/
 | Keyboard | `tests/browser/keyboard.cjs` | PASS 45/45 | Run |
 | Status pages | Scratch Playwright check of `/topics/foundations`, `/coverage`, `/topics` at 390 and 1440 | PASS 6/6: exact Domain 1 counts and subcategory counts, no 'Not yet published' group on the domain page, no 'within in', axe 0, overflow 0; five 'explained in' links resolve (200) | Run |
 | Visual | Screenshots of the domain page header and a subcategory at 1280 | Inspected; existing style kept | Run |
+
+### Domain 1 audit and targeted improvements (2026-11-20, parent `a2e790a`)
+
+Scope: the 16 Domain 1 entries, the five addressed-within concepts, the glossary and three learning paths (read only). Changes: D1-2 fixed (HCI cites ISO 9241-11); eight unlabelled scenarios in four pre-D-131 entries labelled 'Illustrative scenario'; human-centred design taught explicitly in `user-centred-design` (intermediate paragraph, objective, new intermediate quiz question, flashcard reworded; an unverified claim about ISO's reason for the term restated as the usual explanation; IDEO source added as explanatory); seven relations added to close navigation gaps; glossary: 13 domain terms added, UX and human-centred design definitions aligned with their entries.
+
+| Check | Command | Result | Run / inherited |
+|---|---|---|---|
+| Check | `npm run check` | PASS — 612 tests | Run |
+| Taxonomy | `npm run test:taxonomy` | PASS — Domain 1: 21 topics, 16 published, 5 addressed within | Run |
+| Integrity | `entry-integrity.ts` for all 16 Domain 1 entries | Only uncited further-reading references (10, accepted precedent); D1-2 gone; no citation, relation or quiz problems | Run |
+| Glossary | `tests/content.test.ts` (unique slugs, known see-also slugs) | PASS | Run (part of check) |
+| Docs | `npm run docs:generate` | CONTENT_COVERAGE reference counts updated; Domain 1 coverage unchanged | Run |
+| Build | `npm run build` | PASS | Run |
+| Entry review | `entry-review.cjs user-centred-design human-computer-interaction usability user-experience design-thinking` | PASS 40/40 | Run |
+| Glossary page | `curl /glossary` on a local production build | All 13 new terms render | Run |
+| Live paths | Production `/learn/hci-fundamentals` | Shows 'History of HCI' and 'Human-Centred Design' as 'in development' (D1-7) | Run |
+| Sources | One fresh attempt each: NN/g maturity quiz; OpenAlex abstract for Chapman & Plewes | Quiz host still fails (000); no abstract | Run |
+| Not run | Plate renders, devices, keyboard, atlas | No plate, component or route changed | Not run |

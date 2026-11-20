@@ -186,6 +186,7 @@ export default defineEntry({
     { target: "usefulness", type: "related-to", note: "Usefulness needs utility and usability; the three lenses do not ask about usability, so both are needed." },
     { target: "lean-ux", type: "contrasts-with", note: "Lean UX frames design as hypotheses tested in build-measure-learn cycles; design thinking frames it as human-centred exploration weighed through three lenses." },
     { target: "human-centred-design", type: "related-to", note: "IDEO calls human-centred design the value orientation and design thinking a way of applying it." },
+    { target: "design-processes", type: "related-to", note: "Design thinking is one family of design-process models; that entry compares it with others and with how designers actually work." },
   ],
 
   exercises: [

@@ -2,7 +2,7 @@
 
 The current state in one page. Read it first every session, then verify it against `git` (the repo wins; record any discrepancy here). Update it at the end of every meaningful task. History lives in `docs/PROGRESS.md`; decisions in `docs/DECISION_LOG.md`; open items in `docs/OPEN_ISSUES.md`; test results in `docs/QA_VERIFICATION_LEDGER.md`.
 
-Last updated: **2026-11-20** (PR #3 merged; production built from `main` at `9a51aa6` and verified).
+Last updated: **2026-11-20** (Domain 1 audit and targeted improvements; local, not pushed).
 
 ## Repository
 
@@ -46,6 +46,10 @@ Cycle 3 paused after B6 topic 1. Plan: 11 entries + 4 topics addressed within a 
 | 5 | `history-of-interface-design`, `evolution-of-digital-experiences` (published); `history-of-hci` (addressed within `human-computer-interaction`) | Done — `55dc927` |
 
 **Result: Domain 1 complete and validated.** 21/21 topics accounted for: 16 published (6 before + 10 new), 5 addressed within a host (utility, feasibility, viability, human-centred design, history of HCI), 0 planned. Published 103 → 113, addressed within 18 → 23. Open minors: D1-2 to D1-5 in OPEN_ISSUES. **Design skills installed (2026-11-20):** eight third-party Claude Code skills in `.claude/skills/` (see `docs/DESIGN_SKILLS_WORKFLOW.md`); not yet applied to the interface. **Resource enrichment (2026-11-20):** further reading added to 6 entries (QA ledger). Domain 2 not started.
+
+## Domain 1 audit (2026-11-20)
+
+All 16 entries and five addressed-within concepts inspected against the gates, D-129 targets and the D-131 checklist; all gates and targets were already met. Targeted fixes: D1-2 closed; illustrative scenarios labelled in four older entries; human-centred design taught and assessed in `user-centred-design`; seven navigation relations; 13 glossary terms. Coverage unchanged: 16 published, 5 addressed within, 0 planned. Learning paths not changed: D1-7 (addressed-within steps shown as 'in development') and D1-8 (path recommendations) await the owner. Commit local, not pushed.
 
 ## Production release verified (2026-11-20)
 

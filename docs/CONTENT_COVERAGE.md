@@ -15,14 +15,14 @@
 | Planned, no content | 423 |
 | Domains with no published entry | 5 |
 | Formulas with calculators | 25 |
-| Quiz questions | 442 |
+| Quiz questions | 443 |
 | Exercises | 340 |
 | Flashcards | 441 |
 | Labs | 19 |
 | Workshops | 11 |
 | Comparisons | 11 |
 | Learning paths | 16 |
-| Glossary terms | 114 |
+| Glossary terms | 127 |
 | Sources | 540 |
 
 ## By domain
@@ -413,7 +413,7 @@ Five separate dimensions, rated basic / developing / complete from the content (
 | User Control and Freedom | Principle | Professional guideline | complete | developing | complete | basic | complete | 7 | 3 | — | — |
 | User Experience (UX) | Discipline | Established theoretical model | complete | complete | complete | basic | complete | 5 | 4 | — | — |
 | User Interface (UI) Design | Discipline | Professional guideline | complete | complete | complete | developing | complete | 18 | 9 | — | — |
-| User-Centred Design | Framework | Established theoretical model | complete | complete | complete | developing | complete | 5 | 4 | — | — |
+| User-Centred Design | Framework | Established theoretical model | complete | complete | complete | developing | complete | 6 | 5 | — | — |
 | UX Lifecycle | Concept | Professional guideline | complete | complete | complete | basic | complete | 4 | 4 | — | — |
 | UX Maturity | Concept | Professional guideline | complete | developing | complete | basic | complete | 2 | 4 | — | — |
 | UX Writing | Discipline | Professional guideline | complete | complete | complete | basic | complete | 14 | 4 | — | — |

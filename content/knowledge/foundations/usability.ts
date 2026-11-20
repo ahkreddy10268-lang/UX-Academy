@@ -63,8 +63,8 @@ export default defineEntry({
         "Track usability over time with a benchmark set of tasks so you can see whether releases improve or regress.",
       ],
       scenarios: [
-        "A banking app redesign is judged 'more usable' because its SUS score rose — but task success for bill payment fell. The ISO framing makes the regression visible.",
-        "An internal enterprise tool is very efficient for trained staff but has poor learnability, so onboarding new hires takes weeks. Whether that is acceptable depends on staff turnover — a context-of-use question.",
+        "Illustrative scenario: a banking app redesign is judged 'more usable' because its SUS score rose — but task success for bill payment fell. The ISO framing makes the regression visible.",
+        "Illustrative scenario: an internal enterprise tool is very efficient for trained staff but has poor learnability, so onboarding new hires takes weeks. Whether that is acceptable depends on staff turnover — a context-of-use question.",
       ],
     },
     advanced: {
@@ -182,6 +182,7 @@ export default defineEntry({
     { target: "usability-testing", type: "measured-by", note: "Usability testing observes representative users on representative tasks to evaluate usability." },
     { target: "user-centred-design", type: "applied-in", note: "UCD processes set usability requirements and iterate until evaluation shows they are met." },
     { target: "accessibility-concept", type: "related-to", note: "Accessibility can be framed as usability for the widest range of people, including those with disabilities." },
+    { target: "usefulness", type: "complementary-to", note: "Usefulness combines usability with utility: an easy product is useful only if it also does what people need." },
   ],
 
   exercises: [
