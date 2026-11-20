@@ -44,6 +44,10 @@ Cycle 3 paused after B6 topic 1. Plan: 11 entries + 4 topics addressed within a 
 
 **Result: Domain 1 complete and validated.** 21/21 topics accounted for: 16 published (6 before + 10 new), 5 addressed within a host (utility, feasibility, viability, human-centred design, history of HCI), 0 planned. Published 103 → 113, addressed within 18 → 23. Open minors: D1-2 to D1-5 in OPEN_ISSUES. **Design skills installed (2026-11-20):** eight third-party Claude Code skills in `.claude/skills/` (see `docs/DESIGN_SKILLS_WORKFLOW.md`); not yet applied to the interface. **Resource enrichment (2026-11-20):** further reading added to 6 entries (QA ledger). Domain 2 not started.
 
+## Deployment and status reconciliation (2026-11-20)
+
+**Root cause:** Vercel production for project `ux-academy` is built from `claude/pensive-cannon-t1o6sy` (production deployment of `a1f6373`); nothing has ever been deployed from `main`, and `main` (`b788511`) lacks the 55 commits in PR #3. Production shows the pre-Domain-1 state. **Fixed on the branch:** status presentation (domain page, coverage bar, coverage table) and the taxonomy-doc generator (D1-3 closed). **Blocked on the owner (DEP-1):** set Vercel's production branch to `main`, then merge PR #3. Nothing pushed, merged or deployed in this task.
+
 ## B5 topic 1 — `default-effect` (2026-11-20)
 
 **`default-effect` published** (owner authorised this topic only, 2026-11-20; B5 Decision biases, the next foundational topic after Domain 1). Entry (cognitive-bias, `laws-effects/decision-biases`, peer-reviewed), plate in the new `decision-sheets.tsx` (registered in `_fragments.ts`), register record, quick takeaway; no Level-2 figure (plate is the D-129 minimum). Six new sources in `cognitive-effects.ts`. Published 114 → 115. One targeted review, one correction pass; no critical or major findings. Findability (B6 topic 3) still awaits approval. **Next authorised action: none.** Wait for the owner's approval before `loss-aversion`. Commit local, not pushed.

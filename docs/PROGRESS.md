@@ -325,5 +325,9 @@ After that: `ui-design`, `interaction-design-discipline`, `accessibility-concept
 ## Session 64 — B5 topic 1: default effect
 - Published `default-effect` (115 published): defaults as decisions on inaction; opt-in, opt-out and active choice; effort, endorsement and reference dependence; distinction from status quo bias; the retirement, organ-donation and meta-analytic evidence with their limits; digital harms and remedies; an academy classification (beneficial, operational, commercial, manipulative) and seven review questions; evaluation beyond the keep rate. Plate in new `decision-sheets.tsx`; six sources.
 
+## Session 65 — deployment and status reconciliation
+- Found why production shows 6 of 21 for Domain 1: Vercel's production deployments come from the old `claude/pensive-cannon-t1o6sy` branch, never from `main`, and `main` lacks PR #3 (DEP-1).
+- Domain page, coverage bar and coverage table now separate published, addressed within and planned; the taxonomy-doc generator marks addressed-within topics with their host (D1-3 closed).
+
 ## Next task (precise)
-Await the owner's review of `default-effect`. Next, only after approval: `loss-aversion` (B5). `findability` (B6 topic 3) also awaits approval.
+Owner: approve the push of the status fix, set Vercel's production branch to `main` (DEP-1), and approve merging PR #3. Then verify production serves the merge commit. Content: `loss-aversion` and `findability` await approval.

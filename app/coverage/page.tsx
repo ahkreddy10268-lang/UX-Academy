@@ -55,7 +55,7 @@ export default function CoveragePage() {
                       {TOPIC_STATUS_LABEL[s]}
                     </th>
                   ))}
-                  <th className="w-48 py-2 pl-4 font-medium">Written</th>
+                  <th className="w-56 py-2 pl-4 font-medium">Own entry and accounted for</th>
                 </tr>
               </thead>
               <tbody>
@@ -72,7 +72,7 @@ export default function CoveragePage() {
                       </td>
                     ))}
                     <td className="py-3 pl-4">
-                      <CoverageBar published={c.published} total={c.total} label={c.title} />
+                      <CoverageBar published={c.published} total={c.total} label={c.title} addressed={c.byTopicStatus.addressed} planned={c.byTopicStatus.planned} />
                     </td>
                   </tr>
                 ))}

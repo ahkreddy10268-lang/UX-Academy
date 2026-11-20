@@ -439,3 +439,19 @@ Entry, plate (`decision-sheets.tsx`, new fragment file), register record, quick 
 | Build | `npm run build` | PASS (final text) | Run |
 | Entry review | `entry-review.cjs default-effect choice-overload` | PASS 16/16 (final text; axe 0, overflow 0, plate text ≥ 10.2 px at 390) | Run |
 | Review | One targeted review; one correction pass | 0 critical, 0 major; four wordings brought back within their sources (unavoidable defaults, query theory attribution, benign/smart defaults, active-choice condition) | Run |
+
+### Deployment and status reconciliation (2026-11-20, parent `e44f8ce`)
+
+Root cause of the production discrepancy: Vercel production builds from `claude/pensive-cannon-t1o6sy` (latest production `a1f6373`); no deployment from `main` exists, and `main` (`b788511`) is 55 commits behind PR #3. Production therefore shows the pre-Domain-1 state (6 of 21). UI and generator fixes on the branch: the domain page separates published, addressed within and planned (subcategory counts and groups; parent link, no doubled 'in'); `CoverageBar` reports 'N of T with their own entry' plus addressed within, planned and 'accounted for'; `/coverage` column renamed; `generate-docs.ts` marks `coveredBy` topics (closes D1-3).
+
+| Check | Command | Result | Run / inherited |
+|---|---|---|---|
+| Check | `npm run check` | PASS — 612 tests | Run |
+| Taxonomy | `npm run test:taxonomy` | PASS — Domain 1: 21 topics, 16 published, 5 addressed within | Run |
+| Docs | `npm run docs:generate` | KNOWLEDGE_TAXONOMY marks 23 addressed-within topics with hosts; CONTENT_COVERAGE Domain 1 rows 10/3, 4/1, 2/1 | Run |
+| Build | `npm run build` | PASS | Run |
+| Atlas | `tests/browser/atlas.cjs` | PASS 36/36 | Run |
+| Devices | `tests/browser/devices.cjs` | PASS 155/155 | Run |
+| Keyboard | `tests/browser/keyboard.cjs` | PASS 45/45 | Run |
+| Status pages | Scratch Playwright check of `/topics/foundations`, `/coverage`, `/topics` at 390 and 1440 | PASS 6/6: exact Domain 1 counts and subcategory counts, no 'Not yet published' group on the domain page, no 'within in', axe 0, overflow 0; five 'explained in' links resolve (200) | Run |
+| Visual | Screenshots of the domain page header and a subcategory at 1280 | Inspected; existing style kept | Run |

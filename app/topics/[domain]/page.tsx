@@ -53,7 +53,7 @@ export default async function DomainPage({ params }: PageProps<"/topics/[domain]
         }
       >
         <div className="mt-6 max-w-xs">
-          <CoverageBar published={cov.published} total={cov.total} label={d.title} />
+          <CoverageBar published={cov.published} total={cov.total} label={d.title} addressed={cov.byTopicStatus.addressed} planned={cov.byTopicStatus.planned} />
         </div>
         <nav aria-label="Subcategories" className="mt-6 flex flex-wrap gap-2">
           {d.subcategories.map((s) => (
@@ -68,7 +68,10 @@ export default async function DomainPage({ params }: PageProps<"/topics/[domain]
         {d.subcategories.map((s) => {
           const items = itemsForSubcategory(d.id, s.id).sort((a, b) => a.title.localeCompare(b.title));
           const written = items.filter((x) => x.entry);
-          const planned = items.filter((x) => !x.entry);
+          const addressed = items.filter((x) => !x.entry && topicStatus(x) === "addressed");
+          const planned = items.filter((x) => !x.entry && topicStatus(x) !== "addressed");
+          const notStarted = planned.filter((x) => topicStatus(x) === "planned").length;
+          const inProgress = planned.length - notStarted;
           return (
             <section key={s.id} aria-labelledby={s.id} className="scroll-mt-24">
               <div className="flex flex-wrap items-baseline justify-between gap-2 border-b border-rule pb-3">
@@ -76,7 +79,7 @@ export default async function DomainPage({ params }: PageProps<"/topics/[domain]
                   {s.title}
                 </h2>
                 <p className="text-sm text-ink-3">
-                  {written.length} published · {planned.length} not yet published
+                  {written.length} published · {addressed.length} addressed within{inProgress > 0 ? ` · ${inProgress} in progress` : ""} · {notStarted} planned
                 </p>
               </div>
               {s.description && <p className="mt-3 max-w-read text-ink-2">{s.description}</p>}
@@ -89,24 +92,39 @@ export default async function DomainPage({ params }: PageProps<"/topics/[domain]
                   ))}
                 </ul>
               )}
-              {planned.length > 0 && (
+              {addressed.length > 0 && (
                 <div className="mt-6">
-                  <p className="label">Not yet published</p>
+                  <p className="label">Addressed within another entry</p>
                   <ul className="mt-3 flex flex-wrap gap-x-2 gap-y-2">
-                    {planned.map((t) => {
-                      const status = topicStatus(t);
-                      const parent = status === "addressed" && t.coveredBy ? entryBySlug.get(t.coveredBy) : undefined;
+                    {addressed.map((t) => {
+                      const parent = t.coveredBy ? entryBySlug.get(t.coveredBy) : undefined;
                       return (
                         <li key={t.slug}>
-                          <Link href={parent ? `/library/${parent.slug}` : `/library/${t.slug}`} className="inline-flex flex-wrap items-center gap-1.5 rounded-xs border border-dashed border-rule-strong px-2 py-1 text-sm text-ink-2 hover:border-ink-3 hover:text-ink">
+                          <Link href={parent ? `/library/${parent.slug}` : `/library/${t.slug}`} className="inline-flex flex-wrap items-center gap-1.5 rounded-xs border border-rule-strong px-2 py-1 text-sm text-ink-2 hover:border-ink-3 hover:text-ink">
                             {t.title}
                             <span className="text-[11px] text-ink-3">{TYPE_LABEL[t.type]}</span>
-                            <StatusTag status={status} />
-                            {parent && <span className="text-[11px] text-ink-3">in {parent.title}</span>}
+                            <StatusTag status="addressed" />
+                            {parent && <span className="text-[11px] text-ink-3">explained in {parent.title} →</span>}
                           </Link>
                         </li>
                       );
                     })}
+                  </ul>
+                </div>
+              )}
+              {planned.length > 0 && (
+                <div className="mt-6">
+                  <p className="label">Not yet published</p>
+                  <ul className="mt-3 flex flex-wrap gap-x-2 gap-y-2">
+                    {planned.map((t) => (
+                      <li key={t.slug}>
+                        <Link href={`/library/${t.slug}`} className="inline-flex flex-wrap items-center gap-1.5 rounded-xs border border-dashed border-rule-strong px-2 py-1 text-sm text-ink-2 hover:border-ink-3 hover:text-ink">
+                          {t.title}
+                          <span className="text-[11px] text-ink-3">{TYPE_LABEL[t.type]}</span>
+                          <StatusTag status={topicStatus(t)} />
+                        </Link>
+                      </li>
+                    ))}
                   </ul>
                 </div>
               )}
