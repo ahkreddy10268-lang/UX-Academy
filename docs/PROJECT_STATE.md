@@ -2,18 +2,21 @@
 
 The current state in one page. Read it first every session, then verify it against `git` (the repo wins; record any discrepancy here). Update it at the end of every meaningful task. History lives in `docs/PROGRESS.md`; decisions in `docs/DECISION_LOG.md`; open items in `docs/OPEN_ISSUES.md`; test results in `docs/QA_VERIFICATION_LEDGER.md`.
 
-Last updated: **2026-11-19** (Domain 1 — UX & UI Fundamentals complete, D-132; local, not pushed).
+Last updated: **2026-11-20** (deployment reconciliation: `6b030cf` pushed; Vercel production branch set to `main`; PR #3 awaiting merge).
 
 ## Repository
 
 | Item | Value | Verified |
 |---|---|---|
 | Working branch | `claude/batch1-constraints` | 2026-11-19 |
-| Local HEAD | Same as remote | 2026-11-20 |
-| Remote branch HEAD | The Domain 1 resource-enrichment commit, on top of `3c10386` (Domain 1 commits pushed 2026-11-19 on owner approval) | 2026-11-20 |
-| `origin/main` | `b788511`, unchanged | 2026-11-19 (`git ls-remote`) |
+| Local HEAD | Same as remote, plus this records commit (local until approved) | 2026-11-20 |
+| Remote branch HEAD | `6b030cf` (status-display and generator fix), pushed 2026-11-20 on owner approval; all earlier commits, including `e44f8ce` (default-effect), are pushed | 2026-11-20 (`git ls-remote`) |
+| `origin/main` | `b788511`, unchanged | 2026-11-20 (`git ls-remote`) |
+| PR #3 | `claude/batch1-constraints` → `main`: open, not merged, mergeable (clean); head `6b030cf`, 56 commits | 2026-11-20 (GitHub API) |
 | PR #2 | open, not merged; head `a1f6373` unchanged | 2026-11-19 (`git ls-remote refs/pull/2/head`) |
-| Vercel preview | Last checked for `d01dcc2` (`dpl_E2nXhv9rgnPWiMkwtTkVfkBu9LCt`, READY, 2026-11-17). **Not checked for `7019450` or `2225d1c`.** Nothing in production. | 2026-11-17 |
+| Vercel preview | `6b030cf` → `dpl_5khooyWoQQZHJaHJYeePWMHRiY4Z`, READY; Domain 1 shows 16 published, 5 addressed within, 0 planned, 21 of 21 accounted for; five addressed-within links resolve | 2026-11-20 |
+| Vercel production branch | `main`, set by the owner in the dashboard and confirmed by screenshot (the connector cannot read this setting) | 2026-11-20 |
+| Vercel production | `dpl_7s6R4AxHziGx3GvQY2VyQhGzKPCv`, branch `claude/pensive-cannon-t1o6sy`, commit `a1f6373`; unchanged by the branch setting; updates when PR #3 is merged (DEP-1) | 2026-11-20 |
 
 ## Content strategy and cycle
 
@@ -48,9 +51,11 @@ Cycle 3 paused after B6 topic 1. Plan: 11 entries + 4 topics addressed within a 
 
 **Root cause:** Vercel production for project `ux-academy` is built from `claude/pensive-cannon-t1o6sy` (production deployment of `a1f6373`); nothing has ever been deployed from `main`, and `main` (`b788511`) lacks the 55 commits in PR #3. Production shows the pre-Domain-1 state. **Fixed on the branch:** status presentation (domain page, coverage bar, coverage table) and the taxonomy-doc generator (D1-3 closed). **Blocked on the owner (DEP-1):** set Vercel's production branch to `main`, then merge PR #3. Nothing pushed, merged or deployed in this task.
 
+**Update (2026-11-20):** `6b030cf` pushed on owner approval and its preview verified; the owner set the Vercel production branch to `main` (dashboard screenshot). Production is unchanged (`a1f6373`). **Next authorised action: none.** Remaining step, on owner approval only: merge PR #3, then verify that production is built from `main` and shows the corrected Domain 1 counts.
+
 ## B5 topic 1 — `default-effect` (2026-11-20)
 
-**`default-effect` published** (owner authorised this topic only, 2026-11-20; B5 Decision biases, the next foundational topic after Domain 1). Entry (cognitive-bias, `laws-effects/decision-biases`, peer-reviewed), plate in the new `decision-sheets.tsx` (registered in `_fragments.ts`), register record, quick takeaway; no Level-2 figure (plate is the D-129 minimum). Six new sources in `cognitive-effects.ts`. Published 114 → 115. One targeted review, one correction pass; no critical or major findings. Findability (B6 topic 3) still awaits approval. **Next authorised action: none.** Wait for the owner's approval before `loss-aversion`. Commit local, not pushed.
+**`default-effect` published** (owner authorised this topic only, 2026-11-20; B5 Decision biases, the next foundational topic after Domain 1). Entry (cognitive-bias, `laws-effects/decision-biases`, peer-reviewed), plate in the new `decision-sheets.tsx` (registered in `_fragments.ts`), register record, quick takeaway; no Level-2 figure (plate is the D-129 minimum). Six new sources in `cognitive-effects.ts`. Published 114 → 115. One targeted review, one correction pass; no critical or major findings. Findability (B6 topic 3) still awaits approval. **Next authorised action: none.** Wait for the owner's approval before `loss-aversion`. Pushed 2026-11-20 on owner approval (`e44f8ce`).
 
 ## Cycle 3 production — B6, topic 2 (2026-11-20)
 
