@@ -69,7 +69,7 @@ Empirical laws of human performance and the cognitive effects popularised as 'la
 - ↪️ Primacy Effect — *Concept* · `primacy-effect` · addressed within `serial-position-effect`
 - ↪️ Recency Effect — *Concept* · `recency-effect` · addressed within `serial-position-effect`
 - ✅ Von Restorff Effect — *Concept* · `von-restorff-effect`
-- ◻️ Zeigarnik Effect — *Concept* · `zeigarnik-effect`
+- ✅ Zeigarnik Effect — *Concept* · `zeigarnik-effect`
 - ✅ Peak-End Rule — *Concept* · `peak-end-rule`
 - ◻️ Mere Exposure Effect — *Concept* · `mere-exposure-effect`
 - ✅ Aesthetic-Usability Effect — *Concept* · `aesthetic-usability-effect`

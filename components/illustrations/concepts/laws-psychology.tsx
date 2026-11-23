@@ -14,6 +14,7 @@ import { teslerPlate as teslersLaw } from "./learning-sheets";
 import { goldenRulesPlate as shneidermanGoldenRules } from "./learning-sheets";
 import { vonRestorffPlate as vonRestorffEffect } from "./learning-sheets";
 import { choiceOverloadPlate as choiceOverload } from "./learning-sheets";
+import { zeigarnikPlate as zeigarnikEffect } from "./learning-sheets";
 
 const recall = [0.82, 0.68, 0.55, 0.44, 0.38, 0.35, 0.34, 0.37, 0.45, 0.62, 0.8, 0.9];
 
@@ -56,6 +57,7 @@ const plates: IllustrationEntry[] = [
   teslersLaw,
   serialPositionEffect,
   vonRestorffEffect,
+  zeigarnikEffect,
   aestheticUsabilityEffect,
   choiceOverload,
   workingMemoryModel,

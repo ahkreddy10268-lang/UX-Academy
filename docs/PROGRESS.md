@@ -402,3 +402,11 @@ Owner: approve the push of the status fix, set Vercel's production branch to `ma
 - 10 new sources, 10/10 DOI-verified (one read in full, one in relevant sections, seven abstracts, one bibliographic only). Plate, register record, quick takeaway, back-link from `loading-states`.
 - All gates passed (ledger). One targeted review and one correction pass: four wording corrections to match sources, and two plate fixes (overflowing card title, marker over a curve) plus an x-axis label.
 - **Next:** `zeigarnik-effect`.
+
+
+## Session 73 — Domain 2 Batch 5: Zeigarnik Effect published (2026-11-23)
+
+- Topic: `zeigarnik-effect`, a `concept` in `laws-effects/memory-attention-effects` per the frozen taxonomy (the brief assumed `psychology`; corrected in the plan). File: `content/knowledge/laws-effects/zeigarnik-effect.ts`; status `published`; evidence `contested`.
+- Teaches recall (Zeigarnik, contested) vs resumption (Ovsiankina, better supported) vs unfulfilled-goal activation, planning and rumination, and treats open-loop UX patterns as design conventions, not evidence.
+- 8 new sources (7 DOI-verified, 1 URL-reachable). Plate, register, takeaway, two back-links.
+- All gates passed (ledger). One review and one correction pass. **Next:** `postels-law`.

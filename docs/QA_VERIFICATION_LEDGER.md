@@ -577,3 +577,26 @@ Baseline: `npm run check` PASS recorded on `4af404b` (Social Proof section) with
 Review (five dimensions): 0 critical, 0 major. Moderate fixed in the correction pass: four statements tightened to match the sources (Hull/Brown described as vigour toward a goal, not 'food'; Devine et al. measured correct responses per second, not speed; endowed-progress guidance anchored on what the studies did; the goal-distance-model inference labelled as academy interpretation); one weak relation removed (`social-proof`); the three plate defects above. Minor: GG-1.
 
 Limitations: no screen-reader, physical-device or independent expert review. Seven sources abstract only, one bibliographic only. Vercel preview not checked.
+
+### Domain 2 Batch 5 — Zeigarnik Effect (2026-11-23, branch `claude/domain-completion-20261123`, base `831eaf9`)
+
+Change set: new entry `content/knowledge/laws-effects/zeigarnik-effect.ts` (published; `concept`, `laws-effects/memory-attention-effects` per the frozen taxonomy; evidence `contested`); 8 source records in `content/sources/cognitive-effects.ts`; `zeigarnikPlate` in `components/illustrations/concepts/learning-sheets.tsx`, registered through `laws-psychology.tsx`; register record; quick takeaway; back-links in `goal-gradient-effect.ts` and `von-restorff-effect.ts`; regenerated index, `verification.json` (8 added) and generated docs. Classification note: the batch brief placed the topic in `psychology`; the taxonomy places it in `laws-effects`, so the entry follows the taxonomy (see DOMAIN_COMPLETION_PLAN Batch 5). No Domain 2 draft modified. Commit SHA: the commit that adds this section.
+
+Baseline: `check` PASS on `831eaf9` (previous section) with a clean tree; inherited for the start, then all gates re-run on this change set.
+
+| Check | Command | Result | Status |
+|---|---|---|---|
+| Source verification | `npm run sources:verify -- zeigarnik-1927 ovsiankina-1928 macleod-2020 ghibellini-meier-2025 seifert-patalano-1991 masicampo-baumeister-2011-plans masicampo-baumeister-2011-executive wendsche-weigelt-syrek-2026` | 7 `doi-verified`, 1 `url-reachable` (conference paper, no DOI) | PASS |
+| Content index | `npm run content:index` | 121 knowledge files; entry indexed | PASS |
+| Entry integrity | `npx tsx scripts/entry-integrity.ts zeigarnik-effect` | First run failed schema validation (summary over 320 characters); summary shortened; exit 0: 7 outgoing, 2 incoming relations; 3 exercises; 4 quiz (3 levels); 5 flashcards; plate registered. With `goal-gradient-effect` and `von-restorff-effect`: exit 1 only for `von-restorff-effect`'s pre-existing uncited `w3c-wcag-22` (standard) and `laws-of-ux` (further); this batch added one relation line to that file. | PASS (zeigarnik-effect) |
+| Check | `npm run check` (final tree) | Exit 0; 23 files, 624 tests | PASS |
+| Taxonomy | `npm run test:taxonomy` | Exit 0; 1036 links; 118 published at three depths; Domain 2: 46 topics, 17 published, 10 addressed within | PASS |
+| Generated docs | `npm run docs:generate` (final tree) | Exit 0; site 118/561 published, 23 addressed within, 417 planned, 3 drafted | PASS |
+| Plate render | `NODE_PATH=$(npm root -g) npx tsx scripts/render-plates.tsx zeigarnik-effect` | First render: 'Specific plan' overlapped 'thoughts settle' in the Planning panel. Re-laid out ('Thoughts (lab studies)' sub-heading; 'intrude' / 'settle'); re-rendered: no overlap or clipping, light and dark legible; numbers shown (1.9, 0.99) are sourced ratios, the 67% figure is not drawn. | PASS (after fix) |
+| Entry review | `BASE_URL=http://localhost:3100 AXE_PATH=node_modules/axe-core/axe.min.js node tests/browser/entry-review.cjs zeigarnik-effect goal-gradient-effect von-restorff-effect` (final tree) | 24/24; zeigarnik-effect: 1440/768/390 px, light and dark, axe 0, overflow 0, errors 0, plate text min 10.2 px at 390, 4 markers inside, 11 links, flashcards 5/5 | PASS |
+| Build | `npm run build` (final tree) | Exit 0; 998/998 | PASS |
+| Site-wide browser suites | Not run | No shared component, route, `lib/**` or token changed (skill § 4) | NOT RUN (change-impact decision) |
+
+Review (five dimensions): 0 critical, 0 major. Moderate fixed: the waiter anecdote wording aligned with MacLeod's account; the plate overlap above; the summary length. Minor: ZE-1.
+
+Limitations: no screen-reader, physical-device or independent expert review; originals not read; Vercel preview not checked.

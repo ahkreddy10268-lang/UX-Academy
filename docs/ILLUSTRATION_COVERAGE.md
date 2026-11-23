@@ -5,10 +5,10 @@
 
 | Measure | Count |
 |---|---|
-| Registered Level-1 plates | 141 |
-| Published entries with a plate | 117 / 117 |
+| Registered Level-1 plates | 142 |
+| Published entries with a plate | 118 / 118 |
 | Subject plates | 20 / 20 |
-| Plates in the current system (dark technical or instructional sheet) | 139 |
+| Plates in the current system (dark technical or instructional sheet) | 140 |
 | Plates still in the earlier pastel style | 2 |
 | Level-2 figures | 41 |
 | Level-3 explorers (on plates) | 9 |
@@ -21,7 +21,7 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 
 | # | Category | L1 plates | Current style | L2 figures | L3 | Retain / refine / replace | Maturity | Entries |
 |---|---|---:|---:|---:|---:|---|---|---|
-| 1 | UX Concept Illustrations | 39 | 38 | 11 | 13 | 39 / 0 / 0 | developing | `fitts-law`, `hick-hyman-law`, `cognitive-load-theory`, `millers-law`, `jakobs-law`, `mental-models`, `affordances`, `peak-end-rule`, `steering-law`, `teslers-law`, `serial-position-effect`, `von-restorff-effect`, `aesthetic-usability-effect`, `choice-overload`, `working-memory-model`, `recognition-over-recall`, `user-experience`, `human-computer-interaction`, `consistency-principle`, `help-and-documentation`, `ux-writing`, `plain-language`, `default-effect`, `loss-aversion`, `framing-effect`, `anchoring-effect`, `social-proof`, `goal-gradient-effect`, `usefulness`, `desirability`, `ux-maturity`, `experience-design`, `product-design`, `history-of-interface-design`, `evolution-of-digital-experiences` |
+| 1 | UX Concept Illustrations | 40 | 39 | 11 | 13 | 40 / 0 / 0 | developing | `fitts-law`, `hick-hyman-law`, `cognitive-load-theory`, `millers-law`, `jakobs-law`, `mental-models`, `affordances`, `peak-end-rule`, `steering-law`, `teslers-law`, `serial-position-effect`, `von-restorff-effect`, `zeigarnik-effect`, `aesthetic-usability-effect`, `choice-overload`, `working-memory-model`, `recognition-over-recall`, `user-experience`, `human-computer-interaction`, `consistency-principle`, `help-and-documentation`, `ux-writing`, `plain-language`, `default-effect`, `loss-aversion`, `framing-effect`, `anchoring-effect`, `social-proof`, `goal-gradient-effect`, `usefulness`, `desirability`, `ux-maturity`, `experience-design`, `product-design`, `history-of-interface-design`, `evolution-of-digital-experiences` |
 | 2 | UI Anatomy Illustrations | 3 | 3 | 1 | 0 | 3 / 0 / 0 | developing | `ui-design`, `microcopy` |
 | 3 | UX Process Illustrations | 10 | 10 | 3 | 0 | 10 / 0 / 0 | developing | `double-diamond`, `design-thinking`, `user-centred-design`, `content-design`, `design-processes`, `ux-lifecycle` |
 | 4 | User Research Illustrations | 6 | 6 | 5 | 0 | 6 / 0 / 0 | mature | `card-sorting`, `jobs-to-be-done`, `think-aloud-protocol`, `contextual-inquiry`, `in-depth-interviews` |
@@ -41,7 +41,7 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 | Conceptual & Metaphorical | 22 | 8 |
 | Process & Sequential | 32 | 13 |
 | Relationship & Systems | 21 | 10 |
-| Comparison & Contrast | 45 | 8 |
+| Comparison & Contrast | 46 | 8 |
 | Hierarchy & Classification | 21 | 2 |
 
 ## Level 1 audit (every registered plate)
@@ -69,6 +69,7 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 | `teslers-law` | entry | ux-concept | comparison | current · instructional sheet | retain | Sheet (S25): one phone field two ways above equal-length complexity bars split person/app/platform (illustrative). | 0 | — |
 | `serial-position-effect` | entry | ux-concept | conceptual | earlier (pastel) | retain | U-shaped recall chart communicates the effect clearly. | 0 | serial-position-lab |
 | `von-restorff-effect` | entry | ux-concept | comparison | current · instructional sheet | retain | Sheet (S25): uniform list, list with an isolate, illustrative later recall, and an all-emphasised list. | 0 | — |
+| `zeigarnik-effect` | entry | ux-concept | comparison | current · instructional sheet | retain | Sheet (D-133 Domain 2): four panels separating recall (original ratio 1.9 vs meta-analytic 0.99, no general advantage), resumption (interrupted → resumed later), planning (thoughts in lab studies: no plan, intrude; specific plan, settle) and a responsible saved-draft pattern with next step, Continue and Not now. | 0 | — |
 | `aesthetic-usability-effect` | entry | ux-concept | comparison | current · instructional sheet | retain | Sheet (S25): the same form plain and polished, same task outcome, illustrative perceived-ease bars. | 0 | — |
 | `choice-overload` | entry | ux-concept | comparison | current · instructional sheet | retain | Sheet (S25): 6 versus 24 options, an illustrative spread of effects around zero, and the moderating conditions. | 0 | — |
 | `working-memory-model` | entry | ux-concept | relationship | current · instructional sheet | retain | Sheet (S25): central executive, phonological loop, episodic buffer (2000), sketchpad and long-term memory. | 1 | serial-position-lab |
@@ -263,6 +264,7 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 | `teslers-law` | The same phone-number field designed two ways, each above a bar of equal length that stands for the task's fixed complexity, divided between the person, the application and the platform. On the left, the field states a required format and shows an error for a number typed another way: most of the bar is the person's share. On the right, the field accepts the number as typed, detects the country and formats it: most of the bar has moved to the application. The bars are the same length because the complexity is moved, not removed. Tesler's law is a design principle, not an empirical law; the proportions are illustrative. |
 | `serial-position-effect` | A bar chart of recall probability for twelve list positions. Bars are tall for the first few items (primacy) and the last few items (recency), and lower in the middle, forming a U-shaped curve traced by a line across the bar tops. |
 | `von-restorff-effect` | Two lists of seven words studied for later recall. In the left list every word looks the same. In the right list one word, Tea, is set apart in a filled box. Beneath each list, an illustrative later recall: from the uniform list a few scattered words come back; from the second list Tea comes back reliably along with a few others. The isolation effect is about memory for the distinct item. A third small panel shows a list where every word is emphasised, so none is distinct: distinctiveness is relative to its context. |
+| `zeigarnik-effect` | Four panels separate ideas that are often merged. Top left, 'Recall': the ratio of interrupted to completed tasks recalled, 1.9 in Zeigarnik's original report and 0.99 in a 2025 meta-analysis, with the conclusion 'No general advantage'. Top right, 'Resumption': a chip 'Interrupted' leads by an arrow to a chip 'Resumed later', captioned 'A common tendency'. Bottom left, 'Planning': a chip 'Goal unfinished', then 'Thoughts (lab studies)' with two rows: 'No plan', intrude; 'Specific plan', settle. Bottom right, 'Responsible UX': a saved draft card reading 'Draft saved · 3 of 5' and 'Next: add photos', with a 'Continue' button and a 'Not now' button, captioned 'Status in text, easy exit'. |
 | `aesthetic-usability-effect` | The same sign-up form in two visual treatments with identical fields, steps and behaviour. On the left, a plain version with uneven spacing and mismatched alignment; on the right, a polished version with even spacing and a clear primary button. Beneath both, the task outcome is the same: three of three steps completed. Beside each, a rating of perceived ease drawn as an illustrative bar, higher for the polished version. People tend to rate attractive interfaces as easier to use; the correlation is well replicated, but it is a judgement, not evidence that the interface is easier, and it can hide problems during testing. |
 | `choice-overload` | Above, the same product shelf with 6 options and with 24. Below, an illustrative spread of study results drawn as points around a vertical line at zero effect: some studies find fewer choices made with more options, some find more, and on average the effect is close to zero, as meta-analyses report. On the right, the conditions under which overload does appear reliably: a complex choice set, a difficult decision, uncertain preferences and a goal of choosing rather than browsing. The points are illustrative, not data from a particular meta-analysis. |
 | `working-memory-model` | The multicomponent working memory model as a structure of boxes. At the top, the central executive, which directs attention, with a focus ring as its symbol. Beneath it, three components joined to it: the phonological loop on the left, holding the digits 7 3 9 in a rehearsal loop; the episodic buffer in the middle, binding a number and a place into one episode; and the visuospatial sketchpad on the right, holding a small map with a route. Along the bottom, long-term memory, linked to all three. The episodic buffer was added by Baddeley in 2000. The model describes functional components, not places in the brain. |

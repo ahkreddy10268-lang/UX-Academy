@@ -40,23 +40,23 @@ Latest generated coverage (2026-11-20): 21/21 topics accounted for — 16 publis
 
 ## Domain 2 — UX Laws & Cognitive Effects
 
-Latest generated coverage (2026-11-23, after Goal-Gradient Effect): 46 topics — **16 published, 3 drafted, 10 addressed within another entry, 17 planned** (`docs/CONTENT_COVERAGE.md`). The 2026-11-20 baseline was 14 published, 0 drafted, 10 addressed within, 22 planned; the drafted entries are `loss-aversion`, `framing-effect` and `anchoring-effect` (see Batch 1 and 2 below).
+Latest generated coverage (2026-11-23, after Zeigarnik Effect): 46 topics — **17 published, 3 drafted, 10 addressed within another entry, 16 planned** (`docs/CONTENT_COVERAGE.md`). The 2026-11-20 baseline was 14 published, 0 drafted, 10 addressed within, 22 planned; the drafted entries are `loss-aversion`, `framing-effect` and `anchoring-effect` (see Batch 1 and 2 below).
 
-### Already published (16; `social-proof` and `goal-gradient-effect` added 2026-11-23)
+### Already published (17; `social-proof`, `goal-gradient-effect` and `zeigarnik-effect` added 2026-11-23)
 
-`aesthetic-usability-effect`, `choice-overload`, `default-effect`, `doherty-threshold`, `fitts-law`, `gestalt-principles`, `hick-hyman-law`, `jakobs-law`, `millers-law`, `peak-end-rule`, `serial-position-effect`, `goal-gradient-effect`, `social-proof`, `steering-law`, `teslers-law`, `von-restorff-effect`.
+`aesthetic-usability-effect`, `choice-overload`, `default-effect`, `doherty-threshold`, `fitts-law`, `gestalt-principles`, `hick-hyman-law`, `jakobs-law`, `millers-law`, `peak-end-rule`, `serial-position-effect`, `goal-gradient-effect`, `social-proof`, `steering-law`, `teslers-law`, `von-restorff-effect`, `zeigarnik-effect`.
 
 ### Addressed within another entry (10)
 
 - `primacy-effect`, `recency-effect` → `serial-position-effect`.
 - Gestalt grouping principles `law-of-pragnanz`, `law-of-proximity`, `law-of-similarity`, `law-of-closure`, `law-of-continuity`, `law-of-common-region`, `common-fate`, `uniform-connectedness` → `gestalt-principles`.
 
-### Planned at the 2026-11-20 baseline: 22 topics (now 17 planned, 3 drafted, 2 published from this list)
+### Planned at the 2026-11-20 baseline: 22 topics (now 16 planned, 3 drafted, 3 published from this list)
 
 | Priority | Topics |
 |---|---|
 | Foundational (2 remaining) | `loss-aversion`, `framing-effect` |
-| Core professional (12; `social-proof` and `goal-gradient-effect` published 2026-11-23) | ~~`social-proof`~~, ~~`goal-gradient-effect`~~, `zeigarnik-effect`, `postels-law`, `power-law-of-practice`, `webers-law`, `cognitive-ease`, `mere-exposure-effect`, `decision-fatigue`, `status-quo-bias`, `confirmation-bias`, `availability-heuristic` |
+| Core professional (12; `social-proof`, `goal-gradient-effect`, `zeigarnik-effect` published 2026-11-23) | ~~`social-proof`~~, ~~`goal-gradient-effect`~~, ~~`zeigarnik-effect`~~, `postels-law`, `power-law-of-practice`, `webers-law`, `cognitive-ease`, `mere-exposure-effect`, `decision-fatigue`, `status-quo-bias`, `confirmation-bias`, `availability-heuristic` |
 | Specialist (7) | `fechners-law`, `ikea-effect`, `endowment-effect`, `sunk-cost-effect`, `parkinsons-law`, `occams-razor`, `pareto-principle` |
 
 The priority split follows the current D-129 backlog, adjusted for `default-effect` already being published. Candidate hosts from D-129 (`endowment-effect` → `loss-aversion`; `status-quo-bias` → `default-effect`) must still be checked against the actual explanations before any taxonomy status changes.
@@ -126,5 +126,16 @@ Research synthesis is recorded in `docs/DOMAIN_2_BATCH_1_RESEARCH.md`. Key corre
 - Teaches the distinctions between the original hypothesis and human applications, goal proximity and progress monitoring, goal gradient and endowed progress, accumulated vs remaining progress and perceived velocity, the small-area hypothesis and the classic prediction, near-misses and genuine approach, and a progress indicator vs the response it evokes. The non-monotonic gradient and the small-area findings are taught in the main explanation.
 - Plate `goalGradientPlate` (conceptual curves labelled as illustrative), register record, quick takeaway; back-link from `loading-states`. No Level-2 figure.
 - No Domain 2 drafts were modified.
-- **Next authorised Domain 2 topic:** `zeigarnik-effect` (next core-professional topic in the table above; no entry exists). The three drafts still need their own verification and QA (D2-B1-1, D2-B2-1).
+- Next topic after this batch: `zeigarnik-effect` (done in Batch 5 below). The three drafts still need their own verification and QA (D2-B1-1, D2-B2-1).
+
+
+## Batch 5 — Zeigarnik Effect (2026-11-23) — published
+
+**Classification correction.** The core-professional row above is a priority list for Domain 2; it mixes topic types and subcategories. In the frozen taxonomy (`content/taxonomy.ts`, `memory-attention-effects` group) `zeigarnik-effect` is a **`concept`** in **`laws-effects` / `memory-attention-effects`** — Domain 2, beside `serial-position-effect`, `von-restorff-effect` and `peak-end-rule` — not a `cognitive-bias` in `decision-biases`, and not in the `psychology` domain (a planning brief for this batch assumed `psychology`; the taxonomy says otherwise). The entry follows the taxonomy: `content/knowledge/laws-effects/zeigarnik-effect.ts`. Taxonomy unchanged; Domain 2 counts are unaffected because the topic was always a Domain 2 item.
+
+- Sources: 8 new records; 7 `doi-verified`, 1 `url-reachable` (Seifert & Patalano 1991, conference paper without DOI). Read in full: Ghibellini & Meier (2025), MacLeod (2020), Seifert & Patalano (1991). In part: Masicampo & Baumeister (2011, JPSP). Abstract: Masicampo & Baumeister (2011, JESP), Wendsche, Weigelt & Syrek (2026). Bibliographic only: Zeigarnik (1927), Ovsiankina (1928; DOI found through Crossref search, pages 302–379 per Crossref). Crossref registers both originals under the series title "Untersuchungen zur Handlungs- und Affektpsychologie"; the records carry the series title plus the article title. Not used: Butterfield (1964) and Van Bergen (1968) directly (reported via MacLeod), Ongchoco et al. (2026) and its correction.
+- Evidence class `contested`: the recall claim is not supported in general (ratio 0.99, d_z = 0.15 where computable); resumption (Ovsiankina) is the better-supported effect and is taught as the central distinction.
+- Plate `zeigarnikPlate` in `learning-sheets.tsx` (with the other memory-effect sheets), registered via `laws-psychology.tsx`; register record; quick takeaway; back-links from `goal-gradient-effect` and `von-restorff-effect`.
+- No Domain 2 drafts modified.
+- **Next authorised Domain 2 topic:** `postels-law` (next in the core-professional row; no entry exists; taxonomy type `principle` in `popular-ux-laws` — check type and subcategory from the taxonomy before writing). The three drafts still need their own verification and QA (D2-B1-1, D2-B2-1).
 

@@ -173,6 +173,7 @@ export default defineEntry({
     { target: "serial-position-effect", type: "complementary-to", note: "A distinctive item can escape the poor recall typical of middle list positions." },
     { target: "emphasis", type: "applied-in", note: "Emphasis in visual design is the practical application of distinctiveness." },
     { target: "wcag", type: "related-to", note: "WCAG SC 1.4.1 constrains how distinctiveness may be expressed: colour cannot be the only cue." },
+    { target: "zeigarnik-effect", type: "related-to", note: "A memory effect from the same Berlin era; unlike the isolation effect, its recall advantage has not held up in later meta-analysis." },
   ],
 
   exercises: [

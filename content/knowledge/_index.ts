@@ -95,31 +95,32 @@ import m91 from "./laws-effects/social-proof";
 import m92 from "./laws-effects/steering-law";
 import m93 from "./laws-effects/teslers-law";
 import m94 from "./laws-effects/von-restorff-effect";
-import m95 from "./metrics/confidence-intervals";
-import m96 from "./metrics/nasa-tlx";
-import m97 from "./metrics/net-promoter-score";
-import m98 from "./metrics/sample-size-estimation";
-import m99 from "./metrics/system-usability-scale";
-import m100 from "./metrics/task-success-rate";
-import m101 from "./psychology/affordances";
-import m102 from "./psychology/cognitive-load-theory";
-import m103 from "./psychology/gulfs-of-execution-and-evaluation";
-import m104 from "./psychology/mental-models";
-import m105 from "./psychology/recognition-over-recall";
-import m106 from "./psychology/signifiers";
-import m107 from "./psychology/working-memory-model";
-import m108 from "./research/ab-testing";
-import m109 from "./research/card-sorting";
-import m110 from "./research/cognitive-walkthrough";
-import m111 from "./research/contextual-inquiry";
-import m112 from "./research/heuristic-evaluation";
-import m113 from "./research/in-depth-interviews";
-import m114 from "./research/think-aloud-protocol";
-import m115 from "./research/tree-testing";
-import m116 from "./research/usability-testing";
-import m117 from "./type-colour/colour-contrast-ratio";
-import m118 from "./type-colour/modular-type-scale";
-import m119 from "./visual/visual-hierarchy";
+import m95 from "./laws-effects/zeigarnik-effect";
+import m96 from "./metrics/confidence-intervals";
+import m97 from "./metrics/nasa-tlx";
+import m98 from "./metrics/net-promoter-score";
+import m99 from "./metrics/sample-size-estimation";
+import m100 from "./metrics/system-usability-scale";
+import m101 from "./metrics/task-success-rate";
+import m102 from "./psychology/affordances";
+import m103 from "./psychology/cognitive-load-theory";
+import m104 from "./psychology/gulfs-of-execution-and-evaluation";
+import m105 from "./psychology/mental-models";
+import m106 from "./psychology/recognition-over-recall";
+import m107 from "./psychology/signifiers";
+import m108 from "./psychology/working-memory-model";
+import m109 from "./research/ab-testing";
+import m110 from "./research/card-sorting";
+import m111 from "./research/cognitive-walkthrough";
+import m112 from "./research/contextual-inquiry";
+import m113 from "./research/heuristic-evaluation";
+import m114 from "./research/in-depth-interviews";
+import m115 from "./research/think-aloud-protocol";
+import m116 from "./research/tree-testing";
+import m117 from "./research/usability-testing";
+import m118 from "./type-colour/colour-contrast-ratio";
+import m119 from "./type-colour/modular-type-scale";
+import m120 from "./visual/visual-hierarchy";
 
 export const rawEntries: KnowledgeEntryInput[] = [
   m0,
@@ -241,5 +242,6 @@ export const rawEntries: KnowledgeEntryInput[] = [
   m116,
   m117,
   m118,
-  m119
+  m119,
+  m120
 ];

@@ -214,6 +214,7 @@ export default defineEntry({
     { target: "endowment-effect", type: "contrasts-with", note: "Despite the similar name, endowed progress concerns pre-completed steps toward a goal, not valuing what one owns." },
     { target: "deceptive-patterns", type: "applied-in", note: "Fake progress, inflated bars, moved goal posts and chance near-wins exploit the goal gradient." },
     { target: "user-autonomy", type: "related-to", note: "Reward proximity can pull people into purchases or play they would not choose; pause, exit and honest totals protect autonomy." },
+    { target: "zeigarnik-effect", type: "contrasts-with", note: "Zeigarnik originally concerns recall of interrupted tasks, not effort near a goal; its recall claim is contested, while resuming interrupted tasks is better supported." },
   ],
 
   exercises: [
