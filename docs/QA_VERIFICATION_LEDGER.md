@@ -493,3 +493,22 @@ Files changed: `docs/DOMAIN_2_BATCH_1_RESEARCH.md`, `docs/DOMAIN_COMPLETION_PLAN
 | Source verification script | NOT RUN — repository command runner unavailable | NOT RUN (execution blocker) |
 | Content entry tests / build / browser suites | NOT RUN — no content or app files changed | Not required for docs-only change; required after entry files are added |
 | Production runtime | NOT verified; DEP-2 remains open | NOT RUN |
+
+
+### Domain 2 Batch 1 — entry drafts and visual integration (2026-11-23)
+
+Changed: `content/knowledge/laws-effects/{loss-aversion,framing-effect}.ts`, `content/sources/cognitive-effects.ts`, `content/sources/verification.json`, `content/knowledge/_index.ts`, `components/illustrations/concepts/decision-sheets.tsx`, `components/illustrations/visual-register.ts`.
+
+| Check | Result | Run / inherited |
+|---|---|---|
+| Manual structural review | Two files contain three-depth explanations, objectives, evidence/debates, origin, application, limits, misconceptions, 5 explained relations, 3 exercises, 4 quizzes, 4 flashcards and source references | Run (GitHub file inspection, 2026-11-23) |
+| Taxonomy / slug alignment | Both slugs are present in frozen Domain 2 decision-biases inventory; domain id and subcategory match | Run (taxonomy read, 2026-11-23) |
+| Sources | 11 records added; `kahneman-tversky-1979` has a Crossref match in verification.json; 10 remain bibliographic | Partial; repository verifier not run |
+| `npm run sources:verify -- <11 ids>` | NOT RUN — no connected local repository command runner; GitHub shell clone also failed DNS | NOT RUN (execution blocker) |
+| `npx tsx scripts/entry-integrity.ts loss-aversion framing-effect` | NOT RUN — no command runner | NOT RUN |
+| `npm run check`, `npm run test:taxonomy`, `npm run docs:generate`, `npm run build` | NOT RUN — no command runner | NOT RUN; required before publishing |
+| Plate render / `tests/illustrations.test.ts` / entry review | NOT RUN — no command runner or browser server | NOT RUN; required before publishing |
+| GitHub Vercel status | PENDING when last queried (2026-11-23); not a verified pass | Run (GitHub status API) |
+| Live production | Not deployed; no merge to main | Not run |
+
+**Disposition:** Drafts are pushed, but remain `status: "drafted"`. Do not promote to `published` until every required gate is run and any critical/major/moderate findings are corrected.
