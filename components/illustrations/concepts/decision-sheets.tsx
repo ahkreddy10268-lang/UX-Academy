@@ -99,5 +99,79 @@ export const defaultEffectPlate: IllustrationEntry = {
   ),
 };
 
-const plates: IllustrationEntry[] = [defaultEffectPlate];
+
+export const lossAversionPlate: IllustrationEntry = {
+  slug: "loss-aversion",
+  title: "Loss aversion plate",
+  canvas: "sheet",
+  description: "An illustrative value curve bends around a reference point. The loss side is steeper than the gain side close to that point, while a note makes clear that the drawing is conceptual and does not prescribe a universal numerical ratio.",
+  key: [
+    { n: "1", label: "Reference point", detail: "The baseline separates outcomes encoded as gains from outcomes encoded as losses; changing it can change how the same final outcome is evaluated." },
+    { n: "2", label: "Loss side", detail: "In the classic prospect-theory value function the loss side is steeper near the reference point than the gain side." },
+    { n: "3", label: "Gain side", detail: "The gain side is usually drawn concave; curvature within a side is diminishing sensitivity, distinct from loss aversion." },
+    { n: "4", label: "Illustrative curve", detail: "The slope is conceptual, not a universal coefficient. Empirical estimates depend on model, task, incentives and sample." }
+  ],
+  Art: ({ detail }) => (
+    <g>
+      <Card x={8} y={8} w={384} h={284} title="Subjective value around a reference point">
+        <line x1={42} y1={244} x2={372} y2={244} stroke={S.ruleStrong} strokeWidth="1.1" {...hair} />
+        <line x1={205} y1={48} x2={205} y2={244} stroke={S.ruleStrong} strokeWidth="1.1" strokeDasharray="4 4" {...hair} />
+        <line x1={42} y1={166} x2={372} y2={166} stroke={S.rule} strokeWidth="0.9" strokeDasharray="3 4" {...hair} />
+        <path d="M205 166 C176 177 131 203 60 224" fill="none" stroke={S.ink} strokeWidth="2.3" {...hair} />
+        <path d="M205 166 C238 150 291 117 362 88" fill="none" stroke={S.ink2} strokeWidth="2.3" {...hair} />
+        <circle cx={205} cy={166} r="4.5" fill={S.ink} />
+        <UiText x={72} y={202} weight={700}>LOSS</UiText>
+        <UiText x={309} y={112} weight={700}>GAIN</UiText>
+        <UiText x={213} y={58} tone="ink2">value ↑</UiText>
+        <UiText x={205} y={264} anchor="middle" tone="ink2">reference point</UiText>
+        <UiText x={42} y={282} tone="ink2">objective outcome: loss ←  |  → gain</UiText>
+        <UiText x={372} y={282} anchor="end" tone="ink2">illustrative</UiText>
+      </Card>
+      {detail && <><Marker x={205} y={150} n={1} /><Marker x={68} y={216} n={2} /><Marker x={352} y={96} n={3} /><Marker x={380} y={20} n={4} /></>}
+    </g>
+  ),
+};
+
+export const framingEffectPlate: IllustrationEntry = {
+  slug: "framing-effect",
+  title: "Framing effect plate",
+  canvas: "sheet",
+  description: "Two cards show equivalent life-outcome options described as gains and as losses. A lower band separates risky-choice, attribute and goal framing so the three research paradigms are not mistaken for one effect.",
+  key: [
+    { n: "1", label: "Gain description", detail: "The certain outcome is 200 people saved; the alternative is a one-third chance to save all 600 and a two-thirds chance to save none." },
+    { n: "2", label: "Loss description", detail: "The logically equivalent outcomes are 400 certain deaths, or a one-third chance that nobody dies and a two-thirds chance that 600 die." },
+    { n: "3", label: "Equivalent outcomes", detail: "Only the description changes. Options, numbers and probabilities must remain the same in a strict risky-choice framing test." },
+    { n: "4", label: "Three paradigms", detail: "Risky-choice, attribute and goal framing have different tasks and outcomes; do not generalise one paradigm's effect size to all three." }
+  ],
+  Art: ({ detail }) => (
+    <g>
+      <Card x={8} y={8} w={186} h={164} title="Gain frame">
+        <UiText x={20} y={54} weight={700}>Sure option</UiText>
+        <UiText x={20} y={75} tone="ink2">200 people saved</UiText>
+        <line x1={20} y1={88} x2={180} y2={88} stroke={S.rule} strokeWidth="1" />
+        <UiText x={20} y={111} weight={700}>Gamble</UiText>
+        <UiText x={20} y={132} tone="ink2">1/3 save 600</UiText>
+        <UiText x={20} y={150} tone="ink2">2/3 save none</UiText>
+      </Card>
+      <Card x={206} y={8} w={186} h={164} title="Loss frame">
+        <UiText x={218} y={54} weight={700}>Sure option</UiText>
+        <UiText x={218} y={75} tone="ink2">400 people die</UiText>
+        <line x1={218} y1={88} x2={378} y2={88} stroke={S.rule} strokeWidth="1" />
+        <UiText x={218} y={111} weight={700}>Gamble</UiText>
+        <UiText x={218} y={132} tone="ink2">1/3 nobody dies</UiText>
+        <UiText x={218} y={150} tone="ink2">2/3 all 600 die</UiText>
+      </Card>
+      <Card x={8} y={180} w={384} h={112} title="Framing research has different forms">
+        <UiChip x={18} y={210} w={112} label="Risky choice" />
+        <UiChip x={142} y={210} w={94} label="Attribute" />
+        <UiChip x={248} y={210} w={104} label="Goal framing" />
+        <UiText x={18} y={254} tone="ink2">Same outcomes in the top cards; different words</UiText>
+        <UiText x={18} y={274} tone="ink2">Different groups saw the two original versions</UiText>
+      </Card>
+      {detail && <><Marker x={20} y={20} n={1} /><Marker x={380} y={20} n={2} /><Marker x={200} y={164} n={3} /><Marker x={380} y={190} n={4} /></>}
+    </g>
+  ),
+};
+
+const plates: IllustrationEntry[] = [defaultEffectPlate, lossAversionPlate, framingEffectPlate];
 export default plates;
