@@ -331,3 +331,10 @@ After that: `ui-design`, `interaction-design-discipline`, `accessibility-concept
 
 ## Next task (precise)
 Owner: approve the push of the status fix, set Vercel's production branch to `main` (DEP-1), and approve merging PR #3. Then verify production serves the merge commit. Content: `loss-aversion` and `findability` await approval.
+
+
+## Session 66 — UX & UI Fundamentals educational quality audit (2026-11-23)
+- Audited all 16 published Domain 1 entries against the renderer, three-level progression, schema checks, D-129 targets, D-131, evidence notes, practice and taxonomy coverage; full dispositions in `docs/DOMAIN_1_EDUCATIONAL_QUALITY_AUDIT.md`.
+- Finding: the Domain 1 inventory and teaching structure are already complete. Avoid a blanket rewrite, arbitrary word-count expansion, or reversing the five covered-within decisions.
+- Corrected one substantiated issue in `human-computer-interaction`: context-of-use glossary now reflects the 2018 components and cites `iso-9241-11-2018` (commit `ff62feaf`). D1-2 closed in `OPEN_ISSUES.md`. Full paid standard text was not read.
+- No tests/build/browser QA run in this remote session; QA ledger records the limitations and required local verification. No push to main, merge or deployment.
