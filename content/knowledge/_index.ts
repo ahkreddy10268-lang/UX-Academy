@@ -115,6 +115,8 @@ import m111 from "./research/usability-testing";
 import m112 from "./type-colour/colour-contrast-ratio";
 import m113 from "./type-colour/modular-type-scale";
 import m114 from "./visual/visual-hierarchy";
+import m115 from "./laws-effects/framing-effect";
+import m116 from "./laws-effects/loss-aversion";
 
 export const rawEntries: KnowledgeEntryInput[] = [
   m0,
@@ -231,5 +233,7 @@ export const rawEntries: KnowledgeEntryInput[] = [
   m111,
   m112,
   m113,
-  m114
+  m114,
+  m115,
+  m116
 ];
