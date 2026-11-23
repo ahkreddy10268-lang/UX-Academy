@@ -478,3 +478,27 @@ Consolidated improvements: Human-centred Design is now explained and assessed wi
 | `npm run check`, `npm run test:taxonomy`, `npm run build`, post-fix entry review | Local workflow | No results included in the handoff; still required before merge | Not confirmed |
 
 Screen-reader, physical-device and independent expert review were not performed. This branch has not been merged or deployed. Vercel preview is pending at the latest check. Do not treat the pre-fix browser review's exit code as a pass or merge before rerunning the affected checks.
+
+### Final local verification of PR #4 (2026-11-23, branch `codex/domain-1-educational-quality`, HEAD `7a5d362`)
+
+This section closes the "Not confirmed" and "rerun pending" rows above. Every check below ran locally on `7a5d362`, using a production build served by `npx next start -p 3100`. `claude/batch1-constraints` was not used or merged. Nothing was committed, pushed, merged or deployed.
+
+| Check | Command / method | Result | Status |
+|---|---|---|---|
+| Check | `npm run check` | Exit 0; 23 test files, 612 tests | PASS |
+| Taxonomy | `npm run test:taxonomy` | Exit 0; 995 links resolve; 115 published entries pass the three-depth checks; Domain 1 has 21 topics: 16 published, 5 addressed within (76.2%) | PASS |
+| Generated docs | `npm run docs:generate` | Exit 0. `KNOWLEDGE_TAXONOMY.md`, `RESEARCH_SOURCES.md` and `ILLUSTRATION_COVERAGE.md` had date-only changes and were restored. `CONTENT_COVERAGE.md` has genuine changes and is kept, uncommitted: quiz questions 442→443, glossary terms 114→127, UCD references 5→6 and quiz questions 4→5. The earlier report of "only date changes" does not hold for this HEAD. | PASS (one file left modified) |
+| Entry integrity | `npx tsx scripts/entry-integrity.ts human-computer-interaction user-centred-design usability user-experience` | Exit 1. HCI has no problems, and no raw token is left in its vocabulary. The exit code comes from 3 `referencedNotCited` notices on the other three entries. All 3 are `role: "further"` reading references that are also uncited on `main`. They are pre-existing and not caused by this change set. | FAIL by exit code; no new defect |
+| Build | `npm run build` | Exit 0; 997/997 static pages | PASS |
+| Entry review | `BASE_URL=http://localhost:3100 AXE_PATH=node_modules/axe-core/axe.min.js node tests/browser/entry-review.cjs human-computer-interaction user-centred-design usability user-experience` | Exit 0; 32/32 checks pass. Each entry was checked at 1440, 768 and 390 px in light and dark: axe 0, overflow 0, console/page errors 0. Plate text is ≥10.2 px at 390 and markers sit inside the viewBox. Internal links resolve with no raw markup: HCI 35, UCD 23, usability 23, UX 20. Flashcards work by keyboard: HCI 8/8, the others 3/3. | PASS |
+| Raw-token scan | Scratch Playwright scan of every visible text node on the four entry pages, with all `<details>` opened and `script`/`style`/`template` excluded | 0 `{{src:` or `[[` tokens on all four pages, and `innerText` has no match. An earlier version of the scan read `body.textContent` and falsely FAILed all four, because that property includes the hydration `<script>` payloads, which legitimately carry the source strings. | PASS |
+| Review-helper exit code | `… node tests/browser/entry-review.cjs no-such-entry-xyz; echo $?` | 6 FAIL lines, 2/8 passed, exit 1. A recorded FAIL now makes the run exit non-zero. | PASS |
+| Glossary | Scratch Playwright check of `/glossary` at 390 and 1440 | HTTP 200; all 13 new terms present; counter reads "127 of 127"; overflow 0; axe 0; console/page errors 0; all 206 internal links on the page return 200 | PASS |
+| `sources:verify` | Not run | No new source ID in this change set; `iso-9241-11-2018` notes changed only | NOT RUN (appropriate) |
+| e2e-redesign | Not run | `tests/browser/e2e-redesign.cjs:87` still asserts a glossary count of 114. With 127 terms it would fail at that assertion. A stale test expectation, not a product defect. The fix exists only on `claude/batch1-constraints` (`d3ba7c5`). | NOT RUN; known to fail |
+| Atlas, devices, keyboard | Not run | No shared component, route or token changed | NOT RUN (change-impact decision) |
+
+Limitations:
+- No screen-reader, physical-device or independent expert review was done.
+- The glossary check confirms the terms are present and the page is accessible. It does not re-judge the wording of the definitions.
+- The D1-7 roadmap-status code, `docs/DESIGN_REFERENCE_LIBRARY.md`, the Design Thinking → design-processes relation and the e2e glossary-count fix are on `claude/batch1-constraints` only and are not part of this branch.
