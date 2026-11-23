@@ -372,3 +372,15 @@ Owner: approve the push of the status fix, set Vercel's production branch to `ma
 - Entry status intentionally set to `drafted`, not published, because the mandatory repository source verifier, content integrity checks, typecheck, tests, docs generation, plate render, entry browser review and production build have not run in this session.
 - Pushed to `claude/domain-completion-20261123`; source work and lesson modules are on the branch. No merge to `main` or production deployment.
 - Vercel check for the most recent branch commit was still pending when last queried; check target is available on the GitHub commit status.
+
+
+## Session 70 — Domain 2 Batch 2 Anchoring Effect draft (2026-11-23)
+
+- Owner-approved Batch 2 topic: anchoring-effect, the first remaining core-professional topic in Domain 2.
+- Research review recorded in docs/DOMAIN_2_BATCH_2_RESEARCH.md; includes Tversky & Kahneman (1974), Epley & Gilovich (2006), selective accessibility, scale distortion, valuation research, and the 2026 Schley & Weingarten meta-analysis (2,601 effect sizes; Hedges' g = 0.825 [0.765, 0.884]; I² = 93.73%). The 2026 article was reviewed at publisher-abstract level, not full text.
+- Added 9 source records to content/sources/cognitive-effects.ts; all marked bibliographic, not manually DOI-verified.
+- Added content/knowledge/laws-effects/anchoring-effect.ts with 4 learning objectives, 3 exercises, 4 quizzes, 4 flashcards, 5 explained relations and 9 references; status is drafted pending the full gate.
+- Added original plate and register record; generated knowledge index includes the entry. Taxonomy was already frozen with this slug; not modified.
+- Manual GitHub-file integrity inspection: all cited Anchoring Effect source IDs exist in its reference list and source registry; its index/taxonomy/plate/register links exist. Manual inspection caught and fixed a missing source reference in Framing Effect (1992 source) and added reciprocal links between Anchoring, Loss Aversion and Framing Effect.
+- Repository commands remain NOT RUN: no Vercel team-authorised command session in this connection. Latest observed Vercel check for commit 8c108b5 was pending; do not treat as a pass. Live production remains unverified.
+- Pushed code and documentation updates to claude/domain-completion-20261123; no merge to main or production deployment.
