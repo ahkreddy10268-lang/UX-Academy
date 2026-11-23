@@ -512,3 +512,21 @@ Changed: `content/knowledge/laws-effects/{loss-aversion,framing-effect}.ts`, `co
 | Live production | Not deployed; no merge to main | Not run |
 
 **Disposition:** Drafts are pushed, but remain `status: "drafted"`. Do not promote to `published` until every required gate is run and any critical/major/moderate findings are corrected.
+
+
+### Domain 2 Batch 2 — Anchoring Effect draft and visual integration (2026-11-23)
+
+Changed: content/knowledge/laws-effects/anchoring-effect.ts, content/sources/cognitive-effects.ts, content/knowledge/_index.ts, components/illustrations/concepts/decision-sheets.tsx, components/illustrations/visual-register.ts, docs/DOMAIN_2_BATCH_2_RESEARCH.md, and project records.
+
+| Check | Result | Run / inherited |
+|---|---|---|
+| Research review | Original 1974 heuristic, self-generated adjustment, selective accessibility, scale distortion, WTP meta-analysis and 2026 broad meta-analysis reviewed at the access levels documented | Run (web research, 2026-11-23) |
+| Manual entry integrity | Anchoring: all 8 cited source IDs listed in references and present in source registry; 4 objectives, 3 exercises, 4 quizzes, 4 flashcards; entry status drafted | Run (GitHub file inspection, 2026-11-23) |
+| Taxonomy / index / illustration registration | Slug pre-exists in frozen Domain 2 decision-biases taxonomy; index import, decision-sheets plate and visual-register row present | Run (GitHub file inspection, 2026-11-23) |
+| Reciprocal links / citation correction | Added Anchoring back-links to Loss Aversion and Framing; corrected Framing's missing tversky-kahneman-1992 reference | Run (GitHub file inspection, 2026-11-23) |
+| Source verification (npm run sources:verify -- 9 ids) | NOT RUN — current Vercel team connection returns 403 until owner approves team access | BLOCKED (team authorization) |
+| Entry integrity, npm run check, taxonomy, docs generation, plate render/tests, browser entry review, build | NOT RUN — no authorized command runner | BLOCKED (team authorization) |
+| Vercel status for commit 8c108b5 | Pending when checked; not a build pass | Run (GitHub status API) |
+| Production runtime | Not independently verified; DEP-2 remains open | NOT RUN |
+
+**Disposition:** anchoring-effect remains status: drafted. The three Domain 2 entries (Loss Aversion, Framing Effect, Anchoring Effect) are all draft-only until the required source and QA gates run successfully.
