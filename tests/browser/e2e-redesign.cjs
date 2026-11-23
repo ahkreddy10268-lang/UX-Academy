@@ -84,7 +84,7 @@ const check = (name, ok, detail = '') => results.push({ name, ok: !!ok, detail }
   // Glossary filter and formula search
   await p.goto(BASE + '/glossary', { waitUntil: 'networkidle' });
   await p.getByLabel('Filter terms').fill('heuristic');
-  check('glossary filter narrows terms', /^\d+ of 114$/.test((await p.getByText(/of 114$/).textContent()).trim()) && !(await p.getByText('114 of 114').count()));
+  check('glossary filter narrows terms', /^\d+ of 127$/.test((await p.getByText(/of 127$/).textContent()).trim()) && !(await p.getByText('127 of 127').count()));
   await p.goto(BASE + '/formulas', { waitUntil: 'networkidle' });
   await p.getByLabel('Find a formula').fill('SUS');
   check('formula search filters the index', (await p.locator('main h3').count()) >= 1 && (await p.locator('main h3').count()) <= 3, `${await p.locator('main h3').count()} shown`);
