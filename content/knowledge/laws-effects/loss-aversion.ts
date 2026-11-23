@@ -286,7 +286,7 @@ export default defineEntry({
   evidence: "contested",
   evidenceNote:
     "Reference-dependent loss weighting is a foundational prospect-theory claim, but generality and magnitude are contested. A broad cross-disciplinary meta-analysis reports a mean coefficient near 1.96, while a narrower risky-choice synthesis reports about 1.31 with very high heterogeneity; neither should be presented as a universal human constant. The 1991 model also notes that status-quo preference can arise from thinking costs, transaction costs and commitment without loss aversion.",
-  status: "published",
+  status: "drafted",
   quality: {
     classification: true, explanation: true, research: true, beginner: true, professional: true,
     examples: true, limitations: true, relationships: true, sources: true, activities: true
