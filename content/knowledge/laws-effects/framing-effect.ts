@@ -283,7 +283,7 @@ export default defineEntry({
   evidence: "peer-reviewed",
   evidenceNote:
     "Risky-choice framing is supported by classic experiments and meta-analytic evidence, but effects vary by operationalisation, sample and response measure. The 2025 query-theory synthesis supports a process account in the studied decision domains; it does not establish one mechanism for all risky-choice, attribute and goal frames. A framing claim is only an equivalence test when the underlying information is preserved.",
-  status: "published",
+  status: "drafted",
   quality: {
     classification: true, explanation: true, research: true, beginner: true, professional: true,
     examples: true, limitations: true, relationships: true, sources: true, activities: true
