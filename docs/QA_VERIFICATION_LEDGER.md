@@ -457,20 +457,24 @@ Root cause of the production discrepancy: Vercel production builds from `claude/
 | Visual | Screenshots of the domain page header and a subcategory at 1280 | Inspected; existing style kept | Run |
 
 
-### Domain 1 educational quality audit (2026-11-23, branch `codex/domain-1-educational-quality`)
+### Domain 1 educational audit and targeted improvements (2026-11-23, branch `codex/domain-1-educational-quality`)
 
-Reviewed all 16 published UX & UI Fundamentals entries against the current renderer, the three visible learning levels, schema completeness requirements, D-129 type-adjusted visual/evidence targets, D-131 editorial and teaching standards, taxonomy coverage, practice content and source notes. Recorded the individual entry dispositions in `docs/DOMAIN_1_EDUCATIONAL_QUALITY_AUDIT.md`. No broad rewrite was justified by the observed content; 15 entries were preserved without content edits.
+Reviewed all 16 published UX & UI Fundamentals entries against the current renderer, the three visible learning levels, schema completeness requirements, D-129 type-adjusted visual/evidence targets, D-131 editorial and teaching standards, taxonomy coverage, practice content and source notes. Full dispositions are in `docs/DOMAIN_1_EDUCATIONAL_QUALITY_AUDIT.md`. No blanket rewrite was justified.
 
-One targeted correction: `human-computer-interaction` — replaced the outdated narrow context-of-use wording with the 2018 components and added the missing inline `iso-9241-11-2018` citation (commit `ff62feaf`). The source remains marked as paywalled; the full standard was not read. The official ISO catalogue and an official ISO 9241-115 cross-reference were consulted to verify terminology.
+Consolidated improvements: Human-centred Design is now explained and assessed within `user-centred-design`; eight illustrative scenarios across HCI, Usability, UX and UCD are labelled as illustrative; seven typed relations and 13 glossary terms were added; UX and HCD glossary definitions were aligned. HCI's context-of-use vocabulary definition was corrected to the 2018 components without embedding a raw citation token. The ISO citation is in Practitioner explanatory prose. The source record now states that the public ISO catalogue/abstract were consulted, the full paid standard was not accessed, and the official ISO OBP entry for ISO 9241-115:2024 reproduces the definitions and attributes them to ISO 9241-11:2018, clauses 3.1.15 and 3.1.1. The browser review helper now sets a non-zero exit code for any recorded FAIL.
 
 | Check | Command / method | Result | Run / inherited |
 |---|---|---|---|
-| Repository baseline | GitHub API: `main` and entry files | Read `main` at `9a51aa6`; audited 16 Domain 1 entry files | Run |
-| Content review | Entry-by-entry manual structural and semantic review | 16/16 reviewed; all three levels present; no duplicate standalone entries created for the five covered-within topics | Run |
-| Coverage | `docs/CONTENT_COVERAGE.md` generated 2026-11-20 | Existing report shows 16/16 explanation, practice, editorial, D-129 visual and evidence targets met | Observed (prior generated report) |
-| HCI citation correction | Targeted content diff | Applied; D1-2 moved to Closed | Run |
-| `entry-integrity` / source verification | Local workflow scripts | Not run in this remote GitHub session | Not run |
-| `npm run check`, `npm run test:taxonomy`, `npm run docs:generate`, `npm run build` | Local workflow commands | Not run in this remote GitHub session | Not run |
-| Browser, responsive, accessibility and screen-reader review | Workflow review | Not run in this remote GitHub session; no visual/device QA is claimed | Not run |
+| Repository baseline | GitHub API | `main` at `9a51aa6`; 16 Domain 1 entries reviewed | Run |
+| Content review | Entry-by-entry semantic/structural review | 16/16 reviewed; three levels present; five covered-within decisions preserved | Run |
+| Coverage | `docs/CONTENT_COVERAGE.md` generated 2026-11-20 | 16/16 explanation, practice, editorial, D-129 visual and evidence targets | Observed (prior generated report) |
+| Entry integrity | Local HCI entry-integrity script | Reported PASS before correction, but it failed to detect the raw citation token in plain-text Vocabulary; source-token presence anywhere in the entry was treated as a citation | Reported by Claude Desktop |
+| Browser entry review (before correction) | `entry-review.cjs human-computer-interaction` at 1440, 768 and 390 px; light and dark | Reported no accessibility violations, overflow or console errors; plate text ≥10.2 px; 5/5 markers inside; keyboard flashcards 8/8; 35/35 internal links resolve. One check failed: raw `{{src:...}}` token visible in Vocabulary. Script nevertheless exited 0. | Reported by Claude Desktop |
+| Review-helper fix | `tests/browser/entry-review.cjs` | Now sets `process.exitCode = 1` when any assertion is FAIL. Post-fix review has not yet been run. | Code change applied; rerun pending |
+| Generated docs | `npm run docs:generate` | Reported only date changes (2026-11-20 → 2026-11-23) in four generated files; no counts/content changed; files restored and working tree clean | Reported by Claude Desktop |
+| `sources:verify` | Not run | No new source IDs were added | Skipped (appropriate) |
+| Site-wide browser suites | Not run | No shared component or route changed | Skipped (change-impact decision) |
+| Plate renders | Not run | No illustration changed | Skipped (appropriate) |
+| `npm run check`, `npm run test:taxonomy`, `npm run build`, post-fix entry review | Local workflow | No results included in the handoff; still required before merge | Not confirmed |
 
-The GitHub repository was accessible for file reads and commits, but a local clone could not be obtained in this execution environment. Vercel team API access was denied (403), and no local test runner was available. This commit must not be treated as passing the local QA suite.
+Screen-reader, physical-device and independent expert review were not performed. This branch has not been merged or deployed. Vercel preview is pending at the latest check. Do not treat the pre-fix browser review's exit code as a pass or merge before rerunning the affected checks.
