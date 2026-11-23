@@ -82,3 +82,8 @@ These are research leads, not source records or verified citations yet. The repo
 ## Later domains
 
 Proceed through the remaining domains in the exact order in `content/taxonomy.ts`. At each domain start, regenerate coverage and derive that domain's published / addressed-within / planned inventory from the repository. Do not copy stale counts from this plan.
+
+
+## Batch 1 research status (2026-11-23)
+
+Research synthesis is recorded in `docs/DOMAIN_2_BATCH_1_RESEARCH.md`. Key corrections: (1) Loss Aversion must be taught as reference-dependent value asymmetry with meaningful evidence disagreement; neither “losses hurt twice as much” nor one fixed `lambda` is a universal law. (2) Framing Effect must distinguish risky-choice, attribute and goal framing. The 2025 Composto et al. query-theory meta-analysis is included in the framing source set. One primary DOI (`10.2307/1914185`) was independently matched against Crossref in this session; remaining source records still need the repository's `npm run sources:verify` before drafting. **No content has been drafted yet.**

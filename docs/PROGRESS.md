@@ -341,3 +341,14 @@ Owner: approve the push of the status fix, set Vercel's production branch to `ma
 - Domain 2 (UX Laws & Cognitive Effects): 14 published, 10 addressed within, 22 planned; 46 topics total. Domain inventory checked against `content/taxonomy.ts`, `content/knowledge/laws-effects/` and generated `docs/CONTENT_COVERAGE.md`.
 - First approved batch: `loss-aversion`, `framing-effect` (the foundational items remaining after `default-effect`). Candidate literature researched; DOIs and URLs still require the repository's machine verification before source records or entries are created. Plan: `docs/DOMAIN_COMPLETION_PLAN.md`.
 - Documentation-only plan and state changes are being pushed to `claude/domain-completion-20261123`; no content or application files changed in this session, so the code test matrix is not run for this planning commit.
+
+
+## Session 67 — Domain 2 Batch 1 research synthesis (2026-11-23)
+
+- Owner-approved Batch 1: `loss-aversion` and `framing-effect`.
+- Research synthesis recorded in `docs/DOMAIN_2_BATCH_1_RESEARCH.md`; no source records or knowledge entries changed.
+- Loss aversion: read relevant passages of the 1979 prospect-theory full text; confirmed reference-point value function and loss-side steepness; read abstracts / publisher records for 1991 and 1992 theory, Brown et al. 2024, Walasek et al. 2024, Gal & Rucker 2018, Ert & Erev 2013. Research synthesis preserves disagreement and heterogeneity; avoids the “twice as much” universal slogan.
+- Framing: reviewed Tversky & Kahneman 1981 full-text extract and classic Asian disease example; reviewed Kühberger 1998 meta-analysis, Levin et al. 1998 typology, Kühberger 2023 review, and Composto et al. 2025 query-theory meta-analysis. Research synthesis distinguishes risky-choice, attribute and goal framing and keeps the sample design details accurate.
+- One DOI (`10.2307/1914185`) was checked directly against Crossref; exact title, year, container matched. Other candidate metadata came from publisher / PubMed / institutional records but remains pending the repository script.
+- **Gate not passed yet:** `npm run sources:verify -- <ids>` has not run, so no source records have been committed and no entries have been drafted. The current environment has GitHub file access but no usable local checkout/command runner; git clone failed because shell DNS could not resolve github.com. Do not mark source verification, check, build or browser suites PASS.
+- Docs-only research handoff pushed to `claude/domain-completion-20261123`. Application tests/build not required for this documentation-only change; recorded NOT RUN for content gate and production runtime remains DEP-2.

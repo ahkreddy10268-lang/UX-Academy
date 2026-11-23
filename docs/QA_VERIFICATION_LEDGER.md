@@ -467,3 +467,16 @@ Changes: `docs/DOMAIN_COMPLETION_PLAN.md`, `docs/PROJECT_STATE.md`, `docs/PROGRE
 | Domain 1 / 2 inventory | Domain 1 16 + 5 + 0 = 21; Domain 2 14 + 10 + 22 = 46 | Run (taxonomy, content directory and generated coverage cross-check, 2026-11-23) |
 | Application tests / build | Not run — documentation-only changes; no application or content changed | Not required by change-impact policy |
 | Live production runtime | Not verified — direct URL not retrievable in this session | Open: DEP-2 |
+
+
+### Domain 2 Batch 1 research record (2026-11-23; documentation-only)
+
+Files changed: `docs/DOMAIN_2_BATCH_1_RESEARCH.md`, `docs/DOMAIN_COMPLETION_PLAN.md`, `docs/PROJECT_STATE.md`, `docs/PROGRESS.md`.
+
+| Check | Result | Run / inherited |
+|---|---|---|
+| Research review | Primary 1979 prospect-theory passages, 1981 framing text, publisher / abstract metadata and 2024–2025 syntheses reviewed; access limits documented | Run (web research, 2026-11-23) |
+| Crossref source check | `kahneman-tversky-1979`: exact title/year/container matched; all other proposed source IDs still pending script verification | Partial run; not a complete source gate |
+| `npm run sources:verify -- <ids>` | NOT RUN — no connected local repository runner; no source records written | NOT RUN (execution blocker) |
+| `npm run check`, taxonomy, content integrity, build, browser suites | NOT RUN — documentation-only change; entry work has not started | Not required for these doc edits; required after content files change |
+| Production runtime | NOT verified; DEP-2 remains open | NOT RUN |

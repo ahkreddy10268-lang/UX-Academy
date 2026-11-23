@@ -23,7 +23,7 @@ The owner has directed completion of all 20 domains in the canonical taxonomy or
 - Domain 1, UX & UI Fundamentals: complete — 16 published, 5 addressed within, 0 planned (21/21).
 - Domain 2, UX Laws & Cognitive Effects: next — 14 published, 10 addressed within, 22 planned (46 total), based on generated coverage dated 2026-11-20.
 - Active branch: `claude/domain-completion-20261123`, based on `main` at `9a51aa6`.
-- Current first batch: `loss-aversion` and `framing-effect`; source verification must precede drafting.
+- Current first batch: `loss-aversion` and `framing-effect`. Research synthesis complete; source registry + `npm run sources:verify` pending before drafting. See `docs/DOMAIN_2_BATCH_1_RESEARCH.md`.
 - Domain inventory and priority order: `docs/DOMAIN_COMPLETION_PLAN.md`.
 
 ## Content strategy and cycle
@@ -97,7 +97,7 @@ No content was written or researched beyond source existence checks. Candidate s
 
 ## Current approved work (2026-11-23)
 
-**Domain 2 — UX Laws & Cognitive Effects.** Owner-approved sequence is domain-by-domain (D-133). Domain 1 is already complete and validated at 21/21 accounted for. Domain 2 baseline: 14 published, 10 addressed within, 22 planned. First batch: `loss-aversion` and `framing-effect`; sources must be verified before drafting. The exact inventory and candidate source set are in `docs/DOMAIN_COMPLETION_PLAN.md`.
+**Domain 2 — UX Laws & Cognitive Effects.** Owner-approved sequence is domain-by-domain (D-133). Domain 1 is already complete and validated at 21/21 accounted for. Domain 2 baseline: 14 published, 10 addressed within, 22 planned. First batch: `loss-aversion` and `framing-effect`. Research synthesis is recorded in `docs/DOMAIN_2_BATCH_1_RESEARCH.md`; source registry creation and the mandatory machine-verification command remain before drafting.
 
 **Standing authorization:** routine implementation, QA, records and push of completed batches to a development branch are approved. Merge to `main` and production deployment are not included.
 
