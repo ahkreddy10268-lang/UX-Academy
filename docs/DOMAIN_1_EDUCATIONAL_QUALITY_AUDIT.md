@@ -51,7 +51,7 @@ This is a structured content and progression review, not a claim that every cite
 | `ux-lifecycle` | Introduces the phases of a service/product lifecycle and why learning continues after launch. | Explains phase-specific UX questions, decision gates and research through live operation. | Covers governance, agile integration and alternatives to phase-based models. | Preserve. Keep distinct from the generic design-process entry. |
 | `design-processes` | Defines a design process and explains why teams make their work explicit. | Compares common process models and selects a lightweight or heavier process to fit risk. | Distinguishes descriptive from prescriptive models and discusses situated practice. | Preserve. Keep distinct from the product/service lifecycle. |
 | `ux-maturity` | Explains organisational maturity rather than individual designer skill. | Applies the model across strategy, culture, process and outcomes. | Explicitly states that the model is a diagnostic practitioner framework, not a validated measurement scale. | Preserve. Keep the limitation prominent; do not imply independent validation. |
-| `human-computer-interaction` | Explains HCI as an interdisciplinary field with everyday interactive examples. | Connects methods, human factors, research and technology to design and evaluation. | Covers research paradigms, history, scope and different theoretical traditions. | One targeted citation correction identified: `iso-9241-11-2018` appears in references but its context-of-use discussion lacks an inline citation (D1-2). |
+| `human-computer-interaction` | Explains HCI as an interdisciplinary field with everyday interactive examples. | Connects methods, human factors, research and technology to design and evaluation. | Covers research paradigms, history, scope and different theoretical traditions. | **Corrected on the audit branch:** the HCI glossary's context-of-use definition was updated to the 2018 components (users, goals and tasks, resources, and technical/physical/social/cultural/organisational environment) and now cites `iso-9241-11-2018`. The old `equipment` wording was too narrow for the 2018 revision. Full paid standard text was not read. |
 | `history-of-interface-design` | Gives learners a clear account of interface styles and their development. | Connects research-lab contributions to products and the spread of graphical interfaces. | Challenges single-inventor stories and warns that generational schemes simplify overlapping developments. | Preserve. Continue labelling contested or simplified historical narratives. |
 | `evolution-of-digital-experiences` | Introduces the move from specialist/work use to everyday, chosen and experiential use. | Compares the research foci and changing contexts of use. | Distinguishes historical interpretations from periods and discusses waves versus coexistence. | Preserve. Keep separate from the interface-technology chronology. |
 
@@ -71,7 +71,7 @@ Their rationale is recorded in `docs/CONTENT_AUDIT.md`, session 62. Revisit only
 
 | Issue | Recommended handling |
 |---|---|
-| D1-2 | Add an inline citation at the HCI `Context of use` vocabulary definition if the sentence remains supported by the cited standard record; otherwise move the reference to further reading and remove unsupported attribution. Do not claim the paid standard was read in full. |
+| D1-2 | **Resolved in this branch** (commit `ff62feaf`): the entry now cites the existing ISO source and uses the 2018 context-of-use components. Full paid standard text was not read. |
 | D1-4 | Retain the documented abstract-only and bibliographic-only source limitations. No mirror searching or paywall bypass. |
 | D1-5 | Retain the note that Chapman & Plewes is bibliographic-only unless a legitimate, readable copy or evaluation study is found. Do not claim the NN/g model is independently validated. |
 | D1-6 | Do not add the NN/g quiz until its source can be verified. |
@@ -91,7 +91,7 @@ Their rationale is recorded in `docs/CONTENT_AUDIT.md`, session 62. Revisit only
 
 - **Repository source read:** `main` at `9a51aa6e3ba2520ffc0f3e73f2e84479dbc5f38e`.
 - **Coverage evidence:** generated `docs/CONTENT_COVERAGE.md` dated 2026-11-20.
-- **Content edits:** none in this audit record.
+- **Content edit:** one precise HCI glossary correction (context-of-use terminology and inline ISO citation). No other entry content changed.
 - **Code/content tests:** not run for this documentation-only record; no test result is claimed.
-- **Independent expert review, full re-reading of every primary source, screen-reader testing and physical-device testing:** not performed by this audit.
-- **Recommended next action:** resolve D1-2 on the working branch in the repository's local development environment, run all required content QA, then request owner review of the diff before any push or merge.
+- **Independent expert review, full re-reading of every primary source, screen-reader testing and physical-device testing:** not performed by this audit. The official ISO catalogue page and official ISO cross-reference for the context-of-use term were checked; the paid ISO 9241-11 text was not read in full.
+- **Recommended next action:** run the workflow's local content QA (entry integrity, source verification, `npm run check`, taxonomy/doc generation and build); review the full diff before any push or merge.
