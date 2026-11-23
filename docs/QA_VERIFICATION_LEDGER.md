@@ -503,10 +503,13 @@ The learning-path implementation was originally tested on `claude/batch1-constra
 
 | Check | Command / method | Result | Run / inherited |
 |---|---|---|---|
-| HCI entry integrity and browser review | Entry integrity + `entry-review.cjs human-computer-interaction` | HCI content was changed after the latest four-entry browser review (two relations restored and second scenario labelled); rerun is required | Not yet run on final content |
+| Changed-entry integrity | `entry-integrity.ts` for `human-computer-interaction`, `design-thinking`, `usability`, `user-centred-design`, `user-experience` | Not run on final consolidated branch after the last HCI relation/scenario restoration | Not run |
+| HCI entry browser review | `entry-review.cjs human-computer-interaction` after final relation/scenario edits | Must be rerun; the four-entry visible-text review predates the last two HCI relations and second scenario label | Not run on final content |
 | Assertion failure propagation | Inspect `tests/browser/entry-review.cjs`; deliberately force a failed assertion | Code now sets a non-zero exit code on `FAIL`; deliberate failure injection not run | Code inspected; injection not run |
-| Full check, taxonomy, build | `npm run check`, `npm run test:taxonomy`, `npm run build` | Not run on this final consolidated branch | Not run |
-| Site-wide browser tests | `e2e`, `e2e-redesign`, keyboard, devices; plus the relevant learning-path reviews | Not run on this final consolidated branch after the D1-7 route/component work was integrated | Not run |
+| Unit/type/lint and taxonomy | `npm run check`, `npm run test:taxonomy` | Not run on this final consolidated branch | Not run |
+| Build | `npm run build` | Not run on this final consolidated branch | Not run |
+| Impacted browser suites | `e2e`, `e2e-redesign`, `atlas`, `keyboard`, `devices`, `colour-studio`, `crawl`, `a11y`; learning-path direct review | Required by change-impact rules because `app/**`, `components/**` and `lib/**` changed; not run on this final consolidated branch | Not run |
+| Source verification | `sources:verify` | No source IDs are new relative to `main`; the IDEO source record is present on `main` already | Not required for new IDs |
 | Vercel preview | PR #4 check | Pending at latest GitHub status check | Pending |
 | Generated coverage | `docs/CONTENT_COVERAGE.md` | Generated on 2026-11-23; 115/561 published, 23 addressed within, 423 planned, 127 glossary terms, 443 quiz questions | Committed generated output; local regeneration not independently rerun here |
 
