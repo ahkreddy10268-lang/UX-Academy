@@ -86,7 +86,7 @@ No content was written or researched beyond source existence checks. Candidate s
 
 ## Current approved task
 
-**Domain 1 educational quality audit** on `codex/domain-1-educational-quality` (owner-directed in this conversation). All 16 published UX & UI Fundamentals entries reviewed; one evidence/terminology correction applied to `human-computer-interaction`; audit and status documentation updated. Draft PR #4 is open against `main`. No merge or production deployment has occurred. Required local test/build/browser verification has not yet been run; see `docs/QA_VERIFICATION_LEDGER.md`.
+**Domain 1 educational quality audit** on `codex/domain-1-educational-quality` (owner-directed in this conversation). All 16 published UX & UI Fundamentals entries reviewed; targeted content improvements consolidated (HCD teaching in UCD, illustrative labels, glossary and relation updates); HCI citation moved from plain-text vocabulary into Practitioner prose; ISO source note clarified; entry-review script now propagates assertion failures. Draft PR #4 is open against `main`. No merge or production deployment has occurred. Claude Desktop's pre-fix browser run found one raw citation token and a script exit-status defect; the content and test-helper fixes are committed but the post-fix review, required check/taxonomy/build results and Vercel preview verification remain outstanding. See `docs/QA_VERIFICATION_LEDGER.md`.
 
 ## Next authorised action
 
