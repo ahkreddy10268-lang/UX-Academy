@@ -44,7 +44,7 @@ export default defineEntry({
         { term: "Interactive system", meaning: "Technology that responds to what a person does: a device, an app, a website, a physical control with software behind it." },
         { term: "Interaction", meaning: "The exchange between a person and a system while they try to get something done: actions, feedback, interpretation and the next action." },
         { term: "Task", meaning: "A goal a person is trying to achieve, such as paying a bill, which an interactive system supports through a series of actions." },
-        { term: "Context of use", meaning: "The users, tasks, equipment and environment in which a system is used (ISO 9241-11 defines it in these terms); the same interface can behave very differently across contexts." },
+        { term: "Context of use", meaning: "The people using a system, what they are trying to achieve and do, the resources available to them, and the conditions around use. ISO 9241-11:2018 includes technical, physical, social, cultural and organisational aspects of the environment; the same design can perform differently across contexts {{src:iso-9241-11-2018}}." },
         { term: "Human factors", meaning: "The older engineering and psychology tradition of fitting equipment to human capabilities, which HCI inherited and extended." },
         { term: "Interdisciplinary", meaning: "Drawing on several fields at once, with their theories and methods, because no one field covers the whole subject." },
         { term: "Paradigm", meaning: "A set of assumptions about what the subject is and how to study it. HCI researchers describe shifts in the field's paradigms, for example from the individual user to groups and wider contexts." },
