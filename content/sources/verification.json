@@ -276,6 +276,14 @@
     "registeredContainer": "Psychological Bulletin",
     "similarity": 1
   },
+  "bonezzi-brendl-de-angelis-2011": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-23",
+    "registeredTitle": "Stuck in the Middle: The Psychophysics of Goal Pursuit",
+    "registeredYear": 2011,
+    "registeredContainer": "Psychological Science",
+    "similarity": 1
+  },
   "boren-ramey-2000": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",
@@ -465,6 +473,14 @@
     "registeredContainer": "Lecture Notes in Computer Science",
     "similarity": 1
   },
+  "cheema-bagchi-2011": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-23",
+    "registeredTitle": "The Effect of Goal Visualization on Goal Pursuit: Implications for Consumers and Managers",
+    "registeredYear": 2011,
+    "registeredContainer": "Journal of Marketing",
+    "similarity": 1
+  },
   "chernev-bockenholt-goodman-2015": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",
@@ -536,6 +552,14 @@
     "registeredTitle": "A power primer.",
     "registeredYear": 1992,
     "registeredContainer": "Psychological Bulletin",
+    "similarity": 1
+  },
+  "conrad-et-al-2010": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-23",
+    "registeredTitle": "The impact of progress indicators on task completion",
+    "registeredYear": 2010,
+    "registeredContainer": "Interacting with Computers",
     "similarity": 1
   },
   "content-design-london-about": {
@@ -631,6 +655,14 @@
     "registeredContainer": "The Journal of Abnormal and Social Psychology",
     "similarity": 1
   },
+  "devine-et-al-2025": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-23",
+    "registeredTitle": "Increased attention towards progress information near a goal state",
+    "registeredYear": 2025,
+    "registeredContainer": "Psychonomic Bulletin &amp; Review",
+    "similarity": 1
+  },
   "digitalgov-test-for-understanding": {
     "status": "url-reachable",
     "checkedAt": "2026-11-16",
@@ -650,6 +682,14 @@
     "registeredTitle": "What is beautiful is good.",
     "registeredYear": 1972,
     "registeredContainer": "Journal of Personality and Social Psychology",
+    "similarity": 1
+  },
+  "dixon-et-al-2024": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-23",
+    "registeredTitle": "Using “Wordle” to assess the effects of goal gradients and near-misses",
+    "registeredYear": 2024,
+    "registeredContainer": "Scientific Reports",
     "similarity": 1
   },
   "dixon-freeman-toman-2010": {
@@ -1134,6 +1174,14 @@
     "registeredContainer": "Science of Computer Programming",
     "similarity": 1
   },
+  "harkin-et-al-2016": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-23",
+    "registeredTitle": "Does monitoring goal progress promote goal attainment? A meta-analysis of the experimental evidence.",
+    "registeredYear": 2016,
+    "registeredContainer": "Psychological Bulletin",
+    "similarity": 1
+  },
   "harrison-2007-progress-bar": {
     "status": "doi-verified",
     "checkedAt": "2026-11-12",
@@ -1305,6 +1353,14 @@
     "registeredTitle": "Meta-analysis of correlations among usability measures",
     "registeredYear": 2007,
     "registeredContainer": "Proceedings of the SIGCHI Conference on Human Factors in Computing Systems",
+    "similarity": 1
+  },
+  "hull-1932": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-23",
+    "registeredTitle": "The goal-gradient hypothesis and maze learning.",
+    "registeredYear": 1932,
+    "registeredContainer": "Psychological Review",
     "similarity": 1
   },
   "hunt-1995": {
@@ -1536,6 +1592,14 @@
     "registeredContainer": "Design and Culture",
     "similarity": 1
   },
+  "kivetz-urminsky-zheng-2006": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-23",
+    "registeredTitle": "The Goal-Gradient Hypothesis Resurrected: Purchase Acceleration, Illusionary Goal Progress, and Customer Retention",
+    "registeredYear": 2006,
+    "registeredContainer": "Journal of Marketing Research",
+    "similarity": 1
+  },
   "kohavi-et-al-2009": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",
@@ -1549,6 +1613,14 @@
     "checkedAt": "2026-11-03",
     "registeredTitle": "Trustworthy Online Controlled Experiments: A Practical Guide to A/B Testing",
     "registeredYear": 2020,
+    "similarity": 1
+  },
+  "koo-fishbach-2012": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-23",
+    "registeredTitle": "The Small-Area Hypothesis: Effects of Progress Monitoring on Goal Adherence",
+    "registeredYear": 2012,
+    "registeredContainer": "Journal of Consumer Research",
     "similarity": 1
   },
   "krosnick-alwin-1987": {
@@ -2277,6 +2349,14 @@
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
     "httpStatus": 200
+  },
+  "nunes-dreze-2006": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-23",
+    "registeredTitle": "The Endowed Progress Effect: How Artificial Advancement Increases Effort",
+    "registeredYear": 2006,
+    "registeredContainer": "Journal of Consumer Research",
+    "similarity": 1
   },
   "obrien-2009-tree-testing": {
     "status": "url-reachable",

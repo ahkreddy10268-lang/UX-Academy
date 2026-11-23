@@ -554,3 +554,26 @@ Baseline: `npm run check` on `f712e38` **FAILED** before any change (`tsc`: inva
 Review: one targeted review (accuracy against the read papers, classification, explanation, visuals and accessibility, practice and integration) and one correction pass. 0 critical, 0 major; 1 moderate fixed (the ethics paragraph implied research oversight the paper does not report); 6 precision corrections made during drafting before review (claims not supported by sources read were relabelled as academy interpretation or removed). Minor items: SP-1 in `docs/OPEN_ISSUES.md`.
 
 Limitations: no screen-reader, physical-device or independent expert review. Five sources abstract only and one bibliographic only (stated in the entry). Vercel preview not checked.
+
+### Domain 2 Batch 4 — Goal-Gradient Effect (2026-11-23, branch `claude/domain-completion-20261123`, base `4af404b`)
+
+Change set: new entry `content/knowledge/laws-effects/goal-gradient-effect.ts` (published); 10 source records in `content/sources/cognitive-effects.ts`; `goalGradientPlate` in `decision-sheets.tsx`; register record; quick takeaway in `components/visual-explanations/registry.tsx`; back-link in `content/knowledge/design-systems/loading-states.ts`; regenerated `content/knowledge/_index.ts`, `content/sources/verification.json` (10 records added, none changed) and the four generated docs. No Domain 2 draft modified. Commit SHA: the commit that adds this section.
+
+Baseline: `npm run check` PASS recorded on `4af404b` (Social Proof section) with a clean tree, so it was inherited for the start of this task; every gate below was then re-run on this change set.
+
+| Check | Command | Result | Status |
+|---|---|---|---|
+| Source verification | `npm run sources:verify -- hull-1932 kivetz-urminsky-zheng-2006 nunes-dreze-2006 bonezzi-brendl-de-angelis-2011 koo-fishbach-2012 harkin-et-al-2016 conrad-et-al-2010 cheema-bagchi-2011 dixon-et-al-2024 devine-et-al-2025` | 10/10 `doi-verified` | PASS |
+| Content index | `npm run content:index` | 120 knowledge files; entry indexed | PASS |
+| Entry integrity | `npx tsx scripts/entry-integrity.ts goal-gradient-effect loading-states` | Exit 0; 7 outgoing relations, 1 incoming; 3 exercises, 4 quiz (3 levels), 5 flashcards; plate registered; 10 references doi-verified | PASS |
+| Check | `npm run check` (final tree) | Exit 0; 23 files, 622 tests | PASS |
+| Taxonomy | `npm run test:taxonomy` | Exit 0; 1027 links; 117 published entries at three depths; Domain 2: 46 topics, 16 published, 10 addressed within | PASS |
+| Generated docs | `npm run docs:generate` (final tree) | Exit 0; real changes kept. Site: 117/561 published, 23 addressed within, 418 planned, 3 drafted. | PASS |
+| Plate render | `NODE_PATH=$(npm root -g) npx tsx scripts/render-plates.tsx goal-gradient-effect` | First render inspected: card title 'Same position, two framings' overflowed its card under marker 3; marker 2 sat on the dashed curve; x-axis had no axis name. Fixed (title 'Two framings', marker moved, 'progress →' added) and re-rendered: no clipping or overlap, both curves distinguished by solid/dashed and legend, light and dark legible. | PASS (after fix) |
+| Entry review | `BASE_URL=http://localhost:3100 AXE_PATH=node_modules/axe-core/axe.min.js node tests/browser/entry-review.cjs goal-gradient-effect loading-states` (final tree) | 16/16: 1440, 768, 390 px, light and dark; axe 0, overflow 0, errors 0; plate text min 10.2 px at 390; 4 markers inside the viewBox; 13 links resolve, no raw markup; flashcards by keyboard 5/5 | PASS |
+| Build | `npm run build` (final tree) | Exit 0; 998/998 static pages | PASS |
+| Site-wide browser suites | Not run | Content entry, sources, a plate in an existing sheet file, a register record and a takeaway string only; no shared component, route, `lib/**` or token changed (skill § 4) | NOT RUN (change-impact decision) |
+
+Review (five dimensions): 0 critical, 0 major. Moderate fixed in the correction pass: four statements tightened to match the sources (Hull/Brown described as vigour toward a goal, not 'food'; Devine et al. measured correct responses per second, not speed; endowed-progress guidance anchored on what the studies did; the goal-distance-model inference labelled as academy interpretation); one weak relation removed (`social-proof`); the three plate defects above. Minor: GG-1.
+
+Limitations: no screen-reader, physical-device or independent expert review. Seven sources abstract only, one bibliographic only. Vercel preview not checked.

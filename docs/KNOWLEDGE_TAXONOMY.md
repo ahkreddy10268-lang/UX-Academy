@@ -95,7 +95,7 @@ Empirical laws of human performance and the cognitive effects popularised as 'la
 - ✏️ Loss Aversion — *Cognitive bias* · `loss-aversion`
 - ✏️ Anchoring Effect — *Cognitive bias* · `anchoring-effect`
 - ✏️ Framing Effect — *Cognitive bias* · `framing-effect`
-- ◻️ Goal-Gradient Effect — *Cognitive bias* · `goal-gradient-effect`
+- ✅ Goal-Gradient Effect — *Cognitive bias* · `goal-gradient-effect`
 - ◻️ IKEA Effect — *Cognitive bias* · `ikea-effect`
 - ◻️ Endowment Effect — *Cognitive bias* · `endowment-effect`
 - ◻️ Sunk Cost Effect — *Cognitive bias* · `sunk-cost-effect`

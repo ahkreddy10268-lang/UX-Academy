@@ -140,6 +140,7 @@ export default defineEntry({
     { target: "error-states", type: "related-to", note: "Long waits often end in timeouts." },
     { target: "progressive-loading", type: "complementary-to", note: "Loading in phases shortens perceived waits." },
     { target: "interaction-states", type: "related-to", note: "Busy is the component-level state a loading view builds on." },
+    { target: "goal-gradient-effect", type: "related-to", note: "A progress bar that stalls or shows slow early progress can discourage people; honest stages and estimates keep long waits understandable." },
   ],
 
   practice: {

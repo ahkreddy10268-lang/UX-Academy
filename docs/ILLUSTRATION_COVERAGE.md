@@ -5,10 +5,10 @@
 
 | Measure | Count |
 |---|---|
-| Registered Level-1 plates | 140 |
-| Published entries with a plate | 116 / 116 |
+| Registered Level-1 plates | 141 |
+| Published entries with a plate | 117 / 117 |
 | Subject plates | 20 / 20 |
-| Plates in the current system (dark technical or instructional sheet) | 138 |
+| Plates in the current system (dark technical or instructional sheet) | 139 |
 | Plates still in the earlier pastel style | 2 |
 | Level-2 figures | 41 |
 | Level-3 explorers (on plates) | 9 |
@@ -21,7 +21,7 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 
 | # | Category | L1 plates | Current style | L2 figures | L3 | Retain / refine / replace | Maturity | Entries |
 |---|---|---:|---:|---:|---:|---|---|---|
-| 1 | UX Concept Illustrations | 38 | 37 | 11 | 13 | 38 / 0 / 0 | developing | `fitts-law`, `hick-hyman-law`, `cognitive-load-theory`, `millers-law`, `jakobs-law`, `mental-models`, `affordances`, `peak-end-rule`, `steering-law`, `teslers-law`, `serial-position-effect`, `von-restorff-effect`, `aesthetic-usability-effect`, `choice-overload`, `working-memory-model`, `recognition-over-recall`, `user-experience`, `human-computer-interaction`, `consistency-principle`, `help-and-documentation`, `ux-writing`, `plain-language`, `default-effect`, `loss-aversion`, `framing-effect`, `anchoring-effect`, `social-proof`, `usefulness`, `desirability`, `ux-maturity`, `experience-design`, `product-design`, `history-of-interface-design`, `evolution-of-digital-experiences` |
+| 1 | UX Concept Illustrations | 39 | 38 | 11 | 13 | 39 / 0 / 0 | developing | `fitts-law`, `hick-hyman-law`, `cognitive-load-theory`, `millers-law`, `jakobs-law`, `mental-models`, `affordances`, `peak-end-rule`, `steering-law`, `teslers-law`, `serial-position-effect`, `von-restorff-effect`, `aesthetic-usability-effect`, `choice-overload`, `working-memory-model`, `recognition-over-recall`, `user-experience`, `human-computer-interaction`, `consistency-principle`, `help-and-documentation`, `ux-writing`, `plain-language`, `default-effect`, `loss-aversion`, `framing-effect`, `anchoring-effect`, `social-proof`, `goal-gradient-effect`, `usefulness`, `desirability`, `ux-maturity`, `experience-design`, `product-design`, `history-of-interface-design`, `evolution-of-digital-experiences` |
 | 2 | UI Anatomy Illustrations | 3 | 3 | 1 | 0 | 3 / 0 / 0 | developing | `ui-design`, `microcopy` |
 | 3 | UX Process Illustrations | 10 | 10 | 3 | 0 | 10 / 0 / 0 | developing | `double-diamond`, `design-thinking`, `user-centred-design`, `content-design`, `design-processes`, `ux-lifecycle` |
 | 4 | User Research Illustrations | 6 | 6 | 5 | 0 | 6 / 0 / 0 | mature | `card-sorting`, `jobs-to-be-done`, `think-aloud-protocol`, `contextual-inquiry`, `in-depth-interviews` |
@@ -41,7 +41,7 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 | Conceptual & Metaphorical | 22 | 8 |
 | Process & Sequential | 32 | 13 |
 | Relationship & Systems | 21 | 10 |
-| Comparison & Contrast | 44 | 8 |
+| Comparison & Contrast | 45 | 8 |
 | Hierarchy & Classification | 21 | 2 |
 
 ## Level 1 audit (every registered plate)
@@ -160,6 +160,7 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 | `framing-effect` | entry | ux-concept | comparison | current · instructional sheet | retain | Sheet (D-133 Domain 2): equivalent life-outcome options shown as gain and loss descriptions, with a separate strip for risky-choice, attribute and goal framing. | 0 | — |
 | `anchoring-effect` | entry | ux-concept | comparison | current · instructional sheet | retain | Sheet (D-133 Domain 2): two groups receive low/high numeric anchors before estimating the same quantity; group medians shift toward the starting values. A mechanism strip distinguishes adjustment, selective accessibility and scale distortion. | 0 | — |
 | `social-proof` | entry | ux-concept | conceptual | current · instructional sheet | retain | Sheet (D-133 Domain 2): descriptive versus injunctive norm side by side with hotel-sign examples; informational versus normative motive as two chips; a popularity loop (early votes, shown higher, more votes) with the caption that a rating is a signal, not a measurement. | 0 | — |
+| `goal-gradient-effect` | entry | ux-concept | comparison | current · instructional sheet | retain | Sheet (D-133 Domain 2): a conceptual chart of effort against progress contrasting the classic rising gradient (solid) with a 'stuck in the middle' dip (dashed), labelled as illustrative; done-early versus remaining-late framing chips; an honest-progress checklist. | 0 | — |
 | `usefulness` | entry | ux-concept | comparison | current · instructional sheet | retain | Sheet (D-132): a utility-by-usability grid — right or wrong functions against hard or easy to use — with only the right-and-easy cell ticked as useful. | 0 | — |
 | `desirability` | entry | ux-concept | process | current · instructional sheet | retain | Sheet (D-132): an illustrative product-reaction-word study — a balanced word list with one participant's five picks, and the share of 20 people choosing each top word, including an unwanted one. | 0 | — |
 | `design-processes` | entry | ux-process | comparison | current · instructional sheet | retain | Sheet (D-132): three process models — Double Diamond, design thinking, ISO human-centred design — aligned row by row on the shared activities understand, frame, create and test, with an iterate arrow back up. | 0 | — |
@@ -353,6 +354,7 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 | `framing-effect` | Two cards show equivalent life-outcome options described as gains and as losses. A lower band separates risky-choice, attribute and goal framing so the three research paradigms are not mistaken for one effect. |
 | `anchoring-effect` | Two groups receive different starting values before estimating the same quantity. Their group median estimates shift toward the low or high anchor; a lower strip separates three proposed mechanisms. |
 | `social-proof` | Four cards separate the ideas social proof is often reduced to. Top left, 'What people do': 'Descriptive norm', with the example 'Most guests here reuse their towels'. Top right, 'What people approve': 'Injunctive norm', with the example 'Most guests think reusing is right'. Middle, 'Why someone follows others': under 'Informational', a chip 'To be right'; under 'Normative', a chip 'To fit in'. Bottom, 'Popularity is not quality': three chips joined by arrows, 'Early votes', 'Shown higher', 'More votes', with a line returning from the last to the second to show the loop, and the caption 'A rating is a signal, not a measurement'. |
+| `goal-gradient-effect` | Top, 'Effort as the goal nears (conceptual, not measured)': a chart with 'effort' on the vertical axis and 'progress' on the horizontal axis, marked 'start', 'halfway' and 'goal'. A solid line stays low and rises steeply near the goal, labelled in the legend 'Classic gradient: rises near the goal'. A dashed line starts high, dips around halfway and rises again near the goal, labelled 'Stuck in the middle: dips halfway'. Bottom left, 'Two framings' of the same position: a chip '3 of 10 done' marked 'early' and a chip '2 steps left' marked 'late'. Bottom right, 'Honest progress': three lines, 'Real steps only', 'Unit and total shown', 'Pause or exit any time'. |
 | `usefulness` | A two-by-two grid. Rows are utility: 'Right functions' on top, 'Wrong functions' below. Columns are usability: 'Hard to use' on the left, 'Easy to use' on the right. Top right, the only cell with a tick: 'Useful' — does the job, easily. Top left, with a cross: 'Buried' — everything needed is there, but people cannot reach it. Bottom right, with a cross: 'Easy, wrong job' — smooth to use, but not what people need. Bottom left, with a cross: 'Neither'. |
 | `desirability` | An illustrative product-reaction-word study. Left, 'Pick five words': ten word cards in two columns — Calm, Busy, Clean, Cheap, Fresh, Dated, Clear, Boring, Friendly, Confusing — of which one participant's five choices (Calm, Clean, Fresh, Clear, Friendly) are bold and ticked. Right, 'Chosen by (of 20)': bars for the most-chosen words — Calm 70 %, Clear 55 %, Fresh 40 %, Friendly 35 %, Cheap 30 % — with Cheap, a word the team had listed as a risk, among them. |
 | `design-processes` | A table comparing three process models row by row. Columns: Double Diamond, Design thinking (IDEO's phases) and ISO human-centred design. Rows are the shared activities. Understand: Discover / Gather / Context of use. Frame: Define / Frame, synthesise / Requirements. Create: Develop / Generate, make / Design solutions. Test: Deliver / Test / Evaluate. On the left, a dashed arrow runs from the Test row back up to the Understand row, labelled iterate. |

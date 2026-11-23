@@ -394,3 +394,11 @@ Owner: approve the push of the status fix, set Vercel's production branch to `ma
 - Repository command runner available this session: all gates run and passed (see ledger). Fixed three pre-existing gate blockers in the Batch 1–2 drafts (register technique value; two analogy openings) without changing their status.
 - One targeted review, one correction pass (one moderate wording fix in the ethics paragraph). Minor follow-ups in OPEN_ISSUES (SP-1).
 - **Next:** `goal-gradient-effect`; separately, verify and QA the three Domain 2 drafts.
+
+
+## Session 72 — Domain 2 Batch 4: Goal-Gradient Effect published (2026-11-23)
+
+- Topic: `goal-gradient-effect` (cognitive-bias, `laws-effects/decision-biases`). File: `content/knowledge/laws-effects/goal-gradient-effect.ts`; status `published`.
+- 10 new sources, 10/10 DOI-verified (one read in full, one in relevant sections, seven abstracts, one bibliographic only). Plate, register record, quick takeaway, back-link from `loading-states`.
+- All gates passed (ledger). One targeted review and one correction pass: four wording corrections to match sources, and two plate fixes (overflowing card title, marker over a curve) plus an x-axis label.
+- **Next:** `zeigarnik-effect`.

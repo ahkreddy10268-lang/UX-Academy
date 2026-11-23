@@ -40,23 +40,23 @@ Latest generated coverage (2026-11-20): 21/21 topics accounted for — 16 publis
 
 ## Domain 2 — UX Laws & Cognitive Effects
 
-Latest generated coverage (2026-11-23, after Social Proof): 46 topics — **15 published, 3 drafted, 10 addressed within another entry, 18 planned** (`docs/CONTENT_COVERAGE.md`). The 2026-11-20 baseline was 14 published, 0 drafted, 10 addressed within, 22 planned; the drafted entries are `loss-aversion`, `framing-effect` and `anchoring-effect` (see Batch 1 and 2 below).
+Latest generated coverage (2026-11-23, after Goal-Gradient Effect): 46 topics — **16 published, 3 drafted, 10 addressed within another entry, 17 planned** (`docs/CONTENT_COVERAGE.md`). The 2026-11-20 baseline was 14 published, 0 drafted, 10 addressed within, 22 planned; the drafted entries are `loss-aversion`, `framing-effect` and `anchoring-effect` (see Batch 1 and 2 below).
 
-### Already published (15; `social-proof` added 2026-11-23)
+### Already published (16; `social-proof` and `goal-gradient-effect` added 2026-11-23)
 
-`aesthetic-usability-effect`, `choice-overload`, `default-effect`, `doherty-threshold`, `fitts-law`, `gestalt-principles`, `hick-hyman-law`, `jakobs-law`, `millers-law`, `peak-end-rule`, `serial-position-effect`, `social-proof`, `steering-law`, `teslers-law`, `von-restorff-effect`.
+`aesthetic-usability-effect`, `choice-overload`, `default-effect`, `doherty-threshold`, `fitts-law`, `gestalt-principles`, `hick-hyman-law`, `jakobs-law`, `millers-law`, `peak-end-rule`, `serial-position-effect`, `goal-gradient-effect`, `social-proof`, `steering-law`, `teslers-law`, `von-restorff-effect`.
 
 ### Addressed within another entry (10)
 
 - `primacy-effect`, `recency-effect` → `serial-position-effect`.
 - Gestalt grouping principles `law-of-pragnanz`, `law-of-proximity`, `law-of-similarity`, `law-of-closure`, `law-of-continuity`, `law-of-common-region`, `common-fate`, `uniform-connectedness` → `gestalt-principles`.
 
-### Planned at the 2026-11-20 baseline: 22 topics (now 18 planned, 3 drafted, 1 published from this list)
+### Planned at the 2026-11-20 baseline: 22 topics (now 17 planned, 3 drafted, 2 published from this list)
 
 | Priority | Topics |
 |---|---|
 | Foundational (2 remaining) | `loss-aversion`, `framing-effect` |
-| Core professional (12; `social-proof` published 2026-11-23) | ~~`social-proof`~~, `goal-gradient-effect`, `zeigarnik-effect`, `postels-law`, `power-law-of-practice`, `webers-law`, `cognitive-ease`, `mere-exposure-effect`, `decision-fatigue`, `status-quo-bias`, `confirmation-bias`, `availability-heuristic` |
+| Core professional (12; `social-proof` and `goal-gradient-effect` published 2026-11-23) | ~~`social-proof`~~, ~~`goal-gradient-effect`~~, `zeigarnik-effect`, `postels-law`, `power-law-of-practice`, `webers-law`, `cognitive-ease`, `mere-exposure-effect`, `decision-fatigue`, `status-quo-bias`, `confirmation-bias`, `availability-heuristic` |
 | Specialist (7) | `fechners-law`, `ikea-effect`, `endowment-effect`, `sunk-cost-effect`, `parkinsons-law`, `occams-razor`, `pareto-principle` |
 
 The priority split follows the current D-129 backlog, adjusted for `default-effect` already being published. Candidate hosts from D-129 (`endowment-effect` → `loss-aversion`; `status-quo-bias` → `default-effect`) must still be checked against the actual explanations before any taxonomy status changes.
@@ -115,5 +115,16 @@ Research synthesis is recorded in `docs/DOMAIN_2_BATCH_1_RESEARCH.md`. Key corre
 - Correction to the research brief: the 2026 ratings review is by Saxena and Banerji, *International Journal of Consumer Studies* 50(6), published online 24 September 2026.
 - Plate `socialProofPlate` in `decision-sheets.tsx`, register record, quick takeaway; back-link from `default-effect`.
 - All gates passed (QA ledger). Pre-existing gate blockers in the Batch 1–2 drafts were fixed so the gates could run: one invalid technique value in the `anchoring-effect` register record, and the analogy openings of `anchoring-effect` and `loss-aversion` (editorial template cap). Those drafts otherwise remain unverified and `drafted` (D2-B1-1, D2-B2-1).
-- **Next Domain 2 topic:** `goal-gradient-effect` (next core-professional topic). The three drafts still need their own source verification and QA before promotion.
+- Next topic after this batch: `goal-gradient-effect` (done in Batch 4 below).
+
+
+## Batch 4 — Goal-Gradient Effect (2026-11-23) — published
+
+**`goal-gradient-effect` published** (cognitive-bias, `laws-effects/decision-biases`; slug already in the frozen taxonomy, unchanged).
+
+- Sources: 10 new records, **10/10 `doi-verified`**. Read in full: Devine et al. (2025). Relevant sections: Dixon et al. (2024). Abstract only: Kivetz, Urminsky & Zheng (2006), Nunes & Drèze (2006; author PDF unreachable), Bonezzi, Brendl & De Angelis (2011), Koo & Fishbach (2012), Harkin et al. (2016), Conrad et al. (2010; PMC full text not served to automated access), Cheema & Bagchi (2011). Hull (1932): bibliographic only. Not registered: Brown (1948; mentioned only as reported by Devine et al.) and Luo et al. (2026; optional, not used).
+- Teaches the distinctions between the original hypothesis and human applications, goal proximity and progress monitoring, goal gradient and endowed progress, accumulated vs remaining progress and perceived velocity, the small-area hypothesis and the classic prediction, near-misses and genuine approach, and a progress indicator vs the response it evokes. The non-monotonic gradient and the small-area findings are taught in the main explanation.
+- Plate `goalGradientPlate` (conceptual curves labelled as illustrative), register record, quick takeaway; back-link from `loading-states`. No Level-2 figure.
+- No Domain 2 drafts were modified.
+- **Next authorised Domain 2 topic:** `zeigarnik-effect` (next core-professional topic in the table above; no entry exists). The three drafts still need their own verification and QA (D2-B1-1, D2-B2-1).
 

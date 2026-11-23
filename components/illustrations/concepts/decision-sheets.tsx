@@ -269,5 +269,60 @@ export const socialProofPlate: IllustrationEntry = {
   ),
 };
 
-const plates: IllustrationEntry[] = [defaultEffectPlate, lossAversionPlate, framingEffectPlate, anchoringEffectPlate, socialProofPlate];
+export const goalGradientPlate: IllustrationEntry = {
+  slug: "goal-gradient-effect",
+  title: "Goal-gradient effect plate",
+  canvas: "sheet",
+  description:
+    "Top, 'Effort as the goal nears (conceptual, not measured)': a chart with 'effort' on the vertical axis and 'progress' on the horizontal axis, marked 'start', 'halfway' and 'goal'. A solid line stays low and rises steeply near the goal, labelled in the legend 'Classic gradient: rises near the goal'. A dashed line starts high, dips around halfway and rises again near the goal, labelled 'Stuck in the middle: dips halfway'. Bottom left, 'Two framings' of the same position: a chip '3 of 10 done' marked 'early' and a chip '2 steps left' marked 'late'. Bottom right, 'Honest progress': three lines, 'Real steps only', 'Unit and total shown', 'Pause or exit any time'.",
+  key: [
+    { n: "1", label: "Classic gradient", detail: "effort rises as a valued goal nears, first proposed for animals (Hull, 1932) and found in people in reward programmes (Kivetz, Urminsky and Zheng, 2006); the curve is drawn for illustration, not from data" },
+    { n: "2", label: "Stuck in the middle", detail: "motivation can be higher far from and near the goal and lower halfway, depending on whether progress is judged from the start or the end (Bonezzi, Brendl and De Angelis, 2011)" },
+    { n: "3", label: "Small areas", detail: "focusing on the smaller quantity, done early and remaining late, made progress feel faster and increased adherence (Koo and Fishbach, 2012)" },
+    { n: "4", label: "Honest progress", detail: "a bar is a representation; showing slow progress can raise abandonment (Conrad et al., 2010), so show real steps, the unit and total, the pace, and a way out" },
+  ],
+  Art: ({ detail }) => (
+    <g>
+      <Card x={8} y={8} w={384} h={176} title="Effort as the goal nears (conceptual)">
+        <line x1={40} y1={44} x2={40} y2={118} stroke={S.ruleStrong} strokeWidth="1.1" {...hair} />
+        <line x1={40} y1={118} x2={372} y2={118} stroke={S.ruleStrong} strokeWidth="1.1" {...hair} />
+        <UiText x={46} y={52} tone="ink2">effort ↑</UiText>
+        <path d="M52 116 C250 116 320 108 366 48" fill="none" stroke={S.ink} strokeWidth="2.2" {...hair} />
+        <path d="M52 64 C140 108 270 108 366 58" fill="none" stroke={S.ink2} strokeWidth="2" strokeDasharray="6 5" {...hair} />
+        <UiText x={40} y={136} tone="ink2">start</UiText>
+        <UiText x={84} y={136} tone="ink2">progress →</UiText>
+        <UiText x={206} y={136} anchor="middle" tone="ink2">halfway</UiText>
+        <UiText x={372} y={136} anchor="end" tone="ink2">goal</UiText>
+        <line x1={20} y1={150} x2={44} y2={150} stroke={S.ink} strokeWidth="2.2" {...hair} />
+        <UiText x={52} y={155}>Classic gradient: rises near the goal</UiText>
+        <line x1={20} y1={169} x2={44} y2={169} stroke={S.ink2} strokeWidth="2" strokeDasharray="6 5" {...hair} />
+        <UiText x={52} y={174}>Stuck in the middle: dips halfway</UiText>
+      </Card>
+
+      <Card x={8} y={192} w={188} h={100} title="Two framings">
+        <UiChip x={20} y={226} w={112} label="3 of 10 done" />
+        <UiText x={142} y={243} tone="ink2">early</UiText>
+        <UiChip x={20} y={258} w={112} label="2 steps left" />
+        <UiText x={142} y={275} tone="ink2">late</UiText>
+      </Card>
+
+      <Card x={204} y={192} w={188} h={100} title="Honest progress">
+        <UiText x={216} y={238}>Real steps only</UiText>
+        <UiText x={216} y={258}>Unit and total shown</UiText>
+        <UiText x={216} y={278}>Pause or exit any time</UiText>
+      </Card>
+
+      {detail && (
+        <>
+          <Marker x={380} y={20} n={1} />
+          <Marker x={206} y={62} n={2} />
+          <Marker x={184} y={204} n={3} />
+          <Marker x={380} y={204} n={4} />
+        </>
+      )}
+    </g>
+  ),
+};
+
+const plates: IllustrationEntry[] = [defaultEffectPlate, lossAversionPlate, framingEffectPlate, anchoringEffectPlate, socialProofPlate, goalGradientPlate];
 export default plates;
