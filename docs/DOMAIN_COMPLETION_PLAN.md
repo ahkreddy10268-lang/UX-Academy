@@ -56,7 +56,7 @@ Latest generated coverage (2026-11-20): 46 topics — 14 published, 10 addressed
 | Priority | Topics |
 |---|---|
 | Foundational (2 remaining) | `loss-aversion`, `framing-effect` |
-| Core professional (13) | `anchoring-effect`, `social-proof`, `goal-gradient-effect`, `zeigarnik-effect`, `postels-law`, `power-law-of-practice`, `webers-law`, `cognitive-ease`, `mere-exposure-effect`, `decision-fatigue`, `status-quo-bias`, `confirmation-bias`, `availability-heuristic` |
+| Core professional (12) | `social-proof`, `goal-gradient-effect`, `zeigarnik-effect`, `postels-law`, `power-law-of-practice`, `webers-law`, `cognitive-ease`, `mere-exposure-effect`, `decision-fatigue`, `status-quo-bias`, `confirmation-bias`, `availability-heuristic` |
 | Specialist (7) | `fechners-law`, `ikea-effect`, `endowment-effect`, `sunk-cost-effect`, `parkinsons-law`, `occams-razor`, `pareto-principle` |
 
 The priority split follows the current D-129 backlog, adjusted for `default-effect` already being published. Candidate hosts from D-129 (`endowment-effect` → `loss-aversion`; `status-quo-bias` → `default-effect`) must still be checked against the actual explanations before any taxonomy status changes.
@@ -95,3 +95,13 @@ Research synthesis is recorded in `docs/DOMAIN_2_BATCH_1_RESEARCH.md`. Key corre
 - `framing-effect`: drafted, indexed, plate registered; 6 source references.
 - Expected Domain 2 status after docs generation: 14 published, 2 drafted, 10 addressed within, 20 planned. The generated coverage file is intentionally not manually edited.
 - Required next gate: run source verifier, entry integrity, full check, taxonomy, docs generation, plate render, illustration tests, per-entry browser review and build. Keep both entries drafted until all pass.
+
+
+## Batch 2 — first core-professional topic (2026-11-23)
+
+**anchoring-effect** has been drafted, indexed and illustrated on claude/domain-completion-20261123. The taxonomy slug already existed; no taxonomy change was made. Research review: docs/DOMAIN_2_BATCH_2_RESEARCH.md.
+
+- Nine source records added to content/sources/cognitive-effects.ts; all remain bibliographic pending the repository verifier. The source set includes the 2026 Schley & Weingarten meta-analysis (published online 19 May 2026), Tversky & Kahneman (1974), and mechanism/valuation studies.
+- Original teaching plate is in components/illustrations/concepts/decision-sheets.tsx and registered in visual-register.ts.
+- Entry status is drafted, not published. The next step remains full source verification, entry-integrity, content check, taxonomy, generated docs, plate render, browser entry review and production build.
+- Domain 2 expected status after docs generation: 14 published, 3 drafted, 10 addressed within, 19 planned. Generated coverage is not edited manually.
