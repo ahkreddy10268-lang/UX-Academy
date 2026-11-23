@@ -697,4 +697,97 @@ export default defineSources([
     notes: "Open-access Springer publisher HTML and abstract reviewed. Published 26 June 2025. Review covers 27 papers; query-order meta-analysis uses 33 effect sizes from 29 studies and 25 papers (N=11,202), d=0.34, 95% CI [0.27, 0.41]."
   },
 
+
+  // ── Domain 2, Batch 2 (D-133): anchoring effect ─────────────────────────
+  {
+    id: "tversky-kahneman-1974",
+    title: "Judgment under Uncertainty: Heuristics and Biases",
+    authors: ["Tversky, A.", "Kahneman, D."],
+    container: "Science", year: 1974, volume: "185", issue: "4157", pages: "1124-1131",
+    doi: "10.1126/science.185.4157.1124", type: "journal-article", tier: 1,
+    topics: ["anchoring", "heuristics", "judgment under uncertainty", "numeric estimation"],
+    access: "partial", verification: "bibliographic", lastVerifiedAt: "2026-11-23",
+    notes: "Science publisher page and PubMed abstract reviewed. Describes adjustment from an anchor as one of three heuristics for judgment under uncertainty. Classic wheel experiment: low anchor 10, high anchor 65; median estimates 25 and 45. Full article not read in this session."
+  },
+  {
+    id: "epley-gilovich-2006",
+    title: "The Anchoring-and-Adjustment Heuristic: Why the Adjustments Are Insufficient",
+    authors: ["Epley, N.", "Gilovich, T."],
+    container: "Psychological Science", year: 2006, volume: "17", issue: "4", pages: "311-318",
+    doi: "10.1111/j.1467-9280.2006.01704.x", type: "journal-article", tier: 1,
+    topics: ["anchoring", "adjustment", "self-generated anchors", "judgment"],
+    access: "partial", verification: "bibliographic", lastVerifiedAt: "2026-11-23",
+    notes: "PubMed abstract and publisher record reviewed. Two sets of experiments report that adjustments from self-generated anchors often stop once a plausible value is reached, unless people are willing and able to search for a more accurate estimate. Full article not read in this session."
+  },
+  {
+    id: "mussweiler-strack-1999",
+    title: "Hypothesis-Consistent Testing and Semantic Priming in the Anchoring Paradigm: A Selective Accessibility Model",
+    authors: ["Mussweiler, T.", "Strack, F."],
+    container: "Journal of Experimental Social Psychology", year: 1999, volume: "35", issue: "2", pages: "136-164",
+    doi: "10.1006/jesp.1998.1364", type: "journal-article", tier: 1,
+    topics: ["anchoring", "selective accessibility", "semantic priming", "hypothesis testing"],
+    access: "partial", verification: "bibliographic", lastVerifiedAt: "2026-11-23",
+    notes: "Publisher abstract reviewed. Four studies support a selective-accessibility model in which hypothesis-consistent testing during a comparative anchoring task makes anchor-consistent knowledge more accessible for the subsequent absolute judgment. Full article not read in this session."
+  },
+  {
+    id: "frederick-mochon-2012",
+    title: "A Scale Distortion Theory of Anchoring",
+    authors: ["Frederick, S.", "Mochon, D."],
+    container: "Journal of Experimental Psychology: General", year: 2012, volume: "141", issue: "1", pages: "124-133",
+    doi: "10.1037/a0024006", type: "journal-article", tier: 1,
+    topics: ["anchoring", "scale distortion", "response scale", "judgment"],
+    access: "partial", verification: "bibliographic", lastVerifiedAt: "2026-11-23",
+    notes: "PubMed abstract and open manuscript record reviewed. Proposes that some anchoring changes use of a response scale rather than perception of the focal stimulus; reported effects did not generalise to conceptually affiliated judgments on similar scales. Full paper not reviewed line by line."
+  },
+  {
+    id: "furnham-boo-2011",
+    title: "A Literature Review of the Anchoring Effect",
+    authors: ["Furnham, A.", "Boo, H. C."],
+    container: "Journal of Socio-Economics", year: 2011, volume: "40", issue: "1", pages: "35-42",
+    doi: "10.1016/j.socec.2010.10.008", type: "journal-article", tier: 2,
+    topics: ["anchoring", "literature review", "mechanisms", "individual differences"],
+    access: "partial", verification: "bibliographic", lastVerifiedAt: "2026-11-23",
+    notes: "Publisher abstract and an open manuscript PDF were located; the abstract covers competing mechanisms, domains, individual differences, motivation and knowledge. Full review not yet read line by line."
+  },
+  {
+    id: "li-maniadis-sedikides-2021",
+    title: "Anchoring in Economics: A Meta-Analysis of Studies on Willingness-To-Pay and Willingness-To-Accept",
+    authors: ["Li, L.", "Maniadis, Z.", "Sedikides, C."],
+    container: "Journal of Behavioral and Experimental Economics", year: 2021, volume: "90", pages: "101629",
+    doi: "10.1016/j.socec.2020.101629", type: "journal-article", tier: 1,
+    topics: ["anchoring", "willingness to pay", "willingness to accept", "meta-analysis", "pricing"],
+    access: "partial", verification: "bibliographic", lastVerifiedAt: "2026-11-23",
+    notes: "Publisher abstract and author-repository metadata reviewed; an accepted manuscript PDF is available through the University of Southampton repository but was not read line by line here. Meta-analysis of 53 WTP/WTA studies reports a moderate pooled effect smaller than early estimates, with stronger effects for more relevant/compatible anchors, buying tasks and non-laboratory experiments."
+  },
+  {
+    id: "yoon-fong-dimoka-2019",
+    title: "The Robustness of Anchoring Effects on Preferential Judgments",
+    authors: ["Yoon, S.", "Fong, N. M.", "Dimoka, A."],
+    container: "Judgment and Decision Making", year: 2019, volume: "14", issue: "4", pages: "470-487",
+    doi: "10.1017/S1930297500006148", type: "journal-article", tier: 1,
+    topics: ["anchoring", "willingness to pay", "replication", "consumer valuation"],
+    access: "open", verification: "bibliographic", lastVerifiedAt: "2026-11-23",
+    notes: "Open-access Cambridge Core article read in relevant sections: abstract, experiments, cross-study analysis and conclusion. Reports robust WTP anchoring across several procedures, but effects varied between studies and were smaller than some early estimates; five-study, 30-item meta-analysis reported average transformed r = .27."
+  },
+  {
+    id: "schley-weingarten-2026",
+    title: "Fifty Years of Anchoring Effects: A Theoretical Reintegration and Meta-Analysis",
+    authors: ["Schley, D. R.", "Weingarten, E."],
+    container: "Management Science", year: 2026,
+    doi: "10.1287/mnsc.2023.03238", type: "journal-article", tier: 1,
+    topics: ["anchoring", "meta-analysis", "theoretical integration", "heterogeneity", "debiasing"],
+    access: "partial", verification: "bibliographic", lastVerifiedAt: "2026-11-23",
+    notes: "INFORMS publisher abstract and article record reviewed; published online 19 May 2026, Articles in Advance. Meta-analysis includes 2,601 effect sizes (1,280 high-versus-low comparisons), Hedges' g = 0.825 [0.765, 0.884], I² = 93.73%. Abstract reports smaller or null effects in some conditions (incidental priming, cross-dimensional or random anchors, incentives and debiasing). Full text not read."
+  },
+  {
+    id: "lieder-et-al-2018",
+    title: "The Anchoring Bias Reflects Rational Use of Cognitive Resources",
+    authors: ["Lieder, F.", "Griffiths, T. L.", "Huys, Q. J. M.", "Goodman, N. D."],
+    container: "Psychonomic Bulletin & Review", year: 2018, volume: "25", pages: "322-349",
+    doi: "10.3758/s13423-017-1286-8", type: "journal-article", tier: 1,
+    topics: ["anchoring", "bounded rationality", "cognitive resources", "computational models"],
+    access: "partial", verification: "bibliographic", lastVerifiedAt: "2026-11-23",
+    notes: "Springer publisher abstract and bibliographic record reviewed. Theoretical review asks whether anchoring can reflect rational use of finite time and cognitive resources; cited as an alternative theoretical account, not as evidence that every anchored judgment is normatively optimal."
+  },
+
 ]);
