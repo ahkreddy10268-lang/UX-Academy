@@ -530,3 +530,27 @@ Changed: content/knowledge/laws-effects/anchoring-effect.ts, content/sources/cog
 | Production runtime | Not independently verified; DEP-2 remains open | NOT RUN |
 
 **Disposition:** anchoring-effect remains status: drafted. The three Domain 2 entries (Loss Aversion, Framing Effect, Anchoring Effect) are all draft-only until the required source and QA gates run successfully.
+
+### Domain 2 Batch 3 — Social Proof (2026-11-23, branch `claude/domain-completion-20261123`, base `f712e38`)
+
+Change set: new entry `content/knowledge/laws-effects/social-proof.ts` (published); 9 source records in `content/sources/cognitive-effects.ts`; `socialProofPlate` in `components/illustrations/concepts/decision-sheets.tsx`; register record in `visual-register.ts`; quick takeaway in `components/visual-explanations/registry.tsx`; back-link in `default-effect.ts`; regenerated `content/knowledge/_index.ts`, `content/sources/verification.json` and the four generated docs. Gate-blocker fixes to pre-existing drafts: `anchoring-effect` register `techniques` (`"comparison"` was not a valid technique → `["numbered-annotation"]`), and the analogy openings of `anchoring-effect` and `loss-aversion` (editorial template cap). Commit SHA: see the commit that adds this section.
+
+Baseline: `npm run check` on `f712e38` **FAILED** before any change (`tsc`: invalid technique value in the anchoring register record), so the earlier drafts had never passed the shared gates. After the register fix, `check` then failed the editorial analogy-template test on the two drafts' analogies; both were reworded.
+
+| Check | Command | Result | Status |
+|---|---|---|---|
+| Source verification | `npm run sources:verify -- deutsch-gerard-1955 cialdini-reno-kallgren-1990 cialdini-goldstein-2004 goldstein-cialdini-griskevicius-2008 nolan-et-al-2008 salganik-dodds-watts-2006 muchnik-aral-taylor-2013 bond-smith-1996 saxena-banerji-2026` | 9/9 `doi-verified` (Crossref title and year match) | PASS |
+| Content index | `npm run content:index` | 119 knowledge files, 21 source files; `social-proof` indexed | PASS |
+| Entry integrity | `npx tsx scripts/entry-integrity.ts social-proof` | Exit 0; 10 outgoing relations, 1 incoming; 3 exercises, 4 quiz (3 levels), 4 flashcards; plate registered; all 9 references doi-verified. With `default-effect` added, exit 1 only for its pre-existing uncited further-reading `oecd-2019-basic`. | PASS (social-proof) |
+| Check | `npm run check` (final tree) | Exit 0; 23 files, 620 tests | PASS |
+| Taxonomy | `npm run test:taxonomy` | Exit 0; 1019 links; 116 published entries at three depths; Domain 2: 46 topics, 15 published, 10 addressed within | PASS |
+| Generated docs | `npm run docs:generate` (final tree) | Exit 0; real changes kept in all four generated files (new entry, 9 sources, drafted counts). Site: 116/561 published, 23 addressed within, 419 planned, 3 drafted. | PASS |
+| Plate render | `NODE_PATH=$(npm root -g) npx tsx scripts/render-plates.tsx social-proof` | Light and dark PNGs rendered and inspected: no clipping, four markers inside cards, loop arrow correct, legible contrast in both themes. The render script's fallback font draws the opening quote like a closing one; the site font renders it correctly (screenshot of the live page checked). | PASS |
+| Entry review | `BASE_URL=http://localhost:3100 AXE_PATH=node_modules/axe-core/axe.min.js node tests/browser/entry-review.cjs social-proof default-effect`, then `… social-proof` on the final tree | 16/16, then 8/8 on the final tree: 1440, 768, 390 px, light and dark; axe 0, overflow 0, errors 0; plate text min 10.2 px at 390; 4 markers inside the viewBox; 15 links resolve, no raw markup; flashcards by keyboard 4/4 | PASS |
+| Build | `npm run build` (final tree) | Exit 0; 998/998 static pages | PASS |
+| Site-wide browser suites | Not run | Only a content entry, sources, a plate in an existing sheet file, a register record and a takeaway string changed; no shared component, route, `lib/**` or token changed (skill § 4: plate render + entry review) | NOT RUN (change-impact decision) |
+| Drafts' own gates | Not run | `loss-aversion`, `framing-effect`, `anchoring-effect`: their own sources:verify, entry-integrity, plate review and entry review were not run in this session; they remain `drafted` | NOT RUN (out of scope; D2-B1-1, D2-B2-1) |
+
+Review: one targeted review (accuracy against the read papers, classification, explanation, visuals and accessibility, practice and integration) and one correction pass. 0 critical, 0 major; 1 moderate fixed (the ethics paragraph implied research oversight the paper does not report); 6 precision corrections made during drafting before review (claims not supported by sources read were relabelled as academy interpretation or removed). Minor items: SP-1 in `docs/OPEN_ISSUES.md`.
+
+Limitations: no screen-reader, physical-device or independent expert review. Five sources abstract only and one bibliographic only (stated in the entry). Vercel preview not checked.

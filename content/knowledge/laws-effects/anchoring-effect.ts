@@ -31,7 +31,7 @@ export default defineEntry({
         "Anchoring does not mean people copy the first number exactly. They often move away from it, but their final estimate can remain closer to the anchor than it would have been without it. The effect is a tendency, not a guarantee about every person or every task."
       ],
       analogy:
-        "Think of a ruler placed beside an object before you estimate its length. Even if the ruler is the wrong scale, it can become the starting point for your judgment. An anchor is a starting reference that can pull the estimate that follows.",
+        "A ruler placed beside an object before you estimate its length can become the starting point for your judgment, even if the ruler is the wrong scale. An anchor is a starting reference that can pull the estimate that follows.",
       everydayExamples: [
         "A product page shows a high crossed-out price before the current price, shaping what a shopper thinks is a reasonable amount.",
         "A project estimate begins with an early guess of two weeks, and later estimates cluster around that duration even after new information appears.",

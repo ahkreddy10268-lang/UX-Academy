@@ -214,5 +214,60 @@ export const anchoringEffectPlate: IllustrationEntry = {
   ),
 };
 
-const plates: IllustrationEntry[] = [defaultEffectPlate, lossAversionPlate, framingEffectPlate, anchoringEffectPlate];
+export const socialProofPlate: IllustrationEntry = {
+  slug: "social-proof",
+  title: "Social proof plate",
+  canvas: "sheet",
+  description:
+    "Four cards separate the ideas social proof is often reduced to. Top left, 'What people do': 'Descriptive norm', with the example 'Most guests here reuse their towels'. Top right, 'What people approve': 'Injunctive norm', with the example 'Most guests think reusing is right'. Middle, 'Why someone follows others': under 'Informational', a chip 'To be right'; under 'Normative', a chip 'To fit in'. Bottom, 'Popularity is not quality': three chips joined by arrows, 'Early votes', 'Shown higher', 'More votes', with a line returning from the last to the second to show the loop, and the caption 'A rating is a signal, not a measurement'.",
+  key: [
+    { n: "1", label: "Descriptive norm", detail: "what most people actually do; in hotel field experiments, signs reporting that most guests reused towels raised reuse over an environmental appeal (Goldstein, Cialdini and Griskevicius, 2008)" },
+    { n: "2", label: "Injunctive norm", detail: "what most people approve of; the two norms can conflict, and behaviour tends to follow the one the situation makes salient (Cialdini, Reno and Kallgren, 1990)" },
+    { n: "3", label: "Two motives", detail: "the same choice can come from wanting to be right (informational) or wanting to be accepted (normative) (Deutsch and Gerard, 1955)" },
+    { n: "4", label: "Popularity loop", detail: "visible ratings feed later ratings: one artificial up-vote raised final scores by 25% in a randomised experiment (Muchnik, Aral and Taylor, 2013); ratings are constructed signals, not measures of quality" },
+  ],
+  Art: ({ detail }) => (
+    <g>
+      <Card x={8} y={8} w={188} h={96} title="What people do">
+        <UiText x={20} y={52} tone="ink2">Descriptive norm</UiText>
+        <UiText x={20} y={74}>“Most guests here</UiText>
+        <UiText x={20} y={92}>reuse their towels”</UiText>
+      </Card>
+      <Card x={204} y={8} w={188} h={96} title="What people approve">
+        <UiText x={216} y={52} tone="ink2">Injunctive norm</UiText>
+        <UiText x={216} y={74}>“Most guests think</UiText>
+        <UiText x={216} y={92}>reusing is right”</UiText>
+      </Card>
+
+      <Card x={8} y={112} w={384} h={86} title="Why someone follows others">
+        <UiText x={20} y={158} tone="ink2">Informational</UiText>
+        <UiChip x={20} y={166} w={120} label="To be right" />
+        <UiText x={210} y={158} tone="ink2">Normative</UiText>
+        <UiChip x={210} y={166} w={104} label="To fit in" />
+      </Card>
+
+      <Card x={8} y={206} w={384} h={86} title="Popularity is not quality">
+        <UiChip x={20} y={238} w={96} label="Early votes" />
+        <Arrow x1={120} x2={132} y={250} />
+        <UiChip x={138} y={238} w={104} label="Shown higher" />
+        <Arrow x1={246} x2={258} y={250} />
+        <UiChip x={264} y={238} w={96} label="More votes" />
+        <path d="M360 250 H372 V271 H190 V266" fill="none" stroke={S.ink2} strokeWidth="1.1" {...hair} />
+        <path d="M186 268 L190 262 L194 268" fill="none" stroke={S.ink2} strokeWidth="1.1" {...hair} />
+        <UiText x={20} y={287} tone="ink2">A rating is a signal, not a measurement</UiText>
+      </Card>
+
+      {detail && (
+        <>
+          <Marker x={184} y={20} n={1} />
+          <Marker x={380} y={20} n={2} />
+          <Marker x={380} y={124} n={3} />
+          <Marker x={380} y={218} n={4} />
+        </>
+      )}
+    </g>
+  ),
+};
+
+const plates: IllustrationEntry[] = [defaultEffectPlate, lossAversionPlate, framingEffectPlate, anchoringEffectPlate, socialProofPlate];
 export default plates;

@@ -31,7 +31,7 @@ export default defineEntry({
         "Loss aversion is a tendency found in many decision tasks, not a rule that every person always dislikes every loss more than an equal gain. Its size differs across studies and situations, and a designer should not assume it from one user's click or cancellation."
       ],
       analogy:
-        "Think of a score that starts at zero. Adding ten points moves the score up; removing ten moves it down. Loss aversion describes the common finding that the downward move can carry more subjective weight than the equal upward move.",
+        "Picture a score that starts at zero. Adding ten points moves the score up; removing ten moves it down. Loss aversion describes the common finding that the downward move can carry more subjective weight than the equal upward move.",
       everydayExamples: [
         "A person hesitates to switch away from a familiar plan because they focus on features they might lose.",
         "A user worries that deleting a saved draft will remove work they have already invested time in.",

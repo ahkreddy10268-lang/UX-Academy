@@ -384,3 +384,13 @@ Owner: approve the push of the status fix, set Vercel's production branch to `ma
 - Manual GitHub-file integrity inspection: all cited Anchoring Effect source IDs exist in its reference list and source registry; its index/taxonomy/plate/register links exist. Manual inspection caught and fixed a missing source reference in Framing Effect (1992 source) and added reciprocal links between Anchoring, Loss Aversion and Framing Effect.
 - Repository commands remain NOT RUN: no Vercel team-authorised command session in this connection. Latest observed Vercel check for commit 8c108b5 was pending; do not treat as a pass. Live production remains unverified.
 - Pushed code and documentation updates to claude/domain-completion-20261123; no merge to main or production deployment.
+
+
+## Session 71 — Domain 2 Batch 3: Social Proof published (2026-11-23)
+
+- Topic: `social-proof` (cognitive-bias, `laws-effects/decision-biases`), the first remaining core-professional topic. File: `content/knowledge/laws-effects/social-proof.ts`; status `published`.
+- Teaches the distinctions between social proof as a judgement shortcut, informational vs normative influence, descriptive vs injunctive norms, conformity, digital popularity signals and testimonials; norm conflict and backfire; provincial norms; underdetected influence; cumulative advantage and rating herding; ratings as constructed signals; culture; ethics of social statistics.
+- 9 new sources, 9/9 DOI-verified; three read in full, five abstracts, one bibliographic only. Plate, register record, quick takeaway, back-link from `default-effect`.
+- Repository command runner available this session: all gates run and passed (see ledger). Fixed three pre-existing gate blockers in the Batch 1–2 drafts (register technique value; two analogy openings) without changing their status.
+- One targeted review, one correction pass (one moderate wording fix in the ethics paragraph). Minor follow-ups in OPEN_ISSUES (SP-1).
+- **Next:** `goal-gradient-effect`; separately, verify and QA the three Domain 2 drafts.

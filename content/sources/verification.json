@@ -268,6 +268,14 @@
     "registeredContainer": "Proceedings of the 4th Nordic conference on Human-computer interaction: changing roles",
     "similarity": 1
   },
+  "bond-smith-1996": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-23",
+    "registeredTitle": "Culture and conformity: A meta-analysis of studies using Asch's (1952b, 1956) line judgment task.",
+    "registeredYear": 1996,
+    "registeredContainer": "Psychological Bulletin",
+    "similarity": 1
+  },
   "boren-ramey-2000": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",
@@ -483,6 +491,22 @@
     "checkedAt": "2026-11-12",
     "httpStatus": 200
   },
+  "cialdini-goldstein-2004": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-23",
+    "registeredTitle": "Social Influence: Compliance and Conformity",
+    "registeredYear": 2004,
+    "registeredContainer": "Annual Review of Psychology",
+    "similarity": 1
+  },
+  "cialdini-reno-kallgren-1990": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-23",
+    "registeredTitle": "A focus theory of normative conduct: Recycling the concept of norms to reduce littering in public places.",
+    "registeredYear": 1990,
+    "registeredContainer": "Journal of Personality and Social Psychology",
+    "similarity": 1
+  },
   "cloudscape-genai-follow-up": {
     "status": "url-reachable",
     "checkedAt": "2026-11-09",
@@ -598,6 +622,14 @@
     "status": "url-reachable",
     "checkedAt": "2026-11-20",
     "httpStatus": 200
+  },
+  "deutsch-gerard-1955": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-23",
+    "registeredTitle": "A study of normative and informational social influences upon individual judgment.",
+    "registeredYear": 1955,
+    "registeredContainer": "The Journal of Abnormal and Social Psychology",
+    "similarity": 1
   },
   "digitalgov-test-for-understanding": {
     "status": "url-reachable",
@@ -872,6 +904,14 @@
     "registeredTitle": "Two storage mechanisms in free recall",
     "registeredYear": 1966,
     "registeredContainer": "Journal of Verbal Learning and Verbal Behavior",
+    "similarity": 1
+  },
+  "goldstein-cialdini-griskevicius-2008": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-23",
+    "registeredTitle": "A Room with a Viewpoint: Using Social Norms to Motivate Environmental Conservation in Hotels",
+    "registeredYear": 2008,
+    "registeredContainer": "Journal of Consumer Research",
     "similarity": 1
   },
   "google-pair-guidebook": {
@@ -1430,6 +1470,14 @@
     "registeredContainer": "Psychological Science",
     "similarity": 1
   },
+  "kahneman-tversky-1979": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-23",
+    "registeredTitle": "Prospect Theory: An Analysis of Decision under Risk",
+    "registeredYear": 1979,
+    "registeredContainer": "Econometrica",
+    "similarity": 1
+  },
   "kahneman-wakker-sarin-1997": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",
@@ -1855,6 +1903,14 @@
     "checkedAt": "2026-11-03",
     "httpStatus": 200
   },
+  "muchnik-aral-taylor-2013": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-23",
+    "registeredTitle": "Social Influence Bias: A Randomized Experiment",
+    "registeredYear": 2013,
+    "registeredContainer": "Science",
+    "similarity": 1
+  },
   "mui-overview": {
     "status": "url-reachable",
     "checkedAt": "2026-11-11",
@@ -2156,6 +2212,14 @@
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
     "httpStatus": 200
+  },
+  "nolan-et-al-2008": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-23",
+    "registeredTitle": "Normative Social Influence is Underdetected",
+    "registeredYear": 2008,
+    "registeredContainer": "Personality and Social Psychology Bulletin",
+    "similarity": 1
   },
   "norman-1981": {
     "status": "doi-verified",
@@ -2501,6 +2565,14 @@
     "registeredContainer": "Proceedings of the 18th International Conference on Evaluation and Assessment in Software Engineering",
     "similarity": 1
   },
+  "salganik-dodds-watts-2006": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-23",
+    "registeredTitle": "Experimental Study of Inequality and Unpredictability in an Artificial Cultural Market",
+    "registeredYear": 2006,
+    "registeredContainer": "Science",
+    "similarity": 1
+  },
   "sauro-lewis-2005": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",
@@ -2523,6 +2595,14 @@
     "registeredTitle": "When designing usability questionnaires, does it hurt to be positive?",
     "registeredYear": 2011,
     "registeredContainer": "Proceedings of the SIGCHI Conference on Human Factors in Computing Systems",
+    "similarity": 1
+  },
+  "saxena-banerji-2026": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-23",
+    "registeredTitle": "Online Ratings as Constructed Signals: A Systematic Review of Generation, Interpretation, and Consumer Outcomes",
+    "registeredYear": 2026,
+    "registeredContainer": "International Journal of Consumer Studies",
     "similarity": 1
   },
   "scheibehenne-greifeneder-todd-2010": {
@@ -3163,14 +3243,6 @@
     "registeredTitle": "The machine inside the machine: users' models of pocket calculators",
     "registeredYear": 1981,
     "registeredContainer": "International Journal of Man-Machine Studies",
-    "similarity": 1
-  },
-  "kahneman-tversky-1979": {
-    "status": "doi-verified",
-    "checkedAt": "2026-11-23",
-    "registeredTitle": "Prospect Theory: An Analysis of Decision under Risk",
-    "registeredYear": 1979,
-    "registeredContainer": "Econometrica",
     "similarity": 1
   }
 }

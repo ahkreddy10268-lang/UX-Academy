@@ -40,23 +40,23 @@ Latest generated coverage (2026-11-20): 21/21 topics accounted for — 16 publis
 
 ## Domain 2 — UX Laws & Cognitive Effects
 
-Latest generated coverage (2026-11-20): 46 topics — 14 published, 10 addressed within another entry, 22 planned. No research-ledger items were pending at the recorded baseline.
+Latest generated coverage (2026-11-23, after Social Proof): 46 topics — **15 published, 3 drafted, 10 addressed within another entry, 18 planned** (`docs/CONTENT_COVERAGE.md`). The 2026-11-20 baseline was 14 published, 0 drafted, 10 addressed within, 22 planned; the drafted entries are `loss-aversion`, `framing-effect` and `anchoring-effect` (see Batch 1 and 2 below).
 
-### Already published (14)
+### Already published (15; `social-proof` added 2026-11-23)
 
-`aesthetic-usability-effect`, `choice-overload`, `default-effect`, `doherty-threshold`, `fitts-law`, `gestalt-principles`, `hick-hyman-law`, `jakobs-law`, `millers-law`, `peak-end-rule`, `serial-position-effect`, `steering-law`, `teslers-law`, `von-restorff-effect`.
+`aesthetic-usability-effect`, `choice-overload`, `default-effect`, `doherty-threshold`, `fitts-law`, `gestalt-principles`, `hick-hyman-law`, `jakobs-law`, `millers-law`, `peak-end-rule`, `serial-position-effect`, `social-proof`, `steering-law`, `teslers-law`, `von-restorff-effect`.
 
 ### Addressed within another entry (10)
 
 - `primacy-effect`, `recency-effect` → `serial-position-effect`.
 - Gestalt grouping principles `law-of-pragnanz`, `law-of-proximity`, `law-of-similarity`, `law-of-closure`, `law-of-continuity`, `law-of-common-region`, `common-fate`, `uniform-connectedness` → `gestalt-principles`.
 
-### Planned: 22 topics
+### Planned at the 2026-11-20 baseline: 22 topics (now 18 planned, 3 drafted, 1 published from this list)
 
 | Priority | Topics |
 |---|---|
 | Foundational (2 remaining) | `loss-aversion`, `framing-effect` |
-| Core professional (12) | `social-proof`, `goal-gradient-effect`, `zeigarnik-effect`, `postels-law`, `power-law-of-practice`, `webers-law`, `cognitive-ease`, `mere-exposure-effect`, `decision-fatigue`, `status-quo-bias`, `confirmation-bias`, `availability-heuristic` |
+| Core professional (12; `social-proof` published 2026-11-23) | ~~`social-proof`~~, `goal-gradient-effect`, `zeigarnik-effect`, `postels-law`, `power-law-of-practice`, `webers-law`, `cognitive-ease`, `mere-exposure-effect`, `decision-fatigue`, `status-quo-bias`, `confirmation-bias`, `availability-heuristic` |
 | Specialist (7) | `fechners-law`, `ikea-effect`, `endowment-effect`, `sunk-cost-effect`, `parkinsons-law`, `occams-razor`, `pareto-principle` |
 
 The priority split follows the current D-129 backlog, adjusted for `default-effect` already being published. Candidate hosts from D-129 (`endowment-effect` → `loss-aversion`; `status-quo-bias` → `default-effect`) must still be checked against the actual explanations before any taxonomy status changes.
@@ -105,3 +105,15 @@ Research synthesis is recorded in `docs/DOMAIN_2_BATCH_1_RESEARCH.md`. Key corre
 - Original teaching plate is in components/illustrations/concepts/decision-sheets.tsx and registered in visual-register.ts.
 - Entry status is drafted, not published. The next step remains full source verification, entry-integrity, content check, taxonomy, generated docs, plate render, browser entry review and production build.
 - Domain 2 expected status after docs generation: 14 published, 3 drafted, 10 addressed within, 19 planned. Generated coverage is not edited manually.
+
+
+## Batch 3 — Social Proof (2026-11-23) — published
+
+**`social-proof` published** on `claude/domain-completion-20261123` (cognitive-bias, `laws-effects/decision-biases`; taxonomy slug already present, no taxonomy change).
+
+- Sources: 9 new records in `content/sources/cognitive-effects.ts`, **9/9 `doi-verified`** by `npm run sources:verify`. Read in full: Cialdini, Reno & Kallgren (1990); Goldstein, Cialdini & Griskevicius (2008); Muchnik, Aral & Taylor (2013, report only). Abstract only: Cialdini & Goldstein (2004), Nolan et al. (2008), Salganik, Dodds & Watts (2006), Bond & Smith (1996), Saxena & Banerji (2026; open-access PDF blocked by a browser challenge). Deutsch & Gerard (1955): bibliographic only, cited for the distinction its title names.
+- Correction to the research brief: the 2026 ratings review is by Saxena and Banerji, *International Journal of Consumer Studies* 50(6), published online 24 September 2026.
+- Plate `socialProofPlate` in `decision-sheets.tsx`, register record, quick takeaway; back-link from `default-effect`.
+- All gates passed (QA ledger). Pre-existing gate blockers in the Batch 1–2 drafts were fixed so the gates could run: one invalid technique value in the `anchoring-effect` register record, and the analogy openings of `anchoring-effect` and `loss-aversion` (editorial template cap). Those drafts otherwise remain unverified and `drafted` (D2-B1-1, D2-B2-1).
+- **Next Domain 2 topic:** `goal-gradient-effect` (next core-professional topic). The three drafts still need their own source verification and QA before promotion.
+
