@@ -171,6 +171,7 @@ export default defineEntry({
   ],
   relations: [
     { target: "framing-effect", type: "related-to", note: "Gain and loss frames can shift the reference point through which the same outcomes are evaluated, although framing effects have several other mechanisms." },
+    { target: "anchoring-effect", type: "related-to", note: "An anchor can supply a starting reference for an estimate, whereas loss aversion concerns the unequal subjective weighting of gains and losses around a reference point." },
     { target: "default-effect", type: "related-to", note: "A default can become a reference point and make giving it up feel like a loss, but effort and implied endorsement can also explain default retention." },
     { target: "endowment-effect", type: "related-to", note: "The endowment effect is often linked to reference-dependent valuation, but ownership and transaction procedures also matter." },
     { target: "status-quo-bias", type: "related-to", note: "Loss aversion can contribute to a preference for the current state, but status-quo bias also has effort and transaction-cost explanations." },
