@@ -341,5 +341,8 @@ After that: `ui-design`, `interaction-design-discipline`, `accessibility-concept
 - Path pages, cards and the curriculum map now classify each step from the taxonomy's `coveredBy`: lessons, concepts explained within other lessons ('Explained within {host} →', linking to the host's lesson in the same path), and steps in development. Three steps in two paths were affected. Lesson numbering, progress, completion and path data unchanged.
 - QA: check, build, e2e, e2e-redesign (glossary count updated for the 13 new terms), keyboard, devices, direct checks at 390 and 1440. Pre-existing axe landmark finding on the desktop sidebar logged as A11Y-1.
 
+## Session 69 — design reference library (documentation only)
+- Added `docs/DESIGN_REFERENCE_LIBRARY.md`: five inspiration galleries (Refero Styles, CTA Gallery, Footer Design, Navbar Gallery, Scrolltide) and seven free implementation alternatives (awesome-design-md, HyperUI, Watermelon UI, Preline UI, GSAP, Lenis, React Bits), each with site, GitHub, purpose, access model, licence notes and verification date (2026-11-23). Nothing installed; usage bound by the design system, motion rules and the dependency policy. Not verified: Refero MCP pricing, GSAP licensing page.
+
 ## Next task (precise)
 Owner: review the D1-7 commit; decide D1-8 (path recommendations) and A11Y-1. Content candidates awaiting approval: `loss-aversion`, `findability`.

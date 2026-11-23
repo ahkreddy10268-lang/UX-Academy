@@ -2,6 +2,8 @@
 
 How to use the third-party design and frontend skills installed for Claude Code in this project (2026-11-20). These skills are tools for future interface work; none has been applied to the site yet. **Using them on the interface needs the owner's approval.**
 
+External galleries and free implementation libraries for future visual work (purpose, access, pricing, licences) are listed in `docs/DESIGN_REFERENCE_LIBRARY.md`; they are references only, under the same precedence rules.
+
 ## Precedence when instructions conflict
 
 1. UX Academy's own rules: `CLAUDE.md`, `docs/DESIGN_SYSTEM.md` (v4 Monochrome Editorial Workspace, tokens only in `app/globals.css`), `docs/ILLUSTRATION_SYSTEM.md`, `docs/INTERACTION_AND_MOTION_GUIDELINES.md`, and the decision log.
