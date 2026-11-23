@@ -3164,5 +3164,13 @@
     "registeredYear": 1981,
     "registeredContainer": "International Journal of Man-Machine Studies",
     "similarity": 1
+  },
+  "kahneman-tversky-1979": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-23",
+    "registeredTitle": "Prospect Theory: An Analysis of Decision under Risk",
+    "registeredYear": 1979,
+    "registeredContainer": "Econometrica",
+    "similarity": 1
   }
 }
