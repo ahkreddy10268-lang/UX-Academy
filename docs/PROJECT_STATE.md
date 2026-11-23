@@ -11,9 +11,10 @@ Last updated: **2026-11-23** (PR #3 merged; `main` verified at `9a51aa6`; owner-
 | Default branch | `main` at `9a51aa6` (merge of PR #3) | 2026-11-23 (GitHub API) |
 | PR #3 | `claude/batch1-constraints` → `main`: merged 2026-11-20; merge commit `9a51aa6` | 2026-11-23 |
 | PR #2 | merged 2026-11-20 | 2026-11-23 |
-| Domain-completion work branch | `claude/domain-completion-20261123`, based on `main` at `9a51aa6` | 2026-11-23 |
+| Domain-completion work branch | `claude/domain-completion-20261123`, based on `main` at `9a51aa6`; latest recorded handoff push `89a36dc` | 2026-11-23 |
 | Vercel production branch setting | `main` (owner reported setting this on 2026-11-20) | 2026-11-20 |
 | Vercel check on latest `main` commit | Success; check target `https://vercel.com/ambati-re-dd/ux-academy/77Bpw7KyrCPPEEeHf5mMLcVYLwT7` | 2026-11-23 |
+| Vercel check on domain-completion branch | Pending on last query for `89a36dc`; not a build pass | 2026-11-23 |
 | Production runtime / deployed commit | Not independently confirmed from the supplied live URL in this session; do not treat the GitHub check alone as a live-page audit | 2026-11-23 |
 
 ## Owner direction — domain-by-domain completion (D-133, 2026-11-23)
@@ -23,7 +24,7 @@ The owner has directed completion of all 20 domains in the canonical taxonomy or
 - Domain 1, UX & UI Fundamentals: complete — 16 published, 5 addressed within, 0 planned (21/21).
 - Domain 2, UX Laws & Cognitive Effects: next — 14 published, 10 addressed within, 22 planned (46 total), based on generated coverage dated 2026-11-20.
 - Active branch: `claude/domain-completion-20261123`, based on `main` at `9a51aa6`.
-- Current first batch: `loss-aversion` and `framing-effect`. Research synthesis complete; source registry + `npm run sources:verify` pending before drafting. See `docs/DOMAIN_2_BATCH_1_RESEARCH.md`.
+- Current first batch: `loss-aversion` and `framing-effect` are drafted, indexed and illustrated. Eleven source records are registered; only `kahneman-tversky-1979` has a recorded Crossref match. Expected Domain 2 status after docs generation: 14 published, 2 drafted, 10 addressed within, 20 planned. Mandatory source verification, content integrity, check, taxonomy, docs generation, plate render, entry review and build remain pending. See `docs/DOMAIN_2_BATCH_1_RESEARCH.md` and OPEN_ISSUES D2-B1-1.
 - Domain inventory and priority order: `docs/DOMAIN_COMPLETION_PLAN.md`.
 
 ## Content strategy and cycle
@@ -97,7 +98,7 @@ No content was written or researched beyond source existence checks. Candidate s
 
 ## Current approved work (2026-11-23)
 
-**Domain 2 — UX Laws & Cognitive Effects.** Owner-approved sequence is domain-by-domain (D-133). Domain 1 is already complete and validated at 21/21 accounted for. Domain 2 baseline: 14 published, 10 addressed within, 22 planned. First batch: `loss-aversion` and `framing-effect`. Research synthesis is recorded in `docs/DOMAIN_2_BATCH_1_RESEARCH.md`. Full texts of Tversky & Kahneman (1979, 1991) and Walasek et al. (2024) have been reviewed; source registry creation and the mandatory machine-verification command remain before drafting.
+**Domain 2 — UX Laws & Cognitive Effects.** Owner-approved sequence is domain-by-domain (D-133). Domain 1 is complete at 21/21 accounted for. Domain 2's last generated coverage baseline is 14 published, 10 addressed within, 22 planned. First batch: `loss-aversion` and `framing-effect` are now drafted, indexed and illustrated on the development branch. Expected current status, pending `docs:generate`: 14 published, 2 drafted, 10 addressed within, 20 planned. Eleven source records have been added; only `kahneman-tversky-1979` has a recorded Crossref match. Both entries intentionally remain `drafted` until all required source-verification and QA gates pass. See `docs/DOMAIN_2_BATCH_1_RESEARCH.md` and OPEN_ISSUES D2-B1-1.
 
 **Standing authorization:** routine implementation, QA, records and push of completed batches to a development branch are approved. Merge to `main` and production deployment are not included.
 
