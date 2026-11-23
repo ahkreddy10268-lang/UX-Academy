@@ -77,7 +77,7 @@ Source candidates to verify before drafting:
 | Framing | Tversky & Kahneman (1981), *The Framing of Decisions and the Psychology of Choice* | `10.1126/science.7455683` | Original demonstrations of preference shifts under equivalent gain/loss descriptions. |
 | Framing | Kühberger (1998), *The Influence of Framing on Risky Decisions: A Meta-analysis* | `10.1006/obhd.1998.2781` | Meta-analysis reports 136 empirical papers and 230 effect sizes; inspect full text and scope. |
 
-These are research leads, not source records or verified citations yet. The repository's `npm run sources:verify` must confirm DOI metadata and URLs; read the accessible originals and record access limits before adding records. Differences between meta-analyses must be explained by scope, operationalisation and methods rather than averaged away.
+Implemented on `claude/domain-completion-20261123`: 11 records were added to `content/sources/cognitive-effects.ts`, both entry drafts were added and indexed, and both plates were registered. Only `kahneman-tversky-1979` currently has a recorded Crossref match; the other ten records remain `bibliographic` until `npm run sources:verify` checks them. Both entries remain `drafted` pending the repository's complete verification and QA sequence. Differences between meta-analyses are explained by scope, operationalisation and methods rather than averaged away.
 
 ## Later domains
 
@@ -87,3 +87,11 @@ Proceed through the remaining domains in the exact order in `content/taxonomy.ts
 ## Batch 1 research status (2026-11-23)
 
 Research synthesis is recorded in `docs/DOMAIN_2_BATCH_1_RESEARCH.md`. Key corrections: (1) Loss Aversion must be taught as reference-dependent value asymmetry with meaningful evidence disagreement; neither “losses hurt twice as much” nor one fixed `lambda` is a universal law. (2) Framing Effect must distinguish risky-choice, attribute and goal framing. The 2025 Composto et al. query-theory meta-analysis is included in the framing source set. The original 1979 paper and 1991 reference-dependent paper have been read in full; the 2024 risky-choice meta-analysis has also been read in full. Publisher / PubMed records and abstracts have been checked for the remaining candidates. All source records must still pass the repository's `npm run sources:verify` before drafting; no source record or `verification.json` result has been created yet. **No content has been drafted yet.**
+
+
+### Batch 1 implementation status (2026-11-23)
+
+- `loss-aversion`: drafted, indexed, plate registered; 7 source references.
+- `framing-effect`: drafted, indexed, plate registered; 6 source references.
+- Expected Domain 2 status after docs generation: 14 published, 2 drafted, 10 addressed within, 20 planned. The generated coverage file is intentionally not manually edited.
+- Required next gate: run source verifier, entry integrity, full check, taxonomy, docs generation, plate render, illustration tests, per-entry browser review and build. Keep both entries drafted until all pass.
