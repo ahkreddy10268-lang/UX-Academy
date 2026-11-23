@@ -538,3 +538,32 @@ Limitations:
 - No screen-reader, physical-device or independent expert review was done.
 - The glossary check confirms the terms are present and the page is accessible. It does not re-judge the wording of the definitions.
 - The D1-7 roadmap-status code, `docs/DESIGN_REFERENCE_LIBRARY.md`, the Design Thinking → design-processes relation and the e2e glossary-count fix were not on this branch at `7a5d362`; they arrived with the merged remote commits and are not covered by these results.
+
+### Remaining checks on the merged PR #4 candidate (2026-11-23, HEAD `80b02d8`)
+
+This section covers the final consolidated branch: the D1-7 learning-path code, the restored HCI relations and scenario labels, the Design Thinking relation and the 127-term e2e expectation. Checks ran locally against a production build served by `npx next start -p 3100`, with `BASE_URL=http://localhost:3100` and `AXE_PATH=node_modules/axe-core/axe.min.js`. Nothing was merged or deployed.
+
+| Check | Command / method | Result | Status |
+|---|---|---|---|
+| Check | `npm run check` (run before the merge commit) | Exit 0; 23 test files, 612 tests | PASS |
+| Taxonomy | `npm run test:taxonomy` | Exit 0; 998 links; 115 published entries at three depths; Domain 1 has 21 topics: 16 published, 5 addressed within (76.2%) | PASS |
+| Entry integrity | `npx tsx scripts/entry-integrity.ts human-computer-interaction design-thinking usability user-centred-design user-experience` | Exit 1. HCI is clean. 4 `referencedNotCited` notices, all `role: "further"`: `designkit-methods` (design-thinking), `govuk-moderated-usability-testing`, `govuk-service-manual`, `norman-nielsen-ux-definition`. All are uncited on `main` `9a51aa6` too; the design-thinking diff adds only one relation. | FAIL by exit code; pre-existing, no new defect |
+| Build | `npm run build` | Exit 0; 997/997 static pages | PASS |
+| e2e | `node tests/browser/e2e.cjs` | 44/44 | PASS |
+| e2e-redesign | `node tests/browser/e2e-redesign.cjs` | 66/66 (127-term glossary expectation) | PASS |
+| Atlas | `node tests/browser/atlas.cjs` | 36/36 | PASS |
+| Keyboard | `node tests/browser/keyboard.cjs` | 45/45 | PASS |
+| Colour Studio | `node tests/browser/colour-studio.cjs` | 46/46 | PASS |
+| Devices | `node tests/browser/devices.cjs` | 155/155 | PASS |
+| Crawl | `node tests/browser/crawl.cjs` on 27 routes: `/`, `/library`, `/learn`, all 16 `/learn/<id>` paths, `/glossary`, `/topics/foundations`, `/coverage` and the five changed entries | 0 pages with problems | PASS |
+| a11y | `node tests/browser/a11y.cjs` on the same 27 routes, light + dark at 1280 px | 0 violations | PASS |
+| Entry review | `node tests/browser/entry-review.cjs human-computer-interaction design-thinking` | Exit 0; 16/16 at 1440, 768 and 390 px, light and dark. Links resolve with no raw markup: HCI 35, design-thinking 12. Flashcards by keyboard: 8/8 and 5/5. | PASS |
+| HCI scenario labels | `grep "Illustrative scenario" human-computer-interaction.ts` | Both scenarios labelled (lines 78, 79) | PASS |
+| Learning-path direct review | Scratch Playwright: `/learn`, `/learn/hci-fundamentals`, `/learn/ux-fundamentals`, `/learn/accessibility` at 390 and 1440, light and dark; internal links on `/learn/hci-fundamentals` | 11/17. HTTP 200, overflow 0 and console errors 0 everywhere. Addressed-concept text renders (`/learn` 2, HCI path 4, accessibility path 3 mentions). All 50 HCI-path links return 200. **6 FAILs: axe `landmark-unique` on `.app-sidebar` on the three `/learn/<id>` pages at 1440, light and dark.** | FAIL (pre-existing, A11Y-1) |
+| Baseline for the axe failure | `9a51aa6` built in a temporary worktree, served on port 3200, axe at 1440 on the same three pages | `landmark-unique` on all three pages. `/library`, `/library/fitts-law` and `/system` at 1440 on `80b02d8` are clean. | Pre-existing on `main` |
+| `sources:verify` | Not run | No source ID is new relative to `main` | NOT RUN (appropriate) |
+
+Limitations:
+- `a11y.cjs` tests at 1280 px only, which is why it does not catch A11Y-1; the failure is now in `docs/OPEN_ISSUES.md`.
+- The addressed-concept check counts rendered text. It does not judge the layout visually; no screenshots were inspected in this run.
+- No screen-reader, physical-device or independent expert review was done. Vercel preview status was not checked in this run.
