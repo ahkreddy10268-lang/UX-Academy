@@ -2,18 +2,17 @@
 
 The current state in one page. Read it first every session, then verify it against `git` (the repo wins; record any discrepancy here). Update it at the end of every meaningful task. History lives in `docs/PROGRESS.md`; decisions in `docs/DECISION_LOG.md`; open items in `docs/OPEN_ISSUES.md`; test results in `docs/QA_VERIFICATION_LEDGER.md`.
 
-Last updated: **2026-11-20** (deployment reconciliation: `6b030cf` pushed; Vercel production branch set to `main`; PR #3 awaiting merge).
+Last updated: **2026-11-23** (Domain 1 educational audit committed on `codex/domain-1-educational-quality`; PRs #2 and #3 are merged into main per GitHub state; no production deployment change made or verified in this audit).
 
 ## Repository
 
 | Item | Value | Verified |
 |---|---|---|
-| Working branch | `claude/batch1-constraints` | 2026-11-19 |
-| Local HEAD | Same as remote, plus this records commit (local until approved) | 2026-11-20 |
-| Remote branch HEAD | `6b030cf` (status-display and generator fix), pushed 2026-11-20 on owner approval; all earlier commits, including `e44f8ce` (default-effect), are pushed | 2026-11-20 (`git ls-remote`) |
-| `origin/main` | `b788511`, unchanged | 2026-11-20 (`git ls-remote`) |
-| PR #3 | `claude/batch1-constraints` → `main`: open, not merged, mergeable (clean); head `6b030cf`, 56 commits | 2026-11-20 (GitHub API) |
-| PR #2 | open, not merged; head `a1f6373` unchanged | 2026-11-19 (`git ls-remote refs/pull/2/head`) |
+| Active audit branch | `codex/domain-1-educational-quality` (created from current `main`; latest audited change `ff62feaf`) | 2026-11-23 (GitHub API) |
+| Local HEAD | Not available in this remote GitHub session | 2026-11-23 |
+| `main` | `9a51aa6e3ba2520ffc0f3e73f2e84479dbc5f38e` | 2026-11-23 (GitHub API) |
+| PR #3 | `claude/batch1-constraints` → `main`: closed and merged | 2026-11-20 (GitHub API) |
+| PR #2 | `claude/pensive-cannon-t1o6sy` → `main`: closed and merged | 2026-11-20 (GitHub API) |
 | Vercel preview | `6b030cf` → `dpl_5khooyWoQQZHJaHJYeePWMHRiY4Z`, READY; Domain 1 shows 16 published, 5 addressed within, 0 planned, 21 of 21 accounted for; five addressed-within links resolve | 2026-11-20 |
 | Vercel production branch | `main`, set by the owner in the dashboard and confirmed by screenshot (the connector cannot read this setting) | 2026-11-20 |
 | Vercel production | `dpl_7s6R4AxHziGx3GvQY2VyQhGzKPCv`, branch `claude/pensive-cannon-t1o6sy`, commit `a1f6373`; unchanged by the branch setting; updates when PR #3 is merged (DEP-1) | 2026-11-20 |
@@ -47,7 +46,7 @@ Cycle 3 paused after B6 topic 1. Plan: 11 entries + 4 topics addressed within a 
 
 **Result: Domain 1 complete and validated.** 21/21 topics accounted for: 16 published (6 before + 10 new), 5 addressed within a host (utility, feasibility, viability, human-centred design, history of HCI), 0 planned. Published 103 → 113, addressed within 18 → 23. Open minors: D1-2 to D1-5 in OPEN_ISSUES. **Design skills installed (2026-11-20):** eight third-party Claude Code skills in `.claude/skills/` (see `docs/DESIGN_SKILLS_WORKFLOW.md`); not yet applied to the interface. **Resource enrichment (2026-11-20):** further reading added to 6 entries (QA ledger). Domain 2 not started.
 
-## Deployment and status reconciliation (2026-11-20)
+## Deployment and status reconciliation (historical record, 2026-11-20)
 
 **Root cause:** Vercel production for project `ux-academy` is built from `claude/pensive-cannon-t1o6sy` (production deployment of `a1f6373`); nothing has ever been deployed from `main`, and `main` (`b788511`) lacks the 55 commits in PR #3. Production shows the pre-Domain-1 state. **Fixed on the branch:** status presentation (domain page, coverage bar, coverage table) and the taxonomy-doc generator (D1-3 closed). **Blocked on the owner (DEP-1):** set Vercel's production branch to `main`, then merge PR #3. Nothing pushed, merged or deployed in this task.
 
