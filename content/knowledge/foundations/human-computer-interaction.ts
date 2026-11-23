@@ -75,8 +75,8 @@ export default defineEntry({
         "Treat ISO 9241-210 as a process standard for human-centred design, not as a definition of HCI: it says how to organise design activities around users, and it covers only part of what the discipline studies {{src:iso-9241-210-2019}}.",
       ],
       scenarios: [
-        "A hospital wants to replace a shared ward whiteboard with a display. Timing individual clicks would miss what matters: a field study of how nurses and doctors glance at, annotate and talk around the board is the HCI work that decides whether the display helps. This is a scenario written for illustration, not a reported study.",
-        "A team designing a data-entry screen for experts uses a keystroke-level analysis of two layouts, finds one needs fewer operations, and then confirms with a small test with real operators that it also feels acceptable. Prediction narrows the options, observation confirms them.",
+        "Illustrative scenario: a hospital wants to replace a shared ward whiteboard with a display. Timing individual clicks would miss what matters: a field study of how nurses and doctors glance at, annotate and talk around the board is the HCI work that decides whether the display helps.",
+        "Illustrative scenario: a team designing a data-entry screen for experts uses a keystroke-level analysis of two layouts, finds one needs fewer operations, and then confirms with a small test with real operators that it also feels acceptable. Prediction narrows the options, observation confirms them.",
       ],
     },
     advanced: {
@@ -232,6 +232,8 @@ export default defineEntry({
     { target: "human-ai-interaction", type: "influences", note: "Human-AI interaction extends HCI to adaptive, probabilistic systems and tests older models against them." },
     { target: "history-of-interface-design", type: "related-to", note: "The history of interaction styles, from Sketchpad to multi-touch, is traced in its own entry; this entry covers the research field's history." },
     { target: "ui-design", type: "contrasts-with", note: "UI design shapes the interface; HCI studies and evaluates the whole interaction between people and technology." },
+    { target: "interaction-design-discipline", type: "influences", note: "Interaction design as a professional discipline developed from HCI research on how people act on and understand interactive systems." },
+    { target: "evolution-of-digital-experiences", type: "related-to", note: "Traces how the people, places and purposes of computing changed, the shift that moved HCI from the individual operator to everyday life." },
   ],
 
   exercises: [
