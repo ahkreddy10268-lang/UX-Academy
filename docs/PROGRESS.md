@@ -361,3 +361,14 @@ Owner: approve the push of the status fix, set Vercel's production branch to `ma
 - Corrected the framing 2025 query-theory summary to distinguish the 27 papers reviewed from the 33 effect sizes / 29 studies / 25 papers in the query-order analysis. Added Kühberger 1998 moderator details from PubMed abstract.
 - Brown et al. 2024: AEA abstract/publisher record read; Caltech repository lists the full published PDF but PDF retrieval failed, so full text remains unread.
 - No source registry or knowledge-entry files changed: automated repository verification is still required before drafting. Work remains documentation-only.
+
+
+## Session 69 — Domain 2 Batch 1 lesson drafts and illustrations pushed (2026-11-23)
+
+- Owner-approved Batch 1: `loss-aversion` and `framing-effect`.
+- Added two complete three-level entry drafts with definitions, 2–4 observable objectives, conceptual distinctions, origin, application, limitations, misconceptions, typed relations, 3 exercises, 4 quizzes and 4 flashcards each.
+- Registered 11 source records in `content/sources/cognitive-effects.ts`; recorded the direct Crossref match for `kahneman-tversky-1979` in `verification.json`. Other ten records remain bibliographic pending the repository verifier.
+- Added two original teaching plates to `decision-sheets.tsx`, the illustration registry via its existing fragment import, and `visual-register.ts`; updated `content/knowledge/_index.ts` with both entries.
+- Entry status intentionally set to `drafted`, not published, because the mandatory repository source verifier, content integrity checks, typecheck, tests, docs generation, plate render, entry browser review and production build have not run in this session.
+- Pushed to `claude/domain-completion-20261123`; source work and lesson modules are on the branch. No merge to `main` or production deployment.
+- Vercel check for the most recent branch commit was still pending when last queried; check target is available on the GitHub commit status.
