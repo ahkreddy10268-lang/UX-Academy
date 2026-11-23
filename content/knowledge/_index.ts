@@ -17,9 +17,9 @@ import m13 from "./design-systems/data-tables";
 import m14 from "./design-systems/design-governance";
 import m15 from "./design-systems/design-language";
 import m16 from "./design-systems/design-qa";
-import m17 from "./design-systems/design-system-audits";
-import m18 from "./design-systems/design-system-versioning";
-import m19 from "./design-systems/design-system";
+import m17 from "./design-systems/design-system";
+import m18 from "./design-systems/design-system-audits";
+import m19 from "./design-systems/design-system-versioning";
 import m20 from "./design-systems/design-tokens";
 import m21 from "./design-systems/elevation-systems";
 import m22 from "./design-systems/empty-states";
@@ -77,46 +77,47 @@ import m73 from "./interaction/mapping";
 import m74 from "./interaction/progressive-disclosure";
 import m75 from "./interaction/visibility-of-system-status";
 import m76 from "./laws-effects/aesthetic-usability-effect";
-import m77 from "./laws-effects/choice-overload";
-import m78 from "./laws-effects/default-effect";
-import m79 from "./laws-effects/doherty-threshold";
-import m80 from "./laws-effects/fitts-law";
-import m81 from "./laws-effects/gestalt-principles";
-import m82 from "./laws-effects/hick-hyman-law";
-import m83 from "./laws-effects/jakobs-law";
-import m84 from "./laws-effects/millers-law";
-import m85 from "./laws-effects/peak-end-rule";
-import m86 from "./laws-effects/serial-position-effect";
-import m87 from "./laws-effects/steering-law";
-import m88 from "./laws-effects/teslers-law";
-import m89 from "./laws-effects/von-restorff-effect";
-import m90 from "./metrics/confidence-intervals";
-import m91 from "./metrics/nasa-tlx";
-import m92 from "./metrics/net-promoter-score";
-import m93 from "./metrics/sample-size-estimation";
-import m94 from "./metrics/system-usability-scale";
-import m95 from "./metrics/task-success-rate";
-import m96 from "./psychology/affordances";
-import m97 from "./psychology/cognitive-load-theory";
-import m98 from "./psychology/gulfs-of-execution-and-evaluation";
-import m99 from "./psychology/mental-models";
-import m100 from "./psychology/recognition-over-recall";
-import m101 from "./psychology/signifiers";
-import m102 from "./psychology/working-memory-model";
-import m103 from "./research/ab-testing";
-import m104 from "./research/card-sorting";
-import m105 from "./research/cognitive-walkthrough";
-import m106 from "./research/contextual-inquiry";
-import m107 from "./research/heuristic-evaluation";
-import m108 from "./research/in-depth-interviews";
-import m109 from "./research/think-aloud-protocol";
-import m110 from "./research/tree-testing";
-import m111 from "./research/usability-testing";
-import m112 from "./type-colour/colour-contrast-ratio";
-import m113 from "./type-colour/modular-type-scale";
-import m114 from "./visual/visual-hierarchy";
-import m115 from "./laws-effects/framing-effect";
-import m116 from "./laws-effects/loss-aversion";
+import m77 from "./laws-effects/anchoring-effect";
+import m78 from "./laws-effects/choice-overload";
+import m79 from "./laws-effects/default-effect";
+import m80 from "./laws-effects/doherty-threshold";
+import m81 from "./laws-effects/fitts-law";
+import m82 from "./laws-effects/framing-effect";
+import m83 from "./laws-effects/gestalt-principles";
+import m84 from "./laws-effects/hick-hyman-law";
+import m85 from "./laws-effects/jakobs-law";
+import m86 from "./laws-effects/loss-aversion";
+import m87 from "./laws-effects/millers-law";
+import m88 from "./laws-effects/peak-end-rule";
+import m89 from "./laws-effects/serial-position-effect";
+import m90 from "./laws-effects/steering-law";
+import m91 from "./laws-effects/teslers-law";
+import m92 from "./laws-effects/von-restorff-effect";
+import m93 from "./metrics/confidence-intervals";
+import m94 from "./metrics/nasa-tlx";
+import m95 from "./metrics/net-promoter-score";
+import m96 from "./metrics/sample-size-estimation";
+import m97 from "./metrics/system-usability-scale";
+import m98 from "./metrics/task-success-rate";
+import m99 from "./psychology/affordances";
+import m100 from "./psychology/cognitive-load-theory";
+import m101 from "./psychology/gulfs-of-execution-and-evaluation";
+import m102 from "./psychology/mental-models";
+import m103 from "./psychology/recognition-over-recall";
+import m104 from "./psychology/signifiers";
+import m105 from "./psychology/working-memory-model";
+import m106 from "./research/ab-testing";
+import m107 from "./research/card-sorting";
+import m108 from "./research/cognitive-walkthrough";
+import m109 from "./research/contextual-inquiry";
+import m110 from "./research/heuristic-evaluation";
+import m111 from "./research/in-depth-interviews";
+import m112 from "./research/think-aloud-protocol";
+import m113 from "./research/tree-testing";
+import m114 from "./research/usability-testing";
+import m115 from "./type-colour/colour-contrast-ratio";
+import m116 from "./type-colour/modular-type-scale";
+import m117 from "./visual/visual-hierarchy";
 
 export const rawEntries: KnowledgeEntryInput[] = [
   m0,
@@ -235,5 +236,6 @@ export const rawEntries: KnowledgeEntryInput[] = [
   m113,
   m114,
   m115,
-  m116
+  m116,
+  m117
 ];
