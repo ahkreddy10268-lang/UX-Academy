@@ -1,6 +1,6 @@
 # Progress register
 
-_Last updated: 2026-11-17 (session 50 — Batch 3 review: PASS WITH MINOR FOLLOW-UPS; Cycle 1 balance review: IMPROVEMENT REQUIRED; awaiting owner decision)_
+_Last updated: 2026-11-23 (session 66 — domain-by-domain completion direction recorded; Domain 1 confirmed complete; Domain 2 inventory audited)_
 
 ## State
 
@@ -331,3 +331,13 @@ After that: `ui-design`, `interaction-design-discipline`, `accessibility-concept
 
 ## Next task (precise)
 Owner: approve the push of the status fix, set Vercel's production branch to `main` (DEP-1), and approve merging PR #3. Then verify production serves the merge commit. Content: `loss-aversion` and `findability` await approval.
+
+## Session 66 — owner-directed sequential domain completion and Domain 2 audit (2026-11-23)
+
+- Owner instruction: complete all 20 domains one after another in canonical taxonomy order; finish each domain before moving to the next. Recorded as D-133. D-129 quality and source rules remain unchanged; sequencing is overridden for this owner-directed programme.
+- Standing authorization: routine research, implementation, QA, records and push of completed/reviewed batches to a development branch without another approval prompt. No automatic merge to `main` or production deployment.
+- GitHub reconciliation: PR #3 merged; `main` is `9a51aa6`; Vercel check for that commit is success. Live application and deployed production commit not independently verified (DEP-2).
+- Domain 1 (UX & UI Fundamentals): already complete — 16 published, 5 addressed within, 0 planned; 21/21 accounted for.
+- Domain 2 (UX Laws & Cognitive Effects): 14 published, 10 addressed within, 22 planned; 46 topics total. Domain inventory checked against `content/taxonomy.ts`, `content/knowledge/laws-effects/` and generated `docs/CONTENT_COVERAGE.md`.
+- First approved batch: `loss-aversion`, `framing-effect` (the foundational items remaining after `default-effect`). Candidate literature researched; DOIs and URLs still require the repository's machine verification before source records or entries are created. Plan: `docs/DOMAIN_COMPLETION_PLAN.md`.
+- Documentation-only plan and state changes are being pushed to `claude/domain-completion-20261123`; no content or application files changed in this session, so the code test matrix is not run for this planning commit.

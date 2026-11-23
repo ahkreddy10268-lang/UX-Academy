@@ -4,12 +4,13 @@ The single register of unresolved items. Details stay in the linked review or re
 
 Severity: critical · major · moderate · minor (see the `ux-academy-workflow` skill § 5). **Blocks publication** = blocks pushing or publishing the affected work.
 
-Last updated: 2026-11-20, after the deployment reconciliation (DEP-1 branch setting resolved; PR #3 awaiting merge).
+Last updated: 2026-11-23, after PR #3 merge and D-133 domain-by-domain direction; production runtime verification remains open.
 
 ## Cycle and process
 
 | ID | Description | Files | Severity | Blocks publication | Status | Required action | Related |
 |---|---|---|---|---|---|---|---|
+| DEP-2 | Production deployment after PR #3 merge is not yet independently confirmed on the actual live domain. GitHub reports Vercel check success for `main` commit `9a51aa6`, but the supplied deployment URL and dashboard could not be fetched during this session; a green build check is not a live-page audit. | Vercel project `ux-academy`; `docs/PROJECT_STATE.md` | minor | No | Open — build check success, runtime unverified | Inspect the production deployment and custom/production domains in Vercel; confirm the deployed commit and check `/topics/foundations`, `/coverage` and `/topics/laws-effects`. Domain 1 must read 16 published, 5 addressed within, 0 planned (21/21). | DEP-1; D1-3 |
 | C1-1 | **Decided 2026-11-17:** Cycle 2 begins with an improvement-only batch; no new topics. Scope proposal awaiting review: `docs/CYCLE_2_IMPROVEMENT_PROPOSAL.md`. Original: The § 9.3 stop rule was triggered in Batch 1 (`constraints` 5 rework commits; `feedback-principle`, `interaction-states` 2 each). The rule makes the next cycle an improvement cycle "until resolved". | `docs/BALANCED_DEVELOPMENT_PLAN.md` § 9.3; `docs/CYCLE_1_BALANCE_REVIEW.md` § 9 | moderate | No (blocks Cycle 2 new-topic planning) | Decided; scope awaiting owner approval | Owner reviews and approves the improvement-batch scope. Record the decision in DECISION_LOG when the batch is approved. | Cycle 1 review; D-129 |
 | C1-2 | I1 coveredBy checks. **Done 2026-11-17** (see § Closed). | — | — | — | Closed | — | Cycle 1 review; I1 |
 | C1-3 | Clusters A and E were untouched in Cycle 1; the plan requires every cluster within two cycles. | `docs/BALANCED_DEVELOPMENT_PLAN.md` § 2 | minor | No | **Closed 2026-11-19**: met by Cycle 3 (B5 = A, B8 = E) | — (Cycle 2 is the improvement phase; the first new-topic cycle after it is Cycle 3.) | Cycle 1 review; D-131 |

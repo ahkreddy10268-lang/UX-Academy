@@ -455,3 +455,15 @@ Root cause of the production discrepancy: Vercel production builds from `claude/
 | Keyboard | `tests/browser/keyboard.cjs` | PASS 45/45 | Run |
 | Status pages | Scratch Playwright check of `/topics/foundations`, `/coverage`, `/topics` at 390 and 1440 | PASS 6/6: exact Domain 1 counts and subcategory counts, no 'Not yet published' group on the domain page, no 'within in', axe 0, overflow 0; five 'explained in' links resolve (200) | Run |
 | Visual | Screenshots of the domain page header and a subcategory at 1280 | Inspected; existing style kept | Run |
+
+
+### Domain-by-domain programme record (2026-11-23; documentation-only)
+
+Changes: `docs/DOMAIN_COMPLETION_PLAN.md`, `docs/PROJECT_STATE.md`, `docs/PROGRESS.md`, `docs/DECISION_LOG.md`, `docs/OPEN_ISSUES.md`. No application, content-entry, source-registry, generated-index, test or build configuration files changed.
+
+| Check | Result | Run / inherited |
+|---|---|---|
+| Repository reconciliation | `main` = `9a51aa6`; PR #3 merged; Vercel status check success | Run (GitHub API, 2026-11-23) |
+| Domain 1 / 2 inventory | Domain 1 16 + 5 + 0 = 21; Domain 2 14 + 10 + 22 = 46 | Run (taxonomy, content directory and generated coverage cross-check, 2026-11-23) |
+| Application tests / build | Not run — documentation-only changes; no application or content changed | Not required by change-impact policy |
+| Live production runtime | Not verified — direct URL not retrievable in this session | Open: DEP-2 |

@@ -2,21 +2,29 @@
 
 The current state in one page. Read it first every session, then verify it against `git` (the repo wins; record any discrepancy here). Update it at the end of every meaningful task. History lives in `docs/PROGRESS.md`; decisions in `docs/DECISION_LOG.md`; open items in `docs/OPEN_ISSUES.md`; test results in `docs/QA_VERIFICATION_LEDGER.md`.
 
-Last updated: **2026-11-20** (deployment reconciliation: `6b030cf` pushed; Vercel production branch set to `main`; PR #3 awaiting merge).
+Last updated: **2026-11-23** (PR #3 merged; `main` verified at `9a51aa6`; owner-directed domain-by-domain completion recorded as D-133).
 
 ## Repository
 
 | Item | Value | Verified |
 |---|---|---|
-| Working branch | `claude/batch1-constraints` | 2026-11-19 |
-| Local HEAD | Same as remote, plus this records commit (local until approved) | 2026-11-20 |
-| Remote branch HEAD | `6b030cf` (status-display and generator fix), pushed 2026-11-20 on owner approval; all earlier commits, including `e44f8ce` (default-effect), are pushed | 2026-11-20 (`git ls-remote`) |
-| `origin/main` | `b788511`, unchanged | 2026-11-20 (`git ls-remote`) |
-| PR #3 | `claude/batch1-constraints` → `main`: open, not merged, mergeable (clean); head `6b030cf`, 56 commits | 2026-11-20 (GitHub API) |
-| PR #2 | open, not merged; head `a1f6373` unchanged | 2026-11-19 (`git ls-remote refs/pull/2/head`) |
-| Vercel preview | `6b030cf` → `dpl_5khooyWoQQZHJaHJYeePWMHRiY4Z`, READY; Domain 1 shows 16 published, 5 addressed within, 0 planned, 21 of 21 accounted for; five addressed-within links resolve | 2026-11-20 |
-| Vercel production branch | `main`, set by the owner in the dashboard and confirmed by screenshot (the connector cannot read this setting) | 2026-11-20 |
-| Vercel production | `dpl_7s6R4AxHziGx3GvQY2VyQhGzKPCv`, branch `claude/pensive-cannon-t1o6sy`, commit `a1f6373`; unchanged by the branch setting; updates when PR #3 is merged (DEP-1) | 2026-11-20 |
+| Default branch | `main` at `9a51aa6` (merge of PR #3) | 2026-11-23 (GitHub API) |
+| PR #3 | `claude/batch1-constraints` → `main`: merged 2026-11-20; merge commit `9a51aa6` | 2026-11-23 |
+| PR #2 | merged 2026-11-20 | 2026-11-23 |
+| Domain-completion work branch | `claude/domain-completion-20261123`, based on `main` at `9a51aa6` | 2026-11-23 |
+| Vercel production branch setting | `main` (owner reported setting this on 2026-11-20) | 2026-11-20 |
+| Vercel check on latest `main` commit | Success; check target `https://vercel.com/ambati-re-dd/ux-academy/77Bpw7KyrCPPEEeHf5mMLcVYLwT7` | 2026-11-23 |
+| Production runtime / deployed commit | Not independently confirmed from the supplied live URL in this session; do not treat the GitHub check alone as a live-page audit | 2026-11-23 |
+
+## Owner direction — domain-by-domain completion (D-133, 2026-11-23)
+
+The owner has directed completion of all 20 domains in the canonical taxonomy order, one domain at a time. This is a sequencing override to the portfolio order in D-129; D-129's quality, evidence, source verification, target, review and stop-rule requirements remain in force. Routine batches may be researched, implemented, QA-checked, documented and pushed to a development branch without a separate approval prompt. This does not authorize merges to `main` or production deployment.
+
+- Domain 1, UX & UI Fundamentals: complete — 16 published, 5 addressed within, 0 planned (21/21).
+- Domain 2, UX Laws & Cognitive Effects: next — 14 published, 10 addressed within, 22 planned (46 total), based on generated coverage dated 2026-11-20.
+- Active branch: `claude/domain-completion-20261123`, based on `main` at `9a51aa6`.
+- Current first batch: `loss-aversion` and `framing-effect`; source verification must precede drafting.
+- Domain inventory and priority order: `docs/DOMAIN_COMPLETION_PLAN.md`.
 
 ## Content strategy and cycle
 
@@ -51,7 +59,7 @@ Cycle 3 paused after B6 topic 1. Plan: 11 entries + 4 topics addressed within a 
 
 **Root cause:** Vercel production for project `ux-academy` is built from `claude/pensive-cannon-t1o6sy` (production deployment of `a1f6373`); nothing has ever been deployed from `main`, and `main` (`b788511`) lacks the 55 commits in PR #3. Production shows the pre-Domain-1 state. **Fixed on the branch:** status presentation (domain page, coverage bar, coverage table) and the taxonomy-doc generator (D1-3 closed). **Blocked on the owner (DEP-1):** set Vercel's production branch to `main`, then merge PR #3. Nothing pushed, merged or deployed in this task.
 
-**Update (2026-11-20):** `6b030cf` pushed on owner approval and its preview verified; the owner set the Vercel production branch to `main` (dashboard screenshot). Production is unchanged (`a1f6373`). **Next authorised action: none.** Remaining step, on owner approval only: merge PR #3, then verify that production is built from `main` and shows the corrected Domain 1 counts.
+**Update (2026-11-23):** PR #3 was merged into `main` on 2026-11-20 at `9a51aa6`. GitHub reports a successful Vercel check for that commit. The supplied deployment URL and the project dashboard could not be independently fetched in this session, so the live runtime, production alias and deployed commit remain unconfirmed. Verify `/topics/foundations`, `/coverage` and `/topics/laws-effects` on the actual production domain; expected Domain 1 status is 16 published + 5 addressed within + 0 planned (21/21). See DEP-2 in `docs/OPEN_ISSUES.md`.
 
 ## B5 topic 1 — `default-effect` (2026-11-20)
 
@@ -87,14 +95,13 @@ No content was written or researched beyond source existence checks. Candidate s
 
 **Error-fix pass** at the owner's request: Next.js security upgrade to 16.4.6 (`npm audit` 0), all clipped plate markers fixed at the source (site-wide 0 outside the viewBox), undersized and clipped plate text fixed, Level-2 text-version numbering fixed, stale e2e expectation updated. Commit `732077a` plus this records commit, pushed to `claude/batch1-constraints`; see PROGRESS session 59 and the QA ledger.
 
-## Current approved task
+## Current approved work (2026-11-23)
 
-None in progress. **Cycle 2 (improvement phase IB1–IB4) is complete and pushed**, accepted with documented limitations. Consolidated report: `docs/CYCLE_2_IMPROVEMENT_REPORT.md`; per-batch reviews `docs/CYCLE_2_IB2_REVIEW.md`, `…IB3_REVIEW.md`, `…IB4_REVIEW.md`. Coverage: visual target 102/102, Practice 102/102, evidence target 101/102, Editorial 101/102; published 102.
+**Domain 2 — UX Laws & Cognitive Effects.** Owner-approved sequence is domain-by-domain (D-133). Domain 1 is already complete and validated at 21/21 accounted for. Domain 2 baseline: 14 published, 10 addressed within, 22 planned. First batch: `loss-aversion` and `framing-effect`; sources must be verified before drafting. The exact inventory and candidate source set are in `docs/DOMAIN_COMPLETION_PLAN.md`.
 
-## Next authorised action
-
-**Wait for the owner's review of `information-foraging-theory`.** Next, only after approval: B6 topic 2, `information-scent`. The topic-1 commit is local until the owner approves a push.
+**Standing authorization:** routine implementation, QA, records and push of completed batches to a development branch are approved. Merge to `main` and production deployment are not included.
 
 ## Open follow-ups
 
-See `docs/OPEN_ISSUES.md` (notably IB1-2 `heart-framework` evidence gap, N-2 Ericsson–Simon citations, N-4 `brooke-1996`, `brooke-2013` awaiting verification).
+- **DEP-2:** verify that Vercel production is serving the merged `main` commit and the corrected Domain 1 coverage display.
+- Research limits and minor editorial follow-ups remain in `docs/OPEN_ISSUES.md`; keep documented limitations rather than reopening completed entries without new evidence.
