@@ -455,3 +455,22 @@ Root cause of the production discrepancy: Vercel production builds from `claude/
 | Keyboard | `tests/browser/keyboard.cjs` | PASS 45/45 | Run |
 | Status pages | Scratch Playwright check of `/topics/foundations`, `/coverage`, `/topics` at 390 and 1440 | PASS 6/6: exact Domain 1 counts and subcategory counts, no 'Not yet published' group on the domain page, no 'within in', axe 0, overflow 0; five 'explained in' links resolve (200) | Run |
 | Visual | Screenshots of the domain page header and a subcategory at 1280 | Inspected; existing style kept | Run |
+
+
+### Domain 1 educational quality audit (2026-11-23, branch `codex/domain-1-educational-quality`)
+
+Reviewed all 16 published UX & UI Fundamentals entries against the current renderer, the three visible learning levels, schema completeness requirements, D-129 type-adjusted visual/evidence targets, D-131 editorial and teaching standards, taxonomy coverage, practice content and source notes. Recorded the individual entry dispositions in `docs/DOMAIN_1_EDUCATIONAL_QUALITY_AUDIT.md`. No broad rewrite was justified by the observed content; 15 entries were preserved without content edits.
+
+One targeted correction: `human-computer-interaction` — replaced the outdated narrow context-of-use wording with the 2018 components and added the missing inline `iso-9241-11-2018` citation (commit `ff62feaf`). The source remains marked as paywalled; the full standard was not read. The official ISO catalogue and an official ISO 9241-115 cross-reference were consulted to verify terminology.
+
+| Check | Command / method | Result | Run / inherited |
+|---|---|---|---|
+| Repository baseline | GitHub API: `main` and entry files | Read `main` at `9a51aa6`; audited 16 Domain 1 entry files | Run |
+| Content review | Entry-by-entry manual structural and semantic review | 16/16 reviewed; all three levels present; no duplicate standalone entries created for the five covered-within topics | Run |
+| Coverage | `docs/CONTENT_COVERAGE.md` generated 2026-11-20 | Existing report shows 16/16 explanation, practice, editorial, D-129 visual and evidence targets met | Observed (prior generated report) |
+| HCI citation correction | Targeted content diff | Applied; D1-2 moved to Closed | Run |
+| `entry-integrity` / source verification | Local workflow scripts | Not run in this remote GitHub session | Not run |
+| `npm run check`, `npm run test:taxonomy`, `npm run docs:generate`, `npm run build` | Local workflow commands | Not run in this remote GitHub session | Not run |
+| Browser, responsive, accessibility and screen-reader review | Workflow review | Not run in this remote GitHub session; no visual/device QA is claimed | Not run |
+
+The GitHub repository was accessible for file reads and commits, but a local clone could not be obtained in this execution environment. Vercel team API access was denied (403), and no local test runner was available. This commit must not be treated as passing the local QA suite.
