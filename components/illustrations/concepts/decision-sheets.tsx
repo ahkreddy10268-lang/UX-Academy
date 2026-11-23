@@ -173,5 +173,46 @@ export const framingEffectPlate: IllustrationEntry = {
   ),
 };
 
-const plates: IllustrationEntry[] = [defaultEffectPlate, lossAversionPlate, framingEffectPlate];
+
+export const anchoringEffectPlate: IllustrationEntry = {
+  slug: "anchoring-effect",
+  title: "Anchoring effect plate",
+  canvas: "sheet",
+  description:
+    "Two groups receive different starting values before estimating the same quantity. Their group median estimates shift toward the low or high anchor; a lower strip separates three proposed mechanisms.",
+  key: [
+    { n: "1", label: "Low anchor", detail: "One group first considered the value 10. Its median estimate was 25 in the classic UN-country example." },
+    { n: "2", label: "High anchor", detail: "Another group first considered the value 65. Its median estimate was 45 in the same study." },
+    { n: "3", label: "Estimate", detail: "The medians moved in the anchor direction, but did not simply repeat the starting value. They are group medians, not individual changes." },
+    { n: "4", label: "Different mechanisms", detail: "Insufficient adjustment, selective accessibility and scale distortion are distinct accounts; the diagram does not claim they explain every case." }
+  ],
+  Art: ({ detail }) => (
+    <g>
+      <Card x={8} y={8} w={384} h={176} title="Same question · different starting values">
+        <UiText x={22} y={60} weight={700}>Low anchor</UiText>
+        <UiChip x={22} y={76} w={70} label="10" selected />
+        <line x1={102} y1={88} x2={206} y2={88} stroke={S.ink2} strokeWidth="1.2" {...hair} />
+        <path d="M200 83 L208 88 L200 93" fill="none" stroke={S.ink2} strokeWidth="1.2" {...hair} />
+        <UiChip x={218} y={76} w={80} label="Median 25" />
+        <UiText x={316} y={92} tone="ink2">group A</UiText>
+        <line x1={22} y1={105} x2={378} y2={105} stroke={S.rule} strokeWidth="0.9" {...hair} />
+        <UiText x={22} y={133} weight={700}>High anchor</UiText>
+        <UiChip x={22} y={145} w={70} label="65" selected />
+        <line x1={102} y1={157} x2={206} y2={157} stroke={S.ink2} strokeWidth="1.2" {...hair} />
+        <path d="M200 152 L208 157 L200 162" fill="none" stroke={S.ink2} strokeWidth="1.2" {...hair} />
+        <UiChip x={218} y={145} w={80} label="Median 45" />
+        <UiText x={316} y={161} tone="ink2">group B</UiText>
+      </Card>
+      <Card x={8} y={192} w={384} h={100} title="Three proposed explanations">
+        <UiChip x={18} y={222} w={112} label="Adjustment" />
+        <UiChip x={142} y={222} w={112} label="Accessibility" />
+        <UiChip x={266} y={222} w={112} label="Scale" />
+        <UiText x={18} y={268} tone="ink2">Different tasks may involve different processes.</UiText>
+      </Card>
+      {detail && <><Marker x={24} y={20} n={1} /><Marker x={372} y={20} n={2} /><Marker x={304} y={76} n={3} /><Marker x={372} y={204} n={4} /></>}
+    </g>
+  ),
+};
+
+const plates: IllustrationEntry[] = [defaultEffectPlate, lossAversionPlate, framingEffectPlate, anchoringEffectPlate];
 export default plates;
