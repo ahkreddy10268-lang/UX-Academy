@@ -584,4 +584,117 @@ export default defineSources([
     notes:
       "Published 5 April 2022; the Defaults section, the introduction and the consent-notice summaries read 2026-11-20. A regulator's review of research, not new research. Defaults are a predefined setting users are less likely to change; pre-ticked boxes were common in early online selling (travel and cancellation insurance); the Court of Justice of the EU ruled in 2019 (Planet49) that a pre-ticked box is not valid consent for cookies. Mechanisms: effort (physical and mental), implied endorsement, endowment and reference dependence. Harms: hidden defaults, browser defaults, automatic renewal, and defaults chosen even when people are told the default is random (Loewenstein et al., 2015, as reported). Defaults set at extreme values are kept less, and those who kept a 12% default in Beshears et al. (2010) were disproportionately low-income (as reported). Remedies: active choice and choice screens, with limits. Smith et al.'s benign, smart and adaptive defaults. Choice architecture is often not neutral and sits on a spectrum. Consent-notice studies (Utz et al.; Matte et al.) report pre-selected privacy-unfriendly options (as reported). Government evidence review, not primary evidence.",
   },
+
+  // ── Domain 2, Batch 1 (D-133): loss aversion and framing ────────────────
+  {
+    id: "kahneman-tversky-1979",
+    title: "Prospect Theory: An Analysis of Decision under Risk",
+    authors: ["Kahneman, D.", "Tversky, A."],
+    container: "Econometrica", year: 1979, volume: "47", issue: "2", pages: "263-292",
+    doi: "10.2307/1914185", type: "journal-article", tier: 1,
+    topics: ["prospect theory", "reference dependence", "loss aversion", "decision under risk"],
+    access: "open", verification: "doi-verified", lastVerifiedAt: "2026-11-23",
+    notes: "Full text reviewed from an openly hosted copy. Crossref record directly checked on 2026-11-23: exact title, year 1979 and container Econometrica matched (title similarity 1.00). Introduces the reference-dependent value function; not a universal personal loss-aversion ratio."
+  },
+  {
+    id: "tversky-kahneman-1991",
+    title: "Loss Aversion in Riskless Choice: A Reference-Dependent Model",
+    authors: ["Tversky, A.", "Kahneman, D."],
+    container: "The Quarterly Journal of Economics", year: 1991, volume: "106", issue: "4", pages: "1039-1061",
+    doi: "10.2307/2937956", type: "journal-article", tier: 1,
+    topics: ["loss aversion", "reference dependence", "endowment effect", "status quo bias"],
+    access: "partial", verification: "bibliographic", lastVerifiedAt: "2026-11-23",
+    notes: "Full text reviewed from an openly hosted scan; publisher metadata and abstract checked. Distinguishes reference dependence, loss aversion and diminishing sensitivity; discusses the endowment effect and status-quo bias. The authors note that thinking costs, transaction costs and psychological commitment can also produce status-quo patterns."
+  },
+  {
+    id: "tversky-kahneman-1992",
+    title: "Advances in Prospect Theory: Cumulative Representation of Uncertainty",
+    authors: ["Tversky, A.", "Kahneman, D."],
+    container: "Journal of Risk and Uncertainty", year: 1992, volume: "5", pages: "297-323",
+    doi: "10.1007/BF00122574", type: "journal-article", tier: 1,
+    topics: ["cumulative prospect theory", "loss aversion", "probability weighting", "diminishing sensitivity"],
+    access: "partial", verification: "bibliographic", lastVerifiedAt: "2026-11-23",
+    notes: "Publisher record and abstract reviewed. Formalises cumulative prospect theory for risky and uncertain prospects. Full article not reviewed in this session."
+  },
+  {
+    id: "brown-et-al-2024",
+    title: "Meta-analysis of Empirical Estimates of Loss Aversion",
+    authors: ["Brown, A. L.", "Imai, T.", "Vieider, F. M.", "Camerer, C. F."],
+    container: "Journal of Economic Literature", year: 2024, volume: "62", issue: "2", pages: "485-516",
+    doi: "10.1257/jel.20221698", type: "journal-article", tier: 1,
+    topics: ["loss aversion", "meta-analysis", "measurement", "heterogeneity"],
+    access: "partial", verification: "bibliographic", lastVerifiedAt: "2026-11-23",
+    notes: "AEA publisher page and abstract read. Reports 607 estimates from 150 articles and mean coefficient 1.955 (95% interval 1.820-2.102). Caltech repository lists an open full-text PDF but retrieval failed; full text not read. Use only abstract-level claims."
+  },
+  {
+    id: "walasek-mullett-stewart-2024",
+    title: "A meta-analysis of loss aversion in risky contexts",
+    authors: ["Walasek, L.", "Mullett, T. L.", "Stewart, N."],
+    container: "Journal of Economic Psychology", year: 2024, volume: "103", pages: "102740",
+    doi: "10.1016/j.joep.2024.102740", type: "journal-article", tier: 1,
+    topics: ["loss aversion", "risky choice", "meta-analysis", "measurement heterogeneity"],
+    access: "open", verification: "bibliographic", lastVerifiedAt: "2026-11-23",
+    notes: "Full open-access article reviewed from the University of Warwick repository. Random-effects analysis covers 19 datasets from 17 studies; pooled λ = 1.31 (95% CI 1.10-1.53), I² = 91.60%. CI includes neutrality in 12/19 datasets. Elicitation, incentives and model specifications vary."
+  },
+  {
+    id: "gal-rucker-2018",
+    title: "The Loss of Loss Aversion: Will It Loom Larger Than Its Gain?",
+    authors: ["Gal, D.", "Rucker, D. D."],
+    container: "Journal of Consumer Psychology", year: 2018, volume: "28", issue: "3", pages: "497-516",
+    doi: "10.1002/jcpy.1047", type: "journal-article", tier: 1,
+    topics: ["loss aversion", "theory critique", "measurement", "reference dependence"],
+    access: "partial", verification: "bibliographic", lastVerifiedAt: "2026-11-23",
+    notes: "Publisher record and abstract reviewed; author-hosted full-text copy located but not fully assessed line by line. Critical review challenges broad generalisations about loss aversion."
+  },
+  {
+    id: "tversky-kahneman-1981",
+    title: "The Framing of Decisions and the Psychology of Choice",
+    authors: ["Tversky, A.", "Kahneman, D."],
+    container: "Science", year: 1981, volume: "211", issue: "4481", pages: "453-458",
+    doi: "10.1126/science.7455683", type: "journal-article", tier: 1,
+    topics: ["framing effect", "decision frame", "risky-choice framing", "description invariance"],
+    access: "open", verification: "bibliographic", lastVerifiedAt: "2026-11-23",
+    notes: "Full text reviewed from Stanford-hosted PDF; PubMed and Science publisher metadata checked. Classic life-outcome problem used separate gain- and loss-framed groups; 72% and 78% are observed choice rates, not gamble probabilities."
+  },
+  {
+    id: "kuhberger-1998-framing",
+    title: "The Influence of Framing on Risky Decisions: A Meta-analysis",
+    authors: ["Kühberger, A."],
+    container: "Organizational Behavior and Human Decision Processes", year: 1998, volume: "75", issue: "1", pages: "23-55",
+    doi: "10.1006/obhd.1998.2781", type: "journal-article", tier: 1,
+    topics: ["risky-choice framing", "meta-analysis", "moderators", "decision research"],
+    access: "partial", verification: "bibliographic", lastVerifiedAt: "2026-11-23",
+    notes: "PubMed and publisher abstract reviewed. Pool: 136 papers, nearly 30,000 participants and 230 effect sizes. This is a risky-choice meta-analysis, not a universal framing estimate."
+  },
+  {
+    id: "levin-schneider-gaeth-1998",
+    title: "All Frames Are Not Created Equal: A Typology and Critical Analysis of Framing Effects",
+    authors: ["Levin, I. P.", "Schneider, S. L.", "Gaeth, G. J."],
+    container: "Organizational Behavior and Human Decision Processes", year: 1998, volume: "76", issue: "2", pages: "149-188",
+    doi: "10.1006/obhd.1998.2804", type: "journal-article", tier: 1,
+    topics: ["framing effect", "risky-choice framing", "attribute framing", "goal framing"],
+    access: "partial", verification: "bibliographic", lastVerifiedAt: "2026-11-23",
+    notes: "PubMed and publisher abstract reviewed. Distinguishes risky-choice, attribute and goal framing because different operational definitions can tap different processes."
+  },
+  {
+    id: "kuhberger-2023-framing-review",
+    title: "A systematic review of risky-choice framing effects",
+    authors: ["Kühberger, A."],
+    container: "EXCLI Journal", year: 2023, volume: "22", pages: "1012-1031",
+    doi: "10.17179/excli2023-6169", type: "journal-article", tier: 1,
+    topics: ["risky-choice framing", "systematic review", "theory", "methodology"],
+    access: "partial", verification: "bibliographic", lastVerifiedAt: "2026-11-23",
+    notes: "PubMed abstract and journal metadata reviewed; open-access article identified but not yet reviewed line by line. Use only claims supported by the abstract."
+  },
+  {
+    id: "composito-et-al-2025",
+    title: "A meta-analysis of query theory, a psychological process account of framing effects",
+    authors: ["Composto, J. W.", "Duncan, S. M.", "Johnson, E. J.", "Weber, E. U."],
+    container: "Journal of Risk and Uncertainty", year: 2025, volume: "71", pages: "53-71",
+    doi: "10.1007/s11166-025-09458-6", type: "journal-article", tier: 1,
+    topics: ["framing effect", "query theory", "preference construction", "meta-analysis"],
+    access: "open", verification: "bibliographic", lastVerifiedAt: "2026-11-23",
+    notes: "Open-access Springer publisher HTML and abstract reviewed. Published 26 June 2025. Review covers 27 papers; query-order meta-analysis uses 33 effect sizes from 29 studies and 25 papers (N=11,202), d=0.34, 95% CI [0.27, 0.41]."
+  },
+
 ]);
