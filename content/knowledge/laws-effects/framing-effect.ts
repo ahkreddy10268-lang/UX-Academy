@@ -169,6 +169,7 @@ export default defineEntry({
   ],
   relations: [
     { target: "loss-aversion", type: "related-to", note: "Prospect theory uses reference-dependent value and loss aversion to explain important risky-choice framing patterns, though framing has several other mechanisms." },
+    { target: "anchoring-effect", type: "related-to", note: "An initial numeric value can shape a judgment, while a frame changes how the same options or outcomes are represented; both make context relevant to decisions." },
     { target: "default-effect", type: "related-to", note: "A preselected option can establish a reference point and frame the decision, while the default effect also has effort and endorsement mechanisms." },
     { target: "choice-overload", type: "related-to", note: "Both affect choice architecture, but framing concerns representation while choice overload concerns the burden of a choice set." },
     { target: "ux-writing", type: "applied-in", note: "Interface wording can express gain, loss, attribute and goal frames; ethical UX writing must preserve material facts and user control." },
@@ -278,6 +279,7 @@ export default defineEntry({
     { source: "kuhberger-1998-framing", role: "primary", note: "Meta-analysis of risky-choice framing; abstract and bibliographic record reviewed." },
     { source: "kuhberger-2023-framing-review", role: "primary", note: "Systematic review of risky-choice framing effects; abstract and journal record reviewed." },
     { source: "kahneman-tversky-1979", role: "primary", note: "Prospect-theory foundation and reference-dependent value; full text reviewed; Crossref metadata matched." },
+    { source: "tversky-kahneman-1992", role: "primary", note: "Cumulative prospect theory and formal treatment of gains, losses and probability weighting; publisher record and abstract reviewed." },
     { source: "composito-et-al-2025", role: "primary", note: "Open-access query-theory meta-analysis; publisher HTML and reported results reviewed." }
   ],
   evidence: "peer-reviewed",
