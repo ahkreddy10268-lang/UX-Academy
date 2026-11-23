@@ -480,3 +480,16 @@ Files changed: `docs/DOMAIN_2_BATCH_1_RESEARCH.md`, `docs/DOMAIN_COMPLETION_PLAN
 | `npm run sources:verify -- <ids>` | NOT RUN — no connected local repository runner; no source records written | NOT RUN (execution blocker) |
 | `npm run check`, taxonomy, content integrity, build, browser suites | NOT RUN — documentation-only change; entry work has not started | Not required for these doc edits; required after content files change |
 | Production runtime | NOT verified; DEP-2 remains open | NOT RUN |
+
+
+### Domain 2 Batch 1 research deepening (2026-11-23; documentation-only)
+
+Files changed: `docs/DOMAIN_2_BATCH_1_RESEARCH.md`, `docs/DOMAIN_COMPLETION_PLAN.md`, `docs/PROJECT_STATE.md`, `docs/PROGRESS.md`.
+
+| Check | Result | Run / inherited |
+|---|---|---|
+| Full-text research | Tversky & Kahneman (1991) and Walasek et al. (2024) full text reviewed; PDF screenshots inspected. Tversky & Kahneman (1979) full text previously reviewed. | Run (web research, 2026-11-23) |
+| Abstract / metadata review | Brown et al. (2024), Composto et al. (2025), Kühberger (1998, 2023), Levin et al. (1998), Gal & Rucker (2018) | Run (web research, 2026-11-23); access level individually recorded |
+| Source verification script | NOT RUN — repository command runner unavailable | NOT RUN (execution blocker) |
+| Content entry tests / build / browser suites | NOT RUN — no content or app files changed | Not required for docs-only change; required after entry files are added |
+| Production runtime | NOT verified; DEP-2 remains open | NOT RUN |

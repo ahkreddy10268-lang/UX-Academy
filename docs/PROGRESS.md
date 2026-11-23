@@ -352,3 +352,12 @@ Owner: approve the push of the status fix, set Vercel's production branch to `ma
 - One DOI (`10.2307/1914185`) was checked directly against Crossref; exact title, year, container matched. Other candidate metadata came from publisher / PubMed / institutional records but remains pending the repository script.
 - **Gate not passed yet:** `npm run sources:verify -- <ids>` has not run, so no source records have been committed and no entries have been drafted. The current environment has GitHub file access but no usable local checkout/command runner; git clone failed because shell DNS could not resolve github.com. Do not mark source verification, check, build or browser suites PASS.
 - Docs-only research handoff pushed to `claude/domain-completion-20261123`. Application tests/build not required for this documentation-only change; recorded NOT RUN for content gate and production runtime remains DEP-2.
+
+
+## Session 68 — Domain 2 Batch 1 research deepening (2026-11-23)
+
+- Read the full Tversky & Kahneman (1991) reference-dependent model paper. It differentiates reference dependence, loss aversion and diminishing sensitivity; it also states status quo bias can arise from thinking cost, transaction cost and psychological commitment without loss aversion.
+- Read the full Walasek, Mullett & Stewart (2024) risky-context meta-analysis. It covers 17 published studies / 19 datasets; CI includes loss neutrality in 12/19 datasets; I² = 91.60%; pooled λ = 1.31 [1.10, 1.53]. Major caveats: limited available individual-level datasets, variation in incentive structures and elicitation, parameter/model specification dependencies.
+- Corrected the framing 2025 query-theory summary to distinguish the 27 papers reviewed from the 33 effect sizes / 29 studies / 25 papers in the query-order analysis. Added Kühberger 1998 moderator details from PubMed abstract.
+- Brown et al. 2024: AEA abstract/publisher record read; Caltech repository lists the full published PDF but PDF retrieval failed, so full text remains unread.
+- No source registry or knowledge-entry files changed: automated repository verification is still required before drafting. Work remains documentation-only.
