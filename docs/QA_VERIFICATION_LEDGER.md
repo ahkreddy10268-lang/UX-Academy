@@ -873,3 +873,22 @@ Owner instruction: merge everything not yet in `main`. Merged in order: `claude/
 | a11y, same routes | 0 violations | PASS |
 
 Not reviewed editorially in this session: the content of PRs #4 and #7 beyond automated gates (authored on other branches with their own QA records).
+
+### Merge of PR #7 remainder (2026-11-24, branch `claude/pr7-check`, base `main` `676a082`, PR #7 snapshot `bdb125c`)
+
+Owner instruction: merge. PR #7 gained 20 commits after the earlier merge (Spacing Scales and Typography Scales enrichment, including `25c2ecc`, which fixed the unterminated strings that had blocked `1c0a147`). Conflicts only in generated docs (`CONTENT_COVERAGE.md`, `RESEARCH_SOURCES.md`); regenerated.
+
+| Check | Result | Status |
+|---|---|---|
+| `npm run check` | 23 files, 641 tests | PASS |
+| `npm run test:taxonomy` | 1072 links; 121 published at three depths | PASS |
+| `npm run sources:verify` (10 new records) | 10/10 `url-reachable` | PASS |
+| `npm run build` | 1000/1000 | PASS |
+| Entry review (spacing-scales, typography-scales) | 16/16 | PASS |
+| e2e / atlas / keyboard / colour-studio / devices | 44/44, 36/36, 45/45, 46/46, 155/155 | PASS |
+| e2e-redesign | 65/66; remaining FAIL is LIB-1 (pre-existing) | FAIL (pre-existing) |
+| Crawl and a11y (8 routes incl. both changed entries) | 0 problems; 0 violations | PASS |
+
+**Re-run at snapshot `bdb125c`** (15 more commits arrived during testing: the Colour Systems upgrade). Conflicts in generated docs and `verification.json` regenerated or re-verified. Results: check 641 tests PASS; taxonomy PASS; 8 new sources 8/8 `url-reachable`; build 1000/1000; entry review (spacing-scales, typography-scales, colour-systems) 24/24; e2e 44/44; atlas 36/36; keyboard 45/45; colour-studio 46/46; devices 155/155; e2e-redesign 65/66 (LIB-1 only); crawl 0 problems and a11y 0 violations on 9 routes. Commits pushed to PR #7 after `bdb125c` are not included.
+
+Content of the three enriched entries was checked by automated gates only, not editorially reviewed in this session.

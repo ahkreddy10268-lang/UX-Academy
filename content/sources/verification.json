@@ -94,6 +94,16 @@
     "registeredContainer": "Psychological Review",
     "similarity": 1
   },
+  "android-font-scaling-200": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-24",
+    "httpStatus": 200
+  },
+  "android-grids-and-units": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-24",
+    "httpStatus": 200
+  },
   "apple-hig": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
@@ -106,12 +116,12 @@
   },
   "apple-hig-layout": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-11",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "apple-hig-typography": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-11",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "apple-sf-symbols": {
@@ -134,7 +144,7 @@
   },
   "atlassian-color": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-11",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "atlassian-design": {
@@ -144,12 +154,12 @@
   },
   "atlassian-spacing": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-11",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "atlassian-typography": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-11",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "aws-backoff-jitter": {
@@ -377,7 +387,12 @@
   },
   "carbon-2x-grid": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-11",
+    "checkedAt": "2026-11-24",
+    "httpStatus": 200
+  },
+  "carbon-data-viz-colors": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "carbon-design-system": {
@@ -402,12 +417,12 @@
   },
   "carbon-spacing": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-11",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "carbon-themes": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-11",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "card-english-burr-1978": {
@@ -738,7 +753,7 @@
   },
   "dtcg-color-2025": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-11",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "dtcg-format-2025": {
@@ -896,7 +911,7 @@
   },
   "fluent-2-typography": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-11",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "forlizzi-battarbee-2004": {
@@ -939,6 +954,11 @@
   "frost-2016": {
     "status": "url-reachable",
     "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "frost-themeable-ui-history": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "fu-pirolli-2007": {
@@ -1114,12 +1134,12 @@
   },
   "govuk-spacing": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-11",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "govuk-type-scale": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-11",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "govuk-understand-accessibility": {
@@ -1446,6 +1466,11 @@
   "ibm-design-language": {
     "status": "url-reachable",
     "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "ibm-design-program-history": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "ideo-design-kit": {
@@ -1819,7 +1844,7 @@
   },
   "m3-color-roles": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-11",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "m3-design-tokens": {
@@ -1829,7 +1854,7 @@
   },
   "m3-elevation": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-11",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "m3-states": {
@@ -1839,7 +1864,7 @@
   },
   "m3-type-scale": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-11",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "machado-oliveira-fernandes-2009": {
@@ -1952,7 +1977,12 @@
   },
   "mdn-clamp": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-11",
+    "checkedAt": "2026-11-24",
+    "httpStatus": 200
+  },
+  "mdn-color-mix": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "mdn-color-scheme": {
@@ -1962,7 +1992,12 @@
   },
   "mdn-container-queries": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-11",
+    "checkedAt": "2026-11-24",
+    "httpStatus": 200
+  },
+  "mdn-css-length-units": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "mdn-custom-properties": {
@@ -1977,12 +2012,22 @@
   },
   "mdn-prefers-color-scheme": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-11",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "mdn-prefers-reduced-motion": {
     "status": "url-reachable",
     "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "mdn-relative-colors": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-24",
+    "httpStatus": 200
+  },
+  "mdn-variable-fonts": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "microsoft-style-top-10": {
@@ -2111,6 +2156,11 @@
   "nasa-tlx-site": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "nei-color-vision-deficiency": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "newell-rosenbloom-1980": {
@@ -3155,12 +3205,12 @@
   },
   "uswds-color": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-11",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "uswds-spacing-units": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-11",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "uxcel": {
@@ -3261,6 +3311,21 @@
     "checkedAt": "2026-11-20",
     "httpStatus": 200
   },
+  "w3c-css-color-4": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-24",
+    "httpStatus": 200
+  },
+  "w3c-g111-color-pattern": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-24",
+    "httpStatus": 200
+  },
+  "w3c-international-specs": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-24",
+    "httpStatus": 200
+  },
   "w3c-resource-timing": {
     "status": "url-reachable",
     "checkedAt": "2026-11-11",
@@ -3298,7 +3363,7 @@
   },
   "w3c-understanding-non-text-contrast": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-16",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "w3c-understanding-pause-stop-hide": {
@@ -3314,6 +3379,11 @@
   "w3c-understanding-status-messages": {
     "status": "url-reachable",
     "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "w3c-understanding-use-of-color": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "w3c-understanding-wcag-22": {
@@ -3336,6 +3406,11 @@
     "checkedAt": "2026-11-11",
     "httpStatus": 200
   },
+  "w3c-wcag-148": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-24",
+    "httpStatus": 200
+  },
   "w3c-wcag-21": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
@@ -3343,7 +3418,7 @@
   },
   "w3c-wcag-22": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-17",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "w3c-wcag-3-wd": {
@@ -3354,6 +3429,11 @@
   "w3c-wcag-em-2": {
     "status": "url-reachable",
     "checkedAt": "2026-11-12",
+    "httpStatus": 200
+  },
+  "w3c-wcag-faq": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "w3c-wcag-overview": {
@@ -3521,15 +3601,5 @@
     "registeredYear": 1927,
     "registeredContainer": "Psychologische Forschung",
     "similarity": 1
-  },
-  "ibm-design-program-history": {
-    "status": "url-reachable",
-    "checkedAt": "2026-11-24",
-    "httpStatus": 200
-  },
-  "frost-themeable-ui-history": {
-    "status": "url-reachable",
-    "checkedAt": "2026-11-24",
-    "httpStatus": 200
   }
 }

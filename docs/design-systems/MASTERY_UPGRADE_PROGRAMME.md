@@ -180,8 +180,8 @@ No arbitrary word counts. More words are justified only when they add a new expl
 | Pilot 1: Design Tokens | Content, lab integration and page QA complete; accepted as the first format pilot |
 | Pilot 2: Component Architecture | Targeted enrichment complete; shared browser QA passed |
 | Pilot 3: Design Governance | Targeted enrichment complete; shared browser QA passed |
-| Remaining 20-topic rollout | Planned; 9 lessons have completed their depth-upgrade batches |
-| Final branch tests | Nine upgraded lessons: check, taxonomy, source verification, build and targeted browser review passed; full 29-topic rollout suite remains pending |
+| Remaining topic rollout | Twelve lessons accepted, including Spacing Scales, Typography Scales and Colour Systems; 17 other topics remain. |
+| Final branch tests | Twelve accepted lessons: `npm ci` pass; `npm run check` pass (23 test files / 626 tests, typecheck and lint); taxonomy pass (1,046 links; Design Systems 29/29); relevant source checks pass (Spacing 8/8, Typography 12/12, Colour 16/16); docs generation and build pass (998 pages); targeted browser review for Spacing, Typography and Colour passes 8/8 each across 1440/768/390 px in light/dark with axe 0, overflow 0, errors 0 and keyboard flashcards passing. The full site-wide change-impact suite remains pending. |
 
 ## Pilot 1 — current implementation record (2026-11-24)
 
@@ -270,3 +270,59 @@ This validates the three additional lessons only. The full 29-topic programme an
 - `entry-review.cjs design-language atomic-design multi-brand-systems`: PASS 24/24 across 1440/768/390 px in light/dark. Axe 0, overflow 0, page/console errors 0, figure text minimum 10.2 px, no clipped text or out-of-viewBox markers, internal links resolve and no raw citation/link markup; keyboard flashcards pass (4/4 per topic).
 
 Three batches now cover 9/29 lessons. The remaining 20 topics and full site-wide change-impact suite are still outstanding. No taxonomy/schema/progress model changes, merge or production deployment.
+
+## Scales & visual systems — Spacing Scales (2026-11-24)
+
+The existing lesson was selectively enriched in place; its slug, taxonomy, three learning levels, existing examples and exercises remain. The additions address the upgrade matrix without turning the spacing scale into a universal grid rule:
+
+- Clarifies that a spacing scale and a column/layout grid are related but distinct systems, using Carbon's documented 2x Grid and spacing tokens as the comparison.
+- Adds platform mapping: CSS px/rem on web, dp for Android layout and sp for Android text, and points in Apple HIG layout guidance. Android's 4/8 baseline-grid language is labelled as Android guidance, not a universal web requirement.
+- Adds density as semantic-role remapping, with accessibility floors preserved; distinguishes discrete breakpoint mapping from bounded fluid spacing (clamp()) and container-based adaptation.
+- Adds content-driven sizing and explicit exceptions for translated, long or user-adjusted content; explains when a small optical correction is justified and how to document it.
+- Adds a same-task poor/better responsive catalogue CSS comparison, an advanced responsive repair assignment and two flashcards.
+- Added the official Android grids-and-units source; refreshed the relevant Carbon, Atlassian, GOV.UK, Apple and MDN source checks. Current Atlassian scale ranges and Android unit/grid guidance were checked against their official pages.
+
+### Verification for the Spacing Scales content update
+
+- npm ci: PASS; audit reported 0 vulnerabilities.
+- npm run check: PASS — content index, typecheck, 23 test files / 626 tests and ESLint.
+- npm run test:taxonomy: PASS — 20 domains, 73 subcategories, 561 topics, 1,046 links; Design Systems remains 29/29 published.
+- npm run sources:verify for android-grids-and-units, carbon-spacing, carbon-2x-grid, atlassian-spacing, govuk-spacing, apple-hig-layout, mdn-clamp and mdn-container-queries: PASS — 8/8 URL-reachable.
+- npm run docs:generate: PASS — generated source registry now reports 598 sources (280 URL-reachable); Spacing Scales reference count increases from 6 to 11, exercise count from 362 to 363 and flashcards from 476 to 478.
+- npm run build: PASS — Next.js production build; all 998 static pages generated.
+- Vercel Preview /library/spacing-scales: HTTP 200. Server-rendered HTML includes the new comparison, assignment and cited material; no raw citation markup was found.
+- Not yet verified: the reusable six-context Playwright/axe/keyboard entry review. The QA sandbox checkout did not include Playwright or a browser binary, so do not record a visual/accessibility browser pass for this lesson yet.
+
+This is a content update on the existing draft PR branch, not a production release. The PR remains draft; do not merge until the remaining curriculum rollout, final branch integration and full impacted-browser review are complete.
+## Scales & visual systems — Spacing Scales and Typography Scales (2026-11-24)
+
+### Spacing Scales — accepted
+
+- Clarifies the distinction between a spacing scale and a layout/column grid, grounded in Carbon's 2x Grid and spacing tokens.
+- Adds web CSS px/rem, Android dp/sp and Apple point mappings; density as semantic-role remapping; discrete versus fluid spacing; container queries; content-driven sizing for translation and text enlargement; and governed optical exceptions.
+- Adds a same-task poor/better responsive catalogue CSS example, an advanced repair assignment and two flashcards. Adds the official Android grids-and-units source.
+- Verification: `npm ci`, `npm run check` (23 files / 626 tests), `npm run test:taxonomy` (1,046 links, Design Systems 29/29), eight source checks, `npm run docs:generate`, and `npm run build` (998 pages) pass. `entry-review.cjs spacing-scales` passes 8/8 at 1440/768/390 px in light/dark: axe 0, overflow 0, errors 0, clipped figure text 0, internal links 14/14, keyboard flashcards 6/6.
+
+### Typography Scales — accepted
+
+- Retains the existing semantic roles, modular-ratio examples, composite tokens, heading semantics, rem and basic Dynamic Type material.
+- Adds fixed/stepped, modular and fluid scale decision models; variable-font registered axes and preferred CSS properties; multilingual font coverage, shaping, direction and script-aware line breaking; and content expansion guidance. Distinguishes editorial reading measure from dashboard density and explains `ch`/`ic` as font-relative glyph advances, not character counts.
+- Adds a same-task editorial article / staff dashboard CSS comparison, script-specific fallback examples (Hindi, Telugu and Arabic), two professional exercises, two quiz items and three flashcards.
+- Accessibility distinguishes WCAG 2.2 SC 1.4.4 and 1.4.12 (AA) from SC 1.4.8 (AAA); the 2026 W3C Internationalization Group Note is explicitly labelled informative and non-normative.
+- Adds five source records: `mdn-variable-fonts`, `w3c-international-specs`, `android-font-scaling-200`, `mdn-css-length-units` and `w3c-wcag-148`; refreshes Apple HIG Typography and related current sources. All 12 relevant URLs pass source verification.
+- Verification: `npm ci` pass (0 vulnerabilities); `npm run check` pass (23 files / 626 tests, typecheck and lint); taxonomy pass (1,046 links; Design Systems 29/29); `sources:verify` 12/12; `docs:generate` pass; production build pass (998 static pages). `entry-review.cjs typography-scales` passes 8/8 at 1440/768/390 px in light/dark: axe 0, overflow 0, errors 0, clipped figure text 0, internal links 11/11, keyboard flashcards 7/7.
+
+Together with the previous nine accepted lessons, the two scales lessons bring the accepted total to 11/29. The remaining 18 topics and final site-wide change-impact suite remain outstanding. No taxonomy, schema, learner progress identity, production deployment or merge changes were made.
+## Colour Systems — accepted (2026-11-24)
+
+- Retains the existing four-layer model (tonal ramps, semantic roles, documented foreground/background pairs and complete theme remappings), the Material/Carbon/Atlassian/USWDS references and light/dark library examples.
+- Clarifies that USWDS 40/50/70 grade-gap shortcuts depend on USWDS's own bounded luminance grades and must not be transferred to arbitrary ramps.
+- Adds OKLCH palette tuning with caveats about perceptual uniformity, gamut clipping and contrast validation; workflow from seed → ramp → semantic mapping → theme-pair checks → grayscale and colour-vision review.
+- Adds categorical, sequential and diverging data palettes; redundant cues such as labels, markers and line patterns; separation of UI status colours from data-series palettes; and brand constraints that do not override semantic roles or contrast needs.
+- Adds progressive CSS examples: sRGB first, separate feature guards for OKLCH, relative-colour syntax and color-mix, P3 enhancement, and forced-colors handling.
+- Adds a same-task library status-board example, one redesign assignment, two quiz questions and three flashcards. The lesson has 16 references; generated coverage records five exercises.
+- Adds eight unique source records for CSS Color 4, MDN relative-colour syntax and color-mix, Carbon data-visualization palettes, WAI Use of Color and G111, NEI colour-vision deficiency guidance and the WAI WCAG FAQ. Reuses the existing WAI Non-text Contrast record. All 16 cited source URLs passed verification.
+- Verification: `npm ci` pass (0 vulnerabilities); `npm run check` pass (23 files / 626 tests, typecheck and lint); `npm run test:taxonomy` pass (1,046 links; Design Systems 29/29); `sources:verify` 16/16; `docs:generate` pass; `npm run build` pass (998 static pages).
+- Browser QA: `entry-review.cjs colour-systems` pass 8/8 at 1440/768/390 px in light/dark; axe 0, overflow 0, errors 0, clipped figure text 0, internal links 12/12 and keyboard flashcards 7/7.
+
+With Colour Systems accepted, the Design Systems mastery upgrade now has 12/29 lessons accepted; 17 topics and the final site-wide change-impact suite remain.
