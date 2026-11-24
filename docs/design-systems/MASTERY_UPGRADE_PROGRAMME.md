@@ -180,8 +180,8 @@ No arbitrary word counts. More words are justified only when they add a new expl
 | Pilot 1: Design Tokens | Content, lab integration and page QA complete; accepted as the first format pilot |
 | Pilot 2: Component Architecture | Targeted enrichment complete; shared browser QA passed |
 | Pilot 3: Design Governance | Targeted enrichment complete; shared browser QA passed |
-| 26-topic rollout | Planned |
-| Final branch tests | Three pilot lessons: check, taxonomy, source verification, build and browser review passed; full 29-topic rollout suite remains pending |
+| Remaining 23-topic rollout | Planned; first 6 lessons have completed their depth-upgrade batches |
+| Final branch tests | Six upgraded lessons: check, taxonomy, source verification, build and targeted browser review passed; full 29-topic rollout suite remains pending |
 
 ## Pilot 1 — current implementation record (2026-11-24)
 
@@ -224,3 +224,24 @@ Small shared presentation fixes were necessary: reference-list source locators n
 - `entry-review.cjs design-tokens component-architecture design-governance`: PASS 24/24. All three entries reviewed at 1440, 768 and 390 px in light/dark; axe 0, overflow 0, errors 0, plate text >=10.2 px at 390 px, no clipped text or out-of-viewBox markers; all internal links resolve with no raw citation/link markup; keyboard flashcards pass (7/7, 4/4 and the Governance count in the test output).
 
 The full 29-topic rollout and its full impacted-browser suite are not complete. This is a three-topic pilot acceptance, not a declaration that every Design Systems lesson has already met the upgraded dossier standard.
+
+## Token architecture batch — three connected lessons (2026-11-24)
+
+The next dependency group extends the Design Tokens pilot without repeating its core explanation:
+
+- **Primitive Tokens:** clarified Figma number variables versus DTCG dimension values/units; added a same-task CSS comparison of drifting spacing values versus a deliberate primitive scale. The comparison explicitly states that a 4 px base is not a universal rule and that optical exceptions can be justified.
+- **Semantic Tokens:** added Figma's DTCG mode-import constraints, including common-token and supported-type requirements; added a same-task error-message comparison showing raw colour duplicated across themes versus one semantic role remapped per theme.
+- **Theme Architecture:** explained Figma's explicit and Auto-inherited variable modes and its collection default, carefully distinguishing Figma inheritance from the DTCG Resolver's resolution-order document; added a same-task comparison of duplicated component theme patches versus shared semantic role mappings.
+
+Existing DTCG JSON samples, contrast calculations, alternatives, exercises and source analysis were preserved. Figma details are clearly marked as tool-specific, not universal design-system rules.
+
+### Token architecture batch verification
+
+- `npm run check`: PASS — 23 test files, 626 tests; content index, TypeScript and ESLint.
+- `npm run test:taxonomy`: PASS — 20 domains, 73 subcategories, 561 topics, 1,046 links checked, 119 published entries at three depths; Design Systems 29/29.
+- `npm run sources:verify -- style-dictionary-dtcg figma-learn`: PASS — both source roots URL-reachable.
+- `npm run docs:generate`: PASS — coverage and illustration documents regenerated and substantive differences reviewed.
+- `npm run build`: PASS — Next.js production build; all 998 static pages generated.
+- `entry-review.cjs primitive-tokens semantic-tokens theme-architecture`: PASS 24/24; 1440/768/390 px, light/dark, axe 0, overflow 0, console/page errors 0, figure text >=10.2 px at 390 px, no clipping/out-of-viewBox markers, internal links resolve and no raw markup, keyboard flashcards pass.
+
+This validates the three additional lessons only. The full 29-topic programme and full site-wide browser/change-impact suite are still outstanding.
