@@ -30,7 +30,7 @@ export default defineEntry({
       explanation: [
         "Imagine your brand blue is written as `#2F6FDE` in two hundred places across a website, an iPhone app and an Android app. One day the brand changes. Someone has to find and update every single copy — and they will miss some.",
         "A **design token** gives that decision a name, like `color-brand-primary`, and stores its value in one place. Every product uses the name instead of the raw value. Change the value once, and every platform updates.",
-        "Tokens can describe any repeatable design decision: colours, font sizes, spacing, corner radius, shadows, animation durations. They are the shared vocabulary between designers and developers.",
+        "Tokens can describe repeatable design decisions: colour, spacing, typography, shape, elevation and motion. They create a shared vocabulary, but a token is not simply the same thing as a variable in every tool. A token is the named design decision and its meaning; a variable is one way a particular tool or codebase stores and applies a value.",
       ],
       analogy:
         "Tokens are like the named swatches in a paint catalogue. A decorator orders 'Harbour Blue', not a chemical formula. If the manufacturer improves the formula, every order of 'Harbour Blue' gets the update.",
