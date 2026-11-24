@@ -503,7 +503,7 @@ Fields per record (see `lib/content/schema.ts`): id, title, authors, organisatio
 | `shopify-polaris` | Shopify. *Polaris references* | https://shopify.dev/docs/api/polaris | open | url-reachable (2026-11-11) |
 | `sigchi-about` | ACM SIGCHI. *About SIGCHI* | https://sigchi.org/about/ | open | url-reachable (2026-11-04) |
 | `storybook-interaction-tests` | Storybook. *Storybook: Interaction tests* | https://storybook.js.org/docs/writing-tests/interaction-testing | open | url-reachable (2026-11-12) |
-| `style-dictionary-dtcg` | Style Dictionary. *Style Dictionary: Design Tokens Community Group format* | https://styledictionary.com/info/dtcg/ | open | url-reachable (2026-11-11) |
+| `style-dictionary-dtcg` | Style Dictionary. *Style Dictionary: platform transforms for design tokens* | https://styledictionary.com/reference/hooks/transforms/ | open | url-reachable (2026-11-24) |
 | `stylelint-color-no-hex` | Stylelint. *Stylelint: color-no-hex* | https://stylelint.io/user-guide/rules/color-no-hex | open | url-reachable (2026-11-12) |
 | `stylelint-unit-disallowed-list` | Stylelint. *Stylelint: declaration-property-unit-disallowed-list* | https://stylelint.io/user-guide/rules/declaration-property-unit-disallowed-list | open | url-reachable (2026-11-12) |
 | `tailwind-theme` | Tailwind Labs. *Tailwind CSS: Theme variables* | https://tailwindcss.com/docs/theme | open | url-reachable (2026-11-11) |
@@ -546,7 +546,7 @@ Fields per record (see `lib/content/schema.ts`): id, title, authors, organisatio
 | `dtcg-2026-thank-you-jina` | Deloumeau-Prigent, K. (2026). *Thank you Jina and Val*. W3C Community Group blog | https://www.w3.org/community/design-tokens/2026/06/17/thank-you-jina-and-val/ | open | url-reachable (2026-11-03) |
 | `dubberly-how-do-you-design` | Dubberly, H.. *How do you design? A compendium of models*. Dubberly Design Office articles | https://www.dubberly.com/articles/how-do-you-design.html | open | url-reachable (2026-11-19) |
 | `engelbart-1968-demo-digest` | Doug Engelbart Institute. *The 1968 Demo: Interactive Video Digest* | https://www.dougengelbart.org/content/view/374/ | open | url-reachable (2026-11-20) |
-| `figma-learn` | Figma. *Figma Learn* | https://help.figma.com/ | open | url-reachable (2026-11-03) |
+| `figma-learn` | Figma. *Figma Learn* | https://help.figma.com/ | open | url-reachable (2026-11-24) |
 | `frost-2013` | Frost, B. (2013). *Atomic Design (blog post)*. bradfrost.com blog | https://bradfrost.com/blog/post/atomic-web-design/ | open | url-reachable (2026-11-11) |
 | `govuk-frontend-repo` | Government Digital Service (UK). *GOV.UK Frontend (source code repository)*. GitHub | https://github.com/alphagov/govuk-frontend | open | url-reachable (2026-11-20) |
 | `hcibib` | HCIBIB. *HCI Bibliography* | https://www.hcibib.org/ | open | url-reachable (2026-11-03) |
