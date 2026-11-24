@@ -69,7 +69,7 @@ export default defineEntry({
         "Document intent and usage for each semantic token; deprecate rather than delete.",
       ],
       scenarios: [
-        "Adding dark mode to a product whose components reference primitives directly — first migrate components to semantic tokens, then add a dark mapping.",
+        "Illustrative scenario: a booking service adds dark mode, but its button and form components use palette primitives directly. First introduce purpose-named semantic tokens and migrate the components; then map those same semantic roles for the dark context and test every foreground/background pairing.",
         "A company with three brands sharing one component library — share semantic and component tokens, swap primitive mappings per brand.",
         "Designers and developers disagree on spacing — publish one spacing scale as tokens consumed by both Figma variables and CSS.",
       ],
