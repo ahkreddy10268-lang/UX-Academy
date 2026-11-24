@@ -56,10 +56,8 @@ export default defineEntry({
         "A style is more than a size. **Line height** must be set with it: GOV.UK keeps line heights in multiples of 5 px so text lines up with its spacing {{src:govuk-type-scale}}. Large display sizes need relatively tighter line height and often slightly negative letter spacing; small labels need looser spacing to stay legible.",
         "Scales also **adapt**. GOV.UK changes selected type sizes at small breakpoints {{src:govuk-type-scale}}; Fluent 2 documents separate ramps for web, Windows, macOS, iOS and Android {{src:fluent-2-typography}}. Apple publishes platform-specific default and minimum sizes rather than one cross-platform value. Dynamic Type is available on iOS, iPadOS, tvOS, visionOS and watchOS, but not macOS; custom fonts need equivalent scaling behaviour {{src:apple-hig-typography}}. Keep semantic roles stable where useful, but allow values, font families and line metrics to follow the platform.",
         "Ratio matters less than it appears. At a 16 px base, a 1.2 ratio gives 19.2, 23.04 and 27.65 px for the next steps; a 1.333 ratio gives 21.33, 28.43 and 37.9 px. A wide ratio produces dramatic headings but leaves few usable sizes for dense interfaces, which is why product systems often hand-tune their steps.",
-        "**Variable fonts** can hold multiple design variations in one font file. Common registered axes include weight (wght), width (wdth), slant (slnt), italic (ital) and optical size (opsz), but a particular font may expose only some of them. Prefer the corresponding CSS properties — font-weight, font-stretch, font-style and font-optical-sizing — for registered axes; reserve the lower-level font-variation-settings property for custom axes or cases those properties cannot express {{src:mdn-variable-fonts}}. Optical sizing can adjust details for small text versus display text when the font includes an opsz axis {{src:mdn-variable-fonts}}.
-
-        "**One script is not every script.** A family that covers Latin may not contain the glyphs or shaping behaviour needed for Devanagari, Telugu, Arabic, Thai or CJK text. Audit glyph coverage and shaping, provide suitable licensed fallback families, and mark the language and direction of each text run. Allow line boxes and components to grow for taller marks and translated strings; do not apply Latin tracking or fixed line breaks blindly. W3C's 2026 Internationalization Group Note describes script-specific line breaking (including CJK, Thai, Tibetan and Indic examples) and warns that text boxes and line heights must accommodate translation and taller characters. It is informative guidance, not a normative typography standard {{src:w3c-international-specs}}.
-
+        "**Variable fonts** can hold multiple design variations in one font file. Common registered axes include weight (wght), width (wdth), slant (slnt), italic (ital) and optical size (opsz), but a particular font may expose only some of them. Prefer the corresponding CSS properties — font-weight, font-stretch, font-style and font-optical-sizing — for registered axes; reserve the lower-level font-variation-settings property for custom axes or cases those properties cannot express {{src:mdn-variable-fonts}}. Optical sizing can adjust details for small text versus display text when the font includes an opsz axis {{src:mdn-variable-fonts}}.",
+        "**One script is not every script.** A family that covers Latin may not contain the glyphs or shaping behaviour needed for Devanagari, Telugu, Arabic, Thai or CJK text. Audit glyph coverage and shaping, provide suitable licensed fallback families, and mark the language and direction of each text run. Allow line boxes and components to grow for taller marks and translated strings; do not apply Latin tracking or fixed line breaks blindly. W3C's 2026 Internationalization Group Note describes script-specific line breaking (including CJK, Thai, Tibetan and Indic examples) and warns that text boxes and line heights must accommodate translation and taller characters. It is informative guidance, not a normative typography standard {{src:w3c-international-specs}}.",
         "**Reading measure is a separate decision from font size.** Editorial pages need a deliberate line length for sustained reading; a relative width such as ch can be a useful starting point, but it measures the width of the current font's zero glyph, not a guaranteed count of average characters. The ic unit measures an ideographic glyph and can be more useful as a starting point for CJK text. Inspect real copy in each script and font {{src:mdn-css-length-units}}. A dashboard has different needs: compact labels and numeric columns may be appropriate, but data labels must remain legible and must not be mistaken for body text. WCAG 2.2 SC 1.4.8 (AAA) describes a user-adjustable presentation that includes a maximum of 80 characters or glyphs per line (40 for CJK); it requires a mechanism for users to reach those presentation settings, not that every page hard-code one universal line length {{src:w3c-wcag-148}}.",
       ],
       howItWorks: [
@@ -82,7 +80,6 @@ export default defineEntry({
       scenarios: [
         "**Illustrative.** A library app has 14 font sizes in use. Mapping them to nine roles shows that three 'sizes' were the same role with different line heights; the fix is one style with one line height.",
         "**Illustrative.** A designer styles a sidebar heading with the `headline-large` style and marks it up as `h1`, giving the page two h1 elements. The team separates the visual style from the heading level.",
-        "**Critique protocol.** For each piece of text: which role is it? Is it on the scale? Is the line height from the style? Does it survive 200% zoom and text-spacing overrides? Is the heading level semantic, not visual?",
         "**Critique protocol.** For each piece of text: which role is it? Is it on the scale? Is the line height from the style? Does the line measure fit the reading context? Does the actual locale copy wrap without clipped marks or forced breaks? Does it survive 200% zoom and text-spacing overrides? Is the heading level semantic, not visual?",
       ],
     },
@@ -92,12 +89,9 @@ export default defineEntry({
         "**Fluid type.** `clamp(min, preferred, max)` lets a heading grow with the viewport between bounds. The risk is zoom: viewport units do not grow when users zoom text, so MDN advises keeping the maximum a relative unit at least twice the minimum so text can still reach 200% {{src:mdn-clamp}}. Body text is usually kept fixed in rem; fluid sizes suit display and headline roles.",
         "**Platform scaling.** On iOS, Dynamic Type scales text styles by user preference {{src:apple-hig-typography}}; a web scale in rem does the same with the browser's default size. Layouts must grow with text: fixed heights and truncation are the usual failures.",
         "**Measuring the scale.** Useful checks: the number of raw font sizes in code that bypass tokens, line-length (characters per line) at each breakpoint, and visual regression at 200% zoom. Type scales are also a performance decision: each weight of a web font is a download.",
-        "**Variable-font strategy.** Define the supported axis range in the font-face declaration, then expose only the roles the product needs. A weight axis can replace several static weights, while optical sizing can improve small text when the font supports it. Do not assume one variable file is a complete multilingual font; test script coverage, fallback metrics and loading cost {{src:mdn-variable-fonts}}.
-
-        "**Locale-aware typography.** A font fallback chain is part of the type system, not an afterthought. For every supported locale, check glyph coverage, combining marks, diacritics, shaping, punctuation, direction, line-breaking and text expansion. Use language and direction metadata on the content. Avoid fixed line-height and height constraints that clip marks or translated phrases {{src:w3c-international-specs}}.
-
-        "**Editorial versus dashboard.** A publication or book-detail page should optimise for continuous reading: a stable body role, generous unitless leading and a line measure tested with real paragraphs. A data dashboard should distinguish hierarchy from density: headings, table body, labels and numeric values get explicit roles; tabular figures can align columns, but compact presentation must not make information unreadable. Use the same role contract with context-specific mappings rather than inventing unrelated sizes for every screen.
-
+        "**Variable-font strategy.** Define the supported axis range in the font-face declaration, then expose only the roles the product needs. A weight axis can replace several static weights, while optical sizing can improve small text when the font supports it. Do not assume one variable file is a complete multilingual font; test script coverage, fallback metrics and loading cost {{src:mdn-variable-fonts}}.",
+        "**Locale-aware typography.** A font fallback chain is part of the type system, not an afterthought. For every supported locale, check glyph coverage, combining marks, diacritics, shaping, punctuation, direction, line-breaking and text expansion. Use language and direction metadata on the content. Avoid fixed line-height and height constraints that clip marks or translated phrases {{src:w3c-international-specs}}.",
+        "**Editorial versus dashboard.** A publication or book-detail page should optimise for continuous reading: a stable body role, generous unitless leading and a line measure tested with real paragraphs. A data dashboard should distinguish hierarchy from density: headings, table body, labels and numeric values get explicit roles; tabular figures can align columns, but compact presentation must not make information unreadable. Use the same role contract with context-specific mappings rather than inventing unrelated sizes for every screen.",
         "**Accessibility is a layout test.** WCAG 2.2 SC 1.4.4 (AA) requires text resize to 200% without loss of content or function; SC 1.4.12 (AA) tests increased line, paragraph, letter and word spacing. SC 1.4.8 (AAA) is a separate user-adjustable visual-presentation criterion and includes line-width guidance of 80 characters or glyphs (40 CJK). Do not misstate the AAA line-width guidance as an AA requirement or a mandatory default for every language {{src:w3c-wcag-22}} {{src:w3c-wcag-148}}.",
       ],
       evidence: [
@@ -229,8 +223,6 @@ h1.page   { font: var(--text-headline); }   /* level from structure, style from 
   --text-title--font-weight: 600;
 }
 /* <h2 class="text-title"> sets size, line height and weight together */`,
-        caption: "Illustrative. Tailwind v4 lets a text size carry its own line height and weight, matching a composite style.",
-      },
         caption: "Illustrative. Tailwind v4 lets a text size carry its own line height and weight, matching a composite style.",
       },
       {
@@ -413,6 +405,17 @@ h1.page   { font: var(--text-headline); }   /* level from structure, style from 
     },
     {
       id: "typography-scales-q-ratio",
+      kind: "formula",
+      level: "advanced",
+      prompt: "At a 16 px base, which ratio leaves more usable steps between 16 px and 32 px for a dense interface: 1.2 or 1.333?",
+      options: [
+        { text: "1.2 (19.2, 23.04, 27.65 px) — three steps before 32 px", correct: true, explanation: "1.333 gives only 21.33 and 28.43 px." },
+        { text: "1.333 — larger ratios give more steps", correct: false, explanation: "Larger ratios give fewer steps in a range." },
+        { text: "They give the same number", correct: false, explanation: "They do not." },
+        { text: "Ratios do not affect the number of steps", correct: false, explanation: "The ratio sets the spacing between steps." },
+      ],
+      explanation: "Smaller ratios suit dense product interfaces.",
+    },
     {
       id: "typography-scales-q-variable",
       kind: "multiple-choice",
@@ -438,17 +441,6 @@ h1.page   { font: var(--text-headline); }   /* level from structure, style from 
         { text: "Increase letter spacing for every script", correct: false, explanation: "A global Latin tracking rule can harm other scripts." },
       ],
       explanation: "The correct font, shaping, direction and line-breaking behaviour must be tested with real localized text.",
-    },
-      kind: "formula",
-      level: "advanced",
-      prompt: "At a 16 px base, which ratio leaves more usable steps between 16 px and 32 px for a dense interface: 1.2 or 1.333?",
-      options: [
-        { text: "1.2 (19.2, 23.04, 27.65 px) — three steps before 32 px", correct: true, explanation: "1.333 gives only 21.33 and 28.43 px." },
-        { text: "1.333 — larger ratios give more steps", correct: false, explanation: "Larger ratios give fewer steps in a range." },
-        { text: "They give the same number", correct: false, explanation: "They do not." },
-        { text: "Ratios do not affect the number of steps", correct: false, explanation: "The ratio sets the spacing between steps." },
-      ],
-      explanation: "Smaller ratios suit dense product interfaces.",
     },
   ],
 
