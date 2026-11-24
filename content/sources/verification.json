@@ -100,7 +100,7 @@
   },
   "apple-hig-typography": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-11",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "apple-sf-symbols": {
@@ -3454,5 +3454,30 @@
     "registeredYear": 1927,
     "registeredContainer": "Psychologische Forschung",
     "similarity": 1
+  },
+  "mdn-variable-fonts": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-24",
+    "httpStatus": 200
+  },
+  "w3c-international-specs": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-24",
+    "httpStatus": 200
+  },
+  "android-font-scaling-200": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-24",
+    "httpStatus": 200
+  },
+  "mdn-css-length-units": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-24",
+    "httpStatus": 200
+  },
+  "w3c-wcag-148": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-24",
+    "httpStatus": 200
   }
 }
