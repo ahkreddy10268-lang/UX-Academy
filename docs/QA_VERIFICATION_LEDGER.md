@@ -716,3 +716,36 @@ Review (one targeted pass against the sources) found 0 critical and 0 major issu
 Minor: WL-1. Pre-existing: LIB-1.
 
 Limitations: no screen-reader, physical-device or independent expert review; Weber (1834) not read and Algom (2021) abstract only; Vercel preview not checked.
+### Domain 1 audit and targeted improvements (2026-11-20, parent `a2e790a`)
+
+Scope: the 16 Domain 1 entries, the five addressed-within concepts, the glossary and three learning paths (read only). Changes: D1-2 fixed (HCI cites ISO 9241-11); eight unlabelled scenarios in four pre-D-131 entries labelled 'Illustrative scenario'; human-centred design taught explicitly in `user-centred-design` (intermediate paragraph, objective, new intermediate quiz question, flashcard reworded; an unverified claim about ISO's reason for the term restated as the usual explanation; IDEO source added as explanatory); seven relations added to close navigation gaps; glossary: 13 domain terms added, UX and human-centred design definitions aligned with their entries.
+
+| Check | Command | Result | Run / inherited |
+|---|---|---|---|
+| Check | `npm run check` | PASS — 612 tests | Run |
+| Taxonomy | `npm run test:taxonomy` | PASS — Domain 1: 21 topics, 16 published, 5 addressed within | Run |
+| Integrity | `entry-integrity.ts` for all 16 Domain 1 entries | Only uncited further-reading references (10, accepted precedent); D1-2 gone; no citation, relation or quiz problems | Run |
+| Glossary | `tests/content.test.ts` (unique slugs, known see-also slugs) | PASS | Run (part of check) |
+| Docs | `npm run docs:generate` | CONTENT_COVERAGE reference counts updated; Domain 1 coverage unchanged | Run |
+| Build | `npm run build` | PASS | Run |
+| Entry review | `entry-review.cjs user-centred-design human-computer-interaction usability user-experience design-thinking` | PASS 40/40 | Run |
+| Glossary page | `curl /glossary` on a local production build | All 13 new terms render | Run |
+| Live paths | Production `/learn/hci-fundamentals` | Shows 'History of HCI' and 'Human-Centred Design' as 'in development' (D1-7) | Run |
+| Sources | One fresh attempt each: NN/g maturity quiz; OpenAlex abstract for Chapman & Plewes | Quiz host still fails (000); no abstract | Run |
+| Not run | Plate renders, devices, keyboard, atlas | No plate, component or route changed | Not run |
+
+### D1-7 — learning-path display of addressed-within concepts (2026-11-20, parent `58de5b5`)
+
+Display-only change: `lib/content/learning.ts` (`stepStatus` from taxonomy `coveredBy`; `addressed` counts in `pathStats`/`stageStats`, excluded from `planned`), `app/learn/[id]/page.tsx` (addressed rows 'Explained within {host} →', summary 'concepts explained within other lessons', curriculum-map counts), `components/learn/curriculum-map.tsx`, `components/learn/path-card.tsx`, `components/learn/path-explorer.tsx`. No path data, numbering, progress or completion change. `tests/browser/e2e-redesign.cjs`: glossary total updated 114 → 127 (the 13 terms added in `58de5b5`; that commit had not run this suite).
+
+| Check | Command | Result | Run / inherited |
+|---|---|---|---|
+| Check | `npm run check` | PASS — 612 tests, typecheck, lint | Run |
+| Step classification | scratch script over all 16 paths | lessons + addressed + planned = steps for every path; addressed: HCI 2, Accessibility 1; lesson counts unchanged (HCI 16, Accessibility 3) | Run |
+| Build | `npm run build` | PASS (final) | Run |
+| e2e | `tests/browser/e2e.cjs` | PASS 44/44 (final build) | Run |
+| e2e-redesign | `tests/browser/e2e-redesign.cjs` | First run aborted at the glossary count (114 hard-coded; 127 after `58de5b5`); count updated; PASS 66/66 (final build) | Run |
+| Keyboard | `tests/browser/keyboard.cjs` | PASS 45/45 (final build) | Run |
+| Devices | `tests/browser/devices.cjs` | PASS 155/155 (final build) | Run |
+| Direct | Playwright: `/learn`, `/learn/hci-fundamentals`, `/learn/accessibility` at 390 and 1440 | 22/24: summaries, 'Explained within' rows, in-path lesson links, curriculum-map and card counts, HTTP 200, no overflow, no page errors. The 2 failures are axe `landmark-unique` on `.app-sidebar` at 1440, identical on production `9a51aa6` (pre-existing; A11Y-1) | Run |
+| Visual | Screenshot of the HCI path row at 1440 | Title above 'Explained within…', aligned with lesson text; two layout corrections made during QA (row run-on, then centring from the unlayered `.tap` rule) | Run |

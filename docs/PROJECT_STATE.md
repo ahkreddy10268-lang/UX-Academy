@@ -3,6 +3,7 @@
 The current state in one page. Read it first every session, then verify it against `git` (the repo wins; record any discrepancy here). Update it at the end of every meaningful task. History lives in `docs/PROGRESS.md`; decisions in `docs/DECISION_LOG.md`; open items in `docs/OPEN_ISSUES.md`; test results in `docs/QA_VERIFICATION_LEDGER.md`.
 
 Last updated: **2026-11-24** (Domain 2 Batch 8 `webers-law` published on the branch; Batch 7 `power-law-of-practice` at `9d39a9f`; `main` unchanged at `777640d`; D-133 domain-by-domain completion).
+Last updated: **2026-11-20** (D1-7 learning-path display fix; local, not pushed).
 
 ## Repository
 
@@ -33,6 +34,15 @@ The owner has directed completion of all 20 domains in the canonical taxonomy or
 - Batch 8: **webers-law published** — `law` in `performance-laws`, evidence `original-empirical`, 4 new sources (Weber 1834 located but not read; Algom 2021 abstract only), formula functions in `lib/formulas/psychophysics.ts`, Level-1 plate and Level-2 measurement figure; `modular-type-scale` misnomer corrected; all gates and site-wide suites run (QA ledger).
 - **Next authorised action (D-133):** `cognitive-ease` (taxonomy: `concept`, `memory-attention-effects`). Separately outstanding: verification and QA of the three drafts (D2-B1-1, D2-B2-1) and LIB-1.
 - Domain inventory and priority order: `docs/DOMAIN_COMPLETION_PLAN.md`.
+| Working branch | `claude/batch1-constraints` | 2026-11-19 |
+| Local HEAD | `bdfa5ee` plus this records commit (local until approved) | 2026-11-20 |
+| Remote branch HEAD | `bdfa5ee` (records), merged into `main` by PR #3 | 2026-11-20 (`git ls-remote`) |
+| `origin/main` | `9a51aa6e3ba2520ffc0f3e73f2e84479dbc5f38e` — merge of PR #3 | 2026-11-20 (`git ls-remote`) |
+| PR #3 | `claude/batch1-constraints` → `main`: **merged** as `9a51aa6` (branch head at merge `bdfa5ee`) | 2026-11-20 |
+| PR #2 | open, not merged; head `a1f6373` unchanged | 2026-11-19 (`git ls-remote refs/pull/2/head`) |
+| Vercel preview | `6b030cf` → `dpl_5khooyWoQQZHJaHJYeePWMHRiY4Z`, READY; Domain 1 shows 16 published, 5 addressed within, 0 planned, 21 of 21 accounted for; five addressed-within links resolve | 2026-11-20 |
+| Vercel production branch | `main` (set by the owner in the dashboard, confirmed by screenshot; borne out by the production build from `main`) | 2026-11-20 |
+| Vercel production | `dpl_77Bpw7KyrCPPEEeHf5mMLcVYLwT7`, branch `main`, commit `9a51aa6e3ba2520ffc0f3e73f2e84479dbc5f38e`, READY, assigned to `ux-academy-eight.vercel.app`; live site verified. Previous production `dpl_7s6R4…` (`a1f6373`) remains a rollback candidate | 2026-11-20 |
 
 ## Content strategy and cycle
 
@@ -62,6 +72,18 @@ Cycle 3 paused after B6 topic 1. Plan: 11 entries + 4 topics addressed within a 
 | 5 | `history-of-interface-design`, `evolution-of-digital-experiences` (published); `history-of-hci` (addressed within `human-computer-interaction`) | Done — `55dc927` |
 
 **Result: Domain 1 complete and validated.** 21/21 topics accounted for: 16 published (6 before + 10 new), 5 addressed within a host (utility, feasibility, viability, human-centred design, history of HCI), 0 planned. Published 103 → 113, addressed within 18 → 23. Open minors: D1-2 to D1-5 in OPEN_ISSUES. **Design skills installed (2026-11-20):** eight third-party Claude Code skills in `.claude/skills/` (see `docs/DESIGN_SKILLS_WORKFLOW.md`); not yet applied to the interface. **Resource enrichment (2026-11-20):** further reading added to 6 entries (QA ledger). Domain 2 not started.
+
+## D1-7 learning-path display fix (2026-11-20)
+
+Learning paths now show concepts addressed within another entry as 'Explained within {host}', separate from lessons and planned steps, using the taxonomy's `coveredBy`; numbering, progress, completion and path data unchanged. D1-7 closed. Pre-existing axe `landmark-unique` on the desktop sidebar logged as A11Y-1. D1-8 (path recommendations) still awaits the owner. Commit local, not pushed.
+
+## Domain 1 audit (2026-11-20)
+
+Pushed `58de5b5` on owner approval; preview verified. All 16 entries and five addressed-within concepts inspected against the gates, D-129 targets and the D-131 checklist; all gates and targets were already met. Targeted fixes: D1-2 closed; illustrative scenarios labelled in four older entries; human-centred design taught and assessed in `user-centred-design`; seven navigation relations; 13 glossary terms. Coverage unchanged: 16 published, 5 addressed within, 0 planned. Learning paths not changed: D1-7 (addressed-within steps shown as 'in development') and D1-8 (path recommendations) await the owner. Commit local, not pushed.
+
+## Production release verified (2026-11-20)
+
+**PR #3 merged** into `main` as `9a51aa6e3ba2520ffc0f3e73f2e84479dbc5f38e`. **Production branch: `main`.** Vercel production deployment `dpl_77Bpw7KyrCPPEEeHf5mMLcVYLwT7` was built from `main` at that commit, reached READY and is assigned to https://ux-academy-eight.vercel.app. **Production verified live:** `/`, `/topics`, `/topics/foundations` and `/coverage` return 200 at 390 and 1440 px with no overflow, no axe violations and no page errors. **Domain 1 on production: 16 published, 5 addressed within, 0 planned, 21/21 accounted for** (76 % with their own entry); subcategories 10/3/0, 4/1/0, 2/1/0; the five addressed-within topics link to Usefulness, Design Thinking (×2), User-Centred Design and Human-Computer Interaction (HCI), all 200. DEP-1 closed. **Next authorised action: none.** Content (`loss-aversion`, `findability`) awaits owner approval.
 
 ## Deployment and status reconciliation (2026-11-20)
 

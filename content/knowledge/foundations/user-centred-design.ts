@@ -17,7 +17,7 @@ export default defineEntry({
   difficulty: "beginner",
   disciplines: ["Human-computer interaction", "Product design", "UX research", "Service design", "Human factors"],
   learningObjectives: [
-    "Explain the core idea of UCD and why it replaced designing from assumptions.",
+    "Explain the core idea of UCD, why it replaced designing from assumptions, and how it relates to human-centred design.",
     "Describe Gould and Lewis's three principles and the four ISO 9241-210 activities.",
     "Plan a UCD cycle for a real project, choosing methods for each activity.",
     "Critically evaluate UCD's limits — from user involvement theatre to its blind spots for non-users and society.",
@@ -49,6 +49,7 @@ export default defineEntry({
       explanation: [
         "Gould and Lewis (1985) distilled UCD into three principles: **early focus on users and tasks** (study who will use the system and what they do, directly), **empirical measurement** (observe and measure real people using simulations and prototypes early on), and **iterative design** (fix problems found in testing, then test again) {{src:gould-lewis-1985}}. Their survey of designers found that these seemingly obvious principles were rarely named or followed — which is still a useful warning.",
         "ISO 9241-210 turns the idea into a process with four linked activities, preceded by planning: **understand and specify the context of use**; **specify the user requirements**; **produce design solutions**; and **evaluate the designs against requirements**. If evaluation shows requirements are not met, the team iterates back to whichever activity needs revisiting {{src:iso-9241-210-2019}}.",
+        "**User-centred or human-centred?** The two names usually describe the same approach. ISO 9241-210 calls the process *human-centred design* {{src:iso-9241-210-2019}}; this entry uses *user-centred design*, the older name, popularised by Norman and Draper's 1986 book on user centered system design {{src:norman-draper-1986}}. A second meaning is common in practice: IDEO uses human-centred design for a value orientation, that design should start with people, and treats [[design-thinking|design thinking]] as a set of methods for acting on it {{src:ideo-design-thinking-intro}}. When someone says 'HCD', ask which they mean: the ISO process, or the IDEO orientation.",
         "The standard also lists principles: designs grounded in explicit understanding of users, tasks and environments; users involved throughout; design driven and refined by user-centred evaluation; an iterative process; attention to the whole user experience; and multidisciplinary teams. These are paraphrased here because the standard's text is paywalled.",
       ],
       howItWorks: [
@@ -63,14 +64,14 @@ export default defineEntry({
         "Close the loop: every evaluation produces prioritised changes, and the next iteration checks whether they worked.",
       ],
       scenarios: [
-        "An agile team runs a short research spike each sprint and tests the previous sprint's work with three to five users.",
-        "A government service team follows a discovery–alpha–beta–live lifecycle in which each phase includes user research and is assessed against standards (see the GOV.UK Service Manual).",
+        "Illustrative scenario: an agile team runs a short research spike each sprint and tests the previous sprint's work with three to five users.",
+        "Illustrative scenario: a government service team follows a discovery–alpha–beta–live lifecycle in which each phase includes user research and is assessed against standards (see the GOV.UK Service Manual).",
       ],
     },
     advanced: {
       explanation: [
         "The phrase 'user centered system design' was popularised by Norman and Draper's 1986 edited volume, which argued that system design should start from the needs and cognition of users rather than the capabilities of technology {{src:norman-draper-1986}}. Gould and Lewis's paper supplied the operational principles; ISO 13407 (1999) standardised the process, later replaced by ISO 9241-210 (2010, revised 2019).",
-        "ISO prefers 'human-centred' over 'user-centred' to acknowledge effects on stakeholders who are not direct users — operators, people affected by decisions, wider society. In practice most teams use the terms interchangeably, but the distinction matters when designing systems with significant indirect effects, such as algorithmic decision-making.",
+        "ISO uses the term 'human-centred design' for this process. The usual explanation for the word 'human' is that it widens attention beyond direct users to other people affected by a system, such as operators, people affected by its decisions and wider society; the standard's own wording was not read for this entry. In practice most teams use the two terms interchangeably.",
         "UCD has well-known tensions. **User involvement** ranges from token consultation to genuine partnership (see [[participatory-design|participatory design]]). **Users' stated preferences** can conflict with observed behaviour, so UCD privileges observation. And **innovation** debates persist: critics argue user research yields incremental improvements, while proponents reply that deep understanding of needs is what makes radical solutions viable.",
       ],
       evidence: [
@@ -176,6 +177,7 @@ export default defineEntry({
     { target: "double-diamond", type: "related-to", note: "The Double Diamond visualises the diverge–converge rhythm of a human-centred process." },
     { target: "usability-testing", type: "applied-in", note: "Usability testing is the canonical evaluation activity in a UCD cycle." },
     { target: "participatory-design", type: "contrasts-with", note: "Participatory design gives users a decision-making role, whereas classic UCD often treats them as informants and testers." },
+    { target: "ux-maturity", type: "related-to", note: "Maturity models describe how fully an organisation practises user-centred design, from ignoring it to letting research drive strategy." },
   ],
 
   method: {
@@ -297,12 +299,25 @@ export default defineEntry({
       ],
       explanation: "The innovation debate is one of UCD's well-known tensions; the reply rests on understanding needs, not on asking users to design.",
     },
+    {
+      id: "user-centred-design-q-hcd",
+      kind: "multiple-choice",
+      level: "intermediate",
+      prompt: "A colleague says the team should 'switch from user-centred design to human-centred design'. What is the most accurate reply?",
+      options: [
+        { text: "It depends on the meaning: ISO's human-centred design is the same core process under another name, while IDEO uses the term for the value orientation that design thinking applies", correct: true, explanation: "Both meanings are in use, so the useful move is to ask which one is meant before changing anything." },
+        { text: "Human-centred design is a different method with its own activities that replace UCD's", correct: false, explanation: "ISO 9241-210's human-centred process has the same activities as UCD: understand the context of use, specify requirements, produce designs, evaluate and iterate." },
+        { text: "Human-centred design means designing for people in general rather than testing with users", correct: false, explanation: "Neither meaning drops evaluation with people; the ISO process is built around it." },
+        { text: "Human-centred design is the older term that UCD replaced", correct: false, explanation: "The reverse: 'user-centred system design' dates from the 1980s, and the ISO standard uses 'human-centred'." },
+      ],
+      explanation: "The two names usually describe one approach; when the difference matters, it is about who counts (users or everyone affected) or about IDEO's value orientation.",
+    },
   ],
 
   flashcards: [
     { id: "user-centred-design-fc-iso", front: "ISO 9241-210 activities", back: "Understand and specify context of use → specify user requirements → produce design solutions → evaluate against requirements (iterate)." },
     { id: "user-centred-design-fc-gl", front: "Gould & Lewis (1985) principles", back: "Early focus on users and tasks; empirical measurement; iterative design." },
-    { id: "user-centred-design-fc-hcd", front: "Why does ISO say 'human-centred'?", back: "To include stakeholders affected by a system who are not its direct users." },
+    { id: "user-centred-design-fc-hcd", front: "User-centred vs human-centred design", back: "The same core process: ISO names it human-centred design, and the word is usually explained as widening attention beyond direct users. IDEO uses human-centred design for the value orientation that design thinking puts into practice." },
   ],
 
   references: [
@@ -310,6 +325,7 @@ export default defineEntry({
     { source: "norman-draper-1986", role: "primary", note: "Named and framed user-centred system design." },
     { source: "iso-9241-210-2019", role: "standard", note: "Human-centred design process and principles (paraphrased from public descriptions; paywalled)." },
     { source: "nielsen-1993", role: "explanatory", note: "Evidence that testing with users reveals problems designers miss." },
+    { source: "ideo-design-thinking-intro", role: "explanatory", note: "IDEO's sense of human-centred design as a value orientation, applied through design thinking; read in full." },
     { source: "govuk-service-manual", role: "further", note: "A public-sector implementation of human-centred delivery phases." },
   ],
   evidence: "established-theory",

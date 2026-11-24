@@ -417,7 +417,7 @@ Five separate dimensions, rated basic / developing / complete from the content (
 | User Control and Freedom | Principle | Professional guideline | complete | developing | complete | basic | complete | 7 | 3 | — | — |
 | User Experience (UX) | Discipline | Established theoretical model | complete | complete | complete | basic | complete | 5 | 4 | — | — |
 | User Interface (UI) Design | Discipline | Professional guideline | complete | complete | complete | developing | complete | 18 | 9 | — | — |
-| User-Centred Design | Framework | Established theoretical model | complete | complete | complete | developing | complete | 5 | 4 | — | — |
+| User-Centred Design | Framework | Established theoretical model | complete | complete | complete | developing | complete | 6 | 5 | — | — |
 | UX Lifecycle | Concept | Professional guideline | complete | complete | complete | basic | complete | 4 | 4 | — | — |
 | UX Maturity | Concept | Professional guideline | complete | developing | complete | basic | complete | 2 | 4 | — | — |
 | UX Writing | Discipline | Professional guideline | complete | complete | complete | basic | complete | 14 | 4 | — | — |

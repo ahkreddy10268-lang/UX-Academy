@@ -329,6 +329,21 @@ After that: `ui-design`, `interaction-design-discipline`, `accessibility-concept
 - Found why production shows 6 of 21 for Domain 1: Vercel's production deployments come from the old `claude/pensive-cannon-t1o6sy` branch, never from `main`, and `main` lacks PR #3 (DEP-1).
 - Domain page, coverage bar and coverage table now separate published, addressed within and planned; the taxonomy-doc generator marks addressed-within topics with their host (D1-3 closed).
 
+## Session 66 — production release verified
+- PR #3 merged into `main` (`9a51aa6`); the owner set Vercel's Production Branch to `main`. Production deployment `dpl_77Bpw7KyrCPPEEeHf5mMLcVYLwT7` built from `main` at `9a51aa6`, READY, serving ux-academy-eight.vercel.app.
+- Live checks (Playwright, 390 and 1440 px): four routes 200, no overflow, axe 0, no page errors. Domain 1 on production: 16 published, 5 addressed within, 0 planned, 21/21 accounted for; subcategories 10/3, 4/1, 2/1; five host links resolve to the right entries. DEP-1 closed.
+
+## Session 67 — Domain 1 audit and targeted improvements
+- Inspected all 16 entries, the five addressed-within concepts, the glossary and the three fundamentals paths. Gates and D-129 targets were already met; fixes made only where a defect was found: D1-2 (ISO 9241-11 cited in HCI); 'Illustrative scenario' labels in HCI, Usability, UX and UCD; human-centred design taught and quizzed in UCD; seven relations (UX → experience design and product design; HCI → interaction design and evolution of digital experiences; usability → usefulness; design thinking → design processes; UCD → UX maturity); 13 glossary terms.
+- Path findings for the owner (no path changed): D1-7, the HCI path shows History of HCI and Human-Centred Design as 'in development'; D1-8, the UX path uses only 4 Domain 1 entries, the UI path omits interaction design, the HCI path omits the two history entries.
+
+## Session 68 — D1-7: addressed-within concepts on learning paths
+- Path pages, cards and the curriculum map now classify each step from the taxonomy's `coveredBy`: lessons, concepts explained within other lessons ('Explained within {host} →', linking to the host's lesson in the same path), and steps in development. Three steps in two paths were affected. Lesson numbering, progress, completion and path data unchanged.
+- QA: check, build, e2e, e2e-redesign (glossary count updated for the 13 new terms), keyboard, devices, direct checks at 390 and 1440. Pre-existing axe landmark finding on the desktop sidebar logged as A11Y-1.
+
+## Session 69 — design reference library (documentation only)
+- Added `docs/DESIGN_REFERENCE_LIBRARY.md`: five inspiration galleries (Refero Styles, CTA Gallery, Footer Design, Navbar Gallery, Scrolltide) and seven free implementation alternatives (awesome-design-md, HyperUI, Watermelon UI, Preline UI, GSAP, Lenis, React Bits), each with site, GitHub, purpose, access model, licence notes and verification date (2026-11-23). Nothing installed; usage bound by the design system, motion rules and the dependency policy. Not verified: Refero MCP pricing, GSAP licensing page.
+
 ## Next task (precise)
 Owner: approve the push of the status fix, set Vercel's production branch to `main` (DEP-1), and approve merging PR #3. Then verify production serves the merge commit. Content: `loss-aversion` and `findability` await approval.
 
@@ -442,3 +457,4 @@ Owner: approve the push of the status fix, set Vercel's production branch to `ma
 - Back-links from `colour-contrast-ratio` and `feedback-principle`; `modular-type-scale` already linked and its "Weber–Fechner-type psychophysics" wording was corrected.
 - All gates and every site-wide browser suite run (shared `lib/**` change). e2e count 31 → 32; LIB-1 still the only e2e-redesign failure.
 - **Next:** `cognitive-ease`.
+Owner: review the D1-7 commit; decide D1-8 (path recommendations) and A11Y-1. Content candidates awaiting approval: `loss-aversion`, `findability`.
