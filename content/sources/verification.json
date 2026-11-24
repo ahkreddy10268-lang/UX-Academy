@@ -128,7 +128,7 @@
   },
   "atlassian-color": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-11",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "atlassian-design": {
@@ -374,6 +374,11 @@
     "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
+  "carbon-data-viz-colors": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-24",
+    "httpStatus": 200
+  },
   "carbon-design-system": {
     "status": "url-reachable",
     "checkedAt": "2026-11-06",
@@ -401,7 +406,7 @@
   },
   "carbon-themes": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-11",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "card-english-burr-1978": {
@@ -724,7 +729,7 @@
   },
   "dtcg-color-2025": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-11",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "dtcg-format-2025": {
@@ -1783,7 +1788,7 @@
   },
   "m3-color-roles": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-11",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "m3-design-tokens": {
@@ -1919,6 +1924,11 @@
     "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
+  "mdn-color-mix": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-24",
+    "httpStatus": 200
+  },
   "mdn-color-scheme": {
     "status": "url-reachable",
     "checkedAt": "2026-11-11",
@@ -1946,12 +1956,17 @@
   },
   "mdn-prefers-color-scheme": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-11",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "mdn-prefers-reduced-motion": {
     "status": "url-reachable",
     "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "mdn-relative-colors": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "mdn-variable-fonts": {
@@ -2085,6 +2100,11 @@
   "nasa-tlx-site": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "nei-color-vision-deficiency": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "nielsen-1992-heuristic": {
@@ -3116,7 +3136,7 @@
   },
   "uswds-color": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-11",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "uswds-spacing-units": {
@@ -3222,6 +3242,16 @@
     "checkedAt": "2026-11-20",
     "httpStatus": 200
   },
+  "w3c-css-color-4": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-24",
+    "httpStatus": 200
+  },
+  "w3c-g111-color-pattern": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-24",
+    "httpStatus": 200
+  },
   "w3c-international-specs": {
     "status": "url-reachable",
     "checkedAt": "2026-11-24",
@@ -3264,7 +3294,7 @@
   },
   "w3c-understanding-non-text-contrast": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-16",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "w3c-understanding-pause-stop-hide": {
@@ -3280,6 +3310,11 @@
   "w3c-understanding-status-messages": {
     "status": "url-reachable",
     "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "w3c-understanding-use-of-color": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "w3c-understanding-wcag-22": {
@@ -3325,6 +3360,11 @@
   "w3c-wcag-em-2": {
     "status": "url-reachable",
     "checkedAt": "2026-11-12",
+    "httpStatus": 200
+  },
+  "w3c-wcag-faq": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "w3c-wcag-overview": {
