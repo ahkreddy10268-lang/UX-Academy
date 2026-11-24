@@ -19,7 +19,7 @@ jobs:
   quality:
     name: Content, tests and production build
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 45
     steps:
       - name: Check out source
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
@@ -49,3 +49,41 @@ jobs:
 
       - name: Build production bundle (no deployment)
         run: npm run build
+
+      - name: Install browser test tools
+        run: |
+          npm install --no-save --package-lock=false playwright@1.65.1 axe-core@4.14.1
+          npx playwright install --with-deps chromium
+
+      - name: Start local production server
+        run: |
+          npm start -- --port 3100 > /tmp/ux-academy-next.log 2>&1 &
+          echo $! > /tmp/ux-academy-next.pid
+          for attempt in $(seq 1 60); do
+            if curl --fail --silent http://127.0.0.1:3100/ > /dev/null; then
+              exit 0
+            fi
+            sleep 2
+          done
+          cat /tmp/ux-academy-next.log
+          exit 1
+
+      - name: Run site-wide browser regression suites
+        env:
+          BASE_URL: http://127.0.0.1:3100
+        run: |
+          node tests/browser/crawl.cjs / /library /library/anchoring-effect /search-index.json /topics/laws-effects /graph /formulas /practice
+          node tests/browser/e2e.cjs
+          node tests/browser/e2e-redesign.cjs
+          node tests/browser/atlas.cjs
+          node tests/browser/keyboard.cjs
+          node tests/browser/devices.cjs
+          node tests/browser/colour-studio.cjs
+          AXE_PATH=node_modules/axe-core/axe.min.js node tests/browser/a11y.cjs / /library /library/fitts-law /topics/laws-effects /graph /formulas /learn /practice
+
+      - name: Stop local production server
+        if: always()
+        run: |
+          if [ -f /tmp/ux-academy-next.pid ]; then
+            kill "$(cat /tmp/ux-academy-next.pid)" || true
+          fi
