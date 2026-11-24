@@ -155,7 +155,7 @@ export default defineSources([
     authors: [],
     organisation: "World Wide Web Consortium — CSS Working Group",
     url: "https://www.w3.org/TR/css-color/",
-    type: "official-specification",
+    type: "technical-report",
     tier: 2,
     topics: ["CSS color", "OKLCH", "wide-gamut color", "gamut mapping"],
     access: "open",
