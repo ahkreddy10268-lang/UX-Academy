@@ -8,7 +8,7 @@ export default defineEntry({
   summary:
     "Named, platform-agnostic records of design decisions — colours, sizes, spacing, type, motion — that are stored once and transformed for every platform and theme.",
   definition:
-    "A design token is a **named value representing a design decision**, such as `color.text.primary = #1A1A1A` or `space.4 = 16px`. Tokens are stored in a technology-neutral format and transformed into platform code (CSS custom properties, iOS, Android, design-tool variables). Tokens may reference other tokens, producing layers — commonly **primitive**, **semantic** and **component** tokens — that make theming and change management systematic.",
+    "A design token is a **named, reusable expression of a design decision**, with a value and, where the format supports it, metadata such as type and description. A token such as `color.text.primary` expresses the role of a colour without requiring every platform to store it in the same way. Tokens can be exchanged in a tool-neutral format such as the Design Tokens Community Group (DTCG) format, then resolved and transformed into platform outputs such as CSS custom properties or native code. Teams may organise tokens into primitive/reference, semantic/system and component layers, but that tier architecture is a design-system choice, not a DTCG requirement.",
   primaryType: "concept",
   secondaryTypes: ["technique", "pattern"],
   domain: "design-systems",
@@ -29,7 +29,7 @@ export default defineEntry({
     beginner: {
       explanation: [
         "Imagine your brand blue is written as `#2F6FDE` in two hundred places across a website, an iPhone app and an Android app. One day the brand changes. Someone has to find and update every single copy — and they will miss some.",
-        "A **design token** gives that decision a name, like `color-brand-primary`, and stores its value in one place. Every product uses the name instead of the raw value. Change the value once, and every platform updates.",
+        "A **design token** gives that decision a name, like `color-brand-primary`, and stores its value in an agreed source. Product components use the named role instead of repeating raw values. When the value changes, the token pipeline must validate the change, regenerate each platform's output and release it; the update is not automatic unless the system has built and tested that workflow.",
         "Tokens can describe repeatable design decisions: colour, spacing, typography, shape, elevation and motion. They create a shared vocabulary, but a token is not simply the same thing as a variable in every tool. A token is the named design decision and its meaning; a variable is one way a particular tool or codebase stores and applies a value.",
       ],
       analogy:
