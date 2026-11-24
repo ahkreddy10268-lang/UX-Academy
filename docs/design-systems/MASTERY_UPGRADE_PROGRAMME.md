@@ -194,3 +194,11 @@ The `design-tokens` entry now includes:
 - A direct link to the existing `token-lab` on the lesson page.
 
 **Review limitations:** the current Token Lab is a colour-only simulation; it does not teach typography, spacing or motion token mapping. The CSS shown in the lesson is an illustrative resolved output, not a claim that the DTCG file directly defines CSS selectors. Local typecheck, content tests, source verification, build and browser review remain pending.
+
+## Pilot 2 and Pilot 3 — targeted enrichments (2026-11-24)
+
+The initial inspection found that both lessons already contained substantive material; they did not need wholesale rewrites.
+
+- **Component Architecture:** retained the existing compound Tabs example, presentational component/product wrapper, anatomy exercise, 23-prop correction exercise, APG keyboard guidance and alternatives. Added a same-task poor-versus-better code example that contrasts a flag-heavy/data-owning BookCard with a composable presentational card and product wrapper.
+- **Design Governance:** retained the existing centralised/federated/hybrid discussion, GOV.UK's five contribution criteria, lifecycle statuses, RFC template, CI status metadata, correction exercise and governance-model assignment. Added a same-request comparison showing ad hoc chat approval versus an evidence- and criteria-led date-range-picker proposal.
+- These are focused pilot additions, not proof of final completeness. The two lessons still need the same content integrity, build and browser QA as the Design Tokens pilot.
