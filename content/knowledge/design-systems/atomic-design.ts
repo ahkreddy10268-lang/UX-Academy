@@ -76,6 +76,7 @@ export default defineEntry({
         "**State boundaries** are where the chemistry metaphor is silent. A practical rule: atoms and most molecules are presentational and controlled by props; organisms often own interaction state (an autocomplete's open state and active option) and coordinate their parts; data fetching and business state usually live above the template, in pages or application code. Getting this boundary wrong makes molecules impossible to reuse.",
         "**Tokens sit beneath atoms.** Frost's 2013 description already counted colour palettes and fonts among the atoms {{src:frost-2013}}; in today's systems those decisions are primitive and semantic tokens, consumed by atoms, so a theme can change every level without touching the component tree.",
         "**Accessible composition.** Complex organisms such as comboboxes, menus and data grids need the keyboard and ARIA patterns that define them; the ARIA Authoring Practices describe such patterns as informative guidance {{src:w3c-aria-apg}}. Splitting an organism into molecules must not split the roles and states that only make sense together.",
+        "Atomic Design appeared in a wider movement towards modular, themeable interfaces. Brad Frost's 2025 retrospective connects CSS, CSS Zen Garden and modular CSS approaches with the rise of component-driven interface design; his original book outline also discusses the limits of style guides, UI frameworks and pattern libraries. The five stages are Frost's mental model for navigating parts and whole, not a mandatory project structure {{src:frost-themeable-ui-history}} {{src:frost-2016}}.",
       ],
       evidence: [
         "Atomic design is a **practitioner methodology** described in Frost's blog post and book {{src:frost-2013}} {{src:frost-2016}}, widely adopted and adapted in industry. No controlled study was found comparing it with other ways of structuring component libraries; claims about its benefits for consistency and speed are practitioner reports. Frost himself presents it as a mental model rather than a rigid process.",
@@ -364,6 +365,7 @@ function SearchAutocomplete({ results, renderOption }: { results: Book[]; render
   references: [
     { source: "frost-2013", role: "primary", note: "Original statement of the five levels." },
     { source: "frost-2016", role: "primary", note: "Chapters 2 and 4: methodology and interface inventory." },
+    { source: "frost-themeable-ui-history", role: "explanatory", note: "Attributed practitioner history of themeable UI, CSS separation and modular interface patterns." },
     { source: "w3c-wcag-22", role: "standard", note: "SC 1.3.1, 2.1.1, 4.1.2 (A)." },
     { source: "w3c-aria-apg", role: "explanatory", note: "Combobox and other composite patterns (informative guidance)." },
   ],
