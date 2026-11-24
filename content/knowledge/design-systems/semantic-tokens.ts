@@ -392,6 +392,13 @@ export default defineEntry({
 }`,
         caption: "Build tools differ in naming and structure; this shows the shape of the result, not one tool's exact output.",
       },
+    {
+      "title": "Same error-message task, two theme strategies: raw colour versus semantic role",
+      "language": "css",
+      "code": "/* Poor: the component embeds a value and repeats it in both themes */\n.error-message { color: #b42318; }\n[data-theme=\"dark\"] .error-message { color: #b42318; }\n\n/* Better: one role keeps its meaning while each theme chooses a value */\n:root { --color-text-danger: #b42318; }\n[data-theme=\"dark\"] { --color-text-danger: #f07a6e; }\n.error-message { color: var(--color-text-danger); }",
+      "caption": "Illustrative comparison for the same expiry/error message. The semantic name expresses the role, not the hue; each theme must still validate the rendered text/surface pair against WCAG 2.2 SC 1.4.3, AA."
+    },
+
     ],
   },
 
@@ -531,5 +538,5 @@ export default defineEntry({
     sources: true,
     activities: true,
   },
-  lastVerifiedAt: "2026-11-11",
+  lastVerifiedAt: "2026-11-24",
 });
