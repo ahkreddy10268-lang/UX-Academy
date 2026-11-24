@@ -357,6 +357,20 @@ export default defineSources([
 
   /* ---- Batch 4: scales and visual systems ---- */
   {
+    id: "android-grids-and-units",
+    title: "Android Developers: Grids and units",
+    authors: [],
+    organisation: "Google",
+    url: "https://developer.android.com/design/ui/mobile/guides/layout-and-content/grids-and-units",
+    type: "official-documentation",
+    tier: 2,
+    topics: ["spacing", "layout grids", "Android units", "density independence"],
+    access: "open",
+    verification: "url-checked",
+    lastVerifiedAt: "2026-11-24",
+    notes: "Read 2026-11-24. Specifies an 8 dp baseline grid for Android UI, with 4 dp alignment for smaller elements; recommends dp for layout measurements and sp for text that respects user font-size preferences. Platform-specific guidance, not a universal web spacing rule.",
+  },
+  {
     id: "carbon-spacing",
     title: "Carbon Design System: Spacing",
     authors: [],
