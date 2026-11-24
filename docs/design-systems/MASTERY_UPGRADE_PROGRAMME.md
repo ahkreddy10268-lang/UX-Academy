@@ -180,8 +180,8 @@ No arbitrary word counts. More words are justified only when they add a new expl
 | Pilot 1: Design Tokens | Content, lab integration and page QA complete; accepted as the first format pilot |
 | Pilot 2: Component Architecture | Targeted enrichment complete; shared browser QA passed |
 | Pilot 3: Design Governance | Targeted enrichment complete; shared browser QA passed |
-| Remaining 23-topic rollout | Planned; first 6 lessons have completed their depth-upgrade batches |
-| Final branch tests | Six upgraded lessons: check, taxonomy, source verification, build and targeted browser review passed; full 29-topic rollout suite remains pending |
+| Remaining 20-topic rollout | Planned; 9 lessons have completed their depth-upgrade batches |
+| Final branch tests | Nine upgraded lessons: check, taxonomy, source verification, build and targeted browser review passed; full 29-topic rollout suite remains pending |
 
 ## Pilot 1 — current implementation record (2026-11-24)
 
@@ -245,3 +245,28 @@ Existing DTCG JSON samples, contrast calculations, alternatives, exercises and s
 - `entry-review.cjs primitive-tokens semantic-tokens theme-architecture`: PASS 24/24; 1440/768/390 px, light/dark, axe 0, overflow 0, console/page errors 0, figure text >=10.2 px at 390 px, no clipping/out-of-viewBox markers, internal links resolve and no raw markup, keyboard flashcards pass.
 
 This validates the three additional lessons only. The full 29-topic programme and full site-wide browser/change-impact suite are still outstanding.
+
+
+## Foundations batch — Design Language, Atomic Design and Multi-Brand Systems (2026-11-24)
+
+- **Design Language:** adds a sourced historical strand from IBM's 1956 corporate design programme through later software theming and modular digital interfaces. It clearly distinguishes a lasting design language (principles, hierarchy, interaction/content grammar and accessibility) from a temporary visual style or fashion. The historical account labels Brad Frost's 2025 timeline as an attributed practitioner retrospective, not an exhaustive academic history or a single-origin claim.
+- **Atomic Design:** adds a same-search-task example showing how to use atoms/molecules/organisms as a mental model while organising implementation by feature ownership. It explicitly rejects a mandatory atoms/molecules/organisms folder structure and keeps the accessible combobox as one coordinated interaction.
+- **Multi-Brand Systems:** adds a same-request comparison of copied component-library forks versus one shared component/accessibility contract with per-brand token maps and brand-by-mode validation. It also turns the annotated multi-file token illustration into a clearly labelled text file map rather than implying the notes are one JSON document. Its existing illustration's “0 px · serif” label was right-aligned inside the canvas after the browser review identified clipping.
+
+### Verified source and generated records
+
+- Added two source records: `ibm-design-program-history` and `frost-themeable-ui-history`; both verified URL-reachable on 2026-11-24 and recorded in `content/sources/verification.json`.
+- Generated source registry: 595 → 597 total; URL-reachable 277 → 279.
+- Generated entry references: Atomic Design 4 → 5; Design Language 7 → 9; Multi-Brand Systems 5 → 6.
+- The source-history claims are explicitly attributed. IBM is a corporate-design precedent, not the origin of all design languages; Frost's timeline is a practitioner's retrospective.
+
+### Foundations batch verification
+
+- `npm run check`: PASS — 23 test files / 626 tests, content index, TypeScript and ESLint.
+- `npm run test:taxonomy`: PASS — 20 domains, 73 subcategories, 561 topics, 1,046 links checked, 119 published entries at three depths; Design Systems 29/29.
+- `npm run sources:verify -- ibm-design-program-history frost-themeable-ui-history`: PASS — both URLs reachable.
+- `npm run docs:generate`: PASS — 597 source records; coverage and research rows regenerated and changes reviewed.
+- `npm run build`: PASS — Next.js production build; 998 static pages generated.
+- `entry-review.cjs design-language atomic-design multi-brand-systems`: PASS 24/24 across 1440/768/390 px in light/dark. Axe 0, overflow 0, page/console errors 0, figure text minimum 10.2 px, no clipped text or out-of-viewBox markers, internal links resolve and no raw citation/link markup; keyboard flashcards pass (4/4 per topic).
+
+Three batches now cover 9/29 lessons. The remaining 20 topics and full site-wide change-impact suite are still outstanding. No taxonomy/schema/progress model changes, merge or production deployment.
