@@ -329,6 +329,21 @@ After that: `ui-design`, `interaction-design-discipline`, `accessibility-concept
 - Found why production shows 6 of 21 for Domain 1: Vercel's production deployments come from the old `claude/pensive-cannon-t1o6sy` branch, never from `main`, and `main` lacks PR #3 (DEP-1).
 - Domain page, coverage bar and coverage table now separate published, addressed within and planned; the taxonomy-doc generator marks addressed-within topics with their host (D1-3 closed).
 
+## Session 66 — production release verified
+- PR #3 merged into `main` (`9a51aa6`); the owner set Vercel's Production Branch to `main`. Production deployment `dpl_77Bpw7KyrCPPEEeHf5mMLcVYLwT7` built from `main` at `9a51aa6`, READY, serving ux-academy-eight.vercel.app.
+- Live checks (Playwright, 390 and 1440 px): four routes 200, no overflow, axe 0, no page errors. Domain 1 on production: 16 published, 5 addressed within, 0 planned, 21/21 accounted for; subcategories 10/3, 4/1, 2/1; five host links resolve to the right entries. DEP-1 closed.
+
+## Session 67 — Domain 1 audit and targeted improvements
+- Inspected all 16 entries, the five addressed-within concepts, the glossary and the three fundamentals paths. Gates and D-129 targets were already met; fixes made only where a defect was found: D1-2 (ISO 9241-11 cited in HCI); 'Illustrative scenario' labels in HCI, Usability, UX and UCD; human-centred design taught and quizzed in UCD; seven relations (UX → experience design and product design; HCI → interaction design and evolution of digital experiences; usability → usefulness; design thinking → design processes; UCD → UX maturity); 13 glossary terms.
+- Path findings for the owner (no path changed): D1-7, the HCI path shows History of HCI and Human-Centred Design as 'in development'; D1-8, the UX path uses only 4 Domain 1 entries, the UI path omits interaction design, the HCI path omits the two history entries.
+
+## Session 68 — D1-7: addressed-within concepts on learning paths
+- Path pages, cards and the curriculum map now classify each step from the taxonomy's `coveredBy`: lessons, concepts explained within other lessons ('Explained within {host} →', linking to the host's lesson in the same path), and steps in development. Three steps in two paths were affected. Lesson numbering, progress, completion and path data unchanged.
+- QA: check, build, e2e, e2e-redesign (glossary count updated for the 13 new terms), keyboard, devices, direct checks at 390 and 1440. Pre-existing axe landmark finding on the desktop sidebar logged as A11Y-1.
+
+## Session 69 — design reference library (documentation only)
+- Added `docs/DESIGN_REFERENCE_LIBRARY.md`: five inspiration galleries (Refero Styles, CTA Gallery, Footer Design, Navbar Gallery, Scrolltide) and seven free implementation alternatives (awesome-design-md, HyperUI, Watermelon UI, Preline UI, GSAP, Lenis, React Bits), each with site, GitHub, purpose, access model, licence notes and verification date (2026-11-23). Nothing installed; usage bound by the design system, motion rules and the dependency policy. Not verified: Refero MCP pricing, GSAP licensing page.
+
 ## Next task (precise)
 Owner: approve the push of the status fix, set Vercel's production branch to `main` (DEP-1), and approve merging PR #3. Then verify production serves the merge commit. Content: `loss-aversion` and `findability` await approval.
 
@@ -442,3 +457,72 @@ Owner: approve the push of the status fix, set Vercel's production branch to `ma
 - Back-links from `colour-contrast-ratio` and `feedback-principle`; `modular-type-scale` already linked and its "Weber–Fechner-type psychophysics" wording was corrected.
 - All gates and every site-wide browser suite run (shared `lib/**` change). e2e count 31 → 32; LIB-1 still the only e2e-redesign failure.
 - **Next:** `cognitive-ease`.
+Owner: review the D1-7 commit; decide D1-8 (path recommendations) and A11Y-1. Content candidates awaiting approval: `loss-aversion`, `findability`.
+
+## Session 66 — UX & UI Fundamentals educational quality audit (2026-11-23)
+- Audited all 16 published Domain 1 entries against the renderer, three-level progression, schema checks, D-129 targets, D-131, evidence notes, practice and taxonomy coverage; full dispositions in `docs/DOMAIN_1_EDUCATIONAL_QUALITY_AUDIT.md`.
+- Finding: the Domain 1 inventory and teaching structure were already complete; no blanket rewrite or word-count expansion was justified. Five covered-within decisions were preserved.
+- Consolidated focused improvements from the wider Domain 1 review: human-centred design explained and assessed within UCD; eight illustrative scenarios labelled across HCI, Usability, UX and UCD; seven typed relations; 13 glossary terms and two aligned definitions.
+- D1-2 corrected in `human-computer-interaction`: context-of-use vocabulary is now clean plain text; the ISO citation sits in Practitioner explanatory prose. The source note distinguishes the public catalogue/abstract and official ISO 9241-115:2024 cross-reference from the paid ISO 9241-11:2018 text, which was not accessed.
+- Claude Desktop reported a targeted browser review with all viewport/theme, accessibility, overflow, console, plate, keyboard-flashcard and internal-link checks passing except the raw source token in Vocabulary. The review script had exited 0 despite that FAIL; the script is now corrected to set a non-zero exit code on any failed assertion. Post-fix rerun remains pending.
+- `docs:generate` reportedly changed only date metadata in four generated files; restored afterwards. `sources:verify`, site-wide browser suites and plate renders were appropriately skipped for this change set. Other required check/build results were not supplied. No merge or deployment.
+
+
+## Session 67 — Domain 1 QA follow-up and learning-path display (2026-11-23)
+- Incorporated Claude Desktop's follow-up QA findings. The HCI Vocabulary field is plain text and must not contain a `{{src:...}}` token; the ISO citation remains in Practitioner explanatory prose. The source note describes the public ISO catalogue/abstract and official ISO 9241-115:2024 cross-reference without implying the paid ISO 9241-11:2018 text was read.
+- Restored both HCI relations (to `interaction-design-discipline` and `evolution-of-digital-experiences`) and explicitly labelled both HCI scenarios as illustrative. Restored the Design Thinking → Design Processes relation.
+- Added D1-7 learning-path presentation: taxonomy `coveredBy` topics appear as “Explained within {host}” and are counted separately from lessons and planned concepts. No path-step data, numbering, progress or completion rules changed. D1-7 closed.
+- Updated `tests/browser/e2e-redesign.cjs` expected glossary count to 127; generated `docs/CONTENT_COVERAGE.md` committed with the 2026-11-23 generation date and updated counts; added `docs/DESIGN_REFERENCE_LIBRARY.md` as a future-use reading list only.
+- Open decision D1-8 remains: whether the three Fundamentals learning paths should add further Domain 1 entries. No path content changed.
+- Claude Desktop reported a post-correction visible-text review across four entries at 1440/768/390 px in light/dark, with no visible citation/link tokens, accessibility violations, overflow or console errors; all links resolved, figure text ≥10.2 px at phone width, and keyboard flashcards worked. HCI relations and the second scenario label were restored after that review, so HCI review still needs rerunning.
+- The source branch `claude/batch1-constraints` has recorded PASS for D1-7 checks (612 tests, taxonomy, build, e2e 44/44, e2e-redesign 66/66 after glossary count 127, keyboard 45/45, devices 155/155). These are recorded as source-branch evidence only, not final combined-branch results.
+- No merge or production deployment. Final consolidated branch still requires `npm run check`, `npm run test:taxonomy`, `npm run build`, relevant site-wide browser suites, and the final HCI browser review. Screen-reader, physical-device and independent expert testing remain outstanding.
+## Session 75 — Design Systems Mastery Upgrade begins (2026-11-24)
+- Created branch `codex/design-systems-mastery-build` from `main` at `777640d3f248743cbae2e60a145f8d942c26f240`. PR #4 / Domain 1 work remains separate. No merge or production deployment.
+- Added `docs/design-systems/MASTERY_UPGRADE_PROGRAMME.md` defining the upgraded teaching promise, twelve topic-dossier dimensions, evidence and case-study rules, cumulative practical programme, three pilots and acceptance criteria.
+- Added `docs/design-systems/TOPIC_UPGRADE_MATRIX.md` with retain/deepen/practice direction for all 29 existing canonical topics. No taxonomy additions or slug changes.
+- Started Pilot 1, `design-tokens`: clarified token versus tool-variable distinction; explained DTCG versus architecture tiers; expanded source-to-output pipeline; added structured do/don't guidance and DTCG/CSS examples; labelled the theming scenario illustrative; added a token migration/pipeline exercise, questions and flashcards; connected `token-lab` directly to the lesson page.
+- Updated the Style Dictionary source record to the exact official transform documentation checked 2026-11-24; added a precise Figma variables/modes locator to the lesson reference.
+- Current source checks: official DTCG 2025.10 report, Figma variables/modes documentation and Style Dictionary transform documentation reviewed on 2026-11-24. DTCG 2025.10 remains the stable report; the 2026 preview explicitly says not to implement or cite it as authoritative.
+- Not yet run: `npm run check`, `npm run sources:verify`, `npm run build`, generated-doc checks and browser review. The Style Dictionary URL changed in its source record; run source verification. The new lesson content needs normal content integrity and page rendering review before Pilot 1 is accepted.
+- No global template/schema/component change. Preserve the five-stage path, topic IDs and existing `/system` implementation.
+
+## Session 76 — Three Design Systems pilot topics enriched (2026-11-24)
+- Design Tokens: added token-versus-variable clarity, DTCG tier caveat, source-to-output workflow, practice dos/don'ts, DTCG JSON and CSS examples, a same-role light/dark mapping with checked white-foreground contrast, a real UX Academy CSS/Tailwind excerpt from `app/globals.css`, a token pipeline assignment, assessment and flashcards; connected the existing Token Lab to the lesson.
+- Component Architecture: preserved the existing compound Tabs example, presentational component/product wrapper, API alternatives, exercises and APG/React guidance; added an explicit same-task poor-versus-better BookCard architecture example.
+- Design Governance: preserved centralised/federated/hybrid models, GOV.UK criteria, lifecycle, RFC template and governance exercises; added a same-request comparison between ad hoc chat approval and a criteria-led proposal.
+- Added source locator detail for Figma variables/modes and updated the Style Dictionary transform reference record.
+- These are focused pilot changes. No new taxonomy entries, schema fields or progress semantics were added. Two small shared UI adjustments were necessary: source locators wrap at narrow widths; lesson pages now expose the already-supported optional lab reference as an Interactive lab card. The existing editorial page design is preserved.
+- Final QA completed in an isolated Vercel sandbox on `codex/design-systems-mastery-build`: `npm run check` PASS (23 files, 626 tests, TypeScript, ESLint); `npm run test:taxonomy` PASS (1,046 links; Design Systems 29/29); `npm run sources:verify -- style-dictionary-dtcg figma-learn` PASS; `npm run docs:generate` PASS with reviewed count and verification-date updates; `npm run build` PASS (998 static pages); `entry-review.cjs design-tokens component-architecture design-governance` PASS 24/24 across 1440/768/390 px, light/dark, axe 0, overflow 0, page/console errors 0, figure text >=10.2 px, no clipping/out-of-viewBox markers, internal links clean and keyboard flashcards pass. Token Lab direct link, theme switching and 12/12 dark-theme contrast pairs were verified separately.
+- This is acceptance of the three-topic pilot, not completion of all 29 upgraded dossiers. No merge or production deployment.
+
+
+## Session 77 — Design Systems three-topic pilot QA completed (2026-11-24)
+- Re-ran `npm run check`: PASS — 23 test files, 626 tests; typecheck and ESLint pass.
+- `npm run test:taxonomy`: PASS — 20 domains, 73 subcategories, 561 topics, 1,046 links, 119 published entries checked at three depths; Design Systems 29/29 published.
+- `npm run sources:verify -- style-dictionary-dtcg figma-learn`: both PASS URL-reachable.
+- `npm run docs:generate`: PASS. Reviewed the genuine generated changes: quiz 470→472, exercises 361→362, flashcards 472→476, linked labs 23→24, Design Tokens now references 9 sources and 6 exercises, and Figma/Style Dictionary URL verification dates refresh to 2026-11-24. The four generated files are retained for the feature branch.
+- `npm run build`: PASS — Next.js 16.4.6, TypeScript, 998 static pages generated.
+- `entry-review.cjs design-tokens component-architecture design-governance`: PASS 24/24, every page at 1440/768/390 px in light/dark; zero axe violations, overflow, console/page errors, clipped figure text or out-of-viewBox markers; figure text minimum 10.2 px; internal links resolve and no raw citation/link markup; keyboard flashcards pass 7/7, 4/4 and the script-reported Governance count.
+- Direct Token Lab smoke test: lesson card present and links to `/labs/token-lab`; dark-theme switch reports 12/12 documented contrast pairs passing.
+- No taxonomy/schema/progress-model change. Additive shared UI changes are limited to long-reference wrapping and rendering the existing optional lab link.
+- Remaining: complete quality review and upgrade of the other 26 topics in evidence/dependency order; run full affected site-wide browser suites before final PR readiness. No merge or production deployment.
+
+ 
+## Session 78 — Design Systems token-architecture batch completed (2026-11-24)
+- Enriched `primitive-tokens`: distinguished Figma number variables from DTCG dimension objects with explicit units and added a same-task spacing comparison (ad hoc near-duplicates versus a deliberate scale). Existing DTCG colour/spacing ramp, deprecation and correction material retained.
+- Enriched `semantic-tokens`: explained Figma DTCG mode-import constraints (common token across imported files, supported values/types and type consistency) and added a same-task error-message comparison (raw repeated colours versus one semantic role remapped per theme). Existing light/dark token files, resolver JSON, contrast calculations and CSS output retained.
+- Enriched `theme-architecture`: distinguished Figma explicit/Auto inherited modes and collection-default fallback from DTCG Resolver resolution order; added a same-task comparison of per-component theme patches versus shared role variables. Existing resolver and Next.js/Tailwind first-paint example retained.
+- Added Figma-specific source locators for variable type/mode import and mode inheritance in the relevant lessons. Last-verified dates refreshed to 2026-11-24. Figma details are labelled product-specific, not DTCG requirements or universal architecture rules.
+- Generated coverage deltas: Primitive Tokens references 6→7; Semantic Tokens 9→10; Theme Architecture 12→13. Design Systems Level-2 figures 6→7. Generated coverage and illustration register rows were updated on this branch.
+- QA in a fresh Vercel sandbox on the latest batch commit: `npm ci` PASS; `npm run check` PASS (23 test files, 626 tests, TypeScript, ESLint); `npm run test:taxonomy` PASS (20 domains, 73 subcategories, 561 topics, 1,046 links, 119 published entries at 3 depths, Design Systems 29/29); `npm run sources:verify -- style-dictionary-dtcg figma-learn` PASS; `npm run docs:generate` PASS; `npm run build` PASS (998 static pages); `entry-review.cjs primitive-tokens semantic-tokens theme-architecture` PASS 24/24 at 1440/768/390 px in light/dark, axe 0, overflow 0, console/page errors 0, figure text >=10.2 px, no clipped text/out-of-viewBox markers, internal links clean and keyboard flashcards pass.
+- Total Design Systems lessons enriched under the new standard: 6/29. Remaining 23 topics are not complete. No taxonomy/schema/progress change and no production deployment.
+
+
+## Session 79 — Design Systems foundations batch completed (2026-11-24)
+- **Design Language:** added a sourced history strand (IBM corporate design programme, 1956; attributed practitioner history of themeable UI; Atomic Design and Kholmatova context), explicit definition of design language versus temporary visual fashion, origin narrative and two verified references.
+- **Atomic Design:** added a same-task catalogue-search comparison showing the five atomic stages as a mental model alongside feature-based implementation. Clarifies that the model does not mandate atoms/molecules/organisms folders; accessible combobox remains a coordinated interaction.
+- **Multi-Brand Systems:** added a same-request shared-contract versus component-fork comparison, documented the case for governed brand extensions, changed the DTCG multi-file annotated example to text-labelled files (not one misleading JSON snippet), and fixed the existing museum “0 px · serif” SVG label to remain inside its 400×300 canvas.
+- New sources `ibm-design-program-history` and `frost-themeable-ui-history` are URL-reachable and recorded in `content/sources/verification.json` with checkedAt 2026-11-24. Generated registry reports 597 sources (279 URL-reachable); topic source counts Atomic Design 5, Design Language 9, Multi-Brand Systems 6.
+- QA: `npm run check` PASS (23 files, 626 tests, TS, ESLint); taxonomy PASS (1,046 links; Design Systems 29/29); both new sources verified; `npm run docs:generate` PASS; `npm run build` PASS (998 static pages); `entry-review.cjs design-language atomic-design multi-brand-systems` PASS 24/24 on six viewport/theme contexts per entry, axe 0, overflow 0, page/console errors 0, plate text ≥10.2 px, no clipping/out-of-viewBox markers, links clean and keyboard flashcards pass. Multi-Brand was retested separately after an SVG label correction: 8/8 PASS.
+- Total upgraded lessons: 9/29. Remaining: 20. No taxonomy/schema/progress change, merge or production deployment.

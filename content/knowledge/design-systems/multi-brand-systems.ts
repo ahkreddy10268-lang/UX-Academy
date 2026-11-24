@@ -77,6 +77,7 @@ export default defineEntry({
         "**Non-colour shifts.** Typography changes metrics (cap height, x-height, advance widths), not just looks: budget control heights and line lengths in tokens and test them. Radius changes should keep the concentric rule for nested shapes ([[spacing-scales]]). Motion curves can differ by brand, but durations stay within the system's ranges and every brand honours reduced motion.",
         "**Contrast invariance.** Generate the full matrix brand × mode × documented pair and fail the build on any pair below threshold — the same check the [[theme-architecture]] entry applies to modes, multiplied by brands. High-contrast modes apply per brand too.",
         "**Delivery.** Build one stylesheet (or token bundle) per brand and mode; switch by a root attribute. Components stay brand-agnostic and can be server-rendered once per brand. White-label customers receive a constrained brand file (a few primitives) from which the system generates a full mapping, with contrast correction applied automatically.",
+        "**How this evolved.** Themeable interfaces existed before modern design-token formats. Brad Frost's retrospective describes operating-system colour schemes and web CSS as early ways to vary appearance without rebuilding the underlying interface; contemporary multi-brand systems extend that separation into shared semantic contracts, typed token sets and automated brand-by-mode validation {{src:frost-themeable-ui-history}} {{src:dtcg-resolver-2025}}. This is a lineage of related practices, not a claim that all early themes were multi-brand design systems.",
       ],
       evidence: [
         "Multi-brand architecture is **documented practice**: the DTCG resolver module describes tokens across contexts with sets, modifiers and a resolution order {{src:dtcg-resolver-2025}}; Fluent 2 describes branded themes {{src:fluent-2-design-tokens}}; Carbon keeps role names stable while values change {{src:carbon-themes}}. The DTCG reports are W3C Community Group reports, not W3C Standards {{src:dtcg-format-2025}}. Contrast thresholds are WCAG 2.2 criteria {{src:w3c-wcag-22}}; the ratios quoted are computed with this course's formula. No controlled study of multi-brand architectures was found.",
@@ -163,7 +164,7 @@ export default defineEntry({
     examples: [
       {
         title: "Multi-brand DTCG override map with a resolver",
-        language: "json",
+        language: "text",
         code: `// tokens/contract.tokens.json — names every brand must provide (values via references)
 { "color": { "$type": "color",
     "action": { "background": { "$value": "{brand.action}" }, "text": { "$value": "{brand.on-action}" } } },
@@ -215,6 +216,13 @@ for (const brand of ["library", "museum"]) for (const mode of ["light", "dark"])
 }`,
         caption: "Illustrative. The build fails if any brand × mode × pair falls below its WCAG threshold.",
       },
+    {
+      "title": "Same museum-brand request, two architectures: copied libraries versus a shared contract",
+      "language": "text",
+      "code": "POOR: maintain a full component fork for each brand\npackages/\n  library-brand/\n    Button.tsx   # fix, keyboard behaviour and tests copied here\n    DatePicker.tsx\n  museum-brand/\n    Button.tsx   # same component, separately maintained\n    DatePicker.tsx\n  children-brand/\n    Button.tsx   # another copy; may drift\n\nBETTER: shared components consume one semantic contract\npackages/\n  design-system/\n    Button.tsx          # consumes color.action.background/text\n    DatePicker.tsx      # one shared behaviour and accessibility contract\n  tokens/\n    contract.tokens.json\n    brand-library.tokens.json\n    brand-museum.tokens.json\n    brand-children.tokens.json\n  tests/\n    contrast-matrix.test.ts  # brand × light/dark × documented pairs\n\nRULE: a brand may change its mapped values within the contract;\n      a truly different interaction requires a governed extension.",
+      "caption": "Illustrative same-request comparison. The shared-contract model avoids duplicating fixes and accessibility behaviour, while allowing brands to map their own values. It is not always the right answer: brands with genuinely different tasks or legal constraints may need a governed extension or separate product surface rather than forced visual uniformity."
+    },
+
     ],
   },
 
@@ -315,6 +323,7 @@ for (const brand of ["library", "museum"]) for (const mode of ["light", "dark"])
     { source: "fluent-2-design-tokens", role: "explanatory", note: "Branded themes." },
     { source: "carbon-themes", role: "explanatory", note: "Stable role names, changing values." },
     { source: "w3c-wcag-22", role: "standard", note: "SC 1.4.3, 1.4.11, 2.5.8." },
+    { source: "frost-themeable-ui-history", role: "explanatory", note: "Brad Frost retrospective on early UI theming and the evolution towards shared, themeable interface structures." },
   ],
   evidence: "practitioner-recommendation",
   evidenceNote:
@@ -322,5 +331,5 @@ for (const brand of ["library", "museum"]) for (const mode of ["light", "dark"])
 
   status: "published",
   quality: { classification: true, explanation: true, research: true, beginner: true, professional: true, examples: true, limitations: true, relationships: true, sources: true, activities: true },
-  lastVerifiedAt: "2026-11-12",
+  lastVerifiedAt: "2026-11-24",
 });

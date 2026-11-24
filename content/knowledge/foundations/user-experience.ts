@@ -66,8 +66,8 @@ export default defineEntry({
         "Re-evaluate after release, because experiences change with repeated use and changing context.",
       ],
       scenarios: [
-        "A pension provider redesigns its forms and improves task success, but customers still feel uncertain. Interviews show the anxiety comes from not knowing what happens next, which is fixed by a clear timeline after submission rather than by the form.",
-        "A fitness app with high novelty scores at launch loses users after a month. Research finds the hedonic appeal faded while the pragmatic value (tracking progress) was never strong enough to sustain use.",
+        "Illustrative scenario: a pension provider redesigns its forms and improves task success, but customers still feel uncertain. Interviews show the anxiety comes from not knowing what happens next, which is fixed by a clear timeline after submission rather than by the form.",
+        "Illustrative scenario: a fitness app with high novelty scores at launch loses users after a month. Research finds the hedonic appeal faded while the pragmatic value (tracking progress) was never strong enough to sustain use.",
       ],
     },
     advanced: {
@@ -181,6 +181,8 @@ export default defineEntry({
     { target: "peak-end-rule", type: "related-to", note: "The remembered experience after use is shaped by its most intense and final moments." },
     { target: "human-computer-interaction", type: "developed-from", note: "UX research grew within HCI as a response to usability's focus on task performance." },
     { target: "service-design", type: "complementary-to", note: "Service design extends the view to every touchpoint with an organisation, beyond one product's use." },
+    { target: "experience-design", type: "applied-in", note: "Experience design takes the experience described here as the starting point of design: why people act, then what the product does and how." },
+    { target: "product-design", type: "related-to", note: "Product designers in technology companies typically own the experience of a digital product, alongside product management and engineering." },
   ],
 
   exercises: [

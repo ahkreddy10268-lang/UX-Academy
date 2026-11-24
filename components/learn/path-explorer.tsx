@@ -4,6 +4,7 @@
  * planned topics are labelled as planned, never as lessons.
  */
 import { entryBySlug, taxonomyBySlug } from "@/lib/content";
+import { stepStatus } from "@/lib/content/learning";
 import { LayerExplorer, type Layer } from "./art/layer-explorer";
 
 type Spec = { name: string; does: string; decisions: string; slugs: string[]; art: number };
@@ -40,7 +41,13 @@ export function PathExplorer({ id }: { id: string }) {
     art: l.art,
     links: l.slugs
       .filter((s) => entryBySlug.has(s) || taxonomyBySlug.has(s))
-      .map((s) => ({ href: `/library/${s}`, label: entryBySlug.get(s)?.title ?? taxonomyBySlug.get(s)!.title, planned: !entryBySlug.has(s) || entryBySlug.get(s)!.status !== "published" })),
+      .map((s) => {
+        const status = stepStatus(s);
+        const title = entryBySlug.get(s)?.title ?? taxonomyBySlug.get(s)!.title;
+        // A concept explained within another entry links to that host, labelled as such, never as planned.
+        if (status.kind === "addressed") return { href: `/library/${status.host.slug}`, label: `${title} (explained within ${status.host.title})`, planned: false };
+        return { href: `/library/${s}`, label: title, planned: !entryBySlug.has(s) || entryBySlug.get(s)!.status !== "published" };
+      }),
   }));
   return <LayerExplorer title={spec.title} layers={layers} />;
 }

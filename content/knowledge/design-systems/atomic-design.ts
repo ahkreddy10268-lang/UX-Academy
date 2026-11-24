@@ -76,6 +76,7 @@ export default defineEntry({
         "**State boundaries** are where the chemistry metaphor is silent. A practical rule: atoms and most molecules are presentational and controlled by props; organisms often own interaction state (an autocomplete's open state and active option) and coordinate their parts; data fetching and business state usually live above the template, in pages or application code. Getting this boundary wrong makes molecules impossible to reuse.",
         "**Tokens sit beneath atoms.** Frost's 2013 description already counted colour palettes and fonts among the atoms {{src:frost-2013}}; in today's systems those decisions are primitive and semantic tokens, consumed by atoms, so a theme can change every level without touching the component tree.",
         "**Accessible composition.** Complex organisms such as comboboxes, menus and data grids need the keyboard and ARIA patterns that define them; the ARIA Authoring Practices describe such patterns as informative guidance {{src:w3c-aria-apg}}. Splitting an organism into molecules must not split the roles and states that only make sense together.",
+        "Atomic Design appeared in a wider movement towards modular, themeable interfaces. Brad Frost's 2025 retrospective connects CSS, CSS Zen Garden and modular CSS approaches with the rise of component-driven interface design; his original book outline also discusses the limits of style guides, UI frameworks and pattern libraries. The five stages are Frost's mental model for navigating parts and whole, not a mandatory project structure {{src:frost-themeable-ui-history}} {{src:frost-2016}}.",
       ],
       evidence: [
         "Atomic design is a **practitioner methodology** described in Frost's blog post and book {{src:frost-2013}} {{src:frost-2016}}, widely adopted and adapted in industry. No controlled study was found comparing it with other ways of structuring component libraries; claims about its benefits for consistency and speed are practitioner reports. Frost himself presents it as a mental model rather than a rigid process.",
@@ -256,6 +257,13 @@ function SearchAutocomplete({ results, renderOption }: { results: Book[]; render
         caption:
           "Illustrative and shortened (keyboard handling omitted). The organism keeps the combobox roles together; `renderOption` is a slot, so the same organism serves book, author and event searches without new variants {{src:w3c-aria-apg}}.",
       },
+    {
+      "title": "Same catalogue search, two ways to organise the work: strict taxonomy versus feature ownership",
+      "language": "text",
+      "code": "OVER-APPLIED: let the five labels dictate every file and dependency\nsrc/\n  atoms/Label.tsx\n  atoms/Input.tsx\n  atoms/ClearButton.tsx\n  molecules/SearchField.tsx\n  molecules/SuggestionList.tsx\n  organisms/SearchAutocomplete.tsx\n  templates/CatalogueHeader.tsx\n  pages/Catalogue.tsx\n\nBETTER FOR A LARGE PRODUCT: keep the atomic mental model; organise code by feature and reuse\nsrc/\n  features/catalogue/search/\n    SearchAutocomplete.tsx   # owns query, active option and combobox behaviour\n    SearchField.tsx           # local composition for this search task\n    SuggestionList.tsx        # local listbox composition\n  shared/ui/\n    TextInput.tsx             # promoted only if multiple features need the same contract\n    IconButton.tsx            # shared action with its accessible name\n  pages/catalogue/\n    CataloguePage.tsx         # owns data loading and page-level empty/error states",
+      "caption": "Illustrative architecture comparison, not a universal folder rule. Atomic Design helps a team discuss scale and composition; it does not prescribe directory names or require every local element to become a shared atom. Feature ownership can coexist with the atomic mental model. The accessible combobox remains one coordinated interaction, not fragments with disconnected state."
+    },
+
     ],
   },
 
@@ -357,6 +365,7 @@ function SearchAutocomplete({ results, renderOption }: { results: Book[]; render
   references: [
     { source: "frost-2013", role: "primary", note: "Original statement of the five levels." },
     { source: "frost-2016", role: "primary", note: "Chapters 2 and 4: methodology and interface inventory." },
+    { source: "frost-themeable-ui-history", role: "explanatory", note: "Attributed practitioner history of themeable UI, CSS separation and modular interface patterns." },
     { source: "w3c-wcag-22", role: "standard", note: "SC 1.3.1, 2.1.1, 4.1.2 (A)." },
     { source: "w3c-aria-apg", role: "explanatory", note: "Combobox and other composite patterns (informative guidance)." },
   ],
@@ -377,5 +386,5 @@ function SearchAutocomplete({ results, renderOption }: { results: Book[]; render
     sources: true,
     activities: true,
   },
-  lastVerifiedAt: "2026-11-11",
+  lastVerifiedAt: "2026-11-24",
 });

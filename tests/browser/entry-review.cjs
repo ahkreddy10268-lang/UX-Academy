@@ -57,4 +57,5 @@ const out = []; const ok = (n, c, d = "") => out.push(`${c ? "PASS" : "FAIL"} ${
   }
   await b.close();
   console.log(out.join("\n")); console.log(`${out.filter((x) => x.startsWith("PASS")).length}/${out.length} passed`);
+  if (out.some((x) => x.startsWith("FAIL "))) process.exitCode = 1;
 })();

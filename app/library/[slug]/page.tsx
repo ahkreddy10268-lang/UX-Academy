@@ -238,6 +238,17 @@ function Entry({ entry: e }: { entry: KnowledgeEntry }) {
                   <span aria-hidden className="text-ink-2">→</span>
                 </Link>
               )}
+
+              {lab && (
+                <Link href={`/labs/${lab.id}`} className="card mt-5 flex items-center justify-between gap-4 p-4">
+                  <span className="min-w-0">
+                    <span className="label block">Interactive lab</span>
+                    <span className="mt-1 block font-semibold text-ink">{lab.title}</span>
+                    <span className="mt-1 block text-sm text-ink-2">{lab.summary}</span>
+                  </span>
+                  <span aria-hidden className="shrink-0 text-ink-2">→</span>
+                </Link>
+              )}
             </div>
             <figure className="rise-in">
               <div className="overflow-hidden rounded-xl border border-rule bg-surface shadow-raise">

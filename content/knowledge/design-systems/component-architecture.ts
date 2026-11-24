@@ -246,6 +246,7 @@ export async function BookCardWithAvailability({ isbn }: { isbn: string }) {
 }`,
         caption: "Illustrative. The shared card stays data-free and server-rendered; only the reserve button is a client component.",
       },
+      {"title":"Same task, two component architectures: prop flags versus composition","language":"ts","code":"// Poor: one shared component accumulates unrelated flags and data work\nfunction BookCard({ title, author, showBadge, badgeText, showReserve, isbn, fetchAvailability, coverPosition, compact, featured }) {\n  // mixes layout, business data and presentation\n  return <article>{/* many conditional branches */}</article>;\n}\n\n// Better: stable anatomy with consumer-composed content\nfunction BookCard({ title, author, children }) {\n  return <article className=\"card\">\n    <h3>{title}</h3>\n    <p>{author}</p>\n    {children}\n  </article>;\n}\n\n// Product wrapper owns data; actions are composed into the slot\nasync function AvailableBookCard({ isbn }) {\n  const book = await getBook(isbn);\n  return <BookCard title={book.title} author={book.author}>\n    <ReserveButton isbn={isbn} available={book.available} />\n  </BookCard>;\n}","caption":"Illustrative paired example for the same task: show a book card with availability and a reserve action. The better version separates stable structure from product data and task-specific actions. Composition is not automatically better for every simple component; use it when the content genuinely varies."},
     ],
   },
 

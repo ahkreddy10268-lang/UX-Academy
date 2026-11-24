@@ -665,6 +665,100 @@ Change impact: `lib/**` changed, so every browser suite was run on the final bui
 | Entry review | `BASE_URL=http://localhost:3100 AXE_PATH=node_modules/axe-core/axe.min.js node tests/browser/entry-review.cjs power-law-of-practice keystroke-level-model flexibility-and-efficiency-of-use` (final build) | 24/24; power-law-of-practice: 1440/768/390 px, light and dark, axe 0, overflow 0, errors 0, plate text min 10.2 px at 390, 4 markers inside, 12 links, flashcards 5/5 | PASS |
 | e2e | `node tests/browser/e2e.cjs` | 44/44 | PASS |
 | e2e-redesign | `node tests/browser/e2e-redesign.cjs` | 65/66 after updating the detailed-diagram count (30 → 31) for the new Level-2 figure. Remaining FAIL 'library grid shows the first page of 24 cards, each with a plate' (23): `anchoring-effect` (drafted) is listed without a plate because plates are built only for published entries — pre-existing since the drafts were committed, not caused by this batch (LIB-1). The script exits 0 despite a FAIL line. | FAIL (pre-existing, LIB-1) |
+### Domain 1 educational audit and consolidated follow-up (2026-11-23, PR #4 branch `codex/domain-1-educational-quality`)
+
+Scope: all 16 Domain 1 entries, five addressed-within decisions, glossary, related entries and the relevant learning-path display. No general page redesign or taxonomy change. Final changes include:
+- HCI context-of-use wording corrected to the 2018 definition components. The vocabulary field is plain text (no citation token); the ISO citation is in Practitioner explanatory prose.
+- Source metadata distinguishes the public ISO catalogue/abstract from the paid ISO 9241-11:2018 text, which was not accessed. The record cites the official ISO OBP cross-reference ISO 9241-115:2024 for the definitions and attribution.
+- Human-Centred Design explicitly taught and assessed within `user-centred-design`; eight scenarios across HCI, Usability, UX and UCD labelled as illustrative.
+- Seven typed relations, including HCI → Interaction Design, HCI → Evolution of Digital Experiences, and Design Thinking → Design Processes. The two HCI relations and both HCI illustrative-scenario labels are restored in the final branch.
+- 13 glossary terms; two existing definitions aligned. Generated coverage updated to 127 glossary terms.
+- D1-7 learning-path display now classifies covered-within steps separately from lessons and planned concepts, links to the host entry, and updates path summaries/cards/curriculum counts. No learning-path step data or completion model changed.
+- `docs/DESIGN_REFERENCE_LIBRARY.md` added as a reading list for future interface work; it is explicitly not a build plan.
+- `tests/browser/e2e-redesign.cjs` glossary expected count updated from 114 to 127.
+- `tests/browser/entry-review.cjs` now sets `process.exitCode = 1` if any assertion fails.
+
+#### Latest local QA handoff from Claude Desktop
+
+| Check | Command / method | Result | Run / inherited |
+|---|---|---|---|
+| Entry browser review | Four Domain 1 entries; 1440, 768 and 390 px; light and dark themes | Reported zero accessibility violations, horizontal overflow or console errors; no raw `{{src:...}}` or `[[...]]` tokens in visible page text; all internal links resolved; figure text ≥10.2 px at phone width; keyboard flashcards work | Reported by Claude Desktop on the consolidated working branch before the final HCI relations and second scenario label were restored |
+| Raw-token scan | First scan of the full document | False alarm: inspected hydration scripts containing legitimate source strings | Rejected as invalid scan |
+| Raw-token scan, corrected | Visible rendered text only, with every collapsible section opened | 0 citation or link tokens on all four reviewed pages | Reported by Claude Desktop |
+| Generated docs | `npm run docs:generate` | `docs/CONTENT_COVERAGE.md` has genuine content/count updates including 127 glossary terms; local handoff says the generated files were inspected | Reported by Claude Desktop; branch file updated |
+| `sources:verify` | Not run | No new source IDs added | Skipped appropriately |
+| Screen reader / physical devices / independent expert | Manual tests | Not run | Not run |
+
+The post-restoration HCI relation and second-scenario-label edit happened after this entry review. Re-run the HCI entry browser review on the final candidate before merge.
+
+#### D1-7 implementation verification inherited from the source branch
+
+The learning-path implementation was originally tested on `claude/batch1-constraints`; the same five implementation files and the 127-term `e2e-redesign` expectation have been copied into this PR branch. The following results are recorded as **source-branch evidence only**, not as a final-branch pass:
+
+| Check | Command / method | Result | Run / inherited |
+|---|---|---|---|
+| Unit/type/lint | `npm run check` | PASS — 612 tests, typecheck, lint | Run on `claude/batch1-constraints` |
+| Taxonomy | `npm run test:taxonomy` | PASS — all learning-path steps classified; Domain 1 21 topics, 16 published, 5 addressed within | Run on source branch |
+| Build | `npm run build` | PASS (final source-branch build) | Run on source branch |
+| End-to-end | `tests/browser/e2e.cjs` | PASS 44/44 | Run on source branch |
+| Redesign end-to-end | `tests/browser/e2e-redesign.cjs` | First run aborted on stale 114-term assertion; after updating to 127, PASS 66/66 | Run on source branch |
+| Keyboard | `tests/browser/keyboard.cjs` | PASS 45/45 | Run on source branch |
+| Devices | `tests/browser/devices.cjs` | PASS 155/155 | Run on source branch |
+| Learning-path direct review | Playwright: `/learn`, `/learn/hci-fundamentals`, `/learn/accessibility` at 390 and 1440 | 22/24. The two failures were axe `landmark-unique` on `.app-sidebar` at 1440, also present on production `9a51aa6` (pre-existing A11Y-1). No overflow or page errors. | Run on source branch |
+| Visual | HCI path row screenshot at 1440 | Display alignment inspected after two layout corrections | Run on source branch |
+
+#### Final consolidated PR branch — still required
+
+| Check | Command / method | Result | Run / inherited |
+|---|---|---|---|
+| Changed-entry integrity | `entry-integrity.ts` for `human-computer-interaction`, `design-thinking`, `usability`, `user-centred-design`, `user-experience` | Not run on final consolidated branch after the last HCI relation/scenario restoration | Not run |
+| HCI entry browser review | `entry-review.cjs human-computer-interaction` after final relation/scenario edits | Must be rerun; the four-entry visible-text review predates the last two HCI relations and second scenario label | Not run on final content |
+| Assertion failure propagation | Inspect `tests/browser/entry-review.cjs`; deliberately force a failed assertion | Code now sets a non-zero exit code on `FAIL`; deliberate failure injection not run | Code inspected; injection not run |
+| Unit/type/lint and taxonomy | `npm run check`, `npm run test:taxonomy` | Not run on this final consolidated branch | Not run |
+| Build | `npm run build` | Not run on this final consolidated branch | Not run |
+| Impacted browser suites | `e2e`, `e2e-redesign`, `atlas`, `keyboard`, `devices`, `colour-studio`, `crawl`, `a11y`; learning-path direct review | Required by change-impact rules because `app/**`, `components/**` and `lib/**` changed; not run on this final consolidated branch | Not run |
+| Source verification | `sources:verify` | No source IDs are new relative to `main`; the IDEO source record is present on `main` already | Not required for new IDs |
+| Vercel preview | PR #4 check | Pending at latest GitHub status check | Pending |
+| Generated coverage | `docs/CONTENT_COVERAGE.md` | Generated on 2026-11-23; 115/561 published, 23 addressed within, 423 planned, 127 glossary terms, 443 quiz questions | Committed generated output; local regeneration not independently rerun here |
+
+The final branch has not been merged or deployed. Screen-reader, physical-device and independent expert review remain unperformed. Do not merge until the required final-branch checks pass and the full PR diff is reviewed.
+
+### Final local verification of PR #4 (2026-11-23, branch `codex/domain-1-educational-quality`, HEAD `7a5d362`)
+
+**Scope: `7a5d362` only.** These results predate the 16 commits merged from the remote afterwards (`28f3ede`…`955cfd9`: D1-7 learning-path code in `app/`, `components/`, `lib/`; HCI relations and second scenario label restored; Design Thinking relation; e2e glossary count 127; reference-library doc). They do not verify the merged HEAD; the "still required" table above stands. Every check below ran locally on `7a5d362`, using a production build served by `npx next start -p 3100`. `claude/batch1-constraints` was not used or merged. Nothing was merged or deployed.
+
+| Check | Command / method | Result | Status |
+|---|---|---|---|
+| Check | `npm run check` | Exit 0; 23 test files, 612 tests | PASS |
+| Taxonomy | `npm run test:taxonomy` | Exit 0; 995 links resolve; 115 published entries pass the three-depth checks; Domain 1 has 21 topics: 16 published, 5 addressed within (76.2%) | PASS |
+| Generated docs | `npm run docs:generate` | Exit 0. `KNOWLEDGE_TAXONOMY.md`, `RESEARCH_SOURCES.md` and `ILLUSTRATION_COVERAGE.md` had date-only changes and were restored. `CONTENT_COVERAGE.md` has genuine changes and was kept: quiz questions 442→443, glossary terms 114→127, UCD references 5→6 and quiz questions 4→5. The earlier report of "only date changes" does not hold for this HEAD. | PASS |
+| Entry integrity | `npx tsx scripts/entry-integrity.ts human-computer-interaction user-centred-design usability user-experience` | Exit 1. HCI has no problems, and no raw token is left in its vocabulary. The exit code comes from 3 `referencedNotCited` notices on the other three entries. All 3 are `role: "further"` reading references that are also uncited on `main`. They are pre-existing and not caused by this change set. | FAIL by exit code; no new defect |
+| Build | `npm run build` | Exit 0; 997/997 static pages | PASS |
+| Entry review | `BASE_URL=http://localhost:3100 AXE_PATH=node_modules/axe-core/axe.min.js node tests/browser/entry-review.cjs human-computer-interaction user-centred-design usability user-experience` | Exit 0; 32/32 checks pass. Each entry was checked at 1440, 768 and 390 px in light and dark: axe 0, overflow 0, console/page errors 0. Plate text is ≥10.2 px at 390 and markers sit inside the viewBox. Internal links resolve with no raw markup: HCI 35, UCD 23, usability 23, UX 20. Flashcards work by keyboard: HCI 8/8, the others 3/3. | PASS |
+| Raw-token scan | Scratch Playwright scan of every visible text node on the four entry pages, with all `<details>` opened and `script`/`style`/`template` excluded | 0 `{{src:` or `[[` tokens on all four pages, and `innerText` has no match. An earlier version of the scan read `body.textContent` and falsely FAILed all four, because that property includes the hydration `<script>` payloads, which legitimately carry the source strings. | PASS |
+| Review-helper exit code | `… node tests/browser/entry-review.cjs no-such-entry-xyz; echo $?` | 6 FAIL lines, 2/8 passed, exit 1. A recorded FAIL now makes the run exit non-zero. | PASS |
+| Glossary | Scratch Playwright check of `/glossary` at 390 and 1440 | HTTP 200; all 13 new terms present; counter reads "127 of 127"; overflow 0; axe 0; console/page errors 0; all 206 internal links on the page return 200 | PASS |
+| `sources:verify` | Not run | No new source ID in this change set; `iso-9241-11-2018` notes changed only | NOT RUN (appropriate) |
+| e2e-redesign | Not run | `tests/browser/e2e-redesign.cjs:87` still asserts a glossary count of 114. With 127 terms it would fail at that assertion. A stale test expectation, not a product defect. On `7a5d362` the fix existed only on `claude/batch1-constraints`; it has since been merged here (`475d6ff`). | NOT RUN |
+| Atlas, devices, keyboard | Not run | No shared component, route or token changed | NOT RUN (change-impact decision) |
+
+Limitations:
+- No screen-reader, physical-device or independent expert review was done.
+- The glossary check confirms the terms are present and the page is accessible. It does not re-judge the wording of the definitions.
+- The D1-7 roadmap-status code, `docs/DESIGN_REFERENCE_LIBRARY.md`, the Design Thinking → design-processes relation and the e2e glossary-count fix were not on this branch at `7a5d362`; they arrived with the merged remote commits and are not covered by these results.
+
+### Remaining checks on the merged PR #4 candidate (2026-11-23, HEAD `80b02d8`)
+
+This section covers the final consolidated branch: the D1-7 learning-path code, the restored HCI relations and scenario labels, the Design Thinking relation and the 127-term e2e expectation. Checks ran locally against a production build served by `npx next start -p 3100`, with `BASE_URL=http://localhost:3100` and `AXE_PATH=node_modules/axe-core/axe.min.js`. Nothing was merged or deployed.
+
+| Check | Command / method | Result | Status |
+|---|---|---|---|
+| Check | `npm run check` (run before the merge commit) | Exit 0; 23 test files, 612 tests | PASS |
+| Taxonomy | `npm run test:taxonomy` | Exit 0; 998 links; 115 published entries at three depths; Domain 1 has 21 topics: 16 published, 5 addressed within (76.2%) | PASS |
+| Entry integrity | `npx tsx scripts/entry-integrity.ts human-computer-interaction design-thinking usability user-centred-design user-experience` | Exit 1. HCI is clean. 4 `referencedNotCited` notices, all `role: "further"`: `designkit-methods` (design-thinking), `govuk-moderated-usability-testing`, `govuk-service-manual`, `norman-nielsen-ux-definition`. All are uncited on `main` `9a51aa6` too; the design-thinking diff adds only one relation. | FAIL by exit code; pre-existing, no new defect |
+| Build | `npm run build` | Exit 0; 997/997 static pages | PASS |
+| e2e | `node tests/browser/e2e.cjs` | 44/44 | PASS |
+| e2e-redesign | `node tests/browser/e2e-redesign.cjs` | 66/66 (127-term glossary expectation) | PASS |
 | Atlas | `node tests/browser/atlas.cjs` | 36/36 | PASS |
 | Keyboard | `node tests/browser/keyboard.cjs` | 45/45 | PASS |
 | Colour Studio | `node tests/browser/colour-studio.cjs` | 46/46 | PASS |
@@ -716,3 +810,66 @@ Review (one targeted pass against the sources) found 0 critical and 0 major issu
 Minor: WL-1. Pre-existing: LIB-1.
 
 Limitations: no screen-reader, physical-device or independent expert review; Weber (1834) not read and Algom (2021) abstract only; Vercel preview not checked.
+### Domain 1 audit and targeted improvements (2026-11-20, parent `a2e790a`)
+
+Scope: the 16 Domain 1 entries, the five addressed-within concepts, the glossary and three learning paths (read only). Changes: D1-2 fixed (HCI cites ISO 9241-11); eight unlabelled scenarios in four pre-D-131 entries labelled 'Illustrative scenario'; human-centred design taught explicitly in `user-centred-design` (intermediate paragraph, objective, new intermediate quiz question, flashcard reworded; an unverified claim about ISO's reason for the term restated as the usual explanation; IDEO source added as explanatory); seven relations added to close navigation gaps; glossary: 13 domain terms added, UX and human-centred design definitions aligned with their entries.
+
+| Check | Command | Result | Run / inherited |
+|---|---|---|---|
+| Check | `npm run check` | PASS — 612 tests | Run |
+| Taxonomy | `npm run test:taxonomy` | PASS — Domain 1: 21 topics, 16 published, 5 addressed within | Run |
+| Integrity | `entry-integrity.ts` for all 16 Domain 1 entries | Only uncited further-reading references (10, accepted precedent); D1-2 gone; no citation, relation or quiz problems | Run |
+| Glossary | `tests/content.test.ts` (unique slugs, known see-also slugs) | PASS | Run (part of check) |
+| Docs | `npm run docs:generate` | CONTENT_COVERAGE reference counts updated; Domain 1 coverage unchanged | Run |
+| Build | `npm run build` | PASS | Run |
+| Entry review | `entry-review.cjs user-centred-design human-computer-interaction usability user-experience design-thinking` | PASS 40/40 | Run |
+| Glossary page | `curl /glossary` on a local production build | All 13 new terms render | Run |
+| Live paths | Production `/learn/hci-fundamentals` | Shows 'History of HCI' and 'Human-Centred Design' as 'in development' (D1-7) | Run |
+| Sources | One fresh attempt each: NN/g maturity quiz; OpenAlex abstract for Chapman & Plewes | Quiz host still fails (000); no abstract | Run |
+| Not run | Plate renders, devices, keyboard, atlas | No plate, component or route changed | Not run |
+
+### D1-7 — learning-path display of addressed-within concepts (2026-11-20, parent `58de5b5`)
+
+Display-only change: `lib/content/learning.ts` (`stepStatus` from taxonomy `coveredBy`; `addressed` counts in `pathStats`/`stageStats`, excluded from `planned`), `app/learn/[id]/page.tsx` (addressed rows 'Explained within {host} →', summary 'concepts explained within other lessons', curriculum-map counts), `components/learn/curriculum-map.tsx`, `components/learn/path-card.tsx`, `components/learn/path-explorer.tsx`. No path data, numbering, progress or completion change. `tests/browser/e2e-redesign.cjs`: glossary total updated 114 → 127 (the 13 terms added in `58de5b5`; that commit had not run this suite).
+
+| Check | Command | Result | Run / inherited |
+|---|---|---|---|
+| Check | `npm run check` | PASS — 612 tests, typecheck, lint | Run |
+| Step classification | scratch script over all 16 paths | lessons + addressed + planned = steps for every path; addressed: HCI 2, Accessibility 1; lesson counts unchanged (HCI 16, Accessibility 3) | Run |
+| Build | `npm run build` | PASS (final) | Run |
+| e2e | `tests/browser/e2e.cjs` | PASS 44/44 (final build) | Run |
+| e2e-redesign | `tests/browser/e2e-redesign.cjs` | First run aborted at the glossary count (114 hard-coded; 127 after `58de5b5`); count updated; PASS 66/66 (final build) | Run |
+| Keyboard | `tests/browser/keyboard.cjs` | PASS 45/45 (final build) | Run |
+| Devices | `tests/browser/devices.cjs` | PASS 155/155 (final build) | Run |
+| Direct | Playwright: `/learn`, `/learn/hci-fundamentals`, `/learn/accessibility` at 390 and 1440 | 22/24: summaries, 'Explained within' rows, in-path lesson links, curriculum-map and card counts, HTTP 200, no overflow, no page errors. The 2 failures are axe `landmark-unique` on `.app-sidebar` at 1440, identical on production `9a51aa6` (pre-existing; A11Y-1) | Run |
+| Visual | Screenshot of the HCI path row at 1440 | Title above 'Explained within…', aligned with lesson text; two layout corrections made during QA (row run-on, then centring from the unlayered `.tap` rule) | Run |
+| Crawl | `node tests/browser/crawl.cjs` on 27 routes: `/`, `/library`, `/learn`, all 16 `/learn/<id>` paths, `/glossary`, `/topics/foundations`, `/coverage` and the five changed entries | 0 pages with problems | PASS |
+| a11y | `node tests/browser/a11y.cjs` on the same 27 routes, light + dark at 1280 px | 0 violations | PASS |
+| Entry review | `node tests/browser/entry-review.cjs human-computer-interaction design-thinking` | Exit 0; 16/16 at 1440, 768 and 390 px, light and dark. Links resolve with no raw markup: HCI 35, design-thinking 12. Flashcards by keyboard: 8/8 and 5/5. | PASS |
+| HCI scenario labels | `grep "Illustrative scenario" human-computer-interaction.ts` | Both scenarios labelled (lines 78, 79) | PASS |
+| Learning-path direct review | Scratch Playwright: `/learn`, `/learn/hci-fundamentals`, `/learn/ux-fundamentals`, `/learn/accessibility` at 390 and 1440, light and dark; internal links on `/learn/hci-fundamentals` | 11/17. HTTP 200, overflow 0 and console errors 0 everywhere. Addressed-concept text renders (`/learn` 2, HCI path 4, accessibility path 3 mentions). All 50 HCI-path links return 200. **6 FAILs: axe `landmark-unique` on `.app-sidebar` on the three `/learn/<id>` pages at 1440, light and dark.** | FAIL (pre-existing, A11Y-1) |
+| Baseline for the axe failure | `9a51aa6` built in a temporary worktree, served on port 3200, axe at 1440 on the same three pages | `landmark-unique` on all three pages. `/library`, `/library/fitts-law` and `/system` at 1440 on `80b02d8` are clean. | Pre-existing on `main` |
+| `sources:verify` | Not run | No source ID is new relative to `main` | NOT RUN (appropriate) |
+
+Limitations:
+- `a11y.cjs` tests at 1280 px only, which is why it does not catch A11Y-1; the failure is now in `docs/OPEN_ISSUES.md`.
+- The addressed-concept check counts rendered text. It does not judge the layout visually; no screenshots were inspected in this run.
+- No screen-reader, physical-device or independent expert review was done. Vercel preview status was not checked in this run.
+
+### Merge of all outstanding branches (2026-11-24, branch `claude/merge-all-20261124`, base `main` `601bb96`)
+
+Owner instruction: merge everything not yet in `main`. Merged in order: `claude/batch1-constraints` (4 commits), `codex/domain-1-educational-quality` (PR #4, 39), `codex/design-systems-mastery-build` (PR #7, 63). Conflict resolution: `human-computer-interaction.ts` kept `main`'s closeout wording in three hunks (context-of-use vocabulary, ISO 9241-11 sentence, scenario label); log files kept both sides, then duplicate rows in `OPEN_ISSUES.md` (D1-4, D1-5, D1-6, D1-8, A11Y-1) were reduced to `main`'s current row; `PROJECT_STATE.md` reconciled (one 'Last updated', branch-era sections marked historical); generated docs regenerated. No content entry was added or removed (121 published).
+
+| Check | Result | Status |
+|---|---|---|
+| `npm run check` | 23 files, 641 tests | PASS |
+| `npm run test:taxonomy` | 1072 links; 121 published at three depths | PASS |
+| `npm run docs:generate` | Exit 0 | PASS |
+| `npm run build` | 1000/1000 | PASS |
+| Entry review (14 changed entries + webers-law) | 120/120 | PASS |
+| e2e / atlas / keyboard / colour-studio / devices | 44/44, 36/36, 45/45, 46/46, 155/155 | PASS |
+| e2e-redesign | 65/66; remaining FAIL is LIB-1 (pre-existing) | FAIL (pre-existing) |
+| Crawl, 11 real routes (incl. `/learn/design-systems`, HCI, design-tokens, UCD, webers-law) | 0 problems (a 12th route, `/paths`, was a wrong route typed by the tester, not a site route) | PASS |
+| a11y, same routes | 0 violations | PASS |
+
+Not reviewed editorially in this session: the content of PRs #4 and #7 beyond automated gates (authored on other branches with their own QA records).
