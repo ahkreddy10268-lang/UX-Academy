@@ -158,6 +158,73 @@ export default defineEntry({
     "Tooling and format support still vary between design tools and transformers.",
     "Tokens capture values, not the judgement of when and how to use them — documentation is still needed.",
   ],
+  practice: {
+  "dos": [
+    {
+      "text": "Name tokens for their purpose or contract, not their current value (for example, color.action.primary, not blue-button).",
+      "why": "A value can change while its role remains stable; purpose-based names make theme changes and maintenance intelligible.",
+      "kind": "industry"
+    },
+    {
+      "text": "Keep the source file, resolved theme values and generated platform outputs distinguishable.",
+      "why": "A generated CSS variable or native constant is an implementation output, not automatically the authoritative design decision.",
+      "kind": "industry"
+    },
+    {
+      "text": "Validate token references, types, values, contrast pairings and output mappings before publishing.",
+      "why": "A syntactically valid token file can still contain broken aliases, unsuitable values or inaccessible combinations.",
+      "kind": "standard"
+    },
+    {
+      "text": "Add descriptions and a deprecation path when tokens are intended for other teams to consume.",
+      "why": "Consumers need intent, ownership and migration guidance; deleting a referenced token can break multiple products.",
+      "kind": "industry"
+    }
+  ],
+  "donts": [
+    {
+      "text": "Do not make every component depend directly on palette primitives by default.",
+      "why": "It couples component behaviour to a particular palette and makes semantic remapping harder; use a documented exception only when there is a clear reason.",
+      "kind": "industry"
+    },
+    {
+      "text": "Do not create a component token for every property before a real need exists.",
+      "why": "Extra layers increase naming, documentation, review and migration costs; the right number of tiers depends on the system.",
+      "kind": "context"
+    },
+    {
+      "text": "Do not assume a Figma variable collection is automatically a portable DTCG source file.",
+      "why": "Figma variables and DTCG overlap but have different models and feature support; import/export mappings must be checked.",
+      "kind": "platform"
+    },
+    {
+      "text": "Do not treat a successful transform as proof that the rendered interface is correct.",
+      "why": "Output still needs integration, accessibility, visual and platform testing.",
+      "kind": "industry"
+    }
+  ],
+  "examples": [
+    {
+      "title": "A small DTCG source: primitive value and semantic alias",
+      "language": "json",
+      "code": "{\n  \"color\": {\n    \"$type\": \"color\",\n    \"palette\": {\n      \"blue-700\": {\n        \"$value\": {\n          \"colorSpace\": \"srgb\",\n          \"components\": [0.122, 0.290, 0.620],\n          \"hex\": \"#1F4A9E\"\n        }\n      }\n    },\n    \"action\": {\n      \"primary\": {\n        \"$value\": \"{color.palette.blue-700}\",\n        \"$description\": \"Primary action surface\"\n      }\n    }\n  }\n}",
+      "caption": "Illustrative DTCG 2025.10 fragment. The group-level $type is inherited by child tokens; the semantic token references the primitive. A real system must validate the value against every context and foreground pairing."
+    },
+    {
+      "title": "Generated web output: one semantic contract, multiple theme values",
+      "language": "css",
+      "code": ":root {\n  --color-action-primary: #1f4a9e;\n}\n\n[data-theme=\"dark\"] {\n  --color-action-primary: #a9c4ff;\n}\n\n.button--primary {\n  background: var(--color-action-primary);\n}",
+      "caption": "Illustrative resolved CSS output, not DTCG source syntax. The theme resolver/build configuration supplies each context value; the component consumes the semantic output rather than selecting a palette value."
+    },
+    {
+      "title": "A coupling mistake and its correction",
+      "language": "css",
+      "code": "/* Poor: a component knows the palette value */\n.button--primary {\n  background: #1f4a9e;\n}\n\n/* Better: a component consumes an intent */\n.button--primary {\n  background: var(--color-action-primary);\n}",
+      "caption": "The second version creates a place where the system can change the action role per theme or brand. It still needs contrast and state checks after each mapping change."
+    }
+  ]
+},
+
   misconceptions: [
     {
       myth: "Design tokens are a W3C standard.",
