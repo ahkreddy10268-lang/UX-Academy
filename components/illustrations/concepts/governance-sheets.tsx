@@ -472,7 +472,7 @@ export const multiBrandSystemsPlate: IllustrationEntry = {
         <UiText x={340} y={60} mono>
           or. 700
         </UiText>
-        <UiText x={304} y={88} mono>
+        <UiText x={392} y={88} mono anchor="end">
           0 px · serif
         </UiText>
         <line x1={8} y1={160} x2={392} y2={160} stroke={S.rule} strokeWidth="0.9" {...hair} />

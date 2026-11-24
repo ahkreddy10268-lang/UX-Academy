@@ -187,6 +187,7 @@ Decision (date, reasons, against criteria): …`,
 }`,
         caption: "Illustrative. CI blocks promotion to stable until every listed requirement is present.",
       },
+      {"title":"Same request, two governance paths: chat decision versus criteria-led proposal","language":"text","code":"POOR — ad hoc chat\nRequest: 'Can we add a date-range picker?'\nDecision: 'Sure, I will merge it today.'\nNo evidence, owner, duplicate check, accessibility review, status or migration plan.\n\nBETTER — documented proposal\nNeed: people booking a room choose a start and end date.\nEvidence: record which services need a range and what existing controls cannot do.\nUnique: compare the existing date input and date patterns before proposing a new component.\nUsable: test the task with representative people, including disabled participants.\nConsistent: reuse system tokens, field, button and content rules.\nVersatile: define supported contexts and known limitations.\nDecision: record owner, reviewers, trial/stable status, conditions and review date.","caption":"Illustrative comparison of one date-range request. The better process follows published GOV.UK contribution criteria; the example is not a claim that GOV.UK uses this exact request or wording."},
     ],
   },
 

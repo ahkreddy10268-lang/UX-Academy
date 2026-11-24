@@ -12,7 +12,7 @@
 | Plates still in the earlier pastel style | 2 |
 | Level-2 figures | 43 |
 | Level-3 explorers (on plates) | 9 |
-| Labs linked from entries | 23 |
+| Labs linked from entries | 24 |
 | Animated plates | 12 |
 
 ## The 12 illustration categories
@@ -29,7 +29,7 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 | 6 | Interaction Design Illustrations | 19 | 19 | 4 | 5 | 19 / 0 / 0 | developing | `signifiers`, `doherty-threshold`, `gulfs-of-execution-and-evaluation`, `interaction-design-discipline`, `progressive-disclosure`, `visibility-of-system-status`, `user-control-and-freedom`, `error-prevention`, `mapping`, `flexibility-and-efficiency-of-use`, `error-recovery`, `feedback-principle`, `constraints`, `direct-manipulation`, `interaction-states`, `discoverability`, `error-messages` |
 | 7 | Wireframe & Prototyping Illustrations | 1 | 1 | 0 | 0 | 1 / 0 / 0 | developing | — |
 | 8 | Visual Design & Composition Illustrations | 8 | 8 | 2 | 6 | 8 / 0 / 0 | developing | `gestalt-principles`, `colour-contrast-ratio`, `visual-hierarchy`, `modular-type-scale`, `aesthetic-and-minimalist-design` |
-| 9 | Design Systems Illustrations | 29 | 29 | 3 | 6 | 29 / 0 / 0 | developing | `atomic-design`, `design-system`, `design-tokens`, `primitive-tokens`, `semantic-tokens`, `theme-architecture`, `design-language`, `spacing-scales`, `typography-scales`, `colour-systems`, `elevation-systems`, `icon-systems`, `component-libraries`, `component-architecture`, `variants`, `component-properties`, `component-state-management`, `empty-states`, `loading-states`, `skeleton-screens`, `progressive-loading`, `error-states`, `data-tables`, `design-governance`, `design-system-versioning`, `design-qa`, `design-system-audits`, `multi-brand-systems` |
+| 9 | Design Systems Illustrations | 29 | 29 | 3 | 7 | 29 / 0 / 0 | developing | `atomic-design`, `design-system`, `design-tokens`, `primitive-tokens`, `semantic-tokens`, `theme-architecture`, `design-language`, `spacing-scales`, `typography-scales`, `colour-systems`, `elevation-systems`, `icon-systems`, `component-libraries`, `component-architecture`, `variants`, `component-properties`, `component-state-management`, `empty-states`, `loading-states`, `skeleton-screens`, `progressive-loading`, `error-states`, `data-tables`, `design-governance`, `design-system-versioning`, `design-qa`, `design-system-audits`, `multi-brand-systems` |
 | 10 | Usability & Accessibility Illustrations | 4 | 4 | 1 | 0 | 4 / 0 / 0 | developing | `usability`, `accessibility-concept`, `wcag` |
 | 11 | Responsive & Adaptive Design Illustrations | 1 | 1 | 0 | 0 | 1 / 0 / 0 | developing | `responsive-systems` |
 | 12 | UX Evaluation & Optimization Illustrations | 16 | 15 | 7 | 2 | 16 / 0 / 0 | developing | `nielsen-usability-heuristics`, `keystroke-level-model`, `shneiderman-golden-rules`, `heuristic-evaluation`, `cognitive-walkthrough`, `usability-testing`, `system-usability-scale`, `nasa-tlx`, `net-promoter-score`, `task-success-rate`, `ab-testing`, `confidence-intervals`, `sample-size-estimation`, `heart-framework` |
@@ -107,7 +107,7 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 | `visual-hierarchy` | entry | visual-design | comparison | current · instructional sheet | retain | Sheet (S25): the same event card flat and ordered, with the reading path drawn. | 0 | hierarchy-lab |
 | `modular-type-scale` | entry | visual-design | hierarchy | current · instructional sheet | retain | Sheet (S25): specimens at base × 1.25ⁱ from lib/formulas modularScale, and roles that use them. | 0 | type-scale-lab |
 | `design-system` | entry | design-systems | relationship | current · dark technical | retain | Exploded foundations · components · patterns · products with one decision traced from a token into three products; documentation and governance spine linked to every layer; feedback route back to the spine. | 2 | — |
-| `design-tokens` | entry | design-systems | hierarchy | current · instructional sheet | retain | Sheet (S25): primitive → semantic → component references, the button they produce and platform outputs. | 0 | — |
+| `design-tokens` | entry | design-systems | hierarchy | current · instructional sheet | retain | Sheet (S25): primitive → semantic → component references, the button they produce and platform outputs. | 0 | token-lab |
 | `primitive-tokens` | entry | design-systems | hierarchy | current · instructional sheet | retain | Sheet (B1): a grey ramp numbered with gaps, semantic roles choosing steps, a crossed component-to-primitive link, and a spacing scale. | 0 | — |
 | `semantic-tokens` | entry | design-systems | relationship | current · instructional sheet | retain | Sheet (B1): one column of role names mapped to light and dark primitives, a contrast pair, and components that point only at roles. | 0 | token-lab |
 | `visibility-of-system-status` | entry | interaction-design | process | current · instructional sheet | retain | Sheet (S29): feedback matched to duration on a 0.1 / 1 / 10 s timeline, from pressed state to determinate progress with Cancel, and an announced status message. | 0 | feedback-lab |

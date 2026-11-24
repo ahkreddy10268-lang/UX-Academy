@@ -58,6 +58,7 @@ export default defineEntry({
         "In the DTCG 2025.10 format, primitives are tokens with literal values inside groups. A group can declare `$type`, and tokens without their own type inherit it from the closest parent group that has one {{src:dtcg-format-2025}}.",
         "A colour's `$value` is an object: a required `colorSpace` (such as `srgb`, `oklch` or `display-p3`) and `components`, an optional `alpha` (1 when omitted) and an optional six-digit `hex` fallback {{src:dtcg-color-2025}}.",
         "A dimension's `$value` is an object with a numeric `value` and a `unit` of `px` or `rem` {{src:dtcg-format-2025}}. Semantic tokens then refer to primitives with curly-brace references such as `{color.blue.600}` or `{space.400}`.",
+        "Figma number variables can be applied to spacing and dimensions, but a Figma number is not the same data type as a DTCG dimension object with a numeric value and unit. When moving between the formats, define the unit convention (for example px or rem) and confirm the import/export mapping rather than assuming the number carries its unit with it {{src:figma-learn}} {{src:dtcg-format-2025}}.",
       ],
       implementation: [
         "Inventory every value in code and design files; cluster near-duplicates and decide which one survives before naming anything.",
@@ -290,6 +291,13 @@ export default defineEntry({
 [data-theme="dark"] { --color-action-background: var(--color-blue-400); }`,
         caption: "Illustrative. The primitive keeps one meaning; the theme changes the semantic token.",
       },
+    {
+      "title": "Same spacing task, two primitive strategies: drift versus a deliberate scale",
+      "language": "css",
+      "code": "/* Poor: similar cards use near-duplicate values chosen ad hoc */\n.search-field { gap: 13px; padding: 15px 17px; }\n.book-card    { gap: 14px; padding: 16px 18px; }\n.notice       { gap: 12px; padding: 15px 16px; }\n\n/* Better: choose a small set of stable primitive steps */\n:root {\n  --space-300: 12px;\n  --space-400: 16px;\n  --space-500: 20px;\n}\n.search-field { gap: var(--space-300); padding: var(--space-400); }\n.book-card    { gap: var(--space-300); padding: var(--space-500); }\n.notice       { gap: var(--space-300); padding: var(--space-400); }",
+      "caption": "Illustrative comparison for the same library-service interface. The second version reduces arbitrary choices; the scale is not a universal 4 px rule. Optical exceptions may still be justified, but they should be deliberate and documented."
+    },
+
     ],
   },
 
@@ -409,6 +417,7 @@ export default defineEntry({
     { source: "fluent-2-design-tokens", role: "explanatory", note: "Global tokens as context-agnostic raw values." },
     { source: "m3-design-tokens", role: "explanatory", note: "Reference tokens such as md.ref.palette.secondary90." },
     { source: "uswds-color", role: "explanatory", note: "Colour grades whose differences predict contrast." },
+    { source: "figma-learn", role: "explanatory", note: "Number variables can be applied to spacing and dimensional properties; distinguish tool numbers from DTCG dimension values and units.", locator: "https://help.figma.com/hc/en-us/articles/14506821864087-Overview-of-variables-collections-and-modes" },
   ],
   evidence: "practitioner-recommendation",
   evidenceNote:
@@ -427,5 +436,5 @@ export default defineEntry({
     sources: true,
     activities: true,
   },
-  lastVerifiedAt: "2026-11-11",
+  lastVerifiedAt: "2026-11-24",
 });

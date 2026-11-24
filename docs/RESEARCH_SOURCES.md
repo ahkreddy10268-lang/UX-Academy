@@ -99,6 +99,7 @@ Fields per record (see `lib/content/schema.ts`): id, title, authors, organisatio
 | `fornell-1992` | Fornell, C. (1992). *A National Customer Satisfaction Barometer: The Swedish Experience*. Journal of Marketing | doi:10.1177/002224299205600103 | paywalled | doi-verified (2026-11-03) |
 | `frederick-mochon-2012` | Frederick, S., Mochon, D. (2012). *A Scale Distortion Theory of Anchoring*. Journal of Experimental Psychology: General | doi:10.1037/a0024006 | partial | not machine-checked |
 | `fredrickson-kahneman-1993` | Fredrickson, B. L., Kahneman, D. (1993). *Duration neglect in retrospective evaluations of affective episodes*. Journal of Personality and Social Psychology | doi:10.1037/0022-3514.65.1.45 | paywalled | doi-verified (2026-11-03) |
+| `frost-themeable-ui-history` | Frost, B. (2025). *The History of Themeable User Interfaces* | https://bradfrost.com/blog/post/the-history-of-themeable-user-interfaces/ | open | url-reachable (2026-11-24) |
 | `fu-pirolli-2007` | Fu, W.-T., Pirolli, P. (2007). *SNIF-ACT: A cognitive model of user navigation on the World Wide Web*. Human–Computer Interaction | doi:10.1080/07370020701638806 | open | doi-verified (2026-11-20) |
 | `furnas-et-al-1987` | Furnas, G. W. et al. (1987). *The vocabulary problem in human-system communication*. Communications of the ACM | doi:10.1145/32206.32212 | paywalled | doi-verified (2026-11-20) |
 | `gal-rucker-2018` | Gal, D., Rucker, D. D. (2018). *The Loss of Loss Aversion: Will It Loom Larger Than Its Gain?*. Journal of Consumer Psychology | doi:10.1002/jcpy.1047 | partial | not machine-checked |
@@ -142,6 +143,7 @@ Fields per record (see `lib/content/schema.ts`): id, title, authors, organisatio
 | `hutchins-1995` | Hutchins, E. (1995). *Cognition in the Wild* | ISBN 978-0-262-58146-2 | paywalled | not machine-checked |
 | `hutchins-hollan-norman-1985` | Hutchins, E. L., Hollan, J. D., Norman, D. A. (1985). *Direct manipulation interfaces*. Human-Computer Interaction | doi:10.1207/s15327051hci0104_2 | paywalled | doi-verified (2026-11-13) |
 | `hyman-1953` | Hyman, R. (1953). *Stimulus information as a determinant of reaction time*. Journal of Experimental Psychology | doi:10.1037/h0056940 | paywalled | doi-verified (2026-11-03) |
+| `ibm-design-program-history` | IBM. *IBM design: The history of IBM's design program* | https://www.ibm.com/history/design-program | open | url-reachable (2026-11-24) |
 | `iec-61966-2-1` | International Electrotechnical Commission (IEC) (1999). *IEC 61966-2-1:1999 Multimedia systems and equipment — Colour measurement and management — Part 2-1: Colour management — Default RGB colour space — sRGB* | — | paywalled | not machine-checked |
 | `ishii-ullmer-1997` | Ishii, H., Ullmer, B. (1997). *Tangible bits: Towards seamless interfaces between people, bits and atoms*. Proceedings of the ACM SIGCHI Conference on Human Factors in Computing Systems (CHI '97) | doi:10.1145/258549.258715 | open | doi-verified (2026-11-04) |
 | `iso-24495-1-2023` | International Organization for Standardization (2023). *ISO 24495-1:2023 Plain language — Part 1: Governing principles and guidelines* | https://www.iso.org/standard/78907.html | paywalled | url-unreachable (2026-11-16) |
@@ -514,7 +516,7 @@ Fields per record (see `lib/content/schema.ts`): id, title, authors, organisatio
 | `shopify-polaris` | Shopify. *Polaris references* | https://shopify.dev/docs/api/polaris | open | url-reachable (2026-11-11) |
 | `sigchi-about` | ACM SIGCHI. *About SIGCHI* | https://sigchi.org/about/ | open | url-reachable (2026-11-04) |
 | `storybook-interaction-tests` | Storybook. *Storybook: Interaction tests* | https://storybook.js.org/docs/writing-tests/interaction-testing | open | url-reachable (2026-11-12) |
-| `style-dictionary-dtcg` | Style Dictionary. *Style Dictionary: Design Tokens Community Group format* | https://styledictionary.com/info/dtcg/ | open | url-reachable (2026-11-11) |
+| `style-dictionary-dtcg` | Style Dictionary. *Style Dictionary: platform transforms for design tokens* | https://styledictionary.com/reference/hooks/transforms/ | open | url-reachable (2026-11-24) |
 | `stylelint-color-no-hex` | Stylelint. *Stylelint: color-no-hex* | https://stylelint.io/user-guide/rules/color-no-hex | open | url-reachable (2026-11-12) |
 | `stylelint-unit-disallowed-list` | Stylelint. *Stylelint: declaration-property-unit-disallowed-list* | https://stylelint.io/user-guide/rules/declaration-property-unit-disallowed-list | open | url-reachable (2026-11-12) |
 | `tailwind-theme` | Tailwind Labs. *Tailwind CSS: Theme variables* | https://tailwindcss.com/docs/theme | open | url-reachable (2026-11-11) |
@@ -557,7 +559,7 @@ Fields per record (see `lib/content/schema.ts`): id, title, authors, organisatio
 | `dtcg-2026-thank-you-jina` | Deloumeau-Prigent, K. (2026). *Thank you Jina and Val*. W3C Community Group blog | https://www.w3.org/community/design-tokens/2026/06/17/thank-you-jina-and-val/ | open | url-reachable (2026-11-03) |
 | `dubberly-how-do-you-design` | Dubberly, H.. *How do you design? A compendium of models*. Dubberly Design Office articles | https://www.dubberly.com/articles/how-do-you-design.html | open | url-reachable (2026-11-19) |
 | `engelbart-1968-demo-digest` | Doug Engelbart Institute. *The 1968 Demo: Interactive Video Digest* | https://www.dougengelbart.org/content/view/374/ | open | url-reachable (2026-11-20) |
-| `figma-learn` | Figma. *Figma Learn* | https://help.figma.com/ | open | url-reachable (2026-11-03) |
+| `figma-learn` | Figma. *Figma Learn* | https://help.figma.com/ | open | url-reachable (2026-11-24) |
 | `frost-2013` | Frost, B. (2013). *Atomic Design (blog post)*. bradfrost.com blog | https://bradfrost.com/blog/post/atomic-web-design/ | open | url-reachable (2026-11-11) |
 | `govuk-frontend-repo` | Government Digital Service (UK). *GOV.UK Frontend (source code repository)*. GitHub | https://github.com/alphagov/govuk-frontend | open | url-reachable (2026-11-20) |
 | `hcibib` | HCIBIB. *HCI Bibliography* | https://www.hcibib.org/ | open | url-reachable (2026-11-03) |

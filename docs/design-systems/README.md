@@ -2,6 +2,18 @@
 
 > Status: **Phase 1 complete (research and blueprint), 2026-11-10.** No content, code, taxonomy or dependency changes were made in this phase. Branch `claude/pensive-cannon-t1o6sy`, starting commit `6b37b10`.
 
+## Phase 2 — Design Systems Mastery Upgrade (in progress, 2026-11-24)
+
+The 29-topic domain is already published. Phase 2 improves educational depth and practical usefulness without changing the taxonomy or lesson-page design.
+
+- [Mastery upgrade programme](MASTERY_UPGRADE_PROGRAMME.md) — teaching promise, reusable dossier, evidence rules, integrated practical programme and acceptance criteria.
+- [29-topic upgrade matrix](TOPIC_UPGRADE_MATRIX.md) — what to retain, deepen and practise for every existing lesson.
+- Working branch: codex/design-systems-mastery-build (main remains unchanged).
+- Nine lessons have completed depth-upgrade batches: Design Tokens, Component Architecture, Design Governance, Primitive Tokens, Semantic Tokens, Theme Architecture, Design Language, Atomic Design and Multi-Brand Systems. They now include topic-specific comparisons, source-aware explanations, practical examples and corrections; repository checks, build and targeted browser reviews pass. The other 20 still need selective enrichment.
+- First pilot set: Design Tokens, Component Architecture and Design Governance. Second connected batch: Primitive Tokens, Semantic Tokens and Theme Architecture. Third foundations batch: Design Language, Atomic Design and Multi-Brand Systems.
+
+The Phase 1 research files below remain the evidence and design basis. The earlier implementation roadmap records the original proposal and is retained as historical context; the Phase 2 mastery programme now governs the depth-upgrade sequence.
+
 ## Purpose
 
 Plan a complete, evidence-backed programme that teaches the discipline of design systems across all 29 topics of the frozen `design-systems` domain: what each concept is, the principles and rules behind it, how to apply it, what good and poor implementations look like, how to correct them, when not to use them, and how to lead the work.
