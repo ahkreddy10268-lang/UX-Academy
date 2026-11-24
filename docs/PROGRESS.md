@@ -417,3 +417,13 @@ Owner: approve the push of the status fix, set Vercel's production branch to `ma
 - Topic: `postels-law` (`principle`, `laws-effects/popular-ux-laws`), evidence `practitioner-recommendation`. File: `content/knowledge/laws-effects/postels-law.ts`; status `published`.
 - 8 new sources (7 RFC DOIs verified, OWASP URL reachable) plus three reused W3C records. Plate, register record, takeaway, back-links from `error-prevention` and `teslers-law`.
 - All gates passed (ledger). One review and one correction pass. **Next:** `power-law-of-practice` (`law`, `performance-laws`).
+
+## Session 75 — Design Systems Mastery Upgrade begins (2026-11-24)
+- Created branch `codex/design-systems-mastery-build` from `main` at `777640d3f248743cbae2e60a145f8d942c26f240`. PR #4 / Domain 1 work remains separate. No merge or production deployment.
+- Added `docs/design-systems/MASTERY_UPGRADE_PROGRAMME.md` defining the upgraded teaching promise, twelve topic-dossier dimensions, evidence and case-study rules, cumulative practical programme, three pilots and acceptance criteria.
+- Added `docs/design-systems/TOPIC_UPGRADE_MATRIX.md` with retain/deepen/practice direction for all 29 existing canonical topics. No taxonomy additions or slug changes.
+- Started Pilot 1, `design-tokens`: clarified token versus tool-variable distinction; explained DTCG versus architecture tiers; expanded source-to-output pipeline; added structured do/don't guidance and DTCG/CSS examples; labelled the theming scenario illustrative; added a token migration/pipeline exercise, questions and flashcards; connected `token-lab` directly to the lesson page.
+- Updated the Style Dictionary source record to the exact official transform documentation checked 2026-11-24; added a precise Figma variables/modes locator to the lesson reference.
+- Current source checks: official DTCG 2025.10 report, Figma variables/modes documentation and Style Dictionary transform documentation reviewed on 2026-11-24. DTCG 2025.10 remains the stable report; the 2026 preview explicitly says not to implement or cite it as authoritative.
+- Not yet run: `npm run check`, `npm run sources:verify`, `npm run build`, generated-doc checks and browser review. The Style Dictionary URL changed in its source record; run source verification. The new lesson content needs normal content integrity and page rendering review before Pilot 1 is accepted.
+- No global template/schema/component change. Preserve the five-stage path, topic IDs and existing `/system` implementation.
