@@ -405,6 +405,8 @@ export default defineEntry({
     { id: "design-tokens-fc-figma-types", front: "Figma's six variable types (checked 2026-11-24)", back: "Color, number, string, boolean, timing and easing. These are Figma capabilities, not DTCG's type list." },
   ],
 
+  lab: "token-lab",
+
   references: [
     { source: "dtcg-format-2025", role: "primary", note: "Interchange format, types, aliasing, status." },
     { source: "dtcg-2026-thank-you-jina", role: "explanatory", note: "Attribution of the term to Jina Anne and Jon Levine." },
