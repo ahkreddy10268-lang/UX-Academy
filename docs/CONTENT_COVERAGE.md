@@ -15,15 +15,15 @@
 | Planned, no content | 416 |
 | Domains with no published entry | 5 |
 | Formulas with calculators | 25 |
-| Quiz questions | 474 |
-| Exercises | 365 |
-| Flashcards | 481 |
+| Quiz questions | 476 |
+| Exercises | 366 |
+| Flashcards | 484 |
 | Labs | 19 |
 | Workshops | 11 |
 | Comparisons | 11 |
 | Learning paths | 16 |
 | Glossary terms | 114 |
-| Sources | 603 |
+| Sources | 611 |
 
 ## By domain
 
@@ -319,7 +319,7 @@ Five separate dimensions, rated basic / developing / complete from the content (
 | Cognitive Load Theory | Theory | Established theoretical model | complete | complete | complete | complete | complete | 14 | 4 | — | cognitive-load-lab |
 | Cognitive Walkthrough | Method | Peer-reviewed research | complete | complete | complete | developing | complete | 8 | 4 | — | — |
 | Colour Contrast Ratio | Formula | Official standard | complete | complete | complete | developing | complete | 6 | 4 | contrast-ratio | contrast-lab |
-| Colour Systems | Concept | Practitioner recommendation | complete | developing | complete | basic | complete | 7 | 3 | — | — |
+| Colour Systems | Concept | Practitioner recommendation | complete | developing | complete | basic | complete | 16 | 5 | — | — |
 | Component Architecture | Concept | Practitioner recommendation | complete | developing | complete | basic | complete | 11 | 3 | — | — |
 | Component Libraries | Concept | Practitioner recommendation | complete | developing | complete | basic | complete | 14 | 3 | — | — |
 | Component Properties | Concept | Practitioner recommendation | complete | developing | complete | basic | complete | 10 | 3 | — | — |
