@@ -18,4 +18,5 @@ const BASE = process.env.BASE_URL ?? 'http://localhost:3100';
   }
   console.log('violations:', total);
   await b.close();
+  if (total) process.exitCode = 1;
 })();

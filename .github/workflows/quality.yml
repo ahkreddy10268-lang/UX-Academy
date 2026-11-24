@@ -72,7 +72,7 @@ jobs:
         env:
           BASE_URL: http://127.0.0.1:3100
         run: |
-          node tests/browser/crawl.cjs / /library /library/anchoring-effect /search-index.json /topics/laws-effects /graph /formulas /practice
+          node tests/browser/crawl.cjs / /library /search-index.json /topics/laws-effects /graph /formulas /practice
           node tests/browser/e2e.cjs
           node tests/browser/e2e-redesign.cjs
           node tests/browser/atlas.cjs

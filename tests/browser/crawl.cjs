@@ -23,4 +23,5 @@ const routes = process.argv.slice(2);
   }
   console.log('pages with problems:', bad);
   await b.close();
+  if (bad) process.exitCode = 1;
 })();

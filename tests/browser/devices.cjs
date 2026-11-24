@@ -58,8 +58,10 @@ const PAGES = ['/', '/library', '/library/fitts-law', '/library/double-diamond',
     await ctx.close();
   }
   for (const r of results) console.log(r.ok ? 'PASS' : 'FAIL', r.name, r.detail ? `(${r.detail})` : '');
-  console.log(`${results.filter((r) => r.ok).length}/${results.length} passed`);
+  const failed = results.filter((r) => !r.ok).length;
+  console.log(`${results.length - failed}/${results.length} passed`);
   await b.close();
+  if (failed) process.exitCode = 1;
 })().catch((e) => {
   for (const r of results) console.log(r.ok ? 'PASS' : 'FAIL', r.name, r.detail ? `(${r.detail})` : '');
   console.error('ABORTED:', e.message.split('\n')[0]);
