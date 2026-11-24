@@ -22,7 +22,7 @@ export default async function LevelTestPage({ params }: PageProps<"/learn/[id]/l
   const path = learningPaths.find((p) => p.id === id);
   const stage = path?.stages[Number(n) - 1];
   if (!path || !stage) notFound();
-  const publishedEntries = stage.steps.map((s) => entryBySlug.get(s)).filter((e) => e?.status === "published");
+  const publishedEntries = stage.steps.map((s) => entryBySlug.get(s)).filter((e): e is NonNullable<typeof e> => e?.status === "published");
   const all = publishedEntries.flatMap((e) => e.quiz.map((q) => ({ ...q, entry: e.slug, entryTitle: e.title })));
   // Questions written for this level lead the test; the rest are a separate, labelled revision set.
   const questions = all.filter((q) => q.level === stage.level);
