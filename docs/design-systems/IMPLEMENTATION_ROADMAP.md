@@ -1,8 +1,12 @@
 # Implementation roadmap — Phase 2 onwards
 
-> Phase 1 output, 2026-11-10. Batches follow the curriculum dependencies and `docs/CONTENT_AUDIT.md` §6 (Tier 5 lists `atomic-design`, `semantic-tokens`, `component-architecture`, `design-governance` first). One fully researched entry at a time, sources verified first, every gate green before the next. Nothing in this file is implemented yet.
+> Historical Phase 1 implementation proposal, 2026-11-10. This file records the original batch schedule and acceptance design. Phase 2 educational depth is now governed by `MASTERY_UPGRADE_PROGRAMME.md` and `TOPIC_UPGRADE_MATRIX.md`; use those as the current work plan. Completed Phase 1 material remains valid unless the Phase 2 review identifies an evidence or teaching gap.
 
-## Working rules for every batch
+## Current Phase 2 direction
+
+The first three pilot lessons are `design-tokens`, `component-architecture` and `design-governance`. The 29-topic upgrade matrix defines topic-specific enrichment. The original eight-batch plan below remains useful for dependency awareness, but it is not the Phase 2 acceptance standard.
+
+## Historical Phase 1 working rules
 
 - Read the entry's matrix row (TOPIC_RESEARCH_MATRIX.md) and the lesson specification before writing.
 - Add and verify any new source records first (`npm run sources:verify -- <ids>`).
