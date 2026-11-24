@@ -9,8 +9,8 @@ The 29-topic domain is already published. Phase 2 improves educational depth and
 - [Mastery upgrade programme](MASTERY_UPGRADE_PROGRAMME.md) — teaching promise, reusable dossier, evidence rules, integrated practical programme and acceptance criteria.
 - [29-topic upgrade matrix](TOPIC_UPGRADE_MATRIX.md) — what to retain, deepen and practise for every existing lesson.
 - Working branch: codex/design-systems-mastery-build (main remains unchanged).
-- Six lessons have completed depth-upgrade batches: Design Tokens, Component Architecture, Design Governance, Primitive Tokens, Semantic Tokens and Theme Architecture. They now include topic-specific same-task comparisons, source-to-output explanations, examples and practice; checks, build and targeted browser reviews pass. The other 23 still need selective enrichment.
-- First pilot set: Design Tokens, Component Architecture and Design Governance. Second connected batch: Primitive Tokens, Semantic Tokens and Theme Architecture.
+- Nine lessons have completed depth-upgrade batches: Design Tokens, Component Architecture, Design Governance, Primitive Tokens, Semantic Tokens, Theme Architecture, Design Language, Atomic Design and Multi-Brand Systems. They now include topic-specific comparisons, source-aware explanations, practical examples and corrections; repository checks, build and targeted browser reviews pass. The other 20 still need selective enrichment.
+- First pilot set: Design Tokens, Component Architecture and Design Governance. Second connected batch: Primitive Tokens, Semantic Tokens and Theme Architecture. Third foundations batch: Design Language, Atomic Design and Multi-Brand Systems.
 
 The Phase 1 research files below remain the evidence and design basis. The earlier implementation roadmap records the original proposal and is retained as historical context; the Phase 2 mastery programme now governs the depth-upgrade sequence.
 
