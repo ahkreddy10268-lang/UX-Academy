@@ -177,11 +177,11 @@ No arbitrary word counts. More words are justified only when they add a new expl
 | Baseline and Phase 1 research reviewed | Complete |
 | Master upgrade programme | Added in this branch |
 | Topic-by-topic upgrade matrix | Added in this branch |
-| Pilot 1: Design Tokens | Content enrichment implemented on the build branch; local validation and review pending |
-| Pilot 2: Component Architecture | Planned |
-| Pilot 3: Design Governance | Planned |
+| Pilot 1: Design Tokens | Content, lab integration and page QA complete; accepted as the first format pilot |
+| Pilot 2: Component Architecture | Targeted enrichment complete; shared browser QA passed |
+| Pilot 3: Design Governance | Targeted enrichment complete; shared browser QA passed |
 | 26-topic rollout | Planned |
-| Final branch tests | Pending |
+| Final branch tests | Three pilot lessons: check, taxonomy, source verification, build and browser review passed; full 29-topic rollout suite remains pending |
 
 ## Pilot 1 — current implementation record (2026-11-24)
 
@@ -193,7 +193,7 @@ The `design-tokens` entry now includes:
 - A pipeline assignment, questions about variable/token distinction and tier choice, additional flashcards and common misconceptions.
 - A direct link to the existing `token-lab` on the lesson page.
 
-**Review limitations:** the current Token Lab is a colour-only simulation; it does not teach typography, spacing or motion token mapping. The CSS shown in the lesson is an illustrative resolved output, not a claim that the DTCG file directly defines CSS selectors. Local typecheck, content tests, source verification, build and browser review remain pending.
+**Scope and QA:** the current Token Lab is a colour-only simulation; it does not teach typography, spacing or motion token mapping. The CSS shown in the lesson is an illustrative resolved output, not a claim that the DTCG file directly defines CSS selectors. `npm run check` passes (23 files, 626 tests, typecheck and lint); `npm run test:taxonomy` passes (1,046 links, 119 published entries at three depths); both changed source records pass `sources:verify`; `npm run build` passes (998 pages generated); and the three pilot entries pass 24/24 entry-browser checks at 1440, 768 and 390 px in light/dark themes, with zero axe violations, overflow or console errors. See `docs/PROGRESS.md` Session 77 for the exact test record.
 
 ## Pilot 2 and Pilot 3 — targeted enrichments (2026-11-24)
 
@@ -202,3 +202,25 @@ The initial inspection found that both lessons already contained substantive mat
 - **Component Architecture:** retained the existing compound Tabs example, presentational component/product wrapper, anatomy exercise, 23-prop correction exercise, APG keyboard guidance and alternatives. Added a same-task poor-versus-better code example that contrasts a flag-heavy/data-owning BookCard with a composable presentational card and product wrapper.
 - **Design Governance:** retained the existing centralised/federated/hybrid discussion, GOV.UK's five contribution criteria, lifecycle statuses, RFC template, CI status metadata, correction exercise and governance-model assignment. Added a same-request comparison showing ad hoc chat approval versus an evidence- and criteria-led date-range-picker proposal.
 - These are focused pilot additions, not proof of final completeness. The two lessons still need the same content integrity, build and browser QA as the Design Tokens pilot.
+
+
+## Pilot acceptance record — three topics (2026-11-24)
+
+The first three pilots validate the same dossier principle across a technical foundation, component design/build and organisational governance:
+
+- **Design Tokens:** token-versus-variable and DTCG distinction; source-to-output pipeline; structured do/don't guidance; DTCG source, resolved CSS and real UX Academy CSS/Tailwind examples; same-role light/dark contrast calculation; migration exercise; assessment; direct Token Lab card on the lesson page.
+- **Component Architecture:** retains the existing compound Tabs and presentational wrapper examples; adds the same-task poor/strong BookCard API/composition example. The comparison is explicitly labelled illustrative and notes when composition is not worth the added abstraction.
+- **Design Governance:** retains operating models, GOV.UK criteria, RFC and lifecycle material; adds a same-request comparison of ad hoc chat approval with an evidence- and criteria-led proposal. The example is explicitly illustrative.
+
+Small shared presentation fixes were necessary: reference-list source locators now wrap safely on narrow screens, and the existing optional `lab` field now displays an “Interactive lab” card on the lesson page. These are additive and preserve the existing editorial page design; no taxonomy, schema or learner-progress changes were made.
+
+### Verified checks
+
+- `npm run check`: PASS — content index, TypeScript, 23 test files / 626 tests and ESLint.
+- `npm run test:taxonomy`: PASS — 20 domains, 73 subcategories, 561 topics, 1,046 links checked, 119 published entries checked at three depths; Design Systems 29/29 published.
+- `npm run sources:verify -- style-dictionary-dtcg figma-learn`: PASS — both URLs reachable.
+- `npm run docs:generate`: PASS — generated taxonomy, research sources, content coverage and illustration coverage; reviewed the generated count/date diff.
+- `npm run build`: PASS — Next.js production build; all 998 static pages generated.
+- `entry-review.cjs design-tokens component-architecture design-governance`: PASS 24/24. All three entries reviewed at 1440, 768 and 390 px in light/dark; axe 0, overflow 0, errors 0, plate text >=10.2 px at 390 px, no clipped text or out-of-viewBox markers; all internal links resolve with no raw citation/link markup; keyboard flashcards pass (7/7, 4/4 and the Governance count in the test output).
+
+The full 29-topic rollout and its full impacted-browser suite are not complete. This is a three-topic pilot acceptance, not a declaration that every Design Systems lesson has already met the upgraded dossier standard.
