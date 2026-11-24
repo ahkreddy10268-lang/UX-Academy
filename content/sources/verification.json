@@ -794,7 +794,7 @@
   },
   "figma-learn": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-03",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "figma-library-analytics": {
@@ -2962,7 +2962,7 @@
   },
   "style-dictionary-dtcg": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-11",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "stylelint-color-no-hex": {
