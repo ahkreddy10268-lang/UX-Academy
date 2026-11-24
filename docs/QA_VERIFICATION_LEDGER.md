@@ -855,3 +855,21 @@ Limitations:
 - `a11y.cjs` tests at 1280 px only, which is why it does not catch A11Y-1; the failure is now in `docs/OPEN_ISSUES.md`.
 - The addressed-concept check counts rendered text. It does not judge the layout visually; no screenshots were inspected in this run.
 - No screen-reader, physical-device or independent expert review was done. Vercel preview status was not checked in this run.
+
+### Merge of all outstanding branches (2026-11-24, branch `claude/merge-all-20261124`, base `main` `601bb96`)
+
+Owner instruction: merge everything not yet in `main`. Merged in order: `claude/batch1-constraints` (4 commits), `codex/domain-1-educational-quality` (PR #4, 39), `codex/design-systems-mastery-build` (PR #7, 63). Conflict resolution: `human-computer-interaction.ts` kept `main`'s closeout wording in three hunks (context-of-use vocabulary, ISO 9241-11 sentence, scenario label); log files kept both sides, then duplicate rows in `OPEN_ISSUES.md` (D1-4, D1-5, D1-6, D1-8, A11Y-1) were reduced to `main`'s current row; `PROJECT_STATE.md` reconciled (one 'Last updated', branch-era sections marked historical); generated docs regenerated. No content entry was added or removed (121 published).
+
+| Check | Result | Status |
+|---|---|---|
+| `npm run check` | 23 files, 641 tests | PASS |
+| `npm run test:taxonomy` | 1072 links; 121 published at three depths | PASS |
+| `npm run docs:generate` | Exit 0 | PASS |
+| `npm run build` | 1000/1000 | PASS |
+| Entry review (14 changed entries + webers-law) | 120/120 | PASS |
+| e2e / atlas / keyboard / colour-studio / devices | 44/44, 36/36, 45/45, 46/46, 155/155 | PASS |
+| e2e-redesign | 65/66; remaining FAIL is LIB-1 (pre-existing) | FAIL (pre-existing) |
+| Crawl, 11 real routes (incl. `/learn/design-systems`, HCI, design-tokens, UCD, webers-law) | 0 problems (a 12th route, `/paths`, was a wrong route typed by the tester, not a site route) | PASS |
+| a11y, same routes | 0 violations | PASS |
+
+Not reviewed editorially in this session: the content of PRs #4 and #7 beyond automated gates (authored on other branches with their own QA records).
