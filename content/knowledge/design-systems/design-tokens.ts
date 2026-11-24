@@ -214,10 +214,11 @@ export default defineEntry({
     {
       "title": "Generated web output: one semantic contract, multiple theme values",
       "language": "css",
-      "code": ":root {\n  --color-action-primary: #1f4a9e;\n}\n\n[data-theme=\"dark\"] {\n  --color-action-primary: #a9c4ff;\n}\n\n.button--primary {\n  background: var(--color-action-primary);\n}",
-      "caption": "Illustrative resolved CSS output, not DTCG source syntax. The theme resolver/build configuration supplies each context value; the component consumes the semantic output rather than selecting a palette value."
+      "code": ":root {\n  --color-action-primary: #1f4a9e;\n}\n\n[data-theme=\"dark\"] {\n  --color-action-primary: #315b9d;\n}\n\n.button--primary {\n  background: var(--color-action-primary);\n}",
+      "caption": "Illustrative resolved CSS output, not DTCG source syntax. The theme resolver/build configuration supplies each context value; the component consumes the semantic output rather than selecting a palette value. White foreground contrast is 8.30:1 for the light sample and 6.74:1 for the dark sample, computed with the WCAG contrast formula."
     },
     {
+      {"title":"A real implementation pattern: UX Academy's CSS roles and Tailwind mapping","language":"css","code":":root {\n  --paper: #f4f3ef;\n  --surface: #fdfdfb;\n  --ink: #15161b;\n  --accent: #255a8c;\n}\n\n:root[data-theme=\"dark\"] {\n  --paper: #0f1013;\n  --surface: #16171c;\n  --ink: #ecebe5;\n  --accent: #8fb8e0;\n}\n\n@theme inline {\n  --color-paper: var(--paper);\n  --color-surface: var(--surface);\n  --color-ink: var(--ink);\n  --color-accent: var(--accent);\n}","caption":"Selected excerpt from this repository's app/globals.css. It uses CSS custom properties as the theme-level source for these roles, overrides values for dark theme, then maps them into Tailwind utilities with @theme inline. This is a real CSS/Tailwind implementation pattern; it is not a DTCG JSON source file."},
       "title": "A coupling mistake and its correction",
       "language": "css",
       "code": "/* Poor: a component knows the palette value */\n.button--primary {\n  background: #1f4a9e;\n}\n\n/* Better: a component consumes an intent */\n.button--primary {\n  background: var(--color-action-primary);\n}",
