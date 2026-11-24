@@ -2,7 +2,7 @@
 
 The current state in one page. Read it first every session, then verify it against `git` (the repo wins; record any discrepancy here). Update it at the end of every meaningful task. History lives in `docs/PROGRESS.md`; decisions in `docs/DECISION_LOG.md`; open items in `docs/OPEN_ISSUES.md`; test results in `docs/QA_VERIFICATION_LEDGER.md`.
 
-Last updated: **2026-11-23** (Domain 2 Batch 5: `zeigarnik-effect` published on `claude/domain-completion-20261123`; `main` at `9a51aa6`; D-133 domain-by-domain completion).
+Last updated: **2026-11-24** (Domain 2 Batch 6: `postels-law` published on `claude/domain-completion-20261123`; `main` at `ef887a0` after the owner-approved merge of PR #5; D-133 domain-by-domain completion).
 
 ## Repository
 
@@ -11,7 +11,7 @@ Last updated: **2026-11-23** (Domain 2 Batch 5: `zeigarnik-effect` published on 
 | Default branch | `main` at `9a51aa6` (merge of PR #3) | 2026-11-23 (GitHub API) |
 | PR #3 | `claude/batch1-constraints` → `main`: merged 2026-11-20; merge commit `9a51aa6` | 2026-11-23 |
 | PR #2 | merged 2026-11-20 | 2026-11-23 |
-| Domain-completion work branch | `claude/domain-completion-20261123`, based on `main` at `9a51aa6`, 33 commits ahead at `f712e38` before this session; Social Proof `4af404b`, Goal-Gradient Effect `831eaf9` and Zeigarnik Effect batches committed on top (QA ledger records the SHAs) | 2026-11-23 (`git fetch`) |
+| Domain-completion work branch | `claude/domain-completion-20261123`, based on `main` at `9a51aa6`, 33 commits ahead at `f712e38` before this session; Social Proof `4af404b`, Goal-Gradient Effect `831eaf9`, Zeigarnik Effect `0005df9` (merged to `main` via PR #5 as `ef887a0`, production deployment verified 2026-11-24) and Postel's Law batches committed on top (QA ledger records the SHAs) | 2026-11-23 (`git fetch`) |
 | Vercel production branch setting | `main` (owner reported setting this on 2026-11-20) | 2026-11-20 |
 | Vercel check on latest `main` commit | Success; check target `https://vercel.com/ambati-re-dd/ux-academy/77Bpw7KyrCPPEEeHf5mMLcVYLwT7` | 2026-11-23 |
 | Vercel check on domain-completion branch | Pending on last query for `89a36dc`; not a build pass | 2026-11-23 |
@@ -22,13 +22,14 @@ Last updated: **2026-11-23** (Domain 2 Batch 5: `zeigarnik-effect` published on 
 The owner has directed completion of all 20 domains in the canonical taxonomy order, one domain at a time. This is a sequencing override to the portfolio order in D-129; D-129's quality, evidence, source verification, target, review and stop-rule requirements remain in force. Routine batches may be researched, implemented, QA-checked, documented and pushed to a development branch without a separate approval prompt. This does not authorize merges to `main` or production deployment.
 
 - Domain 1, UX & UI Fundamentals: complete — 16 published, 5 addressed within, 0 planned (21/21).
-- Domain 2, UX Laws & Cognitive Effects: active — generated 2026-11-23: **17 published, 3 drafted, 10 addressed within, 16 planned (46)**. `social-proof`, `goal-gradient-effect` and `zeigarnik-effect` published; `loss-aversion`, `framing-effect` and `anchoring-effect` remain drafted. (Supersedes the 2026-11-20 baseline of 14 published, 0 drafted, 22 planned.)
+- Domain 2, UX Laws & Cognitive Effects: active — generated 2026-11-24: **18 published, 3 drafted, 10 addressed within, 15 planned (46)**. `social-proof`, `goal-gradient-effect`, `zeigarnik-effect` and `postels-law` published on the branch (the first three also live on production); `loss-aversion`, `framing-effect` and `anchoring-effect` remain drafted.
 - Active branch: claude/domain-completion-20261123, based on main at 9a51aa6.
 - Batch 1 (foundational): loss-aversion and framing-effect are drafted, indexed and illustrated; 11 source records registered, with only kahneman-tversky-1979 matched to Crossref so far. Batch 2 (first core professional): anchoring-effect is drafted, indexed and illustrated; 9 source records registered, all pending automated verification. All three remain drafted until source verification, content integrity, check, taxonomy, docs generation, plate render, entry review and build pass. Research records: docs/DOMAIN_2_BATCH_1_RESEARCH.md and docs/DOMAIN_2_BATCH_2_RESEARCH.md; blockers: OPEN_ISSUES D2-B1-1 and D2-B2-1.
 - Batch 3 (core professional): **social-proof published** — 9 new sources, 9/9 DOI-verified; all gates PASS on this session's tree (QA ledger). Three pre-existing gate blockers in the Batch 1–2 drafts were fixed so the shared gates could run; those drafts still lack their own verification (D2-B1-1, D2-B2-1).
 - Batch 4 (core professional): **goal-gradient-effect published** — 10 new sources, 10/10 DOI-verified; all gates PASS (QA ledger). No drafts modified.
 - Batch 5: **zeigarnik-effect published** — a `concept` in `laws-effects/memory-attention-effects` (taxonomy home; the plan's core-professional row is a priority queue, not a classification, and a planning brief that placed it in `psychology` was corrected against the taxonomy). 8 new sources; all gates PASS. No drafts modified.
-- **Next authorised action (D-133):** `postels-law`, the next core-professional topic (taxonomy: `principle`, `popular-ux-laws`). Separately outstanding: verification and QA of the three drafts.
+- Batch 6: **postels-law published** — `principle` in `popular-ux-laws`, 8 new sources, all gates PASS; not yet merged to `main` (merging needs owner approval).
+- **Next authorised action (D-133):** `power-law-of-practice`, the next core-professional topic (taxonomy: `law`, `performance-laws`). Separately outstanding: verification and QA of the three drafts.
 - Domain inventory and priority order: `docs/DOMAIN_COMPLETION_PLAN.md`.
 
 ## Content strategy and cycle

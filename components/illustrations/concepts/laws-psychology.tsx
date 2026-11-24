@@ -11,6 +11,7 @@ import { klmPlate as keystrokeLevelModel } from "./learning-sheets";
 import { aestheticUsabilityPlate as aestheticUsabilityEffect } from "./learning-sheets";
 import { dohertyPlate as dohertyThreshold } from "./learning-sheets";
 import { teslerPlate as teslersLaw } from "./learning-sheets";
+import { postelsLawPlate as postelsLaw } from "./learning-sheets";
 import { goldenRulesPlate as shneidermanGoldenRules } from "./learning-sheets";
 import { vonRestorffPlate as vonRestorffEffect } from "./learning-sheets";
 import { choiceOverloadPlate as choiceOverload } from "./learning-sheets";
@@ -55,6 +56,7 @@ const plates: IllustrationEntry[] = [
   keystrokeLevelModel,
   dohertyThreshold,
   teslersLaw,
+  postelsLaw,
   serialPositionEffect,
   vonRestorffEffect,
   zeigarnikEffect,

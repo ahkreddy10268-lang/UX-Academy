@@ -2443,6 +2443,70 @@ export const vonRestorffPlate: IllustrationEntry = {
 };
 
 /* ------------------------------------------------------------------ */
+/* Postel's Law: tolerant input, strict checks, consistent output       */
+/* ------------------------------------------------------------------ */
+export const postelsLawPlate: IllustrationEntry = {
+  slug: "postels-law",
+  title: "Postel's Law plate",
+  canvas: "sheet",
+  description:
+    "An illustrative sheet in four panels, not a protocol flowchart. Top left, 'Harmless variation': the same phone number typed three ways, '+44 20 1234 5678', '+44 (20) 1234-5678' and '+442012345678', with an arrow to one interpreted value, '+442012345678'. Top right, 'Ambiguous meaning': '03/04/2026' with the question 'Which date?' and two choices, '3 April' and '4 March', captioned 'Ask, never guess'. Bottom left, 'Separate checks' for a transfer request: 'Syntax' passes, 'Meaning' passes, 'Permission' fails, each marked with a symbol and a word, captioned 'Passing one is not all'. Bottom right, 'Consistent output': 'Stored and sent as' '+442012345678', 'one documented format'.",
+  key: [
+    { n: "1", label: "Tolerate harmless variation", detail: "spaces, brackets and hyphens do not change the number; accept them and normalise to one value (illustrative number)" },
+    { n: "2", label: "Clarify ambiguity", detail: "03/04/2026 means different dates in different locales; the system asks instead of inferring the person's intent" },
+    { n: "3", label: "Checks stay separate", detail: "a well-formed, meaningful value can still be one the person is not allowed to use; tolerant parsing never replaces validation or authorisation (OWASP; RFC 9413)" },
+    { n: "4", label: "Be conservative in what you send", detail: "store and emit one documented, standards-based representation (RFC 791; RFC 1122)" },
+  ],
+  Art: ({ detail }) => (
+    <g>
+      <Card x={8} y={8} w={188} h={138} title="Harmless variation">
+        <UiText x={20} y={50} mono>+44 20 1234 5678</UiText>
+        <UiText x={20} y={68} mono>+44 (20) 1234-5678</UiText>
+        <UiText x={20} y={86} mono>+442012345678</UiText>
+        <Link from={[102, 94]} to={[102, 108]} />
+        <UiChip x={20} y={112} w={160} label="+442012345678" selected />
+      </Card>
+
+      <Card x={204} y={8} w={188} h={138} title="Ambiguous meaning">
+        <UiText x={216} y={50} mono weight={700}>03/04/2026</UiText>
+        <UiText x={216} y={72} tone="ink2">Which date?</UiText>
+        <UiChip x={216} y={82} w={76} label="3 April" />
+        <UiChip x={300} y={82} w={80} label="4 March" />
+        <UiText x={216} y={134} tone="ink2">Ask, never guess</UiText>
+      </Card>
+
+      <Card x={8} y={154} w={188} h={138} title="Separate checks">
+        <UiText x={20} y={198}>Syntax</UiText>
+        <Verdict x={130} y={194} ok />
+        <UiText x={184} y={198} anchor="end" tone="ink2">pass</UiText>
+        <UiText x={20} y={222}>Meaning</UiText>
+        <Verdict x={130} y={218} ok />
+        <UiText x={184} y={222} anchor="end" tone="ink2">pass</UiText>
+        <UiText x={20} y={246} weight={700}>Permission</UiText>
+        <Verdict x={130} y={242} ok={false} />
+        <UiText x={184} y={246} anchor="end" weight={700}>fail</UiText>
+        <UiText x={20} y={280} tone="ink2">Passing one is not all</UiText>
+      </Card>
+
+      <Card x={204} y={154} w={188} h={138} title="Consistent output">
+        <UiText x={216} y={198} tone="ink2">Stored and sent as</UiText>
+        <UiText x={216} y={222} mono weight={700}>+442012345678</UiText>
+        <UiText x={216} y={246} tone="ink2">one documented format</UiText>
+      </Card>
+
+      {detail && (
+        <>
+          <Marker x={184} y={20} n={1} />
+          <Marker x={380} y={20} n={2} />
+          <Marker x={184} y={166} n={3} />
+          <Marker x={380} y={166} n={4} />
+        </>
+      )}
+    </g>
+  ),
+};
+
+/* ------------------------------------------------------------------ */
 /* Zeigarnik effect: recall versus resumption                           */
 /* ------------------------------------------------------------------ */
 export const zeigarnikPlate: IllustrationEntry = {

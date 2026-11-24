@@ -169,6 +169,7 @@ export default defineEntry({
     { target: "constraints", type: "related-to", note: "Constraints are one of the techniques error prevention uses: they make wrong input impossible where a clear rule exists." },
     { target: "mental-models", type: "related-to", note: "Mistakes come from mental models that do not match the system." },
     { target: "user-control-and-freedom", type: "complementary-to", note: "Undo makes the errors that are not prevented cheap to reverse." },
+    { target: "postels-law", type: "complementary-to", note: "Accepting harmless input variation removes a class of avoidable errors; ambiguous or invalid input still needs clarification or a clear error." },
   ],
 
   practice: {
