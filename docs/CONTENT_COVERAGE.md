@@ -15,15 +15,15 @@
 | Planned, no content | 414 |
 | Domains with no published entry | 5 |
 | Formulas with calculators | 27 |
-| Quiz questions | 479 |
-| Exercises | 367 |
-| Flashcards | 482 |
+| Quiz questions | 482 |
+| Exercises | 368 |
+| Flashcards | 486 |
 | Labs | 19 |
 | Workshops | 11 |
 | Comparisons | 11 |
 | Learning paths | 16 |
-| Glossary terms | 114 |
-| Sources | 606 |
+| Glossary terms | 127 |
+| Sources | 608 |
 
 ## By domain
 
@@ -301,7 +301,7 @@ Five separate dimensions, rated basic / developing / complete from the content (
 | Explanation | 121 | 0 | 0 |
 | Evidence | 83 | 38 | 0 |
 | Practice | 121 | 0 | 0 |
-| Visual | 9 | 50 | 62 |
+| Visual | 9 | 51 | 61 |
 | Editorial | 120 | 1 | 0 |
 
 ## Published entries
@@ -389,7 +389,7 @@ Five separate dimensions, rated basic / developing / complete from the content (
 | Plain Language | Principle | Professional guideline | complete | complete | complete | basic | complete | 12 | 4 | — | — |
 | Postel's Law | Principle | Practitioner recommendation | complete | complete | complete | basic | complete | 11 | 4 | — | — |
 | Power Law of Practice | Law | Contested or limited evidence | complete | complete | complete | developing | complete | 7 | 4 | — | — |
-| Primitive Tokens | Concept | Practitioner recommendation | complete | developing | complete | basic | complete | 6 | 4 | — | — |
+| Primitive Tokens | Concept | Practitioner recommendation | complete | developing | complete | basic | complete | 7 | 4 | — | — |
 | Product Design | Discipline | Professional guideline | complete | complete | complete | basic | complete | 4 | 4 | — | — |
 | Progressive Disclosure | Principle | Professional guideline | complete | complete | complete | developing | complete | 4 | 4 | — | disclosure-lab |
 | Progressive Loading | Pattern | Professional guideline | complete | developing | complete | basic | complete | 10 | 3 | — | — |

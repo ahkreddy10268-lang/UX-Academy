@@ -2,9 +2,9 @@
 
 The current state in one page. Read it first every session, then verify it against `git` (the repo wins; record any discrepancy here). Update it at the end of every meaningful task. History lives in `docs/PROGRESS.md`; decisions in `docs/DECISION_LOG.md`; open items in `docs/OPEN_ISSUES.md`; test results in `docs/QA_VERIFICATION_LEDGER.md`.
 
-Last updated: **2026-11-24** (Domain 2 Batch 8 `webers-law` published on the branch; Batch 7 `power-law-of-practice` at `9d39a9f`; `main` unchanged at `777640d`; D-133 domain-by-domain completion).
-Last updated: **2026-11-20** (D1-7 learning-path display fix; local, not pushed).
-Last updated: **2026-11-23** (Domain 1 educational audit committed on `codex/domain-1-educational-quality`; PRs #2 and #3 are merged into main per GitHub state; no production deployment change made or verified in this audit).
+Last updated: **2026-11-24** (owner asked to merge all outstanding work: PR #8 — Power Law of Practice and Weber's Law — merged as `601bb96`; then `claude/batch1-constraints`, PR #4 `codex/domain-1-educational-quality` and PR #7 `codex/design-systems-mastery-build` merged together via `claude/merge-all-20261124`; D-133 domain-by-domain completion).
+
+**Merge note (2026-11-24):** the three branches were merged on the owner's instruction. Conflicts: `human-computer-interaction.ts` kept `main`'s Domain 1 closeout wording (context-of-use vocabulary without the detailed ISO attribution, D1-2 closed); log files kept both sides, then duplicate issue rows were reduced to `main`'s current row; generated docs were regenerated. Sections below dated before 2026-11-24 that came from those branches (for example 'Current approved work (2026-11-23)' and its 'Next authorised action') are historical; the current next action is the D-133 line in the Owner direction section.
 
 ## Repository
 
@@ -137,14 +137,14 @@ No content was written or researched beyond source existence checks. Candidate s
 
 **Error-fix pass** at the owner's request: Next.js security upgrade to 16.4.6 (`npm audit` 0), all clipped plate markers fixed at the source (site-wide 0 outside the viewBox), undersized and clipped plate text fixed, Level-2 text-version numbering fixed, stale e2e expectation updated. Commit `732077a` plus this records commit, pushed to `claude/batch1-constraints`; see PROGRESS session 59 and the QA ledger.
 
-## Current approved work (2026-11-23)
+## Current approved work (2026-11-23) — historical (from PR #4 branch)
 
 **Domain 2 — UX Laws & Cognitive Effects.** Owner-approved sequence is domain-by-domain (D-133). Domain 1 is complete at 21/21 accounted for. Domain 2's last generated coverage baseline is 14 published, 10 addressed within, 22 planned. Batch 1 (loss-aversion, framing-effect) and Batch 2 (anchoring-effect) are drafted, indexed and illustrated on the development branch. Expected status, pending docs generation: 14 published, 3 drafted, 10 addressed within, 19 planned. There are 20 new source records across these batches; only kahneman-tversky-1979 has a recorded Crossref match. All three entries intentionally remain drafted until source verification and all QA gates pass. Research records: docs/DOMAIN_2_BATCH_1_RESEARCH.md, docs/DOMAIN_2_BATCH_2_RESEARCH.md; open blockers: D2-B1-1 and D2-B2-1.
 
 **Standing authorization:** routine implementation, QA, records and push of completed batches to a development branch are approved. Merge to `main` and production deployment are not included.
 **Domain 1 educational quality audit** on `codex/domain-1-educational-quality` (owner-directed in this conversation). All 16 published UX & UI Fundamentals entries reviewed. The consolidated branch includes HCD teaching and practice in UCD, eight illustrative scenario labels, 13 glossary terms, seven typed relations, the corrected HCI context-of-use citation, and the D1-7 learning-path display for addressed-within topics. The `e2e-redesign` glossary expectation is 127; the generated coverage file and future-use `DESIGN_REFERENCE_LIBRARY.md` are included. HCI's two relations and both scenario labels are restored. D1-8 learning-path recommendations remain open for owner decision. PR #4 is open as a draft against `main`; no merge or deployment. Claude Desktop reported a four-entry, six-viewport/theme review with no visible token leaks, accessibility violations, overflow or console errors; HCI review should be rerun after its last relation/scenario edits. D1-7 test results from `claude/batch1-constraints` are recorded as source-branch evidence, not final-branch passes. Final consolidated branch check/build/browser verification and Vercel preview remain outstanding. See `docs/QA_VERIFICATION_LEDGER.md`.
 
-## Next authorised action
+## Next authorised action — historical (from PR #4 branch; superseded by the D-133 line above)
 
 Run the required repository-local QA on `codex/domain-1-educational-quality`: `npm run check`, `npm run test:taxonomy`, `npm run docs:generate` (review generated count changes), entry integrity for all changed entries, `npm run build`, full browser suites affected by the learning-path route/components, and the final HCI entry review. Confirm `e2e-redesign` uses the current 127-term glossary count and passes. Then inspect the full PR diff and Vercel preview. Do not merge until final-branch checks pass and the owner has reviewed the result.
 
