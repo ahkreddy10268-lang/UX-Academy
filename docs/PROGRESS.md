@@ -417,3 +417,28 @@ Owner: approve the push of the status fix, set Vercel's production branch to `ma
 - Topic: `postels-law` (`principle`, `laws-effects/popular-ux-laws`), evidence `practitioner-recommendation`. File: `content/knowledge/laws-effects/postels-law.ts`; status `published`.
 - 8 new sources (7 RFC DOIs verified, OWASP URL reachable) plus three reused W3C records. Plate, register record, takeaway, back-links from `error-prevention` and `teslers-law`.
 - All gates passed (ledger). One review and one correction pass. **Next:** `power-law-of-practice` (`law`, `performance-laws`).
+
+
+## Session 75 — Domain 1 final closeout (2026-11-24)
+
+- Reconciled `content/taxonomy.ts`, `content/knowledge/foundations/`, `content/knowledge/_index.ts` and `docs/CONTENT_COVERAGE.md`: 21 topics; 16 published (core concepts 10, design approaches 4, history 2); 5 addressed within published hosts (utility → usefulness; feasibility, viability → design-thinking; human-centred-design → user-centred-design; history-of-hci → human-computer-interaction); 0 planned; no duplicate slugs or unindexed files. D-129 visual and evidence targets 16/16.
+- D1-2 closed: `iso-9241-11-2018` now cited in HCI where it supports the claim; an inaccurate ISO attribution in the context-of-use vocabulary corrected.
+- D1-4, D1-5, D1-6: bounded checks (ACM full texts 403; no open-access maturity-model evaluation; NN/g quiz TLS failure); unchanged, non-blocking.
+- **Domain 1 remains COMPLETE (21/21).** Next authorised action unchanged: Domain 2 `power-law-of-practice`.
+
+
+## Session 76 — Domain 2 Batch 7: Power Law of Practice published (2026-11-24)
+
+- Topic: `power-law-of-practice` (`law`, `laws-effects/performance-laws`), evidence `contested`. File: `content/knowledge/laws-effects/power-law-of-practice.ts`; status `published`.
+- 7 new sources; formula record and worked example; pure practice-curve functions with tests in `lib/formulas/experience.ts`; Level-1 plate and Level-2 model-comparison figure.
+- All gates and all site-wide browser suites run (shared `lib/**` change). One stale e2e count updated (30 → 31 detailed diagrams); one pre-existing e2e failure recorded (LIB-1).
+- **Next:** `webers-law`.
+
+## Session 77 — Domain 2 Batch 8: Weber's Law published (2026-11-24)
+
+- Topic: `webers-law` (`law`, `laws-effects/performance-laws`), evidence `original-empirical`. File: `content/knowledge/laws-effects/webers-law.ts`; status `published` after all gates passed (authored as `drafted`).
+- 4 new sources: Weber 1834 (DataCite DOI stored as a doi.org URL; Latin original located, not read), Algom 2021 (abstract only), Haigh, Apthorp & Bizo 2021 (full text), Penconek 2025 (full text, computational evidence).
+- New pure functions with tests in `lib/formulas/psychophysics.ts` (`weberThreshold`, `weberFraction`, `generalisedWeberThreshold`, `psychometricNormal`, `intensityAtCriterion`, `differenceThreshold`); Level-1 plate and Level-2 measurement figure computed from them.
+- Back-links from `colour-contrast-ratio` and `feedback-principle`; `modular-type-scale` already linked and its "Weber–Fechner-type psychophysics" wording was corrected.
+- All gates and every site-wide browser suite run (shared `lib/**` change). e2e count 31 → 32; LIB-1 still the only e2e-redesign failure.
+- **Next:** `cognitive-ease`.

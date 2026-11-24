@@ -38,25 +38,29 @@ D-129 remains the authority for evidence classes, content quality, target interp
 
 Latest generated coverage (2026-11-20): 21/21 topics accounted for — 16 published, 5 addressed within another entry, 0 planned. Do not reopen completed topics for cosmetic reasons; only correct factual/source errors, broken gates, accessibility defects or new verified evidence.
 
+## Domain 1 — final closeout (2026-11-24)
+
+**UX & UI Fundamentals — COMPLETE: 21/21 accounted for; 16 published, 5 addressed within, 0 planned.** Reconciled against the taxonomy, the entry files, the knowledge index and the generated coverage: core concepts 10 published + 3 addressed within (13), design approaches 4 + 1 (5), history of design & HCI 2 + 1 (3). 76% of topics have their own entry; 100% are accounted for. The five covered-within decisions (CONTENT_AUDIT session 62) were not reopened. D1-2 closed; D1-4, D1-5 and D1-6 remain open as non-blocking source and resource limits.
+
 ## Domain 2 — UX Laws & Cognitive Effects
 
-Latest generated coverage (2026-11-24, after Postel's Law): 46 topics — **18 published, 3 drafted, 10 addressed within another entry, 15 planned** (`docs/CONTENT_COVERAGE.md`). The 2026-11-20 baseline was 14 published, 0 drafted, 10 addressed within, 22 planned; the drafted entries are `loss-aversion`, `framing-effect` and `anchoring-effect` (see Batch 1 and 2 below).
+Latest generated coverage (2026-11-24, after Power Law of Practice): 46 topics — **19 published, 3 drafted, 10 addressed within another entry, 14 planned** (`docs/CONTENT_COVERAGE.md`). The 2026-11-20 baseline was 14 published, 0 drafted, 10 addressed within, 22 planned; the drafted entries are `loss-aversion`, `framing-effect` and `anchoring-effect` (see Batch 1 and 2 below).
 
-### Already published (18; `social-proof`, `goal-gradient-effect`, `zeigarnik-effect` added 2026-11-23; `postels-law` 2026-11-24)
+### Already published (20; `social-proof`, `goal-gradient-effect`, `zeigarnik-effect` added 2026-11-23; `postels-law`, `power-law-of-practice`, `webers-law` 2026-11-24)
 
-`aesthetic-usability-effect`, `choice-overload`, `default-effect`, `doherty-threshold`, `fitts-law`, `gestalt-principles`, `hick-hyman-law`, `jakobs-law`, `millers-law`, `peak-end-rule`, `postels-law`, `serial-position-effect`, `goal-gradient-effect`, `social-proof`, `steering-law`, `teslers-law`, `von-restorff-effect`, `zeigarnik-effect`.
+`aesthetic-usability-effect`, `choice-overload`, `default-effect`, `doherty-threshold`, `fitts-law`, `gestalt-principles`, `hick-hyman-law`, `jakobs-law`, `millers-law`, `peak-end-rule`, `postels-law`, `power-law-of-practice`, `serial-position-effect`, `goal-gradient-effect`, `social-proof`, `steering-law`, `teslers-law`, `von-restorff-effect`, `webers-law`, `zeigarnik-effect`.
 
 ### Addressed within another entry (10)
 
 - `primacy-effect`, `recency-effect` → `serial-position-effect`.
 - Gestalt grouping principles `law-of-pragnanz`, `law-of-proximity`, `law-of-similarity`, `law-of-closure`, `law-of-continuity`, `law-of-common-region`, `common-fate`, `uniform-connectedness` → `gestalt-principles`.
 
-### Planned at the 2026-11-20 baseline: 22 topics (now 15 planned, 3 drafted, 4 published from this list)
+### Planned at the 2026-11-20 baseline: 22 topics (now 14 planned, 3 drafted, 5 published from this list)
 
 | Priority | Topics |
 |---|---|
 | Foundational (2 remaining) | `loss-aversion`, `framing-effect` |
-| Core professional (12; `social-proof`, `goal-gradient-effect`, `zeigarnik-effect` published 2026-11-23; `postels-law` 2026-11-24) | ~~`social-proof`~~, ~~`goal-gradient-effect`~~, ~~`zeigarnik-effect`~~, ~~`postels-law`~~, `power-law-of-practice`, `webers-law`, `cognitive-ease`, `mere-exposure-effect`, `decision-fatigue`, `status-quo-bias`, `confirmation-bias`, `availability-heuristic` |
+| Core professional (12; `social-proof`, `goal-gradient-effect`, `zeigarnik-effect` published 2026-11-23; `postels-law`, `power-law-of-practice`, `webers-law` 2026-11-24) | ~~`social-proof`~~, ~~`goal-gradient-effect`~~, ~~`zeigarnik-effect`~~, ~~`postels-law`~~, ~~`power-law-of-practice`~~, ~~`webers-law`~~, `cognitive-ease`, `mere-exposure-effect`, `decision-fatigue`, `status-quo-bias`, `confirmation-bias`, `availability-heuristic` |
 | Specialist (7) | `fechners-law`, `ikea-effect`, `endowment-effect`, `sunk-cost-effect`, `parkinsons-law`, `occams-razor`, `pareto-principle` |
 
 The priority split follows the current D-129 backlog, adjusted for `default-effect` already being published. Candidate hosts from D-129 (`endowment-effect` → `loss-aversion`; `status-quo-bias` → `default-effect`) must still be checked against the actual explanations before any taxonomy status changes.
@@ -147,5 +151,28 @@ Research synthesis is recorded in `docs/DOMAIN_2_BATCH_1_RESEARCH.md`. Key corre
 - Sources: 8 new records in `content/sources/interaction-principles.ts` — RFC 760, 791, 1122, 2360, 7103, 9413, 9112 (all `doi-verified`) and the OWASP Input Validation Cheat Sheet (`url-reachable`). Reused: `w3c-wcag-22`, `w3c-understanding-error-identification`, `w3c-understanding-error-suggestion`. Relevant sections of every RFC read; RFC 9413 read in full. Statuses taken from the RFC documents and the RFC Editor records (STD numbers given only where the document header states them). Not registered: RFC 1958 (quoted only as cited inside RFC 9413).
 - Teaches the original protocol meaning vs the UX adaptation; syntactic variation vs semantic validity; parsing, normalisation, validation, authorisation and output encoding as separate steps; normalisation vs silent mutation; RFC 9413's three robustness aspects and protocol decay; inconsistent parsing as a security issue; fail-safe behaviour; accessible rejection under WCAG 3.3.1/3.3.3/3.3.4. An eight-step decision framework is labelled as academy interpretation.
 - Plate `postelsLawPlate` in `learning-sheets.tsx`, registered via `laws-psychology.tsx`; register record; quick takeaway; back-links from `error-prevention` and `teslers-law`. No drafts modified.
-- **Next authorised Domain 2 topic:** `power-law-of-practice` (next in the core-professional row; no entry exists). Taxonomy: `law` in `laws-effects/performance-laws` — a different type and subcategory from this batch; follow the taxonomy. The three drafts still need their own verification and QA (D2-B1-1, D2-B2-1).
+- Next topic after this batch: `power-law-of-practice` (done in Batch 7 below). The three drafts still need their own verification and QA (D2-B1-1, D2-B2-1).
+
+
+## Batch 7 — Power Law of Practice (2026-11-24) — published
+
+**`power-law-of-practice` published**: `law` in `laws-effects/performance-laws` (taxonomy unchanged). Evidence `contested`: practice speed-ups are well established; whether a power function is the law is not (individual data favour exponential and delayed forms; a 2026 comparison found no clear winner).
+
+- Sources: 7 new records in `content/sources/cognition-hci.ts` — Newell & Rosenbloom 1980 technical report (read in full; `url-reachable`; the 1981 chapter not consulted), Evans et al. 2018 (read in full), Heathcote et al. 2000, Weeks et al. 2026, Crossman 1959, Anderson 1982 (abstracts), Logan 1988 (abstract and introduction); six `doi-verified`. Correction to the brief: the optional "Snoddy (1926) revisited" paper is Stratton, Liu, Hong, Mayer-Kress & Newell (2007), pp. 503–515; not used.
+- Formula record (general and simple forms, worked example 14/8/6/4 s, alternatives). New pure functions in `lib/formulas/experience.ts` (`practicePower`, `practiceExponential`, `practiceDelayedExponential`, `practiceCurve`, `meanCurve`) with unit tests; all numbers in the plate and figure come from them.
+- Visuals: Level-1 plate `powerLawOfPracticePlate` (learning-sheets, via laws-psychology); Level-2 figure `power-law-of-practice.models` (power vs exponential vs delayed exponential; averaging two exponential learners). Back-link from `keystroke-level-model`; `flexibility-and-efficiency-of-use` already linked here.
+- Because `lib/**` changed, every browser suite was run (ledger). `e2e-redesign` 65/66: the remaining FAIL is pre-existing (drafted entries are listed without plates; LIB-1).
+- Next topic after this batch: `webers-law` (done in Batch 8 below).
+
+## Batch 8 — Weber's Law (2026-11-24) — published
+
+**`webers-law` published**: `law` in `laws-effects/performance-laws` (taxonomy unchanged). Evidence `original-empirical`: proportional difference thresholds are a long-standing regularity over limited ranges, with documented deviations at low intensities.
+
+- Sources: 4 new records in `content/sources/cognition-hci.ts` — Weber 1834 (digitised original, DataCite DOI 10.3931/e-rara-70261 stored as a doi.org URL; located, Latin text not read), Algom 2021 (abstract only), Haigh, Apthorp & Bizo 2021 (read in full), Penconek 2025 (read in full apart from some model detail; computational evidence, not a human experiment). Three `doi-verified`, one `url-reachable`.
+- Teaches the threshold form ΔI / I = k with an illustrative k = 0.02 (2 at 100, 10 at 500), measurement by discrimination tasks and psychometric functions, the role of reference, criterion, repetitions and range, and the distinctions from detection thresholds, the above-threshold ratio principle, the Weber principle and Fechner's law.
+- New pure functions in `lib/formulas/psychophysics.ts` with unit tests; all numbers in the plate and figure come from them.
+- Visuals: Level-1 plate `webersLawPlate` (learning-sheets, via laws-psychology); Level-2 figure `webers-law.measurement` (compare → read threshold at 75 % → fractions across the range, ideal vs a low-intensity deviation).
+- Relations: `fechners-law` (planned), `modular-type-scale`, `colour-contrast-ratio`, `feedback-principle`, `fitts-law`, `hick-hyman-law`, `steering-law`, `power-law-of-practice`. Back-links added from `colour-contrast-ratio` and `feedback-principle`; the "Weber–Fechner-type psychophysics" wording in `modular-type-scale` was corrected to link Weber's law without the misnomer.
+- Every browser suite run (shared `lib/**` change); `e2e-redesign` 65/66, the remaining FAIL is LIB-1 (pre-existing).
+- **Next authorised Domain 2 topic:** `cognitive-ease` (next in the core-professional row; no entry exists). Taxonomy: `concept` in `laws-effects/memory-attention-effects`.
 

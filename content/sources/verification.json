@@ -54,6 +54,14 @@
     "registeredContainer": "Proceedings of the SIGCHI Conference on Human Factors in Computing Systems",
     "similarity": 1
   },
+  "algom-2021": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-24",
+    "registeredTitle": "The Weber–Fechner law: A misnomer that persists but that should go away.",
+    "registeredYear": 2021,
+    "registeredContainer": "Psychological Review",
+    "similarity": 1
+  },
   "alhadreti-mayhew-2018": {
     "status": "doi-verified",
     "checkedAt": "2026-11-16",
@@ -68,6 +76,14 @@
     "registeredTitle": "Guidelines for Human-AI Interaction",
     "registeredYear": 2019,
     "registeredContainer": "Proceedings of the 2019 CHI Conference on Human Factors in Computing Systems",
+    "similarity": 1
+  },
+  "anderson-1982": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-24",
+    "registeredTitle": "Acquisition of cognitive skill.",
+    "registeredYear": 1982,
+    "registeredContainer": "Psychological Review",
     "similarity": 1
   },
   "anderson-2004": {
@@ -588,6 +604,14 @@
     "registeredContainer": "Behavioral and Brain Sciences",
     "similarity": 1
   },
+  "crossman-1959": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-24",
+    "registeredTitle": "A THEORY OF THE ACQUISITION OF SPEED-SKILL∗",
+    "registeredYear": 1959,
+    "registeredContainer": "Ergonomics",
+    "similarity": 1
+  },
   "crossref": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
@@ -762,6 +786,14 @@
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
     "httpStatus": 200
+  },
+  "evans-et-al-2018": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-24",
+    "registeredTitle": "Refining the law of practice.",
+    "registeredYear": 2018,
+    "registeredContainer": "Psychological Review",
+    "similarity": 1
   },
   "fabijan-et-al-2019": {
     "status": "doi-verified",
@@ -1166,6 +1198,14 @@
     "registeredContainer": "Field Methods",
     "similarity": 1
   },
+  "haigh-apthorp-bizo-2021": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-24",
+    "registeredTitle": "The role of Weber’s law in human time perception",
+    "registeredYear": 2020,
+    "registeredContainer": "Attention, Perception, &amp; Psychophysics",
+    "similarity": 1
+  },
   "halasz-moran-1983": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",
@@ -1280,6 +1320,14 @@
     "registeredTitle": "Attention and Visual Memory in Visualization and Computer Graphics",
     "registeredYear": 2012,
     "registeredContainer": "IEEE Transactions on Visualization and Computer Graphics",
+    "similarity": 1
+  },
+  "heathcote-brown-mewhort-2000": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-24",
+    "registeredTitle": "The power law repealed: The case for an exponential law of practice",
+    "registeredYear": 2000,
+    "registeredContainer": "Psychonomic Bulletin &amp; Review",
     "similarity": 1
   },
   "hedges-1981": {
@@ -1756,6 +1804,14 @@
     "registeredContainer": "Psychological Review",
     "similarity": 1
   },
+  "logan-1988": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-24",
+    "registeredTitle": "Toward an instance theory of automatization.",
+    "registeredYear": 1988,
+    "registeredContainer": "Psychological Review",
+    "similarity": 1
+  },
   "lovinger-2012-content-modelling": {
     "status": "url-reachable",
     "checkedAt": "2026-11-16",
@@ -2055,6 +2111,11 @@
   "nasa-tlx-site": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "newell-rosenbloom-1980": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "nielsen-1992-heuristic": {
@@ -2468,6 +2529,14 @@
     "registeredTitle": "VII. Note on regression and inheritance in the case of two parents",
     "registeredYear": 1895,
     "registeredContainer": "Proceedings of the Royal Society of London",
+    "similarity": 1
+  },
+  "penconek-2025": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-24",
+    "registeredTitle": "Weber’s Law as the emergent phenomenon of choices based on global inhibition",
+    "registeredYear": 2025,
+    "registeredContainer": "Frontiers in Neuroscience",
     "similarity": 1
   },
   "pernice-2017-f-pattern": {
@@ -3337,6 +3406,19 @@
     "status": "url-reachable",
     "checkedAt": "2026-11-11",
     "httpStatus": 200
+  },
+  "weber-1834": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-24",
+    "httpStatus": 200
+  },
+  "weeks-et-al-2026": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-24",
+    "registeredTitle": "Post-power law of practice: Comparing static and dynamical models of skill acquisition.",
+    "registeredYear": 2026,
+    "registeredContainer": "Journal of Experimental Psychology: Human Perception and Performance",
+    "similarity": 1
   },
   "weiser-1991": {
     "status": "doi-verified",

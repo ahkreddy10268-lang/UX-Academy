@@ -181,6 +181,7 @@ export default defineEntry({
     { target: "perceptual-colour-spaces", type: "contrasts-with", note: "Perceptual spaces such as CIE Lab model lightness differences more uniformly than the WCAG luminance ratio." },
     { target: "colour-systems", type: "applied-in", note: "Semantic colour roles (text, surface, border) are defined with contrast constraints between them." },
     { target: "interaction-states", type: "applied-in", note: "Interaction states must keep text and state indicators at the contrast WCAG requires." },
+    { target: "webers-law", type: "contrasts-with", note: "Contrast ratio is a standardised legibility requirement; Weber's law describes measured discrimination thresholds and does not replace the standard." },
   ],
 
   formulas: [

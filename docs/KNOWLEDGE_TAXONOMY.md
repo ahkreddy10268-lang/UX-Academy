@@ -48,8 +48,8 @@ Empirical laws of human performance and the cognitive effects popularised as 'la
 - ✅ Fitts's Law — *Law* · `fitts-law`
 - ✅ Hick-Hyman Law — *Law* · `hick-hyman-law`
 - ✅ Steering Law — *Law* · `steering-law`
-- ◻️ Power Law of Practice — *Law* · `power-law-of-practice`
-- ◻️ Weber's Law — *Law* · `webers-law`
+- ✅ Power Law of Practice — *Law* · `power-law-of-practice`
+- ✅ Weber's Law — *Law* · `webers-law`
 - ◻️ Fechner's Law — *Law* · `fechners-law`
 
 ### Popular UX laws & rules of thumb (`popular-ux-laws`)
