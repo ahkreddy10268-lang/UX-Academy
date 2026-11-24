@@ -33,7 +33,7 @@ export default async function PathPage({ params }: PageProps<"/learn/[id]">) {
   const p = learningPaths.find((x) => x.id === id);
   if (!p) notFound();
   const stats = pathStats(p);
-  const written = p.stages.flatMap((s) => s.steps).filter((s) => entryBySlug.has(s));
+  const written = p.stages.flatMap((s) => s.steps).filter((s) => entryBySlug.get(s)?.status === "published");
   const firstLesson = written[0];
 
   return (
@@ -91,7 +91,7 @@ export default async function PathPage({ params }: PageProps<"/learn/[id]">) {
                 title: s.title,
                 levelLabel: `${DIFFICULTY_LABEL[s.level]} · ${LEVEL_PURPOSE[s.level]}`,
                 testHref: stageStats(s).questions > 0 ? `/learn/${p.id}/level/${si + 1}` : undefined,
-                lessonSlugs: s.steps.filter((x) => entryBySlug.has(x)),
+                lessonSlugs: s.steps.filter((x) => entryBySlug.get(x)?.status === "published"),
                 practiceItems: stageStats(s).questions + stageStats(s).exercises,
                 addressed: stageStats(s).addressed,
                 planned: stageStats(s).planned,
@@ -145,13 +145,11 @@ export default async function PathPage({ params }: PageProps<"/learn/[id]">) {
                               </li>
                             );
                           }
-                          if (!e)
+                          if (!e || e.status !== "published")
                             return (
                               <li key={slug} className="flex items-center gap-4 border-t border-dashed border-rule px-5 py-3 text-sm text-ink-3">
                                 <span className="w-12 shrink-0" />
-                                <Link href={`/library/${slug}`} className="tap flex-1 underline decoration-dotted underline-offset-4 hover:text-ink">
-                                  {t?.title}
-                                </Link>
+                                <span className="tap flex-1">{t?.title ?? e?.title ?? slug}</span>
                                 <span className="text-xs">in development</span>
                               </li>
                             );

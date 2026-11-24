@@ -27,7 +27,7 @@ export function cardFor(e: KnowledgeEntry): CardData {
 
 export function cardForSlug(slug: string): CardData | undefined {
   const e = entryBySlug.get(slug);
-  if (e) return cardFor(e);
+  if (e) return e.status === "published" ? cardFor(e) : undefined;
   const t = taxonomyItems.find((x) => x.slug === slug);
   if (!t) return undefined;
   return {

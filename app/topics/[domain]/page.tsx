@@ -67,11 +67,12 @@ export default async function DomainPage({ params }: PageProps<"/topics/[domain]
       <Container className="space-y-16 pt-12">
         {d.subcategories.map((s) => {
           const items = itemsForSubcategory(d.id, s.id).sort((a, b) => a.title.localeCompare(b.title));
-          const written = items.filter((x) => x.entry);
+          const written = items.filter((x) => x.entry?.status === "published");
+          const inProgressEntries = items.filter((x) => x.entry && x.entry.status !== "published" && ["research", "drafted", "reviewed"].includes(topicStatus(x)));
           const addressed = items.filter((x) => !x.entry && topicStatus(x) === "addressed");
           const planned = items.filter((x) => !x.entry && topicStatus(x) !== "addressed");
           const notStarted = planned.filter((x) => topicStatus(x) === "planned").length;
-          const inProgress = planned.length - notStarted;
+          const inProgress = items.filter((x) => ["research", "drafted", "reviewed"].includes(topicStatus(x))).length;
           return (
             <section key={s.id} aria-labelledby={s.id} className="scroll-mt-24">
               <div className="flex flex-wrap items-baseline justify-between gap-2 border-b border-rule pb-3">
@@ -91,6 +92,22 @@ export default async function DomainPage({ params }: PageProps<"/topics/[domain]
                     </li>
                   ))}
                 </ul>
+              )}
+              {inProgressEntries.length > 0 && (
+                <div className="mt-6">
+                  <p className="label">In progress</p>
+                  <ul className="mt-3 flex flex-wrap gap-x-2 gap-y-2">
+                    {inProgressEntries.map((t) => (
+                      <li key={t.slug}>
+                        <span className="inline-flex flex-wrap items-center gap-1.5 rounded-xs border border-rule px-2 py-1 text-sm text-ink-2">
+                          {t.title}
+                          <span className="text-[11px] text-ink-3">{TYPE_LABEL[t.type]}</span>
+                          <StatusTag status={topicStatus(t)} />
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               )}
               {addressed.length > 0 && (
                 <div className="mt-6">

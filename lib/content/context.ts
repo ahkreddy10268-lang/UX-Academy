@@ -5,7 +5,7 @@ import { collectStrings, extractLinks } from "./rich";
 
 export function resolveSlug(slug: string): LinkInfo | undefined {
   const e = entryBySlug.get(slug);
-  if (e) return { title: e.title, href: `/library/${slug}`, planned: false };
+  if (e) return e.status === "published" ? { title: e.title, href: `/library/${slug}`, planned: false } : undefined;
   const t = taxonomyBySlug.get(slug);
   if (t) return { title: t.title, href: `/library/${slug}`, planned: true };
   return undefined;

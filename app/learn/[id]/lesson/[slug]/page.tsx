@@ -23,7 +23,7 @@ import type { Difficulty } from "@/lib/content/schema";
 function lessonsOf(pathId: string) {
   const p = learningPaths.find((x) => x.id === pathId);
   if (!p) return [];
-  return p.stages.flatMap((s, si) => s.steps.filter((x) => entryBySlug.has(x)).map((slug) => ({ slug, stage: s, stageIndex: si })));
+  return p.stages.flatMap((s, si) => s.steps.filter((x) => entryBySlug.get(x)?.status === "published").map((slug) => ({ slug, stage: s, stageIndex: si })));
 }
 
 export function generateStaticParams() {
@@ -32,7 +32,8 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps<"/learn/[id]/lesson/[slug]">): Promise<Metadata> {
   const { slug } = await params;
-  return { title: `${entryBySlug.get(slug)?.title ?? "Lesson"} — lesson` };
+  const entry = entryBySlug.get(slug);
+  return { title: entry?.status === "published" ? `${entry.title} — lesson` : "Lesson" };
 }
 
 export default async function LessonPage({ params }: PageProps<"/learn/[id]/lesson/[slug]">) {
@@ -41,7 +42,7 @@ export default async function LessonPage({ params }: PageProps<"/learn/[id]/less
   const e = entryBySlug.get(slug);
   const lessons = lessonsOf(id);
   const index = lessons.findIndex((l) => l.slug === slug);
-  if (!path || !e || index < 0) notFound();
+  if (!path || !e || e.status !== "published" || index < 0) notFound();
   const { stage, stageIndex } = lessons[index];
   const level: Difficulty = stage.level;
   const prev = lessons[index - 1];

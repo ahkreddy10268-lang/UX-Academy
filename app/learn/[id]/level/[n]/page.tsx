@@ -22,13 +22,13 @@ export default async function LevelTestPage({ params }: PageProps<"/learn/[id]/l
   const path = learningPaths.find((p) => p.id === id);
   const stage = path?.stages[Number(n) - 1];
   if (!path || !stage) notFound();
-  const entries = stage.steps.map((s) => entryBySlug.get(s)).filter((e) => e !== undefined);
-  const all = entries.flatMap((e) => e.quiz.map((q) => ({ ...q, entry: e.slug, entryTitle: e.title })));
+  const publishedEntries = stage.steps.map((s) => entryBySlug.get(s)).filter((e) => e?.status === "published");
+  const all = publishedEntries.flatMap((e) => e.quiz.map((q) => ({ ...q, entry: e.slug, entryTitle: e.title })));
   // Questions written for this level lead the test; the rest are a separate, labelled revision set.
   const questions = all.filter((q) => q.level === stage.level);
   const revision = all.filter((q) => q.level !== stage.level);
   const links = linkMapFor(all);
-  for (const e of entries) links[e.slug] = resolveSlug(e.slug)!;
+  for (const e of publishedEntries) links[e.slug] = resolveSlug(e.slug)!;
   const nextLevel = path.stages[Number(n)];
 
   return (
@@ -37,7 +37,7 @@ export default async function LevelTestPage({ params }: PageProps<"/learn/[id]/l
         eyebrow={`Level ${n} test · ${DIFFICULTY_LABEL[stage.level]} — ${LEVEL_PURPOSE[stage.level]}`}
         title={stage.title}
         crumbs={[{ href: "/learn", label: "Learn" }, { href: `/learn/${id}`, label: path.title }, { label: `Level ${n} test` }]}
-        lede={`${questions.length} ${DIFFICULTY_LABEL[stage.level].toLowerCase()}-level ${questions.length === 1 ? "question" : "questions"} from ${entries.length} lessons${revision.length ? `, plus ${revision.length} optional revision ${revision.length === 1 ? "question" : "questions"} from other levels` : ""}. Every option explains itself; wrong answers point to the lesson to revisit. Results are saved to your revision queue.`}
+        lede={`${questions.length} ${DIFFICULTY_LABEL[stage.level].toLowerCase()}-level ${questions.length === 1 ? "question" : "questions"} from ${publishedEntries.length} lessons${revision.length ? `, plus ${revision.length} optional revision ${revision.length === 1 ? "question" : "questions"} from other levels` : ""}. Every option explains itself; wrong answers point to the lesson to revisit. Results are saved to your revision queue.`}
       />
       <Container className="max-w-[52rem] pt-10">
         {questions.length > 0 && <Quiz questions={questions} links={links} showSource />}

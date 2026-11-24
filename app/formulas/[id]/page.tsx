@@ -15,7 +15,7 @@ export function generateStaticParams() {
 }
 
 function find(id: string) {
-  for (const e of entries) {
+  for (const e of entries.filter((entry) => entry.status === "published")) {
     const f = e.formulas.find((x) => x.id === id);
     if (f) return { formula: f, references: e.references, host: e, summary: e.summary };
   }

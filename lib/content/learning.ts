@@ -22,18 +22,20 @@ export function minutesForLevel(e: KnowledgeEntry, level: "beginner" | "intermed
 
 /**
  * What a path step is, from the content itself (D1-7): a lesson (it has its own
- * entry), a concept explained within another published entry (its taxonomy
- * `coveredBy` host), or planned. Addressed concepts are never lessons: they are
- * not numbered, tracked or counted towards completion.
+ * published entry), a concept explained within another published entry (its
+ * taxonomy `coveredBy` host), or planned/in progress. Unpublished entries do not
+ * count as lessons. Addressed concepts are never lessons: they are not numbered,
+ * tracked or counted towards completion.
  */
 export type StepStatus = { kind: "lesson"; entry: KnowledgeEntry } | { kind: "addressed"; host: KnowledgeEntry } | { kind: "planned" };
 
 export function stepStatus(slug: string): StepStatus {
   const entry = entryBySlug.get(slug);
-  if (entry) return { kind: "lesson", entry };
+  if (entry?.status === "published") return { kind: "lesson", entry };
+  if (entry) return { kind: "planned" };
   const hostSlug = taxonomyBySlug.get(slug)?.coveredBy;
   const host = hostSlug ? entryBySlug.get(hostSlug) : undefined;
-  return host ? { kind: "addressed", host } : { kind: "planned" };
+  return host?.status === "published" ? { kind: "addressed", host } : { kind: "planned" };
 }
 
 const countKind = (steps: string[], kind: StepStatus["kind"]) => steps.filter((s) => stepStatus(s).kind === kind).length;
@@ -42,7 +44,7 @@ export type PathStats = {
   levels: number;
   lessons: number; // published steps
   addressed: number; // concepts explained within another published entry (not lessons)
-  planned: number; // steps with neither an entry nor a coveredBy host
+  planned: number; // steps without a published entry or published coveredBy host
   exercises: number; // exercises across published steps
   questions: number; // quiz questions across published steps
   minutes: number; // reading estimate across published steps
@@ -51,7 +53,7 @@ export type PathStats = {
 
 export function pathStats(p: LearningPath): PathStats {
   const steps = p.stages.flatMap((s) => s.steps);
-  const published = steps.map((s) => entryBySlug.get(s)).filter((e): e is KnowledgeEntry => Boolean(e));
+  const published = steps.map((s) => entryBySlug.get(s)).filter((e): e is KnowledgeEntry => e?.status === "published");
   return {
     levels: p.stages.length,
     lessons: published.length,
@@ -65,7 +67,7 @@ export function pathStats(p: LearningPath): PathStats {
 }
 
 export function stageStats(stage: LearningPath["stages"][number]) {
-  const published = stage.steps.map((s) => entryBySlug.get(s)).filter((e): e is KnowledgeEntry => Boolean(e));
+  const published = stage.steps.map((s) => entryBySlug.get(s)).filter((e): e is KnowledgeEntry => e?.status === "published");
   return {
     lessons: published.length,
     addressed: countKind(stage.steps, "addressed"),
@@ -85,9 +87,13 @@ export function stageStats(stage: LearningPath["stages"][number]) {
 export function levelQuestionCounts(stage: LearningPath["stages"][number]): { matching: number; other: number } {
   let matching = 0;
   let other = 0;
-  for (const s of stage.steps) for (const q of entryBySlug.get(s)?.quiz ?? []) {
+  for (const s of stage.steps) {
+    const entry = entryBySlug.get(s);
+    if (entry?.status !== "published") continue;
+    for (const q of entry.quiz) {
       if (q.level === stage.level) matching++;
       else other++;
     }
+  }
   return { matching, other };
 }

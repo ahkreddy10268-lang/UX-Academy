@@ -164,14 +164,20 @@ export const knownSlugs = new Set<string>([...entries.map((e) => e.slug), ...tax
 export type EdgeType = RelationType | "prerequisite-of";
 export type GraphEdge = { from: string; to: string; type: EdgeType; note: string };
 
-export const graphEdges: GraphEdge[] = entries.flatMap((e) => [
-  ...e.prerequisites.map((p) => ({
+const publishedEntries = entries.filter((e) => e.status === "published");
+const isVisibleKnowledgeSlug = (slug: string) => {
+  const linkedEntry = entryBySlug.get(slug);
+  return !linkedEntry || linkedEntry.status === "published";
+};
+
+export const graphEdges: GraphEdge[] = publishedEntries.flatMap((e) => [
+  ...e.prerequisites.filter(isVisibleKnowledgeSlug).map((p) => ({
     from: p,
     to: e.slug,
     type: "prerequisite-of" as const,
     note: `${titleFor(p) ?? p} is recommended before ${e.title}.`,
   })),
-  ...e.relations.map((r) => ({ from: e.slug, to: r.target, type: r.type, note: r.note })),
+  ...e.relations.filter((r) => isVisibleKnowledgeSlug(r.target)).map((r) => ({ from: e.slug, to: r.target, type: r.type, note: r.note })),
 ]);
 
 export function edgesFor(slug: string) {
@@ -183,7 +189,7 @@ export function edgesFor(slug: string) {
 
 /** Entries that list this slug as a prerequisite (what this unlocks). */
 export function unlockedBy(slug: string): KnowledgeEntry[] {
-  return entries.filter((e) => e.prerequisites.includes(slug));
+  return publishedEntries.filter((e) => e.prerequisites.includes(slug));
 }
 
 /** All formulas in the library: those on entries and the standalone ones. */
@@ -195,8 +201,10 @@ export type LibraryFormula = {
   host: { slug: string; title: string; hasEntry: boolean };
   summary: string;
 };
+const publicStandaloneFormulas = standaloneFormulas.filter((f) => isVisibleKnowledgeSlug(f.topic));
+
 export const libraryFormulas: LibraryFormula[] = [
-  ...entries.flatMap((e) =>
+  ...publishedEntries.flatMap((e) =>
     e.formulas.map((f) => ({
       id: f.id,
       name: f.name,
@@ -206,7 +214,7 @@ export const libraryFormulas: LibraryFormula[] = [
       summary: e.summary,
     })),
   ),
-  ...standaloneFormulas.map((f) => ({
+  ...publicStandaloneFormulas.map((f) => ({
     id: f.id,
     name: f.name,
     expression: f.expression,
@@ -216,13 +224,13 @@ export const libraryFormulas: LibraryFormula[] = [
   })),
 ].sort((a, b) => a.name.localeCompare(b.name));
 
-export const standaloneFormulaById = new Map(standaloneFormulas.map((f) => [f.id, f]));
+export const standaloneFormulaById = new Map(publicStandaloneFormulas.map((f) => [f.id, f]));
 
-/** All quiz questions across the library, tagged with their host entry. */
-export const allQuestions = entries.flatMap((e) =>
+/** All quiz questions across the published library, tagged with their host entry. */
+export const allQuestions = publishedEntries.flatMap((e) =>
   e.quiz.map((q) => ({ ...q, entry: e.slug, entryTitle: e.title, domain: e.domain })),
 );
 
-export const allFlashcards = entries.flatMap((e) =>
+export const allFlashcards = publishedEntries.flatMap((e) =>
   e.flashcards.map((c) => ({ ...c, entry: e.slug, entryTitle: e.title })),
 );

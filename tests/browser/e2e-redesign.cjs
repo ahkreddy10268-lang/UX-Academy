@@ -16,6 +16,14 @@ const check = (name, ok, detail = '') => results.push({ name, ok: !!ok, detail }
   const res = p.locator('section[aria-label=Results]');
   const firstPage = await res.locator('article svg[viewBox="0 0 400 300"]').count();
   check('library grid shows the first page of 24 cards, each with a plate', firstPage === 24, `${firstPage} plates`);
+
+  const indexResponse = await ctx.request.get(BASE + '/search-index.json');
+  const searchIndex = await indexResponse.json();
+  check('learner search index excludes drafted entry records', indexResponse.ok() && !searchIndex.some((doc) => doc.id === 'entry:anchoring-effect'));
+  const draftResponse = await p.goto(BASE + '/library/anchoring-effect', { waitUntil: 'networkidle' });
+  check('direct draft entry URLs return 404', draftResponse?.status() === 404, `HTTP ${draftResponse?.status() ?? 'no response'}`);
+  await p.goto(BASE + '/library', { waitUntil: 'networkidle' });
+
   await res.getByRole('button', { name: /^Show \d+ more$/ }).click();
   const plates = await res.locator('article svg[viewBox="0 0 400 300"]').count();
   check('"Show more" reveals every published card with its plate', plates >= 45, `${plates} plates`);

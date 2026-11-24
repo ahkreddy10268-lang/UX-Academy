@@ -19,7 +19,7 @@ export default function LibraryPage() {
   const subject = new Map(domains.map((d) => [d.id, d.shortTitle]));
 
   const docs: LibraryDoc[] = [
-    ...entries.map((e) => ({
+    ...published.map((e) => ({
       slug: e.slug,
       title: e.title,
       summary: richToPlain(e.summary),

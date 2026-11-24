@@ -37,7 +37,8 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: PageProps<"/library/[slug]">): Promise<Metadata> {
   const { slug } = await params;
   const e = entryBySlug.get(slug);
-  if (e) return { title: e.title, description: e.summary };
+  if (e?.status === "published") return { title: e.title, description: e.summary };
+  if (e) return { title: "Not found" };
   const t = taxonomyBySlug.get(slug);
   return { title: t ? `${t.title} (planned)` : "Not found" };
 }
@@ -45,12 +46,12 @@ export async function generateMetadata({ params }: PageProps<"/library/[slug]">)
 export default async function EntryPage({ params }: PageProps<"/library/[slug]">) {
   const { slug } = await params;
   const entry = entryBySlug.get(slug);
-  if (!entry) {
-    const planned = taxonomyBySlug.get(slug);
-    if (!planned) notFound();
-    return <PlannedTopic item={planned} />;
-  }
-  return <Entry entry={entry} />;
+  if (entry?.status === "published") return <Entry entry={entry} />;
+  if (entry) notFound();
+
+  const planned = taxonomyBySlug.get(slug);
+  if (!planned) notFound();
+  return <PlannedTopic item={planned} />;
 }
 
 function Entry({ entry: e }: { entry: KnowledgeEntry }) {
@@ -60,7 +61,7 @@ function Entry({ entry: e }: { entry: KnowledgeEntry }) {
   const { outgoing, incoming } = edgesFor(e.slug);
   const unlocks = unlockedBy(e.slug);
   const lab = e.lab ? labById.get(e.lab) : undefined;
-  const siblings = entries.filter((x) => x.domain === e.domain && x.subcategory === e.subcategory);
+  const siblings = entries.filter((x) => x.status === "published" && x.domain === e.domain && x.subcategory === e.subcategory);
   const pos = siblings.findIndex((x) => x.slug === e.slug);
   const prev = siblings[pos - 1];
   const next = siblings[pos + 1];

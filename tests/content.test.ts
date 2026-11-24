@@ -5,10 +5,15 @@
 import { describe, expect, it } from "vitest";
 import { levelChecks, typeChecks } from "../lib/content/completeness";
 import {
+  allFlashcards,
+  allQuestions,
   comparisons,
   domains,
   entries,
   entryBySlug,
+  graphEdges,
+  libraryFormulas,
+  unlockedBy,
   glossary,
   knownSlugs,
   labById,
@@ -21,6 +26,10 @@ import {
   workshops,
 } from "../lib/content";
 import { collectStrings, extractCitations, extractLinks } from "../lib/content/rich";
+import { cardForSlug } from "../lib/content/cards";
+import { buildSearchDocs } from "../lib/content/search";
+import { resolveSlug } from "../lib/content/context";
+import { stepStatus } from "../lib/content/learning";
 
 const dupes = (xs: string[]) => xs.filter((x, i) => xs.indexOf(x) !== i);
 
@@ -128,6 +137,36 @@ describe("knowledge entries", () => {
     for (const e of entries) {
       const t = taxonomyItems.find((x) => x.slug === e.slug);
       if (t) expect(t.domain, `${e.slug} is in taxonomy domain ${t.domain} but entry says ${e.domain}`).toBe(e.domain);
+    }
+  });
+});
+
+describe("learner-facing entry indexes", () => {
+  const unpublishedSlugs = new Set(entries.filter((e) => e.status !== "published").map((e) => e.slug));
+  const publishedEntryIds = entries.filter((e) => e.status === "published").map((e) => `entry:${e.slug}`).sort();
+
+  it("indexes only published knowledge entries for learner search", () => {
+    expect(buildSearchDocs().filter((d) => d.kind === "entry").map((d) => d.id).sort()).toEqual(publishedEntryIds);
+  });
+
+  it("keeps formulas, quizzes and flashcards on published entries", () => {
+    expect(libraryFormulas.filter((f) => unpublishedSlugs.has(f.host.slug))).toEqual([]);
+    expect(allQuestions.filter((q) => unpublishedSlugs.has(q.entry))).toEqual([]);
+    expect(allFlashcards.filter((c) => unpublishedSlugs.has(c.entry))).toEqual([]);
+  });
+
+  it("keeps graph and unlock relationships away from unpublished entries", () => {
+    expect(graphEdges.filter((edge) => unpublishedSlugs.has(edge.from) || unpublishedSlugs.has(edge.to))).toEqual([]);
+    for (const e of entries.filter((entry) => entry.status === "published")) {
+      expect(unlockedBy(e.slug).every((unlocked) => unlocked.status === "published"), e.slug).toBe(true);
+    }
+  });
+
+  it("keeps unpublished entries out of learner navigation and lessons", () => {
+    for (const slug of unpublishedSlugs) {
+      expect(cardForSlug(slug), slug).toBeUndefined();
+      expect(resolveSlug(slug), slug).toBeUndefined();
+      expect(stepStatus(slug), slug).toEqual({ kind: "planned" });
     }
   });
 });

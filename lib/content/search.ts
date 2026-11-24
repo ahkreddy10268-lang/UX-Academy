@@ -3,6 +3,7 @@ import {
   comparisons,
   domainById,
   entries,
+  entryBySlug,
   glossary,
   labs,
   learningPaths,
@@ -27,11 +28,16 @@ export type SearchDoc = {
   body?: string;
 };
 
-const plain = (s: string) => richToPlain(s, titleFor);
+const publicTitleFor = (slug: string) => {
+  const entry = entryBySlug.get(slug);
+  if (entry) return entry.status === "published" ? entry.title : undefined;
+  return titleFor(slug);
+};
+const plain = (s: string) => richToPlain(s, publicTitleFor);
 
 export function buildSearchDocs(): SearchDoc[] {
   const docs: SearchDoc[] = [];
-  for (const e of entries) {
+  for (const e of entries.filter((entry) => entry.status === "published")) {
     const d = domainById.get(e.domain);
     docs.push({
       id: `entry:${e.slug}`,

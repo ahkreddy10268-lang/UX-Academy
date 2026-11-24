@@ -40,7 +40,7 @@ export function PathExplorer({ id }: { id: string }) {
     decisions: l.decisions,
     art: l.art,
     links: l.slugs
-      .filter((s) => entryBySlug.has(s) || taxonomyBySlug.has(s))
+      .filter((s) => entryBySlug.get(s)?.status === "published" || (!entryBySlug.has(s) && taxonomyBySlug.has(s)))
       .map((s) => {
         const status = stepStatus(s);
         const title = entryBySlug.get(s)?.title ?? taxonomyBySlug.get(s)!.title;
