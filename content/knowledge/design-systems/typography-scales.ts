@@ -115,9 +115,7 @@ export default defineEntry({
   application: {
     summary: ["A type scale is used by every component that shows text; it sets hierarchy, density and much of a product's voice."],
     web: ["Publish composite styles as CSS custom properties and classes; size in rem; reserve `clamp()` for display roles."],
-    mobile: ["Map roles to platform text styles (Dynamic Type on iOS, scalable sp on Android); test the largest sizes."],
     mobile: ["Map roles to native text styles. Dynamic Type is available on iOS, iPadOS, tvOS, visionOS and watchOS; on Android use sp for text and line height, dp for layout. Test the maximum accessibility size rather than assuming the default scale."],
-    enterprise: ["Dense tools need more small styles (label, caption) and fewer display styles; document which roles may appear in tables."],
     enterprise: ["Dense tools need explicit table-body, numeric and label roles, but must preserve legibility at the user's largest text setting. Keep long-form reading areas separate from dense data regions."],
     services: ["Print and email templates reuse role names with print-appropriate values."],
     steps: [
@@ -125,8 +123,7 @@ export default defineEntry({
       "Define roles and the number of steps each needs.",
       "Choose sizes (ratio as a starting point) and pair each with line height, weight and tracking.",
       "Publish composite tokens; set breakpoint and platform remappings.",
-      "Test 200% zoom, text-spacing overrides and heading structure.",
-    "Test 200% browser zoom and text-spacing overrides; separately test Android's maximum 200% nonlinear font scale and Apple Dynamic Type sizes where available.",
+      "Test 200% browser zoom and text-spacing overrides; separately test Android's maximum 200% nonlinear font scale and Apple Dynamic Type sizes where available.",
     "Review editorial measures with real paragraph text; review dashboard rows, numeric alignment, truncation and narrow-container behaviour.",
     "Repeat the review with translated strings and the supported scripts, checking font coverage, line height, shaping, direction and natural wrapping.",
     ],
