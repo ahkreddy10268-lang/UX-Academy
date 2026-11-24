@@ -166,6 +166,7 @@ export default defineEntry({
     { target: "interaction-design-discipline", type: "applied-in", note: "Feedback is applied in interaction design to close the loop between an action and its result." },
     { target: "visibility-of-system-status", type: "applied-in", note: "Heuristic 1 asks a whole system to provide timely, appropriate feedback about its state." },
     { target: "gulfs-of-execution-and-evaluation", type: "related-to", note: "Feedback is what the person evaluates; poor feedback widens the gulf of evaluation." },
+    { target: "webers-law", type: "related-to", note: "Feedback by sound, light or vibration has to change by more than a perceivable amount; Weber's law explains why that amount can grow with the starting level, so thresholds should be measured on the device." },
     { target: "signifiers", type: "complementary-to", note: "Signifiers tell people what an action will do before they act; feedback tells them what it did." },
     { target: "error-recovery", type: "applied-in", note: "Specific feedback about what went wrong is the first step of recovery." },
     { target: "doherty-threshold", type: "related-to", note: "Response-time targets decide how quickly feedback must arrive." },

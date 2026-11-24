@@ -423,3 +423,37 @@ describe("power law of practice", () => {
     expect(() => practiceDelayedExponential(1, { A: 0, B: 1, r: 0.1, tau: -1 })).toThrow();
   });
 });
+
+import { differenceThreshold, generalisedWeberThreshold, intensityAtCriterion, psychometricNormal, weberFraction, weberThreshold } from "./psychophysics";
+
+describe("Weber's law", () => {
+  it("reproduces the worked example with k = 0.02", () => {
+    expect(weberThreshold(100, 0.02)).toBeCloseTo(2, 10);
+    expect(weberThreshold(500, 0.02)).toBeCloseTo(10, 10);
+    expect(weberFraction(2, 100)).toBeCloseTo(weberFraction(10, 500), 10);
+  });
+  it("keeps the Weber fraction constant in the ideal form", () => {
+    for (const i of [1, 10, 250, 4000]) expect(weberFraction(weberThreshold(i, 0.08), i)).toBeCloseTo(0.08, 10);
+  });
+  it("lets the fraction rise at low intensity in the generalised form", () => {
+    const f = (i: number) => weberFraction(generalisedWeberThreshold(i, 0.02, 1), i);
+    expect(f(10)).toBeCloseTo(0.12, 10);
+    expect(f(500)).toBeCloseTo(0.022, 10);
+    expect(f(10)).toBeGreaterThan(f(100));
+    expect(generalisedWeberThreshold(100, 0.02, 0)).toBeCloseTo(weberThreshold(100, 0.02), 10);
+  });
+  it("reads a threshold from a psychometric function", () => {
+    const p = { mu: 100, sigma: 3 };
+    expect(psychometricNormal(100, p)).toBeCloseTo(0.5, 6);
+    expect(psychometricNormal(intensityAtCriterion(p, 0.75), p)).toBeCloseTo(0.75, 5);
+    expect(differenceThreshold(p)).toBeCloseTo(3 * 0.6744897, 4);
+    expect(differenceThreshold(p, 0.84)).toBeGreaterThan(differenceThreshold(p, 0.75));
+  });
+  it("rejects invalid input", () => {
+    expect(() => weberThreshold(0, 0.02)).toThrow();
+    expect(() => weberThreshold(100, -0.1)).toThrow();
+    expect(() => generalisedWeberThreshold(100, 0.02, -1)).toThrow();
+    expect(() => differenceThreshold({ mu: 0, sigma: 1 }, 0.5)).toThrow();
+    expect(() => psychometricNormal(1, { mu: 0, sigma: 0 })).toThrow();
+  });
+});

@@ -675,3 +675,44 @@ Change impact: `lib/**` changed, so every browser suite was run on the final bui
 Review (five dimensions): 0 critical, 0 major. Moderate fixed: Crossman's mechanism worded as in the abstract ('a kind of selective action'); plate marker and label positions; Level-2 axis labels. Brief correction recorded: the optional Snoddy reassessment is by Stratton et al. (2007), not used. Minor: PP-1; pre-existing: LIB-1.
 
 Limitations: no screen-reader, physical-device or independent expert review; four sources abstract only; Vercel preview not checked.
+
+### Domain 2 Batch 8 — Weber's Law (2026-11-24, branch `claude/domain-completion-20261123`, base `9d39a9f`)
+
+Change set: new entry `content/knowledge/laws-effects/webers-law.ts` (authored `drafted`, set to `published` after the gates below; `law`, `laws-effects/performance-laws`; evidence `original-empirical`; formula record with worked example); 4 source records in `content/sources/cognition-hci.ts`; **shared code:** new `lib/formulas/psychophysics.ts` (`weberThreshold`, `weberFraction`, `generalisedWeberThreshold`, `psychometricNormal`, `intensityAtCriterion`, `differenceThreshold`) with tests in `lib/formulas/formulas.test.ts`; Level-1 plate `webersLawPlate` in `learning-sheets.tsx` (registered via `laws-psychology.tsx`); Level-2 figure `components/visual-explanations/concepts/webers-law.tsx` registered in `registry.tsx` with a quick takeaway; register record; back-links in `colour-contrast-ratio.ts` and `feedback-principle.ts`; wording correction in `modular-type-scale.ts` (removed "Weber–Fechner-type psychophysics"; links Weber's law); one stale count in `tests/browser/e2e-redesign.cjs` (detailed-diagram filter 31 → 32, because this batch adds a Level-2 figure); regenerated index, `verification.json` and generated docs. No draft modified. Commit SHA: the commit that adds this section.
+
+Change impact: `lib/**` changed, so every browser suite was run on the final build (skill § 4).
+
+| Check | Command | Result | Status |
+|---|---|---|---|
+| Source verification | `npm run sources:verify -- weber-1834 algom-2021 haigh-apthorp-bizo-2021 penconek-2025` | 3 `doi-verified` (Algom; Haigh et al., Crossref year 2020 = online date, issue 2021, within tolerance; Penconek), 1 `url-reachable` (Weber 1834: its DOI is a DataCite DOI, which the Crossref-only verifier cannot check; stored as a doi.org URL; DataCite record checked by hand: title, creator, 1834, publisher) | PASS |
+| Formula unit tests | `npx vitest run lib/formulas/formulas.test.ts` | 69/69, including worked example ΔI(100) = 2, ΔI(500) = 10 with k = 0.02; constant fraction in the ideal form; generalised fraction 0.12 at 10 and 0.022 at 500; psychometric 50 %/75 % points and threshold 0.6745σ; invalid input rejected | PASS |
+| Content index | `npm run content:index` | Entry indexed | PASS |
+| Entry integrity | `npx tsx scripts/entry-integrity.ts webers-law modular-type-scale colour-contrast-ratio feedback-principle` | webers-law: no problems; 8 outgoing, 3 incoming relations; 1 Level-2 figure; plate register true. One reported problem is pre-existing and accepted: `colour-contrast-ratio` `referencedNotCited: webaim` (further reading, uncited by design; precedent 2026-11-20); this batch only added a relation there | PASS |
+| Check | `npm run check` (final tree) | First run: lint error `react/no-unescaped-entities` (apostrophe in the figure legend); fixed. Final: exit 0; 23 files, 641 tests | PASS (after fix) |
+| Visual tests while drafted | `npx vitest run tests/visuals.test.ts` | Expected single FAIL 'explains only published entries' while the entry was `drafted`; passes after publishing (in the check above) | — |
+| Taxonomy | `npm run test:taxonomy` | Exit 0; 1065 links; 121 published at three depths; Domain 2: 46 topics, 20 published, 10 addressed within | PASS |
+| Generated docs | `npm run docs:generate` (final tree) | Exit 0; Domain 2: 13 planned, 3 drafted, 20 published, 10 addressed within | PASS |
+| Plate render | `NODE_PATH=$(npm root -g) npx tsx scripts/render-plates.tsx webers-law` | First render: the line crossed the 'ΔI = 2 at I = 100' label and marker 1 sat on it; y-scale steepened, label moved below the line, marker moved; re-rendered light and dark: no overlap; values from `weberThreshold` / `weberFraction` | PASS (after fix) |
+| Level-2 figure | Scratch Playwright screenshots of the figure in `/library/webers-law` at 390 light and 1440 dark | First version: 'Comparison 94–106' overflowed its box at both widths; box widened and rebuilt (served SVG confirmed to contain the new 154-unit box). Final: no overlap, no text outside the viewBox, smallest text 13.5 px at 390 px (≥ 12); series distinguished by dashed vs solid line and legend, threshold by an accent bar plus a text label, not colour alone; same rendered width as the Power Law figure at 1440 (layout, not this figure) | PASS (after fix) |
+| Build | `npm run build` (final source) | Exit 0; 1000/1000 static pages | PASS |
+| Entry review | `BASE_URL=http://localhost:3100 AXE_PATH=node_modules/axe-core/axe.min.js node tests/browser/entry-review.cjs webers-law modular-type-scale colour-contrast-ratio feedback-principle power-law-of-practice` (final build) | 40/40; webers-law at 1440/768/390 px, light and dark: axe 0, overflow 0, errors 0, plate markers inside the viewBox, internal links resolve, flashcards added by keyboard | PASS |
+| e2e | `node tests/browser/e2e.cjs` | 44/44 | PASS |
+| e2e-redesign | `node tests/browser/e2e-redesign.cjs` | 65/66 after updating the detailed-diagram count (31 → 32), which passes. Remaining FAIL 'library grid shows the first page of 24 cards, each with a plate' (23) is LIB-1, pre-existing and unchanged | FAIL (pre-existing, LIB-1) |
+| Atlas | `node tests/browser/atlas.cjs` | 36/36 | PASS |
+| Keyboard | `node tests/browser/keyboard.cjs` | 45/45 | PASS |
+| Colour Studio | `node tests/browser/colour-studio.cjs` | 46/46 | PASS |
+| Devices | `node tests/browser/devices.cjs` | 155/155 | PASS |
+| Crawl | `node tests/browser/crawl.cjs` on 12 routes (`/`, `/library`, `/learn`, `/glossary`, `/topics/laws-effects`, `/coverage`, the new entry, its formula page, modular-type-scale, colour-contrast-ratio, feedback-principle, power-law-of-practice) | 0 pages with problems | PASS |
+| a11y | `node tests/browser/a11y.cjs` on the same 12 routes, light and dark | 0 violations | PASS |
+
+Review (one targeted pass against the sources) found 0 critical and 0 major issues. Six moderate issues were fixed:
+- A sentence on criteria in the figure summary was wrongly attributed to Haigh et al.
+- Fechner's additional assumption was paraphrased loosely; it now follows Penconek's wording.
+- "Through the twentieth century" was imprecise, because the cited studies date from 1865; it now reads "from the nineteenth century onwards".
+- The Getty and Killeen–Weiss models were described more precisely.
+- An unsupported biographical description of Weber was removed.
+- A money analogy invited the very misuse the entry warns against, so it was replaced with a physical one (candles).
+
+Minor: WL-1. Pre-existing: LIB-1.
+
+Limitations: no screen-reader, physical-device or independent expert review; Weber (1834) not read and Algom (2021) abstract only; Vercel preview not checked.

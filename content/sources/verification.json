@@ -54,6 +54,14 @@
     "registeredContainer": "Proceedings of the SIGCHI Conference on Human Factors in Computing Systems",
     "similarity": 1
   },
+  "algom-2021": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-24",
+    "registeredTitle": "The Weber–Fechner law: A misnomer that persists but that should go away.",
+    "registeredYear": 2021,
+    "registeredContainer": "Psychological Review",
+    "similarity": 1
+  },
   "alhadreti-mayhew-2018": {
     "status": "doi-verified",
     "checkedAt": "2026-11-16",
@@ -1188,6 +1196,14 @@
     "registeredTitle": "How Many Interviews Are Enough?: An Experiment with Data Saturation and Variability",
     "registeredYear": 2006,
     "registeredContainer": "Field Methods",
+    "similarity": 1
+  },
+  "haigh-apthorp-bizo-2021": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-24",
+    "registeredTitle": "The role of Weber’s law in human time perception",
+    "registeredYear": 2020,
+    "registeredContainer": "Attention, Perception, &amp; Psychophysics",
     "similarity": 1
   },
   "halasz-moran-1983": {
@@ -2515,6 +2531,14 @@
     "registeredContainer": "Proceedings of the Royal Society of London",
     "similarity": 1
   },
+  "penconek-2025": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-24",
+    "registeredTitle": "Weber’s Law as the emergent phenomenon of choices based on global inhibition",
+    "registeredYear": 2025,
+    "registeredContainer": "Frontiers in Neuroscience",
+    "similarity": 1
+  },
   "pernice-2017-f-pattern": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
@@ -3381,6 +3405,11 @@
   "webdev-lcp": {
     "status": "url-reachable",
     "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "weber-1834": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "weeks-et-al-2026": {

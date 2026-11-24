@@ -2,7 +2,7 @@
 
 The current state in one page. Read it first every session, then verify it against `git` (the repo wins; record any discrepancy here). Update it at the end of every meaningful task. History lives in `docs/PROGRESS.md`; decisions in `docs/DECISION_LOG.md`; open items in `docs/OPEN_ISSUES.md`; test results in `docs/QA_VERIFICATION_LEDGER.md`.
 
-Last updated: **2026-11-24** (Domain 1 final closeout; Domain 2 Batch 6 `postels-law` merged to `main` as `777640d` via PR #6 and live on production; D-133 domain-by-domain completion).
+Last updated: **2026-11-24** (Domain 2 Batch 8 `webers-law` published on the branch; Batch 7 `power-law-of-practice` at `9d39a9f`; `main` unchanged at `777640d`; D-133 domain-by-domain completion).
 
 ## Repository
 
@@ -22,7 +22,7 @@ Last updated: **2026-11-24** (Domain 1 final closeout; Domain 2 Batch 6 `postels
 The owner has directed completion of all 20 domains in the canonical taxonomy order, one domain at a time. This is a sequencing override to the portfolio order in D-129; D-129's quality, evidence, source verification, target, review and stop-rule requirements remain in force. Routine batches may be researched, implemented, QA-checked, documented and pushed to a development branch without a separate approval prompt. This does not authorize merges to `main` or production deployment.
 
 - Domain 1, UX & UI Fundamentals: **COMPLETE — 21/21 accounted for; 16 published, 5 addressed within, 0 planned.** Final closeout 2026-11-24: taxonomy, index, files and generated coverage reconciled (core concepts 10+3, design approaches 4+1, history 2+1); D1-2 closed; D1-4, D1-5, D1-6 remain open as non-blocking source/resource limits after bounded checks.
-- Domain 2, UX Laws & Cognitive Effects: active — generated 2026-11-24: **19 published, 3 drafted, 10 addressed within, 14 planned (46)**. Published on the branch this programme: `social-proof`, `goal-gradient-effect`, `zeigarnik-effect`, `postels-law` (all four also on production) and `power-law-of-practice` (branch only); `loss-aversion`, `framing-effect` and `anchoring-effect` remain drafted.
+- Domain 2, UX Laws & Cognitive Effects: active — generated 2026-11-24: **20 published, 3 drafted, 10 addressed within, 13 planned (46)**. Published on the branch this programme: `social-proof`, `goal-gradient-effect`, `zeigarnik-effect`, `postels-law` (all four also on production), `power-law-of-practice` and `webers-law` (branch only); `loss-aversion`, `framing-effect` and `anchoring-effect` remain drafted.
 - Active branch: claude/domain-completion-20261123, based on main at 9a51aa6.
 - Batch 1 (foundational): loss-aversion and framing-effect are drafted, indexed and illustrated; 11 source records registered, with only kahneman-tversky-1979 matched to Crossref so far. Batch 2 (first core professional): anchoring-effect is drafted, indexed and illustrated; 9 source records registered, all pending automated verification. All three remain drafted until source verification, content integrity, check, taxonomy, docs generation, plate render, entry review and build pass. Research records: docs/DOMAIN_2_BATCH_1_RESEARCH.md and docs/DOMAIN_2_BATCH_2_RESEARCH.md; blockers: OPEN_ISSUES D2-B1-1 and D2-B2-1.
 - Batch 3 (core professional): **social-proof published** — 9 new sources, 9/9 DOI-verified; all gates PASS on this session's tree (QA ledger). Three pre-existing gate blockers in the Batch 1–2 drafts were fixed so the shared gates could run; those drafts still lack their own verification (D2-B1-1, D2-B2-1).
@@ -30,7 +30,8 @@ The owner has directed completion of all 20 domains in the canonical taxonomy or
 - Batch 5: **zeigarnik-effect published** — a `concept` in `laws-effects/memory-attention-effects` (taxonomy home; the plan's core-professional row is a priority queue, not a classification, and a planning brief that placed it in `psychology` was corrected against the taxonomy). 8 new sources; all gates PASS. No drafts modified.
 - Batch 6: **postels-law published** — `principle` in `popular-ux-laws`, 8 new sources, all gates PASS; merged to `main` via PR #6 (`777640d`, owner-approved) and verified on production.
 - Batch 7: **power-law-of-practice published** — `law`, contested evidence, 7 new sources, formula functions in `lib/formulas`, Level-1 plate and Level-2 figure; all gates and site-wide suites run.
-- **Next authorised action (D-133):** `webers-law` (taxonomy: `law`, `performance-laws`). Separately outstanding: verification and QA of the three drafts (D2-B1-1, D2-B2-1) and LIB-1.
+- Batch 8: **webers-law published** — `law` in `performance-laws`, evidence `original-empirical`, 4 new sources (Weber 1834 located but not read; Algom 2021 abstract only), formula functions in `lib/formulas/psychophysics.ts`, Level-1 plate and Level-2 measurement figure; `modular-type-scale` misnomer corrected; all gates and site-wide suites run (QA ledger).
+- **Next authorised action (D-133):** `cognitive-ease` (taxonomy: `concept`, `memory-attention-effects`). Separately outstanding: verification and QA of the three drafts (D2-B1-1, D2-B2-1) and LIB-1.
 - Domain inventory and priority order: `docs/DOMAIN_COMPLETION_PLAN.md`.
 
 ## Content strategy and cycle

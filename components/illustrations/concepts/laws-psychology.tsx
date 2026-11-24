@@ -13,6 +13,7 @@ import { dohertyPlate as dohertyThreshold } from "./learning-sheets";
 import { teslerPlate as teslersLaw } from "./learning-sheets";
 import { postelsLawPlate as postelsLaw } from "./learning-sheets";
 import { powerLawOfPracticePlate as powerLawOfPractice } from "./learning-sheets";
+import { webersLawPlate as webersLaw } from "./learning-sheets";
 import { goldenRulesPlate as shneidermanGoldenRules } from "./learning-sheets";
 import { vonRestorffPlate as vonRestorffEffect } from "./learning-sheets";
 import { choiceOverloadPlate as choiceOverload } from "./learning-sheets";
@@ -55,6 +56,7 @@ const serialPositionEffect: IllustrationEntry = {
 const plates: IllustrationEntry[] = [
   steeringLaw,
   powerLawOfPractice,
+  webersLaw,
   keystrokeLevelModel,
   dohertyThreshold,
   teslersLaw,
