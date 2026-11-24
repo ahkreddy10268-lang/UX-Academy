@@ -58,6 +58,7 @@ export default defineEntry({
         "In the DTCG 2025.10 format a semantic token is a token whose `$value` is a curly-brace reference to another token, such as `\"$value\": \"{color.red.700}\"`. It may omit `$type`: when a value is a reference, its type is the resolved type of the token it points to {{src:dtcg-format-2025}}. The Color module illustrates exactly this pattern — `color.text.base` referring to `color.palette.black` — in its non-normative section on token categories {{src:dtcg-color-2025}}.",
         "Themes are separate files that map the same semantic names to different primitives. The DTCG Resolver module describes how to combine them: a resolver document lists **sets** of token files, **modifiers** whose **contexts** (for example `light` and `dark`) each point to their own files, a **default** context, and a **resolutionOrder** in which later entries override earlier ones {{src:dtcg-resolver-2025}}.",
         "Build tools then turn the resolved tokens into platform code — for the web, typically CSS custom properties scoped to a theme selector — so components reference `var(--color-text-danger)` and never a raw value.",
+        "Figma can import token modes from DTCG JSON, but import is selective: a variable is created only when its token appears in every imported file, has a supported type and value, and keeps the same type across those files. That means an incomplete dark-theme file can leave roles unimported. Figma modes are the design-tool context; they are not a substitute for understanding the DTCG Resolver model {{src:figma-learn}} {{src:dtcg-resolver-2025}}.",
       ],
       implementation: [
         "Start from real usage: list the roles the interface actually needs (surfaces, text levels, borders, actions, feedback, focus, disabled) before naming anything.",
@@ -511,6 +512,7 @@ export default defineEntry({
     { source: "fluent-2-design-tokens", role: "explanatory", note: "Global and alias tiers." },
     { source: "carbon-themes", role: "explanatory", note: "Role names fixed across four themes." },
     { source: "atlassian-color", role: "explanatory", note: "Name grammar with role, emphasis and state; accent colours carry no meaning." },
+    { source: "figma-learn", role: "explanatory", note: "DTCG JSON mode import behaviour, supported types and values, and when variables are created.", locator: "https://help.figma.com/hc/en-us/articles/15343816063383-Modes-for-variables" },
   ],
   evidence: "practitioner-recommendation",
   evidenceNote:
