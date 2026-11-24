@@ -38,6 +38,10 @@ D-129 remains the authority for evidence classes, content quality, target interp
 
 Latest generated coverage (2026-11-20): 21/21 topics accounted for — 16 published, 5 addressed within another entry, 0 planned. Do not reopen completed topics for cosmetic reasons; only correct factual/source errors, broken gates, accessibility defects or new verified evidence.
 
+## Domain 1 — final closeout (2026-11-24)
+
+**UX & UI Fundamentals — COMPLETE: 21/21 accounted for; 16 published, 5 addressed within, 0 planned.** Reconciled against the taxonomy, the entry files, the knowledge index and the generated coverage: core concepts 10 published + 3 addressed within (13), design approaches 4 + 1 (5), history of design & HCI 2 + 1 (3). 76% of topics have their own entry; 100% are accounted for. The five covered-within decisions (CONTENT_AUDIT session 62) were not reopened. D1-2 closed; D1-4, D1-5 and D1-6 remain open as non-blocking source and resource limits.
+
 ## Domain 2 — UX Laws & Cognitive Effects
 
 Latest generated coverage (2026-11-24, after Postel's Law): 46 topics — **18 published, 3 drafted, 10 addressed within another entry, 15 planned** (`docs/CONTENT_COVERAGE.md`). The 2026-11-20 baseline was 14 published, 0 drafted, 10 addressed within, 22 planned; the drafted entries are `loss-aversion`, `framing-effect` and `anchoring-effect` (see Batch 1 and 2 below).

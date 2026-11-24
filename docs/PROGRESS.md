@@ -417,3 +417,11 @@ Owner: approve the push of the status fix, set Vercel's production branch to `ma
 - Topic: `postels-law` (`principle`, `laws-effects/popular-ux-laws`), evidence `practitioner-recommendation`. File: `content/knowledge/laws-effects/postels-law.ts`; status `published`.
 - 8 new sources (7 RFC DOIs verified, OWASP URL reachable) plus three reused W3C records. Plate, register record, takeaway, back-links from `error-prevention` and `teslers-law`.
 - All gates passed (ledger). One review and one correction pass. **Next:** `power-law-of-practice` (`law`, `performance-laws`).
+
+
+## Session 75 — Domain 1 final closeout (2026-11-24)
+
+- Reconciled `content/taxonomy.ts`, `content/knowledge/foundations/`, `content/knowledge/_index.ts` and `docs/CONTENT_COVERAGE.md`: 21 topics; 16 published (core concepts 10, design approaches 4, history 2); 5 addressed within published hosts (utility → usefulness; feasibility, viability → design-thinking; human-centred-design → user-centred-design; history-of-hci → human-computer-interaction); 0 planned; no duplicate slugs or unindexed files. D-129 visual and evidence targets 16/16.
+- D1-2 closed: `iso-9241-11-2018` now cited in HCI where it supports the claim; an inaccurate ISO attribution in the context-of-use vocabulary corrected.
+- D1-4, D1-5, D1-6: bounded checks (ACM full texts 403; no open-access maturity-model evaluation; NN/g quiz TLS failure); unchanged, non-blocking.
+- **Domain 1 remains COMPLETE (21/21).** Next authorised action unchanged: Domain 2 `power-law-of-practice`.

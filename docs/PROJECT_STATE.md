@@ -2,7 +2,7 @@
 
 The current state in one page. Read it first every session, then verify it against `git` (the repo wins; record any discrepancy here). Update it at the end of every meaningful task. History lives in `docs/PROGRESS.md`; decisions in `docs/DECISION_LOG.md`; open items in `docs/OPEN_ISSUES.md`; test results in `docs/QA_VERIFICATION_LEDGER.md`.
 
-Last updated: **2026-11-24** (Domain 2 Batch 6: `postels-law` published on `claude/domain-completion-20261123`; `main` at `ef887a0` after the owner-approved merge of PR #5; D-133 domain-by-domain completion).
+Last updated: **2026-11-24** (Domain 1 final closeout; Domain 2 Batch 6 `postels-law` merged to `main` as `777640d` via PR #6 and live on production; D-133 domain-by-domain completion).
 
 ## Repository
 
@@ -21,14 +21,14 @@ Last updated: **2026-11-24** (Domain 2 Batch 6: `postels-law` published on `clau
 
 The owner has directed completion of all 20 domains in the canonical taxonomy order, one domain at a time. This is a sequencing override to the portfolio order in D-129; D-129's quality, evidence, source verification, target, review and stop-rule requirements remain in force. Routine batches may be researched, implemented, QA-checked, documented and pushed to a development branch without a separate approval prompt. This does not authorize merges to `main` or production deployment.
 
-- Domain 1, UX & UI Fundamentals: complete — 16 published, 5 addressed within, 0 planned (21/21).
+- Domain 1, UX & UI Fundamentals: **COMPLETE — 21/21 accounted for; 16 published, 5 addressed within, 0 planned.** Final closeout 2026-11-24: taxonomy, index, files and generated coverage reconciled (core concepts 10+3, design approaches 4+1, history 2+1); D1-2 closed; D1-4, D1-5, D1-6 remain open as non-blocking source/resource limits after bounded checks.
 - Domain 2, UX Laws & Cognitive Effects: active — generated 2026-11-24: **18 published, 3 drafted, 10 addressed within, 15 planned (46)**. `social-proof`, `goal-gradient-effect`, `zeigarnik-effect` and `postels-law` published on the branch (the first three also live on production); `loss-aversion`, `framing-effect` and `anchoring-effect` remain drafted.
 - Active branch: claude/domain-completion-20261123, based on main at 9a51aa6.
 - Batch 1 (foundational): loss-aversion and framing-effect are drafted, indexed and illustrated; 11 source records registered, with only kahneman-tversky-1979 matched to Crossref so far. Batch 2 (first core professional): anchoring-effect is drafted, indexed and illustrated; 9 source records registered, all pending automated verification. All three remain drafted until source verification, content integrity, check, taxonomy, docs generation, plate render, entry review and build pass. Research records: docs/DOMAIN_2_BATCH_1_RESEARCH.md and docs/DOMAIN_2_BATCH_2_RESEARCH.md; blockers: OPEN_ISSUES D2-B1-1 and D2-B2-1.
 - Batch 3 (core professional): **social-proof published** — 9 new sources, 9/9 DOI-verified; all gates PASS on this session's tree (QA ledger). Three pre-existing gate blockers in the Batch 1–2 drafts were fixed so the shared gates could run; those drafts still lack their own verification (D2-B1-1, D2-B2-1).
 - Batch 4 (core professional): **goal-gradient-effect published** — 10 new sources, 10/10 DOI-verified; all gates PASS (QA ledger). No drafts modified.
 - Batch 5: **zeigarnik-effect published** — a `concept` in `laws-effects/memory-attention-effects` (taxonomy home; the plan's core-professional row is a priority queue, not a classification, and a planning brief that placed it in `psychology` was corrected against the taxonomy). 8 new sources; all gates PASS. No drafts modified.
-- Batch 6: **postels-law published** — `principle` in `popular-ux-laws`, 8 new sources, all gates PASS; not yet merged to `main` (merging needs owner approval).
+- Batch 6: **postels-law published** — `principle` in `popular-ux-laws`, 8 new sources, all gates PASS; merged to `main` via PR #6 (`777640d`, owner-approved) and verified on production.
 - **Next authorised action (D-133):** `power-law-of-practice`, the next core-professional topic (taxonomy: `law`, `performance-laws`). Separately outstanding: verification and QA of the three drafts.
 - Domain inventory and priority order: `docs/DOMAIN_COMPLETION_PLAN.md`.
 

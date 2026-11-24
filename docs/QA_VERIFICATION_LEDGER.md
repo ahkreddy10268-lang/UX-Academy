@@ -623,3 +623,23 @@ Baseline: `check` PASS on `0005df9` (previous section) with a clean tree; inheri
 Review (five dimensions): 0 critical, 0 major. Moderate fixed: unconfirmed STD numbers removed from two RFC records after checking the RFC Editor records; a sentence attributing colour/icon reasoning to the 3.3.1 Understanding document replaced with what the source records support; the debate wording on RFC 9413 aligned with its 'many consider' phrasing; plate icon spacing. Minor: PL-1.
 
 Limitations: no screen-reader, physical-device or independent expert review; no user study of input tolerance cited; Vercel preview for this commit not checked.
+
+### Domain 1 final closeout (2026-11-24, branch `claude/domain-completion-20261123`, base `d0b6560`)
+
+Change set: `content/knowledge/foundations/human-computer-interaction.ts` (D1-2: one citation added in the research-methods paragraph; context-of-use vocabulary rewritten without an ISO attribution; reference note narrowed); documentation only otherwise (`OPEN_ISSUES.md`, `PROJECT_STATE.md`, `PROGRESS.md`, `DOMAIN_COMPLETION_PLAN.md`, this ledger). No source records, taxonomy, generated docs or other entries changed. Commit SHA: the commit that adds this section.
+
+| Check | Command / method | Result | Status |
+|---|---|---|---|
+| Coverage reconciliation | Scratch script over `lib/content` (taxonomy items, entries, `coveredBy` hosts), `content/knowledge/_index.ts` and `docs/CONTENT_COVERAGE.md` | 21 topics; 16 published (10/4/2); 5 addressed within published hosts (3/1/1); 0 planned; 0 duplicate slugs; all 16 files indexed; no foundations entry outside the taxonomy; generated rows match | PASS |
+| Entry integrity | `npx tsx scripts/entry-integrity.ts human-computer-interaction ux-maturity` (before fix) | 1 problem: `iso-9241-11-2018` referenced but not cited in HCI | FAIL (pre-fix, D1-2) |
+| Entry integrity | `npx tsx scripts/entry-integrity.ts human-computer-interaction` (after fix) | No problems | PASS |
+| Check | `npm run check` | Exit 0; 23 files, 626 tests | PASS |
+| Taxonomy | `npm run test:taxonomy` | Exit 0; 1046 links; UX & UI Fundamentals 21 topics, 16 published, 5 addressed within (76.2%) | PASS |
+| Generated docs | `npm run docs:generate` | Exit 0; no changes to any generated file (counts unchanged) | PASS |
+| Build | `npm run build` | Exit 0; 998/998 | PASS |
+| Entry review | `BASE_URL=http://localhost:3100 AXE_PATH=node_modules/axe-core/axe.min.js node tests/browser/entry-review.cjs human-computer-interaction` | 8/8: 1440/768/390 px, light and dark, axe 0, overflow 0, errors 0; 35 links resolve, no raw markup (no citation token in the vocabulary); flashcards 8/8 | PASS |
+| `sources:verify` | Not run | No source added or changed | NOT RUN (no new or changed source) |
+| `ux-maturity` entry review | Not run | Entry unchanged (D1-5 bounded search found no readable source) | NOT RUN (unchanged) |
+| Bounded source checks | ACM DL PDFs for `van-dam-1997`, `forlizzi-battarbee-2004`; OpenAlex OA search for maturity-model evaluations; `forms.nngroup.com/s3/Maturity-Quiz` | 403; nothing open on point (Lacerda & Gresse von Wangenheim not OA); TLS certificate failure | Recorded in D1-4, D1-5, D1-6 |
+
+Limitations: only HCI was re-reviewed in the browser; this is not a full re-audit of all 16 Domain 1 entries. PR #4 edits the same HCI lines; resolve in PR #4's favour when it merges.
