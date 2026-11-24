@@ -257,6 +257,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         caption:
           "Illustrative and shortened. Components use bg-surface, text-ink and bg-action, never hex values. `@theme inline` is Tailwind v4's way to expose variables that reference other variables {{src:tailwind-theme}}; `suppressHydrationWarning` covers only the attribute the script sets {{src:react-hydrateroot}}. UX Academy's own root layout follows the same pattern.",
       },
+    {
+      "title": "Same dark-mode task, two architectures: duplicated component overrides versus shared role mappings",
+      "language": "css",
+      "code": "/* Poor: every component receives its own dark-mode patch */\n[data-theme=\"dark\"] .card { background: #141413; color: #f6f6f4; }\n[data-theme=\"dark\"] .dialog { background: #141413; color: #f6f6f4; }\n[data-theme=\"dark\"] .table { background: #141413; color: #f6f6f4; }\n[data-theme=\"dark\"] .button { background: #5f92e8; color: #141413; }\n\n/* Better: context changes semantic roles; components stay shared */\n:root {\n  --surface-default: #ffffff;\n  --text-default: #1f1e1c;\n  --action-background: #2457c5;\n  --action-text: #ffffff;\n}\n[data-theme=\"dark\"] {\n  --surface-default: #141413;\n  --text-default: #f6f6f4;\n  --action-background: #5f92e8;\n  --action-text: #141413;\n}\n.card, .dialog, .table { background: var(--surface-default); color: var(--text-default); }\n.button { background: var(--action-background); color: var(--action-text); }",
+      "caption": "Illustrative comparison for one product with several components. The stronger architecture changes context-level role mappings instead of maintaining theme-specific component copies. It still needs a defined axis/resolution policy and contrast checks for every combination."
+    },
+
     ],
   },
 
@@ -387,5 +394,5 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     sources: true,
     activities: true,
   },
-  lastVerifiedAt: "2026-11-11",
+  lastVerifiedAt: "2026-11-24",
 });
