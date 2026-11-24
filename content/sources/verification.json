@@ -2020,6 +2020,11 @@
     "checkedAt": "2026-11-11",
     "httpStatus": 200
   },
+  "mdn-relative-colors": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-24",
+    "httpStatus": 200
+  },
   "mdn-variable-fonts": {
     "status": "url-reachable",
     "checkedAt": "2026-11-24",
@@ -2151,6 +2156,11 @@
   "nasa-tlx-site": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
+    "httpStatus": 200
+  },
+  "nei-color-vision-deficiency": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "newell-rosenbloom-1980": {
@@ -3299,6 +3309,16 @@
   "w3c-aria-apg": {
     "status": "url-reachable",
     "checkedAt": "2026-11-20",
+    "httpStatus": 200
+  },
+  "w3c-css-color-4": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-24",
+    "httpStatus": 200
+  },
+  "w3c-g111-color-pattern": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "w3c-international-specs": {

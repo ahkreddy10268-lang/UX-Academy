@@ -874,7 +874,7 @@ Owner instruction: merge everything not yet in `main`. Merged in order: `claude/
 
 Not reviewed editorially in this session: the content of PRs #4 and #7 beyond automated gates (authored on other branches with their own QA records).
 
-### Merge of PR #7 remainder (2026-11-24, branch `claude/pr7-check`, base `main` `676a082`, PR #7 head `08d2772`)
+### Merge of PR #7 remainder (2026-11-24, branch `claude/pr7-check`, base `main` `676a082`, PR #7 snapshot `bdb125c`)
 
 Owner instruction: merge. PR #7 gained 20 commits after the earlier merge (Spacing Scales and Typography Scales enrichment, including `25c2ecc`, which fixed the unterminated strings that had blocked `1c0a147`). Conflicts only in generated docs (`CONTENT_COVERAGE.md`, `RESEARCH_SOURCES.md`); regenerated.
 
@@ -889,4 +889,6 @@ Owner instruction: merge. PR #7 gained 20 commits after the earlier merge (Spaci
 | e2e-redesign | 65/66; remaining FAIL is LIB-1 (pre-existing) | FAIL (pre-existing) |
 | Crawl and a11y (8 routes incl. both changed entries) | 0 problems; 0 violations | PASS |
 
-Content of the two enriched entries was checked by automated gates only, not editorially reviewed in this session.
+**Re-run at snapshot `bdb125c`** (15 more commits arrived during testing: the Colour Systems upgrade). Conflicts in generated docs and `verification.json` regenerated or re-verified. Results: check 641 tests PASS; taxonomy PASS; 8 new sources 8/8 `url-reachable`; build 1000/1000; entry review (spacing-scales, typography-scales, colour-systems) 24/24; e2e 44/44; atlas 36/36; keyboard 45/45; colour-studio 46/46; devices 155/155; e2e-redesign 65/66 (LIB-1 only); crawl 0 problems and a11y 0 violations on 9 routes. Commits pushed to PR #7 after `bdb125c` are not included.
+
+Content of the three enriched entries was checked by automated gates only, not editorially reviewed in this session.
