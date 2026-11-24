@@ -205,6 +205,7 @@ export default defineEntry({
     { target: "deceptive-patterns", type: "applied-in", note: "Pre-ticked add-ons, hidden consents and hard-to-cancel renewals are defaults used as deceptive patterns." },
     { target: "consent-design", type: "related-to", note: "Preselected consent is not informed consent; consent design starts from active, visible choices." },
     { target: "user-autonomy", type: "related-to", note: "Every default decides for people who do not act, so visibility, reversibility and easy opt-out protect autonomy." },
+    { target: "social-proof", type: "related-to", note: "Like a default, a popularity signal can be read as an endorsement; both deserve the same questions about who benefits and whether the signal is honest." },
   ],
 
   exercises: [

@@ -455,3 +455,148 @@ Root cause of the production discrepancy: Vercel production builds from `claude/
 | Keyboard | `tests/browser/keyboard.cjs` | PASS 45/45 | Run |
 | Status pages | Scratch Playwright check of `/topics/foundations`, `/coverage`, `/topics` at 390 and 1440 | PASS 6/6: exact Domain 1 counts and subcategory counts, no 'Not yet published' group on the domain page, no 'within in', axe 0, overflow 0; five 'explained in' links resolve (200) | Run |
 | Visual | Screenshots of the domain page header and a subcategory at 1280 | Inspected; existing style kept | Run |
+
+
+### Domain-by-domain programme record (2026-11-23; documentation-only)
+
+Changes: `docs/DOMAIN_COMPLETION_PLAN.md`, `docs/PROJECT_STATE.md`, `docs/PROGRESS.md`, `docs/DECISION_LOG.md`, `docs/OPEN_ISSUES.md`. No application, content-entry, source-registry, generated-index, test or build configuration files changed.
+
+| Check | Result | Run / inherited |
+|---|---|---|
+| Repository reconciliation | `main` = `9a51aa6`; PR #3 merged; Vercel status check success | Run (GitHub API, 2026-11-23) |
+| Domain 1 / 2 inventory | Domain 1 16 + 5 + 0 = 21; Domain 2 14 + 10 + 22 = 46 | Run (taxonomy, content directory and generated coverage cross-check, 2026-11-23) |
+| Application tests / build | Not run — documentation-only changes; no application or content changed | Not required by change-impact policy |
+| Live production runtime | Not verified — direct URL not retrievable in this session | Open: DEP-2 |
+
+
+### Domain 2 Batch 1 research record (2026-11-23; documentation-only)
+
+Files changed: `docs/DOMAIN_2_BATCH_1_RESEARCH.md`, `docs/DOMAIN_COMPLETION_PLAN.md`, `docs/PROJECT_STATE.md`, `docs/PROGRESS.md`.
+
+| Check | Result | Run / inherited |
+|---|---|---|
+| Research review | Primary 1979 prospect-theory passages, 1981 framing text, publisher / abstract metadata and 2024–2025 syntheses reviewed; access limits documented | Run (web research, 2026-11-23) |
+| Crossref source check | `kahneman-tversky-1979`: exact title/year/container matched; all other proposed source IDs still pending script verification | Partial run; not a complete source gate |
+| `npm run sources:verify -- <ids>` | NOT RUN — no connected local repository runner; no source records written | NOT RUN (execution blocker) |
+| `npm run check`, taxonomy, content integrity, build, browser suites | NOT RUN — documentation-only change; entry work has not started | Not required for these doc edits; required after content files change |
+| Production runtime | NOT verified; DEP-2 remains open | NOT RUN |
+
+
+### Domain 2 Batch 1 research deepening (2026-11-23; documentation-only)
+
+Files changed: `docs/DOMAIN_2_BATCH_1_RESEARCH.md`, `docs/DOMAIN_COMPLETION_PLAN.md`, `docs/PROJECT_STATE.md`, `docs/PROGRESS.md`.
+
+| Check | Result | Run / inherited |
+|---|---|---|
+| Full-text research | Tversky & Kahneman (1991) and Walasek et al. (2024) full text reviewed; PDF screenshots inspected. Tversky & Kahneman (1979) full text previously reviewed. | Run (web research, 2026-11-23) |
+| Abstract / metadata review | Brown et al. (2024), Composto et al. (2025), Kühberger (1998, 2023), Levin et al. (1998), Gal & Rucker (2018) | Run (web research, 2026-11-23); access level individually recorded |
+| Source verification script | NOT RUN — repository command runner unavailable | NOT RUN (execution blocker) |
+| Content entry tests / build / browser suites | NOT RUN — no content or app files changed | Not required for docs-only change; required after entry files are added |
+| Production runtime | NOT verified; DEP-2 remains open | NOT RUN |
+
+
+### Domain 2 Batch 1 — entry drafts and visual integration (2026-11-23)
+
+Changed: `content/knowledge/laws-effects/{loss-aversion,framing-effect}.ts`, `content/sources/cognitive-effects.ts`, `content/sources/verification.json`, `content/knowledge/_index.ts`, `components/illustrations/concepts/decision-sheets.tsx`, `components/illustrations/visual-register.ts`.
+
+| Check | Result | Run / inherited |
+|---|---|---|
+| Manual structural review | Two files contain three-depth explanations, objectives, evidence/debates, origin, application, limits, misconceptions, 5 explained relations, 3 exercises, 4 quizzes, 4 flashcards and source references | Run (GitHub file inspection, 2026-11-23) |
+| Taxonomy / slug alignment | Both slugs are present in frozen Domain 2 decision-biases inventory; domain id and subcategory match | Run (taxonomy read, 2026-11-23) |
+| Sources | 11 records added; `kahneman-tversky-1979` has a Crossref match in verification.json; 10 remain bibliographic | Partial; repository verifier not run |
+| `npm run sources:verify -- <11 ids>` | NOT RUN — no connected local repository command runner; GitHub shell clone also failed DNS | NOT RUN (execution blocker) |
+| `npx tsx scripts/entry-integrity.ts loss-aversion framing-effect` | NOT RUN — no command runner | NOT RUN |
+| `npm run check`, `npm run test:taxonomy`, `npm run docs:generate`, `npm run build` | NOT RUN — no command runner | NOT RUN; required before publishing |
+| Plate render / `tests/illustrations.test.ts` / entry review | NOT RUN — no command runner or browser server | NOT RUN; required before publishing |
+| GitHub Vercel status | PENDING when last queried (2026-11-23); not a verified pass | Run (GitHub status API) |
+| Live production | Not deployed; no merge to main | Not run |
+
+**Disposition:** Drafts are pushed, but remain `status: "drafted"`. Do not promote to `published` until every required gate is run and any critical/major/moderate findings are corrected.
+
+
+### Domain 2 Batch 2 — Anchoring Effect draft and visual integration (2026-11-23)
+
+Changed: content/knowledge/laws-effects/anchoring-effect.ts, content/sources/cognitive-effects.ts, content/knowledge/_index.ts, components/illustrations/concepts/decision-sheets.tsx, components/illustrations/visual-register.ts, docs/DOMAIN_2_BATCH_2_RESEARCH.md, and project records.
+
+| Check | Result | Run / inherited |
+|---|---|---|
+| Research review | Original 1974 heuristic, self-generated adjustment, selective accessibility, scale distortion, WTP meta-analysis and 2026 broad meta-analysis reviewed at the access levels documented | Run (web research, 2026-11-23) |
+| Manual entry integrity | Anchoring: all 8 cited source IDs listed in references and present in source registry; 4 objectives, 3 exercises, 4 quizzes, 4 flashcards; entry status drafted | Run (GitHub file inspection, 2026-11-23) |
+| Taxonomy / index / illustration registration | Slug pre-exists in frozen Domain 2 decision-biases taxonomy; index import, decision-sheets plate and visual-register row present | Run (GitHub file inspection, 2026-11-23) |
+| Reciprocal links / citation correction | Added Anchoring back-links to Loss Aversion and Framing; corrected Framing's missing tversky-kahneman-1992 reference | Run (GitHub file inspection, 2026-11-23) |
+| Source verification (npm run sources:verify -- 9 ids) | NOT RUN — current Vercel team connection returns 403 until owner approves team access | BLOCKED (team authorization) |
+| Entry integrity, npm run check, taxonomy, docs generation, plate render/tests, browser entry review, build | NOT RUN — no authorized command runner | BLOCKED (team authorization) |
+| Vercel status for commit 8c108b5 | Pending when checked; not a build pass | Run (GitHub status API) |
+| Production runtime | Not independently verified; DEP-2 remains open | NOT RUN |
+
+**Disposition:** anchoring-effect remains status: drafted. The three Domain 2 entries (Loss Aversion, Framing Effect, Anchoring Effect) are all draft-only until the required source and QA gates run successfully.
+
+### Domain 2 Batch 3 — Social Proof (2026-11-23, branch `claude/domain-completion-20261123`, base `f712e38`)
+
+Change set: new entry `content/knowledge/laws-effects/social-proof.ts` (published); 9 source records in `content/sources/cognitive-effects.ts`; `socialProofPlate` in `components/illustrations/concepts/decision-sheets.tsx`; register record in `visual-register.ts`; quick takeaway in `components/visual-explanations/registry.tsx`; back-link in `default-effect.ts`; regenerated `content/knowledge/_index.ts`, `content/sources/verification.json` and the four generated docs. Gate-blocker fixes to pre-existing drafts: `anchoring-effect` register `techniques` (`"comparison"` was not a valid technique → `["numbered-annotation"]`), and the analogy openings of `anchoring-effect` and `loss-aversion` (editorial template cap). Commit SHA: see the commit that adds this section.
+
+Baseline: `npm run check` on `f712e38` **FAILED** before any change (`tsc`: invalid technique value in the anchoring register record), so the earlier drafts had never passed the shared gates. After the register fix, `check` then failed the editorial analogy-template test on the two drafts' analogies; both were reworded.
+
+| Check | Command | Result | Status |
+|---|---|---|---|
+| Source verification | `npm run sources:verify -- deutsch-gerard-1955 cialdini-reno-kallgren-1990 cialdini-goldstein-2004 goldstein-cialdini-griskevicius-2008 nolan-et-al-2008 salganik-dodds-watts-2006 muchnik-aral-taylor-2013 bond-smith-1996 saxena-banerji-2026` | 9/9 `doi-verified` (Crossref title and year match) | PASS |
+| Content index | `npm run content:index` | 119 knowledge files, 21 source files; `social-proof` indexed | PASS |
+| Entry integrity | `npx tsx scripts/entry-integrity.ts social-proof` | Exit 0; 10 outgoing relations, 1 incoming; 3 exercises, 4 quiz (3 levels), 4 flashcards; plate registered; all 9 references doi-verified. With `default-effect` added, exit 1 only for its pre-existing uncited further-reading `oecd-2019-basic`. | PASS (social-proof) |
+| Check | `npm run check` (final tree) | Exit 0; 23 files, 620 tests | PASS |
+| Taxonomy | `npm run test:taxonomy` | Exit 0; 1019 links; 116 published entries at three depths; Domain 2: 46 topics, 15 published, 10 addressed within | PASS |
+| Generated docs | `npm run docs:generate` (final tree) | Exit 0; real changes kept in all four generated files (new entry, 9 sources, drafted counts). Site: 116/561 published, 23 addressed within, 419 planned, 3 drafted. | PASS |
+| Plate render | `NODE_PATH=$(npm root -g) npx tsx scripts/render-plates.tsx social-proof` | Light and dark PNGs rendered and inspected: no clipping, four markers inside cards, loop arrow correct, legible contrast in both themes. The render script's fallback font draws the opening quote like a closing one; the site font renders it correctly (screenshot of the live page checked). | PASS |
+| Entry review | `BASE_URL=http://localhost:3100 AXE_PATH=node_modules/axe-core/axe.min.js node tests/browser/entry-review.cjs social-proof default-effect`, then `… social-proof` on the final tree | 16/16, then 8/8 on the final tree: 1440, 768, 390 px, light and dark; axe 0, overflow 0, errors 0; plate text min 10.2 px at 390; 4 markers inside the viewBox; 15 links resolve, no raw markup; flashcards by keyboard 4/4 | PASS |
+| Build | `npm run build` (final tree) | Exit 0; 998/998 static pages | PASS |
+| Site-wide browser suites | Not run | Only a content entry, sources, a plate in an existing sheet file, a register record and a takeaway string changed; no shared component, route, `lib/**` or token changed (skill § 4: plate render + entry review) | NOT RUN (change-impact decision) |
+| Drafts' own gates | Not run | `loss-aversion`, `framing-effect`, `anchoring-effect`: their own sources:verify, entry-integrity, plate review and entry review were not run in this session; they remain `drafted` | NOT RUN (out of scope; D2-B1-1, D2-B2-1) |
+
+Review: one targeted review (accuracy against the read papers, classification, explanation, visuals and accessibility, practice and integration) and one correction pass. 0 critical, 0 major; 1 moderate fixed (the ethics paragraph implied research oversight the paper does not report); 6 precision corrections made during drafting before review (claims not supported by sources read were relabelled as academy interpretation or removed). Minor items: SP-1 in `docs/OPEN_ISSUES.md`.
+
+Limitations: no screen-reader, physical-device or independent expert review. Five sources abstract only and one bibliographic only (stated in the entry). Vercel preview not checked.
+
+### Domain 2 Batch 4 — Goal-Gradient Effect (2026-11-23, branch `claude/domain-completion-20261123`, base `4af404b`)
+
+Change set: new entry `content/knowledge/laws-effects/goal-gradient-effect.ts` (published); 10 source records in `content/sources/cognitive-effects.ts`; `goalGradientPlate` in `decision-sheets.tsx`; register record; quick takeaway in `components/visual-explanations/registry.tsx`; back-link in `content/knowledge/design-systems/loading-states.ts`; regenerated `content/knowledge/_index.ts`, `content/sources/verification.json` (10 records added, none changed) and the four generated docs. No Domain 2 draft modified. Commit SHA: the commit that adds this section.
+
+Baseline: `npm run check` PASS recorded on `4af404b` (Social Proof section) with a clean tree, so it was inherited for the start of this task; every gate below was then re-run on this change set.
+
+| Check | Command | Result | Status |
+|---|---|---|---|
+| Source verification | `npm run sources:verify -- hull-1932 kivetz-urminsky-zheng-2006 nunes-dreze-2006 bonezzi-brendl-de-angelis-2011 koo-fishbach-2012 harkin-et-al-2016 conrad-et-al-2010 cheema-bagchi-2011 dixon-et-al-2024 devine-et-al-2025` | 10/10 `doi-verified` | PASS |
+| Content index | `npm run content:index` | 120 knowledge files; entry indexed | PASS |
+| Entry integrity | `npx tsx scripts/entry-integrity.ts goal-gradient-effect loading-states` | Exit 0; 7 outgoing relations, 1 incoming; 3 exercises, 4 quiz (3 levels), 5 flashcards; plate registered; 10 references doi-verified | PASS |
+| Check | `npm run check` (final tree) | Exit 0; 23 files, 622 tests | PASS |
+| Taxonomy | `npm run test:taxonomy` | Exit 0; 1027 links; 117 published entries at three depths; Domain 2: 46 topics, 16 published, 10 addressed within | PASS |
+| Generated docs | `npm run docs:generate` (final tree) | Exit 0; real changes kept. Site: 117/561 published, 23 addressed within, 418 planned, 3 drafted. | PASS |
+| Plate render | `NODE_PATH=$(npm root -g) npx tsx scripts/render-plates.tsx goal-gradient-effect` | First render inspected: card title 'Same position, two framings' overflowed its card under marker 3; marker 2 sat on the dashed curve; x-axis had no axis name. Fixed (title 'Two framings', marker moved, 'progress →' added) and re-rendered: no clipping or overlap, both curves distinguished by solid/dashed and legend, light and dark legible. | PASS (after fix) |
+| Entry review | `BASE_URL=http://localhost:3100 AXE_PATH=node_modules/axe-core/axe.min.js node tests/browser/entry-review.cjs goal-gradient-effect loading-states` (final tree) | 16/16: 1440, 768, 390 px, light and dark; axe 0, overflow 0, errors 0; plate text min 10.2 px at 390; 4 markers inside the viewBox; 13 links resolve, no raw markup; flashcards by keyboard 5/5 | PASS |
+| Build | `npm run build` (final tree) | Exit 0; 998/998 static pages | PASS |
+| Site-wide browser suites | Not run | Content entry, sources, a plate in an existing sheet file, a register record and a takeaway string only; no shared component, route, `lib/**` or token changed (skill § 4) | NOT RUN (change-impact decision) |
+
+Review (five dimensions): 0 critical, 0 major. Moderate fixed in the correction pass: four statements tightened to match the sources (Hull/Brown described as vigour toward a goal, not 'food'; Devine et al. measured correct responses per second, not speed; endowed-progress guidance anchored on what the studies did; the goal-distance-model inference labelled as academy interpretation); one weak relation removed (`social-proof`); the three plate defects above. Minor: GG-1.
+
+Limitations: no screen-reader, physical-device or independent expert review. Seven sources abstract only, one bibliographic only. Vercel preview not checked.
+
+### Domain 2 Batch 5 — Zeigarnik Effect (2026-11-23, branch `claude/domain-completion-20261123`, base `831eaf9`)
+
+Change set: new entry `content/knowledge/laws-effects/zeigarnik-effect.ts` (published; `concept`, `laws-effects/memory-attention-effects` per the frozen taxonomy; evidence `contested`); 8 source records in `content/sources/cognitive-effects.ts`; `zeigarnikPlate` in `components/illustrations/concepts/learning-sheets.tsx`, registered through `laws-psychology.tsx`; register record; quick takeaway; back-links in `goal-gradient-effect.ts` and `von-restorff-effect.ts`; regenerated index, `verification.json` (8 added) and generated docs. Classification note: the batch brief placed the topic in `psychology`; the taxonomy places it in `laws-effects`, so the entry follows the taxonomy (see DOMAIN_COMPLETION_PLAN Batch 5). No Domain 2 draft modified. Commit SHA: the commit that adds this section.
+
+Baseline: `check` PASS on `831eaf9` (previous section) with a clean tree; inherited for the start, then all gates re-run on this change set.
+
+| Check | Command | Result | Status |
+|---|---|---|---|
+| Source verification | `npm run sources:verify -- zeigarnik-1927 ovsiankina-1928 macleod-2020 ghibellini-meier-2025 seifert-patalano-1991 masicampo-baumeister-2011-plans masicampo-baumeister-2011-executive wendsche-weigelt-syrek-2026` | 7 `doi-verified`, 1 `url-reachable` (conference paper, no DOI) | PASS |
+| Content index | `npm run content:index` | 121 knowledge files; entry indexed | PASS |
+| Entry integrity | `npx tsx scripts/entry-integrity.ts zeigarnik-effect` | First run failed schema validation (summary over 320 characters); summary shortened; exit 0: 7 outgoing, 2 incoming relations; 3 exercises; 4 quiz (3 levels); 5 flashcards; plate registered. With `goal-gradient-effect` and `von-restorff-effect`: exit 1 only for `von-restorff-effect`'s pre-existing uncited `w3c-wcag-22` (standard) and `laws-of-ux` (further); this batch added one relation line to that file. | PASS (zeigarnik-effect) |
+| Check | `npm run check` (final tree) | Exit 0; 23 files, 624 tests | PASS |
+| Taxonomy | `npm run test:taxonomy` | Exit 0; 1036 links; 118 published at three depths; Domain 2: 46 topics, 17 published, 10 addressed within | PASS |
+| Generated docs | `npm run docs:generate` (final tree) | Exit 0; site 118/561 published, 23 addressed within, 417 planned, 3 drafted | PASS |
+| Plate render | `NODE_PATH=$(npm root -g) npx tsx scripts/render-plates.tsx zeigarnik-effect` | First render: 'Specific plan' overlapped 'thoughts settle' in the Planning panel. Re-laid out ('Thoughts (lab studies)' sub-heading; 'intrude' / 'settle'); re-rendered: no overlap or clipping, light and dark legible; numbers shown (1.9, 0.99) are sourced ratios, the 67% figure is not drawn. | PASS (after fix) |
+| Entry review | `BASE_URL=http://localhost:3100 AXE_PATH=node_modules/axe-core/axe.min.js node tests/browser/entry-review.cjs zeigarnik-effect goal-gradient-effect von-restorff-effect` (final tree) | 24/24; zeigarnik-effect: 1440/768/390 px, light and dark, axe 0, overflow 0, errors 0, plate text min 10.2 px at 390, 4 markers inside, 11 links, flashcards 5/5 | PASS |
+| Build | `npm run build` (final tree) | Exit 0; 998/998 | PASS |
+| Site-wide browser suites | Not run | No shared component, route, `lib/**` or token changed (skill § 4) | NOT RUN (change-impact decision) |
+
+Review (five dimensions): 0 critical, 0 major. Moderate fixed: the waiter anecdote wording aligned with MacLeod's account; the plate overlap above; the summary length. Minor: ZE-1.
+
+Limitations: no screen-reader, physical-device or independent expert review; originals not read; Vercel preview not checked.

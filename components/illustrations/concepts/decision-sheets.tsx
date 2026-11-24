@@ -99,5 +99,230 @@ export const defaultEffectPlate: IllustrationEntry = {
   ),
 };
 
-const plates: IllustrationEntry[] = [defaultEffectPlate];
+
+export const lossAversionPlate: IllustrationEntry = {
+  slug: "loss-aversion",
+  title: "Loss aversion plate",
+  canvas: "sheet",
+  description: "An illustrative value curve bends around a reference point. The loss side is steeper than the gain side close to that point, while a note makes clear that the drawing is conceptual and does not prescribe a universal numerical ratio.",
+  key: [
+    { n: "1", label: "Reference point", detail: "The baseline separates outcomes encoded as gains from outcomes encoded as losses; changing it can change how the same final outcome is evaluated." },
+    { n: "2", label: "Loss side", detail: "In the classic prospect-theory value function the loss side is steeper near the reference point than the gain side." },
+    { n: "3", label: "Gain side", detail: "The gain side is usually drawn concave; curvature within a side is diminishing sensitivity, distinct from loss aversion." },
+    { n: "4", label: "Illustrative curve", detail: "The slope is conceptual, not a universal coefficient. Empirical estimates depend on model, task, incentives and sample." }
+  ],
+  Art: ({ detail }) => (
+    <g>
+      <Card x={8} y={8} w={384} h={284} title="Subjective value around a reference point">
+        <line x1={42} y1={244} x2={372} y2={244} stroke={S.ruleStrong} strokeWidth="1.1" {...hair} />
+        <line x1={205} y1={48} x2={205} y2={244} stroke={S.ruleStrong} strokeWidth="1.1" strokeDasharray="4 4" {...hair} />
+        <line x1={42} y1={166} x2={372} y2={166} stroke={S.rule} strokeWidth="0.9" strokeDasharray="3 4" {...hair} />
+        <path d="M205 166 C176 177 131 203 60 224" fill="none" stroke={S.ink} strokeWidth="2.3" {...hair} />
+        <path d="M205 166 C238 150 291 117 362 88" fill="none" stroke={S.ink2} strokeWidth="2.3" {...hair} />
+        <circle cx={205} cy={166} r="4.5" fill={S.ink} />
+        <UiText x={72} y={202} weight={700}>LOSS</UiText>
+        <UiText x={309} y={112} weight={700}>GAIN</UiText>
+        <UiText x={213} y={58} tone="ink2">value ↑</UiText>
+        <UiText x={205} y={264} anchor="middle" tone="ink2">reference point</UiText>
+        <UiText x={42} y={282} tone="ink2">objective outcome: loss ←  |  → gain</UiText>
+        <UiText x={372} y={282} anchor="end" tone="ink2">illustrative</UiText>
+      </Card>
+      {detail && <><Marker x={205} y={150} n={1} /><Marker x={68} y={216} n={2} /><Marker x={352} y={96} n={3} /><Marker x={380} y={20} n={4} /></>}
+    </g>
+  ),
+};
+
+export const framingEffectPlate: IllustrationEntry = {
+  slug: "framing-effect",
+  title: "Framing effect plate",
+  canvas: "sheet",
+  description: "Two cards show equivalent life-outcome options described as gains and as losses. A lower band separates risky-choice, attribute and goal framing so the three research paradigms are not mistaken for one effect.",
+  key: [
+    { n: "1", label: "Gain description", detail: "The certain outcome is 200 people saved; the alternative is a one-third chance to save all 600 and a two-thirds chance to save none." },
+    { n: "2", label: "Loss description", detail: "The logically equivalent outcomes are 400 certain deaths, or a one-third chance that nobody dies and a two-thirds chance that 600 die." },
+    { n: "3", label: "Equivalent outcomes", detail: "Only the description changes. Options, numbers and probabilities must remain the same in a strict risky-choice framing test." },
+    { n: "4", label: "Three paradigms", detail: "Risky-choice, attribute and goal framing have different tasks and outcomes; do not generalise one paradigm's effect size to all three." }
+  ],
+  Art: ({ detail }) => (
+    <g>
+      <Card x={8} y={8} w={186} h={164} title="Gain frame">
+        <UiText x={20} y={54} weight={700}>Sure option</UiText>
+        <UiText x={20} y={75} tone="ink2">200 people saved</UiText>
+        <line x1={20} y1={88} x2={180} y2={88} stroke={S.rule} strokeWidth="1" />
+        <UiText x={20} y={111} weight={700}>Gamble</UiText>
+        <UiText x={20} y={132} tone="ink2">1/3 save 600</UiText>
+        <UiText x={20} y={150} tone="ink2">2/3 save none</UiText>
+      </Card>
+      <Card x={206} y={8} w={186} h={164} title="Loss frame">
+        <UiText x={218} y={54} weight={700}>Sure option</UiText>
+        <UiText x={218} y={75} tone="ink2">400 people die</UiText>
+        <line x1={218} y1={88} x2={378} y2={88} stroke={S.rule} strokeWidth="1" />
+        <UiText x={218} y={111} weight={700}>Gamble</UiText>
+        <UiText x={218} y={132} tone="ink2">1/3 nobody dies</UiText>
+        <UiText x={218} y={150} tone="ink2">2/3 all 600 die</UiText>
+      </Card>
+      <Card x={8} y={180} w={384} h={112} title="Framing research has different forms">
+        <UiChip x={18} y={210} w={112} label="Risky choice" />
+        <UiChip x={142} y={210} w={94} label="Attribute" />
+        <UiChip x={248} y={210} w={104} label="Goal framing" />
+        <UiText x={18} y={254} tone="ink2">Same outcomes in the top cards; different words</UiText>
+        <UiText x={18} y={274} tone="ink2">Different groups saw the two original versions</UiText>
+      </Card>
+      {detail && <><Marker x={20} y={20} n={1} /><Marker x={380} y={20} n={2} /><Marker x={200} y={164} n={3} /><Marker x={380} y={190} n={4} /></>}
+    </g>
+  ),
+};
+
+
+export const anchoringEffectPlate: IllustrationEntry = {
+  slug: "anchoring-effect",
+  title: "Anchoring effect plate",
+  canvas: "sheet",
+  description:
+    "Two groups receive different starting values before estimating the same quantity. Their group median estimates shift toward the low or high anchor; a lower strip separates three proposed mechanisms.",
+  key: [
+    { n: "1", label: "Low anchor", detail: "One group first considered the value 10. Its median estimate was 25 in the classic UN-country example." },
+    { n: "2", label: "High anchor", detail: "Another group first considered the value 65. Its median estimate was 45 in the same study." },
+    { n: "3", label: "Estimate", detail: "The medians moved in the anchor direction, but did not simply repeat the starting value. They are group medians, not individual changes." },
+    { n: "4", label: "Different mechanisms", detail: "Insufficient adjustment, selective accessibility and scale distortion are distinct accounts; the diagram does not claim they explain every case." }
+  ],
+  Art: ({ detail }) => (
+    <g>
+      <Card x={8} y={8} w={384} h={176} title="Same question · different starting values">
+        <UiText x={22} y={60} weight={700}>Low anchor</UiText>
+        <UiChip x={22} y={76} w={70} label="10" selected />
+        <line x1={102} y1={88} x2={206} y2={88} stroke={S.ink2} strokeWidth="1.2" {...hair} />
+        <path d="M200 83 L208 88 L200 93" fill="none" stroke={S.ink2} strokeWidth="1.2" {...hair} />
+        <UiChip x={218} y={76} w={80} label="Median 25" />
+        <UiText x={316} y={92} tone="ink2">group A</UiText>
+        <line x1={22} y1={105} x2={378} y2={105} stroke={S.rule} strokeWidth="0.9" {...hair} />
+        <UiText x={22} y={133} weight={700}>High anchor</UiText>
+        <UiChip x={22} y={145} w={70} label="65" selected />
+        <line x1={102} y1={157} x2={206} y2={157} stroke={S.ink2} strokeWidth="1.2" {...hair} />
+        <path d="M200 152 L208 157 L200 162" fill="none" stroke={S.ink2} strokeWidth="1.2" {...hair} />
+        <UiChip x={218} y={145} w={80} label="Median 45" />
+        <UiText x={316} y={161} tone="ink2">group B</UiText>
+      </Card>
+      <Card x={8} y={192} w={384} h={100} title="Three proposed explanations">
+        <UiChip x={18} y={222} w={112} label="Adjustment" />
+        <UiChip x={142} y={222} w={112} label="Accessibility" />
+        <UiChip x={266} y={222} w={112} label="Scale" />
+        <UiText x={18} y={268} tone="ink2">Different tasks may involve different processes.</UiText>
+      </Card>
+      {detail && <><Marker x={24} y={20} n={1} /><Marker x={372} y={20} n={2} /><Marker x={304} y={76} n={3} /><Marker x={372} y={204} n={4} /></>}
+    </g>
+  ),
+};
+
+export const socialProofPlate: IllustrationEntry = {
+  slug: "social-proof",
+  title: "Social proof plate",
+  canvas: "sheet",
+  description:
+    "Four cards separate the ideas social proof is often reduced to. Top left, 'What people do': 'Descriptive norm', with the example 'Most guests here reuse their towels'. Top right, 'What people approve': 'Injunctive norm', with the example 'Most guests think reusing is right'. Middle, 'Why someone follows others': under 'Informational', a chip 'To be right'; under 'Normative', a chip 'To fit in'. Bottom, 'Popularity is not quality': three chips joined by arrows, 'Early votes', 'Shown higher', 'More votes', with a line returning from the last to the second to show the loop, and the caption 'A rating is a signal, not a measurement'.",
+  key: [
+    { n: "1", label: "Descriptive norm", detail: "what most people actually do; in hotel field experiments, signs reporting that most guests reused towels raised reuse over an environmental appeal (Goldstein, Cialdini and Griskevicius, 2008)" },
+    { n: "2", label: "Injunctive norm", detail: "what most people approve of; the two norms can conflict, and behaviour tends to follow the one the situation makes salient (Cialdini, Reno and Kallgren, 1990)" },
+    { n: "3", label: "Two motives", detail: "the same choice can come from wanting to be right (informational) or wanting to be accepted (normative) (Deutsch and Gerard, 1955)" },
+    { n: "4", label: "Popularity loop", detail: "visible ratings feed later ratings: one artificial up-vote raised final scores by 25% in a randomised experiment (Muchnik, Aral and Taylor, 2013); ratings are constructed signals, not measures of quality" },
+  ],
+  Art: ({ detail }) => (
+    <g>
+      <Card x={8} y={8} w={188} h={96} title="What people do">
+        <UiText x={20} y={52} tone="ink2">Descriptive norm</UiText>
+        <UiText x={20} y={74}>“Most guests here</UiText>
+        <UiText x={20} y={92}>reuse their towels”</UiText>
+      </Card>
+      <Card x={204} y={8} w={188} h={96} title="What people approve">
+        <UiText x={216} y={52} tone="ink2">Injunctive norm</UiText>
+        <UiText x={216} y={74}>“Most guests think</UiText>
+        <UiText x={216} y={92}>reusing is right”</UiText>
+      </Card>
+
+      <Card x={8} y={112} w={384} h={86} title="Why someone follows others">
+        <UiText x={20} y={158} tone="ink2">Informational</UiText>
+        <UiChip x={20} y={166} w={120} label="To be right" />
+        <UiText x={210} y={158} tone="ink2">Normative</UiText>
+        <UiChip x={210} y={166} w={104} label="To fit in" />
+      </Card>
+
+      <Card x={8} y={206} w={384} h={86} title="Popularity is not quality">
+        <UiChip x={20} y={238} w={96} label="Early votes" />
+        <Arrow x1={120} x2={132} y={250} />
+        <UiChip x={138} y={238} w={104} label="Shown higher" />
+        <Arrow x1={246} x2={258} y={250} />
+        <UiChip x={264} y={238} w={96} label="More votes" />
+        <path d="M360 250 H372 V271 H190 V266" fill="none" stroke={S.ink2} strokeWidth="1.1" {...hair} />
+        <path d="M186 268 L190 262 L194 268" fill="none" stroke={S.ink2} strokeWidth="1.1" {...hair} />
+        <UiText x={20} y={287} tone="ink2">A rating is a signal, not a measurement</UiText>
+      </Card>
+
+      {detail && (
+        <>
+          <Marker x={184} y={20} n={1} />
+          <Marker x={380} y={20} n={2} />
+          <Marker x={380} y={124} n={3} />
+          <Marker x={380} y={218} n={4} />
+        </>
+      )}
+    </g>
+  ),
+};
+
+export const goalGradientPlate: IllustrationEntry = {
+  slug: "goal-gradient-effect",
+  title: "Goal-gradient effect plate",
+  canvas: "sheet",
+  description:
+    "Top, 'Effort as the goal nears (conceptual, not measured)': a chart with 'effort' on the vertical axis and 'progress' on the horizontal axis, marked 'start', 'halfway' and 'goal'. A solid line stays low and rises steeply near the goal, labelled in the legend 'Classic gradient: rises near the goal'. A dashed line starts high, dips around halfway and rises again near the goal, labelled 'Stuck in the middle: dips halfway'. Bottom left, 'Two framings' of the same position: a chip '3 of 10 done' marked 'early' and a chip '2 steps left' marked 'late'. Bottom right, 'Honest progress': three lines, 'Real steps only', 'Unit and total shown', 'Pause or exit any time'.",
+  key: [
+    { n: "1", label: "Classic gradient", detail: "effort rises as a valued goal nears, first proposed for animals (Hull, 1932) and found in people in reward programmes (Kivetz, Urminsky and Zheng, 2006); the curve is drawn for illustration, not from data" },
+    { n: "2", label: "Stuck in the middle", detail: "motivation can be higher far from and near the goal and lower halfway, depending on whether progress is judged from the start or the end (Bonezzi, Brendl and De Angelis, 2011)" },
+    { n: "3", label: "Small areas", detail: "focusing on the smaller quantity, done early and remaining late, made progress feel faster and increased adherence (Koo and Fishbach, 2012)" },
+    { n: "4", label: "Honest progress", detail: "a bar is a representation; showing slow progress can raise abandonment (Conrad et al., 2010), so show real steps, the unit and total, the pace, and a way out" },
+  ],
+  Art: ({ detail }) => (
+    <g>
+      <Card x={8} y={8} w={384} h={176} title="Effort as the goal nears (conceptual)">
+        <line x1={40} y1={44} x2={40} y2={118} stroke={S.ruleStrong} strokeWidth="1.1" {...hair} />
+        <line x1={40} y1={118} x2={372} y2={118} stroke={S.ruleStrong} strokeWidth="1.1" {...hair} />
+        <UiText x={46} y={52} tone="ink2">effort ↑</UiText>
+        <path d="M52 116 C250 116 320 108 366 48" fill="none" stroke={S.ink} strokeWidth="2.2" {...hair} />
+        <path d="M52 64 C140 108 270 108 366 58" fill="none" stroke={S.ink2} strokeWidth="2" strokeDasharray="6 5" {...hair} />
+        <UiText x={40} y={136} tone="ink2">start</UiText>
+        <UiText x={84} y={136} tone="ink2">progress →</UiText>
+        <UiText x={206} y={136} anchor="middle" tone="ink2">halfway</UiText>
+        <UiText x={372} y={136} anchor="end" tone="ink2">goal</UiText>
+        <line x1={20} y1={150} x2={44} y2={150} stroke={S.ink} strokeWidth="2.2" {...hair} />
+        <UiText x={52} y={155}>Classic gradient: rises near the goal</UiText>
+        <line x1={20} y1={169} x2={44} y2={169} stroke={S.ink2} strokeWidth="2" strokeDasharray="6 5" {...hair} />
+        <UiText x={52} y={174}>Stuck in the middle: dips halfway</UiText>
+      </Card>
+
+      <Card x={8} y={192} w={188} h={100} title="Two framings">
+        <UiChip x={20} y={226} w={112} label="3 of 10 done" />
+        <UiText x={142} y={243} tone="ink2">early</UiText>
+        <UiChip x={20} y={258} w={112} label="2 steps left" />
+        <UiText x={142} y={275} tone="ink2">late</UiText>
+      </Card>
+
+      <Card x={204} y={192} w={188} h={100} title="Honest progress">
+        <UiText x={216} y={238}>Real steps only</UiText>
+        <UiText x={216} y={258}>Unit and total shown</UiText>
+        <UiText x={216} y={278}>Pause or exit any time</UiText>
+      </Card>
+
+      {detail && (
+        <>
+          <Marker x={380} y={20} n={1} />
+          <Marker x={206} y={62} n={2} />
+          <Marker x={184} y={204} n={3} />
+          <Marker x={380} y={204} n={4} />
+        </>
+      )}
+    </g>
+  ),
+};
+
+const plates: IllustrationEntry[] = [defaultEffectPlate, lossAversionPlate, framingEffectPlate, anchoringEffectPlate, socialProofPlate, goalGradientPlate];
 export default plates;

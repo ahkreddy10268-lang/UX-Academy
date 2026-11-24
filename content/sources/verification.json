@@ -268,6 +268,22 @@
     "registeredContainer": "Proceedings of the 4th Nordic conference on Human-computer interaction: changing roles",
     "similarity": 1
   },
+  "bond-smith-1996": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-23",
+    "registeredTitle": "Culture and conformity: A meta-analysis of studies using Asch's (1952b, 1956) line judgment task.",
+    "registeredYear": 1996,
+    "registeredContainer": "Psychological Bulletin",
+    "similarity": 1
+  },
+  "bonezzi-brendl-de-angelis-2011": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-23",
+    "registeredTitle": "Stuck in the Middle: The Psychophysics of Goal Pursuit",
+    "registeredYear": 2011,
+    "registeredContainer": "Psychological Science",
+    "similarity": 1
+  },
   "boren-ramey-2000": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",
@@ -457,6 +473,14 @@
     "registeredContainer": "Lecture Notes in Computer Science",
     "similarity": 1
   },
+  "cheema-bagchi-2011": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-23",
+    "registeredTitle": "The Effect of Goal Visualization on Goal Pursuit: Implications for Consumers and Managers",
+    "registeredYear": 2011,
+    "registeredContainer": "Journal of Marketing",
+    "similarity": 1
+  },
   "chernev-bockenholt-goodman-2015": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",
@@ -482,6 +506,22 @@
     "status": "url-reachable",
     "checkedAt": "2026-11-12",
     "httpStatus": 200
+  },
+  "cialdini-goldstein-2004": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-23",
+    "registeredTitle": "Social Influence: Compliance and Conformity",
+    "registeredYear": 2004,
+    "registeredContainer": "Annual Review of Psychology",
+    "similarity": 1
+  },
+  "cialdini-reno-kallgren-1990": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-23",
+    "registeredTitle": "A focus theory of normative conduct: Recycling the concept of norms to reduce littering in public places.",
+    "registeredYear": 1990,
+    "registeredContainer": "Journal of Personality and Social Psychology",
+    "similarity": 1
   },
   "cloudscape-genai-follow-up": {
     "status": "url-reachable",
@@ -512,6 +552,14 @@
     "registeredTitle": "A power primer.",
     "registeredYear": 1992,
     "registeredContainer": "Psychological Bulletin",
+    "similarity": 1
+  },
+  "conrad-et-al-2010": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-23",
+    "registeredTitle": "The impact of progress indicators on task completion",
+    "registeredYear": 2010,
+    "registeredContainer": "Interacting with Computers",
     "similarity": 1
   },
   "content-design-london-about": {
@@ -599,6 +647,22 @@
     "checkedAt": "2026-11-20",
     "httpStatus": 200
   },
+  "deutsch-gerard-1955": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-23",
+    "registeredTitle": "A study of normative and informational social influences upon individual judgment.",
+    "registeredYear": 1955,
+    "registeredContainer": "The Journal of Abnormal and Social Psychology",
+    "similarity": 1
+  },
+  "devine-et-al-2025": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-23",
+    "registeredTitle": "Increased attention towards progress information near a goal state",
+    "registeredYear": 2025,
+    "registeredContainer": "Psychonomic Bulletin &amp; Review",
+    "similarity": 1
+  },
   "digitalgov-test-for-understanding": {
     "status": "url-reachable",
     "checkedAt": "2026-11-16",
@@ -618,6 +682,14 @@
     "registeredTitle": "What is beautiful is good.",
     "registeredYear": 1972,
     "registeredContainer": "Journal of Personality and Social Psychology",
+    "similarity": 1
+  },
+  "dixon-et-al-2024": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-23",
+    "registeredTitle": "Using “Wordle” to assess the effects of goal gradients and near-misses",
+    "registeredYear": 2024,
+    "registeredContainer": "Scientific Reports",
     "similarity": 1
   },
   "dixon-freeman-toman-2010": {
@@ -866,12 +938,28 @@
     "registeredContainer": "Proceedings of the SIGCHI conference on Human factors in computing systems Reaching through technology - CHI '91",
     "similarity": 1
   },
+  "ghibellini-meier-2025": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-23",
+    "registeredTitle": "Interruption, recall and resumption: a meta-analysis of the Zeigarnik and Ovsiankina effects",
+    "registeredYear": 2025,
+    "registeredContainer": "Humanities and Social Sciences Communications",
+    "similarity": 1
+  },
   "glanzer-cunitz-1966": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",
     "registeredTitle": "Two storage mechanisms in free recall",
     "registeredYear": 1966,
     "registeredContainer": "Journal of Verbal Learning and Verbal Behavior",
+    "similarity": 1
+  },
+  "goldstein-cialdini-griskevicius-2008": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-23",
+    "registeredTitle": "A Room with a Viewpoint: Using Social Norms to Motivate Environmental Conservation in Hotels",
+    "registeredYear": 2008,
+    "registeredContainer": "Journal of Consumer Research",
     "similarity": 1
   },
   "google-pair-guidebook": {
@@ -1094,6 +1182,14 @@
     "registeredContainer": "Science of Computer Programming",
     "similarity": 1
   },
+  "harkin-et-al-2016": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-23",
+    "registeredTitle": "Does monitoring goal progress promote goal attainment? A meta-analysis of the experimental evidence.",
+    "registeredYear": 2016,
+    "registeredContainer": "Psychological Bulletin",
+    "similarity": 1
+  },
   "harrison-2007-progress-bar": {
     "status": "doi-verified",
     "checkedAt": "2026-11-12",
@@ -1267,6 +1363,14 @@
     "registeredContainer": "Proceedings of the SIGCHI Conference on Human Factors in Computing Systems",
     "similarity": 1
   },
+  "hull-1932": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-23",
+    "registeredTitle": "The goal-gradient hypothesis and maze learning.",
+    "registeredYear": 1932,
+    "registeredContainer": "Psychological Review",
+    "similarity": 1
+  },
   "hunt-1995": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",
@@ -1430,6 +1534,14 @@
     "registeredContainer": "Psychological Science",
     "similarity": 1
   },
+  "kahneman-tversky-1979": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-23",
+    "registeredTitle": "Prospect Theory: An Analysis of Decision under Risk",
+    "registeredYear": 1979,
+    "registeredContainer": "Econometrica",
+    "similarity": 1
+  },
   "kahneman-wakker-sarin-1997": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",
@@ -1488,6 +1600,14 @@
     "registeredContainer": "Design and Culture",
     "similarity": 1
   },
+  "kivetz-urminsky-zheng-2006": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-23",
+    "registeredTitle": "The Goal-Gradient Hypothesis Resurrected: Purchase Acceleration, Illusionary Goal Progress, and Customer Retention",
+    "registeredYear": 2006,
+    "registeredContainer": "Journal of Marketing Research",
+    "similarity": 1
+  },
   "kohavi-et-al-2009": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",
@@ -1501,6 +1621,14 @@
     "checkedAt": "2026-11-03",
     "registeredTitle": "Trustworthy Online Controlled Experiments: A Practical Guide to A/B Testing",
     "registeredYear": 2020,
+    "similarity": 1
+  },
+  "koo-fishbach-2012": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-23",
+    "registeredTitle": "The Small-Area Hypothesis: Effects of Progress Monitoring on Goal Adherence",
+    "registeredYear": 2012,
+    "registeredContainer": "Journal of Consumer Research",
     "similarity": 1
   },
   "krosnick-alwin-1987": {
@@ -1682,6 +1810,14 @@
     "registeredContainer": "Proceedings of the SIGCHI conference on Human factors in computing systems  - CHI '92",
     "similarity": 1
   },
+  "macleod-2020": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-23",
+    "registeredTitle": "Zeigarnik and von Restorff: The memory effects and the stories behind them",
+    "registeredYear": 2020,
+    "registeredContainer": "Memory &amp; Cognition",
+    "similarity": 1
+  },
   "madrian-shea-2001": {
     "status": "doi-verified",
     "checkedAt": "2026-11-20",
@@ -1715,6 +1851,22 @@
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
     "httpStatus": 200
+  },
+  "masicampo-baumeister-2011-executive": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-23",
+    "registeredTitle": "Unfulfilled goals interfere with tasks that require executive functions",
+    "registeredYear": 2011,
+    "registeredContainer": "Journal of Experimental Social Psychology",
+    "similarity": 1
+  },
+  "masicampo-baumeister-2011-plans": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-23",
+    "registeredTitle": "Consider it done! Plan making can eliminate the cognitive effects of unfulfilled goals.",
+    "registeredYear": 2011,
+    "registeredContainer": "Journal of Personality and Social Psychology",
+    "similarity": 1
   },
   "material-3": {
     "status": "url-reachable",
@@ -1854,6 +2006,14 @@
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
     "httpStatus": 200
+  },
+  "muchnik-aral-taylor-2013": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-23",
+    "registeredTitle": "Social Influence Bias: A Randomized Experiment",
+    "registeredYear": 2013,
+    "registeredContainer": "Science",
+    "similarity": 1
   },
   "mui-overview": {
     "status": "url-reachable",
@@ -2157,6 +2317,14 @@
     "checkedAt": "2026-11-03",
     "httpStatus": 200
   },
+  "nolan-et-al-2008": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-23",
+    "registeredTitle": "Normative Social Influence is Underdetected",
+    "registeredYear": 2008,
+    "registeredContainer": "Personality and Social Psychology Bulletin",
+    "similarity": 1
+  },
   "norman-1981": {
     "status": "doi-verified",
     "checkedAt": "2026-11-11",
@@ -2214,6 +2382,14 @@
     "checkedAt": "2026-11-03",
     "httpStatus": 200
   },
+  "nunes-dreze-2006": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-23",
+    "registeredTitle": "The Endowed Progress Effect: How Artificial Advancement Increases Effort",
+    "registeredYear": 2006,
+    "registeredContainer": "Journal of Consumer Research",
+    "similarity": 1
+  },
   "obrien-2009-tree-testing": {
     "status": "url-reachable",
     "checkedAt": "2026-11-16",
@@ -2243,6 +2419,14 @@
     "status": "url-reachable",
     "checkedAt": "2026-11-11",
     "httpStatus": 200
+  },
+  "ovsiankina-1928": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-23",
+    "registeredTitle": "Untersuchungen zur Handlungs- und Affektpsychologie: VI. Die Wiederaufnahme unterbrochener Handlungen",
+    "registeredYear": 1928,
+    "registeredContainer": "Psychologische Forschung",
+    "similarity": 1
   },
   "owasp-authentication-cheat-sheet": {
     "status": "url-reachable",
@@ -2501,6 +2685,14 @@
     "registeredContainer": "Proceedings of the 18th International Conference on Evaluation and Assessment in Software Engineering",
     "similarity": 1
   },
+  "salganik-dodds-watts-2006": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-23",
+    "registeredTitle": "Experimental Study of Inequality and Unpredictability in an Artificial Cultural Market",
+    "registeredYear": 2006,
+    "registeredContainer": "Science",
+    "similarity": 1
+  },
   "sauro-lewis-2005": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",
@@ -2525,6 +2717,14 @@
     "registeredContainer": "Proceedings of the SIGCHI Conference on Human Factors in Computing Systems",
     "similarity": 1
   },
+  "saxena-banerji-2026": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-23",
+    "registeredTitle": "Online Ratings as Constructed Signals: A Systematic Review of Generation, Interpretation, and Consumer Outcomes",
+    "registeredYear": 2026,
+    "registeredContainer": "International Journal of Consumer Studies",
+    "similarity": 1
+  },
   "scheibehenne-greifeneder-todd-2010": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",
@@ -2540,6 +2740,11 @@
     "registeredYear": 2014,
     "registeredContainer": "Proceedings of the SIGCHI Conference on Human Factors in Computing Systems",
     "similarity": 1
+  },
+  "seifert-patalano-1991": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-23",
+    "httpStatus": 200
   },
   "semantic-scholar": {
     "status": "url-reachable",
@@ -3087,6 +3292,14 @@
     "registeredContainer": "Scientific American",
     "similarity": 1
   },
+  "wendsche-weigelt-syrek-2026": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-23",
+    "registeredTitle": "Unfinished work tasks and work-related thoughts during off-job time: meta-analysis of the Zeigarnik effect in a work-recovery context",
+    "registeredYear": 2026,
+    "registeredContainer": "Anxiety, Stress, &amp; Coping",
+    "similarity": 1
+  },
   "wertheimer-1923": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",
@@ -3163,6 +3376,14 @@
     "registeredTitle": "The machine inside the machine: users' models of pocket calculators",
     "registeredYear": 1981,
     "registeredContainer": "International Journal of Man-Machine Studies",
+    "similarity": 1
+  },
+  "zeigarnik-1927": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-23",
+    "registeredTitle": "Untersuchungen zur Handlungs- und Affektpsychologie",
+    "registeredYear": 1927,
+    "registeredContainer": "Psychologische Forschung",
     "similarity": 1
   }
 }

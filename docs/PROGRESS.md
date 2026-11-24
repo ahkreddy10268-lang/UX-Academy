@@ -1,6 +1,6 @@
 # Progress register
 
-_Last updated: 2026-11-17 (session 50 — Batch 3 review: PASS WITH MINOR FOLLOW-UPS; Cycle 1 balance review: IMPROVEMENT REQUIRED; awaiting owner decision)_
+_Last updated: 2026-11-23 (session 66 — domain-by-domain completion direction recorded; Domain 1 confirmed complete; Domain 2 inventory audited)_
 
 ## State
 
@@ -331,3 +331,82 @@ After that: `ui-design`, `interaction-design-discipline`, `accessibility-concept
 
 ## Next task (precise)
 Owner: approve the push of the status fix, set Vercel's production branch to `main` (DEP-1), and approve merging PR #3. Then verify production serves the merge commit. Content: `loss-aversion` and `findability` await approval.
+
+## Session 66 — owner-directed sequential domain completion and Domain 2 audit (2026-11-23)
+
+- Owner instruction: complete all 20 domains one after another in canonical taxonomy order; finish each domain before moving to the next. Recorded as D-133. D-129 quality and source rules remain unchanged; sequencing is overridden for this owner-directed programme.
+- Standing authorization: routine research, implementation, QA, records and push of completed/reviewed batches to a development branch without another approval prompt. No automatic merge to `main` or production deployment.
+- GitHub reconciliation: PR #3 merged; `main` is `9a51aa6`; Vercel check for that commit is success. Live application and deployed production commit not independently verified (DEP-2).
+- Domain 1 (UX & UI Fundamentals): already complete — 16 published, 5 addressed within, 0 planned; 21/21 accounted for.
+- Domain 2 (UX Laws & Cognitive Effects): 14 published, 10 addressed within, 22 planned; 46 topics total. Domain inventory checked against `content/taxonomy.ts`, `content/knowledge/laws-effects/` and generated `docs/CONTENT_COVERAGE.md`.
+- First approved batch: `loss-aversion`, `framing-effect` (the foundational items remaining after `default-effect`). Candidate literature researched; DOIs and URLs still require the repository's machine verification before source records or entries are created. Plan: `docs/DOMAIN_COMPLETION_PLAN.md`.
+- Documentation-only plan and state changes are being pushed to `claude/domain-completion-20261123`; no content or application files changed in this session, so the code test matrix is not run for this planning commit.
+
+
+## Session 67 — Domain 2 Batch 1 research synthesis (2026-11-23)
+
+- Owner-approved Batch 1: `loss-aversion` and `framing-effect`.
+- Research synthesis recorded in `docs/DOMAIN_2_BATCH_1_RESEARCH.md`; no source records or knowledge entries changed.
+- Loss aversion: read relevant passages of the 1979 prospect-theory full text; confirmed reference-point value function and loss-side steepness; read abstracts / publisher records for 1991 and 1992 theory, Brown et al. 2024, Walasek et al. 2024, Gal & Rucker 2018, Ert & Erev 2013. Research synthesis preserves disagreement and heterogeneity; avoids the “twice as much” universal slogan.
+- Framing: reviewed Tversky & Kahneman 1981 full-text extract and classic Asian disease example; reviewed Kühberger 1998 meta-analysis, Levin et al. 1998 typology, Kühberger 2023 review, and Composto et al. 2025 query-theory meta-analysis. Research synthesis distinguishes risky-choice, attribute and goal framing and keeps the sample design details accurate.
+- One DOI (`10.2307/1914185`) was checked directly against Crossref; exact title, year, container matched. Other candidate metadata came from publisher / PubMed / institutional records but remains pending the repository script.
+- **Gate not passed yet:** `npm run sources:verify -- <ids>` has not run, so no source records have been committed and no entries have been drafted. The current environment has GitHub file access but no usable local checkout/command runner; git clone failed because shell DNS could not resolve github.com. Do not mark source verification, check, build or browser suites PASS.
+- Docs-only research handoff pushed to `claude/domain-completion-20261123`. Application tests/build not required for this documentation-only change; recorded NOT RUN for content gate and production runtime remains DEP-2.
+
+
+## Session 68 — Domain 2 Batch 1 research deepening (2026-11-23)
+
+- Read the full Tversky & Kahneman (1991) reference-dependent model paper. It differentiates reference dependence, loss aversion and diminishing sensitivity; it also states status quo bias can arise from thinking cost, transaction cost and psychological commitment without loss aversion.
+- Read the full Walasek, Mullett & Stewart (2024) risky-context meta-analysis. It covers 17 published studies / 19 datasets; CI includes loss neutrality in 12/19 datasets; I² = 91.60%; pooled λ = 1.31 [1.10, 1.53]. Major caveats: limited available individual-level datasets, variation in incentive structures and elicitation, parameter/model specification dependencies.
+- Corrected the framing 2025 query-theory summary to distinguish the 27 papers reviewed from the 33 effect sizes / 29 studies / 25 papers in the query-order analysis. Added Kühberger 1998 moderator details from PubMed abstract.
+- Brown et al. 2024: AEA abstract/publisher record read; Caltech repository lists the full published PDF but PDF retrieval failed, so full text remains unread.
+- No source registry or knowledge-entry files changed: automated repository verification is still required before drafting. Work remains documentation-only.
+
+
+## Session 69 — Domain 2 Batch 1 lesson drafts and illustrations pushed (2026-11-23)
+
+- Owner-approved Batch 1: `loss-aversion` and `framing-effect`.
+- Added two complete three-level entry drafts with definitions, 2–4 observable objectives, conceptual distinctions, origin, application, limitations, misconceptions, typed relations, 3 exercises, 4 quizzes and 4 flashcards each.
+- Registered 11 source records in `content/sources/cognitive-effects.ts`; recorded the direct Crossref match for `kahneman-tversky-1979` in `verification.json`. Other ten records remain bibliographic pending the repository verifier.
+- Added two original teaching plates to `decision-sheets.tsx`, the illustration registry via its existing fragment import, and `visual-register.ts`; updated `content/knowledge/_index.ts` with both entries.
+- Entry status intentionally set to `drafted`, not published, because the mandatory repository source verifier, content integrity checks, typecheck, tests, docs generation, plate render, entry browser review and production build have not run in this session.
+- Pushed to `claude/domain-completion-20261123`; source work and lesson modules are on the branch. No merge to `main` or production deployment.
+- Vercel check for the most recent branch commit was still pending when last queried; check target is available on the GitHub commit status.
+
+
+## Session 70 — Domain 2 Batch 2 Anchoring Effect draft (2026-11-23)
+
+- Owner-approved Batch 2 topic: anchoring-effect, the first remaining core-professional topic in Domain 2.
+- Research review recorded in docs/DOMAIN_2_BATCH_2_RESEARCH.md; includes Tversky & Kahneman (1974), Epley & Gilovich (2006), selective accessibility, scale distortion, valuation research, and the 2026 Schley & Weingarten meta-analysis (2,601 effect sizes; Hedges' g = 0.825 [0.765, 0.884]; I² = 93.73%). The 2026 article was reviewed at publisher-abstract level, not full text.
+- Added 9 source records to content/sources/cognitive-effects.ts; all marked bibliographic, not manually DOI-verified.
+- Added content/knowledge/laws-effects/anchoring-effect.ts with 4 learning objectives, 3 exercises, 4 quizzes, 4 flashcards, 5 explained relations and 9 references; status is drafted pending the full gate.
+- Added original plate and register record; generated knowledge index includes the entry. Taxonomy was already frozen with this slug; not modified.
+- Manual GitHub-file integrity inspection: all cited Anchoring Effect source IDs exist in its reference list and source registry; its index/taxonomy/plate/register links exist. Manual inspection caught and fixed a missing source reference in Framing Effect (1992 source) and added reciprocal links between Anchoring, Loss Aversion and Framing Effect.
+- Repository commands remain NOT RUN: no Vercel team-authorised command session in this connection. Latest observed Vercel check for commit 8c108b5 was pending; do not treat as a pass. Live production remains unverified.
+- Pushed code and documentation updates to claude/domain-completion-20261123; no merge to main or production deployment.
+
+
+## Session 71 — Domain 2 Batch 3: Social Proof published (2026-11-23)
+
+- Topic: `social-proof` (cognitive-bias, `laws-effects/decision-biases`), the first remaining core-professional topic. File: `content/knowledge/laws-effects/social-proof.ts`; status `published`.
+- Teaches the distinctions between social proof as a judgement shortcut, informational vs normative influence, descriptive vs injunctive norms, conformity, digital popularity signals and testimonials; norm conflict and backfire; provincial norms; underdetected influence; cumulative advantage and rating herding; ratings as constructed signals; culture; ethics of social statistics.
+- 9 new sources, 9/9 DOI-verified; three read in full, five abstracts, one bibliographic only. Plate, register record, quick takeaway, back-link from `default-effect`.
+- Repository command runner available this session: all gates run and passed (see ledger). Fixed three pre-existing gate blockers in the Batch 1–2 drafts (register technique value; two analogy openings) without changing their status.
+- One targeted review, one correction pass (one moderate wording fix in the ethics paragraph). Minor follow-ups in OPEN_ISSUES (SP-1).
+- **Next:** `goal-gradient-effect`; separately, verify and QA the three Domain 2 drafts.
+
+
+## Session 72 — Domain 2 Batch 4: Goal-Gradient Effect published (2026-11-23)
+
+- Topic: `goal-gradient-effect` (cognitive-bias, `laws-effects/decision-biases`). File: `content/knowledge/laws-effects/goal-gradient-effect.ts`; status `published`.
+- 10 new sources, 10/10 DOI-verified (one read in full, one in relevant sections, seven abstracts, one bibliographic only). Plate, register record, quick takeaway, back-link from `loading-states`.
+- All gates passed (ledger). One targeted review and one correction pass: four wording corrections to match sources, and two plate fixes (overflowing card title, marker over a curve) plus an x-axis label.
+- **Next:** `zeigarnik-effect`.
+
+
+## Session 73 — Domain 2 Batch 5: Zeigarnik Effect published (2026-11-23)
+
+- Topic: `zeigarnik-effect`, a `concept` in `laws-effects/memory-attention-effects` per the frozen taxonomy (the brief assumed `psychology`; corrected in the plan). File: `content/knowledge/laws-effects/zeigarnik-effect.ts`; status `published`; evidence `contested`.
+- Teaches recall (Zeigarnik, contested) vs resumption (Ovsiankina, better supported) vs unfulfilled-goal activation, planning and rumination, and treats open-loop UX patterns as design conventions, not evidence.
+- 8 new sources (7 DOI-verified, 1 URL-reachable). Plate, register, takeaway, two back-links.
+- All gates passed (ledger). One review and one correction pass. **Next:** `postels-law`.

@@ -2443,6 +2443,69 @@ export const vonRestorffPlate: IllustrationEntry = {
 };
 
 /* ------------------------------------------------------------------ */
+/* Zeigarnik effect: recall versus resumption                           */
+/* ------------------------------------------------------------------ */
+export const zeigarnikPlate: IllustrationEntry = {
+  slug: "zeigarnik-effect",
+  title: "Zeigarnik effect plate",
+  canvas: "sheet",
+  description:
+    "Four panels separate ideas that are often merged. Top left, 'Recall': the ratio of interrupted to completed tasks recalled, 1.9 in Zeigarnik's original report and 0.99 in a 2025 meta-analysis, with the conclusion 'No general advantage'. Top right, 'Resumption': a chip 'Interrupted' leads by an arrow to a chip 'Resumed later', captioned 'A common tendency'. Bottom left, 'Planning': a chip 'Goal unfinished', then 'Thoughts (lab studies)' with two rows: 'No plan', intrude; 'Specific plan', settle. Bottom right, 'Responsible UX': a saved draft card reading 'Draft saved · 3 of 5' and 'Next: add photos', with a 'Continue' button and a 'Not now' button, captioned 'Status in text, easy exit'.",
+  key: [
+    { n: "1", label: "Recall: contested", detail: "Zeigarnik reported about twice as many interrupted as completed tasks recalled; a 2025 meta-analysis of 38 publications found a ratio of 0.99, no general advantage (Ghibellini and Meier, 2025)" },
+    { n: "2", label: "Resumption: better supported", detail: "people tended to resume interrupted tasks in laboratory studies (the Ovsiankina effect); the rate varies with the method and is not a product statistic" },
+    { n: "3", label: "Planning", detail: "in laboratory studies a specific plan removed intrusive thoughts about an unfinished goal without finishing it (Masicampo and Baumeister, 2011)" },
+    { n: "4", label: "Responsible UX", detail: "save the work, show the next step in text, let people continue or leave; do not create incompleteness to drive engagement" },
+  ],
+  Art: ({ detail }) => (
+    <g>
+      <Card x={8} y={8} w={188} h={138} title="Recall">
+        <UiText x={20} y={52} tone="ink2">interrupted ÷ completed</UiText>
+        <UiText x={20} y={78}>1927 report</UiText>
+        <UiText x={184} y={78} anchor="end" weight={700}>1.9</UiText>
+        <UiText x={20} y={102}>2025 meta-analysis</UiText>
+        <UiText x={184} y={102} anchor="end" weight={700}>0.99</UiText>
+        <UiText x={20} y={132} tone="ink2">No general advantage</UiText>
+      </Card>
+
+      <Card x={204} y={8} w={188} h={138} title="Resumption">
+        <UiChip x={216} y={44} w={112} label="Interrupted" />
+        <line x1={272} y1={72} x2={272} y2={88} stroke={S.ink2} strokeWidth="1.1" {...hair} />
+        <path d="M267 83 L272 89 L277 83" fill="none" stroke={S.ink2} strokeWidth="1.1" {...hair} />
+        <UiChip x={216} y={92} w={128} label="Resumed later" selected />
+        <UiText x={216} y={136} tone="ink2">A common tendency</UiText>
+      </Card>
+
+      <Card x={8} y={154} w={188} h={138} title="Planning">
+        <UiChip x={20} y={188} w={130} label="Goal unfinished" />
+        <UiText x={20} y={234} tone="ink2">Thoughts (lab studies)</UiText>
+        <UiText x={20} y={258} weight={700}>No plan</UiText>
+        <UiText x={184} y={258} anchor="end">intrude</UiText>
+        <UiText x={20} y={280} weight={700}>Specific plan</UiText>
+        <UiText x={184} y={280} anchor="end">settle</UiText>
+      </Card>
+
+      <Card x={204} y={154} w={188} h={138} title="Responsible UX">
+        <UiText x={216} y={198}>Draft saved · 3 of 5</UiText>
+        <UiText x={216} y={218} tone="ink2">Next: add photos</UiText>
+        <UiChip x={216} y={230} w={84} label="Continue" selected />
+        <UiChip x={306} y={230} w={76} label="Not now" />
+        <UiText x={216} y={282} tone="ink2">Status in text, easy exit</UiText>
+      </Card>
+
+      {detail && (
+        <>
+          <Marker x={184} y={20} n={1} />
+          <Marker x={380} y={20} n={2} />
+          <Marker x={184} y={166} n={3} />
+          <Marker x={380} y={166} n={4} />
+        </>
+      )}
+    </g>
+  ),
+};
+
+/* ------------------------------------------------------------------ */
 /* Choice overload: not a general effect                                */
 /* ------------------------------------------------------------------ */
 export const choiceOverloadPlate: IllustrationEntry = {
