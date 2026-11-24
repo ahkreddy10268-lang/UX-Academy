@@ -88,9 +88,14 @@ export default defineEntry({
     },
     advanced: {
       explanation: [
-        "**Perceptual colour spaces.** sRGB hex steps are not perceptually even; OKLCH (lightness, chroma, hue) makes ramps with consistent lightness steps across hues easier to build. The DTCG colour module lists 14 colour spaces including `srgb`, `oklch` and `display-p3`, with an optional hex fallback {{src:dtcg-color-2025}}. Wide-gamut colours need sRGB fallbacks and contrast checks in the space that will actually be displayed.",
-        "**Contrast models.** WCAG 2 contrast is the conformance measure today; it rates some mid-tone and dark-mode pairs inconsistently with perception, which motivated proposed perceptual alternatives such as APCA for a future WCAG 3 (see [[colour-contrast-ratio]]). A system can document both but must conform to the current one.",
+        "**Perceptual colour spaces.** sRGB hex steps are not perceptually even; OKLCH (lightness, chroma, hue) makes it easier to tune a ramp by holding hue steady while changing lightness or chroma. It is a better control surface, not a promise of globally uniform perceptual steps. The DTCG colour module lists 14 colour spaces including `srgb`, `oklch` and `display-p3`, with an optional hex fallback {{src:dtcg-color-2025}}. Wide-gamut colours need sRGB fallbacks and contrast checks after conversion to the target display gamut {{src:w3c-css-color-4}}.",
+        "**Contrast models.** WCAG 2.2 is the current conformance basis. Perceptual models such as APCA may inform design evaluation, but they are not a replacement for WCAG 2.2 success criteria; W3C says WCAG 3 remains in development {{src:w3c-wcag-faq}}.",
+
         "**Multi-brand.** When brands share components, brand colour usually changes only a few roles (primary action, accent); status, text and surface roles stay shared, so accessibility checks carry over. A brand whose primary hue cannot reach 4.5:1 with white text needs a darker action step or dark text on its fill.",
+        "**Palette-generation workflow.** Start from the brand seed and usage constraints; pick hue families; generate candidate lightness/chroma steps; check each colour against target gamut; tune around clipping; map roles and pairs; calculate WCAG contrast for every theme; then review at component size, in grayscale and under protan, deutan and tritan simulations. Re-run checks when a seed, ramp, theme or component pairing changes. Simulation is a review aid, not evidence that every person will perceive a palette identically {{src:nei-color-vision-deficiency}} {{src:mdn-relative-colors}}.",
+        "**Data colour is a second system.** Categorical series should be distinguishable without implying order; sequential scales should communicate low-to-high magnitude; diverging scales should centre on a meaningful neutral value. Carbon's chart guidance separates these palette types and is explicitly a work in progress, not a universal standard {{src:carbon-data-viz-colors}}. Direct labels, point shapes, dash patterns and table equivalents help preserve meaning when hue differences disappear.",
+        "**Brand constraints and semantic freedom.** Record which values are identity-critical (logo, brand signature, approved campaign colours) and which are functional roles. A brand may constrain the seed hue or selected primary steps, but text, surfaces, focus/state indicators and danger/success roles must remain legible and consistent. If a fixed brand fill cannot support the intended foreground, change the foreground or role mapping rather than overriding the contrast rule. The text-in-logo exception in WCAG 1.4.3 is not a general brand exemption {{src:w3c-wcag-22}}.",
+        "**Modern CSS colour.** OKLCH, color-mix() and relative-colour syntax can generate variants from a seed in the browser. They do not automatically enforce WCAG contrast, semantic roles or cross-browser fallback. Preserve an sRGB declaration first, feature-test enhancements, and test output on the real target gamut. CSS Color 4's current publication is a Candidate Recommendation Draft (23 November 2026); the syntax and gamut model are useful, but the draft is work in progress, not a finished W3C Recommendation {{src:w3c-css-color-4}} {{src:mdn-relative-colors}} {{src:mdn-color-mix}}.",
         "**Operations.** Useful measures: raw colour values in code, pairs used in production that are not documented, contrast regressions in visual tests, and the share of status messages that rely on colour alone.",
       ],
       evidence: [
@@ -98,21 +103,26 @@ export default defineEntry({
       ],
       debates: [
         "**Generated or hand-tuned ramps?** Generated ramps are consistent and extensible; hand-tuned ramps look better for specific hues. Many teams generate then adjust.",
-        "**How many roles?** Material 3's 26 roles {{src:m3-color-roles}} cover most needs but are a lot to learn; small teams may start with fewer and grow.",
+        "**How many roles?** Material 3's documented role set {{src:m3-color-roles}} is comprehensive but takes effort to learn; a small product can begin with a smaller coherent set and expand only when a real use requires it.",
+        "**One palette or two?** Shared foundations improve consistency, but charts need categorical, sequential and diverging relationships that interface status colours do not provide. Share primitives and validation rules; keep data-series semantics separate {{src:carbon-data-viz-colors}}.",
+        "**Fixed brand hue or adjusted hue?** Holding a brand hue can help identity, but a fixed hue/chroma through every lightness step may leave the target gamut or fail on certain backgrounds. Document which brand values are locked and where semantic roles may select a safer step.",
+
         "**WCAG 2 or perceptual contrast?** WCAG 2 is the requirement; perceptual models may predict legibility better. Documenting both is common; claiming conformance by the newer model alone is not valid.",
       ],
       alternativeModels: [
         "**Flat palette** — a list of named colours with usage notes; quick, but meaning and contrast are left to each screen.",
         "**Algorithmic theming** — roles generated from one seed colour (as in dynamic colour); consistent, but brand control and edge cases need review.",
+        "**Curated chart palettes** — separately defined categorical, sequential and diverging sets for data; they protect the data relationship but still need explicit theme, contrast and redundant-encoding checks.",
+
       ],
     },
   },
 
   application: {
     summary: ["Colour systems apply to every surface, text and control; they are the layer users notice first when themes or brands change."],
-    web: ["Publish roles as CSS custom properties; switch themes by attribute or `prefers-color-scheme`; keep a hex fallback for wide-gamut values."],
+    web: ["Publish roles as CSS custom properties; switch themes by attribute or `prefers-color-scheme`; keep an sRGB fallback before progressive OKLCH, relative-colour and Display P3 enhancements; test forced-colors mode."],
     mobile: ["Map roles to platform dynamic colours; test light, dark and increased-contrast settings."],
-    enterprise: ["Data visualisation needs its own categorical and sequential ramps, separate from status colours."],
+    enterprise: ["Data visualisation needs distinct categorical, sequential and diverging palettes, separate from status colours; add labels, shapes or line styles and test the smallest chart marks."],
     services: ["Printed materials need CMYK equivalents of brand roles; status meaning must survive greyscale print."],
     steps: [
       "Audit colours in use and the meanings they carry.",
@@ -169,11 +179,17 @@ export default defineEntry({
       { text: "Separate ramps (raw colours) from roles (purpose) and document which roles pair.", why: "Roles are designed to be used in pairs; improper pairings break contrast {{src:m3-color-roles}}.", kind: "system" },
       { text: "Check text pairs at 4.5:1 and non-text pairs (borders, focus, icons) at 3:1 in every theme.", why: "WCAG 2.2 SC 1.4.3 and 1.4.11 (AA) {{src:w3c-wcag-22}}.", kind: "standard" },
       { text: "Reserve status colours for status and keep decorative accents meaningless.", why: "Atlassian keeps accent colours out of places where colour has meaning {{src:atlassian-color}}.", kind: "industry" },
+      { text: "Use OKLCH as a palette-tuning space, but test every generated role pair after gamut mapping and in each theme.", why: "OKLCH gives direct lightness/chroma/hue controls; CSS Color 4 describes conversion and gamut mapping, neither of which guarantees a WCAG pair will pass {{src:w3c-css-color-4}}.", kind: "system" },
+      { text: "Choose chart palettes by data type and provide a non-colour cue for important series.", why: "Carbon distinguishes categorical, sequential and diverging palettes; W3C's G111 technique provides pattern as one sufficient example {{src:carbon-data-viz-colors}} {{src:w3c-g111-color-pattern}}.", kind: "standard" },
+      { text: "Keep an sRGB fallback and feature-test modern CSS colour functions.", why: "color-mix() and relative-colour syntax can generate variants, but display gamut and browser support still need progressive enhancement {{src:mdn-color-mix}} {{src:mdn-relative-colors}}.", kind: "platform" },
     ],
     donts: [
       { text: "Don't convey status by colour alone.", why: "People who cannot tell the colours apart miss the meaning [WCAG 2.2 SC 1.4.1, A] {{src:w3c-wcag-22}}.", kind: "standard" },
       { text: "Don't create a dark theme by inverting the light palette.", why: "The same steps on a dark surface often fail contrast; remap roles instead {{src:carbon-themes}}.", kind: "system" },
       { text: "Don't use raw hex values in components.", why: "Raw values bypass roles, so themes and audits miss them.", kind: "system" },
+      { text: "Don't assume a perceptually generated ramp is contrast-safe or colour-vision-safe.", why: "Perceptual spacing is not a WCAG contrast calculation or a universal colour-difference guarantee; check each role pair and chart encoding {{src:w3c-wcag-22}} {{src:nei-color-vision-deficiency}}.", kind: "standard" },
+      { text: "Don't reuse the same red/green status palette as a categorical chart palette.", why: "State and series meanings are different; hue alone is not enough to identify either one {{src:carbon-data-viz-colors}} {{src:w3c-understanding-use-of-color}}.", kind: "system" },
+      { text: "Don't ship wide-gamut-only colours or override forced-colors user choices.", why: "A display may map an out-of-gamut colour, and users may rely on a constrained system palette for legibility {{src:w3c-css-color-4}}.", kind: "platform" },
     ],
     examples: [
       {
