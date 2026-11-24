@@ -21,6 +21,10 @@ export default defineEntry({
     "Use graded ramps to predict contrast and choose steps for each theme.",
     "Keep meaning independent of colour alone and status colours consistent.",
     "Specify colour tokens that survive theming and new brands.",
+    "Generate and tune tonal ramps in a perceptual colour space, then validate rendered colours and display-gamut fallbacks.",
+    "Choose categorical, sequential and diverging palettes for the data relationship, and test redundant encodings for colour-vision differences.",
+    "Implement modern CSS colour features progressively, preserving an sRGB fallback and respecting user high-contrast settings.",
+    "Negotiate brand constraints without allowing brand colours to replace semantic status roles or accessibility requirements.",
   ],
   prerequisites: ["colour-contrast-ratio", "primitive-tokens", "semantic-tokens"],
 
@@ -48,13 +52,19 @@ export default defineEntry({
     },
     intermediate: {
       explanation: [
-        "**Ramps make contrast predictable.** USWDS grades colours from 0 to 100 so that a grade difference of 50 or more gives WCAG AA contrast and 70 or more gives AAA — its 'magic numbers' {{src:uswds-color}}. Even without that guarantee, ordered steps let designers reason: in this course's library palette, blue 600 on white is 6.47:1, but the same blue on near-black is only 2.85:1, so the dark theme needs blue 400 (5.94:1).",
+        "**Ramps make contrast predictable.** USWDS grades colours from 0 to 100 using bounded relative-luminance ranges. Its published gaps of 40, 50 and 70 correspond to large-text AA, normal-text AA / large-text AAA, and AAA respectively. Do not apply those differences to an arbitrary ramp or treat a step count as a contrast calculator {{src:uswds-color}}. Even without that guarantee, ordered steps let designers reason: in this course's library palette, blue 600 on white is 6.47:1, but the same blue on near-black is only 2.85:1, so the dark theme needs blue 400 (5.94:1).",
         "**Roles carry meaning.** Material Design 3 defines 26 standard roles in groups such as primary, secondary, error and surface, with 'on' roles for content placed on a fill and 'container' roles for fills; roles are meant to be used in their intended pairs, and improper pairings can break contrast {{src:m3-color-roles}}. Atlassian names tokens by property, role, emphasis and state (`color.background.danger.bold.hovered`) and keeps decorative accent colours separate because they carry no meaning {{src:atlassian-color}}.",
         "**Themes remap roles.** Carbon's four themes (White, Gray 10, Gray 90, Gray 100) keep role names such as `$text-primary` and change only their values {{src:carbon-themes}}. This is [[theme-architecture]] applied to colour.",
-        "**Meaning never by colour alone.** A red border on an invalid field must be joined by text or an icon, because colour alone fails people who cannot distinguish it [WCAG 2.2 SC 1.4.1 Use of Color, A] {{src:w3c-wcag-22}}.",
+        "**Meaning never by colour alone.** A red border on an invalid field must be joined by text, an icon or another visible cue, because colour alone fails people who cannot distinguish it [WCAG 2.2 SC 1.4.1 Use of Color, A] {{src:w3c-wcag-22}}. Charts need the same care: label series and distinguish them with markers or line styles, not hue alone {{src:w3c-g111-color-pattern}}.",
+        "**Palette type follows the data.** Use a **categorical (qualitative)** palette for unrelated named groups, a **sequential** palette for a value that increases or decreases, and a **diverging** palette when values depart from a meaningful midpoint such as zero or target. A diverging palette is not simply two brand hues placed together. Carbon documents these as separate chart-palette types and labels its guidance work in progress {{src:carbon-data-viz-colors}}.",
+        "**Colour vision is diverse.** Red–green deficiencies are the most common; blue–yellow deficiencies and complete colour-vision deficiency also occur {{src:nei-color-vision-deficiency}}. Do not assume one pair of hues will remain distinct for everyone. Vary lightness as well as hue, keep labels and legends explicit, and add shapes, line patterns or direct labels when series carry important meaning [SC 1.4.1, A] {{src:w3c-understanding-use-of-color}}.",
+        "**A perceptual space helps; it does not certify a palette.** OKLCH exposes lightness, chroma and hue separately and is often easier to tune than HSL for a ramp. Equal numeric changes are not a guarantee of equal perceived difference across every hue or display. Check adjacent steps, contrast pairs, gamut and colour-vision simulations with real UI content {{src:w3c-css-color-4}}.",
+        "**Brand is a constraint, not the semantic model.** Keep a brand seed and approved identity colours where necessary, but let semantic roles map to suitable ramp steps in each theme. Do not make a brand red also mean danger simply because it is available; do not force white text onto a brand fill that fails. The logo exception in WCAG is narrow and does not exempt ordinary interface text or controls {{src:w3c-wcag-22}}.",
       ],
       howItWorks: [
         "The ramp is the primitive layer, roles are the semantic layer, and pairs are the contract between them: checking every documented pair against WCAG thresholds turns accessibility into a property of the system rather than of each screen.",
+        "Generate candidates from the brand seed or hue family; pick lightness and chroma steps; check gamut; map semantic roles; then test every foreground/background pair in light, dark and high-contrast themes. A generator proposes colours — the pair matrix and visual review decide whether they are usable.",
+        "Keep interface roles and chart roles related but distinct. A chart series palette should preserve category identity and ordered data, while the UI status palette reserves stable meanings such as success, warning and danger.",
         "Reserving status hues for status, and accent hues for decoration, keeps colour meaningful: once red means 'error', it cannot also mean 'brand'.",
       ],
       implementation: [
@@ -64,6 +74,11 @@ export default defineEntry({
         "Pair every status colour with text or an icon [SC 1.4.1, A].",
         "Express each theme as a full role mapping; respond to `prefers-color-scheme` {{src:mdn-prefers-color-scheme}} and keep a user override.",
         "Lint for raw colour values in components.",
+        "Validate normal text at 4.5:1 and large text at 3:1 [SC 1.4.3, AA]; validate visual information required to identify UI components/states and meaningful graphical objects at 3:1 against adjacent colours [SC 1.4.11, AA]. Contrast belongs to the rendered pair, not to a hue or token in isolation {{src:w3c-wcag-22}} {{src:w3c-understanding-non-text-contrast}}.",
+        "Use a categorical palette for unrelated groups, a sequential palette for ordered values and a diverging palette only when the midpoint has meaning. Do not use a rainbow gradient as a substitute for an ordered scale {{src:carbon-data-viz-colors}}.",
+        "Check red/green and blue/yellow confusions, grayscale, small marks and thin strokes. Add labels, markers, patterns or line styles so data remains understandable without hue {{src:nei-color-vision-deficiency}} {{src:w3c-g111-color-pattern}}.",
+        "Keep sRGB values as a fallback. Enhance with OKLCH, relative-colour syntax, color-mix() or Display P3 only inside feature/support checks; CSS Color 4 remains a Candidate Recommendation Draft dated 23 November 2026, not a completed Recommendation {{src:w3c-css-color-4}} {{src:mdn-relative-colors}} {{src:mdn-color-mix}}.",
+        "Test forced-colors/high-contrast modes and do not suppress user-selected system colours. Treat a brand-logo exception narrowly; adjacent UI, text and controls still need their applicable contrast and meaning cues {{src:w3c-css-color-4}} {{src:w3c-wcag-22}}.",
       ],
       scenarios: [
         "**Illustrative.** The library app's 'overdue' badge and its brand red were the same token. Separating `status.danger` from `brand.accent` lets the brand evolve without weakening the warning.",
