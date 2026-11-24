@@ -162,7 +162,7 @@ export default defineEntry({
   practice: {
   "dos": [
     {
-      "text": "Name tokens for their purpose or contract, not their current value (for example, color.action.primary, not blue-button).",
+      "text": "Name tokens for their purpose or contract (for example, color.action.primary), not their current value (blue-button).",
       "why": "A value can change while its role remains stable; purpose-based names make theme changes and maintenance intelligible.",
       "kind": "industry"
     },
@@ -185,7 +185,7 @@ export default defineEntry({
   "donts": [
     {
       "text": "Do not make every component depend directly on palette primitives by default.",
-      "why": "It couples component behaviour to a particular palette and makes semantic remapping harder; use a documented exception only when there is a clear reason.",
+      "why": "It couples component behaviour to a particular palette and makes semantic remapping harder; document exceptions where there is a clear reason.",
       "kind": "industry"
     },
     {
@@ -206,19 +206,24 @@ export default defineEntry({
   ],
   "examples": [
     {
-      "title": "A small DTCG source: primitive value and semantic alias",
+      "title": "DTCG source: a primitive value and semantic alias",
       "language": "json",
       "code": "{\n  \"color\": {\n    \"$type\": \"color\",\n    \"palette\": {\n      \"blue-700\": {\n        \"$value\": {\n          \"colorSpace\": \"srgb\",\n          \"components\": [0.122, 0.290, 0.620],\n          \"hex\": \"#1F4A9E\"\n        }\n      }\n    },\n    \"action\": {\n      \"primary\": {\n        \"$value\": \"{color.palette.blue-700}\",\n        \"$description\": \"Primary action surface\"\n      }\n    }\n  }\n}",
       "caption": "Illustrative DTCG 2025.10 fragment. The group-level $type is inherited by child tokens; the semantic token references the primitive. A real system must validate the value against every context and foreground pairing."
     },
     {
-      "title": "Generated web output: one semantic contract, multiple theme values",
+      "title": "Resolved web output: the same semantic contract in light and dark themes",
       "language": "css",
-      "code": ":root {\n  --color-action-primary: #1f4a9e;\n}\n\n[data-theme=\"dark\"] {\n  --color-action-primary: #315b9d;\n}\n\n.button--primary {\n  background: var(--color-action-primary);\n}",
-      "caption": "Illustrative resolved CSS output, not DTCG source syntax. The theme resolver/build configuration supplies each context value; the component consumes the semantic output rather than selecting a palette value. White foreground contrast is 8.30:1 for the light sample and 6.74:1 for the dark sample, computed with the WCAG contrast formula."
+      "code": "/* Light context */\n:root {\n  --color-action-primary: #1f4a9e;\n}\n\n/* Dark context */\n[data-theme=\"dark\"] {\n  --color-action-primary: #315b9d;\n}\n\n/* Shared component */\n.button--primary {\n  color: #fff;\n  background: var(--color-action-primary);\n}",
+      "caption": "Illustrative resolved CSS output, not DTCG source syntax. White foreground contrast is 8.30:1 for the light sample and 6.74:1 for the dark sample, computed with the WCAG contrast formula. The theme resolver/build configuration supplies each context value."
     },
     {
-      {"title":"A real implementation pattern: UX Academy's CSS roles and Tailwind mapping","language":"css","code":":root {\n  --paper: #f4f3ef;\n  --surface: #fdfdfb;\n  --ink: #15161b;\n  --accent: #255a8c;\n}\n\n:root[data-theme=\"dark\"] {\n  --paper: #0f1013;\n  --surface: #16171c;\n  --ink: #ecebe5;\n  --accent: #8fb8e0;\n}\n\n@theme inline {\n  --color-paper: var(--paper);\n  --color-surface: var(--surface);\n  --color-ink: var(--ink);\n  --color-accent: var(--accent);\n}","caption":"Selected excerpt from this repository's app/globals.css. It uses CSS custom properties as the theme-level source for these roles, overrides values for dark theme, then maps them into Tailwind utilities with @theme inline. This is a real CSS/Tailwind implementation pattern; it is not a DTCG JSON source file."},
+      "title": "A real implementation pattern: UX Academy's CSS roles and Tailwind mapping",
+      "language": "css",
+      "code": ":root {\n  --paper: #f4f3ef;\n  --surface: #fdfdfb;\n  --ink: #15161b;\n  --accent: #255a8c;\n}\n\n:root[data-theme=\"dark\"] {\n  --paper: #0f1013;\n  --surface: #16171c;\n  --ink: #ecebe5;\n  --accent: #8fb8e0;\n}\n\n@theme inline {\n  --color-paper: var(--paper);\n  --color-surface: var(--surface);\n  --color-ink: var(--ink);\n  --color-accent: var(--accent);\n}",
+      "caption": "Selected excerpt from this repository's app/globals.css. It uses CSS custom properties as the theme-level source for these roles, overrides values for dark theme, then maps them into Tailwind utilities with @theme inline. This is a real CSS/Tailwind implementation pattern; it is not a DTCG JSON source file."
+    },
+    {
       "title": "A coupling mistake and its correction",
       "language": "css",
       "code": "/* Poor: a component knows the palette value */\n.button--primary {\n  background: #1f4a9e;\n}\n\n/* Better: a component consumes an intent */\n.button--primary {\n  background: var(--color-action-primary);\n}",
