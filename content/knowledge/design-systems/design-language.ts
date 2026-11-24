@@ -77,6 +77,8 @@ export default defineEntry({
         "**Multi-platform translation.** One language rarely means identical pixels on every platform. Principles, semantic roles and voice should be shared; the expression of those decisions may adapt to each platform's conventions — native controls, navigation patterns, system type sizes. A language that overrides platform conventions to look identical everywhere trades the user's existing knowledge for the brand's consistency.",
         "**Governance.** A design language needs an owner and a change process: who may propose a new foundation decision, how it is reviewed against principles, and how changes are versioned and rolled out to every product. Without governance, languages drift team by team — the problem they were meant to solve.",
         "**Measuring drift.** Useful signals include the number of raw values that bypass tokens in code, one-off component variants, and how often reviews find foundation decisions missing. These show where the language is not being used; whether that harms users needs research.",
+        "**A short history, not a single invention.** IBM's corporate design program began in 1956 and covered architecture, graphics and methods of work; its stated aim was a coherent design theme, not merely a standard palette or typeface {{src:ibm-design-program-history}}. Digital interface theming then developed through operating-system colour schemes and web styling. Brad Frost's 2025 retrospective traces Windows 3.1 custom colour schemes, CSS, CSS Zen Garden's separation of structure and presentation, and later modular/themeable UI patterns; treat this as an attributed practitioner's timeline, not an exhaustive independent history {{src:frost-themeable-ui-history}}. In digital product design, Frost's Atomic Design (2013/2016) and Kholmatova's 2017 book helped articulate repeatable parts, shared patterns and practices for creating design languages {{src:frost-2013}} {{src:frost-2016}} {{src:kholmatova-2017}}.",
+        "**Language versus fashion.** Skeuomorphic surfaces, flat interfaces, material-inspired depth, glass effects and other visual treatments are ways a language may be expressed; none is a design-system architecture by itself. A team should change a visual treatment when it serves the product's principles, users and platform constraints—not simply because a style is currently fashionable. The underlying grammar (roles, hierarchy, motion, content voice and accessibility) should remain understandable through a visual refresh.",
       ],
       evidence: [
         "Design languages are **documented practice**. IBM publishes its language separately from its implementation {{src:ibm-design-language}}; Carbon documents motion styles as language decisions {{src:carbon-motion}}; Material 3 encodes decisions as token classes {{src:m3-design-tokens}}; Kholmatova and Frost describe the practice from experience {{src:kholmatova-2017}} {{src:frost-2016}}. No controlled study was found that measures the effect of a design language on recognition, learnability or delivery speed; such claims are practitioner reports.",
@@ -92,6 +94,25 @@ export default defineEntry({
       ],
     },
   },
+
+  origin: {
+  "contributors": [
+    "Eliot Noyes",
+    "Thomas J. Watson Jr.",
+    "IBM Design",
+    "Brad Frost",
+    "Alla Kholmatova"
+  ],
+  "period": "Corporate design programmes from the mid-20th century; digital interface theming and design-system practice developed through the 1990s–2020s",
+  "problem": "Organizations needed coherent design decisions across products, channels and teams. In digital products, teams also needed to reuse and adapt a common interface language without duplicating the entire structure for every product or theme.",
+  "narrative": [
+    "There is no single inventor or start date for design language. IBM's official history dates Thomas J. Watson Jr.'s appointment of Eliot Noyes to lead a corporate design program to 1956. Its scope included architecture, graphics and methods of work; Noyes favoured a unifying design theme rather than a fixed visual motif that could quickly become dated {{src:ibm-design-program-history}}.",
+    "In software interfaces, visual theming and separation of presentation from structure evolved through operating-system settings and web technologies. Brad Frost's 2025 retrospective traces user-customisable Windows colour schemes, CSS and CSS Zen Garden, then the move towards modular and themeable interfaces {{src:frost-themeable-ui-history}}.",
+    "For digital product teams, Atomic Design (introduced as a methodology in 2013 and expanded in the 2016 book) made the part-and-whole model explicit; Alla Kholmatova's 2017 book focused on patterns and practices for creating design languages in digital products {{src:frost-2013}} {{src:frost-2016}} {{src:kholmatova-2017}}.",
+    "Modern systems often record their language as principles, foundations, tokens, component contracts and usage guidance. The layers are related, but no single vendor's token taxonomy or component library is the universal definition of a design language."
+  ],
+  "attributionNote": "The milestones above illustrate different strands of the history; IBM is not presented as the origin of all design languages, and Brad Frost's 2025 timeline is an attributed retrospective rather than an independent academic history."
+},
 
   application: {
     summary: [
@@ -317,6 +338,8 @@ Local, civic       Plain words           Voice: sentence case, no jargon     (co
     { source: "frost-2016", role: "explanatory", note: "Atomic design and design systems practice." },
     { source: "m3-design-tokens", role: "explanatory", note: "Reference, system and component token classes." },
     { source: "w3c-wcag-22", role: "standard", note: "SC 2.2.2 (A) and 2.3.3 (AAA) on motion." },
+    { source: "ibm-design-program-history", role: "explanatory", note: "IBM corporate design programme, appointed leadership and scope beginning in 1956." },
+    { source: "frost-themeable-ui-history", role: "explanatory", note: "Brad Frost retrospective on GUI theming, CSS, CSS Zen Garden and modular themeable interfaces." },
   ],
   evidence: "practitioner-recommendation",
   evidenceNote:
@@ -335,5 +358,5 @@ Local, civic       Plain words           Voice: sentence case, no jargon     (co
     sources: true,
     activities: true,
   },
-  lastVerifiedAt: "2026-11-11",
+  lastVerifiedAt: "2026-11-24",
 });
