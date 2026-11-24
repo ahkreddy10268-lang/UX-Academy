@@ -16,14 +16,14 @@
 | Domains with no published entry | 5 |
 | Formulas with calculators | 25 |
 | Quiz questions | 472 |
-| Exercises | 362 |
-| Flashcards | 476 |
+| Exercises | 363 |
+| Flashcards | 478 |
 | Labs | 19 |
 | Workshops | 11 |
 | Comparisons | 11 |
 | Learning paths | 16 |
 | Glossary terms | 114 |
-| Sources | 597 |
+| Sources | 598 |
 
 ## By domain
 
@@ -401,7 +401,7 @@ Five separate dimensions, rated basic / developing / complete from the content (
 | Signifiers | Concept | Professional guideline | complete | complete | complete | developing | complete | 7 | 3 | — | — |
 | Skeleton Screens | Pattern | Practitioner recommendation | complete | developing | complete | developing | complete | 7 | 3 | — | async-state-lab |
 | Social Proof | Cognitive bias | Peer-reviewed research | complete | complete | complete | basic | complete | 9 | 4 | — | — |
-| Spacing Scales | Concept | Practitioner recommendation | complete | developing | complete | basic | complete | 6 | 3 | — | — |
+| Spacing Scales | Concept | Practitioner recommendation | complete | developing | complete | basic | complete | 11 | 3 | — | — |
 | Steering Law | Law | Original empirical research | complete | complete | complete | developing | complete | 5 | 3 | steering | steering-lab |
 | System Usability Scale (SUS) | Research instrument | Peer-reviewed research | complete | complete | complete | developing | developing | 7 | 4 | sus | — |
 | Task Success Rate | Metric | Peer-reviewed research | complete | complete | complete | developing | complete | 4 | 3 | task-success | — |
