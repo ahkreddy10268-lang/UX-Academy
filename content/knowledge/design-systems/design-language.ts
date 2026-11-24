@@ -21,6 +21,7 @@ export default defineEntry({
     "Translate a brand principle into concrete interface decisions about type, space, colour and motion.",
     "Encode those decisions as semantic tokens and component contracts.",
     "Carry one design language across web, iOS and Android without breaking platform conventions.",
+    "Distinguish enduring principles and grammar from a temporary visual style or trend.",
   ],
   prerequisites: ["design-system"],
 
