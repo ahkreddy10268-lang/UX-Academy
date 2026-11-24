@@ -425,3 +425,11 @@ Owner: approve the push of the status fix, set Vercel's production branch to `ma
 - D1-2 closed: `iso-9241-11-2018` now cited in HCI where it supports the claim; an inaccurate ISO attribution in the context-of-use vocabulary corrected.
 - D1-4, D1-5, D1-6: bounded checks (ACM full texts 403; no open-access maturity-model evaluation; NN/g quiz TLS failure); unchanged, non-blocking.
 - **Domain 1 remains COMPLETE (21/21).** Next authorised action unchanged: Domain 2 `power-law-of-practice`.
+
+
+## Session 76 — Domain 2 Batch 7: Power Law of Practice published (2026-11-24)
+
+- Topic: `power-law-of-practice` (`law`, `laws-effects/performance-laws`), evidence `contested`. File: `content/knowledge/laws-effects/power-law-of-practice.ts`; status `published`.
+- 7 new sources; formula record and worked example; pure practice-curve functions with tests in `lib/formulas/experience.ts`; Level-1 plate and Level-2 model-comparison figure.
+- All gates and all site-wide browser suites run (shared `lib/**` change). One stale e2e count updated (30 → 31 detailed diagrams); one pre-existing e2e failure recorded (LIB-1).
+- **Next:** `webers-law`.

@@ -386,3 +386,40 @@ describe("HSV conversion", () => {
   });
 });
 
+
+import { meanCurve, practiceCurve, practiceDelayedExponential, practiceExponential, practicePower } from "./experience";
+
+describe("power law of practice", () => {
+  const ex = { A: 2, B: 12, alpha: 0.5 };
+  it("reproduces the worked example T(N) = 2 + 12·N^-0.5", () => {
+    expect(practicePower(1, ex)).toBeCloseTo(14, 10);
+    expect(practicePower(4, ex)).toBeCloseTo(8, 10);
+    expect(practicePower(9, ex)).toBeCloseTo(6, 10);
+    expect(practicePower(36, ex)).toBeCloseTo(4, 10);
+  });
+  it("approaches the asymptote A, never zero", () => {
+    expect(practicePower(1e8, ex)).toBeGreaterThan(2);
+    expect(practicePower(1e8, ex)).toBeLessThan(2.01);
+  });
+  it("is a straight line of slope -alpha in log(T - A) vs log(N + E)", () => {
+    const p = { A: 1, B: 10, alpha: 0.4, E: 5 };
+    const pt = (n: number) => [Math.log(n + 5), Math.log(practicePower(n, p) - 1)];
+    const [x1, y1] = pt(3);
+    const [x2, y2] = pt(300);
+    expect((y2 - y1) / (x2 - x1)).toBeCloseTo(-0.4, 10);
+  });
+  it("delayed exponential reduces to the exponential when tau = 0", () => {
+    for (const n of [0, 1, 5, 20]) expect(practiceDelayedExponential(n, { A: 1, B: 3, r: 0.2, tau: 0 })).toBeCloseTo(practiceExponential(n, { A: 1, B: 3, r: 0.2 }), 10);
+  });
+  it("averages curves point by point", () => {
+    const a = practiceCurve((n) => practiceExponential(n, { A: 2, B: 10, r: 0.5 }), 1, 3);
+    const b = practiceCurve((n) => practiceExponential(n, { A: 2, B: 10, r: 0.05 }), 1, 3);
+    const m = meanCurve([a, b]);
+    expect(m[1].t).toBeCloseTo((a[1].t + b[1].t) / 2, 10);
+  });
+  it("rejects invalid parameters", () => {
+    expect(() => practicePower(1, { A: 0, B: 1, alpha: 0 })).toThrow();
+    expect(() => practicePower(0, { A: 0, B: 1, alpha: 1 })).toThrow();
+    expect(() => practiceDelayedExponential(1, { A: 0, B: 1, r: 0.1, tau: -1 })).toThrow();
+  });
+});

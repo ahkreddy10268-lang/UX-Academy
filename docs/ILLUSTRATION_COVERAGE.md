@@ -5,12 +5,12 @@
 
 | Measure | Count |
 |---|---|
-| Registered Level-1 plates | 143 |
-| Published entries with a plate | 119 / 119 |
+| Registered Level-1 plates | 144 |
+| Published entries with a plate | 120 / 120 |
 | Subject plates | 20 / 20 |
-| Plates in the current system (dark technical or instructional sheet) | 141 |
+| Plates in the current system (dark technical or instructional sheet) | 142 |
 | Plates still in the earlier pastel style | 2 |
-| Level-2 figures | 41 |
+| Level-2 figures | 42 |
 | Level-3 explorers (on plates) | 9 |
 | Labs linked from entries | 23 |
 | Animated plates | 12 |
@@ -21,7 +21,7 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 
 | # | Category | L1 plates | Current style | L2 figures | L3 | Retain / refine / replace | Maturity | Entries |
 |---|---|---:|---:|---:|---:|---|---|---|
-| 1 | UX Concept Illustrations | 41 | 40 | 11 | 13 | 41 / 0 / 0 | developing | `fitts-law`, `hick-hyman-law`, `cognitive-load-theory`, `millers-law`, `jakobs-law`, `mental-models`, `affordances`, `peak-end-rule`, `steering-law`, `teslers-law`, `postels-law`, `serial-position-effect`, `von-restorff-effect`, `zeigarnik-effect`, `aesthetic-usability-effect`, `choice-overload`, `working-memory-model`, `recognition-over-recall`, `user-experience`, `human-computer-interaction`, `consistency-principle`, `help-and-documentation`, `ux-writing`, `plain-language`, `default-effect`, `loss-aversion`, `framing-effect`, `anchoring-effect`, `social-proof`, `goal-gradient-effect`, `usefulness`, `desirability`, `ux-maturity`, `experience-design`, `product-design`, `history-of-interface-design`, `evolution-of-digital-experiences` |
+| 1 | UX Concept Illustrations | 42 | 41 | 12 | 13 | 42 / 0 / 0 | developing | `fitts-law`, `hick-hyman-law`, `cognitive-load-theory`, `millers-law`, `jakobs-law`, `mental-models`, `affordances`, `peak-end-rule`, `steering-law`, `power-law-of-practice`, `teslers-law`, `postels-law`, `serial-position-effect`, `von-restorff-effect`, `zeigarnik-effect`, `aesthetic-usability-effect`, `choice-overload`, `working-memory-model`, `recognition-over-recall`, `user-experience`, `human-computer-interaction`, `consistency-principle`, `help-and-documentation`, `ux-writing`, `plain-language`, `default-effect`, `loss-aversion`, `framing-effect`, `anchoring-effect`, `social-proof`, `goal-gradient-effect`, `usefulness`, `desirability`, `ux-maturity`, `experience-design`, `product-design`, `history-of-interface-design`, `evolution-of-digital-experiences` |
 | 2 | UI Anatomy Illustrations | 3 | 3 | 1 | 0 | 3 / 0 / 0 | developing | `ui-design`, `microcopy` |
 | 3 | UX Process Illustrations | 10 | 10 | 3 | 0 | 10 / 0 / 0 | developing | `double-diamond`, `design-thinking`, `user-centred-design`, `content-design`, `design-processes`, `ux-lifecycle` |
 | 4 | User Research Illustrations | 6 | 6 | 5 | 0 | 6 / 0 / 0 | mature | `card-sorting`, `jobs-to-be-done`, `think-aloud-protocol`, `contextual-inquiry`, `in-depth-interviews` |
@@ -38,10 +38,10 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 
 | Method | L1 plates (primary) | L2 figures |
 |---|---:|---:|
-| Conceptual & Metaphorical | 22 | 8 |
+| Conceptual & Metaphorical | 23 | 8 |
 | Process & Sequential | 32 | 13 |
 | Relationship & Systems | 21 | 10 |
-| Comparison & Contrast | 47 | 8 |
+| Comparison & Contrast | 47 | 9 |
 | Hierarchy & Classification | 21 | 2 |
 
 ## Level 1 audit (every registered plate)
@@ -64,6 +64,7 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 | `ia` | subject | information-architecture | hierarchy | current · instructional sheet | retain | Sheet (S25): an indented site structure, the navigation bar and breadcrumb, and search reaching the same page. | 0 | — |
 | `atomic-design` | entry | design-systems | hierarchy | current · instructional sheet | retain | Sheet (S25; entry plate since S33, planned label removed): atoms → molecule → organism → template → page, each built from the last. | 1 | — |
 | `steering-law` | entry | ux-concept | conceptual | current · instructional sheet | retain | Sheet (S25): two tunnels with A/W from lib/formulas steeringId and a cascading menu as a tunnel. | 0 | steering-lab |
+| `power-law-of-practice` | entry | ux-concept | conceptual | current · instructional sheet | retain | Sheet (D-133 Domain 2): an illustrative curve T = 2 + 12·N^−0.5 computed by lib/formulas practicePower, four marked points (14, 8, 6, 4 s), a dashed floor at A = 2 s, and the caution that the curve is a model of averages, not every learner. | 1 | — |
 | `keystroke-level-model` | entry | evaluation-optimization | process | current · instructional sheet | retain | Sheet (S25): renaming a file as M P BB H M 10K, times from lib/formulas parseKlm/klmTotal. | 1 | — |
 | `doherty-threshold` | entry | interaction-design | conceptual | current · instructional sheet | retain | Sheet (S25): fast and slow exchanges on a log time axis with the ~0.4 s mark labelled a rule of thumb. | 0 | feedback-lab |
 | `teslers-law` | entry | ux-concept | comparison | current · instructional sheet | retain | Sheet (S25): one phone field two ways above equal-length complexity bars split person/app/platform (illustrative). | 0 | — |
@@ -194,7 +195,7 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 
 ## Level 2 figures
 
-41 of 41 Level-2 figures are drawn in a current language (sheet or viz).
+42 of 42 Level-2 figures are drawn in a current language (sheet or viz).
 
 | Figure | Type | Method | Language | Verification |
 |---|---|---|---|---|
@@ -206,6 +207,7 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 | `direct-manipulation.space` | conceptual | relationship | sheet | content-checked |
 | `fitts-law.anatomy` | formula | conceptual | sheet | content-checked |
 | `fitts-law.placement` | comparison | comparison | sheet | illustrative |
+| `power-law-of-practice.models` | comparison | comparison | sheet | illustrative |
 | `double-diamond.process` | process | process | viz | content-checked |
 | `cognitive-load-theory.architecture` | conceptual | conceptual | viz | content-checked |
 | `cognitive-load-theory.split-attention` | comparison | comparison | sheet | illustrative |
@@ -260,6 +262,7 @@ A figure has one primary category (and may list secondaries). Level 2 and Level 
 | `ia` | Three views of the same website's structure. On the left, a site map: a home page branching into three sections, one of which branches again. At the top right, the navigation people see: a menu bar with the same three section names and a breadcrumb trail showing the path to the current page. Below it, a search box with a query and two results drawn from the same structure. The structure, its labels, the navigation and search are four views of one design. |
 | `atomic-design` | Brad Frost's five stages of atomic design built up from left to right. Atoms: a label, an input and a button on their own. A molecule: the three combined into a search form. An organism: a site header that contains the search form beside a logo and navigation. A template: a page wireframe that places the header above grey content areas. A page: the same template with real content in it. Each stage is assembled from the one before, and the page stage tests the parts with real content. |
 | `steering-law` | Two straight tunnels a pointer must travel along without leaving the edges. The upper one is 120 units long and 40 wide, an index of difficulty A / W = 3; the lower one is twice as long and half as wide, ID = 12, four times harder, because difficulty grows linearly with length over width rather than logarithmically as in Fitts's law. Below, a cascading menu: moving from 'Share' sideways into its submenu is steering along a narrow horizontal tunnel, where a small vertical slip opens the wrong submenu. |
+| `power-law-of-practice` | An illustrative practice curve, not data. A chart titled 'Time per trial (illustrative)' plots T = 2 + 12·N^−0.5 seconds against practice trials 1 to 36. The curve falls steeply at first and then flattens. Four points are marked with their computed times: 14 s on trial 1, 8 s on trial 4, 6 s on trial 9 and 4 s on trial 36. A dashed horizontal line at 2 s is labelled 'floor A = 2 s'. Below, two lines: 'Large gains early, small gains later' and 'A model of averages, not every learner'. |
 | `keystroke-level-model` | Renaming a file, broken into Keystroke-Level Model operators and drawn as a timeline whose segment lengths are the standard operator times. Above, the screen: a file row, the pointer clicking it, and the name field being typed. Below, the method M P BB H M 10K: M, mentally prepare (1.35 s); P, point to the file (1.1 s); BB, press and release the button (0.2 s); H, move the hands to the keyboard (0.4 s); M again; and 10K, nine letters and Enter at 0.28 s each. The predicted time is the sum, 7.2 s, for an expert making no errors. The unit times date from the original studies and differ on modern devices. |
 | `doherty-threshold` | A response-time axis on a logarithmic scale from 0.1 to 10 seconds, with a mark at about 0.4 seconds. Two exchanges start from the same action, a click on Search. In the upper one the results arrive at 0.3 seconds, inside the mark, and the next action follows straight on. In the lower one a spinner turns for 3 seconds before results appear, and the person waits. The 0.4 second figure comes from a 1982 IBM industry report on productivity; it is a performance aspiration and a rule of thumb, not a measured perceptual threshold. |
 | `teslers-law` | The same phone-number field designed two ways, each above a bar of equal length that stands for the task's fixed complexity, divided between the person, the application and the platform. On the left, the field states a required format and shows an error for a number typed another way: most of the bar is the person's share. On the right, the field accepts the number as typed, detects the country and formats it: most of the bar has moved to the application. The bars are the same length because the complexity is moved, not removed. Tesler's law is a design principle, not an empirical law; the proportions are illustrative. |

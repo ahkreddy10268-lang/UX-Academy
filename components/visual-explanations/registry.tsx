@@ -9,6 +9,7 @@ import { DirectnessSpace } from "./concepts/direct-manipulation";
 import { DesignThinkingLenses } from "./concepts/design-thinking";
 import { DoubleDiamondProcess } from "./concepts/double-diamond";
 import { FittsAnatomy, FittsComparison } from "./concepts/fitts-law";
+import { PracticeModels } from "./concepts/power-law-of-practice";
 import { GestaltAnnotated, GestaltSpacing } from "./concepts/gestalt-principles";
 import { HeuristicDecision, HeuristicFlow } from "./concepts/heuristic-evaluation";
 import { HciCycle, HciEcosystem, HciInteractionModel, HciParadigms, HciPerspectives, HciTimeline } from "./concepts/human-computer-interaction";
@@ -215,6 +216,26 @@ export const visualExplanations: VisualExplanation[] = [
     verification: "illustrative",
     sources: ["mackenzie-1992"],
     Component: FittsComparison,
+  },
+  {
+    id: "power-law-of-practice.models",
+    language: "sheet",
+    slug: "power-law-of-practice",
+    type: "comparison",
+    level: 2,
+    title: "Three practice laws, and what averaging does",
+    objective: "Power, exponential and delayed-exponential practice curves drawn from the same start and floor, then two individual exponential learners and their group average.",
+    takeaway: "Similar-looking curves imply different learning rates, and an average of learners can take a shape none of them has, so the model must be chosen by comparing fits to individual data, not by eye.",
+    summary: [
+      "Top chart (illustrative): all three curves start at 14 s on trial 1 and approach a 2 s floor. Power T = 2 + 12·N^−0.5 drops steeply, then flattens slowly. Exponential T = 2 + 13.53·e^−0.12N removes a constant share of the remaining improvement each trial and flattens sooner. Delayed exponential T = 2 + 12.16·21/(20 + e^0.25N) stays high for several trials, then falls quickly.",
+      "The exponential's relative learning rate is constant; the power function's falls as r/N; the delay parameter τ allows a slow start, and τ = 0 gives the plain exponential (Evans et al., 2018).",
+      "Bottom chart (illustrative): two learners who each improve exponentially, one fast (r = 0.6) and one slow (r = 0.06), and their point-by-point average.",
+      "Early on both learners contribute to the average's fall; later only the slow learner is still improving, so the average flattens gradually and matches neither learner. Averaging individual exponential curves in this way can make a group curve look power-like (Heathcote et al., 2000).",
+      "A curve's shape describes data; it is not a theory of why learning happens. Mechanisms such as knowledge compilation or instance retrieval are separate claims.",
+    ],
+    verification: "illustrative",
+    sources: ["newell-rosenbloom-1980", "heathcote-brown-mewhort-2000", "evans-et-al-2018"],
+    Component: PracticeModels,
   },
   {
     id: "double-diamond.process",
@@ -954,6 +975,7 @@ export const quickTakeaways: Record<string, string> = {
   desirability: "Whether people want a product is a separate question from whether it works: study it with reaction methods, and never mistake appeal for usefulness.",
   "information-foraging-theory": "People weigh the gain they expect from a source against the cost of reaching it, judged from the cues in front of them: that estimate decides which link they follow, what they consume and when they leave.",
   "information-scent": "Scent is the visitor's estimate, made before the click, of whether a page will meet their need; judge a label by whether people reach the right page and find what they expected, not by how many click it.",
+  "power-law-of-practice": "Practice usually makes a task faster, quickly at first and then more slowly towards a floor; the exact curve differs between people, so measure individuals and do not treat one curve as a law.",
   "postels-law": "Be flexible about harmless variation, precise about meaning, strict about safety and consistent in what you send: accept different formats of the same value, ask when meaning is unclear, and never let tolerance bypass validation.",
   "zeigarnik-effect": "Interrupted tasks are not generally remembered better, but people often return to them: save the work, show the next step and let people choose when to be reminded, rather than keeping them feeling unfinished.",
   "goal-gradient-effect": "Effort often rises near a goal, but motivation can sag in the middle and depends on how progress is framed: show real steps, the unit and total and an honest pace, and never fake closeness.",

@@ -172,6 +172,7 @@ export default defineEntry({
     { target: "cognitive-walkthrough", type: "complementary-to", note: "Both are analytic, participant-free methods: KLM predicts expert efficiency, cognitive walkthrough examines first-time learnability." },
     { target: "usability-testing", type: "contrasts-with", note: "Usability testing observes real behaviour including errors and learning; the KLM predicts idealised expert behaviour." },
     { target: "time-on-task", type: "related-to", note: "KLM predictions estimate a lower bound for expert time on task that empirical measures can be compared against." },
+    { target: "power-law-of-practice", type: "related-to", note: "KLM estimates practised, error-free execution; the practice curve describes how performance approaches that state with repetition." },
   ],
 
   formulas: [

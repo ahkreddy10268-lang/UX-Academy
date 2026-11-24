@@ -6,7 +6,7 @@
  */
 import type { CSSProperties, ReactNode } from "react";
 import { hickInformationEqual, klmTotal, parseKlm, steeringId } from "../../../lib/formulas/pointing";
-import { chunk, peakEnd } from "../../../lib/formulas/experience";
+import { chunk, peakEnd, practiceCurve, practicePower } from "../../../lib/formulas/experience";
 import { nasaTlxRaw, nps, susScore } from "../../../lib/formulas/questionnaires";
 import { problemDiscovery, sampleSizeProportion, sampleSizeTwoProportions, taskSuccess, twoProportionTest } from "../../../lib/formulas/stats";
 import { contrastRatio, modularScale } from "../../../lib/formulas/visual";
@@ -2440,6 +2440,62 @@ export const vonRestorffPlate: IllustrationEntry = {
       </g>
     );
   },
+};
+
+/* ------------------------------------------------------------------ */
+/* Power law of practice: steep early gains, a floor, a model           */
+/* ------------------------------------------------------------------ */
+const PLP = { A: 2, B: 12, alpha: 0.5 };
+const plpX = (n: number) => 60 + ((n - 1) * 310) / 35;
+const plpY = (t: number) => 180 - t * 10;
+const PLP_CURVE = practiceCurve((n) => practicePower(n, PLP), 1, 36);
+const PLP_MARKS = [1, 4, 9, 36].map((n) => ({ n, t: practicePower(n, PLP) }));
+
+export const powerLawOfPracticePlate: IllustrationEntry = {
+  slug: "power-law-of-practice",
+  title: "Power law of practice plate",
+  canvas: "sheet",
+  description:
+    "An illustrative practice curve, not data. A chart titled 'Time per trial (illustrative)' plots T = 2 + 12·N^−0.5 seconds against practice trials 1 to 36. The curve falls steeply at first and then flattens. Four points are marked with their computed times: 14 s on trial 1, 8 s on trial 4, 6 s on trial 9 and 4 s on trial 36. A dashed horizontal line at 2 s is labelled 'floor A = 2 s'. Below, two lines: 'Large gains early, small gains later' and 'A model of averages, not every learner'.",
+  key: [
+    { n: "1", label: "Steep early gains", detail: "the first few trials save the most time: 14 s to 8 s by trial 4 in this illustrative curve" },
+    { n: "2", label: "Diminishing returns", detail: "later trials save less: 6 s at trial 9, 4 s at trial 36" },
+    { n: "3", label: "The asymptote", detail: "the curve approaches the floor A, not zero; lowering it needs a design change, not more practice" },
+    { n: "4", label: "A model, not a promise", detail: "individual learners are often better described by exponential or delayed curves; averaging can produce a power-like shape (Heathcote et al., 2000; Evans et al., 2018)" },
+  ],
+  Art: ({ detail }) => (
+    <g>
+      <Card x={8} y={8} w={384} h={200} title="Time per trial (illustrative)">
+        <line x1={52} y1={40} x2={52} y2={180} stroke={S.ruleStrong} strokeWidth="1.1" {...hair} />
+        <line x1={52} y1={180} x2={376} y2={180} stroke={S.ruleStrong} strokeWidth="1.1" {...hair} />
+        <line x1={52} y1={plpY(PLP.A)} x2={376} y2={plpY(PLP.A)} stroke={S.ink2} strokeWidth="1" strokeDasharray="5 4" {...hair} />
+        <UiText x={150} y={plpY(PLP.A) - 6} tone="ink2">floor A = 2 s</UiText>
+        <path d={PLP_CURVE.map((p, i) => `${i ? "L" : "M"}${plpX(p.n).toFixed(1)} ${plpY(p.t).toFixed(1)}`).join(" ")} fill="none" stroke={S.ink} strokeWidth="2.2" {...hair} />
+        {PLP_MARKS.map((m) => (
+          <circle key={m.n} cx={plpX(m.n)} cy={plpY(m.t)} r={3.5} fill={S.ink} />
+        ))}
+        <UiText x={plpX(1) + 10} y={plpY(PLP_MARKS[0].t) + 5}>{`${+PLP_MARKS[0].t.toFixed(1)} s`}</UiText>
+        <UiText x={plpX(4) + 10} y={plpY(PLP_MARKS[1].t) + 4}>{`${+PLP_MARKS[1].t.toFixed(1)} s`}</UiText>
+        <UiText x={plpX(9) + 6} y={plpY(PLP_MARKS[2].t) - 9}>{`${+PLP_MARKS[2].t.toFixed(1)} s`}</UiText>
+        <UiText x={plpX(36) - 8} y={plpY(PLP_MARKS[3].t) - 8} anchor="end">{`${+PLP_MARKS[3].t.toFixed(1)} s`}</UiText>
+        <UiText x={plpX(1)} y={198} anchor="middle" tone="ink2">1</UiText>
+        <UiText x={214} y={198} anchor="middle" tone="ink2">practice trials →</UiText>
+        <UiText x={plpX(36)} y={198} anchor="middle" tone="ink2">36</UiText>
+      </Card>
+      <Card x={8} y={216} w={384} h={76}>
+        <UiText x={20} y={246}>Large gains early, small gains later</UiText>
+        <UiText x={20} y={272} tone="ink2">A model of averages, not every learner</UiText>
+      </Card>
+      {detail && (
+        <>
+          <Marker x={120} y={62} n={1} />
+          <Marker x={200} y={100} n={2} />
+          <Marker x={110} y={plpY(PLP.A) - 10} n={3} />
+          <Marker x={380} y={228} n={4} />
+        </>
+      )}
+    </g>
+  ),
 };
 
 /* ------------------------------------------------------------------ */

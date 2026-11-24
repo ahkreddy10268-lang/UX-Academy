@@ -643,3 +643,35 @@ Change set: `content/knowledge/foundations/human-computer-interaction.ts` (D1-2:
 | Bounded source checks | ACM DL PDFs for `van-dam-1997`, `forlizzi-battarbee-2004`; OpenAlex OA search for maturity-model evaluations; `forms.nngroup.com/s3/Maturity-Quiz` | 403; nothing open on point (Lacerda & Gresse von Wangenheim not OA); TLS certificate failure | Recorded in D1-4, D1-5, D1-6 |
 
 Limitations: only HCI was re-reviewed in the browser; this is not a full re-audit of all 16 Domain 1 entries. PR #4 edits the same HCI lines; resolve in PR #4's favour when it merges.
+
+### Domain 2 Batch 7 — Power Law of Practice (2026-11-24, branch `claude/domain-completion-20261123`, base `08ba3c2`)
+
+Change set: new entry `content/knowledge/laws-effects/power-law-of-practice.ts` (published; `law`, `laws-effects/performance-laws`; evidence `contested`; formula record with worked example); 7 source records in `content/sources/cognition-hci.ts`; **shared code:** `lib/formulas/experience.ts` (`practicePower`, `practiceExponential`, `practiceDelayedExponential`, `practiceCurve`, `meanCurve`) with tests in `lib/formulas/formulas.test.ts`; Level-1 plate `powerLawOfPracticePlate` in `learning-sheets.tsx` (registered via `laws-psychology.tsx`); Level-2 figure `components/visual-explanations/concepts/power-law-of-practice.tsx` registered in `registry.tsx` with a quick takeaway; register record; back-link in `keystroke-level-model.ts`; one stale count in `tests/browser/e2e-redesign.cjs` (detailed-diagram filter 30 → 31, because this batch adds a Level-2 figure); regenerated index, `verification.json` and generated docs. No draft modified. Commit SHA: the commit that adds this section.
+
+Change impact: `lib/**` changed, so every browser suite was run on the final build (skill § 4).
+
+| Check | Command | Result | Status |
+|---|---|---|---|
+| Source verification | `npm run sources:verify -- newell-rosenbloom-1980 crossman-1959 heathcote-brown-mewhort-2000 evans-et-al-2018 weeks-et-al-2026 anderson-1982 logan-1988` | 6 `doi-verified`, 1 `url-reachable` (technical report, no DOI) | PASS |
+| Formula unit tests | `npx vitest run lib/formulas/formulas.test.ts` | 64/64, including worked example T(1, 4, 9, 36) = 14, 8, 6, 4 s; asymptote never reached; log(T − A) vs log(N + E) slope −α; delayed exponential = exponential at τ = 0; averaging | PASS |
+| Content index | `npm run content:index` | Entry indexed | PASS |
+| Entry integrity | `npx tsx scripts/entry-integrity.ts power-law-of-practice flexibility-and-efficiency-of-use` | Exit 0 after plate and figure were registered (first run: plate register false, before the plate existed); 1 Level-2 figure; 8 outgoing, 2 incoming relations | PASS |
+| Check | `npm run check` (final tree) | Exit 0; 23 files, 634 tests | PASS |
+| Taxonomy | `npm run test:taxonomy` | Exit 0; 1055 links; 120 published at three depths; Domain 2: 46 topics, 19 published, 10 addressed within | PASS |
+| Generated docs | `npm run docs:generate` (final tree) | Exit 0; site 120/561 published | PASS |
+| Plate render | `NODE_PATH=$(npm root -g) npx tsx scripts/render-plates.tsx power-law-of-practice` | First render: marker 1 on the curve, '6 s' over the curve; moved; re-rendered light and dark: no overlap; values from `practicePower` formatted to one decimal | PASS (after fix) |
+| Level-2 figure | Scratch Playwright screenshots of the figure in `/library/power-law-of-practice` at 390 light and 1440 dark | First version: 'time' and 'trials →' labels overlapped curves; moved outside the axes and rebuilt. Note: one re-check ran against a stale server still bound to port 3100 (EADDRINUSE for the new one); all `next start` processes were killed and the checks repeated on the final build (served SVG viewBox 360×430 confirmed). Final: no overlap, no text outside the viewBox, smallest text 14 units ≈ 12.6 px at 390 px; curves distinguished by line style and legend, not colour | PASS (after fix) |
+| Build | `npm run build` (final source) | Exit 0; 999/999 | PASS |
+| Entry review | `BASE_URL=http://localhost:3100 AXE_PATH=node_modules/axe-core/axe.min.js node tests/browser/entry-review.cjs power-law-of-practice keystroke-level-model flexibility-and-efficiency-of-use` (final build) | 24/24; power-law-of-practice: 1440/768/390 px, light and dark, axe 0, overflow 0, errors 0, plate text min 10.2 px at 390, 4 markers inside, 12 links, flashcards 5/5 | PASS |
+| e2e | `node tests/browser/e2e.cjs` | 44/44 | PASS |
+| e2e-redesign | `node tests/browser/e2e-redesign.cjs` | 65/66 after updating the detailed-diagram count (30 → 31) for the new Level-2 figure. Remaining FAIL 'library grid shows the first page of 24 cards, each with a plate' (23): `anchoring-effect` (drafted) is listed without a plate because plates are built only for published entries — pre-existing since the drafts were committed, not caused by this batch (LIB-1). The script exits 0 despite a FAIL line. | FAIL (pre-existing, LIB-1) |
+| Atlas | `node tests/browser/atlas.cjs` | 36/36 | PASS |
+| Keyboard | `node tests/browser/keyboard.cjs` | 45/45 | PASS |
+| Colour Studio | `node tests/browser/colour-studio.cjs` | 46/46 | PASS |
+| Devices | `node tests/browser/devices.cjs` | 155/155 | PASS |
+| Crawl | `node tests/browser/crawl.cjs` on 12 routes (`/`, `/library`, `/learn`, `/glossary`, `/topics/laws-effects`, `/coverage`, the new entry, Fitts, KLM, flexibility, steering, Hick-Hyman) | 0 pages with problems | PASS |
+| a11y | `node tests/browser/a11y.cjs` on the same 12 routes, light and dark | 0 violations | PASS |
+
+Review (five dimensions): 0 critical, 0 major. Moderate fixed: Crossman's mechanism worded as in the abstract ('a kind of selective action'); plate marker and label positions; Level-2 axis labels. Brief correction recorded: the optional Snoddy reassessment is by Stratton et al. (2007), not used. Minor: PP-1; pre-existing: LIB-1.
+
+Limitations: no screen-reader, physical-device or independent expert review; four sources abstract only; Vercel preview not checked.
