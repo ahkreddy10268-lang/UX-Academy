@@ -12,7 +12,7 @@
 | Plates still in the earlier pastel style | 2 |
 | Level-2 figures | 41 |
 | Level-3 explorers (on plates) | 9 |
-| Labs linked from entries | 23 |
+| Labs linked from entries | 24 |
 | Animated plates | 12 |
 
 ## The 12 illustration categories
