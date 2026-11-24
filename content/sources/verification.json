@@ -94,6 +94,11 @@
     "registeredContainer": "Psychological Review",
     "similarity": 1
   },
+  "android-font-scaling-200": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-24",
+    "httpStatus": 200
+  },
   "android-grids-and-units": {
     "status": "url-reachable",
     "checkedAt": "2026-11-24",
@@ -1844,7 +1849,7 @@
   },
   "m3-elevation": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-11",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "m3-states": {
@@ -1980,6 +1985,11 @@
     "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
+  "mdn-css-length-units": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-24",
+    "httpStatus": 200
+  },
   "mdn-custom-properties": {
     "status": "url-reachable",
     "checkedAt": "2026-11-11",
@@ -1998,6 +2008,11 @@
   "mdn-prefers-reduced-motion": {
     "status": "url-reachable",
     "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "mdn-variable-fonts": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "microsoft-style-top-10": {
@@ -3175,7 +3190,7 @@
   },
   "uswds-spacing-units": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-11",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "uxcel": {
@@ -3276,6 +3291,11 @@
     "checkedAt": "2026-11-20",
     "httpStatus": 200
   },
+  "w3c-international-specs": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-24",
+    "httpStatus": 200
+  },
   "w3c-resource-timing": {
     "status": "url-reachable",
     "checkedAt": "2026-11-11",
@@ -3349,6 +3369,11 @@
   "w3c-wai-tables-tutorial": {
     "status": "url-reachable",
     "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "w3c-wcag-148": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "w3c-wcag-21": {
@@ -3536,30 +3561,5 @@
     "registeredYear": 1927,
     "registeredContainer": "Psychologische Forschung",
     "similarity": 1
-  },
-  "mdn-variable-fonts": {
-    "status": "url-reachable",
-    "checkedAt": "2026-11-24",
-    "httpStatus": 200
-  },
-  "w3c-international-specs": {
-    "status": "url-reachable",
-    "checkedAt": "2026-11-24",
-    "httpStatus": 200
-  },
-  "android-font-scaling-200": {
-    "status": "url-reachable",
-    "checkedAt": "2026-11-24",
-    "httpStatus": 200
-  },
-  "mdn-css-length-units": {
-    "status": "url-reachable",
-    "checkedAt": "2026-11-24",
-    "httpStatus": 200
-  },
-  "w3c-wcag-148": {
-    "status": "url-reachable",
-    "checkedAt": "2026-11-24",
-    "httpStatus": 200
   }
 }
