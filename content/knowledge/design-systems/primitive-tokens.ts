@@ -291,6 +291,13 @@ export default defineEntry({
 [data-theme="dark"] { --color-action-background: var(--color-blue-400); }`,
         caption: "Illustrative. The primitive keeps one meaning; the theme changes the semantic token.",
       },
+    {
+      "title": "Same spacing task, two primitive strategies: drift versus a deliberate scale",
+      "language": "css",
+      "code": "/* Poor: similar cards use near-duplicate values chosen ad hoc */\n.search-field { gap: 13px; padding: 15px 17px; }\n.book-card    { gap: 14px; padding: 16px 18px; }\n.notice       { gap: 12px; padding: 15px 16px; }\n\n/* Better: choose a small set of stable primitive steps */\n:root {\n  --space-300: 12px;\n  --space-400: 16px;\n  --space-500: 20px;\n}\n.search-field { gap: var(--space-300); padding: var(--space-400); }\n.book-card    { gap: var(--space-300); padding: var(--space-500); }\n.notice       { gap: var(--space-300); padding: var(--space-400); }",
+      "caption": "Illustrative comparison for the same library-service interface. The second version reduces arbitrary choices; the scale is not a universal 4 px rule. Optical exceptions may still be justified, but they should be deliberate and documented."
+    },
+
     ],
   },
 
@@ -429,5 +436,5 @@ export default defineEntry({
     sources: true,
     activities: true,
   },
-  lastVerifiedAt: "2026-11-11",
+  lastVerifiedAt: "2026-11-24",
 });
