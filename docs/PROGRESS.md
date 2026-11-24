@@ -410,3 +410,10 @@ Owner: approve the push of the status fix, set Vercel's production branch to `ma
 - Teaches recall (Zeigarnik, contested) vs resumption (Ovsiankina, better supported) vs unfulfilled-goal activation, planning and rumination, and treats open-loop UX patterns as design conventions, not evidence.
 - 8 new sources (7 DOI-verified, 1 URL-reachable). Plate, register, takeaway, two back-links.
 - All gates passed (ledger). One review and one correction pass. **Next:** `postels-law`.
+
+
+## Session 74 — Domain 2 Batch 6: Postel's Law published (2026-11-24)
+
+- Topic: `postels-law` (`principle`, `laws-effects/popular-ux-laws`), evidence `practitioner-recommendation`. File: `content/knowledge/laws-effects/postels-law.ts`; status `published`.
+- 8 new sources (7 RFC DOIs verified, OWASP URL reachable) plus three reused W3C records. Plate, register record, takeaway, back-links from `error-prevention` and `teslers-law`.
+- All gates passed (ledger). One review and one correction pass. **Next:** `power-law-of-practice` (`law`, `performance-laws`).

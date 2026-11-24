@@ -90,37 +90,38 @@ import m86 from "./laws-effects/jakobs-law";
 import m87 from "./laws-effects/loss-aversion";
 import m88 from "./laws-effects/millers-law";
 import m89 from "./laws-effects/peak-end-rule";
-import m90 from "./laws-effects/serial-position-effect";
-import m91 from "./laws-effects/social-proof";
-import m92 from "./laws-effects/steering-law";
-import m93 from "./laws-effects/teslers-law";
-import m94 from "./laws-effects/von-restorff-effect";
-import m95 from "./laws-effects/zeigarnik-effect";
-import m96 from "./metrics/confidence-intervals";
-import m97 from "./metrics/nasa-tlx";
-import m98 from "./metrics/net-promoter-score";
-import m99 from "./metrics/sample-size-estimation";
-import m100 from "./metrics/system-usability-scale";
-import m101 from "./metrics/task-success-rate";
-import m102 from "./psychology/affordances";
-import m103 from "./psychology/cognitive-load-theory";
-import m104 from "./psychology/gulfs-of-execution-and-evaluation";
-import m105 from "./psychology/mental-models";
-import m106 from "./psychology/recognition-over-recall";
-import m107 from "./psychology/signifiers";
-import m108 from "./psychology/working-memory-model";
-import m109 from "./research/ab-testing";
-import m110 from "./research/card-sorting";
-import m111 from "./research/cognitive-walkthrough";
-import m112 from "./research/contextual-inquiry";
-import m113 from "./research/heuristic-evaluation";
-import m114 from "./research/in-depth-interviews";
-import m115 from "./research/think-aloud-protocol";
-import m116 from "./research/tree-testing";
-import m117 from "./research/usability-testing";
-import m118 from "./type-colour/colour-contrast-ratio";
-import m119 from "./type-colour/modular-type-scale";
-import m120 from "./visual/visual-hierarchy";
+import m90 from "./laws-effects/postels-law";
+import m91 from "./laws-effects/serial-position-effect";
+import m92 from "./laws-effects/social-proof";
+import m93 from "./laws-effects/steering-law";
+import m94 from "./laws-effects/teslers-law";
+import m95 from "./laws-effects/von-restorff-effect";
+import m96 from "./laws-effects/zeigarnik-effect";
+import m97 from "./metrics/confidence-intervals";
+import m98 from "./metrics/nasa-tlx";
+import m99 from "./metrics/net-promoter-score";
+import m100 from "./metrics/sample-size-estimation";
+import m101 from "./metrics/system-usability-scale";
+import m102 from "./metrics/task-success-rate";
+import m103 from "./psychology/affordances";
+import m104 from "./psychology/cognitive-load-theory";
+import m105 from "./psychology/gulfs-of-execution-and-evaluation";
+import m106 from "./psychology/mental-models";
+import m107 from "./psychology/recognition-over-recall";
+import m108 from "./psychology/signifiers";
+import m109 from "./psychology/working-memory-model";
+import m110 from "./research/ab-testing";
+import m111 from "./research/card-sorting";
+import m112 from "./research/cognitive-walkthrough";
+import m113 from "./research/contextual-inquiry";
+import m114 from "./research/heuristic-evaluation";
+import m115 from "./research/in-depth-interviews";
+import m116 from "./research/think-aloud-protocol";
+import m117 from "./research/tree-testing";
+import m118 from "./research/usability-testing";
+import m119 from "./type-colour/colour-contrast-ratio";
+import m120 from "./type-colour/modular-type-scale";
+import m121 from "./visual/visual-hierarchy";
 
 export const rawEntries: KnowledgeEntryInput[] = [
   m0,
@@ -243,5 +244,6 @@ export const rawEntries: KnowledgeEntryInput[] = [
   m117,
   m118,
   m119,
-  m120
+  m120,
+  m121
 ];

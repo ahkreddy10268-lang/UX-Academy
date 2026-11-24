@@ -2433,6 +2433,11 @@
     "checkedAt": "2026-11-16",
     "httpStatus": 200
   },
+  "owasp-input-validation-cheat-sheet": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-24",
+    "httpStatus": 200
+  },
   "paas-1992": {
     "status": "doi-verified",
     "checkedAt": "2026-11-03",
@@ -2630,10 +2635,59 @@
     "checkedAt": "2026-11-03",
     "httpStatus": 200
   },
+  "rfc-1122": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-24",
+    "registeredTitle": "Requirements for Internet Hosts - Communication Layers",
+    "registeredYear": 1989,
+    "similarity": 1
+  },
+  "rfc-2360": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-24",
+    "registeredTitle": "Guide for Internet Standards Writers",
+    "registeredYear": 1998,
+    "similarity": 1
+  },
+  "rfc-7103": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-24",
+    "registeredTitle": "Advice for Safe Handling of Malformed Messages",
+    "registeredYear": 2014,
+    "similarity": 1
+  },
+  "rfc-760": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-24",
+    "registeredTitle": "DoD standard Internet Protocol",
+    "registeredYear": 1980,
+    "similarity": 1
+  },
+  "rfc-791": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-24",
+    "registeredTitle": "Internet Protocol",
+    "registeredYear": 1981,
+    "similarity": 1
+  },
   "rfc-9110": {
     "status": "url-reachable",
     "checkedAt": "2026-11-11",
     "httpStatus": 200
+  },
+  "rfc-9112": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-24",
+    "registeredTitle": "HTTP/1.1",
+    "registeredYear": 2022,
+    "similarity": 1
+  },
+  "rfc-9413": {
+    "status": "doi-verified",
+    "checkedAt": "2026-11-24",
+    "registeredTitle": "Maintaining Robust Protocols",
+    "registeredYear": 2023,
+    "similarity": 1
   },
   "rodden-hutchinson-fu-2010": {
     "status": "doi-verified",

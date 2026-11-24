@@ -169,6 +169,7 @@ export default defineEntry({
     { target: "default-effect", type: "applied-in", note: "Defaults are a primary way of moving decisions from users to the system — with ethical responsibilities." },
     { target: "user-control-and-freedom", type: "contrasts-with", note: "Absorbing complexity can reduce user control; designers must balance automation with the ability to override." },
     { target: "jakobs-law", type: "related-to", note: "Both are practitioner maxims; following conventions is one way to keep complexity familiar rather than new." },
+    { target: "postels-law", type: "related-to", note: "Tolerant input handling is one way the system absorbs complexity from the person, and the system must then parse and validate correctly." },
   ],
 
   exercises: [
