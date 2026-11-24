@@ -291,6 +291,28 @@ export default defineEntry({
       ],
       criteria: ["Clear naming convention", "Versioning and deprecation path", "Usage measurement", "Ownership defined"],
     },
+    {
+      id: "design-tokens-ex-pipeline",
+      kind: "assignment",
+      level: "intermediate",
+      title: "Trace a token from source to product",
+      prompt: [
+        "Use the illustrative Library Services Platform. Define one primitive and one semantic action token in a DTCG-style source file. Show the resolved light and dark values, one generated web output and where the same semantic role would be mapped for a native app.",
+        "Mark which file is authoritative, which files are generated, and which checks must run before release. Do not assume the DTCG format alone defines the platform transform.",
+      ],
+      deliverable: "A short source fragment, a two-theme mapping table, one platform output and a validation checklist.",
+      criteria: [
+        "The primitive records a value and the semantic token records a purpose through an alias",
+        "The same semantic name is used by the component in both themes",
+        "The source, resolver and platform output are not conflated",
+        "At least one contrast check and one platform-integration check are specified",
+        "The learner identifies one limitation of the chosen tooling",
+      ],
+      exampleSolution: [
+        "The source defines color.palette.blue-700 as the primitive and color.action.primary as an alias to it. The light context resolves action.primary to #1F4A9E; the dark context resolves the same role to #A9C4FF. The web build emits --color-action-primary under :root and a dark-context override under [data-theme=dark]. The button only consumes var(--color-action-primary).",
+        "The source file is authoritative; theme resolution chooses context values; platform transforms create CSS/native outputs. Validation checks the alias graph, type and naming rules, contrast for each text/surface pairing, and the actual button in web and native builds. The team records which imported DTCG fields its design tool supports rather than assuming full format parity.",
+      ],
+    },
   ],
 
   quiz: [
@@ -332,6 +354,32 @@ export default defineEntry({
       explanation: "Primitive → semantic → component is the standard layering for theming.",
     },
     {
+      id: "design-tokens-q-variable",
+      kind: "multiple-choice",
+      level: "beginner",
+      prompt: "Which statement best distinguishes a design token from a Figma variable?",
+      options: [
+        { text: "A token is a named design decision; a Figma variable is one tool feature that can store and apply reusable values", correct: true, explanation: "A tool variable can implement part of a token architecture, but the design decision and interoperable source model are broader." },
+        { text: "They are exactly the same thing in every tool and file format", correct: false, explanation: "Tool variables and token interchange formats overlap but have different types, scopes and feature support." },
+        { text: "A token is only a CSS custom property", correct: false, explanation: "CSS custom properties are one possible platform output." },
+        { text: "A variable always contains more information than a token", correct: false, explanation: "The term does not guarantee a richer architecture; context and format matter." },
+      ],
+      explanation: "Distinguish the design decision and its naming contract from one implementation feature.",
+    },
+    {
+      id: "design-tokens-q-layers",
+      kind: "scenario",
+      level: "advanced",
+      prompt: "A two-person product team has one web app and no theming requirement. A proposal adds four token tiers and 600 component tokens. What is the strongest response?",
+      options: [
+        { text: "Start with the smallest useful architecture, such as CSS variables or primitive and semantic roles, and add a tier only when a real use case justifies its maintenance cost", correct: true, explanation: "Token layers are an architectural choice. Complexity should be justified by platform, theme, brand and ownership needs." },
+        { text: "Adopt all four tiers because DTCG requires them", correct: false, explanation: "DTCG does not prescribe primitive, semantic or component tiers." },
+        { text: "Reject tokens because a small team cannot use them", correct: false, explanation: "A lightweight token set may still solve a real consistency problem." },
+        { text: "Create one token for every CSS declaration", correct: false, explanation: "This can tokenise incidental values and create a maintenance burden without clarifying reusable decisions." },
+      ],
+      explanation: "The design should fit the product's scale, needs and available ownership.",
+    },
+    {
       id: "design-tokens-q-alias",
       kind: "multiple-choice",
       level: "advanced",
@@ -350,6 +398,10 @@ export default defineEntry({
     { id: "design-tokens-fc-layers", front: "Three common token layers", back: "Primitive (options) → semantic (purpose) → component (scoped)." },
     { id: "design-tokens-fc-dtcg", front: "DTCG format status", back: "Design Tokens Format Module 2025.10 — Final Community Group Report (28 Oct 2025); not a W3C Standard." },
     { id: "design-tokens-fc-origin", front: "Who coined 'design tokens'?", back: "Jina Anne with Jon Levine at Salesforce." },
+    { id: "design-tokens-fc-variable", front: "Token versus tool variable", back: "A token expresses a named design decision; a Figma variable is one tool feature for storing and applying reusable values." },
+    { id: "design-tokens-fc-pipeline", front: "Token delivery pipeline", back: "Author → validate → resolve context → transform per platform → generate outputs → test in product." },
+    { id: "design-tokens-fc-tier-standard", front: "Does DTCG require primitive/semantic/component tiers?", back: "No. DTCG defines token file structure and references; tier architectures are conventions used by particular design systems." },
+    { id: "design-tokens-fc-figma-types", front: "Figma's six variable types (checked 2026-11-24)", back: "Color, number, string, boolean, timing and easing. These are Figma capabilities, not DTCG's type list." },
   ],
 
   references: [
