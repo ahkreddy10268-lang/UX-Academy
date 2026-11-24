@@ -368,7 +368,7 @@ export default defineSources([
     access: "open",
     verification: "url-checked",
     lastVerifiedAt: "2026-11-24",
-    notes: "Read 2026-11-24. Specifies an 8 dp baseline grid for Android UI, with 4 dp alignment for smaller elements; recommends dp for layout measurements and sp for text that respects user font-size preferences. Platform-specific guidance, not a universal web spacing rule.",
+    notes: "Read 2026-11-24. Recommends 4 and 8 measurements when using a baseline grid; use dp for layout specifications and sp for text that respects user font-size preferences. Platform-specific guidance, not a universal web spacing rule.",
   },
   {
     id: "carbon-spacing",
@@ -382,7 +382,7 @@ export default defineSources([
     access: "open",
     verification: "url-checked",
     lastVerifiedAt: "2026-11-10",
-    notes: "Read 2026-11-10 (Phase 1 audit). Spacing tokens $spacing-01 (2 px) to $spacing-13 (160 px), built on multiples of 2, 4 and 8; deviation 'should be avoided whenever possible'; spacing tokens are not responsive.",
+    notes: "Read 2026-11-24. Current overview describes component spacing increments built from multiples of 2, 4 and 8 and advises avoiding scale deviations when possible. The scale complements the Carbon 2x Grid; breakpoint layout may move between spacing steps without making the tokens themselves fluid.",
   },
   {
     id: "atlassian-spacing",
@@ -396,7 +396,7 @@ export default defineSources([
     access: "open",
     verification: "url-checked",
     lastVerifiedAt: "2026-11-10",
-    notes: "Read 2026-11-10 (Phase 1 audit). 8 px base (space.100); scale from space.0 to space.1000 (80 px) including 2, 4 and 6 px steps; negative tokens; ranges by use: small for icon gaps and input padding, medium for button padding and cards, large for page layout.",
+    notes: "Read 2026-11-24. 8 px base (space.100); published scale from 0 to 80 px, grouped as small (0–8 px), medium (12–24 px) and large (32–80 px), with usage guidance for component padding, icon/text gaps, cards and page layout.",
   },
   {
     id: "uswds-spacing-units",
