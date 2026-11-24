@@ -269,6 +269,19 @@ export default defineEntry({
       ],
     },
     {
+      id: "colour-systems-ex-status-data",
+      kind: "assignment",
+      level: "intermediate",
+      title: "Redesign the library status board",
+      prompt: [
+        "Illustrative case. A library branch dashboard uses green for available stock, red for overdue books and the same blue for every data-series line. In dark mode, the primary brand blue is unchanged; the overdue label is colour-only; two adjacent chart series cannot be distinguished in grayscale.",
+        "Produce current and corrected role maps for the same task. Separate semantic UI roles (brand, text, surface, status, focus) from chart roles (categorical, sequential or diverging).",
+        "Show the generated ramp and its OKLCH controls, document any sRGB/gamut fallback, calculate actual WCAG pairs in light and dark themes, and add text/shape/line-style cues. Explain which values remain brand-locked and which may remap.",
+      ],
+      deliverable: "A before/after role-map table, contrast-pair matrix, CSS token example, chart palette specification and colour-vision/grayscale QA record.",
+      criteria: ["Same task compared fairly", "Roles separated from raw values", "Text and non-text pairs measured in each theme", "Series remain distinguishable without hue", "Brand constraints documented without status collisions", "Fallback and gamut behaviour tested"],
+    },
+    {
       id: "colour-systems-ex-brand",
       kind: "reflection",
       level: "advanced",
@@ -307,6 +320,32 @@ export default defineEntry({
       explanation: "Each theme maps roles to steps that pass.",
     },
     {
+      id: "colour-systems-q-data-palette",
+      kind: "multiple-choice",
+      level: "intermediate",
+      prompt: "A branch dashboard compares six unrelated regions, plots daily volume over time, and shows variance around a zero target. Which palette types fit those three jobs?",
+      options: [
+        { text: "Categorical for regions, sequential for volume, diverging for variance", correct: true, explanation: "Palette structure should match whether data is nominal, ordered or centred on a meaningful midpoint." },
+        { text: "Sequential for regions, categorical for volume, diverging for the zero-target variance", correct: false, explanation: "Region names have no order; a sequential ramp would imply one." },
+        { text: "One red-to-green ramp for all three", correct: false, explanation: "It conflates data relationships and can be difficult for colour-vision differences." },
+        { text: "Brand colour for every series", correct: false, explanation: "A brand colour is not a general-purpose data encoding." },
+      ],
+      explanation: "Categorical, sequential and diverging palettes serve different data relationships.",
+    },
+    {
+      id: "colour-systems-q-grade",
+      kind: "scenario",
+      level: "advanced",
+      prompt: "A team uses an arbitrary OKLCH ramp and claims that steps 50 units apart always pass WCAG AA because USWDS has a 50-point magic number. What is wrong?",
+      options: [
+        { text: "USWDS's magic numbers rely on its own defined grade luminance ranges, not arbitrary numeric steps", correct: true, explanation: "The shortcut is valid only for the USWDS grade system; all other pairs need direct contrast checks." },
+        { text: "OKLCH is not a valid CSS colour space", correct: false, explanation: "The issue is misapplying the USWDS rule, not the colour space." },
+        { text: "WCAG only applies to hex colours", correct: false, explanation: "WCAG contrast concerns the rendered pair's relative luminance, not authoring syntax." },
+        { text: "A 50-point difference guarantees AAA", correct: false, explanation: "USWDS distinguishes its grade gaps for different text thresholds." },
+      ],
+      explanation: "Never transfer a vendor-specific shortcut to a different scale without proving its luminance bounds.",
+    },
+    {
       id: "colour-systems-q-uswds",
       kind: "multiple-choice",
       level: "advanced",
@@ -325,7 +364,10 @@ export default defineEntry({
     { id: "colour-systems-fc-layers", front: "Four layers of a colour system", back: "Tonal ramps, roles, documented pairs, themes." },
     { id: "colour-systems-fc-pair", front: "Where does contrast belong?", back: "To a pair: a foreground role on a background role, in each theme." },
     { id: "colour-systems-fc-uswds", front: "USWDS magic numbers", back: "A grade difference of 50+ gives AA contrast; 70+ gives AAA." },
-    { id: "colour-systems-fc-wcag", front: "WCAG 2.2 criteria for colour systems", back: "1.4.1 Use of Color (A), 1.4.3 Contrast Minimum (AA, 4.5:1), 1.4.11 Non-text Contrast (AA, 3:1)." },
+    { id: "colour-systems-fc-wcag", front: "WCAG 2.2 criteria for colour systems", back: "1.4.1 Use of Color (A), 1.4.3 Contrast Minimum (AA: 4.5:1 normal text, 3:1 large text), 1.4.11 Non-text Contrast (AA: 3:1 for required component/state cues and meaningful graphics)." },
+    { id: "colour-systems-fc-oklch", front: "What OKLCH gives a colour designer", back: "Lightness, chroma and hue can be tuned separately. It helps generate ramp candidates; it does not guarantee contrast, gamut fit or colour-vision distinction." },
+    { id: "colour-systems-fc-chart", front: "Three data palette types", back: "Categorical for unrelated groups; sequential for ordered magnitude; diverging for values around a meaningful midpoint." },
+    { id: "colour-systems-fc-magic", front: "USWDS magic numbers", back: "Its 40/50/70 grade-gap guidance relies on USWDS's own bounded luminance ranges. Do not apply it to arbitrary ramp steps." },
   ],
 
   references: [
@@ -336,12 +378,21 @@ export default defineEntry({
     { source: "dtcg-color-2025", role: "explanatory", note: "Colour spaces in tokens." },
     { source: "mdn-prefers-color-scheme", role: "explanatory", note: "Theme preference media feature." },
     { source: "w3c-wcag-22", role: "standard", note: "SC 1.4.1, 1.4.3, 1.4.11." },
+    { source: "w3c-css-color-4", role: "explanatory", note: "CSS Color 4, current Candidate Recommendation Draft status; OKLCH, wide-gamut colour and gamut mapping. Draft, not completed Recommendation." },
+    { source: "mdn-relative-colors", role: "explanatory", note: "Progressively enhanced colour variants from an origin colour." },
+    { source: "mdn-color-mix", role: "explanatory", note: "CSS color-mix() interpolation and modern colour spaces." },
+    { source: "carbon-data-viz-colors", role: "explanatory", note: "Categorical, sequential, diverging and alert palette distinctions; guidance is work in progress." },
+    { source: "w3c-understanding-use-of-color", role: "standard", note: "Informative Understanding document for WCAG 2.2 SC 1.4.1, Level A." },
+    { source: "w3c-understanding-non-text-contrast", role: "standard", note: "Informative Understanding document for WCAG 2.2 SC 1.4.11, Level AA." },
+    { source: "w3c-g111-color-pattern", role: "explanatory", note: "W3C sufficient technique example using pattern in addition to colour; techniques are informative, not mandatory." },
+    { source: "nei-color-vision-deficiency", role: "explanatory", note: "Types of colour-vision deficiency: red-green, blue-yellow and complete deficiency." },
+    { source: "w3c-wcag-faq", role: "explanatory", note: "W3C WAI FAQ current status of WCAG 3; it is not a replacement for WCAG 2.2 conformance." },
   ],
   evidence: "practitioner-recommendation",
   evidenceNote:
-    "Documented design-system practice; contrast thresholds and the colour-alone rule are WCAG 2.2 success criteria; perceptual basis in established colour-vision research. Ramp structures and role sets are conventions without experimental comparison.",
+    "Documented design-system practice from Material, Carbon, Atlassian and USWDS; WCAG 2.2 SC 1.4.1, 1.4.3 and 1.4.11 provide the applicable normative requirements. CSS Color 4 is a Candidate Recommendation Draft, and the W3C Understanding documents and G111 technique are informative. OKLCH is a useful authoring space, not a contrast or colour-vision certification. Palette structures, semantic role names and brand-remapping rules remain system conventions rather than one experimentally proven universal model.",
 
   status: "published",
   quality: { classification: true, explanation: true, research: true, beginner: true, professional: true, examples: true, limitations: true, relationships: true, sources: true, activities: true },
-  lastVerifiedAt: "2026-11-11",
+  lastVerifiedAt: "2026-11-24",
 });
