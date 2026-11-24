@@ -173,9 +173,10 @@ export default defineSources([
     type: "standard",
     tier: 1,
     topics: ["usability", "effectiveness", "efficiency", "satisfaction", "context of use"],
-    licence: "Copyrighted; paid access. Only the public abstract was consulted.",
+    licence: "Copyrighted; paid access.",
     access: "paywalled",
     verification: "bibliographic",
+    notes: "The official ISO catalogue record and its public abstract were consulted; the paid text of ISO 9241-11:2018 was not accessed. The official ISO Online Browsing Platform entry for ISO 9241-115:2024 reproduces the context-of-use and usability definitions and attributes them to ISO 9241-11:2018, clauses 3.1.15 and 3.1.1 respectively.",
   },
   {
     id: "iso-9241-210-2019",

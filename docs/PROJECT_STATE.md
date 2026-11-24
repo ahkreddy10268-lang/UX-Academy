@@ -4,6 +4,7 @@ The current state in one page. Read it first every session, then verify it again
 
 Last updated: **2026-11-24** (Domain 2 Batch 8 `webers-law` published on the branch; Batch 7 `power-law-of-practice` at `9d39a9f`; `main` unchanged at `777640d`; D-133 domain-by-domain completion).
 Last updated: **2026-11-20** (D1-7 learning-path display fix; local, not pushed).
+Last updated: **2026-11-23** (Domain 1 educational audit committed on `codex/domain-1-educational-quality`; PRs #2 and #3 are merged into main per GitHub state; no production deployment change made or verified in this audit).
 
 ## Repository
 
@@ -43,6 +44,14 @@ The owner has directed completion of all 20 domains in the canonical taxonomy or
 | Vercel preview | `6b030cf` → `dpl_5khooyWoQQZHJaHJYeePWMHRiY4Z`, READY; Domain 1 shows 16 published, 5 addressed within, 0 planned, 21 of 21 accounted for; five addressed-within links resolve | 2026-11-20 |
 | Vercel production branch | `main` (set by the owner in the dashboard, confirmed by screenshot; borne out by the production build from `main`) | 2026-11-20 |
 | Vercel production | `dpl_77Bpw7KyrCPPEEeHf5mMLcVYLwT7`, branch `main`, commit `9a51aa6e3ba2520ffc0f3e73f2e84479dbc5f38e`, READY, assigned to `ux-academy-eight.vercel.app`; live site verified. Previous production `dpl_7s6R4…` (`a1f6373`) remains a rollback candidate | 2026-11-20 |
+| Active audit branch | `codex/domain-1-educational-quality` (created from current `main`; latest audited change `ff62feaf`) | 2026-11-23 (GitHub API) |
+| Local HEAD | Not available in this remote GitHub session | 2026-11-23 |
+| `main` | `9a51aa6e3ba2520ffc0f3e73f2e84479dbc5f38e` | 2026-11-23 (GitHub API) |
+| PR #3 | `claude/batch1-constraints` → `main`: closed and merged | 2026-11-20 (GitHub API) |
+| PR #2 | `claude/pensive-cannon-t1o6sy` → `main`: closed and merged | 2026-11-20 (GitHub API) |
+| Vercel preview | `6b030cf` → `dpl_5khooyWoQQZHJaHJYeePWMHRiY4Z`, READY; Domain 1 shows 16 published, 5 addressed within, 0 planned, 21 of 21 accounted for; five addressed-within links resolve | 2026-11-20 |
+| Vercel production branch | `main`, set by the owner in the dashboard and confirmed by screenshot (the connector cannot read this setting) | 2026-11-20 |
+| Vercel production | Last directly verified deployment was `dpl_7s6R4AxHziGx3GvQY2VyQhGzKPCv` (`a1f6373`) before PR #3 merged; post-merge production deployment not verified in this audit (Vercel API returned 403 for the team scope) | 2026-11-23 audit note |
 
 ## Content strategy and cycle
 
@@ -71,7 +80,7 @@ Cycle 3 paused after B6 topic 1. Plan: 11 entries + 4 topics addressed within a 
 | 4 | `product-design`, `experience-design` (both published) | Done — `9eb3675` |
 | 5 | `history-of-interface-design`, `evolution-of-digital-experiences` (published); `history-of-hci` (addressed within `human-computer-interaction`) | Done — `55dc927` |
 
-**Result: Domain 1 complete and validated.** 21/21 topics accounted for: 16 published (6 before + 10 new), 5 addressed within a host (utility, feasibility, viability, human-centred design, history of HCI), 0 planned. Published 103 → 113, addressed within 18 → 23. Open minors: D1-2 to D1-5 in OPEN_ISSUES. **Design skills installed (2026-11-20):** eight third-party Claude Code skills in `.claude/skills/` (see `docs/DESIGN_SKILLS_WORKFLOW.md`); not yet applied to the interface. **Resource enrichment (2026-11-20):** further reading added to 6 entries (QA ledger). Domain 2 not started.
+**Result: Domain 1 complete and validated.** 21/21 topics accounted for: 16 published (6 before + 10 new), 5 addressed within a host (utility, feasibility, viability, human-centred design, history of HCI), 0 planned. Published 103 → 113, addressed within 18 → 23. Open minors: D1-4 to D1-6 in OPEN_ISSUES; D1-2 was resolved in the Domain 1 educational audit (see `docs/DOMAIN_1_EDUCATIONAL_QUALITY_AUDIT.md`). **Design skills installed (2026-11-20):** eight third-party Claude Code skills in `.claude/skills/` (see `docs/DESIGN_SKILLS_WORKFLOW.md`); not yet applied to the interface. **Resource enrichment (2026-11-20):** further reading added to 6 entries (QA ledger). Domain 2 not started.
 
 ## D1-7 learning-path display fix (2026-11-20)
 
@@ -90,6 +99,9 @@ Pushed `58de5b5` on owner approval; preview verified. All 16 entries and five ad
 **Root cause:** Vercel production for project `ux-academy` is built from `claude/pensive-cannon-t1o6sy` (production deployment of `a1f6373`); nothing has ever been deployed from `main`, and `main` (`b788511`) lacks the 55 commits in PR #3. Production shows the pre-Domain-1 state. **Fixed on the branch:** status presentation (domain page, coverage bar, coverage table) and the taxonomy-doc generator (D1-3 closed). **Blocked on the owner (DEP-1):** set Vercel's production branch to `main`, then merge PR #3. Nothing pushed, merged or deployed in this task.
 
 **Update (2026-11-23):** PR #3 was merged into `main` on 2026-11-20 at `9a51aa6`. GitHub reports a successful Vercel check for that commit. The supplied deployment URL and the project dashboard could not be independently fetched in this session, so the live runtime, production alias and deployed commit remain unconfirmed. Verify `/topics/foundations`, `/coverage` and `/topics/laws-effects` on the actual production domain; expected Domain 1 status is 16 published + 5 addressed within + 0 planned (21/21). See DEP-2 in `docs/OPEN_ISSUES.md`.
+## Deployment and status reconciliation (historical record, 2026-11-20)
+
+**Historical root cause:** Vercel production was built from `claude/pensive-cannon-t1o6sy` (`a1f6373`) while the corrected Domain 1 status pages and generator fixes were on the `claude/batch1-constraints` branch. The owner changed Vercel's production branch to `main` on 2026-11-20. PR #3 was subsequently merged into `main` on 2026-11-20 (GitHub API). The last confirmed production deployment in the earlier record was still `a1f6373`; this audit did not verify the post-merge production deployment because Vercel API access returned 403 for the team scope. DEP-1's branch-setting and merge prerequisites are complete; post-merge production verification remains outstanding. No production settings or deployment were changed by this audit.
 
 ## B5 topic 1 — `default-effect` (2026-11-20)
 
@@ -130,6 +142,11 @@ No content was written or researched beyond source existence checks. Candidate s
 **Domain 2 — UX Laws & Cognitive Effects.** Owner-approved sequence is domain-by-domain (D-133). Domain 1 is complete at 21/21 accounted for. Domain 2's last generated coverage baseline is 14 published, 10 addressed within, 22 planned. Batch 1 (loss-aversion, framing-effect) and Batch 2 (anchoring-effect) are drafted, indexed and illustrated on the development branch. Expected status, pending docs generation: 14 published, 3 drafted, 10 addressed within, 19 planned. There are 20 new source records across these batches; only kahneman-tversky-1979 has a recorded Crossref match. All three entries intentionally remain drafted until source verification and all QA gates pass. Research records: docs/DOMAIN_2_BATCH_1_RESEARCH.md, docs/DOMAIN_2_BATCH_2_RESEARCH.md; open blockers: D2-B1-1 and D2-B2-1.
 
 **Standing authorization:** routine implementation, QA, records and push of completed batches to a development branch are approved. Merge to `main` and production deployment are not included.
+**Domain 1 educational quality audit** on `codex/domain-1-educational-quality` (owner-directed in this conversation). All 16 published UX & UI Fundamentals entries reviewed. The consolidated branch includes HCD teaching and practice in UCD, eight illustrative scenario labels, 13 glossary terms, seven typed relations, the corrected HCI context-of-use citation, and the D1-7 learning-path display for addressed-within topics. The `e2e-redesign` glossary expectation is 127; the generated coverage file and future-use `DESIGN_REFERENCE_LIBRARY.md` are included. HCI's two relations and both scenario labels are restored. D1-8 learning-path recommendations remain open for owner decision. PR #4 is open as a draft against `main`; no merge or deployment. Claude Desktop reported a four-entry, six-viewport/theme review with no visible token leaks, accessibility violations, overflow or console errors; HCI review should be rerun after its last relation/scenario edits. D1-7 test results from `claude/batch1-constraints` are recorded as source-branch evidence, not final-branch passes. Final consolidated branch check/build/browser verification and Vercel preview remain outstanding. See `docs/QA_VERIFICATION_LEDGER.md`.
+
+## Next authorised action
+
+Run the required repository-local QA on `codex/domain-1-educational-quality`: `npm run check`, `npm run test:taxonomy`, `npm run docs:generate` (review generated count changes), entry integrity for all changed entries, `npm run build`, full browser suites affected by the learning-path route/components, and the final HCI entry review. Confirm `e2e-redesign` uses the current 127-term glossary count and passes. Then inspect the full PR diff and Vercel preview. Do not merge until final-branch checks pass and the owner has reviewed the result.
 
 ## Open follow-ups
 

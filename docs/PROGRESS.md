@@ -458,3 +458,22 @@ Owner: approve the push of the status fix, set Vercel's production branch to `ma
 - All gates and every site-wide browser suite run (shared `lib/**` change). e2e count 31 → 32; LIB-1 still the only e2e-redesign failure.
 - **Next:** `cognitive-ease`.
 Owner: review the D1-7 commit; decide D1-8 (path recommendations) and A11Y-1. Content candidates awaiting approval: `loss-aversion`, `findability`.
+
+## Session 66 — UX & UI Fundamentals educational quality audit (2026-11-23)
+- Audited all 16 published Domain 1 entries against the renderer, three-level progression, schema checks, D-129 targets, D-131, evidence notes, practice and taxonomy coverage; full dispositions in `docs/DOMAIN_1_EDUCATIONAL_QUALITY_AUDIT.md`.
+- Finding: the Domain 1 inventory and teaching structure were already complete; no blanket rewrite or word-count expansion was justified. Five covered-within decisions were preserved.
+- Consolidated focused improvements from the wider Domain 1 review: human-centred design explained and assessed within UCD; eight illustrative scenarios labelled across HCI, Usability, UX and UCD; seven typed relations; 13 glossary terms and two aligned definitions.
+- D1-2 corrected in `human-computer-interaction`: context-of-use vocabulary is now clean plain text; the ISO citation sits in Practitioner explanatory prose. The source note distinguishes the public catalogue/abstract and official ISO 9241-115:2024 cross-reference from the paid ISO 9241-11:2018 text, which was not accessed.
+- Claude Desktop reported a targeted browser review with all viewport/theme, accessibility, overflow, console, plate, keyboard-flashcard and internal-link checks passing except the raw source token in Vocabulary. The review script had exited 0 despite that FAIL; the script is now corrected to set a non-zero exit code on any failed assertion. Post-fix rerun remains pending.
+- `docs:generate` reportedly changed only date metadata in four generated files; restored afterwards. `sources:verify`, site-wide browser suites and plate renders were appropriately skipped for this change set. Other required check/build results were not supplied. No merge or deployment.
+
+
+## Session 67 — Domain 1 QA follow-up and learning-path display (2026-11-23)
+- Incorporated Claude Desktop's follow-up QA findings. The HCI Vocabulary field is plain text and must not contain a `{{src:...}}` token; the ISO citation remains in Practitioner explanatory prose. The source note describes the public ISO catalogue/abstract and official ISO 9241-115:2024 cross-reference without implying the paid ISO 9241-11:2018 text was read.
+- Restored both HCI relations (to `interaction-design-discipline` and `evolution-of-digital-experiences`) and explicitly labelled both HCI scenarios as illustrative. Restored the Design Thinking → Design Processes relation.
+- Added D1-7 learning-path presentation: taxonomy `coveredBy` topics appear as “Explained within {host}” and are counted separately from lessons and planned concepts. No path-step data, numbering, progress or completion rules changed. D1-7 closed.
+- Updated `tests/browser/e2e-redesign.cjs` expected glossary count to 127; generated `docs/CONTENT_COVERAGE.md` committed with the 2026-11-23 generation date and updated counts; added `docs/DESIGN_REFERENCE_LIBRARY.md` as a future-use reading list only.
+- Open decision D1-8 remains: whether the three Fundamentals learning paths should add further Domain 1 entries. No path content changed.
+- Claude Desktop reported a post-correction visible-text review across four entries at 1440/768/390 px in light/dark, with no visible citation/link tokens, accessibility violations, overflow or console errors; all links resolved, figure text ≥10.2 px at phone width, and keyboard flashcards worked. HCI relations and the second scenario label were restored after that review, so HCI review still needs rerunning.
+- The source branch `claude/batch1-constraints` has recorded PASS for D1-7 checks (612 tests, taxonomy, build, e2e 44/44, e2e-redesign 66/66 after glossary count 127, keyboard 45/45, devices 155/155). These are recorded as source-branch evidence only, not final combined-branch results.
+- No merge or production deployment. Final consolidated branch still requires `npm run check`, `npm run test:taxonomy`, `npm run build`, relevant site-wide browser suites, and the final HCI browser review. Screen-reader, physical-device and independent expert testing remain outstanding.
