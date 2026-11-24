@@ -65,7 +65,7 @@ export default defineEntry({
         "Define primitives as scales (colour ramps, spacing and type scales).",
         "Define semantic tokens from real usage: text, surface, border, action, feedback (success/warning/danger/info), focus.",
         "Encode accessibility constraints: every text token paired with the surface tokens it may sit on must meet contrast requirements.",
-        "Automate the pipeline: source → validation → transforms → published packages, versioned with semantic versioning.",
+      "Automate the pipeline: source → schema and alias validation → context resolution → platform transforms → generated outputs → integration tests. Version and document the outputs; keep source files and generated artifacts distinguishable.",
         "Document intent and usage for each semantic token; deprecate rather than delete.",
       ],
       scenarios: [
@@ -87,7 +87,8 @@ export default defineEntry({
       debates: [
         "**How many layers?** Some teams adopt three or four tiers; others argue that component tokens create an explosion of names that few people use. Measure usage and prune.",
         "**Naming taxonomies.** Category-first (`color.text.primary`) vs component-first (`button.color.text`) naming affects discoverability and theming; there is no single standard.",
-        "**Tokens vs styles in tools.** Design tools increasingly support variables and modes natively, which overlaps with token pipelines and raises the question of which is the source of truth.",
+        "**Tokens vs variables and styles in tools.** Design tools increasingly support variables, aliases and modes natively. A team can author in a design tool, in code or in a dedicated token source. The decision is about source-of-truth ownership, validation, portability and release workflow—not about declaring one tool variable feature to be the token standard.",
+        "**Interchange format vs platform-native output.** A shared source format improves exchange, but target platforms differ in units, colour capabilities, typography APIs and runtime theme behaviour. A valid interchange file does not guarantee identical rendering or complete support in every importer.",
       ],
       alternativeModels: [
         "**CSS custom properties alone** — simpler for web-only products, but without cross-platform transformation or a tool-neutral source.",
@@ -412,7 +413,8 @@ export default defineEntry({
     { source: "material-3", role: "explanatory", note: "Token architecture in Material Design 3." },
     { source: "fluent-2", role: "explanatory", note: "Token practice in Fluent 2." },
     { source: "carbon-design-system", role: "explanatory", note: "Token practice in Carbon." },
-    { source: "figma-learn", role: "further", note: "Design-tool variables and modes." },
+    { source: "figma-learn", role: "primary", note: "Official overview of variables, collections and modes; six variable types, aliases and contextual modes.", locator: "https://help.figma.com/hc/en-us/articles/14506821864087-Overview-of-variables-collections-and-modes" },
+    { source: "style-dictionary-dtcg", role: "explanatory", note: "Platform transforms: changing token names, values and attributes for target outputs.", locator: "https://styledictionary.com/reference/hooks/transforms/" },
   ],
   evidence: "practitioner-recommendation",
   evidenceNote:
@@ -431,5 +433,5 @@ export default defineEntry({
     sources: true,
     activities: true,
   },
-  lastVerifiedAt: "2026-11-11",
+  lastVerifiedAt: "2026-11-24",
 });
