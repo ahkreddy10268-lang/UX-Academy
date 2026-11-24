@@ -78,6 +78,11 @@
     "registeredContainer": "Psychological Review",
     "similarity": 1
   },
+  "android-font-scaling-200": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-24",
+    "httpStatus": 200
+  },
   "android-grids-and-units": {
     "status": "url-reachable",
     "checkedAt": "2026-11-24",
@@ -138,7 +143,7 @@
   },
   "atlassian-typography": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-11",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "aws-backoff-jitter": {
@@ -869,7 +874,7 @@
   },
   "fluent-2-typography": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-11",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "forlizzi-battarbee-2004": {
@@ -1097,7 +1102,7 @@
   },
   "govuk-type-scale": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-11",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "govuk-understand-accessibility": {
@@ -1798,7 +1803,7 @@
   },
   "m3-type-scale": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-11",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "machado-oliveira-fernandes-2009": {
@@ -1924,6 +1929,11 @@
     "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
+  "mdn-css-length-units": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-24",
+    "httpStatus": 200
+  },
   "mdn-custom-properties": {
     "status": "url-reachable",
     "checkedAt": "2026-11-11",
@@ -1942,6 +1952,11 @@
   "mdn-prefers-reduced-motion": {
     "status": "url-reachable",
     "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "mdn-variable-fonts": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "microsoft-style-top-10": {
@@ -3207,6 +3222,11 @@
     "checkedAt": "2026-11-20",
     "httpStatus": 200
   },
+  "w3c-international-specs": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-24",
+    "httpStatus": 200
+  },
   "w3c-resource-timing": {
     "status": "url-reachable",
     "checkedAt": "2026-11-11",
@@ -3282,6 +3302,11 @@
     "checkedAt": "2026-11-11",
     "httpStatus": 200
   },
+  "w3c-wcag-148": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-24",
+    "httpStatus": 200
+  },
   "w3c-wcag-21": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
@@ -3289,7 +3314,7 @@
   },
   "w3c-wcag-22": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-17",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "w3c-wcag-3-wd": {
@@ -3454,30 +3479,5 @@
     "registeredYear": 1927,
     "registeredContainer": "Psychologische Forschung",
     "similarity": 1
-  },
-  "mdn-variable-fonts": {
-    "status": "url-reachable",
-    "checkedAt": "2026-11-24",
-    "httpStatus": 200
-  },
-  "w3c-international-specs": {
-    "status": "url-reachable",
-    "checkedAt": "2026-11-24",
-    "httpStatus": 200
-  },
-  "android-font-scaling-200": {
-    "status": "url-reachable",
-    "checkedAt": "2026-11-24",
-    "httpStatus": 200
-  },
-  "mdn-css-length-units": {
-    "status": "url-reachable",
-    "checkedAt": "2026-11-24",
-    "httpStatus": 200
-  },
-  "w3c-wcag-148": {
-    "status": "url-reachable",
-    "checkedAt": "2026-11-24",
-    "httpStatus": 200
   }
 }
