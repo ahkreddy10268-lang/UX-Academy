@@ -213,17 +213,17 @@ export default defineSources([
   /* ---- Theme architecture (Batch 2) ---- */
   {
     id: "style-dictionary-dtcg",
-    title: "Style Dictionary: Design Tokens Community Group format",
+    title: "Style Dictionary: platform transforms for design tokens",
     authors: [],
     organisation: "Style Dictionary",
-    url: "https://styledictionary.com/info/dtcg/",
+    url: "https://styledictionary.com/reference/hooks/transforms/",
     type: "official-documentation",
     tier: 2,
-    topics: ["token pipelines", "DTCG format", "build tools"],
+    topics: ["token pipelines", "platform transforms", "build tools"],
     access: "open",
     verification: "url-checked",
-    lastVerifiedAt: "2026-11-11",
-    notes: "Read 2026-11-11. States that Style Dictionary has had first-class support for the DTCG format since version 4, that the 2025.10 format is not yet fully supported, with work in progress in v5, and offers a converter from its v3 JSON format to DTCG keys ($value, $type, $description).",
+    lastVerifiedAt: "2026-11-24",
+    notes: "Read 2026-11-24. Official transform reference: transformations can change token names, values or attributes for a target platform; transforms are configured per platform and run sequentially, with predefined or custom transforms. This record supports the platform-output pipeline concept; it does not claim that every Style Dictionary version fully supports every DTCG 2025.10 feature.",
   },
   {
     id: "tokens-studio-docs",
