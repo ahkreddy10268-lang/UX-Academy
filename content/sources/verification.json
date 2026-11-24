@@ -78,6 +78,11 @@
     "registeredContainer": "Psychological Review",
     "similarity": 1
   },
+  "android-grids-and-units": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-24",
+    "httpStatus": 200
+  },
   "apple-hig": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
@@ -909,6 +914,11 @@
     "checkedAt": "2026-11-11",
     "httpStatus": 200
   },
+  "frost-themeable-ui-history": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-24",
+    "httpStatus": 200
+  },
   "fu-pirolli-2007": {
     "status": "doi-verified",
     "checkedAt": "2026-11-20",
@@ -1398,6 +1408,11 @@
   "ibm-design-language": {
     "status": "url-reachable",
     "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "ibm-design-program-history": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "ideo-design-kit": {
@@ -3439,20 +3454,5 @@
     "registeredYear": 1927,
     "registeredContainer": "Psychologische Forschung",
     "similarity": 1
-  },
-  "ibm-design-program-history": {
-    "status": "url-reachable",
-    "checkedAt": "2026-11-24",
-    "httpStatus": 200
-  },
-  "frost-themeable-ui-history": {
-    "status": "url-reachable",
-    "checkedAt": "2026-11-24",
-    "httpStatus": 200
-  },
-  "android-grids-and-units": {
-    "status": "url-reachable",
-    "checkedAt": "2026-11-24",
-    "httpStatus": 200
   }
 }
