@@ -240,7 +240,17 @@ export default defineEntry({
     {
       myth: "Components should use primitive tokens like blue.500.",
       reality:
-        "Using primitives in components defeats theming. Components should consume semantic (purpose-named) tokens.",
+        "Using primitives in components defeats theming. Components should consume semantic (purpose-named) tokens, unless a documented system constraint justifies a direct primitive reference.",
+    },
+    {
+      myth: "DTCG requires every design system to use primitive, semantic and component token tiers.",
+      reality:
+        "DTCG defines an interchange format for token values, types, groups and references. The number and names of architectural tiers are decisions made by each design system, not a DTCG conformance requirement {{src:dtcg-format-2025}}.",
+    },
+    {
+      myth: "A Figma variable collection is automatically a portable DTCG token source.",
+      reality:
+        "Figma variables are tool features with their own variable types, scopes and modes. DTCG is a separate interchange format; import/export mappings and unsupported properties must be checked {{src:figma-learn}}.",
     },
   ],
 
