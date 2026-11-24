@@ -104,11 +104,11 @@ export function ReferenceList({
               return (
                 <li key={r.source} id={`ref-${r.source}`} className="grid scroll-mt-24 grid-cols-[2rem_1fr] gap-2">
                   <span className="formula pt-0.5 text-sm text-ink-3">[{n}]</span>
-                  <div>
+                  <div className="min-w-0">
                     <SourceCitation source={s} record={verification[s.id]} />
                     {(r.note || r.locator) && (
                       <p className="mt-1 text-sm text-ink-2">
-                        {r.locator && <span className="font-medium">{r.locator}. </span>}
+                        {r.locator && <span className="font-medium [overflow-wrap:anywhere]">{r.locator}. </span>}
                         {r.note}
                       </p>
                     )}
