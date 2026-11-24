@@ -10,7 +10,10 @@ describe("learning paths", () => {
       for (const s of p.stages) {
         const { matching, other } = levelQuestionCounts(s);
         expect(matching + other, `${p.id}/${s.title}`).toBe(stageStats(s).questions);
-        const direct = s.steps.reduce((n, slug) => n + (entryBySlug.get(slug)?.quiz.filter((q) => q.level === s.level).length ?? 0), 0);
+        const direct = s.steps.reduce((n, slug) => {
+          const entry = entryBySlug.get(slug);
+          return n + (entry?.status === "published" ? entry.quiz.filter((q) => q.level === s.level).length : 0);
+        }, 0);
         expect(matching).toBe(direct);
       }
   });
