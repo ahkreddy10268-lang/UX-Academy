@@ -23,7 +23,7 @@
 | Comparisons | 11 |
 | Learning paths | 16 |
 | Glossary terms | 114 |
-| Sources | 595 |
+| Sources | 597 |
 
 ## By domain
 
@@ -313,7 +313,7 @@ Five separate dimensions, rated basic / developing / complete from the content (
 | Aesthetic and Minimalist Design | Principle | Professional guideline | complete | developing | complete | basic | complete | 7 | 3 | — | — |
 | Aesthetic-Usability Effect | Concept | Peer-reviewed research | complete | complete | complete | basic | complete | 8 | 4 | — | — |
 | Affordances | Concept | Established theoretical model | complete | complete | complete | basic | complete | 7 | 3 | — | — |
-| Atomic Design | Methodology | Practitioner recommendation | complete | developing | complete | developing | complete | 4 | 3 | — | — |
+| Atomic Design | Methodology | Practitioner recommendation | complete | developing | complete | developing | complete | 5 | 3 | — | — |
 | Card Sorting | Method | Practitioner recommendation | complete | complete | complete | developing | complete | 4 | 4 | — | — |
 | Choice Overload | Concept | Contested or limited evidence | complete | complete | complete | basic | complete | 3 | 4 | — | — |
 | Cognitive Load Theory | Theory | Established theoretical model | complete | complete | complete | complete | complete | 14 | 4 | — | cognitive-load-lab |
@@ -332,7 +332,7 @@ Five separate dimensions, rated basic / developing / complete from the content (
 | Data Tables | Pattern | Professional guideline | complete | developing | complete | developing | complete | 7 | 3 | — | async-state-lab |
 | Default Effect | Cognitive bias | Peer-reviewed research | complete | complete | complete | basic | complete | 6 | 6 | — | — |
 | Design Governance | Strategy | Practitioner recommendation | complete | developing | complete | basic | complete | 8 | 3 | — | — |
-| Design Language | Concept | Practitioner recommendation | complete | developing | complete | basic | complete | 7 | 3 | — | — |
+| Design Language | Concept | Practitioner recommendation | complete | developing | complete | basic | complete | 9 | 3 | — | — |
 | Design Process | Concept | Professional guideline | complete | complete | complete | basic | complete | 5 | 4 | — | — |
 | Design QA | Strategy | Practitioner recommendation | complete | developing | complete | basic | complete | 8 | 3 | — | — |
 | Design System | Concept | Practitioner recommendation | complete | complete | complete | developing | complete | 11 | 9 | — | — |
@@ -381,7 +381,7 @@ Five separate dimensions, rated basic / developing / complete from the content (
 | Microcopy | Pattern | Professional guideline | complete | complete | complete | basic | complete | 9 | 4 | — | — |
 | Miller's Law | Concept | Peer-reviewed research | complete | complete | complete | developing | complete | 4 | 4 | — | — |
 | Modular Type Scale | Technique | Practitioner recommendation | complete | complete | complete | developing | complete | 5 | 3 | modular-scale | type-scale-lab |
-| Multi-Brand Systems | Concept | Practitioner recommendation | complete | developing | complete | basic | complete | 5 | 3 | — | — |
+| Multi-Brand Systems | Concept | Practitioner recommendation | complete | developing | complete | basic | complete | 6 | 3 | — | — |
 | NASA Task Load Index (NASA-TLX) | Research instrument | Peer-reviewed research | complete | complete | complete | developing | complete | 3 | 4 | nasa-tlx | — |
 | Net Promoter Score (NPS) | Metric | Contested or limited evidence | complete | complete | complete | developing | complete | 3 | 3 | nps | — |
 | Nielsen's 10 Usability Heuristics | Heuristic | Professional guideline | complete | complete | complete | developing | complete | 8 | 4 | — | feedback-lab |
