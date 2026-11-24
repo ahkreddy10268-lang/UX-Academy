@@ -2,15 +2,28 @@
 
 The current state in one page. Read it first every session, then verify it against `git` (the repo wins; record any discrepancy here). Update it at the end of every meaningful task. History lives in `docs/PROGRESS.md`; decisions in `docs/DECISION_LOG.md`; open items in `docs/OPEN_ISSUES.md`; test results in `docs/QA_VERIFICATION_LEDGER.md`.
 
-Last updated: **2026-11-24** (owner asked to merge all outstanding work: PR #8 — Power Law of Practice and Weber's Law — merged as `601bb96`; then `claude/batch1-constraints`, PR #4 `codex/domain-1-educational-quality` and PR #7 `codex/design-systems-mastery-build` merged together via `claude/merge-all-20261124`; D-133 domain-by-domain completion).
+Last updated: **2026-11-24** (main verified at `d96b423`; active development branch `claude/merge-all-20261124` at `9008c2f`, six commits ahead / zero behind; LIB-1 isolation batch and full CI verified; no merge or production deployment).
 
 **Merge note (2026-11-24):** the three branches were merged on the owner's instruction. Conflicts: `human-computer-interaction.ts` kept `main`'s Domain 1 closeout wording (context-of-use vocabulary without the detailed ISO attribution, D1-2 closed); log files kept both sides, then duplicate issue rows were reduced to `main`'s current row; generated docs were regenerated. Sections below dated before 2026-11-24 that came from those branches (for example 'Current approved work (2026-11-23)' and its 'Next authorised action') are historical; the current next action is the D-133 line in the Owner direction section.
 
 ## Repository
 
+**Current remote state — verified 2026-11-24:** `main` is `d96b423f73e9720578dbdab20567bd449c94306c`. Active development branch `claude/merge-all-20261124` is `9008c2f365fefb714a0498f9faafb2739c006e1d`, six commits ahead and zero behind. The full GitHub Actions quality workflow passed on that exact head (run [45369113223](https://github.com/ahkreddy10268-lang/UX-Academy/actions/runs/45369113223)). The branch remains unmerged.
+
+**Preview-build guard:** the Vercel project `ux-academy` has a branch-specific Ignored Build Step that skips `claude/merge-all-20261124` and permits other refs, including `main`, to use the normal build path. The branch events inspected after the change were canceled by the ignore command before app builds. The existing Vercel check reports a build-rate-limit failure; no Ready preview exists for this batch's latest commits. The previously Ready branch deployment predates the guard. Production settings were not changed, and no production deployment was made.
+
 | Item | Value | Verified |
 |---|---|---|
-| Default branch | `main` at `9a51aa6` (merge of PR #3) | 2026-11-23 (GitHub API) |
+| Default branch | `main` at `d96b423f73e9720578dbdab20567bd449c94306c` | 2026-11-24 (GitHub API) |
+| Active development branch | `claude/merge-all-20261124` at `9008c2f365fefb714a0498f9faafb2739c006e1d` — 6 ahead / 0 behind | 2026-11-24 (GitHub compare API) |
+| GitHub Actions quality run | Run `45369113223` — PASS; check, taxonomy, docs, build and browser suites | 2026-11-24 |
+| Vercel preview protection | Ignored Build Step skips `claude/merge-all-20261124`; `main` not excluded | 2026-11-24 (event log) |
+| Vercel status on development commits | Build-rate-limit failure; no Ready deployment for this batch's latest commits | 2026-11-24 |
+| Production deployment | No deployment made in this task; production branch/settings left unchanged | 2026-11-24 |
+
+| Item | Value | Verified |
+|---|---|---|
+| Default branch | `main` at `d96b423` | 2026-11-24 (GitHub API) |
 | PR #3 | `claude/batch1-constraints` → `main`: merged 2026-11-20; merge commit `9a51aa6` | 2026-11-23 |
 | PR #2 | merged 2026-11-20 | 2026-11-23 |
 | Domain-completion work branch | `claude/domain-completion-20261123`, based on `main` at `9a51aa6`, 33 commits ahead at `f712e38` before this session; Social Proof `4af404b`, Goal-Gradient Effect `831eaf9`, Zeigarnik Effect `0005df9` (merged to `main` via PR #5 as `ef887a0`, production deployment verified 2026-11-24) and Postel's Law batches committed on top (QA ledger records the SHAs) | 2026-11-23 (`git fetch`) |

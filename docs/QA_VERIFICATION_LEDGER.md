@@ -33,6 +33,32 @@ npm run sources:verify -- <id…>
 
 Newest first. "Tree" is the commit the run was made on. Dates are when the run happened.
 
+### Unpublished-content isolation and development-lane CI — `9008c2f` (2026-11-24)
+
+Changes: learner-facing publication guards across Library, direct entry/lesson routes, search, Formula Lab, question/flashcard indexes, graph relationships and learning paths; retain status-only planning visibility; regression tests; browser scripts now return non-zero when assertions fail; GitHub Actions quality workflow. Generated records: quiz pool 486 → 474; research registry URL status updated after four additional URLs verified reachable.
+
+| Check | Command / scope | Result | Run / inherited | Limitations |
+|---|---|---|---|---|
+| Install | `npm ci` | PASS | Run | GitHub Actions Linux runner |
+| Check | `npm run check` | PASS — 23 test files / 645 tests; content index, TypeScript and ESLint | Run | Exact SHA `9008c2f365fefb714a0498f9faafb2739c006e1d` |
+| Taxonomy | `npm run test:taxonomy` | PASS — 20 domains, 73 subcategories, 561 topics, 1,072 links, 121 published entries checked | Run | — |
+| Generated docs | `npm run docs:generate` + `git diff --exit-code` | PASS — generated records current | Run | Updates committed separately at `ed57bfa` |
+| Build | `npm run build` | PASS — 999/999 static pages generated | Run | Build only; no deployment |
+| Crawl | `node tests/browser/crawl.cjs` on 7 routes | PASS — 0 pages with problems | Run | — |
+| E2E | `node tests/browser/e2e.cjs` | PASS — 44/44 | Run | Playwright / Chromium |
+| E2E redesign | `node tests/browser/e2e-redesign.cjs` | PASS — 68/68; includes absence of drafted search record and HTTP 404 for direct draft URL; retained 24-card plate check | Run | — |
+| Knowledge Atlas | `node tests/browser/atlas.cjs` | PASS — 36/36 | Run | — |
+| Keyboard | `node tests/browser/keyboard.cjs` | PASS — 45/45 | Run | Accessibility-tree assertions; not a screen-reader test |
+| Device emulation | `node tests/browser/devices.cjs` | PASS — 155/155 | Run | Emulated iPhone / Android / iPad profiles, not physical devices |
+| Colour Studio | `node tests/browser/colour-studio.cjs` | PASS — 46/46 | Run | — |
+| Accessibility | `AXE_PATH=node_modules/axe-core/axe.min.js node tests/browser/a11y.cjs` on 8 routes × light/dark | PASS — 0 violations | Run | axe-core 4.14.1; no manual AT review |
+| Draft isolation | Added content-unit regressions and E2E assertions | PASS | Run | No content lesson was edited; `sources:verify` and per-entry editorial review not required or run |
+| Vercel branch guard | Project Ignored Build Step event logs | PASS — branch checks returned exit 0 and events were CANCELED before the application build | Verified | Vercel status check still reports the existing build-rate-limit failure; no Ready deployment for the new branch commits; no production deployment |
+
+GitHub Actions run: [`45369113223`](https://github.com/ahkreddy10268-lang/UX-Academy/actions/runs/45369113223). The complete workflow passed on `9008c2f365fefb714a0498f9faafb2739c006e1d`.
+
+Manual VoiceOver/NVDA, physical-device and independent expert testing remain NOT RUN. No merge to `main` or production deployment was performed.
+
 ### Explorer labels (TD-5) and the Claude Design brief (2026-11-18, parent `b4a656b`)
 
 Changes: `components/illustrations/interactive/explorers.tsx`, `components/illustrations/primitives.tsx` (shared `Dim` label size), `docs/UX_ACADEMY_FOR_CLAUDE_DESIGN.md`, records.

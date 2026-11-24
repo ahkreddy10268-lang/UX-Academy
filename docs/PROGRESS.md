@@ -1,6 +1,6 @@
 # Progress register
 
-_Last updated: 2026-11-23 (session 66 — domain-by-domain completion direction recorded; Domain 1 confirmed complete; Domain 2 inventory audited)_
+_Last updated: 2026-11-24 (session 67 — unpublished learner-content isolation fixed and verified; development-only CI lane established)_
 
 ## State
 
@@ -559,3 +559,14 @@ Owner: review the D1-7 commit; decide D1-8 (path recommendations) and A11Y-1. Co
 - QA in disposable Vercel sandbox from the feature branch: `npm ci` PASS (0 vulnerabilities); `npm run check` PASS (23 test files / 626 tests, typecheck, lint); taxonomy PASS (1,046 links, Design Systems 29/29); `npm run docs:generate` PASS; `npm run build` PASS (998 static pages).
 - Browser review: `entry-review.cjs colour-systems` PASS 8/8 across 1440/768/390 px in light/dark; axe 0, overflow 0, browser errors 0, clipped figure text 0, internal links 12/12 and keyboard flashcards 7/7.
 - Accepted upgrades now total 12/29; 17 topics remain, plus the final site-wide change-impact suite. No taxonomy/schema/progress identity changes, main-branch write, merge or production deployment.
+
+## Session 67 — unpublished-content isolation and GitHub-only development lane (2026-11-24)
+
+- Established a branch-specific Vercel Ignored Build Step for `claude/merge-all-20261124`: the command exits 0 for this development ref (skip build) and exits 1 for other refs, leaving the production `main` build path unchanged. Vercel event logs confirm the affected branch events were canceled before the application build. No production deployment or merge was performed.
+- Rebased the work branch onto current `main` (`d96b423f73e9720578dbdab20567bd449c94306c)); current branch head `9008c2f365fefb714a0498f9faafb2739c006e1d`, six commits ahead and zero behind at verification.
+- Resolved LIB-1 across learner Library, direct entry/lesson routes, search, Formula Lab, quiz/flashcard pools, knowledge graph, learning-path lessons and related links. Planning surfaces retain status-only progress without exposing unpublished lesson content.
+- Added regression coverage. Browser harnesses now fail CI when assertions fail rather than only printing failures.
+- Added GitHub Actions quality workflow: install, check, taxonomy, generated-doc consistency, production build, local Playwright browser suites, device emulation and axe checks. It contains no deployment action.
+- Latest full CI run `45369113223`: `npm run check` PASS (23 test files / 645 tests); taxonomy PASS (20 domains, 73 subcategories, 561 topics, 1,072 links, 121 published entries); generated docs clean; build PASS (999 pages); crawl 0 problems; e2e 44/44; e2e-redesign 68/68; Atlas 36/36; keyboard 45/45; devices 155/155; Colour Studio 46/46; axe 0 violations.
+- Updated generated quiz count from 486 to 474 to align learner-facing practice pools with published entries; source registry now records four newly reachable URLs. No lesson content was promoted.
+- Remaining manual limitations: no VoiceOver/NVDA, physical-device or independent expert review. Three Domain 2 drafts continue to have separate source/entry QA blockers; the active D-133 next content action remains `cognitive-ease`.
