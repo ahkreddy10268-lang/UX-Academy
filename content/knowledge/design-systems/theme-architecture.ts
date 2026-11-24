@@ -55,6 +55,7 @@ export default defineEntry({
       howItWorks: [
         "On the web, themes are usually delivered as CSS custom properties. Custom properties cascade and inherit from their parent {{src:mdn-custom-properties}}, so defining role variables under `:root` and overriding them under `[data-theme=\"dark\"]` re-themes everything below that element — including a single dark section inside a light page.",
         "The browser can follow the person's system setting through the `prefers-color-scheme` media feature {{src:mdn-prefers-color-scheme}}, and the `color-scheme` property tells it to draw scrollbars, form controls and other browser UI in the matching scheme {{src:mdn-color-scheme}}.",
+        "Figma variable modes provide a useful design-tool example of inherited context: an object can use an explicit mode, or Auto can inherit the mode set on its parent container; if no parent sets one, it falls back to the collection default. This works for nested frames and components, but it is Figma’s inheritance model, not the DTCG Resolver’s separate resolution-order document {{src:figma-learn}} {{src:dtcg-resolver-2025}}.",
       ],
       implementation: [
         "Make every component consume semantic or component tokens only; lint against primitives and raw values in component code.",
@@ -367,6 +368,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     { source: "tailwind-theme", role: "explanatory", note: "Tailwind v4 @theme and @theme inline." },
     { source: "carbon-themes", role: "explanatory", note: "Role names fixed across four themes." },
     { source: "fluent-2-design-tokens", role: "explanatory", note: "Light, dark, high-contrast and branded themes on alias tokens." },
+    { source: "figma-learn", role: "explanatory", note: "Variable modes, explicit context selection, Auto inheritance and default-mode fallback.", locator: "https://help.figma.com/hc/en-us/articles/15343816063383-Modes-for-variables" },
   ],
   evidence: "practitioner-recommendation",
   evidenceNote:
