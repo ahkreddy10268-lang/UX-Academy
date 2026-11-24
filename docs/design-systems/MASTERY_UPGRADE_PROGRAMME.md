@@ -177,8 +177,20 @@ No arbitrary word counts. More words are justified only when they add a new expl
 | Baseline and Phase 1 research reviewed | Complete |
 | Master upgrade programme | Added in this branch |
 | Topic-by-topic upgrade matrix | Added in this branch |
-| Pilot 1: Design Tokens | In progress |
+| Pilot 1: Design Tokens | Content enrichment implemented on the build branch; local validation and review pending |
 | Pilot 2: Component Architecture | Planned |
 | Pilot 3: Design Governance | Planned |
 | 26-topic rollout | Planned |
 | Final branch tests | Pending |
+
+## Pilot 1 — current implementation record (2026-11-24)
+
+The `design-tokens` entry now includes:
+- A clearer token-versus-variable explanation and a warning that tool variables are not the DTCG file format.
+- A token delivery pipeline from authoring through validation, context resolution, platform transforms, generated outputs and integration tests.
+- An explicit statement that DTCG does not mandate primitive/semantic/component tiers.
+- Structured practice guidance and examples: DTCG source fragment, resolved CSS for light/dark contexts, and a poor-versus-better component mapping.
+- A pipeline assignment, questions about variable/token distinction and tier choice, additional flashcards and common misconceptions.
+- A direct link to the existing `token-lab` on the lesson page.
+
+**Review limitations:** the current Token Lab is a colour-only simulation; it does not teach typography, spacing or motion token mapping. The CSS shown in the lesson is an illustrative resolved output, not a claim that the DTCG file directly defines CSS selectors. Local typecheck, content tests, source verification, build and browser review remain pending.
