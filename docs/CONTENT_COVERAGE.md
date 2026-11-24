@@ -388,14 +388,14 @@ Five separate dimensions, rated basic / developing / complete from the content (
 | Peak-End Rule | Concept | Peer-reviewed research | complete | complete | complete | developing | complete | 7 | 4 | — | — |
 | Plain Language | Principle | Professional guideline | complete | complete | complete | basic | complete | 12 | 4 | — | — |
 | Postel's Law | Principle | Practitioner recommendation | complete | complete | complete | basic | complete | 11 | 4 | — | — |
-| Primitive Tokens | Concept | Practitioner recommendation | complete | developing | complete | basic | complete | 6 | 4 | — | — |
+| Primitive Tokens | Concept | Practitioner recommendation | complete | developing | complete | basic | complete | 7 | 4 | — | — |
 | Product Design | Discipline | Professional guideline | complete | complete | complete | basic | complete | 4 | 4 | — | — |
 | Progressive Disclosure | Principle | Professional guideline | complete | complete | complete | developing | complete | 4 | 4 | — | disclosure-lab |
 | Progressive Loading | Pattern | Professional guideline | complete | developing | complete | basic | complete | 10 | 3 | — | — |
 | Recognition over Recall | Principle | Professional guideline | complete | complete | complete | basic | complete | 10 | 3 | — | — |
 | Responsive Systems | Concept | Practitioner recommendation | complete | developing | complete | basic | complete | 7 | 3 | — | — |
 | Sample Size Estimation | Technique | Established theoretical model | complete | complete | complete | developing | complete | 5 | 4 | sample-size | — |
-| Semantic Tokens | Concept | Practitioner recommendation | complete | developing | complete | developing | complete | 9 | 4 | — | token-lab |
+| Semantic Tokens | Concept | Practitioner recommendation | complete | developing | complete | developing | complete | 10 | 4 | — | token-lab |
 | Serial Position Effect | Concept | Original empirical research | complete | complete | complete | developing | complete | 6 | 4 | — | serial-position-lab |
 | Shneiderman's Eight Golden Rules | Heuristic | Professional guideline | complete | complete | complete | basic | complete | 7 | 4 | — | — |
 | Signifiers | Concept | Professional guideline | complete | complete | complete | developing | complete | 7 | 3 | — | — |
@@ -406,7 +406,7 @@ Five separate dimensions, rated basic / developing / complete from the content (
 | System Usability Scale (SUS) | Research instrument | Peer-reviewed research | complete | complete | complete | developing | developing | 7 | 4 | sus | — |
 | Task Success Rate | Metric | Peer-reviewed research | complete | complete | complete | developing | complete | 4 | 3 | task-success | — |
 | Tesler's Law | Principle | Practitioner recommendation | complete | complete | complete | basic | complete | 5 | 3 | — | — |
-| Theme Architecture | Concept | Practitioner recommendation | complete | developing | complete | developing | complete | 12 | 3 | — | token-lab |
+| Theme Architecture | Concept | Practitioner recommendation | complete | developing | complete | developing | complete | 13 | 3 | — | token-lab |
 | Think-Aloud Protocol | Method | Peer-reviewed research | complete | complete | complete | developing | complete | 12 | 4 | — | — |
 | Tree Testing | Method | Practitioner recommendation | complete | complete | complete | developing | complete | 4 | 4 | — | — |
 | Typography Scales | Concept | Practitioner recommendation | complete | developing | complete | basic | complete | 9 | 3 | — | — |
