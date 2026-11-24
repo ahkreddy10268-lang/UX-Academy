@@ -180,8 +180,8 @@ No arbitrary word counts. More words are justified only when they add a new expl
 | Pilot 1: Design Tokens | Content, lab integration and page QA complete; accepted as the first format pilot |
 | Pilot 2: Component Architecture | Targeted enrichment complete; shared browser QA passed |
 | Pilot 3: Design Governance | Targeted enrichment complete; shared browser QA passed |
-| Remaining topic rollout | Eleven lessons accepted, including Spacing Scales and Typography Scales; 18 other topics remain. |
-| Final branch tests | Eleven accepted lessons: `npm ci` pass; `npm run check` pass (23 test files / 626 tests, typecheck and lint); taxonomy pass (1,046 links; Design Systems 29/29); relevant source checks pass (Spacing 8/8, Typography 12/12); docs generation and build pass (998 pages); targeted browser review for both scale lessons pass 8/8 each across 1440/768/390 px in light/dark with axe 0, overflow 0, errors 0 and keyboard flashcards passing. The full site-wide integration suite remains pending. |
+| Remaining topic rollout | Twelve lessons accepted, including Spacing Scales, Typography Scales and Colour Systems; 17 other topics remain. |
+| Final branch tests | Twelve accepted lessons: `npm ci` pass; `npm run check` pass (23 test files / 626 tests, typecheck and lint); taxonomy pass (1,046 links; Design Systems 29/29); relevant source checks pass (Spacing 8/8, Typography 12/12, Colour 16/16); docs generation and build pass (998 pages); targeted browser review for Spacing, Typography and Colour passes 8/8 each across 1440/768/390 px in light/dark with axe 0, overflow 0, errors 0 and keyboard flashcards passing. The full site-wide change-impact suite remains pending. |
 
 ## Pilot 1 — current implementation record (2026-11-24)
 
@@ -313,3 +313,16 @@ This is a content update on the existing draft PR branch, not a production relea
 - Verification: `npm ci` pass (0 vulnerabilities); `npm run check` pass (23 files / 626 tests, typecheck and lint); taxonomy pass (1,046 links; Design Systems 29/29); `sources:verify` 12/12; `docs:generate` pass; production build pass (998 static pages). `entry-review.cjs typography-scales` passes 8/8 at 1440/768/390 px in light/dark: axe 0, overflow 0, errors 0, clipped figure text 0, internal links 11/11, keyboard flashcards 7/7.
 
 Together with the previous nine accepted lessons, the two scales lessons bring the accepted total to 11/29. The remaining 18 topics and final site-wide change-impact suite remain outstanding. No taxonomy, schema, learner progress identity, production deployment or merge changes were made.
+## Colour Systems — accepted (2026-11-24)
+
+- Retains the existing four-layer model (tonal ramps, semantic roles, documented foreground/background pairs and complete theme remappings), the Material/Carbon/Atlassian/USWDS references and light/dark library examples.
+- Clarifies that USWDS 40/50/70 grade-gap shortcuts depend on USWDS's own bounded luminance grades and must not be transferred to arbitrary ramps.
+- Adds OKLCH palette tuning with caveats about perceptual uniformity, gamut clipping and contrast validation; workflow from seed → ramp → semantic mapping → theme-pair checks → grayscale and colour-vision review.
+- Adds categorical, sequential and diverging data palettes; redundant cues such as labels, markers and line patterns; separation of UI status colours from data-series palettes; and brand constraints that do not override semantic roles or contrast needs.
+- Adds progressive CSS examples: sRGB first, separate feature guards for OKLCH, relative-colour syntax and color-mix, P3 enhancement, and forced-colors handling.
+- Adds a same-task library status-board example, one redesign assignment, two quiz questions and three flashcards. The lesson has 16 references; generated coverage records five exercises.
+- Adds eight unique source records for CSS Color 4, MDN relative-colour syntax and color-mix, Carbon data-visualization palettes, WAI Use of Color and G111, NEI colour-vision deficiency guidance and the WAI WCAG FAQ. Reuses the existing WAI Non-text Contrast record. All 16 cited source URLs passed verification.
+- Verification: `npm ci` pass (0 vulnerabilities); `npm run check` pass (23 files / 626 tests, typecheck and lint); `npm run test:taxonomy` pass (1,046 links; Design Systems 29/29); `sources:verify` 16/16; `docs:generate` pass; `npm run build` pass (998 static pages).
+- Browser QA: `entry-review.cjs colour-systems` pass 8/8 at 1440/768/390 px in light/dark; axe 0, overflow 0, errors 0, clipped figure text 0, internal links 12/12 and keyboard flashcards 7/7.
+
+With Colour Systems accepted, the Design Systems mastery upgrade now has 12/29 lessons accepted; 17 topics and the final site-wide change-impact suite remain.
