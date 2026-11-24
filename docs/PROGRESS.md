@@ -488,3 +488,15 @@ Owner: approve the push of the status fix, set Vercel's production branch to `ma
 - Browser QA: `entry-review.cjs typography-scales` PASS 8/8 across 1440/768/390 px in light/dark; axe 0, overflow 0, page/console errors 0, clipped figure text 0, internal links 11/11 and keyboard flashcards 7/7.
 - Re-ran the earlier `entry-review.cjs spacing-scales` in the same sandbox: PASS 8/8 across the same viewport/theme matrix; axe 0, overflow 0, page/console errors 0, clipped figure text 0, internal links 14/14 and keyboard flashcards 6/6. Spacing Scales is now accepted too.
 - Accepted upgrades now total 11/29; 18 topics remain, plus the final site-wide change-impact suite. No taxonomy/schema/progress identity changes, main-branch write, merge or production deployment.
+## Session 82 — Design Systems Colour Systems enrichment (2026-11-24)
+
+- Enriched the existing `colour-systems` lesson in place on `codex/design-systems-mastery-build`; canonical slug, taxonomy and learner-progress identity are unchanged.
+- Retained the four-layer model (ramps, semantic roles, documented pairs and themes); clarified USWDS's 40/50/70 grade-gap shortcuts and that they are valid only for its own luminance-bounded grade system.
+- Added an OKLCH palette-generation and validation workflow; states that perceptual ramp generation does not guarantee WCAG contrast, gamut fit or colour-vision distinction.
+- Added categorical, sequential and diverging chart palettes, colour-vision safeguards, redundant encoding (labels, markers and patterns), data-series/UI-status separation, brand-role boundaries and forced-colours guidance.
+- Added a progressive CSS example with sRGB fallback and separate support guards for OKLCH, relative-colour syntax and color-mix, plus P3 enhancement and forced-colors handling.
+- Added the library status-board worked example, redesign assignment, two quiz questions and three flashcards. The lesson now lists 16 references and generated coverage records five exercises.
+- Added eight unique source records and reused the existing WAI SC 1.4.11 source. `sources:verify` PASS for 16/16 unique cited URLs. Generated source registry: 611 total, 293 URL-reachable.
+- QA in disposable Vercel sandbox from the feature branch: `npm ci` PASS (0 vulnerabilities); `npm run check` PASS (23 test files / 626 tests, typecheck, lint); taxonomy PASS (1,046 links, Design Systems 29/29); `npm run docs:generate` PASS; `npm run build` PASS (998 static pages).
+- Browser review: `entry-review.cjs colour-systems` PASS 8/8 across 1440/768/390 px in light/dark; axe 0, overflow 0, browser errors 0, clipped figure text 0, internal links 12/12 and keyboard flashcards 7/7.
+- Accepted upgrades now total 12/29; 17 topics remain, plus the final site-wide change-impact suite. No taxonomy/schema/progress identity changes, main-branch write, merge or production deployment.
