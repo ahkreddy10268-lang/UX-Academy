@@ -256,6 +256,13 @@ function SearchAutocomplete({ results, renderOption }: { results: Book[]; render
         caption:
           "Illustrative and shortened (keyboard handling omitted). The organism keeps the combobox roles together; `renderOption` is a slot, so the same organism serves book, author and event searches without new variants {{src:w3c-aria-apg}}.",
       },
+    {
+      "title": "Same catalogue search, two ways to organise the work: strict taxonomy versus feature ownership",
+      "language": "text",
+      "code": "OVER-APPLIED: let the five labels dictate every file and dependency\nsrc/\n  atoms/Label.tsx\n  atoms/Input.tsx\n  atoms/ClearButton.tsx\n  molecules/SearchField.tsx\n  molecules/SuggestionList.tsx\n  organisms/SearchAutocomplete.tsx\n  templates/CatalogueHeader.tsx\n  pages/Catalogue.tsx\n\nBETTER FOR A LARGE PRODUCT: keep the atomic mental model; organise code by feature and reuse\nsrc/\n  features/catalogue/search/\n    SearchAutocomplete.tsx   # owns query, active option and combobox behaviour\n    SearchField.tsx           # local composition for this search task\n    SuggestionList.tsx        # local listbox composition\n  shared/ui/\n    TextInput.tsx             # promoted only if multiple features need the same contract\n    IconButton.tsx            # shared action with its accessible name\n  pages/catalogue/\n    CataloguePage.tsx         # owns data loading and page-level empty/error states",
+      "caption": "Illustrative architecture comparison, not a universal folder rule. Atomic Design helps a team discuss scale and composition; it does not prescribe directory names or require every local element to become a shared atom. Feature ownership can coexist with the atomic mental model. The accessible combobox remains one coordinated interaction, not fragments with disconnected state."
+    },
+
     ],
   },
 
@@ -377,5 +384,5 @@ function SearchAutocomplete({ results, renderOption }: { results: Book[]; render
     sources: true,
     activities: true,
   },
-  lastVerifiedAt: "2026-11-11",
+  lastVerifiedAt: "2026-11-24",
 });
