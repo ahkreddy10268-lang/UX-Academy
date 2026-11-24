@@ -15,9 +15,9 @@
 | Planned, no content | 416 |
 | Domains with no published entry | 5 |
 | Formulas with calculators | 25 |
-| Quiz questions | 470 |
-| Exercises | 361 |
-| Flashcards | 472 |
+| Quiz questions | 472 |
+| Exercises | 362 |
+| Flashcards | 476 |
 | Labs | 19 |
 | Workshops | 11 |
 | Comparisons | 11 |
@@ -301,7 +301,7 @@ Five separate dimensions, rated basic / developing / complete from the content (
 | Explanation | 119 | 0 | 0 |
 | Evidence | 81 | 38 | 0 |
 | Practice | 119 | 0 | 0 |
-| Visual | 9 | 48 | 62 |
+| Visual | 9 | 49 | 61 |
 | Editorial | 118 | 1 | 0 |
 
 ## Published entries
@@ -339,7 +339,7 @@ Five separate dimensions, rated basic / developing / complete from the content (
 | Design System Audits | Strategy | Practitioner recommendation | complete | developing | complete | basic | complete | 5 | 3 | — | — |
 | Design System Versioning | Strategy | Practitioner recommendation | complete | developing | complete | basic | complete | 6 | 3 | — | — |
 | Design Thinking | Framework | Professional guideline | complete | complete | complete | developing | complete | 8 | 4 | — | — |
-| Design Tokens | Concept | Practitioner recommendation | complete | developing | complete | basic | complete | 8 | 4 | — | — |
+| Design Tokens | Concept | Practitioner recommendation | complete | developing | complete | developing | complete | 9 | 6 | — | token-lab |
 | Desirability | Concept | Peer-reviewed research | complete | complete | complete | basic | complete | 4 | 4 | — | — |
 | Direct Manipulation | Principle | Established theoretical model | complete | complete | complete | developing | complete | 6 | 4 | — | — |
 | Discoverability | Principle | Professional guideline | complete | complete | complete | basic | complete | 5 | 4 | — | — |
