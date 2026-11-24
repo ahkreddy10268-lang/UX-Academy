@@ -90,7 +90,7 @@
   },
   "apple-hig-layout": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-11",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "apple-hig-typography": {
@@ -128,7 +128,7 @@
   },
   "atlassian-spacing": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-11",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "atlassian-typography": {
@@ -361,7 +361,7 @@
   },
   "carbon-2x-grid": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-11",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "carbon-design-system": {
@@ -386,7 +386,7 @@
   },
   "carbon-spacing": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-11",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "carbon-themes": {
@@ -1082,7 +1082,7 @@
   },
   "govuk-spacing": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-11",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "govuk-type-scale": {
@@ -1896,7 +1896,7 @@
   },
   "mdn-clamp": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-11",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "mdn-color-scheme": {
@@ -1906,7 +1906,7 @@
   },
   "mdn-container-queries": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-11",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "mdn-custom-properties": {
@@ -3446,6 +3446,11 @@
     "httpStatus": 200
   },
   "frost-themeable-ui-history": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-24",
+    "httpStatus": 200
+  },
+  "android-grids-and-units": {
     "status": "url-reachable",
     "checkedAt": "2026-11-24",
     "httpStatus": 200
