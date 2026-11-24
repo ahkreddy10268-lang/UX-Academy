@@ -15,15 +15,15 @@
 | Planned, no content | 416 |
 | Domains with no published entry | 5 |
 | Formulas with calculators | 25 |
-| Quiz questions | 472 |
-| Exercises | 363 |
-| Flashcards | 478 |
+| Quiz questions | 474 |
+| Exercises | 365 |
+| Flashcards | 481 |
 | Labs | 19 |
 | Workshops | 11 |
 | Comparisons | 11 |
 | Learning paths | 16 |
 | Glossary terms | 114 |
-| Sources | 598 |
+| Sources | 603 |
 
 ## By domain
 
@@ -409,7 +409,7 @@ Five separate dimensions, rated basic / developing / complete from the content (
 | Theme Architecture | Concept | Practitioner recommendation | complete | developing | complete | developing | complete | 13 | 3 | — | token-lab |
 | Think-Aloud Protocol | Method | Peer-reviewed research | complete | complete | complete | developing | complete | 12 | 4 | — | — |
 | Tree Testing | Method | Practitioner recommendation | complete | complete | complete | developing | complete | 4 | 4 | — | — |
-| Typography Scales | Concept | Practitioner recommendation | complete | developing | complete | basic | complete | 9 | 3 | — | — |
+| Typography Scales | Concept | Practitioner recommendation | complete | developing | complete | basic | complete | 14 | 5 | — | — |
 | Usability | Concept | Official standard | complete | complete | complete | basic | complete | 7 | 4 | — | — |
 | Usability Testing | Method | Peer-reviewed research | complete | complete | complete | complete | complete | 14 | 4 | problem-discovery | — |
 | Usefulness | Concept | Peer-reviewed research | complete | complete | complete | basic | complete | 5 | 4 | — | — |
