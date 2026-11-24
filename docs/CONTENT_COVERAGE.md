@@ -15,7 +15,7 @@
 | Planned, no content | 414 |
 | Domains with no published entry | 5 |
 | Formulas with calculators | 27 |
-| Quiz questions | 486 |
+| Quiz questions | 474 |
 | Exercises | 372 |
 | Flashcards | 494 |
 | Labs | 19 |
