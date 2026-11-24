@@ -94,6 +94,11 @@
     "registeredContainer": "Psychological Review",
     "similarity": 1
   },
+  "android-grids-and-units": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-24",
+    "httpStatus": 200
+  },
   "apple-hig": {
     "status": "url-reachable",
     "checkedAt": "2026-11-03",
@@ -106,12 +111,12 @@
   },
   "apple-hig-layout": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-11",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "apple-hig-typography": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-11",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "apple-sf-symbols": {
@@ -144,7 +149,7 @@
   },
   "atlassian-spacing": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-11",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "atlassian-typography": {
@@ -377,7 +382,7 @@
   },
   "carbon-2x-grid": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-11",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "carbon-design-system": {
@@ -402,7 +407,7 @@
   },
   "carbon-spacing": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-11",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "carbon-themes": {
@@ -941,6 +946,11 @@
     "checkedAt": "2026-11-11",
     "httpStatus": 200
   },
+  "frost-themeable-ui-history": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-24",
+    "httpStatus": 200
+  },
   "fu-pirolli-2007": {
     "status": "doi-verified",
     "checkedAt": "2026-11-20",
@@ -1114,7 +1124,7 @@
   },
   "govuk-spacing": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-11",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "govuk-type-scale": {
@@ -1446,6 +1456,11 @@
   "ibm-design-language": {
     "status": "url-reachable",
     "checkedAt": "2026-11-11",
+    "httpStatus": 200
+  },
+  "ibm-design-program-history": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "ideo-design-kit": {
@@ -1952,7 +1967,7 @@
   },
   "mdn-clamp": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-11",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "mdn-color-scheme": {
@@ -1962,7 +1977,7 @@
   },
   "mdn-container-queries": {
     "status": "url-reachable",
-    "checkedAt": "2026-11-11",
+    "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
   "mdn-custom-properties": {
@@ -3522,12 +3537,27 @@
     "registeredContainer": "Psychologische Forschung",
     "similarity": 1
   },
-  "ibm-design-program-history": {
+  "mdn-variable-fonts": {
     "status": "url-reachable",
     "checkedAt": "2026-11-24",
     "httpStatus": 200
   },
-  "frost-themeable-ui-history": {
+  "w3c-international-specs": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-24",
+    "httpStatus": 200
+  },
+  "android-font-scaling-200": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-24",
+    "httpStatus": 200
+  },
+  "mdn-css-length-units": {
+    "status": "url-reachable",
+    "checkedAt": "2026-11-24",
+    "httpStatus": 200
+  },
+  "w3c-wcag-148": {
     "status": "url-reachable",
     "checkedAt": "2026-11-24",
     "httpStatus": 200

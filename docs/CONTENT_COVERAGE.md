@@ -15,15 +15,15 @@
 | Planned, no content | 414 |
 | Domains with no published entry | 5 |
 | Formulas with calculators | 27 |
-| Quiz questions | 482 |
-| Exercises | 368 |
-| Flashcards | 486 |
+| Quiz questions | 484 |
+| Exercises | 371 |
+| Flashcards | 491 |
 | Labs | 19 |
 | Workshops | 11 |
 | Comparisons | 11 |
 | Learning paths | 16 |
 | Glossary terms | 127 |
-| Sources | 608 |
+| Sources | 614 |
 
 ## By domain
 
@@ -402,7 +402,7 @@ Five separate dimensions, rated basic / developing / complete from the content (
 | Signifiers | Concept | Professional guideline | complete | complete | complete | developing | complete | 7 | 3 | — | — |
 | Skeleton Screens | Pattern | Practitioner recommendation | complete | developing | complete | developing | complete | 7 | 3 | — | async-state-lab |
 | Social Proof | Cognitive bias | Peer-reviewed research | complete | complete | complete | basic | complete | 9 | 4 | — | — |
-| Spacing Scales | Concept | Practitioner recommendation | complete | developing | complete | basic | complete | 6 | 3 | — | — |
+| Spacing Scales | Concept | Practitioner recommendation | complete | developing | complete | basic | complete | 11 | 3 | — | — |
 | Steering Law | Law | Original empirical research | complete | complete | complete | developing | complete | 5 | 3 | steering | steering-lab |
 | System Usability Scale (SUS) | Research instrument | Peer-reviewed research | complete | complete | complete | developing | developing | 7 | 4 | sus | — |
 | Task Success Rate | Metric | Peer-reviewed research | complete | complete | complete | developing | complete | 4 | 3 | task-success | — |
@@ -410,7 +410,7 @@ Five separate dimensions, rated basic / developing / complete from the content (
 | Theme Architecture | Concept | Practitioner recommendation | complete | developing | complete | developing | complete | 13 | 3 | — | token-lab |
 | Think-Aloud Protocol | Method | Peer-reviewed research | complete | complete | complete | developing | complete | 12 | 4 | — | — |
 | Tree Testing | Method | Practitioner recommendation | complete | complete | complete | developing | complete | 4 | 4 | — | — |
-| Typography Scales | Concept | Practitioner recommendation | complete | developing | complete | basic | complete | 9 | 3 | — | — |
+| Typography Scales | Concept | Practitioner recommendation | complete | developing | complete | basic | complete | 14 | 5 | — | — |
 | Usability | Concept | Official standard | complete | complete | complete | basic | complete | 7 | 4 | — | — |
 | Usability Testing | Method | Peer-reviewed research | complete | complete | complete | complete | complete | 14 | 4 | problem-discovery | — |
 | Usefulness | Concept | Peer-reviewed research | complete | complete | complete | basic | complete | 5 | 4 | — | — |

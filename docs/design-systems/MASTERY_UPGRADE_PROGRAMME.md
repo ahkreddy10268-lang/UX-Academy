@@ -180,8 +180,8 @@ No arbitrary word counts. More words are justified only when they add a new expl
 | Pilot 1: Design Tokens | Content, lab integration and page QA complete; accepted as the first format pilot |
 | Pilot 2: Component Architecture | Targeted enrichment complete; shared browser QA passed |
 | Pilot 3: Design Governance | Targeted enrichment complete; shared browser QA passed |
-| Remaining 20-topic rollout | Planned; 9 lessons have completed their depth-upgrade batches |
-| Final branch tests | Nine upgraded lessons: check, taxonomy, source verification, build and targeted browser review passed; full 29-topic rollout suite remains pending |
+| Remaining topic rollout | Nine lessons accepted; Spacing Scales content enriched and awaiting targeted visual/keyboard QA; 19 other topics remain. |
+| Final branch tests | Nine accepted lessons retain their recorded checks. Spacing Scales: npm ci, npm run check (23 files / 626 tests), taxonomy (1,046 links), 8 source checks, docs generation and build (998 pages) pass; preview route returns HTTP 200 with updated content and citations. Six-context axe/keyboard review remains pending. |
 
 ## Pilot 1 — current implementation record (2026-11-24)
 
@@ -270,3 +270,27 @@ This validates the three additional lessons only. The full 29-topic programme an
 - `entry-review.cjs design-language atomic-design multi-brand-systems`: PASS 24/24 across 1440/768/390 px in light/dark. Axe 0, overflow 0, page/console errors 0, figure text minimum 10.2 px, no clipped text or out-of-viewBox markers, internal links resolve and no raw citation/link markup; keyboard flashcards pass (4/4 per topic).
 
 Three batches now cover 9/29 lessons. The remaining 20 topics and full site-wide change-impact suite are still outstanding. No taxonomy/schema/progress model changes, merge or production deployment.
+
+## Scales & visual systems — Spacing Scales (2026-11-24)
+
+The existing lesson was selectively enriched in place; its slug, taxonomy, three learning levels, existing examples and exercises remain. The additions address the upgrade matrix without turning the spacing scale into a universal grid rule:
+
+- Clarifies that a spacing scale and a column/layout grid are related but distinct systems, using Carbon's documented 2x Grid and spacing tokens as the comparison.
+- Adds platform mapping: CSS px/rem on web, dp for Android layout and sp for Android text, and points in Apple HIG layout guidance. Android's 4/8 baseline-grid language is labelled as Android guidance, not a universal web requirement.
+- Adds density as semantic-role remapping, with accessibility floors preserved; distinguishes discrete breakpoint mapping from bounded fluid spacing (clamp()) and container-based adaptation.
+- Adds content-driven sizing and explicit exceptions for translated, long or user-adjusted content; explains when a small optical correction is justified and how to document it.
+- Adds a same-task poor/better responsive catalogue CSS comparison, an advanced responsive repair assignment and two flashcards.
+- Added the official Android grids-and-units source; refreshed the relevant Carbon, Atlassian, GOV.UK, Apple and MDN source checks. Current Atlassian scale ranges and Android unit/grid guidance were checked against their official pages.
+
+### Verification for the Spacing Scales content update
+
+- npm ci: PASS; audit reported 0 vulnerabilities.
+- npm run check: PASS — content index, typecheck, 23 test files / 626 tests and ESLint.
+- npm run test:taxonomy: PASS — 20 domains, 73 subcategories, 561 topics, 1,046 links; Design Systems remains 29/29 published.
+- npm run sources:verify for android-grids-and-units, carbon-spacing, carbon-2x-grid, atlassian-spacing, govuk-spacing, apple-hig-layout, mdn-clamp and mdn-container-queries: PASS — 8/8 URL-reachable.
+- npm run docs:generate: PASS — generated source registry now reports 598 sources (280 URL-reachable); Spacing Scales reference count increases from 6 to 11, exercise count from 362 to 363 and flashcards from 476 to 478.
+- npm run build: PASS — Next.js production build; all 998 static pages generated.
+- Vercel Preview /library/spacing-scales: HTTP 200. Server-rendered HTML includes the new comparison, assignment and cited material; no raw citation markup was found.
+- Not yet verified: the reusable six-context Playwright/axe/keyboard entry review. The QA sandbox checkout did not include Playwright or a browser binary, so do not record a visual/accessibility browser pass for this lesson yet.
+
+This is a content update on the existing draft PR branch, not a production release. The PR remains draft; do not merge until the remaining curriculum rollout, final branch integration and full impacted-browser review are complete.
